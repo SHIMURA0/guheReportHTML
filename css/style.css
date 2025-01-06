@@ -1,0 +1,224 @@
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/* 页面设置 */
+@page {
+  size: A4; /* 设置纸张大小为 A4 */
+  margin: 40mm; /* 设置边距 */
+}
+
+body {
+
+  font-family: "Microsoft YaHei", Arial, sans-serif; /* 设置字体为微软雅黑 */
+  margin: 0; /* 去掉默认边距 */
+  padding: 40mm; /* 设置内边距 */
+  box-sizing: border-box; /* 包含边框和内边距 */
+}
+
+.custom-title {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 2.5rem; /* 字体大小 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  border: 1px solid rgba(0, 178, 180, 0.3); /* 边框 */
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* 确保打印时颜色准确 */
+  }
+  .no-print {
+    display: none; /* 不打印的元素 */
+  }
+  .page-break {
+    page-break-after: always; /* 强制分页 */
+  }
+  .rounded-table {
+    width: 100%; /* 确保表格宽度为100% */
+  }
+}
+
+.custom-teal {
+  background-color: rgb(0, 178, 180); /* 自定义颜色 */
+}
+.custom-gray {
+  color: #a0aec0; /* 自定义灰色 */
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: 4px;
+  background-color: #e2e8f0; /* 灰色背景 */
+}
+.progress {
+  height: 100%;
+  border-radius: 4px;
+  background-color: #48bb78; /* 绿色 */
+}
+.description-container {
+  width: 100%;
+  background-color: rgb(235, 248, 248); /* 更新后的描述容器背景色 */
+  border-radius: 8px; /* 圆角 */
+  padding: 5px; /* 内边距 */
+  margin-top: -8px; /* 设置负上边距 */
+  font-size: 0.6rem; /* 描述框内字体大小 */
+
+}
+.description-container > div {
+  padding: 2px; /* 增加内边距 */
+}
+
+.chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: bold; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+.latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+}
+.column-text {
+  font-size: 0.75rem; /* 控制每一列的字体大小 */
+}
+/* 新增样式：整体表格圆角 */
+.rounded-table {
+  border-radius: 8px; /* 圆角 */
+  overflow: hidden; /* 确保内容不超出圆角 */
+  border: 1px solid #e2e8f0; /* 添加边框以增强视觉效果 */
+  width: 100%; /* 确保表格宽度为100% */
+}
+.bold-text {
+  font-weight: bold; /* 加粗 */
+}
+/* 调整列宽 */
+.first-column {
+  width: 22%; /* 设置第一列宽度 */
+  padding-left: 50px; /* 增加左侧填充 */
+  padding-right: 10px; /* 增加右侧填充 */
+}
+.second-column {
+  width: 20%; /* 设置第二列宽度 */
+}
+.third-column {
+  width: 14%; /* 设置第三列宽度 */
+}
+.fourth-column {
+  width: 11%; /* 设置第四列宽度 */
+}
+.fifth-column {
+  width: 12%; /* 设置第五列宽度 */
+}
+.sixth-column {
+  width: 21%; /* 设置第六列宽度 */
+}
+/* 表头单元格样式 */
+th.first-column {
+  padding: 4px 20px; /* 上下 4px，左右 20px */
+}
+
+th.second-column {
+  padding: 4px 15px; /* 上下 4px，左右 15px */
+}
+
+th.third-column {
+  padding: 4px 10px; /* 上下 4px，左右 10px */
+}
+
+th.fourth-column {
+  padding: 4px 5px; /* 上下 4px，左右 5px */
+}
+
+th.fifth-column {
+  padding: 4px 10px; /* 上下 4px，左右 10px */
+}
+
+th.sixth-column {
+  padding: 4px 20px; /* 上下 4px，左右 20px */
+}
+
+/* 数据单元格样式 */
+td.first-column {
+  padding: 4px 20px; /* 上下 4px，左右 20px */
+}
+
+td.second-column {
+  padding: 4px 10px; /* 上下 4px，左右 15px */
+}
+
+td.third-column {
+  padding: 4px 10px; /* 上下 4px，左右 10px */
+}
+
+td.fourth-column {
+  padding: 4px 5px; /* 上下 4px，左右 5px */
+}
+
+td.fifth-column {
+  padding: 4px 10px; /* 上下 4px，左右 10px */
+}
+
+td.sixth-column {
+  padding: 4px 20px; /* 上下 4px，左右 20px */
+}
+.info-box {
+  background-color: rgba(0, 178, 180, 0.15); /* 自定义背景色 */
+  border: none; /* 边框颜色 */
+  border-radius: 3mm; /* 圆角 */
+  padding: 10px; /* 增加内边距以改善布局 */
+  margin-bottom: 16px; /* 下边距 */
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: flex-start; /* 垂直对齐方式 */
+}
+
+.info-box .icon {
+  color: rgb(0, 178, 180); /* 图标颜色 */
+  font-size: 0.75rem; /* 增加图标大小以提高可见性 */
+  margin-right: 0px; /* 增加图标与文本之间的间距 */
+  margin-top: 3px;
+  align-self: flex-start; /* 确保图标与文本顶部对齐 */
+}
+
+.info-box .content {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: column; /* 垂直排列内容 */
+}
+
+.info-box p {
+  font-size: 0.75rem; /* 段落字体大小 */
+  margin: 0; /* 去掉段落的上下边距 */
+  padding: 0; /* 去掉段落的内边距 */
+  line-height: 1.5; /* 设置行高，调整行距 */
+}
+
+.info-box ul {
+  font-size: 0.75rem; /* 列表字体大小 */
+  margin: 0; /* 去掉列表的上下边距 */
+  padding-left: 1.25rem; /* 调整列表的左侧内边距 */
+  margin-top: 0.5rem; /* 设置列表与段落之间的间隔 */
+  line-height: 1.2; /* 设置行高，调整行距 */
+}
+/* 新增样式：表头字体大小 */
+th {
+  font-size: 0.6rem; /* 设置表头字体大小 */
+  padding: 1px 0px; /* 设置表头的内边距，您可以根据需要调整这些值 */
+}
+td {
+  padding: 2px 1px; /* 减少内边距 */
+  line-height: 1; /* 减少行高 */
+}
+
+
