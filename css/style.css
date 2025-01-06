@@ -17,6 +17,20 @@ body {
   box-sizing: border-box; /* 包含边框和内边距 */
 }
 
+.custom-title-1 {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 3rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  border: 1px solid rgba(0, 178, 180, 0.3); /* 边框 */
+}
+
 .custom-title {
   width: 95%; /* 设置标题宽度为页面宽度的85% */
   margin: 0 auto; /* 居中对齐 */
@@ -26,6 +40,7 @@ body {
   text-align: center; /* 文本居中 */
   color: rgb(0, 178, 180); /* 字体颜色 */
   font-size: 2.5rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   border: 1px solid rgba(0, 178, 180, 0.3); /* 边框 */
 }
@@ -39,10 +54,13 @@ body {
     display: none; /* 不打印的元素 */
   }
   .page-break {
-    page-break-after: always; /* 强制分页 */
+    page-break-before: always; /* 强制分页 */
   }
   .rounded-table {
     width: 100%; /* 确保表格宽度为100% */
+  }
+  tr {
+    page-break-inside: avoid;
   }
 }
 
@@ -52,6 +70,83 @@ body {
 .custom-gray {
   color: #a0aec0; /* 自定义灰色 */
 }
+
+
+/*肠道菌群检测板块*/
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.label {
+  width: 80px;  /* 减小标签宽度 */
+  font-size: 16px;
+  text-align: right;  /* 文字右对齐 */
+  padding-right: 10px;  /* 文字和进度条之间的间距 */
+}
+.bar-wrapper {
+  position: relative;
+  width: 500px;  /* 固定进度条容器宽度 */
+}
+.bar {
+  height: 25px;
+  border-radius: 4px;
+  position: absolute;  /* 使用绝对定位确保左端对齐 */
+  left: 0;
+}
+.percentage {
+  position: absolute;
+  left: calc(var(--bar-width) + 10px);  /* 根据进度条宽度定位 */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+/* 细菌样式 */
+.细菌 .label { color: #4A90E2; }
+.细菌 .bar {
+  background-color: #4A90E2;
+  width: 450px;  /* 90% */
+  --bar-width: 450px;
+}
+.细菌 .percentage { color: #4A90E2; }
+
+/* 病毒样式 */
+.病毒 .label { color: #27AE60; }
+.病毒 .bar {
+  background-color: #27AE60;
+  width: 25px;  /* 5% */
+  --bar-width: 25px;
+}
+.病毒 .percentage { color: #27AE60; }
+
+/* 真菌样式 */
+.真菌 .label { color: #9B59B6; }
+.真菌 .bar {
+  background-color: #9B59B6;
+  width: 15px;  /* 3% */
+  --bar-width: 15px;
+}
+.真菌 .percentage { color: #9B59B6; }
+
+/* 原生生物样式 */
+.原生生物 .label { color: #F39C12; }
+.原生生物 .bar {
+  background-color: #F39C12;
+  width: 5px;  /* 1% */
+  --bar-width: 5px;
+}
+.原生生物 .percentage { color: #F39C12; }
+
+/* 寄生虫样式 */
+.寄生虫 .label { color: #E74C3C; }
+.寄生虫 .bar {
+  background-color: #E74C3C;
+  width: 5px;  /* 1% */
+  --bar-width: 5px;
+}
+.寄生虫 .percentage { color: #E74C3C; }
 
 .progress-bar {
   height: 10px;
@@ -92,7 +187,7 @@ body {
   line-height: 1; /* 设置行高为1，减少行间距 */
 }
 .column-text {
-  font-size: 0.75rem; /* 控制每一列的字体大小 */
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 /* 新增样式：整体表格圆角 */
 .rounded-table {
