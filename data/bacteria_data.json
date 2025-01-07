@@ -1,0 +1,5119 @@
+{
+  "core_gut_bacteria_data": [
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "normal_range": "0-4.464",
+      "detected_abundance": 1.90370,
+      "progress_percentage": 42.6,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 67,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "normal_range": "0-67.8009",
+      "detected_abundance": 0.04290,
+      "progress_percentage": 0.06,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 50,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，专门降解植物多糖和黏蛋白的菌群，产生琥珀酸和乙酸，与植物性饮食密切相关"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘤胃球菌属",
+      "latin_name": "Ruminococcus",
+      "normal_range": "0.0544-19.7985",
+      "detected_abundance": 9.84521,
+      "progress_percentage": 49.7,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 44,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，是肠道主要的纤维素降解菌，能产生乙酸和丁酸，对维持结肠上皮细胞健康至关重要"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "normal_range": "1.0578-47.3225",
+      "detected_abundance": 0.08974,
+      "progress_percentage": 0.19,
+      "evaluation": {
+        "status": "偏低 ↓",
+        "color": "orange"
+      },
+      "higher_than_percentage": 2,
+      "normal_detection_rate": 99.04,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，能降解复杂碳水化合物，产生丙酸盐，参与胆固醇代谢，调节宿主免疫系统"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议增加全谷物、豆类等膳食纤维摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "真杆菌属",
+      "latin_name": "Eubacterium",
+      "normal_range": "0.1146-9.4883",
+      "detected_abundance": 5.75186,
+      "progress_percentage": 60.6,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 95,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，主要产生丁酸盐，具有抗炎作用，参与胆固醇转化和胆汁酸代谢，维持肠道屏障完整性"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳酸杆菌属",
+      "latin_name": "Lactobacillus",
+      "normal_range": "0-0.4302",
+      "detected_abundance": 0.00660,
+      "progress_percentage": 1.5,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性兼性厌氧菌，产生乳酸和抗菌物质，增强肠道屏障功能，调节免疫系统，抑制有害菌生长"
+        }
+      ]
+    },
+    {
+      "chinese_name": "芽孢杆菌属",
+      "latin_name": "Bacillus",
+      "normal_range": "0.0001-0.5535",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性需氧菌，能形成芽孢，产生多种水解酶和抗菌肽，增强肠道免疫功能，改善肠道微生态平衡"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议适当补充含芽孢杆菌的活性益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Lachnoclostridium",
+      "latin_name": "Lachnoclostridium",
+      "normal_range": "0-0.2086",
+      "detected_abundance": 0.17516,
+      "progress_percentage": 84,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "厌氧产丁酸菌，能降解复杂碳水化合物，产生短链脂肪酸，参与结肠上皮细胞能量代谢，维持肠道健康"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "normal_range": "1.9351-17.7942",
+      "detected_abundance": 28.86665,
+      "progress_percentage": 162.2,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 99,
+      "normal_detection_rate": 98.08,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，是人体肠道中最主要的丁酸盐产生菌之一，具有显著的抗炎作用，通过代谢膳食纤维产生短链脂肪酸，维持肠道屏障功能"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：适当减少膳食纤维摄入，可补充乳酸菌调节菌群平衡；避免过量摄入全谷物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "normal_range": "0.0846-6.9056",
+      "detected_abundance": 10.17279,
+      "progress_percentage": 147.3,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 75,
+      "normal_detection_rate": 97.60,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，主要产生乙酸盐，参与碳水化合物发酵和氢气代谢，与肠道代谢稳态密切相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：控制碳水化合物摄入，减少精制糖和淀粉类食物；可适量补充益生元"
+        }
+      ]
+    },
+    {
+      "chinese_name": "戴阿利斯特杆菌属",
+      "latin_name": "Dialister",
+      "normal_range": "0-3.7365",
+      "detected_abundance": 2.74325,
+      "progress_percentage": 73.4,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 79,
+      "normal_detection_rate": 96.15,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，参与丙酸盐代谢，与宿主免疫系统调节和炎症反应相关"
+        }
+      ]
+    },
+    {
+      "chinese_name": "罗氏菌属",
+      "latin_name": "Roseburia",
+      "normal_range": "0.583-16.3581",
+      "detected_abundance": 6.33667,
+      "progress_percentage": 38.7,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 10,
+      "normal_detection_rate": 96.15,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧产丁酸菌，通过降解膳食纤维产生丁酸盐，维持肠道屏障功能，具有显著抗炎作用"
+        }
+      ]
+    },
+    {
+      "chinese_name": "直肠真杆菌属",
+      "latin_name": "Agathobacter",
+      "normal_range": "0-8.6328",
+      "detected_abundance": 0.00038,
+      "progress_percentage": 0.004,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 95.67,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，主要降解抗性淀粉，产生乙酸盐和丙酸盐，参与碳水化合物代谢"
+        }
+      ]
+    },
+    {
+      "chinese_name": "吉米菌属",
+      "latin_name": "Gemmiger",
+      "normal_range": "0.0038-0.973",
+      "detected_abundance": 0.18163,
+      "progress_percentage": 18.7,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 9,
+      "normal_detection_rate": 95.67,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "厌氧菌，参与复杂碳水化合物降解，与维生素代谢和神经递质产生相关"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副拟杆菌属",
+      "latin_name": "Parabacteroides",
+      "normal_range": "0.1095-8.7303",
+      "detected_abundance": 0.00675,
+      "progress_percentage": 0.08,
+      "evaluation": {
+        "status": "偏低 ↓",
+        "color": "orange"
+      },
+      "higher_than_percentage": 9,
+      "normal_detection_rate": 95.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，参与胆汁酸代谢和脂质代谢，产生琥珀酸和丙酸盐"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：增加抗性淀粉摄入（绿色香蕉、冷却米饭）；适量补充含铁食物和发酵食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "另枝菌属",
+      "latin_name": "Alistipes",
+      "normal_range": "0.0807-18.1199",
+      "detected_abundance": 0.00099,
+      "progress_percentage": 0.005,
+      "evaluation": {
+        "status": "偏低 ↓",
+        "color": "orange"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "耐胆汁厌氧菌，参与氨基酸代谢，产生吲哚类物质和短链脂肪酸"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：适量增加优质蛋白质摄入；添加深色蔬菜；可搭配咖啡酸类化合物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "毛螺菌属",
+      "latin_name": "Lachnospira",
+      "normal_range": "0.0347-8.6596",
+      "detected_abundance": 5.02851,
+      "progress_percentage": 58.1,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 70,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "厌氧菌，专门降解果胶的重要菌群，产生乙酸盐和丁酸盐，参与碳水化合物代谢"
+        }
+      ]
+    },
+    {
+      "chinese_name": "考拉杆菌属",
+      "latin_name": "Phascolarctobacterium",
+      "normal_range": "0-3.7492",
+      "detected_abundance": 0.00081,
+      "progress_percentage": 0.02,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，利用琥珀酸产生丙酸盐，参与肠道代谢物质转化，与肠道稳态维持相关"
+        }
+      ]
+    },
+    {
+      "chinese_name": "巨单胞菌属",
+      "latin_name": "Megamonas",
+      "normal_range": "0-0.6916",
+      "detected_abundance": 0.00049,
+      "progress_percentage": 0.07,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 58,
+      "normal_detection_rate": 87.50,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "厌氧菌，专门降解复杂碳水化合物，产生乙酸盐、丙酸盐和乳酸盐，参与肠道能量代谢，与神经系统功能和免疫调节相关"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪球菌属",
+      "latin_name": "Coprococcus",
+      "normal_range": "0.0826-9.4195",
+      "detected_abundance": 0.05595,
+      "progress_percentage": 0.6,
+      "evaluation": {
+        "status": "偏低 ↓",
+        "color": "orange"
+      },
+      "higher_than_percentage": 64,
+      "normal_detection_rate": 86.06,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧产丁酸菌，通过代谢膳食纤维产生丁酸盐，具有免疫调节功能，参与色氨酸代谢，与神经递质合成相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：补充水溶性膳食纤维（菊粉、燕麦β-葡聚糖）；适量添加全谷物；可搭配益生元"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "normal_range": "1.7546-35.5006",
+      "detected_abundance": 0.03296,
+      "progress_percentage": 0.09,
+      "evaluation": {
+        "status": "偏低 ↓",
+        "color": "orange"
+      },
+      "higher_than_percentage": 24,
+      "normal_detection_rate": 97.12,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性厌氧菌，核心益生菌，产生乙酸盐和乳酸盐，合成B族维生素和GABA，增强肠道屏障功能，调节免疫系统"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：补充低聚果糖（FOS）和菊粉；添加发酵乳制品；可选用含双歧杆菌的益生菌制剂；减少精制糖摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "normal_range": "0-0.4302",
+      "detected_abundance": 0.00660,
+      "progress_percentage": 1.5,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性兼性厌氧菌，产生乳酸和抗菌物质，参与碳水化合物发酵，合成维生素B族和维生素K，增强肠道屏障功能"
+        }
+      ]
+    },
+    {
+      "chinese_name": "芽孢杆菌属",
+      "latin_name": "Bacillus",
+      "normal_range": "0.0001-0.5535",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性需氧菌，产生多种水解酶和抗菌肽，增强肠道免疫功能，参与碳水化合物和蛋白质代谢"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：补充含枯草芽孢杆菌的益生菌制剂；增加发酵食品摄入；适量添加膳食纤维"
+        }
+      ]
+    }
+  ],
+
+  "non_core_gut_bacteria_data": [
+    {
+      "chinese_name": "柯林斯氏菌属",
+      "latin_name": "Collinsella",
+      "normal_range": "0-9.1529",
+      "detected_abundance": 0.01763,
+      "progress_percentage": 0.19,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 82,
+      "normal_detection_rate": 90.38,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "柯林斯氏菌是一类革兰氏阳性细菌，其水平与肥胖、糖尿病和心血管疾病等代谢病风险相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜酸菌属",
+      "latin_name": "Bilophila",
+      "normal_range": "0-0.1545",
+      "detected_abundance": 0.73111,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 66.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "嗜酸菌属是一类革兰氏阴性细菌，在肠道中参与氨基酸的代谢，其丰度可能与宿主的营养状态和肠道健康相关。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "为改善嗜酸菌属超标，建议增加膳食纤维与发酵食品的摄入，减少糖和精制碳水化合物，同时限制红肉和加工肉制品。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "黄酮还原菌属",
+      "latin_name": "Flavonifractor",
+      "normal_range": "0-0.7285",
+      "detected_abundance": 2.44087,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 57,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "黄酮还原菌属通过发酵黄酮等植物化合物来获取能量，参与植物性膳食成分的降解。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "减少黄酮含量高的食物：限制富含黄酮的食物如水果、蔬菜和茶类。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "多雷氏菌属",
+      "latin_name": "Dorea",
+      "normal_range": "0.0581-5.212",
+      "detected_abundance": 0.43735,
+      "progress_percentage": 8.4,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 20,
+      "normal_detection_rate": 89.42,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "多雷氏菌属是一种厌氧菌，主要通过发酵作用代谢碳水化合物，尤其是膳食纤维和复杂的多糖，分解膳食纤维，产生短链脂肪酸。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "洪氏菌属",
+      "latin_name": "Hungatella",
+      "normal_range": "0-0.027",
+      "detected_abundance": 0.14743,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 18,
+      "normal_detection_rate": 89.42,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "洪氏菌属是一种厌氧菌，主要通过发酵代谢有机物，尤其是耐消化的碳水化合物，如纤维和多糖，有助于分解食物残渣，产生短链脂肪酸。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "减少高糖和高脂肪食品，增加膳食纤维，摄入发酵食品，保持水分。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "颤螺菌属",
+      "latin_name": "Oscillospira",
+      "normal_range": "0.0033-0.5346",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 36,
+      "normal_detection_rate": 87.50,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "颤螺菌属是一种厌氧细菌，参与分解和发酵食物成分,能够代谢一些膳食纤维和其他复杂的碳水化合物，产生短链脂肪酸，促进肠道健康。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议适当补充益生菌"
+        }
+      ]
+    },
+    {
+      "chinese_name": "图里希菌属",
+      "latin_name": "Turicibacter",
+      "normal_range": "0-0.1234",
+      "detected_abundance": 0.00252,
+      "progress_percentage": 2.0,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 49.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性厌氧菌，主要产生乳酸盐，参与色氨酸代谢，与肌肉能量代谢和神经递质合成密切相关，在运动相关的肠-肌轴中发挥重要作用"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丁酸弧菌属",
+      "latin_name": "Butyrivibrio",
+      "normal_range": "0-3.2594",
+      "detected_abundance": 0.02421,
+      "progress_percentage": 0.7,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 98,
+      "normal_detection_rate": 35.58,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧菌，主要的丁酸盐产生菌之一，能高效降解复杂碳水化合物（纤维素、半纤维素、果胶），产生丁酸盐和共轭亚油酸，参与肠道屏障功能维持"
+        }
+      ]
+    },
+    {
+      "chinese_name": "克里斯滕森菌属",
+      "latin_name": "Christensenella",
+      "normal_range": "0-0.0054",
+      "detected_abundance": 0.00192,
+      "progress_percentage": 35.6,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 5.77,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "专性厌氧革兰氏阴性菌，产生乙酸盐和丁酸盐，具有显著的遗传相关性，参与脂质代谢和葡萄糖稳态，与宿主代谢健康密切相关"
+        }
+      ]
+    }
+  ],
+  "beneficial_gut_bacteria_data": [
+    {
+      "chinese_name": "嗜粘蛋白-艾克曼菌",
+      "latin_name": "A. muciniphila",
+      "normal_range": "0-6.6395",
+      "detected_abundance": 0.00394,
+      "progress_percentage": 0.06,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 95.67,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "嗜粘蛋白-艾克曼菌是一种革兰氏阴性细菌，能够分解肠道黏液，有助于维持肠道屏障功能和调节代谢健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "凝结芽孢杆菌",
+      "latin_name": "B. coagulans",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00027,
+      "progress_percentage": 0.34,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "凝结芽孢杆菌是一种耐热的革兰氏阳性芽孢杆菌，常用于作为益生菌，具有促进肠道健康和改善消化的潜在益处。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "枯草芽孢杆菌",
+      "latin_name": "B. subtilis",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00185,
+      "progress_percentage": 2.31,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 58,
+      "normal_detection_rate": 87.50,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "枯草芽孢杆菌是一种广泛存在的革兰氏阳性芽孢杆菌，常用于发酵食品，有助于改善肠道微生态和促进植物生长。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "多形拟杆菌",
+      "latin_name": "B. thetaiotaomicron",
+      "normal_range": "0-2.7856",
+      "detected_abundance": 0.00020,
+      "progress_percentage": 0.01,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 64,
+      "normal_detection_rate": 86.06,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "多形拟杆菌是一种革兰氏阴性厌氧细菌，能够有效分解复杂碳水化合物，并在维持肠道微生态平衡和健康方面发挥重要作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "青春双歧杆菌",
+      "latin_name": "B. adolescentis",
+      "normal_range": "0-14.286",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 24,
+      "normal_detection_rate": 97.12,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "青春双歧杆菌是一种革兰氏阳性益生菌，参与消化过程并有助于维持肠道健康，常被作为益生菌补充剂的一部分。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "角双歧杆菌",
+      "latin_name": "B. angulatum",
+      "normal_range": "0-0.15257",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "角双歧杆菌是一种革兰氏阳性益生菌，有助于维持肠道微生物平衡，并可能对宿主的免疫系统发挥积极作用。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "动物双歧杆菌",
+      "latin_name": "B. animalis",
+      "normal_range": "0-0.18833",
+      "detected_abundance": 0.00113,
+      "progress_percentage": 0.60,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "动物双歧杆菌是一种革兰氏阳性益生菌，具有促进消化健康、增强免疫功能以及改善肠道微生态的潜在益处。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "两歧双歧杆菌",
+      "latin_name": "B. bifidum",
+      "normal_range": "0-2.1225",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "两歧双歧杆菌是一种革兰氏阳性益生菌，能够帮助分解食物，促进营养吸收，有助于维护肠道健康和增强免疫系统功能。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "短双歧杆菌",
+      "latin_name": "B. breve",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00158,
+      "progress_percentage": 1.98,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 67,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "短双歧杆菌是一种革兰氏阳性益生菌，它在消化过程中发挥重要作用，能够帮助分解乳糖和其他碳水化合物，促进肠道健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链状双歧杆菌",
+      "latin_name": "B. catenulatum",
+      "normal_range": "0-0.50838",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 50,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "链状双歧杆菌是一种革兰氏阳性益生菌，它有助于改善肠道微生物群的平衡，促进消化健康，可能在发酵过程中可能产生有益的代谢物。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳双歧杆菌",
+      "latin_name": "B. crudilactis",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 44,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "乳双歧杆菌是一种革兰氏阳性益生菌，它在乳糖代谢方面发挥作用，能够帮助消化乳制品，维持肠道健康和增强免疫系统。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "婴儿双歧杆菌",
+      "latin_name": "B. infantis",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 2,
+      "normal_detection_rate": 99.04,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "婴儿双歧杆菌是一种革兰氏阳性益生菌，主要存在于新生儿和婴儿的肠道中。这种细菌对婴儿的消化系统发育至关重要。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "长双歧杆菌",
+      "latin_name": "B. longum",
+      "normal_range": "0-6.854",
+      "detected_abundance": 0.01861,
+      "progress_percentage": 0.27,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 95,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "长双歧杆菌是一种革兰氏阳性益生菌，它可以促进消化、增强免疫系统、帮助维持肠道微生物平衡、减少肠道炎症等。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "胃痛双歧杆菌",
+      "latin_name": "B. merycicum",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "胃痛双歧杆菌是一种相对较少研究的双歧杆菌，它具有促进肠道健康、改善消化和增强免疫反应的潜力。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "穆卡拉巴双歧杆菌",
+      "latin_name": "B. moukalabense",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00021,
+      "progress_percentage": 0.26,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "穆卡拉巴双歧杆菌是一种相对较新的双歧杆菌菌株，对肠道健康有积极影响。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "假长双歧杆菌",
+      "latin_name": "B. pseudolongum",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00142,
+      "progress_percentage": 1.78,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 5.77,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "假长双歧杆菌是一种革兰氏阳性益生菌，具有促进肠道健康和改善消化的能力。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "分支双歧杆菌",
+      "latin_name": "B. ramosum",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 98,
+      "normal_detection_rate": 35.58,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "分支双歧杆菌是一种革兰氏阳性益生菌，它主要存在于人类的肠道中，尤其是在婴儿期和幼儿期。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "罗伊氏双歧杆菌",
+      "latin_name": "B. reuteri",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 5.77,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "罗伊氏双歧杆菌是一种特有的益生菌，以其能在肠道中产生抗菌物质并改善消化健康而著称，有助于缓解腹泻和增强免疫功能。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "短柄双歧杆菌",
+      "latin_name": "B. stellenboschense",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "短柄双歧杆菌是一种益生菌，能够促进肠道健康并可能改善消化功能，常见于人类和动物的肠道微生物群中。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪双歧杆菌",
+      "latin_name": "B. stercoris",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "粪双歧杆菌是一种益生菌，主要存在于人类和动物的肠道中，以其助于维持肠道微生物平衡和促进消化健康而受到关注。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "布劳特氏菌属氢营养菌",
+      "latin_name": "B. hydrogenotropica",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00262,
+      "progress_percentage": 3.28,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "布劳特氏菌属氢营养菌是一种厌氧细菌，以其能够利用氢气作为电子供体并产生短链脂肪酸而著称。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "穗状丁酸弧菌",
+      "latin_name": "B. crossotus",
+      "normal_range": "0-2.9334",
+      "detected_abundance": 0.00239,
+      "progress_percentage": 0.08,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "穗状丁酸弧菌是一种厌氧细菌，以其发酵纤维素产生丁酸的能力而闻名，有助于促进肠道健康和维持消化功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丁酸梭菌",
+      "latin_name": "C. butyricum",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.01350,
+      "progress_percentage": 16.88,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "丁酸梭菌是一种厌氧性细菌，能够产生丁酸，对于肠道健康和食品发酵具有重要作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "霍氏真杆菌",
+      "latin_name": "E. hallii",
+      "normal_range": "0-3.5506",
+      "detected_abundance": 0.02035,
+      "progress_percentage": 0.57,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "霍氏真杆菌是一种厌氧细菌，以其能够发酵膳食纤维并产生丁酸而著称，促进肠道健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "直肠真杆菌",
+      "latin_name": "E. rectale",
+      "normal_range": "0-13.029",
+      "detected_abundance": 2.14287,
+      "progress_percentage": 16.45,
+      "evaluation": {
+        "status": "检出",
+        "color": "green"
+      },
+      "higher_than_percentage": 75,
+      "normal_detection_rate": 95.67,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "直肠真杆菌是一种厌氧细菌，以其能发酵膳食纤维并产生短链脂肪酸，尤其是丁酸，促进肠道健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普拉梭菌",
+      "latin_name": "F. prausnitzii",
+      "normal_range": "0.18043-14.003",
+      "detected_abundance": 26.23325,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 98,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "普拉梭菌是一种益生菌，以其产生丁酸和抗炎作用而著称，对维持肠道健康和整体免疫功能有重要的积极影响。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "可以通过增加纤维摄入、食用发酵食品以及减少糖和加工食品的摄入来改善普拉梭菌超标情况。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜酸乳杆菌",
+      "latin_name": "L. acidophilus",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "嗜酸乳杆菌是一种常见的益生菌，以其能够发酵乳糖并生成乳酸而著称，具有助于消化、增强免疫力以及维持肠道微生物平衡的潜力。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "短乳杆菌",
+      "latin_name": "L. brevis",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00028,
+      "progress_percentage": 0.35,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "短乳杆菌是一种乳酸菌，以其发酵能力和产生乳酸而著称，具有促进消化、增强免疫力和抗菌特性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "干酪乳杆菌",
+      "latin_name": "L. casei",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "干酪乳杆菌是一种乳酸菌，它以其良好的发酵特性和能够耐受酸性环境而著称，具有促进消化、增强免疫力、改善肠道菌群平衡等益处。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "卷曲乳杆菌",
+      "latin_name": "L. crispatus",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00489,
+      "progress_percentage": 6.11,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 67,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "卷曲乳杆菌是一种重要的乳酸菌，它以其对维持阴道健康和抑制病原体生长的能力而闻名，同时也能促进消化系统的健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "德氏乳杆菌",
+      "latin_name": "L. delbrueckii",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 44,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "德氏乳杆菌是一种乳酸菌，它能够在酸性环境中生存，具有良好的发酵能力，并能产生多种代谢产物，能够促进消化和增强免疫功能。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "发酵乳杆菌",
+      "latin_name": "L. fermentum",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.00013,
+      "progress_percentage": 0.16,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "发酵乳杆菌是一种常见的乳酸菌，具有促进消化、增强免疫功能和抑制有害病原体生长的潜力，对肠道健康有益。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "格氏乳杆菌",
+      "latin_name": "L. gasseri",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "格氏乳杆菌是一种重要的乳酸菌，具有促进消化、增强免疫功能和维持阴道健康的潜力，对于肠道和生殖道的健康有益。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瑞士乳杆菌",
+      "latin_name": "L. helveticus",
+      "normal_range": "0-0.08",
+      "detected_abundance": "ND",
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 44,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "瑞士乳杆菌是一种重要的乳酸菌，有助于分解乳蛋白，释放出有益的氨基酸和生物活性肽，从而促进消化、增强免疫功能等。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌制剂"
+        }
+      ]
+    }
+  ],
+  "harmful_gut_bacteria_data": [
+    {
+      "chinese_name": "埃希氏菌属",
+      "latin_name": "Escherichia",
+      "normal_range": "0-3.83",
+      "detected_abundance": 0.14296,
+      "progress_percentage": 3.73,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 6,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性兼性厌氧菌，正常菌群成员，参与维生素K和B族维生素合成，但部分菌株可致病。过度生长可导致肠道屏障功能受损"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：加强肠道屏障，补充益生菌；注意饮食卫生；可适量补充乳酸菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链球菌属",
+      "latin_name": "Streptococcus",
+      "normal_range": "0-0.3496",
+      "detected_abundance": 0.31690,
+      "progress_percentage": 90.65,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 13,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性兼性厌氧菌，产生乳酸和短链脂肪酸，部分菌株具有益生作用，但也可能导致机会性感染"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意口腔卫生；补充益生菌；增加膳食纤维摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "韦荣菌属",
+      "latin_name": "Veillonella",
+      "normal_range": "0-0.0086",
+      "detected_abundance": 0.38326,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 7,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，利用乳酸产生丙酸盐，参与口腔和肠道微生态平衡，与运动耐力相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：控制乳制品摄入；加强口腔卫生；可补充益生菌调节菌群平衡"
+        }
+      ]
+    },
+    {
+      "chinese_name": "泛菌属",
+      "latin_name": "Pantoea",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00225,
+      "progress_percentage": 4.5,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 0.02,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性兼性厌氧菌，环境中常见，机会性致病菌，与免疫功能密切相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：加强免疫力；注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭杆菌属",
+      "latin_name": "Fusobacterium",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00976,
+      "progress_percentage": 19.52,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，产生短链脂肪酸和致炎因子，参与黏膜免疫调节，过度生长可能导致炎症反应"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：增加膳食纤维；补充抗炎益生菌"
+        }
+      ]
+    },
+    {
+      "chinese_name": "志贺氏菌属",
+      "latin_name": "Shigella",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.04732,
+      "progress_percentage": 94.64,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 62.98,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性兼性厌氧菌，侵袭性肠道病原菌，与饮食卫生密切相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意饮食卫生；避免生食；加强肠道屏障功能"
+        }
+      ]
+    },
+    {
+      "chinese_name": "弯曲杆菌属",
+      "latin_name": "Campylobacter",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.04799,
+      "progress_percentage": 95.98,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 55.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性微需氧菌，人畜共患病原菌，与食品安全密切相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意食品卫生；充分烹饪肉类；避免交叉污染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "克雷伯氏菌属",
+      "latin_name": "Klebsiella",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.09652,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 89.06,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性兼性厌氧菌，条件致病菌，参与碳水化合物代谢，过度生长可能导致免疫失衡"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：调节肠道菌群；补充益生菌；加强口腔卫生；控制碳水化合物摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脱硫弧菌属",
+      "latin_name": "Desulfovibrio",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.02325,
+      "progress_percentage": 46.5,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 33.65,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性厌氧菌，硫酸盐还原菌，产生硫化氢，参与硫代谢，过度生长可能影响肠道屏障"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：减少含硫氨基酸食物摄入；增加膳食纤维；补充益生菌"
+        }
+      ]
+    },
+    {
+      "chinese_name": "螺杆菌属",
+      "latin_name": "Helicobacter",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00373,
+      "progress_percentage": 7.46,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 22.12,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性微需氧菌，定植于胃肠道黏膜，部分菌种可能影响胃肠道健康"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意饮食卫生；避免刺激性食物；保持规律作息"
+        }
+      ]
+    },
+    {
+      "chinese_name": "弓形菌属",
+      "latin_name": "Arcobacter",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00209,
+      "progress_percentage": 4.18,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 7.69,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性微需氧菌，环境中常见的潜在致病菌，与水源污染相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意饮用水卫生；避免生食海产品；加强食品卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "厌氧螺菌属",
+      "latin_name": "Anaerobiospirillum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00044,
+      "progress_percentage": 0.88,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 0.00,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性专性厌氧菌，主要分布在肠道，具有极强的运动性，参与碳水化合物代谢，过度生长可能影响肠道稳态"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意饮食卫生；避免生食；补充益生菌调节菌群"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠球菌属",
+      "latin_name": "Enterococcus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.12259,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性兼性厌氧菌，产生细菌素，参与肠道微生态平衡，具有一定益生作用，但过度生长可能影响菌群稳态"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：适当补充益生菌；控制碳水化合物摄入；增加膳食纤维；注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "奈瑟氏菌属",
+      "latin_name": "Neisseria",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00957,
+      "progress_percentage": 19.14,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": null,
+      "normal_detection_rate": 46.15,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性需氧菌，主要定植于黏膜表面，参与口腔微生态平衡，产生脂多糖，与局部免疫功能相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：加强口腔卫生；增强免疫力；保持环境通风"
+        }
+      ]
+    },
+    {
+      "chinese_name": "不动杆菌属",
+      "latin_name": "Acinetobacter",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.11947,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性需氧菌，环境适应力强，参与有机物降解，过度生长可能影响免疫平衡"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：加强个人卫生；避免环境污染；提高免疫力；可补充益生菌"
+        }
+      ]
+    },
+    {
+      "chinese_name": "假单胞菌属",
+      "latin_name": "Pseudomonas",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.07830,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 69,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阴性需氧菌，具有多样代谢能力，产生多种次级代谢产物，与环境适应性相关，过度生长可能影响微生态平衡"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：注意环境卫生；加强饮食卫生；补充有益菌群；增强免疫力"
+        }
+      ]
+    },
+    {
+      "chinese_name": "霍尔德曼氏菌属",
+      "latin_name": "Holdemania",
+      "normal_range": "0-0.0003",
+      "detected_abundance": 0.10581,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 98,
+      "normal_detection_rate": 29.33,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "革兰氏阳性厌氧菌，参与蛋白质代谢，产生短链脂肪酸，与肠道代谢功能相关"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议：调节饮食结构；适量补充益生菌；增加膳食纤维摄入"
+        }
+      ]
+    }
+  ],
+  "opportunistic_gut_pathogens_data": [
+    {
+      "chinese_name": "鲍曼不动杆菌",
+      "latin_name": "A. baumannii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.11308,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "医院感染常见病原菌，正常存在于呼吸道。免疫力低下时可致肺炎，具有多重耐药性。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议加强消毒防护，避免医院感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "醋酸钙不动杆菌",
+      "latin_name": "A. calcoaceticus",
+      "normal_range": "0-0.01",
+      "detected_abundance": 0.00023,
+      "progress_percentage": 2.3,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见于人体皮肤和黏膜。条件致病菌，可引起伤口感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "约氏不动杆菌",
+      "latin_name": "A. johnsonii",
+      "normal_range": "0-0.02",
+      "detected_abundance": 0.00145,
+      "progress_percentage": 7.25,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人体正常菌群成员。免疫力降低时可引起尿路感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "琼氏不动杆菌",
+      "latin_name": "A. junii",
+      "normal_range": "0-0.03",
+      "detected_abundance": 0.00567,
+      "progress_percentage": 18.9,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "存在于人体皮肤表面的常见菌。可能引起软组织感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鲁氏不动杆菌",
+      "latin_name": "A. lwoffii",
+      "normal_range": "0-0.01",
+      "detected_abundance": 0.02145,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "皮肤正常菌群成员。医院感染的重要条件致病菌。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议注意个人卫生，预防院内感染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "蜡样芽孢杆菌",
+      "latin_name": "B. cereus",
+      "normal_range": "0-0.02",
+      "detected_abundance": 0.00089,
+      "progress_percentage": 4.45,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 13,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土壤中常见细菌。过量可导致食物中毒。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脆弱拟杆菌",
+      "latin_name": "B. fragilis",
+      "normal_range": "0-1.8852",
+      "detected_abundance": 0.00145,
+      "progress_percentage": 0.08,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 7,
+      "normal_detection_rate": 98.56,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要肠道共生菌。参与维生素K的合成，维持肠道健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普通拟杆菌",
+      "latin_name": "B. vulgatus",
+      "normal_range": "0-20.066",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道重要益生菌。维持肠道菌群平衡，促进免疫系统发育。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议补充益生菌"
+        }
+      ]
+    },
+    {
+      "chinese_name": "难辨梭菌",
+      "latin_name": "C. difficile",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.08647,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 98,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "正常菌群成员，使用抗生素后易过度生长。可引起腹泻等症状。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议谨慎使用抗生素，必要时进行菌群干预"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阴沟肠杆菌",
+      "latin_name": "E. cloacae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00692,
+      "progress_percentage": 13.84,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道常驻菌群。免疫力低下时可致感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪肠球菌",
+      "latin_name": "E. faecalis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.01415,
+      "progress_percentage": 28.3,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道正常菌群成员。过量可致多器官感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "屎肠球菌",
+      "latin_name": "E. faecium",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.10070,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道共生菌，具有较强耐药性。过量可致感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议调节肠道菌群平衡"
+        }
+      ]
+    },
+    {
+      "chinese_name": "大肠埃希氏菌",
+      "latin_name": "E. coli",
+      "normal_range": "0-3.8364",
+      "detected_abundance": 0.14497,
+      "progress_percentage": 3.78,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 6,
+      "normal_detection_rate": 99.52,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道优势菌，维持肠道稳态。过量可致腹泻发热。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "具核梭杆菌",
+      "latin_name": "F. nucleatum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00459,
+      "progress_percentage": 9.18,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "口腔常见菌。可引起牙周感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肺炎克雷伯菌",
+      "latin_name": "K. pneumoniae",
+      "normal_range": "0-0.24019",
+      "detected_abundance": 0.09579,
+      "progress_percentage": 39.88,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "呼吸道定植菌。免疫力低下时可致肺炎。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "铜绿假单胞菌",
+      "latin_name": "P. aeruginosa",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.04152,
+      "progress_percentage": 83.04,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 69,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境常见菌，具有适应性强特点。可引起呼吸道感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脱氮假单胞杆菌",
+      "latin_name": "P. denitrificans",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土壤中的分解菌。参与环境氮循环。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "荧光假单胞菌",
+      "latin_name": "P. fluorescens",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00093,
+      "progress_percentage": 1.86,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水体常见菌。可引起局部感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "黄褐假单胞菌",
+      "latin_name": "P. fulva",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境菌群成员。很少引起感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "门多萨假单胞菌",
+      "latin_name": "P. mendocina",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土壤常见菌。极少引起感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "恶臭假单胞菌",
+      "latin_name": "P. putida",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00065,
+      "progress_percentage": 1.3,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境中的益生菌。促进植物生长。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "斯氏假单胞菌",
+      "latin_name": "P. stutzeri",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00116,
+      "progress_percentage": 2.32,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境脱氮菌。参与环境净化。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "咽峡链球菌",
+      "latin_name": "S. anginosus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00280,
+      "progress_percentage": 5.6,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "口咽部定植菌。可引起口腔感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肺炎链球菌",
+      "latin_name": "S. pneumoniae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.03111,
+      "progress_percentage": 62.22,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 69,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "上呼吸道定植菌。可导致肺部感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "小韦荣球菌",
+      "latin_name": "V. parvula",
+      "normal_range": "0-0.13203",
+      "detected_abundance": 0.07774,
+      "progress_percentage": 58.88,
+      "evaluation": {
+        "status": "检出",
+        "color": "blue"
+      },
+      "higher_than_percentage": 83,
+      "normal_detection_rate": 45.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "口腔常驻菌。参与乳酸代谢，维持口腔健康。"
+        }
+      ]
+    }
+  ],
+  "gut_pathogens_data": [
+    {
+      "chinese_name": "豚鼠气单胞菌",
+      "latin_name": "Aeromonas caviae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水环境常见病原菌。可引起胃肠道感染，常见腹泻症状。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮水卫生，避免生食水产品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜水气单胞菌",
+      "latin_name": "Aeromonas hydrophila",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "广泛分布于水环境中。可引起皮肤软组织感染和腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免接触污染水体，及时处理伤口"
+        }
+      ]
+    },
+    {
+      "chinese_name": "温和气单胞菌",
+      "latin_name": "Aeromonas sobria",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00037,
+      "progress_percentage": 0.74,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水生环境常见菌。可引起急性胃肠炎和腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免食用生食"
+        }
+      ]
+    },
+    {
+      "chinese_name": "牛布鲁氏杆菌",
+      "latin_name": "Brucella abortus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要人畜共患病原体。通过接触感染牛或食用污染乳制品传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免接触感染动物，注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "犬布鲁氏杆菌",
+      "latin_name": "Brucella canis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "犬类布鲁氏菌病病原体。可引起慢性感染和发热。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防护，避免与患病犬类密切接触"
+        }
+      ]
+    },
+    {
+      "chinese_name": "羊布鲁氏杆菌",
+      "latin_name": "Brucella melitensis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00142,
+      "progress_percentage": 2.84,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最主要的人畜共患布鲁氏菌。可引起多系统感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生羊奶制品，加强职业防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "绵羊布鲁氏杆菌",
+      "latin_name": "Brucella ovis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要感染绵羊。人类感染风险较低。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好职业防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "猪布鲁氏杆菌",
+      "latin_name": "Brucella suis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "猪群常见布鲁氏菌。可引起关节炎和全身症状。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意职业防护，避免接触感染动物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "唐菖蒲伯克霍尔德氏菌",
+      "latin_name": "Burkholderia gladioli",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00049,
+      "progress_percentage": 0.98,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要与植物相关的环境菌。免疫力低下者易感。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强个人防护，注意环境卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "大肠弯曲菌",
+      "latin_name": "Campylobacter coli",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00283,
+      "progress_percentage": 5.66,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见食源性致病菌。可引起急性肠炎和腹痛。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品卫生，避免生食"
+        }
+      ]
+    },
+    {
+      "chinese_name": "胎儿弯曲菌",
+      "latin_name": "Campylobacter fetus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00034,
+      "progress_percentage": 0.68,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "生殖系统感染菌。可引起流产和全身感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强孕期防护，注意个人卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "空肠弯曲菌",
+      "latin_name": "Campylobacter jejuni",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.03914,
+      "progress_percentage": 78.28,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最常见的弯曲菌属致病菌。可引起急性肠炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免食用未熟食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肉毒梭菌",
+      "latin_name": "Clostridium botulinum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00372,
+      "progress_percentage": 7.44,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "产生致命神经毒素的土壤菌。可引起重症肉毒中毒。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品储存，避免食用可疑罐头"
+        }
+      ]
+    },
+    {
+      "chinese_name": "产气荚膜梭菌",
+      "latin_name": "Clostridium perfringens",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00419,
+      "progress_percentage": 8.38,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见食源性致病菌。可引起急性食物中毒。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "确保食品充分加热，注意储存温度"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阪崎肠杆菌",
+      "latin_name": "Cronobacter sakazakii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00482,
+      "progress_percentage": 9.64,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境条件致病菌。新生儿易感，可致严重感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意婴儿配方奶粉卫生，谨慎储存"
+        }
+      ]
+    },
+    {
+      "chinese_name": "猪红斑丹毒丝菌",
+      "latin_name": "Erysipelothrix rhusiopathiae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00020,
+      "progress_percentage": 0.4,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "动物源性致病菌。主要感染猪类。可引起人类皮肤蜂窝织炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意职业防护，避免直接接触感染动物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "大肠埃希菌O157:H7",
+      "latin_name": "Escherichia coli O157:H7",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要食源性致病菌。可引起出血性腹泻和肾功能损害。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免生食或未煮熟食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "幽门螺杆菌",
+      "latin_name": "Helicobacter pylori",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00204,
+      "progress_percentage": 4.08,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "胃部定植菌。可引起慢性胃炎、消化性溃疡和胃癌。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，必要时就医检查"
+        }
+      ]
+    },
+    {
+      "chinese_name": "博杰曼军团菌",
+      "latin_name": "Legionella bozemanae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水环境中的机会性致病菌。可引起军团菌病。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意环境卫生，定期清洁水系统"
+        }
+      ]
+    },
+    {
+      "chinese_name": "杜莫夫军团菌",
+      "latin_name": "Legionella dumoffii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见于空调冷却系统。可引起呼吸道感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "定期维护空调系统，保持环境卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "长滩军团菌",
+      "latin_name": "Legionella longbeachae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土壤环境常见菌。可引起肺部感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "接触土壤时注意防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜肺军团菌",
+      "latin_name": "Legionella pneumophila",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00115,
+      "progress_percentage": 2.3,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水系统常见致病菌。可引起严重肺炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "定期消毒水系统，注意环境卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "单核细胞增生李斯特菌",
+      "latin_name": "L. monocytogenes",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.02299,
+      "progress_percentage": 45.98,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境和食品中常见。可引起脑膜炎，孕妇需特别注意。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用未经充分加热的食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鸟分枝杆菌复合群",
+      "latin_name": "M. avium complex sp.",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境常见机会性致病菌。免疫力低下者易感。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强个人防护，注意环境卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "龟分枝杆菌",
+      "latin_name": "M. chelonae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水环境常见菌。可引起皮肤和软组织感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免接触污染水体，及时处理伤口"
+        }
+      ]
+    },
+    {
+      "chinese_name": "偶发分枝杆菌",
+      "latin_name": "M. fortuitum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00024,
+      "progress_percentage": 0.48,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "广泛分布于环境中。可引起皮肤和软组织感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，避免环境污染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "堪萨斯分枝杆菌",
+      "latin_name": "M. kansasii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00026,
+      "progress_percentage": 0.52,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "自来水系统常见。可引起类结核样肺部感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮用水卫生，定期维护水系统"
+        }
+      ]
+    },
+    {
+      "chinese_name": "海洋分枝杆菌",
+      "latin_name": "M. marinum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00031,
+      "progress_percentage": 0.62,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水生环境常见。可引起游泳池肉芽肿。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "接触水体时注意防护，及时处理伤口"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘰疬分枝杆菌",
+      "latin_name": "M. scrofulaceum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00020,
+      "progress_percentage": 0.4,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "环境中广泛分布。可引起颈部淋巴结炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，加强环境防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "结核分枝杆菌",
+      "latin_name": "M. tuberculosis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.13505,
+      "progress_percentage": 270.1,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 95,
+      "normal_detection_rate": 35.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要呼吸道传染病病原体。可引起肺结核等。需高度重视。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "及时就医检查，进行规范治疗"
+        }
+      ]
+    },
+    {
+      "chinese_name": "溃疡分枝杆菌",
+      "latin_name": "M. ulcerans",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "热带地区特有菌种。可引起伯鲁利溃疡。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意皮肤防护，及时处理伤口"
+        }
+      ]
+    },
+    {
+      "chinese_name": "类志贺邻单胞菌",
+      "latin_name": "P. shigelloides",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00020,
+      "progress_percentage": 0.4,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水生环境常见。可引起胃肠道感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免生食水产品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "猪霍乱沙门氏菌",
+      "latin_name": "S. enterica Choleraesuis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "猪群常见致病菌。可引起人类严重感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品卫生，避免食用未熟食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠炎沙门氏菌",
+      "latin_name": "S. Enteritidis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要食源性致病菌。是沙门氏菌感染的主要原因之一。可引起急性胃肠炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品卫生，避免食用未熟食品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副伤寒沙门氏菌-A",
+      "latin_name": "S. Paratyphi A",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人类特异性致病菌。可引起副伤寒，症状类似伤寒但较轻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，预防粪-口传播"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副伤寒沙门氏菌-B",
+      "latin_name": "S. Paratyphi B",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人类特异性病原体。引起B型副伤寒。发热和胃肠道症状显著。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强个人卫生，注意饮食安全"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副伤寒沙门氏菌-C",
+      "latin_name": "S. Paratyphi C",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "致病性相对较弱的副伤寒菌。可引起C型副伤寒。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免交叉感染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "伤寒沙门氏菌",
+      "latin_name": "S. Typhi",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "严重的人类特异性病原体。可引起伤寒，威胁生命。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强个人卫生，注意饮食和饮水安全"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鼠伤寒沙门菌",
+      "latin_name": "S. Typhimurium",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "广谱性致病菌。可感染多种宿主，引起急性胃肠炎。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品安全，避免生食"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鲍氏志贺氏菌",
+      "latin_name": "Shigella boydii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道致病菌。可引起细菌性痢疾，主要在发展中国家流行。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，预防粪-口传播"
+        }
+      ]
+    },
+    {
+      "chinese_name": "痢疾志贺氏菌",
+      "latin_name": "Shigella dysenteriae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最严重的志贺氏菌。可引起出血性痢疾，产生致命毒素。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强卫生防护，及时就医治疗"
+        }
+      ]
+    },
+    {
+      "chinese_name": "福氏志贺氏菌",
+      "latin_name": "Shigella flexneri",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.03009,
+      "progress_percentage": 60.18,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "痢疾常见病原体。可引起急性细菌性痢疾。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，预防交叉感染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "宋内志贺氏菌",
+      "latin_name": "Shigella sonnei",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.01473,
+      "progress_percentage": 29.46,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "相对温和的痢疾菌。常引起轻症腹泻和肠道感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，加强饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "金黄色葡萄球菌",
+      "latin_name": "S. aureus",
+      "normal_range": "0-0.08",
+      "detected_abundance": 0.50389,
+      "progress_percentage": 629.86,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "higher_than_percentage": 95,
+      "normal_detection_rate": 35.19,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要致病菌。可引起皮肤感染、食物中毒等多种疾病。需警惕。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "及时就医诊治，注意个人卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "猪链球菌",
+      "latin_name": "S. suis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00938,
+      "progress_percentage": 18.76,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要人兽共患病原体。可引起脑膜炎等严重感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意职业防护，避免接触感染动物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "齿垢密螺旋体",
+      "latin_name": "T. denticola",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00071,
+      "progress_percentage": 1.42,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "口腔常见菌。与牙周疾病发生相关。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强口腔卫生，定期洁牙"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梅毒密螺旋体",
+      "latin_name": "T. pallidum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "性传播疾病病原体。可引起梅毒，需及时治疗。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防护，必要时及时就医"
+        }
+      ]
+    },
+    {
+      "chinese_name": "文氏密螺旋体",
+      "latin_name": "T. vincentii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "口腔常见螺旋体。与急性坏死性龈炎有关。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "保持口腔卫生，预防牙龈疾病"
+        }
+      ]
+    },
+    {
+      "chinese_name": "霍乱弧菌",
+      "latin_name": "V. cholerae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00047,
+      "progress_percentage": 0.94,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要肠道致病菌。可引起霍乱，造成严重腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免生食海产品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟态弧菌",
+      "latin_name": "V. mimicus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "海洋环境常见菌。可引起胃肠炎和腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意海产品卫生，避免生食"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副溶血弧菌",
+      "latin_name": "V. parahaemolyticus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00119,
+      "progress_percentage": 2.38,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "海产品相关致病菌。可引起急性胃肠炎和食物中毒。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生海产品，注意加热充分"
+        }
+      ]
+    },
+    {
+      "chinese_name": "创伤弧菌",
+      "latin_name": "V. vulnificus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00188,
+      "progress_percentage": 3.76,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "海洋环境中的严重致病菌。可通过伤口感染或食用海产品引起重症感染，免疫力低下者风险更高。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免生食海产品，伤口避免接触海水，及时处理伤口"
+        }
+      ]
+    },
+    {
+      "chinese_name": "小肠结肠炎耶尔森菌",
+      "latin_name": "Y. enterocolitica",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要食源性致病菌。可引起急性肠炎，常通过污染的食品和水传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品卫生，避免食用未充分加热的猪肉制品"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鼠疫耶尔森菌",
+      "latin_name": "Yersinia pestis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要烈性传染病病原体。可引起鼠疫，主要通过啮齿类动物和跳蚤传播。需严格防控。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强环境卫生，避免接触啮齿类动物"
+        }
+      ]
+    },
+    {
+      "chinese_name": "假结核耶尔森菌",
+      "latin_name": "Y. pseudotuberculosis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人兽共患病病原体。可引起类似结核的症状，通过污染的食物和水传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，避免食用未经充分处理的食品"
+        }
+      ]
+    }
+  ],
+  "gut_fungi_data": [
+    {
+      "chinese_name": "白色念珠菌",
+      "latin_name": "Candida albicans",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00034,
+      "progress_percentage": 0.68,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人体常见条件致病菌。正常菌群成员，免疫力下降时可过度生长。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生，增强免疫力"
+        }
+      ]
+    },
+    {
+      "chinese_name": "酿酒酵母",
+      "latin_name": "S. cerevisiae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00022,
+      "progress_percentage": 0.44,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "益生菌，广泛应用于发酵工业。参与营养代谢，促进肠道健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "真贝酵母",
+      "latin_name": "S. eubayanus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "低温发酵酵母。参与啤酒发酵过程。对人体无害。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "奇异酵母",
+      "latin_name": "S. paradoxus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "野生酵母菌种。与酿酒酵母亲缘关系密切。一般不致病。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "木糖发酵酵母",
+      "latin_name": "S. stipitis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "特殊碳源利用菌。可发酵木糖。工业应用菌种。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "黄曲霉",
+      "latin_name": "A. flavus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见真菌。可产生黄曲霉毒素。注意储存食品防霉。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强食品储存管理"
+        }
+      ]
+    },
+    {
+      "chinese_name": "烟曲霉",
+      "latin_name": "A. fumigatus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要条件致病真菌。可引起肺部感染。免疫力低下者易感。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "预防真菌感染"
+        }
+      ]
+    },
+    {
+      "chinese_name": "米曲霉",
+      "latin_name": "A. oryzae",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "食品发酵工业常用菌种。参与酱油等发酵食品制作。益生菌。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "新型隐球菌",
+      "latin_name": "C. neoformans",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "条件致病真菌。可引起中枢神经系统感染。需警惕。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强防护，注意卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "汉氏德巴利氏酵母",
+      "latin_name": "D. hansenii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00022,
+      "progress_percentage": 0.44,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "耐盐酵母。参与发酵食品制作。对人体无害。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "产甘油假丝酵母",
+      "latin_name": "E. gossypii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "工业微生物。用于维生素B2生产。一般不致病。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "轮枝镰刀菌",
+      "latin_name": "F. verticillioides",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "植物病原真菌。可产生真菌毒素。注意食品储存。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品储存条件"
+        }
+      ]
+    },
+    {
+      "chinese_name": "尖孢镰刀菌",
+      "latin_name": "F. oxysporum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00073,
+      "progress_percentage": 1.46,
+      "evaluation": {
+        "status": "丰度较低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见土壤真菌。部分株系可致病。注意防护。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强卫生防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "禾谷镰刀菌",
+      "latin_name": "F. graminearum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "作物病原真菌。可产生真菌毒素。影响粮食安全。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意储存防霉"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳酸克鲁维酵母",
+      "latin_name": "K. lactis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "工业发酵菌种。参与乳制品发酵。益生作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "稻瘟病菌",
+      "latin_name": "P. grisea",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "水稻重要病原真菌。一般不感染人类。环境真菌。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "玉米黑粉菌",
+      "latin_name": "U. maydis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "玉米特异性病原菌。食用菌品种。对人体无害。"
+        }
+      ]
+    }
+  ],
+  "gut_parasites_data": [
+    {
+      "chinese_name": "人隐孢子虫",
+      "latin_name": "C. hominis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "寄生虫病原体，可引起腹泻。主要通过被污染的水传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "建议注意饮水卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "布氏麦片吸虫",
+      "latin_name": "F. buski",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00207,
+      "progress_percentage": 4.14,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "消化道寄生虫。通过食用受污染的水生植物感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脑炎微孢子虫",
+      "latin_name": "E. hellem",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "机会性病原体。可引起免疫力低下者感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "卫氏并殖吸虫",
+      "latin_name": "P. westermani",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00256,
+      "progress_percentage": 5.12,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肺部寄生虫。通过食用未煮熟的淡水蟹类感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品安全"
+        }
+      ]
+    },
+    {
+      "chinese_name": "毛首鞭形线虫",
+      "latin_name": "T. trichiura",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00173,
+      "progress_percentage": 3.46,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道蠕虫。通过污染的土壤和食物传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "保持个人卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "疟原虫",
+      "latin_name": "P. ovale",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00389,
+      "progress_percentage": 7.78,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "通过蚊虫叮咬传播。可引起间日疟。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好防蚊措施"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肉胞子虫",
+      "latin_name": "S. neurona",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "寄生原虫。主要感染神经系统。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意食品卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "十二指肠钩口线虫",
+      "latin_name": "A. duodenale",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00136,
+      "progress_percentage": 2.72,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土源性线虫。可引起贫血。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "蠕形住肠线虫",
+      "latin_name": "E. vermicularis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00456,
+      "progress_percentage": 9.12,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "常见蠕虫。引起肛门瘙痒。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "保持个人卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "美洲钩口线虫",
+      "latin_name": "Necator americanus",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00252,
+      "progress_percentage": 5.04,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "土源性线虫。可致贫血和营养不良。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好个人防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "巴西利士曼原虫",
+      "latin_name": "L. braziliensis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "通过白蛉叮咬传播。可引起皮肤病变。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免被虫叮咬"
+        }
+      ]
+    },
+    {
+      "chinese_name": "杜氏利什曼原虫",
+      "latin_name": "L. donovani",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "内脏利什曼病病原体。影响免疫系统。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防虫措施"
+        }
+      ]
+    },
+    {
+      "chinese_name": "硕大利什曼虫",
+      "latin_name": "L. major",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "皮肤利什曼病病原体。通过昆虫叮咬传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好防护措施"
+        }
+      ]
+    },
+    {
+      "chinese_name": "婴儿利什曼虫",
+      "latin_name": "L. infantum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "可引起内脏利什曼病。儿童易感。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "预防虫媒传播"
+        }
+      ]
+    },
+    {
+      "chinese_name": "布氏锥虫",
+      "latin_name": "T. brucei",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00028,
+      "progress_percentage": 0.56,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "非洲锥虫病病原体。通过采采蝇传播。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防虫措施"
+        }
+      ]
+    },
+    {
+      "chinese_name": "柱氏锥虫",
+      "latin_name": "T. cruzi",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00859,
+      "progress_percentage": 17.18,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "美洲锥虫病病原体。通过锥蝽叮咬传播。可引起心脏和消化道病变。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免虫媒接触"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阴道毛滴虫",
+      "latin_name": "T. vaginalis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00693,
+      "progress_percentage": 13.86,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "泌尿生殖道寄生虫。可引起感染性疾病。需及时诊治。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意个人卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "蓝氏贾第鞭毛虫",
+      "latin_name": "Giardia intestinalis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道原虫。通过污染的水和食物传播。可致腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "溶组织内阿米巴",
+      "latin_name": "E. histolytica",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00062,
+      "progress_percentage": 1.24,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "致病性原虫。可引起肠道和肝脏感染。需警惕。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "小隐孢子虫",
+      "latin_name": "C. parvum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人畜共患寄生虫。通过污染的水传播。可致腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮水卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "鼠隐孢子虫",
+      "latin_name": "C. muris",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00012,
+      "progress_percentage": 0.24,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要感染啮齿类动物。偶见人类感染。可致消化道症状。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意环境卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "刚地弓形虫",
+      "latin_name": "T. gondii",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00767,
+      "progress_percentage": 15.34,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人畜共患虫病。通过生食传播。孕妇需特别注意。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生食"
+        }
+      ]
+    },
+    {
+      "chinese_name": "恶性疟原虫",
+      "latin_name": "P. falciparum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00137,
+      "progress_percentage": 2.74,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最严重的疟疾病原体。通过按蚊传播。可致重症疟疾。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好防蚊措施"
+        }
+      ]
+    },
+    {
+      "chinese_name": "间日疟原虫",
+      "latin_name": "P. vivax",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00318,
+      "progress_percentage": 6.36,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最常见的疟原虫。可引起间日疟。有潜伏期。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防蚊防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "牛环形泰勒虫",
+      "latin_name": "T. annulata",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 8,
+      "normal_detection_rate": 91.83,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要感染牛。通过蜱虫传播。人类较少感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意防虫"
+        }
+      ]
+    },
+    {
+      "chinese_name": "小泰勒虫",
+      "latin_name": "T. parva",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "牛重要病原体。通过蜱虫传播。人类不易感染。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "做好防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠脑炎微孢子虫",
+      "latin_name": "E. intestinalis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "机会性病原体。可感染免疫力低下者。影响消化道。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "加强卫生防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "兔脑炎微孢子虫",
+      "latin_name": "E. cuniculi",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "未检出",
+        "color": "gray"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要感染兔类。人类偶见感染。可致神经系统疾病。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意接触防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "日本血吸虫",
+      "latin_name": "S. japonicum",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00343,
+      "progress_percentage": 6.86,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要人体寄生虫。通过受染水体感染。可致肝纤维化。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免接触疫水"
+        }
+      ]
+    },
+    {
+      "chinese_name": "曼氏血吸虫",
+      "latin_name": "S. mansoni",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00349,
+      "progress_percentage": 6.98,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人体寄生虫。通过淡水感染。影响肝脏和肠道。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "预防水体接触"
+        }
+      ]
+    },
+    {
+      "chinese_name": "埃及血吸虫",
+      "latin_name": "S. haematobium",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00308,
+      "progress_percentage": 6.16,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "泌尿生殖系统寄生虫。通过接触被污染水体感染。可引起尿路系统损害。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免接触疫水，加强个人防护"
+        }
+      ]
+    },
+    {
+      "chinese_name": "猪带绦虫",
+      "latin_name": "T. solium",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00044,
+      "progress_percentage": 0.88,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 15,
+      "normal_detection_rate": 88.94,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要人兽共患寄生虫。通过食用感染猪肉传播。可引起囊虫病。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生猪肉，注意肉品烹饪"
+        }
+      ]
+    },
+    {
+      "chinese_name": "牛带绦虫",
+      "latin_name": "T. saginata",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00046,
+      "progress_percentage": 0.92,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人畜共患寄生虫。经感染牛肉传播。主要寄生于小肠。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "确保牛肉充分煮熟，注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "蛔蚴蠕虫",
+      "latin_name": "A. lumbricoides",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00358,
+      "progress_percentage": 7.16,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 52,
+      "normal_detection_rate": 81.25,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最常见的人体蠕虫。通过被污染的土壤和食物传播。可致营养不良。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "注意饮食卫生，勤洗手"
+        }
+      ]
+    },
+    {
+      "chinese_name": "旋毛形线虫",
+      "latin_name": "T. spiralis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00099,
+      "progress_percentage": 1.98,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人兽共患寄生虫。通过食用感染肉类传播。可致肌肉疼痛。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生肉，确保肉类煮熟"
+        }
+      ]
+    },
+    {
+      "chinese_name": "华支睾吸虫",
+      "latin_name": "C. sinensis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00137,
+      "progress_percentage": 2.74,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 38,
+      "normal_detection_rate": 80.29,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肝胆管寄生虫。通过食用生鱼传播。可引起肝胆疾病。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "避免食用生鱼片，注意饮食卫生"
+        }
+      ]
+    },
+    {
+      "chinese_name": "环孢子虫",
+      "latin_name": "C. cayetanensis",
+      "normal_range": "0-0.05",
+      "detected_abundance": 0.00635,
+      "progress_percentage": 12.7,
+      "evaluation": {
+        "status": "丰度极低",
+        "color": "yellow"
+      },
+      "higher_than_percentage": 27,
+      "normal_detection_rate": 77.88,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "食源性原虫。通过污染的水果蔬菜传播。可致腹泻。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "彻底清洗蔬果，注意饮食卫生"
+        }
+      ]
+    }
+  ]
+}

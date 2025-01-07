@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<!-- 帮助浏览器正确显示（通用）中文文字 -->
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-white p-5">
+  <!-- 第二页，宏基因组报告阅读指南 -->
   <h1 class="custom-title-1">宏基因报告阅读报告</h1>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -80,49 +82,140 @@
     </div>
   </div>
 
-  <h3 class="custom-title page-break">肠道菌群检测</h3>
+  <!-- 肠道菌群检测模块 -->
+  <h1 class="custom-title page-break">肠道菌群检测</h1>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-    <div class="bar-container 细菌">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群可以大分类成细菌，病毒，真菌，原生生物和寄生虫 5 个类别，下列是对各项组成部分的介绍及他们在您肠道中的分布比例图。
+          </p>
+          <ul class="list-disc ml-5">
+            <li>细菌：肠道微生物的主要组成部分。</li>
+          </ul>
+          <ul class="list-disc ml-5">
+            <li>病毒：主要为是噬菌体，在调节细菌的种类和数量方面扮演重要角色。它们既可以抑制有害细菌的生长，也可以推动微生物群落的多样性。</li>
+          </ul>
+          <ul class="list-disc ml-5">
+            <li>真菌：主要包括酵母菌（如白色念珠菌），在数量较少时是正常的一部分，但当免疫系统受损时，可能会因其快速繁殖而导致感染或其它问题。</li>
+          </ul>
+          <ul class="list-disc ml-5">
+            <li>原生生物：数量较少，但原生生物如变形虫和细胞虫有时会影响肠道环境，参与营养循环和分解。</li>
+          </ul>
+          <ul class="list-disc ml-5">
+            <li>寄生虫：常见的肠道寄生虫如蛔虫和鞭虫，虽然数量较少，但在某些情况下可能导致消化不良和腹痛等健康问题。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bar-container type-bacteria">
       <div class="label">细菌</div>
       <div class="bar-wrapper">
         <div class="bar"></div>
-        <div class="percentage">90%</div>
       </div>
+      <div class="percentage">90%</div>
     </div>
 
-    <div class="bar-container 病毒">
+    <div class="bar-container type-virus">
       <div class="label">病毒</div>
       <div class="bar-wrapper">
         <div class="bar"></div>
-        <div class="percentage">5%</div>
       </div>
+      <div class="percentage">5%</div>
     </div>
 
-    <div class="bar-container 真菌">
+    <div class="bar-container type-fungus">
       <div class="label">真菌</div>
       <div class="bar-wrapper">
         <div class="bar"></div>
-        <div class="percentage">3%</div>
       </div>
+      <div class="percentage">3%</div>
     </div>
 
-    <div class="bar-container 原生生物">
+    <div class="bar-container type-protozoan">
       <div class="label">原生生物</div>
       <div class="bar-wrapper">
         <div class="bar"></div>
-        <div class="percentage">1%</div>
       </div>
+      <div class="percentage">1%</div>
     </div>
 
-    <div class="bar-container 寄生虫">
+    <div class="bar-container type-parasite">
       <div class="label">寄生虫</div>
       <div class="bar-wrapper">
         <div class="bar"></div>
-        <div class="percentage">1%</div>
       </div>
+      <div class="percentage">1%</div>
     </div>
   </div>
-  <h3 class="custom-title page-break">核心菌属报告</h3>
+
+  <!-- 肠道细菌板块 -->
+  <h2 class="custom-title page-break">肠道细菌</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道微生物以细菌为主要组成部分，在人体肠道中约有数千种不同的细菌物种，总数量高达数十万亿个。健康成年人肠道中的细菌主要由厚壁菌门（Firmicutes）、拟杆菌门（Bacteroidetes）、放线菌门（Actinobacteria）和变形菌门（Proteobacteria）等构成，其中厚壁菌门和拟杆菌门的数量占比最高，可达 90% 以上。我们可以从两个重要维度来评估肠道菌群中的细菌：丰度和致病性，这两个维度的组合可以帮助我们更全面地理解不同菌属在肠道微生态中的重要性和分布特征。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 肠道细菌分类信息图总容器-->
+    <div class="gut-bacteria-container">
+      <div class="gut-bacteria-title">肠道菌群细菌分类体系</div>
+      <div class="gut-bacteria-content">
+        <!-- 左侧分类卡片 -->
+        <div class="left">
+          <div class="gut-bacteria-sub-title">按菌群丰度分</div>
+
+          <div class="gut-bacteria-card core">
+            <h3>核心菌属</h3>
+            <p>在绝大多数健康人群肠道中普遍存在的优势菌属，包括厚壁菌属、拟杆菌属等，占据总菌群的主要组成部分。</p>
+          </div>
+
+          <div class="gut-bacteria-card non-core">
+            <h3>非核心重要菌属</h3>
+            <p>虽然丰度相对较低，但对维持肠道健康具有重要作用的菌属，如乳酸菌属、双歧杆菌属等。</p>
+          </div>
+
+        </div>
+        <!-- 右侧分类卡片 -->
+        <div class="right">
+          <div class="gut-bacteria-sub-title">按菌群特性分</div>
+          <div class="gut-bacteria-card beneficial">
+            <h3>有益菌</h3>
+            <p>对人体健康有益的菌群，如双歧杆菌、乳酸菌等。它们参与营养物质的消化吸收，产生维生素，增强免疫力。</p>
+          </div>
+          <div class="gut-bacteria-card harmful">
+            <h3>有害菌</h3>
+            <p>有害菌通常是指那些在肠道中可能对宿主产生负面影响的细菌，这些细菌可能会干扰肠道平衡，导致消化问题，或促进肠道炎症。</p>
+          </div>
+          <div class="gut-bacteria-card opportunistic">
+            <h3>机会致病菌</h3>
+            <p>通常情况下与人体和平共处，但在特定条件下（如免疫力下降时）可能导致疾病的菌群。</p>
+          </div>
+          <div class="gut-bacteria-card pathogenic">
+            <h3>致病菌</h3>
+            <p>能够直接导致疾病的有害菌群，它们会破坏肠道环境，引起感染和炎症等症状。</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 核心菌属板块 -->
+  <h3 class="custom-title-1 page-break">核心菌属</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -140,9 +233,113 @@
       </div>
     </div>
 
+    <!-- 核心菌属表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
+          <!-- 标题行 -->
+          <tr class="bg-teal-600 text-white">
+            <th class="py-2 px-4 text-left first-column">菌种名称</th>
+            <th class="py-2 px-4 text-center second-column">正常范围</th>
+            <th class="py-2 px-4 text-center third-column">检测丰度</th>
+            <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+            <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+            <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+          </tr>
+        </thead>
+        <tbody id="core-gut-bacteria-table-body">
+          <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadCoreBacteriaData() {  // 改名为loadCoreBacteriaData
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderCoreBacteriaTable(data.core_gut_bacteria_data);  // 保持data.core_gut_bacteria_data不变
+          } catch (error) {
+            console.error('Error loading core bacteria data:', error);
+          }
+        }
+
+        function renderCoreBacteriaTable(bacteriaData) {  // 改名为renderCoreBacteriaTable
+          const tableBody = document.getElementById('core-gut-bacteria-table-body');
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.innerHTML = `
+                    <td class="py-2 px-4 text-left first-column">
+                        <div class="chinese-text">${bacteria.chinese_name}</div>
+                        <div class="latin-text">${bacteria.latin_name}</div>
+                    </td>
+                    <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+                    <td class="py-2 px-4 text-center column-text">
+                        ${bacteria.detected_abundance}
+                        <div class="progress-bar w-full mt-1">
+                            <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                        </div>
+                    </td>
+                    <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                        ${bacteria.evaluation.status}
+                    </td>
+                    <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
+                    <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+                `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.innerHTML = `
+                    <td colspan="6" class="py-2 px-4 text-left">
+                        <div class="description-container text-gray-600">
+                            ${bacteria.descriptions.map(desc => `
+                                <div>
+                                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                       style="color: ${desc.color};"></i>
+                                    ${desc.text}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </td>
+                `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时获取数据
+        document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);  // 改为loadCoreBacteriaData
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 其他非核心菌属板块 -->
+  <h3 class="custom-title-1 page-break">其他非核心菌属</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            其他非核心重要菌属指的是在人群中丰度不高，但对肠道健康有重要影响的菌属。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 其他非核心菌属表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
           <th class="py-2 px-4 text-left first-column">菌种名称</th>
           <th class="py-2 px-4 text-center second-column">正常范围</th>
@@ -152,7 +349,759 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
+        <tbody id="non-core-gut-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadNonCoreBacteriaData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderNonCoreBacteriaTable(data.non_core_gut_bacteria_data); // 修改数据源名称
+          } catch (error) {
+            console.error('Error loading non-core bacteria data:', error);
+          }
+        }
+
+        function renderNonCoreBacteriaTable(bacteriaData) {
+          const tableBody = document.getElementById('non-core-gut-bacteria-table-body');
+          if (!tableBody) {
+            console.error('Non-core bacteria table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('non-core-data-row'); // 添加特定的类名
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${bacteria.chinese_name}</div>
+                <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${bacteria.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('non-core-desc-row'); // 添加特定的类名
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${bacteria.descriptions.map(desc => `
+                    <div class="non-core-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时仅加载非核心菌属数据
+        document.addEventListener('DOMContentLoaded', loadNonCoreBacteriaData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 常见有益菌版块 -->
+  <h3 class="custom-title-1 page-break">常见有益菌</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            其他非核心重要菌属指的是在人群中丰度不高，但对肠道健康有重要影响的菌属。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见有益菌表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="beneficial-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadBeneficialBacteriaData() {  // 改为loadBeneficialBacteriaData
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderBeneficialBacteriaTable(data.beneficial_gut_bacteria_data);  // 改为beneficial_bacteria_data
+          } catch (error) {
+            console.error('Error loading beneficial bacteria data:', error);
+          }
+        }
+
+        function renderBeneficialBacteriaTable(bacteriaData) {  // 改为renderBeneficialBacteriaTable
+          const tableBody = document.getElementById('beneficial-bacteria-table-body');  // 改为beneficial-bacteria-table-body
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${bacteria.chinese_name}</div>
+                  <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${bacteria.detected_abundance}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                  ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+          `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${bacteria.descriptions.map(desc => `
+                          <div>
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
+          `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时获取数据
+        document.addEventListener('DOMContentLoaded', loadBeneficialBacteriaData);  // 改为loadBeneficialBacteriaData
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 常见有害菌版块 -->
+  <h3 class="custom-title-1 page-break">常见有害菌</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            本报告列出了 17 种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见有害菌表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="harmful-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadHarmfulBacteriaData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderHarmfulBacteriaTable(data.harmful_gut_bacteria_data);
+          } catch (error) {
+            console.error('Error loading harmful bacteria data:', error);
+          }
+        }
+
+        function renderHarmfulBacteriaTable(bacteriaData) {
+          const tableBody = document.getElementById('harmful-bacteria-table-body');
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${bacteria.chinese_name}</div>
+                <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${bacteria.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage ? bacteria.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${bacteria.descriptions.map(desc => `
+                    <div>
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时获取数据
+        document.addEventListener('DOMContentLoaded', loadHarmfulBacteriaData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 常见机会致病菌版块 -->
+  <h3 class="custom-title-1 page-break">常见机会致病菌</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            本报告列出了 17 种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见机会致病菌表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="opportunistic-pathogen-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadOpportunisticPathogenData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderOpportunisticPathogenTable(data.opportunistic_gut_pathogens_data);
+          } catch (error) {
+            console.error('Error loading opportunistic pathogen data:', error);
+          }
+        }
+
+        function renderOpportunisticPathogenTable(bacteriaData) {
+          const tableBody = document.getElementById('opportunistic-pathogen-table-body');
+          if (!tableBody) {
+            console.error('Opportunistic pathogen table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('opportunistic-pathogen-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${bacteria.chinese_name}</div>
+                <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${bacteria.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('opportunistic-pathogen-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${bacteria.descriptions.map(desc => `
+                    <div class="opportunistic-pathogen-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载机会致病菌数据
+        document.addEventListener('DOMContentLoaded', loadOpportunisticPathogenData);
+
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 常见致病菌版块 -->
+  <h3 class="custom-title-1 page-break">常见致病菌</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            本报告列出了 17 种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见致病菌表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="pathogenic-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadPathogenicBacteriaData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderPathogenicBacteriaTable(data.gut_pathogens_data);
+          } catch (error) {
+            console.error('Error loading pathogenic bacteria data:', error);
+          }
+        }
+
+        function renderPathogenicBacteriaTable(bacteriaData) {
+          const tableBody = document.getElementById('pathogenic-bacteria-table-body');
+          if (!tableBody) {
+            console.error('Pathogenic bacteria table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          bacteriaData.forEach(bacteria => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('pathogenic-bacteria-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${bacteria.chinese_name}</div>
+                <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${bacteria.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('pathogenic-bacteria-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${bacteria.descriptions.map(desc => `
+                    <div class="pathogenic-bacteria-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadPathogenicBacteriaData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- 常见真菌版块 -->
+  <h3 class="custom-title-1 page-break">常见真菌</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见真菌表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="fungi-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadFungiData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderFungiTable(data.gut_fungi_data);
+          } catch (error) {
+            console.error('Error loading fungi data:', error);
+          }
+        }
+
+        function renderFungiTable(fungiData) {
+          const tableBody = document.getElementById('fungi-table-body');
+          if (!tableBody) {
+            console.error('Fungi table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fungiData.forEach(fungi => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('fungi-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${fungi.chinese_name}</div>
+                <div class="latin-text">${fungi.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${fungi.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${fungi.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${fungi.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${fungi.evaluation.color}-600 column-text">
+                ${fungi.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${fungi.higher_than_percentage !== null ? fungi.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${fungi.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('fungi-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${fungi.descriptions.map(desc => `
+                    <div class="fungi-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载真菌数据
+        document.addEventListener('DOMContentLoaded', loadFungiData);
+      </script>
+
+
+    </div>
+
+  </div>
+
+  <!-- 常见肠道寄生虫版块 -->
+  <h3 class="custom-title-1 page-break">常见肠道寄生虫</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 常见肠道寄生虫表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
+        </thead>
+        <tbody id="parasites-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+      <script>
+        async function loadParasitesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderParasitesTable(data.gut_parasites_data);
+          } catch (error) {
+            console.error('Error loading parasites data:', error);
+          }
+        }
+
+        function renderParasitesTable(parasitesData) {
+          const tableBody = document.getElementById('parasites-table-body');
+          if (!tableBody) {
+            console.error('Parasites table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          parasitesData.forEach(parasite => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('parasite-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${parasite.chinese_name}</div>
+                <div class="latin-text">${parasite.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${parasite.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${parasite.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${parasite.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${parasite.evaluation.color}-600 column-text">
+                ${parasite.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${parasite.higher_than_percentage !== null ? parasite.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${parasite.normal_detection_rate}%</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('parasite-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${parasite.descriptions.map(desc => `
+                    <div class="parasite-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载寄生虫数据
+        document.addEventListener('DOMContentLoaded', loadParasitesData);
+      </script>
+    </div>
+
+  </div>
+
+  <!-- 病毒版块 -->
+  <h3 class="custom-title-1 page-break">肠道病毒</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 病毒表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">病毒分类</th>
+        </tr>
+        </thead>
         <tbody>
+        <!-- 数据行 -->
         <tr>
           <td class="py-2 px-4 text-left first-column">
             <div class="chinese-text">梭菌属</div>
@@ -166,353 +1115,7 @@
             </div>
           </td>
           <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-        <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">拟杆菌属</div>
-            <div class="latin-text">Bacteroides</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">1.0578-47.3225</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.08974
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 10%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-orange-600 column-text">偏低 ↓</td>
-          <td class="py-2 px-4 text-center column-text">2%</td>
-          <td class="py-2 px-4 text-center column-text">99.04%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i> 其他描述信息...
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">Lachnoclostridium</div>
-            <div class="latin-text">Lachnoclostridium</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <!--          <span class="chinese-text">梭菌属</span><br>-->
-            <!--          <span class="latin-text">Clostridium</span>-->
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div> <!-- 根据实际值调整宽度 -->
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">67%</td>
-          <td class="py-2 px-4 text-center column-text">99.52%</td>
+          <td class="py-2 px-4 text-center column-text">噬菌体</td>
         </tr>
         <tr>
           <td colspan="6" class="py-2 px-4 text-left">
@@ -532,6 +1135,539 @@
         </tbody>
       </table>
     </div>
+
   </div>
+
+
+  <!-- 肠道菌群抗性和基因分布板块 -->
+
+  <!-- 整体页面容器 -->
+  <h2 class="custom-title-1 page-break">肠道菌群抗性与基因分布</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            下列是在您肠道内检测到的肠道细菌抗生素耐药基因。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 包裹三个卡片的容器 -->
+    <div class="card-container">
+      <div class="card">
+        <div class="title">检测菌株</div>
+        <div class="number">21株</div>
+        <div class="status green">100% 完成检测</div>
+      </div>
+      <div class="card">
+        <div class="title">耐药基因种类</div>
+        <div class="number">12种</div>
+        <div class="status blue">覆盖3大类别</div>
+      </div>
+      <div class="card">
+        <div class="title">最高reads数</div>
+        <div class="number">321,552</div>
+        <div class="status orange">四环素类耐药</div>
+      </div>
+    </div>
+
+    <!-- 核心菌属表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">来源菌株</th>
+          <th class="py-2 px-4 text-center second-column">耐药基因</th>
+          <th class="py-2 px-4 text-center third-column">耐药类型</th>
+          <th class="py-2 px-4 text-center fourth-column">reads数量</th>
+          <th class="py-2 px-4 text-center fifth-column">耐药药物</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">细菌</div>
+            <div class="latin-text">Bacterium</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">aac(6')-E111</td>
+          <td class="py-2 px-4 text-center column-text">
+            氨基糖苷类
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">974</td>
+          <td class="py-2 px-4 text-center column-text">阿米卡星</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 营养评估板块 -->
+  <h1 class="custom-title-1 page-break">营养饮食指标评估</h1>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            营养饮食评估模块旨在分析个体的饮食习惯与营养摄入情况，以评估其对健康的影响。该模块主要涵盖宏观营养素（如碳水化合物、蛋白质、脂肪）和微观营养素（如维生素、矿物质）的摄入量，以及膳食纤维和水分的摄入。通过对饮食数据的综合分析，我们可以了解个体的营养状态和潜在的营养缺乏或过量问题，从而为制定个性化的饮食干预方案提供科学依据。营养饮食评估不仅关注食物的种类和数量，还考虑饮食的多样性和均衡性，这些因素对维持身体健康和预防慢性疾病至关重要。通过对饮食模式的评估，我们能够识别出可能影响健康的饮食习惯，并提出相应的改善建议，以促进整体健康水平的提升。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nutrition-container">
+      <!-- 左侧圆环图 -->
+      <!-- 左侧圆环图 -->
+      <div class="nutrition-donut-chart-container">
+        <div class="nutrition-donut-chart">
+          <svg width="300" height="300" viewBox="0 0 300 300">
+            <defs>
+              <filter id="nutrition-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                <feOffset dx="2" dy="2"/>
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.2"/>
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 圆环背景 -->
+            <circle cx="150" cy="150" r="120" fill="none" stroke="#f0f0f0" stroke-width="30"/>
+
+            <!-- 正常 48.4% -->
+            <path d="M150,30 A120,120 0 0,1 150,270 A120,120 0 0,1 150,30"
+                  fill="none"
+                  stroke="#98E089"
+                  stroke-width="30"
+                  stroke-dasharray="377 754"
+                  transform="rotate(-90 150 150)"
+                  filter="url(#nutrition-shadow)"/>
+
+            <!-- 缺乏 29.0% -->
+            <path d="M150,30 A120,120 0 0,1 150,270 A120,120 0 0,1 150,30"
+                  fill="none"
+                  stroke="#FF8989"
+                  stroke-width="30"
+                  stroke-dasharray="226 754"
+                  stroke-dashoffset="-377"
+                  transform="rotate(-90 150 150)"
+                  filter="url(#nutrition-shadow)"/>
+
+            <!-- 不足 16.1% -->
+            <path d="M150,30 A120,120 0 0,1 150,270 A120,120 0 0,1 150,30"
+                  fill="none"
+                  stroke="#FFB489"
+                  stroke-width="30"
+                  stroke-dasharray="121 754"
+                  stroke-dashoffset="-603"
+                  transform="rotate(-90 150 150)"
+                  filter="url(#nutrition-shadow)"/>
+
+            <!-- 过量 6.5% -->
+            <path d="M150,30 A120,120 0 0,1 150,270 A120,120 0 0,1 150,30"
+                  fill="none"
+                  stroke="#89C3FF"
+                  stroke-width="30"
+                  stroke-dasharray="30 754"
+                  stroke-dashoffset="-724"
+                  transform="rotate(-90 150 150)"
+                  filter="url(#nutrition-shadow)"/>
+          </svg>
+          <!-- 修改后的中心文字结构 -->
+          <div class="nutrition-donut-hole">
+            <div class="nutrition-center-text">
+              <div>营养指标</div>
+              <div>总计 31 项</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧卡片列表 -->
+      <div class="nutrition-status-cards">
+        <!-- 正常状态卡片 -->
+        <div class="nutrition-status-card normal">
+          <div class="nutrition-card-header">
+            <div class="nutrition-status-dot"></div>
+            <div class="nutrition-status-title">正常</div>
+            <div class="nutrition-status-percentage">48.4%</div>
+          </div>
+          <div class="nutrition-card-content">15 项指标达标</div>
+        </div>
+
+        <!-- 缺乏状态卡片 -->
+        <div class="nutrition-status-card lack">
+          <div class="nutrition-card-header">
+            <div class="nutrition-status-dot"></div>
+            <div class="nutrition-status-title">缺乏</div>
+            <div class="nutrition-status-percentage">29.0%</div>
+          </div>
+          <div class="nutrition-card-content">纤维、乳制品、乙酸、维生素 A/B1/E</div>
+          <div class="nutrition-card-content">叶酸、甘氨酸、色氨酸</div>
+        </div>
+
+        <!-- 不足状态卡片 -->
+        <div class="nutrition-status-card insufficient">
+          <div class="nutrition-card-header">
+            <div class="nutrition-status-dot"></div>
+            <div class="nutrition-status-title">不足</div>
+            <div class="nutrition-status-percentage">16.1%</div>
+          </div>
+          <div class="nutrition-card-content">铁、锌、维生素 B6/C/K</div>
+        </div>
+
+        <!-- 过量状态卡片 -->
+        <div class="nutrition-status-card excess">
+          <div class="nutrition-card-header">
+            <div class="nutrition-status-dot"></div>
+            <div class="nutrition-status-title">过量</div>
+            <div class="nutrition-status-percentage">6.5%</div>
+          </div>
+          <div class="nutrition-card-content">糖、苏氨酸</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 日常饮食评估板块 -->
+  <h3 class="custom-title-1 page-break">日常饮食评估</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            糖、盐、膳食纤维和乳制品是人体日常饮食中重要的营养成分，对维持人体基本生理功能和健康发挥着关键作用。本报告将通过肠道菌群等检测指标，全面评估这些营养成分在人体中的代谢水平和整体状况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心菌属表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">评估指标</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">糖</div>
+            <div class="latin-text">Sugar</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">0-4.464</td>
+          <td class="py-2 px-4 text-center column-text">
+            1.90370
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              <div>
+                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
+                碳水化合物的一种，提供快速能量，参与代谢过程。
+              </div>
+<!--              <div>-->
+<!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
+<!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
+<!--              </div>-->
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 矿物质微量元素和有机酸评估板块 -->
+  <h3 class="custom-title-1 page-break">矿物质微量元素和有机酸评估</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            矿物质微量元素和有机酸是人体代谢过程中的重要组成部分，它们通过不同的机制参与人体生理功能的调节。本报告将通过肠道菌群等检测指标，全面评估其在人体中的代谢水平和整体状况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心菌属表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">评估指标</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">糖</div>
+            <div class="latin-text">Sugar</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">0-4.464</td>
+          <td class="py-2 px-4 text-center column-text">
+            1.90370
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              <div>
+                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
+                碳水化合物的一种，提供快速能量，参与代谢过程。
+              </div>
+              <!--              <div>-->
+              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
+              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
+              <!--              </div>-->
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 维生素评估板块 -->
+  <h3 class="custom-title-1 page-break">维生素评估</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            维生素是人体必需的微量营养素，本报告通过肠道菌群等检测指标来评估下列各项维生素的水平。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 维生素表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">评估指标</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">维生素A</div>
+            <div class="latin-text">Vitamin A</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">0-4.464</td>
+          <td class="py-2 px-4 text-center column-text">
+            1.90370
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              <div>
+                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
+                碳水化合物的一种，提供快速能量，参与代谢过程。
+              </div>
+              <!--              <div>-->
+              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
+              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
+              <!--              </div>-->
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 氨基酸评估板块 -->
+  <h3 class="custom-title-1 page-break">氨基酸评估</h3>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            氨基酸是蛋白质的基本构建单位，在人体内参与多种重要的生理功能。人体所需的 20 种氨基酸中，9 种必需氨基酸需要从食物中获取，其余可由人体自身合成。氨基酸评估可以反映蛋白质营养状况以及代谢功能等。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 维生素表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">评估指标</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">维生素A</div>
+            <div class="latin-text">Vitamin A</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">0-4.464</td>
+          <td class="py-2 px-4 text-center column-text">
+            1.90370
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              <div>
+                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
+                碳水化合物的一种，提供快速能量，参与代谢过程。
+              </div>
+              <!--              <div>-->
+              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
+              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
+              <!--              </div>-->
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 慢病风险评估板块 -->
+  <h1 class="custom-title-1 page-break">慢病风险评估</h1>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 慢病风险表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">评估指标</th>
+          <th class="py-2 px-4 text-center third-column">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据行 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">炎症性肠炎</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              <div>
+                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
+                炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。
+              </div>
+              <div>
+                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
+                该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
 </body>
 </html>
+
