@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>宏基因组报告</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css">
+<!--  <link rel="stylesheet" href="file:///Users/shimura/WebstormProject/guheReport/css/style.css">-->
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-white p-5">
@@ -255,7 +256,9 @@
       <script>
         async function loadCoreBacteriaData() {  // 改名为loadCoreBacteriaData
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            // const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch("http://localhost:8000/data/bacteria_data.json");
+            // const response = await fetch("file:///Users/shimura/WebstormProject/guheReport/data/bacteria_data.json");
             const data = await response.json();
             renderCoreBacteriaTable(data.core_gut_bacteria_data);  // 保持data.core_gut_bacteria_data不变
           } catch (error) {
@@ -271,39 +274,39 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.innerHTML = `
-                    <td class="py-2 px-4 text-left first-column">
-                        <div class="chinese-text">${bacteria.chinese_name}</div>
-                        <div class="latin-text">${bacteria.latin_name}</div>
-                    </td>
-                    <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
-                    <td class="py-2 px-4 text-center column-text">
-                        ${bacteria.detected_abundance}
-                        <div class="progress-bar w-full mt-1">
-                            <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
-                        </div>
-                    </td>
-                    <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                        ${bacteria.evaluation.status}
-                    </td>
-                    <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
-                    <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
-                `;
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${bacteria.chinese_name}</div>
+                  <div class="latin-text">${bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${bacteria.detected_abundance}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
+                  ${bacteria.evaluation.status}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
+              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+          `;
 
             // 创建描述行
             const descRow = document.createElement('tr');
             descRow.innerHTML = `
-                    <td colspan="6" class="py-2 px-4 text-left">
-                        <div class="description-container text-gray-600">
-                            ${bacteria.descriptions.map(desc => `
-                                <div>
-                                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                       style="color: ${desc.color};"></i>
-                                    ${desc.text}
-                                </div>
-                            `).join('')}
-                        </div>
-                    </td>
-                `;
+              <td colspan="6" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${bacteria.descriptions.map(desc => `
+                          <div>
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
+          `;
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -1634,38 +1637,105 @@
           <th class="py-2 px-4 text-center fourth-column">评估结果</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="slow-disease-table-body">
         <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">炎症性肠炎</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。
-              </div>
-            </div>
-          </td>
-        </tr>
+<!--        <tr>-->
+<!--          <td class="py-2 px-4 text-left first-column">-->
+<!--            <div class="chinese-text">炎症性肠炎</div>-->
+<!--            <div class="latin-text">Inflammatory bowel disease</div>-->
+<!--          </td>-->
+<!--          <td class="py-2 px-4 text-center column-text">-->
+<!--            0.25-->
+<!--            <div class="progress-bar w-full mt-1">-->
+<!--              <div class="progress" style="width: 42.6%;"></div>-->
+<!--            </div>-->
+<!--          </td>-->
+<!--          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td colspan="6" class="py-2 px-4 text-left">-->
+<!--            <div class="description-container text-gray-600">-->
+<!--              <div>-->
+<!--                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>-->
+<!--                炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
+<!--                该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </td>-->
+<!--        </tr>-->
 
         </tbody>
       </table>
+
+      <script>
+        async function loadDiseaseData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderDiseaseTable(data.slow_disease_data);
+          } catch (error) {
+            console.error('Error loading disease data:', error);
+          }
+        }
+
+        function renderDiseaseTable(diseaseData) {
+          const tableBody = document.getElementById('slow-disease-table-body');
+          if (!tableBody) {
+            console.error('Disease table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          diseaseData.forEach(disease => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('disease-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${disease.chinese_name}</div>
+                <div class="latin-text">${disease.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${disease.value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${disease.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${disease.risk_level.color}-600 column-text">
+                ${disease.risk_level.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('disease-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${disease.descriptions.map(desc => `
+                    <div class="disease-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载疾病数据
+        document.addEventListener('DOMContentLoaded', loadDiseaseData);
+      </script>
     </div>
 
   </div>
@@ -1674,7 +1744,85 @@
 
   <!-- 疾病症状相关菌首页 -->
 
+  <h1 class="custom-title-1 page-break">疾病症状相关菌</h1>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与疾病的关联性研究已成为现代医学研究的重要领域。通过大规模人群研究和临床观察，我们发现多种健康问题与肠道菌群的特定丰度水平直接相关。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 疾病症状相关菌 : 肥胖相关菌 -->
+
+  <h2 class="custom-title-1 page-break">肥胖相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群通过影响能量吸收、脂肪代谢和免疫功能，在肥胖发生发展中扮演重要角色。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="border-b border-gray-200">
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">双歧杆菌</div>
+            <div class="latin-text text-gray-500">Bifidobacterium</div>
+          </td>
+          <td class="py-2 px-4 text-center disease-column-text">4.52-6.85</td>
+          <td class="py-2 px-4 text-center disease-column-text">
+            3.86
+            <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+              <div class="progress bg-teal-500 rounded-full h-2" style="width: 45%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center text-yellow-600 disease-column-text">偏低</td>
+          <td class="py-2 px-4 text-center disease-column-text">68%</td>
+          <td class="py-2 px-4 text-center disease-column-text">负相关</td>
+          <td class="py-2 px-4 text-center disease-column-text">
+            <div class="flex justify-center items-center">
+              <span class="text-red-500">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </span>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
   <!-- 疾病症状相关菌 : 便秘相关菌 -->
   <!-- 疾病症状相关菌 : 腹胀相关菌 -->
   <!-- 疾病症状相关菌 : 过敏相关菌 -->

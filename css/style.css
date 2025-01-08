@@ -6,7 +6,7 @@
 /* 页面设置 */
 @page {
   size: A4; /* 设置纸张大小为 A4 */
-  margin: 40mm; /* 设置边距 */
+  /*margin: 40mm; !* 设置边距 *!*/
 }
 
 body {
@@ -53,8 +53,15 @@ body {
   .no-print {
     display: none; /* 不打印的元素 */
   }
+  @page {
+    margin: 10mm; /* 设置每一页的边距 */
+  }
   .page-break {
     page-break-before: always; /* 强制分页 */
+    /*margin-top: 20mm; !* 为分页元素添加上边距 *!*/
+  }
+  h1, h2, h3 {
+    margin-top: 10mm; /* 为标题添加上边距 */
   }
   .rounded-table {
     width: 100%; /* 确保表格宽度为100% */
@@ -541,6 +548,38 @@ tr {
 .lack { border-left: 4px solid #FF8989; }
 .insufficient { border-left: 4px solid #FFB489; }
 .excess { border-left: 4px solid #89C3FF; }
+
+
+/* 疾病相关菌 */
+
+.disease-first-column {
+  width: 19%; /* 菌种名称需要足够空间显示中英文 */
+}
+.disease-second-column {
+  width: 14%; /* 正常范围数值 */
+}
+.disease-third-column {
+  width: 13%; /* 检测丰度+进度条需要较大空间 */
+}
+.disease-fourth-column {
+  width: 12%; /* 结果评价 */
+}
+.disease-fifth-column {
+  width: 13%; /* 超过%的人 */
+}
+.disease-sixth-column {
+  width: 10%; /* 失眠相关性 */
+}
+.disease-seventh-column {
+  width: 19%; /* 相关性强度（点状图标较紧凑） */
+}
+
+
+.disease-column-text {
+  font-size: 0.6rem; /* 控制每一列的字体大小 */
+}
+
+
 
 /* 个性化饮食推荐 */
 

@@ -5115,5 +5115,29 @@
         }
       ]
     }
+  ],
+  "slow_disease_data": [
+    {
+      "chinese_name": "炎症性肠炎",
+      "latin_name": "Inflammatory bowel disease",
+      "value": "0.25",
+      "progress_percentage": 42.6,
+      "risk_level": {
+        "status": "低风险",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。"
+        }
+      ]
+    }
   ]
 }
