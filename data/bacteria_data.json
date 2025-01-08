@@ -5139,5 +5139,35 @@
         }
       ]
     }
+  ],
+  "fatdata": [
+    {
+      "chinese_name": "双歧杆菌",
+      "latin_name": "Bifidobacterium",
+      "range": "4.52-6.85",
+      "current_value": 3.86,
+      "progress_percentage": 45,
+      "progress_color": "red",
+      "status": {
+        "text": "偏低",
+        "color": "red",
+        "direction": "down"
+      },
+      "percentage": "68%",
+      "correlation": "负相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "这是一条信息描述"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "这是一条警告描述"
+        }
+      ]
+    }
   ]
 }

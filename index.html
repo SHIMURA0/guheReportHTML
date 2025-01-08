@@ -1670,72 +1670,6 @@
         </tbody>
       </table>
 
-      <script>
-        async function loadDiseaseData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderDiseaseTable(data.slow_disease_data);
-          } catch (error) {
-            console.error('Error loading disease data:', error);
-          }
-        }
-
-        function renderDiseaseTable(diseaseData) {
-          const tableBody = document.getElementById('slow-disease-table-body');
-          if (!tableBody) {
-            console.error('Disease table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          diseaseData.forEach(disease => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('disease-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${disease.chinese_name}</div>
-                <div class="latin-text">${disease.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                ${disease.value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${disease.progress_percentage}%;"></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${disease.risk_level.color}-600 column-text">
-                ${disease.risk_level.status}
-              </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('disease-desc-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${disease.descriptions.map(desc => `
-                    <div class="disease-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载疾病数据
-        document.addEventListener('DOMContentLoaded', loadDiseaseData);
-      </script>
     </div>
 
   </div>
@@ -1753,7 +1687,7 @@
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            肠道菌群与疾病的关联性研究已成为现代医学研究的重要领域。通过大规模人群研究和临床观察，我们发现多种健康问题与肠道菌群的特定丰度水平直接相关。
+          肠道菌群与疾病的关联性研究已成为现代医学研究的重要领域。通过大规模人群研究和临床观察，我们发现多种健康问题与肠道菌群的特定丰度水平直接相关。
           </p>
         </div>
       </div>
@@ -1791,34 +1725,132 @@
           <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
         </tr>
         </thead>
-        <tbody>
-        <tr class="border-b border-gray-200">
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">双歧杆菌</div>
-            <div class="latin-text text-gray-500">Bifidobacterium</div>
-          </td>
-          <td class="py-2 px-4 text-center disease-column-text">4.52-6.85</td>
-          <td class="py-2 px-4 text-center disease-column-text">
-            3.86
-            <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-              <div class="progress bg-teal-500 rounded-full h-2" style="width: 45%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center text-yellow-600 disease-column-text">偏低</td>
-          <td class="py-2 px-4 text-center disease-column-text">68%</td>
-          <td class="py-2 px-4 text-center disease-column-text">负相关</td>
-          <td class="py-2 px-4 text-center disease-column-text">
-            <div class="flex justify-center items-center">
-              <span class="text-red-500">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              </span>
-            </div>
-          </td>
-        </tr>
+        <tbody id="fatdata-table-body">
+<!--        <tr class="border-b border-gray-200">-->
+<!--          <td class="py-2 px-4 text-left first-column">-->
+<!--            <div class="chinese-text">双歧杆菌</div>-->
+<!--            <div class="latin-text text-gray-500">Bifidobacterium</div>-->
+<!--          </td>-->
+<!--          <td class="py-2 px-4 text-center disease-column-text">4.52-6.85</td>-->
+<!--          <td class="py-2 px-4 text-center disease-column-text">-->
+<!--            3.86-->
+<!--            <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">-->
+<!--              <div class="progress bg-red-500 rounded-full h-2" style="width: 45%;"></div>-->
+<!--            </div>-->
+<!--          </td>-->
+<!--          <td class="py-2 px-4 text-center text-red-600 disease-column-text">-->
+<!--            偏低 <i class="fas fa-arrow-down"></i>-->
+<!--          </td>-->
+<!--          <td class="py-2 px-4 text-center disease-column-text">68%</td>-->
+<!--          <td class="py-2 px-4 text-center disease-column-text">负相关</td>-->
+<!--          <td class="py-2 px-4 text-center disease-column-text">-->
+<!--            <div class="flex justify-center items-center">-->
+<!--              <span class="text-orange-500">-->
+<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
+<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
+<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
+<!--              </span>-->
+<!--            </div>-->
+<!--          </td>-->
+<!--        </tr>-->
         </tbody>
       </table>
+
+      <script>
+        async function loadFatData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderFatDataTable(data.fatdata);
+          } catch (error) {
+            console.error('Error loading fat data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderFatDataTable(fatData) {
+          const tableBody = document.getElementById('fatdata-table-body');
+          if (!tableBody) {
+            console.error('Fat data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('fat-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('fatdata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="fat-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadFatData);
+      </script>
+
     </div>
   </div>
 
