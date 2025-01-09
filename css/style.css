@@ -452,6 +452,18 @@ tr {
 
 /* 免疫指标评估板块 */
 
+.immunity-first-column {
+  width: 25%;
+}
+.immunity-second-column {
+  width: 25%;
+}
+.immunity-third-column {
+  width: 25%;
+}
+.immunity-fourth-column {
+  width: 25%;
+}
 
 
 /* 营养评估板块 */

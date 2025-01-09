@@ -5506,6 +5506,401 @@
     }
   ],
 
+  "humoral_immunity_data": [
+    {
+      "chinese_name": "免疫球蛋白A",
+      "latin_name": "IgA",
+      "normal_range": "15-98",
+      "detected_abundance": 62,
+      "progress_percentage": 62,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要分布于呼吸道、消化道等黏膜表面，是抵抗病原体入侵的第一道防线。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "免疫球蛋白D",
+      "latin_name": "IgD",
+      "normal_range": "15-98",
+      "detected_abundance": 62,
+      "progress_percentage": 62,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "存在于 B 淋巴细胞表面，在免疫系统的调节和抗原识别中发挥作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "免疫球蛋白M",
+      "latin_name": "IgM",
+      "normal_range": "15-98",
+      "detected_abundance": 7,
+      "progress_percentage": 7,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "是机体产生的第一类抗体，在初次免疫应答中起关键作用。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "增加优质蛋白质摄入、改善基础疾病、补充营养剂和定期监测。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "白蛋白",
+      "latin_name": "Albumin",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "由肝脏合成的重要蛋白质，维持血浆渗透压，反映营养状况和肝功能。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "增加优质蛋白质摄入、改善基础疾病、补充营养剂和定期监测。"
+        }
+      ]
+    }
+  ],
+
+  "inflammatory_infection_data": [
+    {
+      "chinese_name": "白细胞总数及分类",
+      "latin_name": "IgA",
+      "normal_range": "3.5-9.5",
+      "detected_abundance": 7.35,
+      "progress_percentage": 65,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "机体抵抗感染的重要免疫细胞，数量变化可反映炎症感染状态。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "降钙素原",
+      "latin_name": "PCT",
+      "normal_range": "0-0",
+      "detected_abundance": 0,
+      "progress_percentage": 0,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "细菌感染的特异性标志物，对全身性感染和脓毒症具有重要诊断价值。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "高敏C反应蛋白",
+      "latin_name": "hsCRP",
+      "normal_range": "0.068-8.2",
+      "detected_abundance": 4.48,
+      "progress_percentage": 54,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "心脑血管系统炎症的敏感指标，可预测心血管疾病风险。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "类便钙蛋白",
+      "latin_name": "FC",
+      "normal_range": "0-85",
+      "detected_abundance": 1,
+      "progress_percentage": 1,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "来源于中性粒细胞，是炎症性肠病的特异性标志物。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪便嗜酸性粒细胞蛋白X",
+      "latin_name": "EPX",
+      "normal_range": "0-85",
+      "detected_abundance": 1,
+      "progress_percentage": 1,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "反映肠道嗜酸性粒细胞介导的炎症反应，与食物过敏和肠道炎症相关。"
+        }
+      ]
+    }
+  ],
+
+  "microbial_metabolites_data": [
+    {
+      "chinese_name": "脂多糖",
+      "latin_name": "LPS",
+      "normal_range": "0-85",
+      "detected_abundance": 1,
+      "progress_percentage": 1,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "细菌细胞壁的重要组成部分，是评估肠道通透性和炎症反应的关键指标。"
+        }
+      ],
+      "inflammatory_type": "致炎代谢物"
+    },
+    {
+      "chinese_name": "胆汁酸",
+      "latin_name": "Bile acid",
+      "normal_range": "15-95",
+      "detected_abundance": 44,
+      "progress_percentage": 44,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与脂质代谢和吸收的重要物质，同时具有调节肠道菌群的作用。"
+        }
+      ],
+      "inflammatory_type": "抗炎代谢物"
+    },
+    {
+      "chinese_name": "氢气",
+      "latin_name": "H₂",
+      "normal_range": "15-95",
+      "detected_abundance": 16,
+      "progress_percentage": 16,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "由肠道菌群产生的重要代谢物，具有抗氧化、抗炎和调节免疫功能的作用。"
+        }
+      ],
+      "inflammatory_type": "抗炎代谢物"
+    },
+    {
+      "chinese_name": "丁酸盐",
+      "latin_name": "Butyrate",
+      "normal_range": "15-98",
+      "detected_abundance": 13,
+      "progress_percentage": 13,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要的短链脂肪酸，为肠道细胞提供能量，具有抗炎和维护肠道屏障功能。"
+        }
+      ],
+      "inflammatory_type": "抗炎代谢物"
+    },
+    {
+      "chinese_name": "乙酸盐",
+      "latin_name": "Acetate",
+      "normal_range": "15-98",
+      "detected_abundance": 13,
+      "progress_percentage": 13,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最丰富的短链脂肪酸之一，参与能量代谢，具有抗炎作用。"
+        }
+      ],
+      "inflammatory_type": "抗炎代谢物"
+    }
+  ],
+
+  "cytokines_data": [
+    {
+      "chinese_name": "白介素6",
+      "latin_name": "IgA",
+      "normal_range": "1-85",
+      "detected_abundance": 1,
+      "progress_percentage": 1,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "白介素A是重要的促炎性细胞因子参与急性期反应和炎症过程由 T 细胞和巨噬细胞等产生。"
+        }
+      ],
+      "cytokine_type": "促炎性"
+    },
+    {
+      "chinese_name": "肿瘤坏死因子-α",
+      "latin_name": "TNF-α",
+      "normal_range": "5-85",
+      "detected_abundance": 1,
+      "progress_percentage": 1,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "典型的促炎性细胞因子在炎症早期发挥关键作用可诱导其他炎症介质的产生。"
+        }
+      ],
+      "cytokine_type": "促炎性"
+    },
+    {
+      "chinese_name": "II-17a",
+      "latin_name": "hsCRP",
+      "normal_range": "5-85",
+      "detected_abundance": 64,
+      "progress_percentage": 74,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "由Th17 细胞产生的促炎性因子与自身免疫性疾病密切相关参与组织炎症反应。"
+        }
+      ],
+      "cytokine_type": "促炎性"
+    },
+    {
+      "chinese_name": "II-10",
+      "latin_name": "FC",
+      "normal_range": "15-95",
+      "detected_abundance": 9,
+      "progress_percentage": 9,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要的抗炎性细胞因子具有免疫抑制作用可抑制促炎性因子的产生。"
+        }
+      ],
+      "cytokine_type": "抗炎性"
+    },
+    {
+      "chinese_name": "干扰素-γ",
+      "latin_name": "IFN-γ",
+      "normal_range": "15-95",
+      "detected_abundance": 83,
+      "progress_percentage": 85,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "具有双重免疫调节作用参与抗病毒免疫应答可激活巨噬细胞。"
+        }
+      ],
+      "cytokine_type": "双重调节"
+    }
+  ],
+
+  "immune_oncology_markers_data": [
+    {
+      "chinese_name": "嗜铬粒蛋白A",
+      "latin_name": "CgA",
+      "normal_range": "5-95",
+      "detected_abundance": 64,
+      "progress_percentage": 65,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "嗜铬粒蛋白A是神经内分泌细胞分泌的一种酸性糖蛋白，是评估神经内分泌肿瘤的重要标志物。"
+        }
+      ]
+    }
+  ],
+
   "slow_disease_data": [
     {
       "chinese_name": "炎症性肠炎",
@@ -5530,6 +5925,7 @@
       ]
     }
   ],
+
   "fatdata": [
     {
       "chinese_name": "双歧杆菌",

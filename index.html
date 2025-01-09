@@ -361,6 +361,7 @@
         async function loadNonCoreBacteriaData() {
           try {
             const response = await fetch('./data/bacteria_data.json');
+            // const response = await fetch("http://localhost:8000/data/bacteria_data.json");
             const data = await response.json();
             renderNonCoreBacteriaTable(data.non_core_gut_bacteria_data); // 修改数据源名称
           } catch (error) {
@@ -1675,30 +1676,85 @@
       <table class="min-w-full">
         <thead>
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">神经活性物质名称</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left immunity-first-column">神经活性物质名称</th>
+          <th class="py-2 px-4 text-center immunity-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center immunity-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center immunity-fourth-column">评估结果</th>
         </tr>
         </thead>
         <tbody id="humoral-immunity-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">血清素</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">15-98</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
         </tbody>
       </table>
+
+      <script>
+        async function loadHumoralImmunityData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderHumoralImmunityTable(data.humoral_immunity_data);
+          } catch (error) {
+            console.error('Error loading other metabolites data:', error);
+          }
+        }
+
+        function renderHumoralImmunityTable(organicacidsData) {
+          const tableBody = document.getElementById('humoral-immunity-data-table-body');
+          if (!tableBody) {
+            console.error('Compounds table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(humoral=> {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('humoral-immunity-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${humoral.chinese_name}</div>
+                <div class="latin-text">${humoral.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${humoral.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${humoral.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${humoral.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${humoral.evaluation.color}-600 column-text">
+                ${humoral.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('humoral-immunity-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${humoral.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadHumoralImmunityData);
+      </script>
+
     </div>
   </div>
 
@@ -1730,26 +1786,81 @@
         </thead>
         <tbody id="inflammatory-infection-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">血清素</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">15-98</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
         </tbody>
       </table>
+
+      <script>
+        async function loadInflammatoryInfectionData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderInflammatoryInfectionTable(data.inflammatory_infection_data);
+          } catch (error) {
+            console.error('Error loading inflammatory_infection_data data:', error);
+          }
+        }
+
+        function renderInflammatoryInfectionTable(organicacidsData) {
+          const tableBody = document.getElementById('inflammatory-infection-data-table-body');
+          if (!tableBody) {
+            console.error('inflammatory infection table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(infection=> {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('inflammatory-infection-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${infection.chinese_name}</div>
+                <div class="latin-text">${infection.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${infection.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${infection.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${infection.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${infection.evaluation.color}-600 column-text">
+                ${infection.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('inflammatory-infection-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${infection.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadInflammatoryInfectionData);
+      </script>
+
     </div>
   </div>
 
-  <!-- 免疫指标评估板块 : 菌群代谢评估 -->
+  <!-- 免疫指标评估板块 : 菌群代谢物评估 -->
 
   <h2 class="custom-title-1 page-break">菌群代谢物指标评估</h2>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
@@ -1777,22 +1888,77 @@
         </thead>
         <tbody id="microbial-metabolites-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">血清素</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">15-98</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
         </tbody>
       </table>
+
+      <script>
+        async function loadMicrobialMetabolitesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderMicrobialMetabolitesTable(data.microbial_metabolites_data);
+          } catch (error) {
+            console.error('Error loading microbial metabolites data:', error);
+          }
+        }
+
+        function renderMicrobialMetabolitesTable(organicacidsData) {
+          const tableBody = document.getElementById('microbial-metabolites-data-table-body');
+          if (!tableBody) {
+            console.error('microbial metabolites data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(metabolites=> {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('microbial-metabolites-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${metabolites.chinese_name}</div>
+                <div class="latin-text">${metabolites.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${metabolites.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${metabolites.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${metabolites.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${metabolites.evaluation.color}-600 column-text">
+                ${metabolites.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('microbial-metabolites-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${metabolites.descriptions.map(desc => `
+                    <div class="microbial-metabolites-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadMicrobialMetabolitesData);
+      </script>
+
     </div>
   </div>
 
@@ -1824,22 +1990,77 @@
         </thead>
         <tbody id="cytokines-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">血清素</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">15-98</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
         </tbody>
       </table>
+
+      <script>
+        async function loadCytokinesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderCytokinesTable(data.cytokines_data);
+          } catch (error) {
+            console.error('Error loading cytokines data:', error);
+          }
+        }
+
+        function renderCytokinesTable(organicacidsData) {
+          const tableBody = document.getElementById('cytokines-data-table-body');
+          if (!tableBody) {
+            console.error('Cytokines data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(cytokines=> {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('cytokines-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${cytokines.chinese_name}</div>
+                <div class="latin-text">${cytokines.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${cytokines.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${cytokines.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${cytokines.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${cytokines.evaluation.color}-600 column-text">
+                ${cytokines.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('cytokines-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${cytokines.descriptions.map(desc => `
+                    <div class="microbial-metabolites-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadCytokinesData);
+      </script>
+
     </div>
   </div>
 
@@ -1871,22 +2092,77 @@
         </thead>
         <tbody id="immune-oncology-markers-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">血清素</div>
-            <div class="latin-text">Inflammatory bowel disease</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">15-98</td>
-          <td class="py-2 px-4 text-center column-text">
-            0.25
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
-        </tr>
         </tbody>
       </table>
+
+      <script>
+        async function loadImmuneOncologyData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderImmuneOncologyTable(data.immune_oncology_markers_data);
+          } catch (error) {
+            console.error('Error loading cytokines data:', error);
+          }
+        }
+
+        function renderImmuneOncologyTable(organicacidsData) {
+          const tableBody = document.getElementById('immune-oncology-markers-data-table-body');
+          if (!tableBody) {
+            console.error('Cytokines data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(immune => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('cytokines-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${immune.chinese_name}</div>
+                <div class="latin-text">${immune.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${immune.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${immune.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${immune.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${immune.evaluation.color}-600 column-text">
+                ${immune.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('cytokines-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${immune.descriptions.map(desc => `
+                    <div class="microbial-metabolites-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadImmuneOncologyData);
+      </script>
+
     </div>
   </div>
 
