@@ -1726,33 +1726,7 @@
         </tr>
         </thead>
         <tbody id="fatdata-table-body">
-<!--        <tr class="border-b border-gray-200">-->
-<!--          <td class="py-2 px-4 text-left first-column">-->
-<!--            <div class="chinese-text">双歧杆菌</div>-->
-<!--            <div class="latin-text text-gray-500">Bifidobacterium</div>-->
-<!--          </td>-->
-<!--          <td class="py-2 px-4 text-center disease-column-text">4.52-6.85</td>-->
-<!--          <td class="py-2 px-4 text-center disease-column-text">-->
-<!--            3.86-->
-<!--            <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">-->
-<!--              <div class="progress bg-red-500 rounded-full h-2" style="width: 45%;"></div>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--          <td class="py-2 px-4 text-center text-red-600 disease-column-text">-->
-<!--            偏低 <i class="fas fa-arrow-down"></i>-->
-<!--          </td>-->
-<!--          <td class="py-2 px-4 text-center disease-column-text">68%</td>-->
-<!--          <td class="py-2 px-4 text-center disease-column-text">负相关</td>-->
-<!--          <td class="py-2 px-4 text-center disease-column-text">-->
-<!--            <div class="flex justify-center items-center">-->
-<!--              <span class="text-orange-500">-->
-<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
-<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
-<!--                <i class="fa fa-star" aria-hidden="true"></i>-->
-<!--              </span>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--        </tr>-->
+        <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
 
@@ -1856,10 +1830,674 @@
 
 
   <!-- 疾病症状相关菌 : 便秘相关菌 -->
+
+  <h2 class="custom-title-1 page-break">便秘相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody id="constipation-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadConstipationData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderConstipationDataTable(data.constipation_data);
+          } catch (error) {
+            console.error('Error loading fat data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderConstipationDataTable(fatData) {
+          const tableBody = document.getElementById('constipation-data-table-body');
+          if (!tableBody) {
+            console.error('Constipation data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('constipation-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('constipationdata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="constipation-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadConstipationData);
+      </script>
+
+    </div>
+  </div>
+
   <!-- 疾病症状相关菌 : 腹胀相关菌 -->
+
+  <h2 class="custom-title-1 page-break">腹胀相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody id="bloating-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadBloatingData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderBloatingDataTable(data.bloating_data);
+          } catch (error) {
+            console.error('Error loading bloating data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderBloatingDataTable(fatData) {
+          const tableBody = document.getElementById('bloating-data-table-body');
+          if (!tableBody) {
+            console.error('Bloating data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('bloating-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('bloatingdata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="constipation-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadBloatingData);
+      </script>
+
+    </div>
+  </div>
+
   <!-- 疾病症状相关菌 : 过敏相关菌 -->
+
+  <h2 class="custom-title-1 page-break">过敏相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody id="allergy-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadAllergyData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderAllergyDataTable(data.allergy_data);
+          } catch (error) {
+            console.error('Error loading allergy data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderAllergyDataTable(fatData) {
+          const tableBody = document.getElementById('allergy-data-table-body');
+          if (!tableBody) {
+            console.error('Allergy data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('allergy-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('allergydata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="constipation-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadAllergyData);
+      </script>
+
+    </div>
+  </div>
+
   <!-- 疾病症状相关菌 : 抑郁相关菌 -->
+
+  <h2 class="custom-title-1 page-break">抑郁相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody id="depression-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadDepressionData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderDepressionDataTable(data.depression_data);
+          } catch (error) {
+            console.error('Error loading depression data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderDepressionDataTable(fatData) {
+          const tableBody = document.getElementById('depression-data-table-body');
+          if (!tableBody) {
+            console.error('Depression data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('depression-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('depressiondata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="constipation-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadDepressionData);
+      </script>
+
+    </div>
+  </div>
+
   <!-- 疾病症状相关菌 : 失眠相关菌 -->
+
+  <h2 class="custom-title-1 page-break">失眠相关菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
+          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        </tr>
+        </thead>
+        <tbody id="insomnia-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadInsomniaData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderInsomniaDataTable(data.insomnia_data);
+          } catch (error) {
+            console.error('Error loading insomnia data:', error);
+          }
+        }
+
+        function generateStars(count) {
+          let stars = '';
+          // 添加橙色星星
+          for (let i = 0; i < count; i++) {
+            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
+          }
+          // 添加灰色星星
+          for (let i = count; i < 3; i++) {
+            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
+          }
+          return stars;
+        }
+
+        function renderInsomniaDataTable(fatData) {
+          const tableBody = document.getElementById('insomnia-data-table-body');
+          if (!tableBody) {
+            console.error('Insomnia data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fatData.forEach(item => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            // dataRow.className = 'border-b border-gray-200';
+            dataRow.classList.add('insomnia-row');
+            dataRow.innerHTML = `
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${item.chinese_name}</div>
+                    <div class="latin-text text-gray-500">${item.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    ${item.current_value}
+                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
+                             style="width: ${item.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
+                    ${item.status.text}
+                    ${item.status.direction ?
+              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
+                </td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
+                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
+                <td class="py-2 px-4 text-center disease-column-text">
+                    <div class="flex justify-center items-center">
+                        <span class="text-orange-500">
+                            ${generateStars(item.stars)}
+                        </span>
+                    </div>
+                </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('insomniadata-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+                <td colSpan="7" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${item.descriptions.map(desc => `
+                            <div class="constipation-description">
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadInsomniaData);
+      </script>
+
+    </div>
+  </div>
 
 
   <!-- 个性化饮食板块 -->

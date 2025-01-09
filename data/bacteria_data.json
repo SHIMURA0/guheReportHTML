@@ -5168,6 +5168,4068 @@
           "text": "这是一条警告描述"
         }
       ]
+    },
+    {
+      "chinese_name": "厚壁菌门",
+      "latin_name": "Firmicutes",
+      "range": "28.594-83.961",
+      "current_value": 94.36370,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "厚壁菌门的数量在肥胖人群中较高，可以从食物中提取更多的能量，并将其储存为脂肪。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：碳水化合物、植物蛋白、豆制材、低能量饮食/热量限制、全麦、杂芝麻丝体"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阿德勒氏菌属",
+      "latin_name": "Adlercreutzia",
+      "range": "0-0.74966",
+      "current_value": 0.00133,
+      "progress_percentage": 0.18,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "能够代谢大豆异黄酮，促进女性肥胖。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，适量摄入大豆制品。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "range": "1.7545796-35.500554",
+      "current_value": 0.03296,
+      "progress_percentage": 0.09,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "24%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "促进肠道内有益菌的生长，抑制有害菌的生长，减少肥胖相关的炎症反应代谢素乱。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生菌和膳食纤维的摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜胆菌属",
+      "latin_name": "Bilophila",
+      "range": "0-0.1544794",
+      "current_value": 0.73110,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Bilophila wadsworthia是一种能够产生硫化物的细菌，其在肥胖人群中的丰度较高。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：鼠李糖乳杆菌、低聚果糖和菊粉、酵母β-葡聚糖、水果和蔬菜"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 42.6,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "67%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖者的丰度较高，尤其Clostridium butyricum，可通过增强营养吸收促进肥胖的发展。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持均衡饮食，控制热量摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "埃希氏菌属",
+      "latin_name": "Escherichia",
+      "range": "0-3.83",
+      "current_value": 0.14296,
+      "progress_percentage": 3.7,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "6%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群丰度明显增加，能够产生酒精，从而导致血液中酒精水平升高，也可能是肥胖人群易患非酒精性脂肪性肝病的原因之一。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持健康的饮食习惯，控制热量摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "霍尔德曼氏菌属",
+      "latin_name": "Holdemania",
+      "range": "0-0.28",
+      "current_value": 0.10581,
+      "progress_percentage": 37.8,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "98%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肥胖人群中明显增加，与神经炎症、脂质和葡萄糖代谢障碍相关，与肥胖相关的肝硬化、糖尿病和代谢综合征等疾病有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "巨单胞菌属",
+      "latin_name": "Megamonas",
+      "range": "0-0.6915718",
+      "current_value": 0.00049,
+      "progress_percentage": 0.07,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "58%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群丰度较高，与糖尿病、炎症反应等代谢性疾病密切相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加运动量，控制饮食摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "震颤杆菌属",
+      "latin_name": "Oscillibacter",
+      "range": "0-3.1958",
+      "current_value": 0.17179,
+      "progress_percentage": 5.4,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "78%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肥胖症患者中的丰度明显增加，与肥胖症的发生和发展密切相关，增加可能导致肠道菌群失衡，从而影响能量代谢和肥胖症的发生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，增加益生菌摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丹毒丝菌科",
+      "latin_name": "Erysipelotrichaceae",
+      "range": "0-1.7163",
+      "current_value": 0.34971,
+      "progress_percentage": 20.4,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "97%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肥胖人群中明显增加，与肥胖相关的代谢紊乱和炎症反应有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加运动量，注意饮食均衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "红蝽菌科",
+      "latin_name": "Coriobacteriaceae",
+      "range": "0-10.241",
+      "current_value": 0.01926,
+      "progress_percentage": 0.19,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "82%",
+      "correlation": "正相关",
+      "stars": 3,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "通过调节胆固醇吸收来影响能量代谢，与高脂饮食下的肠病和肥胖的抵抗力相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制脂肪摄入，保持健康的生活方式。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脆弱拟杆菌",
+      "latin_name": "Bacteroides fragilis",
+      "range": "0-0.05",
+      "current_value": 0.00145,
+      "progress_percentage": 2.9,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与婴儿3周和26周时的BMI呈正相关，可能通过抑制乙酸水平来加速肥胖，与ALT呈负相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持健康的饮食习惯，控制体重。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "牙龈卟啉单胞菌",
+      "latin_name": "Porphyromonas gingivalis",
+      "range": "0-0.05",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Porphyromonas gingivalis是一种牙周病原菌，会导致饮食性肥胖进一步增重和，改变棕色脂肪组织的内分泌功能影响肥胖。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "注意口腔卫生，定期进行牙齿检查和清洁。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "活波瘤胃球菌",
+      "latin_name": "Ruminococcus gnavus",
+      "range": "0-0.05",
+      "current_value": 0.22486,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "20%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与短链脂肪酸的产生有关，在女性中与ICPP、NAFLD和肥胖等疾病有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：咖啡、乳杆菌补充、白藜芦醇、母乳低聚糖、槲皮素红维素。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "别样杆菌属",
+      "latin_name": "Alistipes",
+      "range": "0.080658-18.1198662",
+      "current_value": 0.00099,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "15%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肠道菌群中起重要作用，与代谢健康相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维的摄入，保持饮食多样性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "厌氧棒状菌属",
+      "latin_name": "Anaerotruncs",
+      "range": "0-0.13747",
+      "current_value": 0.08642,
+      "progress_percentage": 62.9,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "55%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肠道菌群失调，饱和脂肪酸摄入量较高时丰度更高，与肥胖有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制饱和脂肪酸的摄入，保持健康的饮食习惯。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "柯林斯氏菌属",
+      "latin_name": "Collinsella",
+      "range": "0-9.1528862",
+      "current_value": 0.01763,
+      "progress_percentage": 0.19,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "82%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "增加导致肠道微生物群落的失衡，潜在的促炎症成分增加，如短链脂肪酸减少，可能会导致肥胖和代谢综合征的发生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生菌摄入，调节肠道菌群平衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "range": "0-0.4302374",
+      "current_value": 0.00660,
+      "progress_percentage": 1.53,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群中丰度增加，但是一些菌株能够对肥胖产生有益影响，与其抑制脂肪酸合成酶基因表达、降低脂肪酸氧化酶活性有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充益生菌，保持肠道菌群平衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳球菌属",
+      "latin_name": "Lactococcus",
+      "range": "0-0.058488",
+      "current_value": 0.00222,
+      "progress_percentage": 3.79,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群的肠道微生物组中丰度较少，而正常体重人群中较多。参与调节肠道内的卡路里代谢和能量平衡，从而影响体重。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议通过饮食调节提高有益菌群的丰度。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "颤螺菌属",
+      "latin_name": "Oscillospira",
+      "range": "0.033-5.346",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "36%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Oscillospira过多或过少都与肥胖相关，益生菌或益生元可以增加Oscillospira的数量，从而减轻肥胖和代谢疾病的症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充益生菌和益生元，调节肠道菌群平衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副萨特氏菌属",
+      "latin_name": "Parasutterella",
+      "range": "0-0.8235",
+      "current_value": 0.33869,
+      "progress_percentage": 41.13,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与L-半胱氨酸和脂肪酸生物合成径有关，在肥胖人群中，丰度与BMI和2型糖尿病呈正相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制饮食摄入，保持健康的生活方式，定期监测血糖水平。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "龙包沃氏菌属",
+      "latin_name": "Romboutsia",
+      "range": "0-0.021404",
+      "current_value": 0.01546,
+      "progress_percentage": 72.23,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "73%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肠道黏膜屏障功能下降、肠道炎症反应增加，葡萄糖代谢异常等现象有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议改善饮食结构，增加膳食纤维摄入，注意调节血糖水平。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘤胃梭菌属",
+      "latin_name": "Ruminiclostridium",
+      "range": "0-0.05",
+      "current_value": 0.00203,
+      "progress_percentage": 4.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "46%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "主要与肥胖发型呈正相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、低聚果糖、没食子酸、芽孢杆菌补充。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌科",
+      "latin_name": "Prevotellaceae",
+      "range": "0-56.537",
+      "current_value": 0.04756,
+      "progress_percentage": 0.08,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "70%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖患者肠道中Prevotellaceae的丰度增加，女性中高丰度的Prevotellaceae与肥胖有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "具核梭杆菌",
+      "latin_name": "Fusobacterium nucleatum",
+      "range": "0-0.05",
+      "current_value": 0.00459,
+      "progress_percentage": 9.18,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Fusobacterium nucleatum在肥胖人群中更为丰富，是一种机会性病原体，与牙周病的发生和发展密切相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议注意口腔卫生，定期进行牙齿检查。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "扭链瘤胃球菌",
+      "latin_name": "Ruminococcus torques",
+      "range": "0-3.8364",
+      "current_value": 0.31451,
+      "progress_percentage": 8.2,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "增加导致牛磺酸结合胆酸（TCA）和脱氧胆酸（DCA）水平升高，并激活脂肪组织的G蛋白偶联胆酸受体（GPBAR1，TGR5）。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制饮食摄入，保持运动习惯。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "棒杆菌属",
+      "latin_name": "Corynebacterium",
+      "range": "0-0.05",
+      "current_value": 0.00843,
+      "progress_percentage": 16.86,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Corynebacterium jeddahense和C. massiliensis是从患有病态肥胖的人的粪便中分离出来的菌株。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持健康的生活方式，控制体重。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "戴阿利斯特杆菌属",
+      "latin_name": "Dialister",
+      "range": "0-3.7365342",
+      "current_value": 2.74325,
+      "progress_percentage": 73.42,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "79%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Dialister属与高炎症指数相关，运动可以增加Dialister属的丰度，从而改善肥胖儿童的肠道菌群组成。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加适度运动，改善肠道菌群。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群中丰度明显降低，炎症反应增加，促进脂肪分解和吸收，减少脂肪的积累，促进肠道内废素的分泌，减少食欲和促进代谢。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "纤毛菌属",
+      "latin_name": "Leptotrichia",
+      "range": "0-0",
+      "current_value": 0.00146,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "95%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肥胖女性中的相对丰度较高，与糖尿病、中风等代谢性疾病有关联。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制饮食，定期监测血糖。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "巨球形菌属",
+      "latin_name": "Megasphaera",
+      "range": "0-0.13046",
+      "current_value": 0.00399,
+      "progress_percentage": 3.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在肥胖人群中富集，促进脂肪沉积和代谢。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，控制脂肪摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0-67.8009886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "丰度与体重、腰围、BMI、脂肪质量指数、甘油三酯和高敏C-反应蛋白水平呈正相关，而与高密度脂蛋白胆固醇水平呈负相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制体重，注意饮食均衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘤胃球菌属",
+      "latin_name": "Ruminococcus",
+      "range": "0.0543588-19.7985354",
+      "current_value": 9.84521,
+      "progress_percentage": 49.73,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "44%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖者的肠道菌群中明显增加，产生支链氨基酸和谷氨酸等代谢物可增加肥胖可能性。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，控制热量摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "产碱菌科",
+      "latin_name": "Alcaligenaceae",
+      "range": "0-0",
+      "current_value": 0.01035,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "25%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖者肠道中相对丰度较高，可以产生内毒素LPS，引起慢性低度炎症，也是机会性病原菌，特别是在患有自闭症的儿童中。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生菌摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "赭色噬帽菌",
+      "latin_name": "Capnocytophaga ochracea",
+      "range": "0-0",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖女性的Streptococcus sanguinis、Streptococcus oralis和Capnocytophaga ochracea的水平显著高于非肥胖女性。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议注意口腔卫生，保持健康的生活方式。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "柯氏菌",
+      "latin_name": "Collinsella aerofaciens",
+      "range": "0-10.121",
+      "current_value": 0.00117,
+      "progress_percentage": 0.01,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "30%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Collinsella aerofaciens是一种与肥胖和代谢综合征相关的微生物生物标志物。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "长链多尔氏菌",
+      "latin_name": "Dorea longicatena",
+      "range": "0-4.2889",
+      "current_value": 0.33368,
+      "progress_percentage": 7.78,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Dorea longicatena是肥胖的生物标志物之一。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持健康的饮食习惯，控制热量摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "史氏甲烷短杆菌",
+      "latin_name": "Methanobrevibacter smithii",
+      "range": "0-3.3301",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生的甲烷与便秘、肠易激综合征和肥胖有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "血链球菌",
+      "latin_name": "Streptococcus sanguinis",
+      "range": "0-0.05",
+      "current_value": 0.00203,
+      "progress_percentage": 4.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "研究发现，Streptococcus sanguinis、Streptococcus oralis和Capnocytophaga ochracea在肥胖女性的水平显著高于非肥胖女性。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议注意口腔卫生，保持健康的生活方式。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "艾克曼菌",
+      "latin_name": "Akkermansia muciniphila",
+      "range": "0-6.6395",
+      "current_value": 0.00394,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "45%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "降低肠道黏膜的炎症程度，增加肠道屏障功能，降低肥胖相关的代谢疾病。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生菌摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "肥胖人群中丰度明显降低，炎症反应增加，促进脂肪分解和吸收，减少脂肪的积累，促进肠道内废素的分泌，减少食欲和促进代谢。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌门",
+      "latin_name": "Bacteroidetes",
+      "range": "19.203-90.8",
+      "current_value": 0.15639,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "17%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "丰度与肥胖呈负相关，越多肥胖的风险越低。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，调节肠道菌群。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "优杆菌属",
+      "latin_name": "Eubacterium",
+      "range": "0.1145944-9.4883306",
+      "current_value": 5.75186,
+      "progress_percentage": 60.62,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "95%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Eubacterium dolichum与代谢紊乱和肥胖有关其丰度与内脂肪质量呈正相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议控制脂肪摄入，保持运动习惯。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "卵形拟杆菌",
+      "latin_name": "Bacteroides ovatus",
+      "range": "0-3.0624",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "25%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "具有抗炎作用，在肥胖、2型糖尿病和胰腺炎硬化疾病患者中数量减少，具有保护作用，可以诱导肠道IgA的产生，有益于肠道稳态和免疫健康。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "颤螺菌属",
+      "latin_name": "Oscillospira",
+      "range": "0.033-5.346",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "36%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Oscillospira过多或过少都与肥胖相关，益生菌或益生元可以增加Oscillospira的数量，从而减轻肥胖和代谢疾病的症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充益生菌和益生元，调节肠道菌群平衡。"
+        }
+      ]
+    }
+  ],
+  "constipation_data": [
+    {
+      "chinese_name": "史氏甲烷短杆菌",
+      "latin_name": "Methanobrevibacter smithii",
+      "range": "0-3.3301",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生甲烷，而甲烷能够延迟肠道的传输时间，从而导致便秘。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善排便功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪球菌属",
+      "latin_name": "Coprococcus",
+      "range": "0.082336-9.4195178",
+      "current_value": 0.05595,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "64%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Coprococcus的丰度过高或过低都可能与功能性便秘有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调整饮食结构，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "埃希氏菌属",
+      "latin_name": "Escherichia",
+      "range": "0-3.83",
+      "current_value": 0.14296,
+      "progress_percentage": 3.73,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "6%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "过度生长会导致色氨酸转化为吲哚，从而增加脂肪组织产生的吲哚含量，与慢性便秘患者尿液成分的改变有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群平衡，控制饮食。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "毛螺菌属",
+      "latin_name": "Lachnospira",
+      "range": "0.0346628-8.6596222",
+      "current_value": 5.02851,
+      "progress_percentage": 58.07,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "70%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "一些菌株能够产生乳乳酸和醋酸，这些物质通过抑制炎症分泌导致便秘。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生菌摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "厌氧棒状菌属",
+      "latin_name": "Anaerotruncs",
+      "range": "0-0.13747",
+      "current_value": 0.08642,
+      "progress_percentage": 62.87,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "55%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "便秘患者的肠道中Anaerotruncs的数量明显增加，可以产生一些酸和气体等代谢产物，可能会刺激肠道神经，进一步影响肠道蠕动和排便便功能。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "葡萄球菌属",
+      "latin_name": "Staphylococcus",
+      "range": "0-0.05",
+      "current_value": 0.51158,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "-",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "感染是导致后感染性肠易激综合征（PI-IBS）的潜在病原因素之一，与肠道梗阻和肠穿孔疾病有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、大蒜、绿茶、双歧杆菌补充。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链球菌属",
+      "latin_name": "Streptococcus",
+      "range": "0-0.3495704",
+      "current_value": 0.31690,
+      "progress_percentage": 90.65,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "13%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在IBS患者中富集，与便秘的发生和发展有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善肠道功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "脆弱拟杆菌",
+      "latin_name": "Bacteroides fragilis",
+      "range": "0-0.05",
+      "current_value": 0.00145,
+      "progress_percentage": 2.9,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "功能性便秘的儿童和老年患者中，含量增加。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加运动量，保持规律作息。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "卵形拟杆菌",
+      "latin_name": "Bacteroides ovatus",
+      "range": "0-3.0624",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "25%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在老年便秘患者和儿童功能性便秘患者中，相对丰度增加。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，保持充足水分。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "下水道菌属",
+      "latin_name": "Cloacibacillus",
+      "range": "0-0",
+      "current_value": 0.00028,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Cloacibacillus在便秘患者的肠道中更为丰富，过度生长时，可能会导致肠道菌群失衡，从而引起便秘。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，增加益生菌摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 42.64,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "67%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "便秘患者的肠道中Lachnospira和Clostridium的水平明显升高，而Clostridium difficile则被证明增加了后感染性肠易激综合征的风险。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，控制饮食。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "range": "1.7545796-35.500554",
+      "current_value": 0.03296,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "24%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可以与其他菌种合作转放短链脂肪酸和气体，促进肠道蠕动缓解便秘症状。可以增加乳酸菌的丰度，从而缓解便秘。但也可能会促进胆脂症的发生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "range": "0-0.4302374",
+      "current_value": 0.00660,
+      "progress_percentage": 1.53,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在便秘患者中含量降低，补充后可改善便秘症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充乳酸菌，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阿克曼氏菌属",
+      "latin_name": "Akkermansia",
+      "range": "0-5.7984096",
+      "current_value": 0.00460,
+      "progress_percentage": 0.08,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "44%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "调节肠道黏膜屏障的功能，促进肠道蠕动和水分吸收，减少肠道炎症反应，从而改善便秘症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "range": "0.0846204-6.9055608",
+      "current_value": 10.17279,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "75%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在便秘患者中明显降低。通过摄入亚麻籽等食物，可以增加Blautia的数量，从而改善便秘症状。能够产生丁酸可以促进肠道蠕动，从而改善便秘。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：高脂汁酸、红酒、啤酒。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0-67.8009886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可以分解纤维素和其他难以消化的食物成分，产生大量的短链脂肪酸，刺激肠道蠕动，促进排便。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，保持饮食均衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 42.64,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "67%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "便秘患者的肠道中Lachnospira和Clostridium的水平明显升高。而Clostridium difficile则被证明增加了后感染性肠易激综合征的风险。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，控制饮食。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘤胃球菌属",
+      "latin_name": "Ruminococcus",
+      "range": "0.0543588-19.7985354",
+      "current_value": 9.84521,
+      "progress_percentage": 49.73,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "44%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "其丰度过高与便秘的加重有关。其代谢产物可以影响肠道的运动和水分吸收，从而促进排便，因此缺乏也可能导致便秘。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持适度运动，调节肠道菌群平衡。"
+        }
+      ]
+    }
+  ],
+  "bloating_data": [
+    {
+      "chinese_name": "史氏甲烷短杆菌",
+      "latin_name": "M. smithii",
+      "range": "0-0.3301",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "主要参与肠道内甲烷的产生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "range": "1.0577624-47.3225368",
+      "current_value": 0.08974,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "29%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "参与碳水化合物代谢，维持肠道稳态，可能影响睡眠。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，如全谷物、蔬菜水果等"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 42.64,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "67%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "参与肠道健康和免疫调节。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持均衡饮食，增加益生元摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "瘤胃球菌属",
+      "latin_name": "Ruminococcus",
+      "range": "0.05438-19.7985354",
+      "current_value": 9.84521,
+      "progress_percentage": 49.73,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "44%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道代谢相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "变形菌属",
+      "latin_name": "Proteobacteria",
+      "range": "0-1.742",
+      "current_value": 3.89401,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "20%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道微生物失衡相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加益生元摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "艰难梭菌",
+      "latin_name": "Clostridium difficile",
+      "range": "0-0.05",
+      "current_value": 0.08647,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "94%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可能导致肠道感染。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议减少糖和油腻食物的摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠球菌属",
+      "latin_name": "Enterococcus",
+      "range": "0-0.05",
+      "current_value": 0.12259,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "52%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康密切相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持均衡饮食，增加益生元摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0-67.8009886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与碳水化合物代谢相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链球菌属",
+      "latin_name": "Streptococcus",
+      "range": "0-0.3495704",
+      "current_value": 0.31690,
+      "progress_percentage": 90.65,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "13%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可能影响免疫功能。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持均衡饮食，增加益生元摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "蓝藻门",
+      "latin_name": "Cyanobacteria",
+      "range": "0-0",
+      "current_value": 0.02100,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道微生物失衡相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "产气荚膜梭菌",
+      "latin_name": "Clostridium perfringens",
+      "range": "0-0.05",
+      "current_value": 0.00419,
+      "progress_percentage": 8.38,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-9%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可能导致食物中毒。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "保持健康的饮食习惯，增加膳食纤维摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "range": "0-0.4302374",
+      "current_value": 0.00660,
+      "progress_percentage": 1.53,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在儿童肠易激综合征患者中具有显著的减轻腹痛、打嗝、腹胀和便秘的作用，与高纤维饮食结合可有效减少结肠慢室病患者的腹胀和长期腹痛。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充乳酸菌，调节肠道菌群平衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "毛螺旋菌科",
+      "latin_name": "Lachnospiraceae",
+      "range": "1.8245-46.849",
+      "current_value": 26.47123,
+      "progress_percentage": 54.71,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "27%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "减少与腹胀有关，可将复杂的植物多糖发酵成乙酸、丁酸和丙酸等短链脂肪酸。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "range": "1.7545796-35.500554",
+      "current_value": 0.03296,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "24%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与腹胀和腹痛等症状的减轻有关。口服VSL#3等益生菌可以增加有益菌的数量，从而改善便秘、腹泻等症状，并减轻腹胀的程度。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，增加益生菌摄入。"
+        }
+      ]
+    }
+  ],
+  "allergy_data": [
+    {
+      "chinese_name": "脆弱拟杆菌",
+      "latin_name": "B. fragilis",
+      "range": "0-0.05",
+      "current_value": 0.00145,
+      "progress_percentage": 2.9,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "花粉过敏成年人丰度上升，可以通过补充双歧杆菌来预防，会诱导更多的Th2细胞因子，与花生和坚果过敏存在相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，调节免疫反应。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "构橘酸杆菌属",
+      "latin_name": "Citrobacter",
+      "range": "0-0.5",
+      "current_value": 0.07731,
+      "progress_percentage": 15.46,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Citrobacter在食物过敏的肠道中明显富集，会加重系统性过敏症状并减少肠道Th17细胞。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善过敏症状。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "克雷伯氏菌属",
+      "latin_name": "Klebsiella",
+      "range": "0-0.05",
+      "current_value": 0.09652,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "过度生长可能会导致肠道微生物群落失衡，从而引发过敏反应。过敏婴儿肠道中Klebsiella的数量明显增加，有益菌数量减少。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、双歧杆菌补充、大麦、低聚果糖"
+        }
+      ]
+    },
+    {
+      "chinese_name": "莫拉氏菌属",
+      "latin_name": "Moraxella",
+      "range": "0-0",
+      "current_value": 0.00228,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与哮喘等过敏性疾病有关联。儿童早期感染Moraxella会增加呼吸道疾病的严重程度和发生急性哮喘的风险。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：低聚甘露糖、大蒜"
+        }
+      ]
+    },
+    {
+      "chinese_name": "变形菌门",
+      "latin_name": "Proteobacteria",
+      "range": "0-1.742",
+      "current_value": 3.89408,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "20%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "增加血液中的脂多糖内毒素，增加肠道通透性，导致慢性炎症反应。提入低聚果糖可调节肠道微生物，改善过敏反应。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：低脂饮食、牛磺酸、生酮饮食、聚甘露糖醛酸"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "range": "0-5.7271",
+      "current_value": 0.55581,
+      "progress_percentage": 9.7,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "7%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "早期婴儿肠道微生物群落中，丰度的增加与食物敏感性的发展有关联。可以产生脂多糖（LPS），与多种代谢性疾病的炎症有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "活波瘤胃球菌",
+      "latin_name": "R. gnavus",
+      "range": "0-0.05",
+      "current_value": 0.22486,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "20%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与食物敏感性、哮喘、呼吸道过敏等疾病的发生有关，会导致肠道内炎症反应的加剧，引发过敏症状。降低肠道内纤维素降解酶的潜力。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：咖啡、乳杆菌补充、白藜芦醇、母乳低聚糖、羧甲基纤维素"
+        }
+      ]
+    },
+    {
+      "chinese_name": "气单胞菌属",
+      "latin_name": "Aeromonas",
+      "range": "0-0.05",
+      "current_value": 0.00200,
+      "progress_percentage": 4,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "感染会引起过敏反应，如Kounis综合征，同时过敏患者对某些抗生素也可能存在过敏反应，因此需要注意过敏史。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议注意过敏史，谨慎用药。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "range": "0.0846204-6.9055608",
+      "current_value": 10.17279,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "75%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "高丰度可能会导致过敏疾病的发展，如婴儿的食物过敏和儿童的1型糖尿病。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：高脂汁酸，红酒，啤酒"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠球菌属",
+      "latin_name": "Enterococcus",
+      "range": "0-0.05",
+      "current_value": 0.12259,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "52%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "通过激活巨噬细胞，促进炎症过程，从而影响过敏或变态反应的人类IgE抗体调节。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、可可、母乳低聚糖、椰皮素"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "能够产生丰富的短链脂肪酸和其他代谢物，减少过敏原物质的进入和吸收，减少过度的免疫和炎症反应，降低过敏的严重程度和持续时间。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丙酸杆菌属",
+      "latin_name": "Propionibacterium",
+      "range": "0-0",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "能够产生丙酸和细菌素，可以抑制S. aureus或其他病原菌的增殖，被认为具有抗过敏的作用，包括对哮喘和AD的保护作用。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "罗氏菌属",
+      "latin_name": "Roseburia",
+      "range": "0.5829956-16.3580638",
+      "current_value": 6.33667,
+      "progress_percentage": 36.45,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "10%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可产生丁酸的益生菌，食物过敏患者的肠道中Roseburia的丰度较低，通过摄食干预或益生菌治疗，可以增加Roseburia的丰度，促进过敏的缓解。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链状双歧杆菌",
+      "latin_name": "Bifidobacterium catenulatum",
+      "range": "0-0.50838",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "成人型哮喘可能会促进过敏炎症所特有的Th2偏向免疫反应。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，调节免疫反应。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "铜绿假单胞菌",
+      "latin_name": "Pseudomonas aeruginosa",
+      "range": "0-0.05",
+      "current_value": 0.04152,
+      "progress_percentage": 83.04,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "感染也可能会引起过敏反应，感染可能会导致过敏性支气管曲霉病（ABPA）的发生，增加宿主患上过敏性疾病的风险。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议注意卫生，预防感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "range": "1.7545796-35.500554",
+      "current_value": 0.03296,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "24%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可以调节肠道免疫系统，减少过敏反应。Bifidobacterium可以改善过敏症状，如哮喘和湿疹，可以进一步提高其对过敏的保护作用。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，增加益生菌摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "range": "0-0.4302374",
+      "current_value": 0.00660,
+      "progress_percentage": 1.53,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可以减轻食物过敏和湿疹等过敏症状，可以通过降低食物中过敏原的含量来减轻过敏症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充乳酸菌，改善免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生丰富的短链脂肪酸，如丙酸、丁酸和乙酸等，维持肠道健康和免疫系统的正常功能，促进免疫系统的平衡，减少过敏症状的发生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）"
+        }
+      ]
+    },
+    {
+      "chinese_name": "艾克曼氏菌",
+      "latin_name": "Akkermansia muciniphila",
+      "range": "0-6.6395",
+      "current_value": 0.00394,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "45%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "调节肠道微生物群和短链脂肪酸预防过敏，阻断免疫细胞的流入，减轻病理，降低了炎症水平。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阿克曼氏菌属",
+      "latin_name": "Akkermansia",
+      "range": "0-5.7984096",
+      "current_value": 0.00460,
+      "progress_percentage": 0.08,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "44%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "减少多种炎症标志物，修复肠道，富含多糖的蔓越莓提取物和其他富含类黄酮的食物，包括绿茶和红茶可增高Akk水平。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加富含多糖和类黄酮的食物摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "range": "1.0577624-47.3225368",
+      "current_value": 0.08974,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "2%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "在婴儿期和幼儿期，丰度降低与食物过敏或特应性皮炎的发生有关，过多也与过敏结果有关，包括哮喘、花粉症和食物过敏等。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群平衡。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "range": "0.0846204-6.9055608",
+      "current_value": 10.17279,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "75%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "高丰度可能会导致过敏疾病的发展，如婴儿的食物过敏和儿童的1型糖尿病。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议：高脂汁酸、红酒、啤酒"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Dorea菌属",
+      "latin_name": "Dorea",
+      "range": "0.05807-5.2120164",
+      "current_value": 0.43735,
+      "progress_percentage": 7.39,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "20%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Dorea与食物过敏和免疫有关，有助于保护免疫系统免受食物敏感和食物过敏的影响。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议保持均衡饮食，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0-67.8009886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "孕期母亲肠道微生物中Prevotella的丰度增加可以预防食物过敏，在食物过敏患者中，Prevotella的丰度较低。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群，改善免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "罗氏菌属",
+      "latin_name": "Roseburia",
+      "range": "0.5829956-16.3580638",
+      "current_value": 6.33667,
+      "progress_percentage": 36.45,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "10%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "可产生丁酸的益生菌，食物过敏患者的肠道中Roseburia的丰度较低，通过膳食干预或益生菌治疗，可以增加Roseburia的丰度，促进过敏的缓解。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，改善肠道环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "青春双歧杆菌",
+      "latin_name": "Bifidobacterium adolescentis",
+      "range": "0-14.286",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "过敏儿童的肠道中数量较少，缺乏可能导致免疫系统的失调，使食物过敏原更容易穿过肠道屏障，导致食物过敏性的增加。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适量补充双歧杆菌，改善免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Lachnoclostridium",
+      "latin_name": "Lachnoclostridium",
+      "range": "0-0.2086068",
+      "current_value": 0.17516,
+      "progress_percentage": 83.97,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Lachnoclostridium可产生短链脂肪酸，减少食物过敏的发生。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，促进短链脂肪酸的产生。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普通拟杆菌",
+      "latin_name": "Bacteroides vulgatus",
+      "range": "0-20.066",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "4%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "食物过敏与Bacteroides vulgatus相对丰度呈负相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议调节肠道菌群平衡，改善免疫功能。"
+        }
+      ]
+    }
+  ],
+  "depression_data": [
+    {
+      "chinese_name": "脱硫弧菌属",
+      "latin_name": "Desulfovibrio",
+      "range": "0-0.05",
+      "current_value": 0.02325,
+      "progress_percentage": 46.5,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "脱硫弧菌通过其代谢产物（如硫化氢）引发肠道炎症、破坏肠-脑轴信号。文献支持见[Dsv1，Dsv2，Dsv3]。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "别样杆菌属",
+      "latin_name": "Alistipes",
+      "range": "0.080658-18.1198662",
+      "current_value": 0.00099,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "15%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "重要的肠道共生菌，参与碳水化合物代谢，维持肠道稳态，可能影响睡眠。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，如全谷物、蔬菜水果等"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "range": "1.0577624-47.3225368",
+      "current_value": 0.08974,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "2%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "梭菌目是一类革兰氏阳性厌氧菌，通过肠-脑轴影响神经递质和炎症因子分泌，其失衡可直接导致睡眠质量下降和失眠症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "梭菌目超标，建议多吃富含膳食纤维的绿色蔬菜和全麦食品，搭配酸奶、泡菜等发酵食品，同时减少糖和油腻食物的摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "埃希氏菌属",
+      "latin_name": "Escherichia",
+      "range": "0-3.83",
+      "current_value": 0.14296,
+      "progress_percentage": 3.73,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "6%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生短链脂肪酸，参与胆固醇代谢，具有抗炎作用，可能影响睡眠。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "解黄酮菌属",
+      "latin_name": "Flavonifractor",
+      "range": "0-0.7285098",
+      "current_value": 2.44087,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "57%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "经黏液真杆菌属是肠道关键菌种，通过神经递质和炎症调节，可直接影响褪黑激素分泌，导致失眠和睡眠质量下降。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "推荐食用如洋葱、大蒜、香蕉等益生元食物，搭配酸奶、泡菜等发酵食品，并选择如苹果、芦笋、莲藕等纤维丰富的蔬果。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "震颤杆菌属",
+      "latin_name": "Oscillibacter",
+      "range": "0-3.1958",
+      "current_value": 0.17179,
+      "progress_percentage": 5.38,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "78%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "具有益生功能，可产生多种酶类和抗菌物质，增强免疫力，可能影响睡眠。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适当补充含芽孢杆菌的益生菌制剂"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副拟杆菌属",
+      "latin_name": "Parabacteroides",
+      "range": "0.1095448-8.7303488",
+      "current_value": 0.00675,
+      "progress_percentage": 0,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "9%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "厌氧菌，与肠道健康密切相关，参与多糖代谢，可能影响睡眠。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "摄入富含益生元的绿色蔬菜和水果，如菊苣、大蒜、洋葱，同时选择发酵食品如酸奶和泡菜，并适度减少精制碳水化合物的摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "放线菌属",
+      "latin_name": "Actinomyces",
+      "range": "0-0.053911",
+      "current_value": 0.01470,
+      "progress_percentage": 27.27,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "52%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "重要的益生菌，产生丁酸，具有抗炎作用，维持肠道健康，可能与睡眠质量相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议适当调整饮食结构，增加膳食纤维摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "厌氧棒状菌属",
+      "latin_name": "Anaerostipes",
+      "range": "0.093342-9.5549",
+      "current_value": 0.39135,
+      "progress_percentage": 3.15,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "78%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "代谢碳水化合物，产生短链脂肪酸，与多种肠道疾病相关，可能影响睡眠。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "range": "0.0846204-6.9055608",
+      "current_value": 10.17279,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "75%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "龙包茨氏菌属是一类重要的革兰氏阴性厌氧菌，其失衡可能与炎症反应、免疫调节和代谢紊乱密切相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 42.64,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "67%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生丁酸，抗炎，维持肠道健康，可能与睡眠质量相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "爱格氏菌属",
+      "latin_name": "Eggerthella",
+      "range": "0.0-0.04271",
+      "current_value": 0.00343,
+      "progress_percentage": 8.03,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "抑制肠道炎症，产生短链脂肪酸（SCFAs）消耗有关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "嗜血杆菌属",
+      "latin_name": "Haemophilus",
+      "range": "0.0-0.09788",
+      "current_value": 0.07296,
+      "progress_percentage": 74.54,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康、认知相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "霍尔德曼氏菌属",
+      "latin_name": "Holdemania",
+      "range": "0.0-0.28",
+      "current_value": 0.10581,
+      "progress_percentage": 37.79,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "98%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康相关，可能影响代谢。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "克雷伯氏菌属",
+      "latin_name": "Klebsiella",
+      "range": "0.0-0.05",
+      "current_value": 0.096521,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "-%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康相关，可能影响免疫。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副萨特氏菌属",
+      "latin_name": "Paraprevotella",
+      "range": "0.0-0.76066",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "76%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康密切相关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "副拟杆菌属",
+      "latin_name": "Parasutterella",
+      "range": "0.0-0.8235",
+      "current_value": 0.33869,
+      "progress_percentage": 41.13,
+      "progress_color": "teal",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "99%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康密切相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0.0-67.800886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康相关，可能影响心理健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "韦荣菌属",
+      "latin_name": "Veillonella",
+      "range": "0.0-0.008568",
+      "current_value": 0.383267,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "7%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康相关，可能影响睡眠。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "单形拟杆菌",
+      "latin_name": "B. uniformis",
+      "range": "0.0-17.741",
+      "current_value": "ND",
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "4%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康密切相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普氏栖粪杆菌",
+      "latin_name": "F. prausnitzii",
+      "range": "0.18043-14.003",
+      "current_value": 26.23325,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "高脂肪饮食（如动物脂肪）"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入"
+        }
+      ]
+    },
+    {
+      "chinese_name": "食葡糖罗斯拜瑞氏菌",
+      "latin_name": "R. inulinivorans",
+      "range": "0.0-2.7653",
+      "current_value": 5.12041,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "16%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "促进肠道健康，可能影响代谢。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "双歧杆菌属",
+      "latin_name": "Bifidobacterium",
+      "range": "1.7545796-35.500554",
+      "current_value": 0.03296,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "24%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与肠道健康密切相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "具有双相情感障碍和重度抑郁症的患者肠道中Faecalibacterium水平较低。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乳杆菌属",
+      "latin_name": "Lactobacillus",
+      "range": "0.0-0.4302374",
+      "current_value": 0.00660,
+      "progress_percentage": 1.53,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "通过上调海马体中的GABA来缓解抑郁症。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "罗氏菌属",
+      "latin_name": "Roseburia",
+      "range": "0.5829956-16.3580638",
+      "current_value": 6.33667,
+      "progress_percentage": 36.45,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "10%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "能帮助产生短链脂肪酸和脑部-肠道信号。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "range": "1.0577624-47.3225368",
+      "current_value": 0.08974,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "缺乏",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "2%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "产生益生元和短链脂肪酸，减轻抑郁和焦虑症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，如全谷物、蔬菜水果等"
+        }
+      ]
+    },
+    {
+      "chinese_name": "优杆菌属",
+      "latin_name": "Eubacterium",
+      "range": "0.1145944-9.488306",
+      "current_value": 5.75186,
+      "progress_percentage": 60.21,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "95%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与降低血清清蛋白有关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0.0-67.800896",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "teal",
+      "status": {
+        "text": "正常",
+        "color": "green",
+        "direction": "normal"
+      },
+      "percentage": "50%",
+      "correlation": "负相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "Prevotella与多种神经递质的产生有关，如γ-氨基丁酸（GABA）和色氨酸等。"
+        }
+      ]
+    }
+  ],
+  "insomnia_data": [
+    {
+      "chinese_name": "拟杆菌属",
+      "latin_name": "Bacteroides",
+      "range": "1.0578-47.3225",
+      "current_value": 0.08974,
+      "progress_percentage": 0,
+      "progress_color": "yellow",
+      "status": {
+        "text": "偏低",
+        "color": "yellow",
+        "direction": "down"
+      },
+      "percentage": "2%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "重要的肠道共生菌，参与碳水化合物代谢，维持肠道稳态，可能影响睡眠。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "建议增加膳食纤维摄入，如全谷物、蔬菜水果等"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌目",
+      "latin_name": "Clostridiales",
+      "range": "6.2649-69.865",
+      "current_value": 87.70725,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "90%",
+      "correlation": "正相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "梭菌目是一类革兰氏阳性厌氧菌，通过肠-脑轴影响神经递质和炎症因子分泌，其失衡可直接导致睡眠质量下降和失眠症状。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "梭菌目超标，建议多吃富含膳食纤维的绿色蔬菜和全麦食品，搭配酸奶、泡菜等发酵食品，同时减少糖和油腻食物的摄入。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "经黏液真杆菌属",
+      "latin_name": "Blautia",
+      "range": "0.0846204-6.9055608",
+      "current_value": 10.17279,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "75%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "经黏液真杆菌属是肠道关键菌种，通过神经递质和炎症调节，可直接影响褪黑激素分泌，导致失眠和睡眠质量下降。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "推荐食用如洋葱、大蒜、香蕉等益生元食物，搭配酸奶、泡菜等发酵食品，并选择如苹果、芦笋、莲藕等纤维丰富的蔬果。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "梭菌属",
+      "latin_name": "Clostridium",
+      "range": "0-4.4645924",
+      "current_value": 1.90370,
+      "progress_percentage": 43,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "67%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "失眠相关，与特定代谢物（Amide c18、Benzoyl chloride、Cytosine和N, n-dimethylarginine）的水平正相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "链球菌属",
+      "latin_name": "Streptococcus",
+      "range": "0-0.3495704",
+      "current_value": 0.31690,
+      "progress_percentage": 91,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "13%",
+      "correlation": "正相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "其丰度在失眠患者中显著高于对照。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "普雷沃氏菌属",
+      "latin_name": "Prevotella",
+      "range": "0-67.8009886",
+      "current_value": 0.04290,
+      "progress_percentage": 0.06,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "50%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与失眠相关的氨基酸代谢和炎症因子IL-1之间存在关联。可能通过调节氨基酸代谢和促炎因子来影响睡眠。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "龙包茨氏菌属",
+      "latin_name": "Romboutsia",
+      "range": "0-0.021404",
+      "current_value": 0.01546,
+      "progress_percentage": 72,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "73%",
+      "correlation": "正相关",
+      "stars": 1,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "丰度在失眠患者中显著增加，而在治疗后有所降低。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "粪杆菌属",
+      "latin_name": "Faecalibacterium",
+      "range": "1.9350868-17.7942438",
+      "current_value": 28.86665,
+      "progress_percentage": 100,
+      "progress_color": "red",
+      "status": {
+        "text": "超标",
+        "color": "red",
+        "direction": "up"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 3,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与慢性失眠负相关，可能与宿主的葡萄糖稳态和脂质代谢有关。"
+        },
+        {
+          "type": "warning",
+          "color": "#e74c3c",
+          "text": "推荐食用如乳杆菌补充、亚麻籽、壳寡糖、棉子糖（甜菜）。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "阿克曼氏菌属",
+      "latin_name": "Akkermansia",
+      "range": "0-5.7984096",
+      "current_value": 0.00460,
+      "progress_percentage": 0.07,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "44%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "增加丰度有助于预防肥胖、动脉粥样硬化和失眠等健康问题。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "长双歧杆菌",
+      "latin_name": "Bifidobacterium longum",
+      "range": "0-6.854",
+      "current_value": 0.01861,
+      "progress_percentage": 0.27,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "99%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "通过改变肠道菌群和抑制肠道细菌LPS的产生，增加认知功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Lachnoclostridium",
+      "latin_name": "Lachnoclostridium",
+      "range": "0-0.2086068",
+      "current_value": 0.17516,
+      "progress_percentage": 83,
+      "progress_color": "green",
+      "status": {
+        "text": "正常",
+        "color": "green"
+      },
+      "percentage": "8%",
+      "correlation": "负相关",
+      "stars": 2,
+      "star_color": "lightgray",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "与失眠患者的自我报告睡眠效率(SE)呈正相关。"
+        }
+      ]
     }
   ]
 }
