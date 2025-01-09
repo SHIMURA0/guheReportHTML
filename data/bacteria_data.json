@@ -5116,6 +5116,396 @@
       ]
     }
   ],
+  "organic_acids_data": [
+    {
+      "chinese_name": "丁酸盐",
+      "latin_name": "Butyrate",
+      "normal_range": "15-98",
+      "detected_abundance": 24,
+      "progress_percentage": 24,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要的短链脂肪酸，为肠道细胞提供能量，具有抗炎和维护肠道屏障功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丙酸盐",
+      "latin_name": "Propionate",
+      "normal_range": "15-98",
+      "detected_abundance": 62,
+      "progress_percentage": 62,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与糖异生过程，调节食欲和能量代谢，具有抗炎作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乙酸盐",
+      "latin_name": "Acetate",
+      "normal_range": "15-98",
+      "detected_abundance": 7,
+      "progress_percentage": 7,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "最丰富的短链脂肪酸，参与脂质代谢，为周边组织提供能量。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "异戊酸盐",
+      "latin_name": "Isovaleric",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "支链氨基酸代谢产物，反映蛋白质发酵状态。"
+        }
+      ]
+    }
+  ],
+
+  "neuroactive_substances_data": [
+    {
+      "chinese_name": "\u03B3-氨基丁酸",
+      "latin_name": "GABA",
+      "normal_range": "15-98",
+      "detected_abundance": 24,
+      "progress_percentage": 24,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "主要的抑制性神经递质，调节神经元兴奋性，参与焦虑、睡眠等功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "血清素",
+      "latin_name": "5-HT",
+      "normal_range": "20-95",
+      "detected_abundance": 99,
+      "progress_percentage": 100,
+      "evaluation": {
+        "status": "超标",
+        "color": "red"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "调节情绪、睡眠和食欲的关键神经递质，影响心理健康状态。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "组胺",
+      "latin_name": "Histamine",
+      "normal_range": "5-95",
+      "detected_abundance": 67,
+      "progress_percentage": 67,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与免疫应答和过敏反应，同时调节觉醒和食欲。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "DOPAC",
+      "latin_name": "DOPAC",
+      "normal_range": "10-95",
+      "detected_abundance": 66,
+      "progress_percentage": 66,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "多巴胺的主要代谢产物，反映多巴胺能神经系统的活性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "雌激素",
+      "latin_name": "Estrogen",
+      "normal_range": "10-95",
+      "detected_abundance": 89,
+      "progress_percentage": 89,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "重要的性激素，影响生殖功能、骨密度和心血管健康。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "多巴胺",
+      "latin_name": "Dopamine",
+      "normal_range": "5-95",
+      "detected_abundance": 87,
+      "progress_percentage": 87,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "与奖励、愉悦、运动功能相关的神经递质，影响动机和行为。"
+        }
+      ]
+    }
+  ],
+
+  "compounds_data": [
+    {
+      "chinese_name": "丁酸盐",
+      "latin_name": "Butyrate",
+      "normal_range": "15-98",
+      "detected_abundance": 24,
+      "progress_percentage": 24,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与血液凝固过程，促进骨骼钙化，具有抗动脉粥样硬化的作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "丙酸盐",
+      "latin_name": "Propionate",
+      "normal_range": "15-98",
+      "detected_abundance": 62,
+      "progress_percentage": 62,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道菌群代谢芳香族氨基酸产生的代谢物，反映肠道菌群的代谢活性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "乙酸盐",
+      "latin_name": "Acetate",
+      "normal_range": "15-98",
+      "detected_abundance": 7,
+      "progress_percentage": 7,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与细胞信号传导，对神经系统功能和胰岛素敏感性有重要影响。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "异戊酸盐",
+      "latin_name": "Isovaleric",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "蛋白质代谢产物，其水平反映肠道菌群的蛋白质降解能力。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "谷氨酸",
+      "latin_name": "Glutamate",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与血液凝固过程，促进骨骼钙化，具有抗动脉粥样硬化的作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "色氨",
+      "latin_name": "Tryptophan",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道菌群代谢芳香族氨基酸产生的代谢物，反映肠道菌群的代谢活性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "喹啉",
+      "latin_name": "Quinolinic",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与细胞信号传导，对神经系统功能和胰岛素敏感性有重要影响。"
+        }
+      ]
+    }
+  ],
+
+  "other_metabolites_data": [
+    {
+      "chinese_name": "维生素K2",
+      "latin_name": "Vitamin K2",
+      "normal_range": "5-95",
+      "detected_abundance": 9,
+      "progress_percentage": 9,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与血液凝固过程，促进骨骼钙化，具有抗动脉粥样硬化的作用。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "对甲酚",
+      "latin_name": "p-Cresol",
+      "normal_range": "0-83",
+      "detected_abundance": 43,
+      "progress_percentage": 52,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道菌群代谢芳香族氨基酸产生的代谢物，反映肠道菌群的代谢活性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肌醇",
+      "latin_name": "Inositol",
+      "normal_range": "5-95",
+      "detected_abundance": 35,
+      "progress_percentage": 35,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与细胞信号传导，对神经系统功能和胰岛素敏感性有重要影响。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "苯酚",
+      "latin_name": "Phenol",
+      "normal_range": "5-85",
+      "detected_abundance": 5,
+      "progress_percentage": 5,
+      "evaluation": {
+        "status": "正常",
+        "color": "green"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "蛋白质代谢产物，其水平反映肠道菌群的蛋白质降解能力。"
+        }
+      ]
+    }
+  ],
+
   "slow_disease_data": [
     {
       "chinese_name": "炎症性肠炎",

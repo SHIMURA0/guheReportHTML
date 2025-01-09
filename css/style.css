@@ -434,6 +434,26 @@ tr {
 .blue { color: blue; }
 .orange { color: orange; }
 
+
+/* 菌群代谢物及神经递质评估板块 */
+
+.microbial-metabolites-first-column {
+  width: 25%;
+}
+.microbial-metabolites-second-column {
+  width: 25%;
+}
+.microbial-metabolites-third-column {
+  width: 25%;
+}
+.microbial-metabolites-fourth-column {
+  width: 25%;
+}
+
+/* 免疫指标评估板块 */
+
+
+
 /* 营养评估板块 */
 .nutrition-container {
   display: flex;

@@ -256,8 +256,8 @@
       <script>
         async function loadCoreBacteriaData() {  // 改名为loadCoreBacteriaData
           try {
-            // const response = await fetch('./data/bacteria_data.json');
-            const response = await fetch("http://localhost:8000/data/bacteria_data.json");
+            const response = await fetch('./data/bacteria_data.json');
+            // const response = await fetch("http://localhost:8000/data/bacteria_data.json");
             // const response = await fetch("file:///Users/shimura/WebstormProject/guheReport/data/bacteria_data.json");
             const data = await response.json();
             renderCoreBacteriaTable(data.core_gut_bacteria_data);  // 保持data.core_gut_bacteria_data不变
@@ -1212,9 +1212,683 @@
 
   </div>
 
-  <!-- 菌群代谢物及神经递质评估板块 -->
+  <!-- 菌群代谢物及神经递质评估板块 ： 首页 -->
 
-  <!-- 免疫指标评估板块 -->
+  <h1 class="custom-title-1 page-break">菌群代谢物及神经递质评估</h1>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            菌群代谢物和神经递质是肠道微生物与宿主相互作用的重要媒介，已发现数百种不同的活性分子。这些代谢物在维持肠道健康和影响宿主生理功能方面发挥着关键作用。健康成年人肠道中的主要代谢产物包括短链脂肪酸（SCFAs）、胆汁酸、色氨酸代谢物和神经递质等。以下是对这些代谢物的详细介绍。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 菌群代谢物及神经递质评估板块 : 有机酸评估 -->
+
+  <h2 class="custom-title-1 page-break">有机酸评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            有机酸类代谢物是由肠道微生物发酵碳水化合物和蛋白质产生的重要中间产物。这些物质参与能量代谢、神经传导和免疫调节等多个生理过程。通过检测这些指标，可以评估肠道微生物的代谢活性和宿主健康状况。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">有机酸名称</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">结果评价</th>
+        </tr>
+        </thead>
+        <tbody id="organic-acids-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadOrganicAcidsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderOrganicAcidsTable(data.organic_acids_data);
+          } catch (error) {
+            console.error('Error loading organic acids data:', error);
+          }
+        }
+
+        function renderOrganicAcidsTable(organicacidsData) {
+          const tableBody = document.getElementById('organic-acids-data-table-body');
+          if (!tableBody) {
+            console.error('Organic acids table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(acid => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('organic-acids-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${acid.chinese_name}</div>
+                <div class="latin-text">${acid.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${acid.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${acid.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${acid.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${acid.evaluation.color}-600 column-text">
+                ${acid.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('organic-acids-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${acid.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadOrganicAcidsData);
+      </script>
+
+    </div>
+  </div>
+
+  <!-- 菌群代谢物及神经递质评估板块 : 神经活性物质评估 -->
+
+  <h2 class="custom-title-1 page-break">神经活性物质评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            神经活性物质是一类在神经系统中发挥重要作用的化学物质，包括神经递质和激素。这些物质参与调节情绪、认知、行为和内分泌功能。通过检测这些指标，可以评估神经系统功能状态和神经内分泌平衡。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">神经活性物质名称</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="neuroactive-substances-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadNeuroActiveData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderNeuroActiveTable(data.neuroactive_substances_data);
+          } catch (error) {
+            console.error('Error loading neuroactive-substances data:', error);
+          }
+        }
+
+        function renderNeuroActiveTable(organicacidsData) {
+          const tableBody = document.getElementById('neuroactive-substances-data-table-body');
+          if (!tableBody) {
+            console.error('Neuroactive-substances table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(neuroactive => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('neuroactive-substances-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${neuroactive.chinese_name}</div>
+                <div class="latin-text">${neuroactive.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${neuroactive.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${neuroactive.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${neuroactive.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${neuroactive.evaluation.color}-600 column-text">
+                ${neuroactive.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('neuroactive-substances-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${neuroactive.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadNeuroActiveData);
+      </script>
+
+    </div>
+  </div>
+
+  <!-- 菌群代谢物及神经递质评估板块 : 含氮/含硫化合物评估物质 -->
+
+  <h2 class="custom-title-1 page-break">含氮/含硫化合物评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            神经活性物质是一类在神经系统中发挥重要作用的化学物质，包括神经递质和激素。这些物质参与调节情绪、认知、行为和内分泌功能。通过检测这些指标，可以评估神经系统功能状态和神经内分泌平衡。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">化合物名称</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="compounds-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadCompoundsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderCompoundsTable(data.compounds_data);
+          } catch (error) {
+            console.error('Error loading compounds data:', error);
+          }
+        }
+
+        function renderCompoundsTable(organicacidsData) {
+          const tableBody = document.getElementById('compounds-data-table-body');
+          if (!tableBody) {
+            console.error('Compounds table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(compounds => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('compounds-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${compounds.chinese_name}</div>
+                <div class="latin-text">${compounds.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${compounds.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${compounds.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${compounds.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${compounds.evaluation.color}-600 column-text">
+                ${compounds.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('compounds-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${compounds.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadCompoundsData);
+      </script>
+
+    </div>
+  </div>
+
+  <!-- 菌群代谢物及神经递质评估板块 : 其他代谢物评估 -->
+
+  <h2 class="custom-title-1 page-break">其他代谢物评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            其他代谢物包含了以下的这些指标。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">其他代谢物名称</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="other-metabolites-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadOtherMetabolitesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderOtherMetabolitesTable(data.other_metabolites_data);
+          } catch (error) {
+            console.error('Error loading other metabolites data:', error);
+          }
+        }
+
+        function renderOtherMetabolitesTable(organicacidsData) {
+          const tableBody = document.getElementById('other-metabolites-data-table-body');
+          if (!tableBody) {
+            console.error('Compounds table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          organicacidsData.forEach(other => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('other-metabolites-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${other.chinese_name}</div>
+                <div class="latin-text">${other.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">${other.normal_range}</td>
+              <td class="py-2 px-4 text-center column-text">
+                ${other.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="width: ${other.progress_percentage}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text text-${other.evaluation.color}-600 column-text">
+                ${other.evaluation.status}
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('other-metabolites-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${other.descriptions.map(desc => `
+                    <div class="organic-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadOtherMetabolitesData);
+      </script>
+
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 首页 -->
+
+  <h1 class="custom-title-1 page-break">免疫指标评估</h1>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            免疫指标是评估人体免疫系统功能状态的重要参数，主要包括体液免疫、细胞免疫、炎症因子和代谢物质等多个类别，总计涵盖数十种具体指标。健康成年人的免疫系统主要由免疫球蛋白（如 IgG、IgA、IgM）、补体系统（C3、C4 等）、细胞因子（IL-1β、IL-6、TNF-α 等）和免疫细胞（T 细胞、B 细胞、NK 细胞等）构成，其中免疫球蛋白和免疫细胞在免疫防御中发挥核心作用，占据免疫防御功能的 80% 以上。我们可以从两个关键维度来评估免疫指标：活性和特异性，这两个维度的结合可以帮助我们更全面地理解不同免疫指标在人体免疫系统中的功能地位和分布特点。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 体液免疫评估 -->
+
+  <h2 class="custom-title-1 page-break">体液免疫评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            体液免疫是机体重要的防御系统，通过产生多种免疫活性物质来识别和清除病原体。通过检测这些指标，可以评估机体的免疫防御能力和炎症状态。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">神经活性物质名称</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="humoral-immunity-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">血清素</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">15-98</td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 炎症感染评估 -->
+
+  <h2 class="custom-title-1 page-break">炎症感染指标评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            炎症标志物是评估机体炎症状态的重要指标。通过检测不同的炎症标志物，可以了解系统的炎症程度。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">炎症感染指标</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="inflammatory-infection-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">血清素</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">15-98</td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 菌群代谢评估 -->
+
+  <h2 class="custom-title-1 page-break">菌群代谢物指标评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群代谢物是评估肠道健康和免疫功能的重要指标。这些指标可以反应肠道微生态平衡状况和炎症反应水平。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">菌群代谢物指标</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="microbial-metabolites-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">血清素</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">15-98</td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 细胞因子指标评估 -->
+
+  <h2 class="custom-title-1 page-break">细胞因子指标评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            细胞因子是免疫系统中重要的信号分子，通过检测不同的细胞因子水平，可以了解机体的免疫状态和炎症程度。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">细胞因子</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="cytokines-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">血清素</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">15-98</td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 免疫指标评估板块 : 免疫肿瘤指标评估 -->
+
+  <h2 class="custom-title-1 page-break">免疫肿瘤指标评估</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肿瘤免疫指标是评估机体抗肿瘤免疫功能的重要标志物，通过检测这些指标可以了解机体的免疫监视和抗肿瘤能力。这些指标的变化可以反映肿瘤的发生发展，也可用于免疫治疗的疗效评估和预后判断。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left microbial-metabolites-first-column">免疫肿瘤指标</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        </tr>
+        </thead>
+        <tbody id="immune-oncology-markers-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">血清素</div>
+            <div class="latin-text">Inflammatory bowel disease</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text">15-98</td>
+          <td class="py-2 px-4 text-center column-text">
+            0.25
+            <div class="progress-bar w-full mt-1">
+              <div class="progress" style="width: 42.6%;"></div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <!-- 营养评估板块 -->
   <h1 class="custom-title-1 page-break">营养饮食指标评估</h1>
