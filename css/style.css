@@ -231,15 +231,15 @@ body {
 .progress {
   height: 100%;
   border-radius: 4px;
-  background-color: #48bb78; /* 绿色 */
+  /*background-color: #48bb78; !* 绿色 *!*/
 }
 .description-container {
   width: 100%;
+  color: #111827; /* 容器内文本的字体颜色，这里选择为更深的灰色 */
   background-color: rgb(235, 248, 248); /* 更新后的描述容器背景色 */
   border-radius: 8px; /* 圆角 */
   padding: 5px; /* 内边距 */
   margin-top: -8px; /* 设置负上边距 */
-  /*margin-bottom: 0px;*/
   font-size: 0.5rem; /* 描述框内字体大小 */
 }
 .description-container > div {
@@ -580,6 +580,22 @@ tr {
 .lack { border-left: 4px solid #FF8989; }
 .insufficient { border-left: 4px solid #FFB489; }
 .excess { border-left: 4px solid #89C3FF; }
+
+/* 营养板块 ： 营养表格列样式 */
+
+.nutrition-first-column {
+  width: 25%; /* 菌种名称需要足够空间显示中英文 */
+}
+.nutrition-second-column {
+  width: 30%; /* 正常范围数值 */
+}
+.nutrition-third-column {
+  width: 25%; /* 检测丰度+进度条需要较大空间 */
+}
+.nutrition-fourth-column {
+  width: 20%; /* 结果评价 */
+}
+
 
 
 /* 疾病相关菌 */

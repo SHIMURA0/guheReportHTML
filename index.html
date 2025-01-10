@@ -2141,7 +2141,7 @@
             descRow.classList.add('cytokines-data-row');
             descRow.innerHTML = `
               <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
+                <div class="description-container">
                   ${immune.descriptions.map(desc => `
                     <div class="microbial-metabolites-description">
                       <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
@@ -2300,8 +2300,8 @@
 
   </div>
 
-  <!-- 日常饮食评估板块 -->
-  <h3 class="custom-title-1 page-break">日常饮食评估</h3>
+  <!-- 日常饮食和矿物质微量元素评估板块 -->
+  <h3 class="custom-title-1 page-break">日常饮食和矿物质微量元素评估</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -2316,57 +2316,120 @@
       </div>
     </div>
 
-    <!-- 核心菌属表格 -->
+    <!-- 日常饮食表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">评估指标</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left nutrition-first-column">饮食指标</th>
+          <th class="py-2 px-4 text-center nutrition-second-column">正常范围（缺乏-不足-过量）</th>
+          <th class="py-2 px-4 text-center nutrition-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center nutrition-fourth-column">评估结果</th>
         </tr>
         </thead>
-        <tbody>
-        <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">糖</div>
-            <div class="latin-text">Sugar</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                碳水化合物的一种，提供快速能量，参与代谢过程。
-              </div>
-<!--              <div>-->
-<!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
-<!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
-<!--              </div>-->
-            </div>
-          </td>
-        </tr>
-
+        <tbody id="daily-food-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
+
+      <script>
+        async function loadDailyFoodData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderDailyFoodTable(data.daily_food_data);
+          } catch (error) {
+            console.error('Error loading daily food data:', error);
+          }
+        }
+
+        function renderDailyFoodTable(dailyfoodData) {
+          const tableBody = document.getElementById('daily-food-data-table-body');
+          if (!tableBody) {
+            console.error('Daily food data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          dailyfoodData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('cytokines-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${[
+                    food.normal_range.Deficiency ?? 0,
+                    food.normal_range.Insufficiency ?? 0,
+                    food.normal_range.Excess ?? 0
+                  ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${food.Evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="
+                    width: ${Math.min(100, Math.round((food.Evaluation_value / food.normal_range.Excess) * 100))}%;
+                    background-color: ${
+                      food.Evaluation_value < food.normal_range.Deficiency ? '#ff4d4f' :
+                      food.Evaluation_value < food.normal_range.Insufficiency ? '#fadb14' :
+                      food.Evaluation_value < food.normal_range.Excess ? '#52c41a' : '#1890ff'
+                    };
+                  "></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center column-text" style="
+                color: ${
+                  food.Evaluation_value < food.normal_range.Deficiency ? '#ff4d4f' :
+                  food.Evaluation_value < food.normal_range.Insufficiency ? '#fadb14' :
+                  food.Evaluation_value < food.normal_range.Excess ? '#52c41a' : '#1890ff'
+                };
+                font-weight : bold;">
+                ${
+                  food.Evaluation_value < food.normal_range.Deficiency ? '缺乏' :
+                  food.Evaluation_value < food.normal_range.Insufficiency ? '不足' :
+                  food.Evaluation_value < food.normal_range.Excess ? '正常' : '过量'
+                }
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('cytokines-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container">
+                  ${food.descriptions.map(desc => `
+                    <div class="microbial-metabolites-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadDailyFoodData);
+      </script>
+
     </div>
 
   </div>
 
-  <!-- 矿物质微量元素和有机酸评估板块 -->
-  <h3 class="custom-title-1 page-break">矿物质微量元素和有机酸评估</h3>
+  <!-- 短链脂肪酸评估板块 -->
+  <h3 class="custom-title-1 page-break">短链脂肪酸评估</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -2381,51 +2444,115 @@
       </div>
     </div>
 
-    <!-- 核心菌属表格 -->
+    <!-- 短链脂肪酸表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">评估指标</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left nutrition-first-column">评估指标</th>
+          <th class="py-2 px-4 text-center nutrition-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center nutrition-third-column">评估数值</th>
+          <th class="py-2 px-4 text-center nutrition-fourth-column">评估结果</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="short-chain-fatty-acids-data-table-body">
         <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">糖</div>
-            <div class="latin-text">Sugar</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                碳水化合物的一种，提供快速能量，参与代谢过程。
-              </div>
-              <!--              <div>-->
-              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
-              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
-              <!--              </div>-->
-            </div>
-          </td>
-        </tr>
-
         </tbody>
       </table>
+
+      <script>
+        <!-- SCFAs is an abbreviation for short chain fatty acids -->
+        async function loadSCFAsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderSCFAsTable(data.short_chain_fatty_acids_data);
+          } catch (error) {
+            console.error('Error loading Short-Chain Fatty Acids data:', error);
+          }
+        }
+
+        function renderSCFAsTable(scfasData) {
+          const tableBody = document.getElementById('short-chain-fatty-acids-data-table-body');
+          if (!tableBody) {
+            console.error('Short-Chain Fatty Acids data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          scfasData.forEach(scfas => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('short-chain-fatty-acids-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${scfas.chinese_name}</div>
+                <div class="latin-text">${scfas.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${[
+              scfas.normal_range.Deficiency ?? 0,
+              scfas.normal_range.Insufficiency ?? 0,
+              scfas.normal_range.Excess ?? 0
+            ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${scfas.Evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="
+                    width: ${Math.min(100, Math.round((scfas.Evaluation_value / scfas.normal_range.Excess) * 100))}%;
+                    background-color: ${
+              scfas.Evaluation_value < scfas.normal_range.Deficiency ? '#ff4d4f' :
+                scfas.Evaluation_value < scfas.normal_range.Insufficiency ? '#fadb14' :
+                  scfas.Evaluation_value < scfas.normal_range.Excess ? '#52c41a' : '#1890ff'
+            };
+                  "></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center column-text" style="
+                color: ${
+              scfas.Evaluation_value < scfas.normal_range.Deficiency ? '#ff4d4f' :
+                scfas.Evaluation_value < scfas.normal_range.Insufficiency ? '#fadb14' :
+                  scfas.Evaluation_value < scfas.normal_range.Excess ? '#52c41a' : '#1890ff'
+            };
+                font-weight : bold;">
+                ${
+              scfas.Evaluation_value < scfas.normal_range.Deficiency ? '缺乏' :
+                scfas.Evaluation_value < scfas.normal_range.Insufficiency ? '不足' :
+                  scfas.Evaluation_value < scfas.normal_range.Excess ? '正常' : '过量'
+            }
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('short-chain-fatty-acids-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container">
+                  ${scfas.descriptions.map(desc => `
+                    <div class="microbial-metabolites-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadSCFAsData);
+      </script>
+
     </div>
 
   </div>
@@ -2458,39 +2585,103 @@
           <th class="py-2 px-4 text-center fourth-column">评估结果</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="vitamins-data-table-body">
         <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">维生素A</div>
-            <div class="latin-text">Vitamin A</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                碳水化合物的一种，提供快速能量，参与代谢过程。
-              </div>
-              <!--              <div>-->
-              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
-              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
-              <!--              </div>-->
-            </div>
-          </td>
-        </tr>
-
         </tbody>
       </table>
+
+      <script>
+        async function loadVitaminsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderVitaminsTable(data.vitamins_data);
+          } catch (error) {
+            console.error('Error loading vitamins data:', error);
+          }
+        }
+
+        function renderVitaminsTable(vitaminsData) {
+          const tableBody = document.getElementById('vitamins-data-table-body');
+          if (!tableBody) {
+            console.error('Vitamins data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          vitaminsData.forEach(vitamins => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('vitamins-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${vitamins.chinese_name}</div>
+                <div class="latin-text">${vitamins.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${[
+              vitamins.normal_range.Deficiency ?? 0,
+              vitamins.normal_range.Insufficiency ?? 0,
+              vitamins.normal_range.Excess ?? 0
+            ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${vitamins.Evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="
+                    width: ${Math.min(100, Math.round((vitamins.Evaluation_value / vitamins.normal_range.Excess) * 100))}%;
+                    background-color: ${
+                      vitamins.Evaluation_value < vitamins.normal_range.Deficiency ? '#ff4d4f' :
+                      vitamins.Evaluation_value < vitamins.normal_range.Insufficiency ? '#fadb14' :
+                      vitamins.Evaluation_value < vitamins.normal_range.Excess ? '#52c41a' : '#1890ff'
+                    };
+                  "></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center column-text" style="
+                color: ${
+                  vitamins.Evaluation_value < vitamins.normal_range.Deficiency ? '#ff4d4f' :
+                  vitamins.Evaluation_value < vitamins.normal_range.Insufficiency ? '#fadb14' :
+                  vitamins.Evaluation_value < vitamins.normal_range.Excess ? '#52c41a' : '#1890ff'
+                };
+                font-weight : bold;
+              ">
+                ${
+                  vitamins.Evaluation_value < vitamins.normal_range.Deficiency ? '缺乏' :
+                  vitamins.Evaluation_value < vitamins.normal_range.Insufficiency ? '不足' :
+                  vitamins.Evaluation_value < vitamins.normal_range.Excess ? '正常' : '过量'
+                }
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('vitamins-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container">
+                  ${vitamins.descriptions.map(desc => `
+                    <div class="vitamins-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadVitaminsData);
+      </script>
+
     </div>
 
   </div>
@@ -2511,7 +2702,7 @@
       </div>
     </div>
 
-    <!-- 维生素表格 -->
+    <!-- 氨基酸表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
@@ -2523,39 +2714,103 @@
           <th class="py-2 px-4 text-center fourth-column">评估结果</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="amino-acids-data-table-body">
         <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">维生素A</div>
-            <div class="latin-text">Vitamin A</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                碳水化合物的一种，提供快速能量，参与代谢过程。
-              </div>
-              <!--              <div>-->
-              <!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
-              <!--                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。-->
-              <!--              </div>-->
-            </div>
-          </td>
-        </tr>
-
         </tbody>
       </table>
+
+      <script>
+        async function loadAminoAcidsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderAminoAcidsTable(data.amino_acids_data);
+          } catch (error) {
+            console.error('Error loading amino acids data:', error);
+          }
+        }
+
+        function renderAminoAcidsTable(aminoacidsData) {
+          const tableBody = document.getElementById('amino-acids-data-table-body');
+          if (!tableBody) {
+            console.error('Amino acids data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          aminoacidsData.forEach(aminoacids => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('amino-acids-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${aminoacids.chinese_name}</div>
+                <div class="latin-text">${aminoacids.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                  ${[
+                    aminoacids.normal_range.Deficiency ?? 0,
+                    aminoacids.normal_range.Insufficiency ?? 0,
+                    aminoacids.normal_range.Excess ?? 0
+                  ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${aminoacids.Evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress" style="
+                    width: ${Math.min(100, Math.round((aminoacids.Evaluation_value / aminoacids.normal_range.Excess) * 100))}%;
+                    background-color: ${
+                      aminoacids.Evaluation_value < aminoacids.normal_range.Deficiency ? '#ff4d4f' :
+                      aminoacids.Evaluation_value < aminoacids.normal_range.Insufficiency ? '#fadb14' :
+                      aminoacids.Evaluation_value < aminoacids.normal_range.Excess ? '#52c41a' : '#1890ff'
+                    };
+                  "></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center column-text" style="
+                color: ${
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Deficiency ? '#ff4d4f' :
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Insufficiency ? '#fadb14' :
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Excess ? '#52c41a' : '#1890ff'
+                };
+                font-weight : bold;
+              ">
+                ${
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Deficiency ? '缺乏' :
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Insufficiency ? '不足' :
+                  aminoacids.Evaluation_value < aminoacids.normal_range.Excess ? '正常' : '过量'
+                }
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('amino-acids-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container">
+                  ${aminoacids.descriptions.map(desc => `
+                    <div class="amino-acids-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadAminoAcidsData);
+      </script>
+
     </div>
 
   </div>
