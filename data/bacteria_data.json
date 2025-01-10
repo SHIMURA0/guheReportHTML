@@ -10624,5 +10624,24 @@
         }
       ]
     }
+  ],
+
+  "detected_gut_bacteria_data": [
+    {
+      "chinese_name": "普氏粪类杆菌",
+      "latin_name": "Faecalibacterium prausnitzii",
+      "normal_range": {
+        "min_normal_value": 0.18043,
+        "max_normal_value": 14.003
+      },
+      "detected_value": 0.17516,
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "普氏粪类杆菌在分解复杂的碳水化合物（如膳食纤维）方面发挥重要作用，帮助宿主消化食物并吸收营养。"
+        }
+      ]
+    }
   ]
 }

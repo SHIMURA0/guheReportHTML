@@ -27,8 +27,6 @@ body {
   color: rgb(0, 178, 180); /* 字体颜色 */
   font-size: 3rem; /* 字体大小 */
   font-weight: bold; /* 使用 'bold' 使字体变粗 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  border: 1px solid rgba(0, 178, 180, 0.3); /* 边框 */
 }
 
 .custom-title {
@@ -41,8 +39,6 @@ body {
   color: rgb(0, 178, 180); /* 字体颜色 */
   font-size: 2.5rem; /* 字体大小 */
   font-weight: bold; /* 使用 'bold' 使字体变粗 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  border: 1px solid rgba(0, 178, 180, 0.3); /* 边框 */
 }
 
 /* 打印样式 */
@@ -192,7 +188,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: rgb(0, 178, 180); /* customTeal */
-  background-color: #f0f0f0; /* 灰色背景 */
+  background-color: #f8f9fa; /* 灰色背景 */
   margin-bottom: 10px;
   text-align: center;
 }
@@ -202,7 +198,6 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin: 10px 0;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   flex: 1; /* 使卡片等高 */
   display: flex; /* 使卡片内容垂直排列 */
   flex-direction: column; /* 垂直排列内容 */
@@ -219,9 +214,9 @@ body {
 .core { background-color: #bbdefb; } /* 核心菌属 */
 .non-core { background-color: #e1bee7; } /* 非核心重要菌属 */
 .beneficial { background-color: #c8e6c9; } /* 有益菌 */
-.harmful { background-color: #ef9a9a; } /* 有害菌 */
+.harmful { background-color: #ffcdd2; } /* 有害菌 */
 .opportunistic { background-color: #ffe0b2; } /* 机会致病菌 */
-.pathogenic { background-color: #ffcdd2; } /* 致病菌 */
+.pathogenic { background-color: #ef9a9a; } /* 致病菌 */
 
 .progress-bar {
   height: 8px;
@@ -437,6 +432,60 @@ tr {
 
 /* 菌群代谢物及神经递质评估板块 */
 
+/* 菌群代谢物及神经递质评估板块 : 总结页卡片信息图表样式 */
+
+.metabolism-card {
+  display: flex;
+  align-items: stretch;  /* 改为stretch，使子元素高度相等 */
+  margin-bottom: 20px;
+  gap: 10px;
+  min-height: 80px;    /* 设置最小高度 */
+}
+
+.metabolism-icon-box {
+  width: 200px;
+  /* 删除固定高度，让它自适应父容器高度 */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  padding: 20px;        /* 添加内边距 */
+  gap: 10px;
+}
+
+.metabolism-content-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  flex-grow: 1;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  display: flex;        /* 添加flex布局 */
+  align-items: center;  /* 文字垂直居中 */
+}
+
+/* 颜色主题 */
+.organic-acid {
+  background: #4CAF50;  /* 清新的绿色 */
+}
+
+.neuroactive {
+  background: #7E57C2;  /* 优雅的紫色 */
+}
+
+.nitrogen-sulfur {
+  background: #26A69A;  /* 青绿色 */
+}
+
+.other-metabolites {
+  background: #5C6BC0;  /* 靛蓝色 */
+}
+
+/* 菌群代谢物及神经递质评估板块 : 表格样式 */
+
 .microbial-metabolites-first-column {
   width: 25%;
 }
@@ -451,6 +500,63 @@ tr {
 }
 
 /* 免疫指标评估板块 */
+
+/* 免疫板块 ： 总结页卡片样式 */
+
+.immunity-card {
+  display: flex;
+  align-items: stretch;  /* 改为stretch，使子元素高度相等 */
+  margin-bottom: 20px;
+  gap: 10px;
+  min-height: 80px;    /* 设置最小高度 */
+}
+
+.immunity-icon-box {
+  width: 150px;
+  /* 删除固定高度，让它自适应父容器高度 */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  padding: 20px;        /* 添加内边距 */
+  gap: 10px;
+}
+
+.immunity-content-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  flex-grow: 1;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  display: flex;        /* 添加flex布局 */
+  align-items: center;  /* 文字垂直居中 */
+}
+
+.immune {
+  background: #4e7bef;
+}
+
+.inflammation {
+  background: #e47470;
+}
+
+.metabolism {
+  background: #52b788;
+}
+
+.cytokine {
+  background: #9f86c0;
+}
+
+.cancer {
+  background: #e9b949;
+}
+
+/* 免疫板块 ： 表格样式 */
 
 .immunity-first-column {
   width: 25%;
