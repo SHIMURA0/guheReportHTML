@@ -75,6 +75,14 @@ body {
   color: #a0aec0; /* 自定义灰色 */
 }
 
+/* 肠道整体评估 : 肠道基础功能 */
+
+.basic-function-of-gut-first-column{ width: 25% }
+.basic-function-of-gut-second-column{ width: 25% }
+.basic-function-of-gut-third-column{ width: 25% }
+.basic-function-of-gut-fourth-column{ width: 25% }
+
+
 
 .bar-container {
   display: flex;
@@ -765,3 +773,10 @@ tr {
 .detected-gut-fungi-second-column{ width: 25% }
 .detected-gut-fungi-third-column{ width: 20% }
 .detected-gut-fungi-fourth-column{ width: 15% }
+
+/* 检出肠道真核生物板块 */
+
+.detected-gut-eukaryotes-first-column{ width: 40% }
+.detected-gut-eukaryotes-second-column{ width: 25% }
+.detected-gut-eukaryotes-third-column{ width: 20% }
+.detected-gut-eukaryotes-fourth-column{ width: 15% }

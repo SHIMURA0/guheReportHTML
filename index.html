@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <!-- 帮助浏览器正确显示（通用）中文文字 -->
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,19 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-white p-5">
-  <!-- 第二页，宏基因组报告阅读指南 -->
+
+<body class="bg-white p-5">、
+
+  <!-- 宏基因组检测报告总结页 -->
+  <h1 class="custom-title-1 page-break">宏基因组检测报告</h1>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+
+
+  </div>
+
+  <!-- 宏基因组报告阅读指南 -->
   <h1 class="custom-title-1">宏基因报告阅读报告</h1>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -81,6 +93,128 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- 肠道整体评估板块 -->
+  <h1 class="custom-title-1 page-break">肠道整体评估</h1>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+
+
+  </div>
+
+
+  <!-- 肠道整体评估 : 肠道基础功能评估 -->
+  <h2 class="custom-title-1 page-break">肠道基础功能评估</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left basic-function-of-gut-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column">结果评价</th>
+        </tr>
+        </thead>
+        <tbody id="basic-functions-of-gut-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadBasicFunctionOfGutData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderBasicFunctionOfGutTable(data.basic_function_of_gut_data);
+          } catch (error) {
+            console.error('Error loading detected gut eukaryotes data:', error);
+          }
+        }
+
+        function renderBasicFunctionOfGutTable(detectedGutFungiData) {
+          const tableBody = document.getElementById('basic-functions-of-gut-data-table-body');
+          if (!tableBody) {
+            console.error('Detected gut eukaryotes data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          detectedGutFungiData.forEach(eukaryotes => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('depression-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${eukaryotes.chinese_name}</div>
+                  <div class="latin-text text-gray-500">${eukaryotes.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${[
+              eukaryotes.normal_range.min_normal_value ?? 0,
+              eukaryotes.normal_range.max_normal_value ?? 0
+            ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${eukaryotes.evaluated_value}
+                  <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                      <div class="progress bg-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
+                           style="width: ${Math.min(100, (eukaryotes.evaluated_value / eukaryotes.normal_range.max_normal_value * 100))}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center text-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+                ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '缺乏' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '超标' : '正常'}
+                <i class="fas ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('detected-gut-eukaryotes-data-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+              <td colSpan="7" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${eukaryotes.descriptions.map(desc => `
+                          <div class="detected-gut-eukaryotes-description">
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadBasicFunctionOfGutData);
+      </script>
+    </div>
+
+  </div>
+
+  <!-- 肠道整体评估 : 肠道菌群评估 -->
+  <h2 class="custom-title-1 page-break">肠道菌群整体评估</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+
+
   </div>
 
   <!-- 肠道菌群检测模块 -->
@@ -4090,10 +4224,10 @@
       <table class="min-w-full">
         <thead>
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left detected-gut-fungi-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center detected-gut-fungi-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center detected-gut-fungi-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center detected-gut-fungi-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-left detected-gut-eukaryotes-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center detected-gut-eukaryotes-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center detected-gut-eukaryotes-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center detected-gut-eukaryotes-fourth-column">结果评价</th>
         </tr>
         </thead>
         <tbody id="detected-gut-eukaryotes-data-table-body">

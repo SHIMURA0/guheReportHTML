@@ -1,4 +1,125 @@
 {
+  "basic_function_of_gut_data": [
+    {
+      "chinese_name": "蛋白发酵",
+      "english_name": "Protein fermentation",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 70
+      },
+      "evaluated_value": 3,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "反映肠道菌群对蛋白质的分解能力，影响氨基酸的吸收和利用效率。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "消化效率",
+      "english_name": "Digestive Efficiency",
+      "normal_range": {
+        "min_normal_value": 25,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 99,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "评估肠道对各类营养物质的消化吸收能力，包括碳水化合物、脂肪和蛋白质的处理效率。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠道产气",
+      "english_name": "Intestinal Gas Production",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 70
+      },
+      "evaluated_value": 47,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "反映肠道菌群发酵过程的活跃程度，与肠道微生态平衡密切相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠道屏障",
+      "english_name": "Intestinal Barrier",
+      "normal_range": {
+        "min_normal_value": 25,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 28,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "评估肠黏膜的完整性和防御功能，是阻止有害物质进入体内的重要屏障。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠道炎症",
+      "english_name": "Intestinal Inflammation",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 75
+      },
+      "evaluated_value": 18,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "反映肠道免疫状态和炎症反应水平，是肠道健康的重要指标。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "代谢健康",
+      "english_name": "Metabolic health",
+      "normal_range": {
+        "min_normal_value": 25,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 1,
+      "status": "缺乏",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "反映肠道整体的代谢状态和效率，是评估机体能量代谢和营养物质转化的重要指标。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "草酸盐代谢",
+      "english_name": "Oxalate metabolism",
+      "normal_range": {
+        "min_normal_value": 25,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 1,
+      "status": "缺乏",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "评估肠道对草酸盐的处理能力，与肾结石风险和钙吸收密切相关。"
+        }
+      ]
+    }
+  ],
   "core_gut_bacteria_data": [
     {
       "chinese_name": "梭菌属",
