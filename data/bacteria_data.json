@@ -120,6 +120,149 @@
       ]
     }
   ],
+  "overall_evaluation_of_gut_microbiome_data": [
+    {
+      "chinese_name": "菌种数量",
+      "english_name": "Gut microbial species count",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 101,
+      "status": "超标",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "反映肠道微生物的总体丰度，是评估肠道微生态稳定性的基础指标。"
+        },
+        {
+          "type": "suggestion",
+          "color": "#2ecc71",
+          "text": "可通过增加膳食纤维、限制糖分和加工食品、摄入发酵食品、保持规律作息和锻炼、管理压力，以及考虑益生菌补充剂来实现。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "菌种多样性",
+      "english_name": "Gut microbial diversity",
+      "normal_range": {
+        "min_normal_value": 15,
+        "max_normal_value": 95
+      },
+      "evaluated_value": 36,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "表征肠道菌群的物种丰富度和均匀度，高多样性通常预示着更稳定的微生态系统。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "菌群平衡",
+      "english_name": "Gut microbiota balance",
+      "normal_range": {
+        "min_normal_value": 15,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 94,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "评估有益菌与有害菌的比例关系，反映肠道微生态的协调程度。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "菌群恢复力",
+      "english_name": "Gut microbial resilience",
+      "normal_range": {
+        "min_normal_value": 25,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 8,
+      "status": "缺乏",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "衡量肠道菌群对外界干扰的抵抗能力和自我修复能力。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "有益菌",
+      "english_name": "Beneficial bacteria",
+      "normal_range": {
+        "min_normal_value": 16,
+        "max_normal_value": 100
+      },
+      "evaluated_value": 94,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "包括双歧杆菌、乳酸菌等对肠道健康有利的菌群，能促进营养物质吸收和免疫功能。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "有害菌",
+      "english_name": "Pathogenic bacteria",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 84
+      },
+      "evaluated_value": 34,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "指可能导致肠道功能紊乱的菌群，过高水平可能引起消化问题。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "革兰氏阴性菌",
+      "english_name": "Gram-negative bacteria",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.4
+      },
+      "evaluated_value": 0,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "这类细菌的细胞壁结构特殊，与某些疾病风险相关。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "好氧菌",
+      "english_name": "Aerobic bacteria",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.3
+      },
+      "evaluated_value": 0,
+      "status": "正常",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "需要氧气生存的菌群，反映肠道氧化还原环境状态。"
+        }
+      ]
+    }
+  ],
   "core_gut_bacteria_data": [
     {
       "chinese_name": "梭菌属",

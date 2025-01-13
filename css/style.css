@@ -83,79 +83,27 @@ body {
 .basic-function-of-gut-fourth-column{ width: 25% }
 
 
+/* 肠道整体评估 : 肠道菌群评估 */
 
-.bar-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-  height: 40px;
+.overall-evaluation-of-gut-first-column{ width: 25% }
+.overall-evaluation-of-gut-second-column{ width: 25% }
+.overall-evaluation-of-gut-third-column{ width: 25% }
+.overall-evaluation-of-gut-fourth-column{ width: 25% }
+
+
+
+/* 肠道菌群检测模块 : 总结页肠道菌群组成比例说明信息图样式*/
+
+.overall-progress-container {
+  background-color: #f3f4f6;
+  border-radius: 9999px;
 }
-
-.label {
-  width: 120px;
-  font-size: 16px;
-  font-weight: 600;
-  padding-right: 20px;
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.bar-wrapper {
-  width: 500px; /* 固定宽度 */
+.overall-progress-bar {
   height: 24px;
-  position: relative;
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  margin-right: 15px; /* 添加右边距，给百分比数字留空间 */
+  border-radius: 9999px;
+  transition: width 0.5s ease-in-out;
 }
 
-.bar {
-  height: 100%;
-  border-radius: 12px;
-  transition: width 0.3s ease;
-}
-
-.percentage {
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 10px; /* 与进度条保持一定距离 */
-}
-
-/* 各类型样式 */
-.type-bacteria .label,
-.type-bacteria .percentage { color: #4A90E2; }
-.type-bacteria .bar {
-  background-color: #4A90E2;
-  width: 90%;
-}
-
-.type-virus .label,
-.type-virus .percentage { color: #27AE60; }
-.type-virus .bar {
-  background-color: #27AE60;
-  width: 5%;
-}
-
-.type-fungus .label,
-.type-fungus .percentage { color: #9B59B6; }
-.type-fungus .bar {
-  background-color: #9B59B6;
-  width: 3%;
-}
-
-.type-protozoan .label,
-.type-protozoan .percentage { color: #F39C12; }
-.type-protozoan .bar {
-  background-color: #F39C12;
-  width: 1%;
-}
-
-.type-parasite .label,
-.type-parasite .percentage { color: #E74C3C; }
-.type-parasite .bar {
-  background-color: #E74C3C;
-  width: 1%;
-}
 
 /* 肠道菌群细菌分类版块*/
 
