@@ -3871,13 +3871,8 @@
 
 
 
-
-
-
-
-
-
   </div>
+
 
   <!-- 实际检出肠道菌群板块 : 检出细菌 -->
 
@@ -3923,52 +3918,51 @@
           detectedGutBacteriaData.forEach(Bacteria => {
             // 创建数据行
             const dataRow = document.createElement('tr');
-            // dataRow.className = 'border-b border-gray-200';
             dataRow.classList.add('depression-row');
             dataRow.innerHTML = `
-                <td class="py-2 px-4 text-left first-column">
-                    <div class="chinese-text">${Bacteria.chinese_name}</div>
-                    <div class="latin-text text-gray-500">${Bacteria.latin_name}</div>
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${[
-                      Bacteria.normal_range.min_normal_value ?? 0,
-                      Bacteria.normal_range.max_normal_value ?? 0
-                    ].join('-')}
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${Bacteria.detected_value}
-                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                        <div class="progress bg-${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'yellow' :
-                                  Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
-                             style="width: ${Math.min(100, (Bacteria.detected_value / Bacteria.normal_range.max_normal_value * 100))}%;"></div>
-                    </div>
-                </td>
-                <td class="py-2 px-4 text-center text-${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'yellow' :
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${Bacteria.chinese_name}</div>
+                  <div class="latin-text text-gray-500">${Bacteria.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${[
+                    Bacteria.normal_range.min_normal_value ?? 0,
+                    Bacteria.normal_range.max_normal_value ?? 0
+                  ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${Bacteria.detected_value}
+                  <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                      <div class="progress bg-${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'yellow' :
+                                Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
+                           style="width: ${Math.min(100, (Bacteria.detected_value / Bacteria.normal_range.max_normal_value * 100))}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center text-${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'yellow' :
               Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
-    ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? '缺乏' :
-              Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? '超标' : '正常'}
-    <i class="fas ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'fa-arrow-down' :
-              Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
-</td>
+                ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? '缺乏' :
+                Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? '超标' : '正常'}
+                <i class="fas ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'fa-arrow-down' :
+                Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
+              </td>
             `;
 
             // 创建描述行
             const descRow = document.createElement('tr');
-            descRow.classList.add('depressiondata-desc-row')
+            descRow.classList.add('detected-gut-bacteria-data-desc-row')
             // colSpan="7" 因为肥胖相关菌的表格有7列
             descRow.innerHTML = `
-                <td colSpan="7" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600">
-                        ${Bacteria.descriptions.map(desc => `
-                            <div class="constipation-description">
-                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                   style="color: ${desc.color};"></i>
-                                ${desc.text}
-                            </div>
-                        `).join('')}
-                    </div>
-                </td>
+              <td colSpan="7" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${Bacteria.descriptions.map(desc => `
+                          <div class="detected-gut-bacteria-description">
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
             `;
 
             // 添加到表格
@@ -3980,18 +3974,214 @@
         // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadDetectedGutBacteriaData);
       </script>
-
     </div>
-
-
-
-
-
-
-
-
   </div>
 
+  <!-- 实际检出肠道菌群板块 : 检出真菌 -->
+
+  <h2 class="custom-title-1 page-break">检出肠道真菌</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left detected-gut-fungi-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-fourth-column">结果评价</th>
+        </tr>
+        </thead>
+        <tbody id="detected-gut-fungi-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadDetectedGutFungiData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderDetectedGutFungiTable(data.detected_gut_fungi_data);
+          } catch (error) {
+            console.error('Error loading detected gut fungi data:', error);
+          }
+        }
+
+        function renderDetectedGutFungiTable(detectedGutFungiData) {
+          const tableBody = document.getElementById('detected-gut-fungi-data-table-body');
+          if (!tableBody) {
+            console.error('Detected gut fungi data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          detectedGutFungiData.forEach(fungi => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('depression-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${fungi.chinese_name}</div>
+                  <div class="latin-text text-gray-500">${fungi.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${[
+              fungi.normal_range.min_normal_value ?? 0,
+              fungi.normal_range.max_normal_value ?? 0
+            ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${fungi.detected_value}
+                  <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                      <div class="progress bg-${fungi.detected_value < fungi.normal_range.min_normal_value ? 'yellow' :
+              fungi.detected_value > fungi.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
+                           style="width: ${Math.min(100, (fungi.detected_value / fungi.normal_range.max_normal_value * 100))}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center text-${fungi.detected_value < fungi.normal_range.min_normal_value ? 'yellow' :
+              fungi.detected_value > fungi.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+                ${fungi.detected_value < fungi.normal_range.min_normal_value ? '缺乏' :
+              fungi.detected_value > fungi.normal_range.max_normal_value ? '超标' : '正常'}
+                <i class="fas ${fungi.detected_value < fungi.normal_range.min_normal_value ? 'fa-arrow-down' :
+              fungi.detected_value > fungi.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('detected-gut-fungi-data-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+              <td colSpan="7" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${fungi.descriptions.map(desc => `
+                          <div class="detected-gut-fungi-description">
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadDetectedGutFungiData);
+      </script>
+    </div>
+  </div>
+
+  <!-- 实际检出肠道菌群板块 : 检出真核生物 -->
+
+  <h2 class="custom-title-1 page-break">检出肠道真核生物</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left detected-gut-fungi-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center detected-gut-fungi-fourth-column">结果评价</th>
+        </tr>
+        </thead>
+        <tbody id="detected-gut-eukaryotes-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
+      </table>
+
+      <script>
+        async function loadDetectedGutEukaryotesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderDetectedGutEukaryotesTable(data.detected_gut_eukaryotes_data);
+          } catch (error) {
+            console.error('Error loading detected gut eukaryotes data:', error);
+          }
+        }
+
+        function renderDetectedGutEukaryotesTable(detectedGutFungiData) {
+          const tableBody = document.getElementById('detected-gut-eukaryotes-data-table-body');
+          if (!tableBody) {
+            console.error('Detected gut eukaryotes data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          detectedGutFungiData.forEach(eukaryotes => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('depression-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                  <div class="chinese-text">${eukaryotes.chinese_name}</div>
+                  <div class="latin-text text-gray-500">${eukaryotes.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${[
+              eukaryotes.normal_range.min_normal_value ?? 0,
+              eukaryotes.normal_range.max_normal_value ?? 0
+            ].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center disease-column-text">
+                  ${eukaryotes.detected_value}
+                  <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
+                      <div class="progress bg-${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
+              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
+                           style="width: ${Math.min(100, (eukaryotes.detected_value / eukaryotes.normal_range.max_normal_value * 100))}%;"></div>
+                  </div>
+              </td>
+              <td class="py-2 px-4 text-center text-${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
+              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+                ${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? '缺乏' :
+              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? '超标' : '正常'}
+                <i class="fas ${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
+              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
+              </td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('detected-gut-eukaryotes-data-desc-row')
+            // colSpan="7" 因为肥胖相关菌的表格有7列
+            descRow.innerHTML = `
+              <td colSpan="7" class="py-2 px-4 text-left">
+                  <div class="description-container text-gray-600">
+                      ${eukaryotes.descriptions.map(desc => `
+                          <div class="detected-gut-eukaryotes-description">
+                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                 style="color: ${desc.color};"></i>
+                              ${desc.text}
+                          </div>
+                      `).join('')}
+                  </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadDetectedGutEukaryotesData);
+      </script>
+    </div>
+  </div>
 
 
 </body>

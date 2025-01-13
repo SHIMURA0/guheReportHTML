@@ -750,3 +750,18 @@ tr {
 .food-column-text {
   font-size: 0.6rem; /* 控制每一列的字体大小 */
 }
+
+
+/* 检出肠道细菌板块 */
+
+.detected-gut-microbiota-first-column{ width: 40% }
+.detected-gut-microbiota-second-column{ width: 25% }
+.detected-gut-microbiota-third-column{ width: 20% }
+.detected-gut-microbiota-fourth-column{ width: 15% }
+
+/* 检出肠道真菌板块 */
+
+.detected-gut-fungi-first-column{ width: 40% }
+.detected-gut-fungi-second-column{ width: 25% }
+.detected-gut-fungi-third-column{ width: 20% }
+.detected-gut-fungi-fourth-column{ width: 15% }
