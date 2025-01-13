@@ -3242,49 +3242,130 @@
       </div>
     </div>
 
-    <!-- 慢病风险表格 -->
+    <!-- 慢病风险评估板块 : 慢病风险表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">评估指标</th>
-          <th class="py-2 px-4 text-center third-column">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left slow-disease-first-column">评估疾病</th>
+          <th class="py-2 px-4 text-center slow-disease-second-column">风险评估数值</th>
+          <th class="py-2 px-4 text-center slow-disease-third-column">风险评估</th>
+          <th class="py-2 px-4 text-center slow-disease-fourth-column">疾病分类</th>
         </tr>
         </thead>
         <tbody id="slow-disease-table-body">
-        <!-- 数据行 -->
-<!--        <tr>-->
-<!--          <td class="py-2 px-4 text-left first-column">-->
-<!--            <div class="chinese-text">炎症性肠炎</div>-->
-<!--            <div class="latin-text">Inflammatory bowel disease</div>-->
-<!--          </td>-->
-<!--          <td class="py-2 px-4 text-center column-text">-->
-<!--            0.25-->
-<!--            <div class="progress-bar w-full mt-1">-->
-<!--              <div class="progress" style="width: 42.6%;"></div>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">低风险</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td colspan="6" class="py-2 px-4 text-left">-->
-<!--            <div class="description-container text-gray-600">-->
-<!--              <div>-->
-<!--                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>-->
-<!--                炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>-->
-<!--                该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--        </tr>-->
-
+        <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
+
+      <script>
+        async function loadSlowDiseaseData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            renderSlowDiseaseTable(data.slow_disease_data);
+          } catch (error) {
+            console.error('Error loading slow disease data:', error);
+          }
+        }
+
+        function renderSlowDiseaseTable(slowdiseaseData) {
+          const tableBody = document.getElementById('slow-disease-table-body');
+          if (!tableBody) {
+            console.error('Slow disease data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          slowdiseaseData.forEach(disease => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('slow-disease-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left first-column">
+                <div class="chinese-text">${disease.chinese_name}</div>
+                <div class="latin-text">${disease.english_name}</div>
+              </td>
+
+              <td class="py-2 px-4 text-center column-text" style="
+                  color: ${
+                    disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
+                    disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
+                    disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
+                    '#ff4d4f' /* 红色，高风险 */
+                  };
+                  font-weight: bold;
+              ">
+                ${disease.evaluation_value} <!-- 动态显示评估值 -->
+                <div class="slow-disease-progress-container w-full mt-1 h-2">
+                    <!-- 进度条背景 -->
+                  <div class="h-full bg-gray-200 rounded-full relative overflow-hidden">
+                      <!-- 进度条，根据evaluation_value设置颜色和宽度 -->
+                    <div class="h-full rounded-full" style="
+                        width: ${disease.evaluation_value * 100}%; /* 根据评估值设置进度条的宽度 */
+                        background-color: ${
+                        disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
+                        disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
+                        disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
+                        '#ff4d4f' /* 红色，高风险 */
+                      };
+                    "></div>
+                      <!-- 分界线 -->
+                    <div class="slow-disease-level-marker" style="left: 30%"></div>
+                    <div class="slow-disease-level-marker" style="left: 50%"></div>
+                    <div class="slow-disease-level-marker" style="left: 70%"></div>
+                  </div>
+                </div>
+              </td>
+
+              <td class="py-2 px-4 text-center column-text" style="
+                  color: ${
+                    disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
+                    disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
+                    disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
+                    '#ff4d4f' /* 红色，高风险 */
+                  };
+                  font-weight: bold;
+              ">
+                ${
+                  disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '低风险' :
+                  disease.evaluation_value < 0.5 ? '注意' :
+                  disease.evaluation_value < 0.7 ? '中高风险' :
+                  '高风险'
+                }
+              </td>
+
+              <td class="py-2 px-4 text-center column-text">${disease.classification}</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('slow-disease-data-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container">
+                  ${disease.descriptions.map(desc => `
+                    <div class="slow-disease-data-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载有机酸数据
+        document.addEventListener('DOMContentLoaded', loadSlowDiseaseData);
+      </script>
 
     </div>
 

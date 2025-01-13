@@ -6775,13 +6775,9 @@
   "slow_disease_data": [
     {
       "chinese_name": "炎症性肠炎",
-      "latin_name": "Inflammatory bowel disease",
-      "value": "0.25",
-      "progress_percentage": 42.6,
-      "risk_level": {
-        "status": "低风险",
-        "color": "green"
-      },
+      "english_name": "Inflammatory bowel disease",
+      "evaluation_value": "0.25",
+      "classification": "肠道疾病",
       "descriptions": [
         {
           "type": "info",
@@ -6792,6 +6788,168 @@
           "type": "bell",
           "color": "rgb(255, 0, 0)",
           "text": "该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠易激综合征",
+      "english_name": "Irritable Bowel Syndrome",
+      "evaluation_value": "0.52",
+      "classification": "肠道疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠易激综合征是一种常见的功能性胃肠道疾病，以腹痛、腹胀和排便习惯改变为主要表现。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患肠易激综合征的风险处于中等水平，建议关注饮食习惯和生活压力管理。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "感染性腹泻",
+      "english_name": "Infectious Diarrhea",
+      "evaluation_value": "0.14",
+      "classification": "肠道疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "感染性腹泻是由病原微生物感染引起的急性腹泻疾病。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患感染性腹泻的风险较低，建议保持良好的个人卫生习惯。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肠道病毒感染",
+      "english_name": "Enterovirus Infection",
+      "evaluation_value": "0.15",
+      "classification": "肠道疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道病毒感染是一种常见的病毒性感染疾病，可引起多种症状。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患肠道病毒感染的风险较低，建议注意个人防护。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "过敏性腹泻",
+      "english_name": "Allergic Diarrhea",
+      "evaluation_value": "0.03",
+      "classification": "肠道疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "过敏性腹泻是由食物或其他过敏原引起的腹泻症状。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患过敏性腹泻的风险很低，建议继续保持当前的饮食习惯。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肝病",
+      "english_name": "Liver Disease",
+      "evaluation_value": "0.30",
+      "classification": "消化系统疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肝病包括各种影响肝脏功能的疾病，可能由多种因素引起。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患肝病的风险处于中低水平，建议定期进行肝功能检查。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "心脑血管疾病",
+      "english_name": "Cardiovascular and Cerebrovascular Disease",
+      "evaluation_value": "0.15",
+      "classification": "循环系统疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "心脑血管疾病是影响心脏和大脑血管的一系列疾病。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患心脑血管疾病的风险较低，建议保持健康的生活方式。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "甲状腺疾病",
+      "english_name": "Thyroid Disease",
+      "evaluation_value": "0.19",
+      "classification": "内分泌系统疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "甲状腺疾病包括影响甲状腺功能的各种疾病。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患甲状腺疾病的风险较低，建议定期进行甲状腺功能检查。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "肺部疾病",
+      "english_name": "Lung Disease",
+      "evaluation_value": "0.15",
+      "classification": "呼吸系统疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肺部疾病包括影响肺部功能的各种疾病。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前患肺部疾病的风险较低，建议保持良好的呼吸环境。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "神经行为发育异常",
+      "english_name": "Neurobehavioral Development Disorder",
+      "evaluation_value": "0.39",
+      "classification": "神经系统疾病",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "神经行为发育异常是影响神经系统发育和行为表现的一系列疾病。"
+        },
+        {
+          "type": "bell",
+          "color": "rgb(255, 0, 0)",
+          "text": "该风险提示目前出现神经行为发育异常的风险处于中等水平，建议进行专业评估和早期干预。"
         }
       ]
     }

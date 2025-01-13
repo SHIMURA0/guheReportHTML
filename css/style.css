@@ -659,6 +659,29 @@ tr {
 }
 
 
+/* 慢病风险评估板块 */
+
+/* 慢病风险评估板块 : 慢病风险表格*/
+
+/* 慢病风险评估板块 : 慢病风险表格 : 列样式*/
+.slow-disease-first-column { width: 30%; }
+.slow-disease-second-column { width: 25%; }
+.slow-disease-third-column { width: 20%; }
+.slow-disease-fourth-column { width: 25%; }
+
+/* 慢病风险评估板块 : 慢病风险表格 : 进度条样式*/
+.slow-disease-progress-container {
+  position: relative;
+}
+.slow-disease-level-marker {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #9CA3AF;  /* 改成灰色 */
+  top: 0;
+  transform: translateX(-50%);
+}
+
 
 /* 疾病相关菌 */
 
