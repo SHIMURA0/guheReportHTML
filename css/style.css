@@ -664,10 +664,10 @@ tr {
 /* 慢病风险评估板块 : 慢病风险表格*/
 
 /* 慢病风险评估板块 : 慢病风险表格 : 列样式*/
-.slow-disease-first-column { width: 30%; }
+.slow-disease-first-column { width: 40%; }
 .slow-disease-second-column { width: 25%; }
-.slow-disease-third-column { width: 20%; }
-.slow-disease-fourth-column { width: 25%; }
+.slow-disease-third-column { width: 15%; }
+.slow-disease-fourth-column { width: 20%; }
 
 /* 慢病风险评估板块 : 慢病风险表格 : 进度条样式*/
 .slow-disease-progress-container {
