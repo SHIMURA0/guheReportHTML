@@ -65,6 +65,14 @@ body {
   tr {
     page-break-inside: avoid;
   }
+  .description-container {
+    page-break-inside: avoid;
+  }
+
+  td {
+    page-break-inside: avoid;
+  }
+
 
 }
 
