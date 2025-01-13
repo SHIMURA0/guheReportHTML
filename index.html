@@ -13,19 +13,101 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-white p-5">、
+<body class="bg-white p-5">
 
   <!-- 宏基因组检测报告总结页 -->
-  <h1 class="custom-title-1 page-break">宏基因组检测报告</h1>
+  <h1 class="custom-title-1">宏基因组检测报告</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
+    <!-- 基本信息行 -->
+    <div class="grid grid-cols-4 gap-4 mb-6">
+      <div class="summary-info-card">
+        <div class="summary-title">姓名</div>
+        <div class="font-bold text-gray-800">张三</div>
+      </div>
+      <div class="summary-info-card">
+        <div class="summary-title">年龄</div>
+        <div class="font-bold text-gray-800">3岁0月</div>
+      </div>
+      <div class="summary-info-card">
+        <div class="summary-title">样本编号</div>
+        <div class="font-bold text-gray-800">64XXXXX09</div>
+      </div>
+      <div class="summary-info-card">
+        <div class="summary-title">报告日期</div>
+        <div class="font-bold text-gray-800">2024-04-05</div>
+      </div>
+    </div>
 
+    <!-- 健康总分和肠道年龄并排显示 -->
+    <div class="grid grid-cols-2 gap-4 mb-6">
+      <div class="summary-info-card">
+        <div class="summary-title">健康总分</div>
+        <div class="flex flex-col items-center">
+          <div class="w-40 h-40 mb-4">
+            <svg viewBox="0 0 100 100">
+              <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
+              <circle class="summary-circle" cx="50" cy="50" r="45"
+                      stroke-dasharray="282.7"
+                      stroke-dashoffset="101.772"/>
+              <text x="50" y="45"
+                    class="summary-score-text"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    font-size="24"
+                    font-weight="bold"
+                    fill="rgb(45, 166, 168)">64</text>
+              <text x="50" y="65"
+                    class="summary-score-text"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="rgb(71, 85, 105)">总分: 100</text>
+            </svg>
+          </div>
+          <div class="summary-description text-center">
+            健康总分 64 分，处于亚健康及营养饮食不合理状态，表明目前健康状况处于中等偏下水平，主要原因是饮食营养不均衡，需要通过调整饮食结构和生活习惯来改善健康状况。
+          </div>
+        </div>
+      </div>
+      <div class="summary-info-card">
+        <div class="summary-title mb-12">肠道年龄</div>
+        <!-- 移除 justify-center 和 h-full -->
+        <div class="flex flex-col">
+          <!-- 只保留 relative -->
+          <div class="relative w-full">
+            <!-- 真实年龄条 -->
+            <div class="summary-age-bar bg-gray-200 mb-8">
+              <div class="summary-age-bar bg-blue-200" style="width: 30%"></div>
+              <span class="summary-age-label" style="left: 30%">实际年龄: 3岁</span>
+            </div>
+            <!-- 肠道年龄条 -->
+            <div class="summary-age-bar bg-gray-200 mb-8">
+              <div class="summary-age-bar" style="width: 54.7%; background-color: rgb(45, 166, 168)"></div>
+              <span class="summary-age-label" style="left: 54.7%">肠道年龄: 5.47岁</span>
+            </div>
+          </div>
+          <!-- 给描述文字添加上边距 -->
+          <div class="summary-description mt-4">
+            当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 肠型信息 -->
+    <div class="summary-info-card">
+      <div class="summary-title">肠型</div>
+      <div class="summary-value">普雷沃氏菌型</div>
+      <div class="summary-description">
+        肠型为"普雷沃氏菌"，意味着在您的肠道菌群中，普雷沃氏菌是主要优势菌，这种肠型通常与高碳水化合物、高纤维的饮食方式相关，常见于偏好植物性食物的人群中。
+      </div>
+    </div>
 
   </div>
 
   <!-- 宏基因组报告阅读指南 -->
-  <h1 class="custom-title-1 page-break">宏基因报告阅读报告</h1>
+  <h1 class="custom-title-1 page-break">宏基因组报告阅读指南</h1>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
     <div class="info-box">
