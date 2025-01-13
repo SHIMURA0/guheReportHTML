@@ -728,3 +728,10 @@ tr {
 .detected-gut-eukaryotes-second-column{ width: 25% }
 .detected-gut-eukaryotes-third-column{ width: 20% }
 .detected-gut-eukaryotes-fourth-column{ width: 15% }
+
+
+/* 参考文献板块 */
+
+.journal-badge {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
