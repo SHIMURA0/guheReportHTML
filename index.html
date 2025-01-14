@@ -4299,6 +4299,167 @@
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-food-top page-break">个性化饮食推荐TOP30</h2>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 图例 -->
+    <div class="food-recommendation-top-legend-container">
+      <div class="bg-red-500 text-center text-white text-sm py-1">避免摄入</div>
+      <div class="bg-orange-300 text-center text-white text-sm py-1">控制摄入</div>
+      <div class="bg-yellow-200 text-center text-gray-700 text-sm py-1">适当摄入</div>
+      <div class="bg-green-100 text-center text-gray-700 text-sm py-1">建议食用</div>
+      <div class="bg-green-300 text-center text-gray-700 text-sm py-1">建议多食用</div>
+      <div class="bg-green-500 text-center text-white text-sm py-1">强烈推荐</div>
+    </div>
+
+    <!-- 刻度 -->
+    <div class="food-recommendation-top-scale-container mb-2">
+      <span class="food-recommendation-top-scale-number" style="left: 0%">-100</span>
+      <span class="food-recommendation-top-scale-number" style="left: 16.67%">-60</span>
+      <span class="food-recommendation-top-scale-number" style="left: 33.33%">-30</span>
+      <span class="food-recommendation-top-scale-number" style="left: 50%">0</span>
+      <span class="food-recommendation-top-scale-number" style="left: 66.67%">30</span>
+      <span class="food-recommendation-top-scale-number" style="left: 83.33%">60</span>
+      <span class="food-recommendation-top-scale-number" style="left: 100%">100</span>
+    </div>
+
+    <!-- 食品条目 -->
+<!--    <div>-->
+<!--      &lt;!&ndash; 第一行：最不推荐 vs 最推荐 &ndash;&gt;-->
+<!--      <div class="flex items-center">-->
+<!--        <div class="w-20 text-right pr-4">反式脂肪</div>-->
+<!--        <div class="food-recommendation-top-score-bar-container">-->
+<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
+<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(1)"></div>-->
+<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(1)"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w-20 pl-4">菊苣</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第二行：次不推荐 vs 次推荐 &ndash;&gt;-->
+<!--      <div class="flex items-center mt-[1px]">-->
+<!--        <div class="w-20 text-right pr-4">黄油</div>-->
+<!--        <div class="food-recommendation-top-score-bar-container">-->
+<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
+<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.85)"></div>-->
+<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.85)"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w-20 pl-4">波菜</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第三行 &ndash;&gt;-->
+<!--      <div class="flex items-center mt-[1px]">-->
+<!--        <div class="w-20 text-right pr-4">猪培根</div>-->
+<!--        <div class="food-recommendation-top-score-bar-container">-->
+<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
+<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.80)"></div>-->
+<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.81)"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w-20 pl-4">菜豆</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第四行 &ndash;&gt;-->
+<!--      <div class="flex items-center mt-[1px]">-->
+<!--        <div class="w-20 text-right pr-4">加工肉</div>-->
+<!--        <div class="food-recommendation-top-score-bar-container">-->
+<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
+<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.73)"></div>-->
+<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.73)"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="w-20 pl-4">茄子</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div id="food-container"></div> <!-- 用于展示食品条目的容器 -->
+
+    <script>
+      async function fetchAndRenderTopAndLowestFoods() {
+        try {
+          // 1. 获取数据
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+
+          // 2. 创建包含要合并的键的列表
+          const keysToMerge = [
+            'staple_food_data',
+            'dairy_products_data',
+            'dried_fruits_data',
+            'fast_food_data',
+            'aquatic_products_data',
+            'fruit_data',
+            'soup_data',
+            'meat_data',
+            'vegetables_data'
+          ];
+
+          // 3. 合并所有指定的食物数据
+          let allFoods = [];
+          keysToMerge.forEach(key => {
+            if (data[key] && Array.isArray(data[key])) {
+              allFoods = allFoods.concat(data[key]);
+            }
+          });
+
+          // 4. 按推荐分数从高到低排序，取前 30 个和后 30 个
+          const sortedFoods = allFoods.sort((a, b) => b.evaluation_value - a.evaluation_value); // 从高到低排序
+
+          const topFoods = sortedFoods.slice(0, 30); // 最高的 30 个
+          const lowestFoods = sortedFoods.slice(-30); // 最低的 30 个
+
+          // 5. 渲染到页面
+          const foodContainer = document.getElementById('food-container');
+          foodContainer.innerHTML = ''; // 清空容器
+
+          // 6. 渲染最高和最低食品一一对应
+          const maxRows = Math.max(topFoods.length, lowestFoods.length);
+          for (let i = 0; i < maxRows; i++) {
+            const topFood = topFoods[i] || {}; // 如果没有更多的项，使用空对象
+            const lowestFood = lowestFoods[maxRows - i - 1] || {}; // 同上
+
+            const foodRow = `
+              <div class="flex items-center mt-[1px]">
+                  <div class="w-20 text-right pr-4">${lowestFood.chinese_name || '未定义'}</div>
+                  <div class="food-recommendation-top-score-bar-container">
+                      <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
+                          <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
+                          <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
+                      </div>
+                  </div>
+                  <div class="w-20 pl-4">${topFood.chinese_name || '未定义'}</div>
+              </div>
+            `;
+            foodContainer.innerHTML += foodRow; // 动态添加到 DOM 中
+          }
+
+        } catch (error) {
+          console.error("Error fetching or processing data:", error);
+        }
+      }
+
+      // 调用函数
+      fetchAndRenderTopAndLowestFoods();
+    </script>
+
+
+
   </div>
 
   <h2 class="custom-title-1 page-break">主食类饮食推荐</h2>

@@ -779,6 +779,77 @@ tr {
 
 /* 个性化饮食推荐 */
 
+.custom-title-food-top {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 2rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
+}
+
+/* 个性化饮食推荐 : 推荐食物TOP比较信息图样式 */
+
+.food-recommendation-top-score-bar-container {
+  width: calc(100% - 160px);
+  margin: 0 auto;
+  position: relative;
+}
+.food-recommendation-top-score-bar {
+  position: relative;
+  width: 100%;
+}
+.food-recommendation-top-score-bar::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #fff;
+  z-index: 10;
+}
+.food-recommendation-top-negative-score {
+  position: absolute;
+  right: 50%;
+  height: 100%;
+  width: calc(150% / 3);
+  transform-origin: right;
+  border-radius: 9999px 0 0 9999px;
+}
+.food-recommendation-top-positive-score {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: calc(150% / 3);
+  transform-origin: left;
+  border-radius: 0 9999px 9999px 0;
+}
+.food-recommendation-top-legend-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0 80px;
+}
+.food-recommendation-top-scale-container {
+  position: relative;
+  height: 24px;
+  margin: 0 80px;
+}
+.food-recommendation-top-scale-number {
+  position: absolute;
+  font-size: 0.875rem;
+  color: #4B5563;
+}
+
+.food-recommendation-top-scale-number:not(.left):not(.right) {
+  transform: translateX(-50%);
+}
+
+/* 个性化饮食推荐 : 通用表格样式 */
+
 .food-first-column { width: 13%; }  /* 食物名称，需要较宽空间显示中英文 */
 .food-second-column { width: 13%; }  /* 推荐指数，较短数字 */
 .food-third-column { width: 10%; }  /* 能量(KJ)，数字较短 */
