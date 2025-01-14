@@ -4625,6 +4625,8 @@
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.fast_food_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
             renderFastFoodTable(data.fast_food_data);
           } catch (error) {
             console.error('Error loading fast food data:', error);
@@ -4671,6 +4673,486 @@
 
         // 页面加载时加载致病菌数据
         document.addEventListener('DOMContentLoaded', loadFastFoodData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-1 page-break">水产品推荐</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 水产品推荐表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        </tr>
+        </thead>
+        <tbody id="aquatic-products-data-table-body">
+
+        </tbody>
+      </table>
+
+      <script>
+        async function loadAquaticProductsData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.aquatic_products_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
+            renderAquaticProductsTable(data.aquatic_products_data);
+          } catch (error) {
+            console.error('Error loading aquatic products data:', error);
+          }
+        }
+
+        function renderAquaticProductsTable(fastfoodData) {
+          const tableBody = document.getElementById('aquatic-products-data-table-body');
+          if (!tableBody) {
+            console.error('Aquatic products data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fastfoodData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('fast-food-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">
+                ${food.evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadAquaticProductsData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-1 page-break">水果推荐</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 水果推荐表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        </tr>
+        </thead>
+        <tbody id="fruit-data-table-body">
+
+        </tbody>
+      </table>
+
+      <script>
+        async function loadFruitData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.fruit_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
+            renderFruitTable(data.fruit_data);
+          } catch (error) {
+            console.error('Error loading fruit data:', error);
+          }
+        }
+
+        function renderFruitTable(fruitData) {
+          const tableBody = document.getElementById('fruit-data-table-body');
+          if (!tableBody) {
+            console.error('Fruit data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fruitData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('fast-food-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">
+                ${food.evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadFruitData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-1 page-break">汤推荐</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 汤推荐表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        </tr>
+        </thead>
+        <tbody id="soup-data-table-body">
+
+        </tbody>
+      </table>
+
+      <script>
+        async function loadSoupData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.soup_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
+            renderSoupTable(data.soup_data);
+          } catch (error) {
+            console.error('Error loading soup data:', error);
+          }
+        }
+
+        function renderSoupTable(fruitData) {
+          const tableBody = document.getElementById('soup-data-table-body');
+          if (!tableBody) {
+            console.error('Fruit data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fruitData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('soup-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">
+                ${food.evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadSoupData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-1 page-break">肉类推荐</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 肉类推荐表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        </tr>
+        </thead>
+        <tbody id="meat-data-table-body">
+
+        </tbody>
+      </table>
+
+      <script>
+        async function loadMeatData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.meat_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
+            renderMeatTable(data.meat_data);
+          } catch (error) {
+            console.error('Error loading meat data:', error);
+          }
+        }
+
+        function renderMeatTable(fruitData) {
+          const tableBody = document.getElementById('meat-data-table-body');
+          if (!tableBody) {
+            console.error('Meat data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          fruitData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('meat-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">
+                ${food.evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadMeatData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2 class="custom-title-1 page-break">蔬菜推荐</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 蔬菜推荐表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <!-- 标题行 -->
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        </tr>
+        </thead>
+        <tbody id="vegetables-data-table-body">
+
+        </tbody>
+      </table>
+
+      <script>
+        async function loadVegetablesData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
+            data.vegetables_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
+            renderVegetablesTable(data.vegetables_data);
+          } catch (error) {
+            console.error('Error loading vegetables data:', error);
+          }
+        }
+
+        function renderVegetablesTable(vegetablesData) {
+          const tableBody = document.getElementById('vegetables-data-table-body');
+          if (!tableBody) {
+            console.error('Vegetables data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          vegetablesData.forEach(food => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('vegetables-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${food.chinese_name}</div>
+                <div class="latin-text">${food.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">
+                ${food.evaluation_value}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
+              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+          });
+        }
+
+        // 页面加载时加载致病菌数据
+        document.addEventListener('DOMContentLoaded', loadVegetablesData);
       </script>
 
     </div>
