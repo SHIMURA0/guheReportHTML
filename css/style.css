@@ -779,15 +779,15 @@ tr {
 
 /* 个性化饮食推荐 */
 
-.food-first-column { width: 11%; }  /* 食物名称，需要较宽空间显示中英文 */
-.food-second-column { width: 12%; }  /* 推荐指数，较短数字 */
+.food-first-column { width: 13%; }  /* 食物名称，需要较宽空间显示中英文 */
+.food-second-column { width: 13%; }  /* 推荐指数，较短数字 */
 .food-third-column { width: 10%; }  /* 能量(KJ)，数字较短 */
-.food-fourth-column { width: 10%; } /* 蛋白(g)，数字较短 */
+.food-fourth-column { width: 9%; } /* 蛋白(g)，数字较短 */
 .food-fifth-column { width: 9%; }  /* 脂肪(g)，数字较短 */
-.food-sixth-column { width: 14%; }  /* 碳水化合物，文字较长 */
+.food-sixth-column { width: 13%; }  /* 碳水化合物，文字较长 */
 .food-seventh-column { width: 9%; } /* 淀粉(g)，数字较短 */
 .food-eighth-column { width: 12%; }  /* 膳食纤维，文字较长 */
-.food-nineth-column { width: 13%; }  /* 胆固醇，文字较长且有单位 */
+.food-nineth-column { width: 12%; }  /* 胆固醇，文字较长且有单位 */
 
 .food-column-text {
   font-size: 0.6rem; /* 控制每一列的字体大小 */
