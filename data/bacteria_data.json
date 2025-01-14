@@ -14382,5 +14382,122 @@
         }
       ]
     }
+  ],
+
+  "reference_data": [
+    {
+      "title": "Exposure to concentrated ambient PM2.5 alters the composition of gut microbiota in a murine model",
+      "author": "Wang, W. et al.",
+      "journal": "Part Fibre Toxicol 15, 17",
+      "date": "2018"
+    },
+    {
+      "title": "Gut Dysbiosis in Animals Due to Environmental Chemical Exposures",
+      "author": "Rosenfeld, C. S.",
+      "journal": "Front Cell Infect Microbiol 7, 396",
+      "date": "2017"
+    },
+    {
+      "title": "Gut Microbiota Richness and Composition and Dietary Intake of Overweight Pregnant Women Are Related to Serum Zonulin Concentration, a Marker for Intestinal Permeability",
+      "author": "Mokkala, K. et al.",
+      "journal": "J Nutr 146, 1694-1700",
+      "date": "2016"
+    },
+    {
+      "title": "Gut microbiota, dietary intakes and intestinal permeability reflected by serum zonulin in women",
+      "author": "Mörkl, S. et al.",
+      "journal": "Eur J Nutr 57, 2985-2997",
+      "date": "2018"
+    },
+    {
+      "title": "The neuroactive potential of the human gut microbiota in quality of life and depression",
+      "author": "Valles-Colomer, M. et al.",
+      "journal": "Nature Microbiology 4, 623",
+      "date": "2019"
+    },
+    {
+      "title": "Impact of the Gut Microbiota on Intestinal Immunity Mediated by Tryptophan Metabolism",
+      "author": "Gao, J. et al.",
+      "journal": "Front Cell Infect Microbiol 8",
+      "date": "2018"
+    },
+    {
+      "title": "Linking the gut microbiome to metabolism through endocrine hormones",
+      "author": "Brubaker, P. L.",
+      "journal": "Endocrinology",
+      "date": "2018"
+    },
+    {
+      "title": "Microbial endocrinology: host–bacteria communication within the gut microbiome",
+      "author": "Sandrini, S., Aldriwesh, M., Alruways, M. & Freestone, P.",
+      "journal": "Journal of Endocrinology 225, R21-R34",
+      "date": "2015"
+    },
+    {
+      "title": "A High Salt Diet Modulates the Gut Microbiota and Short Chain Fatty Acids Production in a Salt-Sensitive Hypertension Rat Model",
+      "author": "Bier, A. et al.",
+      "journal": "Nutrients 10",
+      "date": "2018"
+    },
+    {
+      "title": "Altered gut microbiome composition in children with refractory epilepsy after ketogenic diet",
+      "author": "Zhang, Y. et al.",
+      "journal": "Epilepsy Res. 145, 163-168",
+      "date": "2018"
+    },
+    {
+      "title": "Association analysis of dietary habits with gut microbiota of a native Chinese community",
+      "author": "Qian, L. et al.",
+      "journal": "Exp Ther Med 16, 856-866",
+      "date": "2018"
+    },
+    {
+      "title": "Effect of changes in food groups intake on magnesium, zinc, copper, and selenium serum levels during 2 years of dietary intervention",
+      "author": "Paz-Tal, O. et al.",
+      "journal": "J Am Coll Nutr 34, 1-14",
+      "date": "2015"
+    },
+    {
+      "title": "Intersection of salt- and immune-mediated mechanisms of hypertension in the gut microbiome",
+      "author": "Wyatt, C. M. & Crowley, S. D.",
+      "journal": "Kidney Int. 93, 532-534",
+      "date": "2018"
+    },
+    {
+      "title": "Salt-responsive gut commensal modulates TH17 axis and disease",
+      "author": "Wilck, N. et al.",
+      "journal": "Nature 551, 585-589",
+      "date": "2017"
+    },
+    {
+      "title": "The Virtual Metabolic Human database: integrating human and gut microbiome metabolism with nutrition and disease",
+      "author": "Noronha, A. et al.",
+      "journal": "bioRxiv 321331",
+      "date": "2018"
+    },
+    {
+      "title": "Fecal concentrations of bacterially derived vitamin K forms are associated with gut microbiota composition but not plasma or fecal cytokine concentrations in healthy adults",
+      "author": "Karl, J. P. et al.",
+      "journal": "Am. J. Clin. Nutr. 106, 1052-1061",
+      "date": "2017"
+    },
+    {
+      "title": "A novel ultra high-throughput 16S rRNA gene amplicon sequencing library preparation method for the Illumina HiSeq platform",
+      "author": "de Muinck, E. J., Trosvik, P., Gilfillan, G. D., Hov, J. R. & Sundaram, A. Y. M.",
+      "journal": "Microbiome 5, 68",
+      "date": "2017"
+    },
+    {
+      "title": "Role of Neurochemicals in the Interaction between the Microbiota and the Immune and the Nervous System of the Host Organism",
+      "author": "Oleskin, A. V., Shenderov, B. A. & Rogovsky, V. S.",
+      "journal": "Probiotics Antimicrob Proteins 9, 215-234",
+      "date": "2017"
+    },
+    {
+      "title": "Linking the Gut Microbiota to a Brain Neurotransmitter",
+      "author": "Jameson, K. G. & Hsiao, E. Y.",
+      "journal": "Trends Neurosci. 41, 413-414",
+      "date": "2018"
+    }
   ]
 }

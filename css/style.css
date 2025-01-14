@@ -889,6 +889,10 @@ tr {
 
 /* 参考文献板块 */
 
-.journal-badge {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+/* 参考文献板块 : 参考文献卡片样式 */
+
+.reference-card-no-break {
+  break-inside: avoid; /* 对于 CSS 断开控制 */
+  page-break-inside: avoid; /* 对于打印样式 */
+  overflow: hidden; /* 防止溢出 */
 }
