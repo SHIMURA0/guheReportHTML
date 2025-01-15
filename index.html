@@ -1378,7 +1378,7 @@
 
   </div>
 
-  <!-- 常见肠道寄生虫版块 -->
+  <!-- 肠道菌群检测 : 常见肠道寄生虫版块 -->
   <h3 class="custom-title-1 page-break">常见肠道寄生虫</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
@@ -1389,7 +1389,7 @@
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
+            肠道常见寄生虫检测对于评估肠道健康和潜在感染风险具有重要意义。虽然部分寄生虫在低水平时可能不会造成明显症状，但持续监测对预防寄生虫相关疾病至关重要。
           </p>
         </div>
       </div>
@@ -1397,60 +1397,76 @@
 
     <!-- 常见肠道寄生虫表格 -->
     <div class="rounded-table">
+
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+          <th class="py-2 px-4 text-left parasite-first-column">寄生虫名称</th>
+          <th class="py-2 px-4 text-center parasite-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center parasite-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center parasite-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center parasite-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center parasite-sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="parasites-table-body">
+        <tbody id="gut-parasites-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
+
       <script>
-        async function loadParasitesData() {
+        async function loadGutParasitesData() {
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
-            renderParasitesTable(data.gut_parasites_data);
+            // 对 gut_parasites_data 按照 detected_abundance 从大到小排序
+            data.gut_parasites_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
+            renderGutParasitesTable(data.gut_parasites_data);
           } catch (error) {
-            console.error('Error loading parasites data:', error);
+            console.error('Error loading gut parasites data:', error);
           }
         }
 
-        function renderParasitesTable(parasitesData) {
-          const tableBody = document.getElementById('parasites-table-body');
+        function renderGutParasitesTable(gutParasitesData) {
+          const tableBody = document.getElementById('gut-parasites-data-table-body');
           if (!tableBody) {
-            console.error('Parasites table body not found');
+            console.error('Gut parasites data table body not found');
             return;
           }
 
           tableBody.innerHTML = '';
 
-          parasitesData.forEach(parasite => {
+          gutParasitesData.forEach(parasite => {
             // 创建数据行
             const dataRow = document.createElement('tr');
-            dataRow.classList.add('parasite-row');
+            dataRow.classList.add('gut-parasite-data-row');
             dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
+              <td class="py-2 px-4 text-left">
                 <div class="chinese-text">${parasite.chinese_name}</div>
                 <div class="latin-text">${parasite.latin_name}</div>
               </td>
-              <td class="py-2 px-4 text-center column-text">${parasite.normal_range}</td>
               <td class="py-2 px-4 text-center column-text">
-                ${parasite.detected_abundance}
+                ${[parasite.normal_range.min_normal_value, parasite.normal_range.max_normal_value].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${parasite.detected_abundance === 0 ? 'ND' : parasite.detected_abundance}
                 <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${parasite.progress_percentage}%;"></div>
+                  <div class="progress ${parasite.detected_abundance <= parasite.normal_range.max_normal_value && parasite.detected_abundance >= parasite.normal_range.min_normal_value ? 'bg-green-600' : 'bg-red-600'}"
+                       style="width: ${parasite.detected_abundance === 0 ? 0 : Math.min((parasite.detected_abundance / parasite.normal_range.max_normal_value) * 100, 100)}%;"></div>
                 </div>
               </td>
-              <td class="py-2 px-4 text-center bold-text text-${parasite.evaluation.color}-600 column-text">
-                ${parasite.evaluation.status}
+              <td class="py-2 px-4 text-center bold-text column-text
+                ${parasite.detected_abundance === 0 ? 'text-gray-600' :
+                parasite.detected_abundance < parasite.normal_range.min_normal_value ? 'text-gray-600' :
+                parasite.detected_abundance > parasite.normal_range.max_normal_value ? 'text-red-600' :
+                'text-green-600'}"
+              >
+                ${parasite.detected_abundance === 0 ? '未检出' :
+                parasite.detected_abundance < parasite.normal_range.min_normal_value ? '低于正常' :
+                parasite.detected_abundance > parasite.normal_range.max_normal_value ? '超标 ↑' :
+                '正常'
+                }
               </td>
               <td class="py-2 px-4 text-center column-text">${parasite.higher_than_percentage !== null ? parasite.higher_than_percentage + '%' : '-'}</td>
               <td class="py-2 px-4 text-center column-text">${parasite.normal_detection_rate}%</td>
@@ -1458,7 +1474,7 @@
 
             // 创建描述行
             const descRow = document.createElement('tr');
-            descRow.classList.add('parasite-desc-row');
+            descRow.classList.add('gut-parasite-desc-row');
             descRow.innerHTML = `
               <td colspan="6" class="py-2 px-4 text-left">
                 <div class="description-container text-gray-600">
@@ -1480,13 +1496,13 @@
         }
 
         // 页面加载时加载寄生虫数据
-        document.addEventListener('DOMContentLoaded', loadParasitesData);
+        document.addEventListener('DOMContentLoaded', loadGutParasitesData);
       </script>
     </div>
 
   </div>
 
-  <!-- 病毒版块 -->
+  <!-- 肠道菌群检测 : 病毒版块 -->
   <h3 class="custom-title-1 page-break">肠道病毒</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
@@ -1497,7 +1513,7 @@
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
+            肠道微生物除了细菌外，还包含大量病毒。研究表明，健康人的肠道中约有数万种病毒，其中超过 90% 是噬菌体。下表展示了在您肠道中检测到的病毒，按病毒的检出丰度从高到低排列了前15位（如无检出将没有显示）。
           </p>
         </div>
       </div>

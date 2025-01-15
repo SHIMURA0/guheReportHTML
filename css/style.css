@@ -412,23 +412,50 @@ tr {
   page-break-inside: avoid; /* 避免在行内分页 */
 }
 
-/* 肠道菌群检测 : 病毒*/
+/* 肠道菌群检测 : 常见肠道寄生虫板块*/
+
+/* 肠道菌群检测 : 常见肠道寄生虫 : 表格列样式*/
+
+.parasite-first-column {
+  width: 20%; /* 寄生虫名称 */
+}
+.parasite-second-column {
+  width: 13%; /* 正常范围数值 */
+}
+.parasite-third-column {
+  width: 20%; /* 检测丰度+进度条 */
+}
+.parasite-fourth-column {
+  width: 12%; /* 结果评价 */
+}
+.parasite-fifth-column {
+  width: 13%; /* 超过%的人 */
+}
+.parasite-sixth-column {
+  width: 22%; /* 有%的正常人检出 */
+}
+
+
+/* 肠道菌群检测 : 病毒板块*/
+
+/* 肠道菌群检测 : 病毒 : 表格列样式*/
 
 .virus-first-column {
-  width: 30%; /* 菌种名称需要足够空间显示中英文 */
+  width: 30%; /* 病毒名称 */
 }
 .virus-second-column {
   width: 15%; /* 正常范围数值 */
 }
 .virus-third-column {
-  width: 20%; /* 检测丰度+进度条需要较大空间 */
+  width: 20%; /* 检测丰度+进度条 */
 }
 .virus-fourth-column {
   width: 15%; /* 结果评价 */
 }
 .virus-fifth-column {
-  width: 20%; /* 超过%的人 */
+  width: 20%; /* 病毒分类 */
 }
+
 
 /*肠道菌群抗性和基因分布*/
 

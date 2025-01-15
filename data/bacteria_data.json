@@ -4453,17 +4453,16 @@
       ]
     }
   ],
+
   "gut_parasites_data": [
     {
       "chinese_name": "人隐孢子虫",
       "latin_name": "C. hominis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -4482,13 +4481,11 @@
     {
       "chinese_name": "布氏麦片吸虫",
       "latin_name": "F. buski",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00207,
-      "progress_percentage": 4.14,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00207,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4507,13 +4504,11 @@
     {
       "chinese_name": "脑炎微孢子虫",
       "latin_name": "E. hellem",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -4532,13 +4527,11 @@
     {
       "chinese_name": "卫氏并殖吸虫",
       "latin_name": "P. westermani",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00256,
-      "progress_percentage": 5.12,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00256,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -4557,13 +4550,11 @@
     {
       "chinese_name": "毛首鞭形线虫",
       "latin_name": "T. trichiura",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00173,
-      "progress_percentage": 3.46,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00173,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4582,13 +4573,11 @@
     {
       "chinese_name": "疟原虫",
       "latin_name": "P. ovale",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00389,
-      "progress_percentage": 7.78,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00389,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -4607,13 +4596,11 @@
     {
       "chinese_name": "肉胞子虫",
       "latin_name": "S. neurona",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -4632,13 +4619,11 @@
     {
       "chinese_name": "十二指肠钩口线虫",
       "latin_name": "A. duodenale",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00136,
-      "progress_percentage": 2.72,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00136,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4657,13 +4642,11 @@
     {
       "chinese_name": "蠕形住肠线虫",
       "latin_name": "E. vermicularis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00456,
-      "progress_percentage": 9.12,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00456,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -4682,13 +4665,11 @@
     {
       "chinese_name": "美洲钩口线虫",
       "latin_name": "Necator americanus",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00252,
-      "progress_percentage": 5.04,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00252,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4707,13 +4688,11 @@
     {
       "chinese_name": "巴西利士曼原虫",
       "latin_name": "L. braziliensis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -4732,13 +4711,11 @@
     {
       "chinese_name": "杜氏利什曼原虫",
       "latin_name": "L. donovani",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -4757,13 +4734,11 @@
     {
       "chinese_name": "硕大利什曼虫",
       "latin_name": "L. major",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4782,13 +4757,11 @@
     {
       "chinese_name": "婴儿利什曼虫",
       "latin_name": "L. infantum",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -4807,13 +4780,11 @@
     {
       "chinese_name": "布氏锥虫",
       "latin_name": "T. brucei",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00028,
-      "progress_percentage": 0.56,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00028,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -4832,13 +4803,11 @@
     {
       "chinese_name": "柱氏锥虫",
       "latin_name": "T. cruzi",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00859,
-      "progress_percentage": 17.18,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00859,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -4857,13 +4826,11 @@
     {
       "chinese_name": "阴道毛滴虫",
       "latin_name": "T. vaginalis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00693,
-      "progress_percentage": 13.86,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00693,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4882,13 +4849,11 @@
     {
       "chinese_name": "蓝氏贾第鞭毛虫",
       "latin_name": "Giardia intestinalis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -4907,13 +4872,11 @@
     {
       "chinese_name": "溶组织内阿米巴",
       "latin_name": "E. histolytica",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00062,
-      "progress_percentage": 1.24,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00062,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -4932,13 +4895,11 @@
     {
       "chinese_name": "小隐孢子虫",
       "latin_name": "C. parvum",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -4957,13 +4918,11 @@
     {
       "chinese_name": "鼠隐孢子虫",
       "latin_name": "C. muris",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00012,
-      "progress_percentage": 0.24,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00012,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -4982,13 +4941,11 @@
     {
       "chinese_name": "刚地弓形虫",
       "latin_name": "T. gondii",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00767,
-      "progress_percentage": 15.34,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00767,
       "higher_than_percentage": 52,
       "normal_detection_rate": 81.25,
       "descriptions": [
@@ -5007,13 +4964,11 @@
     {
       "chinese_name": "恶性疟原虫",
       "latin_name": "P. falciparum",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00137,
-      "progress_percentage": 2.74,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00137,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -5032,13 +4987,11 @@
     {
       "chinese_name": "间日疟原虫",
       "latin_name": "P. vivax",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00318,
-      "progress_percentage": 6.36,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00318,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -5057,13 +5010,11 @@
     {
       "chinese_name": "牛环形泰勒虫",
       "latin_name": "T. annulata",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -5082,13 +5033,11 @@
     {
       "chinese_name": "小泰勒虫",
       "latin_name": "T. parva",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -5107,13 +5056,11 @@
     {
       "chinese_name": "肠脑炎微孢子虫",
       "latin_name": "E. intestinalis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -5132,13 +5079,11 @@
     {
       "chinese_name": "兔脑炎微孢子虫",
       "latin_name": "E. cuniculi",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -5157,13 +5102,11 @@
     {
       "chinese_name": "日本血吸虫",
       "latin_name": "S. japonicum",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00343,
-      "progress_percentage": 6.86,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00343,
       "higher_than_percentage": 52,
       "normal_detection_rate": 81.25,
       "descriptions": [
@@ -5182,13 +5125,11 @@
     {
       "chinese_name": "曼氏血吸虫",
       "latin_name": "S. mansoni",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00349,
-      "progress_percentage": 6.98,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00349,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -5207,13 +5148,11 @@
     {
       "chinese_name": "埃及血吸虫",
       "latin_name": "S. haematobium",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00308,
-      "progress_percentage": 6.16,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00308,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -5232,13 +5171,11 @@
     {
       "chinese_name": "猪带绦虫",
       "latin_name": "T. solium",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00044,
-      "progress_percentage": 0.88,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00044,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -5257,13 +5194,11 @@
     {
       "chinese_name": "牛带绦虫",
       "latin_name": "T. saginata",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00046,
-      "progress_percentage": 0.92,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00046,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -5282,13 +5217,11 @@
     {
       "chinese_name": "蛔蚴蠕虫",
       "latin_name": "A. lumbricoides",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00358,
-      "progress_percentage": 7.16,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00358,
       "higher_than_percentage": 52,
       "normal_detection_rate": 81.25,
       "descriptions": [
@@ -5307,13 +5240,11 @@
     {
       "chinese_name": "旋毛形线虫",
       "latin_name": "T. spiralis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00099,
-      "progress_percentage": 1.98,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00099,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -5332,13 +5263,11 @@
     {
       "chinese_name": "华支睾吸虫",
       "latin_name": "C. sinensis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00137,
-      "progress_percentage": 2.74,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00137,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -5357,13 +5286,11 @@
     {
       "chinese_name": "环孢子虫",
       "latin_name": "C. cayetanensis",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00635,
-      "progress_percentage": 12.7,
-      "evaluation": {
-        "status": "丰度极低",
-        "color": "yellow"
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
       },
+      "detected_abundance": 0.00635,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
