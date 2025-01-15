@@ -5380,6 +5380,93 @@
       ]
     }
   ],
+  "gut_virus_data": [
+    {
+      "chinese_name": "分枝杆菌噬菌体 Echild",
+      "latin_name": "Mycobacterium phage Echild",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
+      },
+      "detected_abundance": 0.00331,
+      "classification": "噬菌体",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "分枝杆菌噬菌体 Echild 可以被视为一种有益的肠道病毒，因为它专门感染和攻击有害的分枝杆菌，从而帮助对抗由这些细菌引起的感染。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Cbastvirus ST",
+      "latin_name": "Cbastvirus ST",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
+      },
+      "detected_abundance": 0.00274,
+      "classification": "噬菌体",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "Cbastvirus ST 是一种新发现的噬菌体，属于巨噬菌体（Myoviridae）家族，专门感染某些细菌，尤其是与细菌性疾病相关的病原体。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "Shalavirus Shbh1",
+      "latin_name": "Shalavirus Shbh1",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
+      },
+      "detected_abundance": 0.00265,
+      "classification": "噬菌体",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "Shalavirus Shbh1 是一种噬菌体，属于双链DNA噬菌体的类别，主要感染特定细菌。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "草履虫绿藻病毒 1 号",
+      "latin_name": "PbCV-1",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
+      },
+      "detected_abundance": 0.00318,
+      "classification": "植物性病毒",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "草履虫绿藻病毒1号是一种专门感染特定种类的绿藻和草履虫的双链DNA病毒。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "人内源逆转录病毒 K",
+      "latin_name": "Human endogenous retrovirus K",
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.05
+      },
+      "detected_abundance": 0.00308,
+      "classification": "内源性病毒",
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "人类内源性逆转录病毒 K是一个属于人类基因组的内源性逆转录病毒家族成员，它的表达与多种疾病相关，也可能影响免疫调节。"
+        }
+      ]
+    }
+  ],
   "organic_acids_data": [
     {
       "chinese_name": "丁酸盐",

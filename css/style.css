@@ -412,6 +412,24 @@ tr {
   page-break-inside: avoid; /* 避免在行内分页 */
 }
 
+/* 肠道菌群检测 : 病毒*/
+
+.virus-first-column {
+  width: 30%; /* 菌种名称需要足够空间显示中英文 */
+}
+.virus-second-column {
+  width: 15%; /* 正常范围数值 */
+}
+.virus-third-column {
+  width: 20%; /* 检测丰度+进度条需要较大空间 */
+}
+.virus-fourth-column {
+  width: 15%; /* 结果评价 */
+}
+.virus-fifth-column {
+  width: 20%; /* 超过%的人 */
+}
+
 /*肠道菌群抗性和基因分布*/
 
 .card-container { /* 包裹三个卡片的容器 */

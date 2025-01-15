@@ -591,12 +591,12 @@
 
           <div class="gut-bacteria-card core">
             <h3>核心菌属</h3>
-            <p>在绝大多数健康人群肠道中普遍存在的优势菌属，包括厚壁菌属、拟杆菌属等，占据总菌群的主要组成部分。</p>
+            <p style="color: #555555;">在绝大多数健康人群肠道中普遍存在的优势菌属，包括厚壁菌属、拟杆菌属等，占据总菌群的主要组成部分。</p>
           </div>
 
           <div class="gut-bacteria-card non-core">
             <h3>非核心重要菌属</h3>
-            <p>虽然丰度相对较低，但对维持肠道健康具有重要作用的菌属，如乳酸菌属、双歧杆菌属等。</p>
+            <p style="color: #555555;">虽然丰度相对较低，但对维持肠道健康具有重要作用的菌属，如乳酸菌属、双歧杆菌属等。</p>
           </div>
 
         </div>
@@ -605,19 +605,19 @@
           <div class="gut-bacteria-sub-title">按菌群特性分</div>
           <div class="gut-bacteria-card beneficial">
             <h3>有益菌</h3>
-            <p>对人体健康有益的菌群，如双歧杆菌、乳酸菌等。它们参与营养物质的消化吸收，产生维生素，增强免疫力。</p>
+            <p style="color: #555555;">对人体健康有益的菌群，如双歧杆菌、乳酸菌等。它们参与营养物质的消化吸收，产生维生素，增强免疫力。</p>
           </div>
           <div class="gut-bacteria-card harmful">
             <h3>有害菌</h3>
-            <p>有害菌通常是指那些在肠道中可能对宿主产生负面影响的细菌，这些细菌可能会干扰肠道平衡，导致消化问题，或促进肠道炎症。</p>
+            <p style="color: #555555;">有害菌通常是指那些在肠道中可能对宿主产生负面影响的细菌，这些细菌可能会干扰肠道平衡，导致消化问题，或促进肠道炎症。</p>
           </div>
           <div class="gut-bacteria-card opportunistic">
             <h3>机会致病菌</h3>
-            <p>通常情况下与人体和平共处，但在特定条件下（如免疫力下降时）可能导致疾病的菌群。</p>
+            <p style="color: #555555;">通常情况下与人体和平共处，但在特定条件下（如免疫力下降时）可能导致疾病的菌群。</p>
           </div>
           <div class="gut-bacteria-card pathogenic">
             <h3>致病菌</h3>
-            <p>能够直接导致疾病的有害菌群，它们会破坏肠道环境，引起感染和炎症等症状。</p>
+            <p style="color: #555555;">能够直接导致疾病的有害菌群，它们会破坏肠道环境，引起感染和炎症等症状。</p>
           </div>
         </div>
 
@@ -1509,47 +1509,98 @@
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center fifth-column">病毒分类</th>
+          <th class="py-2 px-4 text-left virus-first-column">病毒名称</th>
+          <th class="py-2 px-4 text-center virus-second-column">正常范围</th>
+          <th class="py-2 px-4 text-center virus-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center virus-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center virus-fifth-column">病毒分类</th>
         </tr>
         </thead>
-        <tbody>
-        <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">梭菌属</div>
-            <div class="latin-text">Clostridiumhhhhh</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">0-4.464</td>
-          <td class="py-2 px-4 text-center column-text">
-            1.90370
-            <div class="progress-bar w-full mt-1">
-              <div class="progress" style="width: 42.6%;"></div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">正常</td>
-          <td class="py-2 px-4 text-center column-text">噬菌体</td>
-        </tr>
-        <tr>
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              <div>
-                <i class="fas fa-info-circle" style="color: rgb(0, 178, 180);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-              <div>
-                <i class="fas fa-bell" style="color: rgb(255, 0, 0);"></i>
-                厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用。
-              </div>
-            </div>
-          </td>
-        </tr>
-
+        <tbody id="gut-virus-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
+
+      <script>
+        async function loadGutVirusData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // 对 gut_virus_data 按照 detected_abundance 从大到小排序
+            data.gut_virus_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
+            renderGutVirusTable(data.gut_virus_data);
+          } catch (error) {
+            console.error('Error loading gut virus data:', error);
+          }
+        }
+
+        function renderGutVirusTable(gutVirusData) {
+          const tableBody = document.getElementById('gut-virus-data-table-body');
+          if (!tableBody) {
+            console.error('Gut virus data table body not found');
+            return;
+          }
+
+          tableBody.innerHTML = '';
+
+          gutVirusData.forEach(virus => {
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.classList.add('gut-virus-data-row');
+            dataRow.innerHTML = `
+              <td class="py-2 px-4 text-left">
+                <div class="chinese-text">${virus.chinese_name}</div>
+                <div class="latin-text">${virus.latin_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${[virus.normal_range.min_normal_value, virus.normal_range.max_normal_value].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${virus.detected_abundance}
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress ${virus.detected_abundance <= virus.normal_range.max_normal_value && virus.detected_abundance >= virus.normal_range.min_normal_value ? 'bg-green-600' : 'bg-red-600'}"
+                       style="width: ${Math.min((virus.detected_abundance / virus.normal_range.max_normal_value) * 100, 100)}%;"></div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center bold-text column-text
+                ${virus.detected_abundance < virus.normal_range.min_normal_value ? 'text-gray-600' :
+                virus.detected_abundance > virus.normal_range.max_normal_value ? 'text-red-600' :
+                'text-green-600'}"
+              >
+                ${virus.detected_abundance < virus.normal_range.min_normal_value ? '低于正常' :
+                virus.detected_abundance > virus.normal_range.max_normal_value ? '超标 ↑' :
+                '正常'}
+              </td>
+              <td class="py-2 px-4 text-center column-text">${virus.classification}</td>
+            `;
+
+            // 创建描述行
+            const descRow = document.createElement('tr');
+            descRow.classList.add('gut-virus-desc-row');
+            descRow.innerHTML = `
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600">
+                  ${virus.descriptions.map(desc => `
+                    <div class="parasite-description">
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};"></i>
+                      ${desc.text}
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            `;
+
+            // 添加到表格
+            tableBody.appendChild(dataRow);
+            tableBody.appendChild(descRow);
+          });
+        }
+
+        // 页面加载时加载寄生虫数据
+        document.addEventListener('DOMContentLoaded', loadGutVirusData);
+      </script>
+
     </div>
 
   </div>
@@ -5358,6 +5409,8 @@
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
+            // 对 detected_gut_bacteria_data 按照 detected_value 从大到小（从正到负）排序
+            data.detected_gut_bacteria_data.sort((a, b) => b.detected_value - a.detected_value);
             renderDetectedGutBacteriaTable(data.detected_gut_bacteria_data);
           } catch (error) {
             console.error('Error loading detected gut bacteria data:', error);
