@@ -1290,7 +1290,7 @@
         <thead>
         <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-left first-column">真菌名称</th>
           <th class="py-2 px-4 text-center second-column">正常范围</th>
           <th class="py-2 px-4 text-center third-column">检测丰度</th>
           <th class="py-2 px-4 text-center fourth-column">结果评价</th>
@@ -1298,24 +1298,26 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="fungi-table-body">
+        <tbody id="gut-fungi-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
 
       <script>
-        async function loadFungiData() {
+        async function loadGutFungiData() {
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
-            renderFungiTable(data.gut_fungi_data);
+            // 对 gut_fungi_data 按照 detected_abundance 从大到小排序
+            data.gut_fungi_dataa.sort((a, b) => b.detected_abundance - a.detected_abundance);
+            renderGutFungiTable(data.gut_fungi_data);
           } catch (error) {
             console.error('Error loading fungi data:', error);
           }
         }
 
-        function renderFungiTable(fungiData) {
-          const tableBody = document.getElementById('fungi-table-body');
+        function renderGutFungiTable(gutFungiData) {
+          const tableBody = document.getElementById('gut-fungi-data-table-body');
           if (!tableBody) {
             console.error('Fungi table body not found');
             return;
@@ -1323,7 +1325,7 @@
 
           tableBody.innerHTML = '';
 
-          fungiData.forEach(fungi => {
+          gutFungiData.forEach(fungi => {
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('fungi-row');
@@ -1370,7 +1372,7 @@
         }
 
         // 页面加载时加载真菌数据
-        document.addEventListener('DOMContentLoaded', loadFungiData);
+        document.addEventListener('DOMContentLoaded', loadGutFungiData);
       </script>
 
 
