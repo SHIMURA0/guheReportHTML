@@ -4439,13 +4439,23 @@
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 图例 -->
+
+<!--    <div class="food-recommendation-top-legend-container">-->
+<!--      <div class="bg-[#FF3B30] text-center text-white text-sm py-1">避免摄入</div>-->
+<!--      <div class="bg-[#FF9500] text-center text-white text-sm py-1">控制摄入</div>-->
+<!--      <div class="bg-[#FFCC00] text-center text-gray-700 text-sm py-1">适当摄入</div>-->
+<!--      <div class="bg-[#B4CD3C] text-center text-gray-700 text-sm py-1">建议食用</div>-->
+<!--      <div class="bg-[#87B550] text-center text-white text-sm py-1">建议多食用</div>-->
+<!--      <div class="bg-[#34C759] text-center text-white text-sm py-1">强烈推荐</div>-->
+<!--    </div>-->
+
     <div class="food-recommendation-top-legend-container">
-      <div class="bg-red-500 text-center text-white text-sm py-1">避免摄入</div>
-      <div class="bg-orange-300 text-center text-white text-sm py-1">控制摄入</div>
-      <div class="bg-yellow-200 text-center text-gray-700 text-sm py-1">适当摄入</div>
-      <div class="bg-green-100 text-center text-gray-700 text-sm py-1">建议食用</div>
-      <div class="bg-green-300 text-center text-gray-700 text-sm py-1">建议多食用</div>
-      <div class="bg-green-500 text-center text-white text-sm py-1">强烈推荐</div>
+      <div class="bg-[#FF3B30] text-center text-white text-sm py-1">避免摄入</div>
+      <div class="bg-[#FF9500] text-center text-white text-sm py-1">控制摄入</div>
+      <div class="bg-[#FFCC00] text-center text-white text-sm py-1">适当摄入</div>
+      <div class="bg-[#7ED321] text-center text-white text-sm py-1">建议食用</div>
+      <div class="bg-[#00C35A] text-center text-white text-sm py-1">建议多食用</div>
+      <div class="bg-[#00B248] text-center text-white text-sm py-1">强烈推荐</div>
     </div>
 
     <!-- 刻度 -->
@@ -4556,18 +4566,54 @@
             const topFood = topFoods[i] || {}; // 如果没有更多的项，使用空对象
             const lowestFood = lowestFoods[maxRows - i - 1] || {}; // 同上
 
+            const getNegativeColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const getPositiveColor = (value) => {
+              if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
             const foodRow = `
               <div class="flex items-center mt-[1px]">
                   <div class="w-20 text-right pr-4">${lowestFood.chinese_name || '未定义'}</div>
                   <div class="food-recommendation-top-score-bar-container">
                       <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
-                          <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
-                          <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
+                          <div class="food-recommendation-top-negative-score" style="background-color: ${getNegativeColor(lowestFood.evaluation_value)}; transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
+                          <div class="food-recommendation-top-positive-score" style="background-color: ${getPositiveColor(topFood.evaluation_value)}; transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
                       </div>
                   </div>
                   <div class="w-20 pl-4">${topFood.chinese_name || '未定义'}</div>
               </div>
-            `;
+          `;
+
+
+            // const foodRow = `
+            //   <div class="flex items-center mt-[1px]">
+            //       <div class="w-20 text-right pr-4">${lowestFood.chinese_name || '未定义'}</div>
+            //       <div class="food-recommendation-top-score-bar-container">
+            //           <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
+            //               <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
+            //               <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
+            //           </div>
+            //       </div>
+            //       <div class="w-20 pl-4">${topFood.chinese_name || '未定义'}</div>
+            //   </div>
+            // `;
             foodContainer.innerHTML += foodRow; // 动态添加到 DOM 中
           }
 
@@ -4645,16 +4691,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('staple-food-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -4663,7 +4728,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -4739,16 +4805,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('dairy-products-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -4757,7 +4842,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -4833,16 +4919,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('dairy-products-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -4851,7 +4956,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -4929,16 +5035,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('fast-food-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -4947,7 +5072,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -5025,16 +5151,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('fast-food-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -5043,7 +5188,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -5121,16 +5267,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('fast-food-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -5139,7 +5304,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -5217,16 +5383,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('soup-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -5235,7 +5420,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -5313,16 +5499,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('meat-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -5331,7 +5536,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
@@ -5409,16 +5615,35 @@
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('vegetables-data-row');
+            const getProgressBarColor = (value) => {
+              if (value >= -100 && value < -60) {
+                return '#FF3B30'; // -100 到 -60
+              } else if (value >= -60 && value < -30) {
+                return '#FF9500'; // -60 到 -30
+              } else if (value >= -30 && value < 0) {
+                return '#FFCC00'; // -30 到 0
+              } else if (value >= 0 && value < 30) {
+                return '#7ED321'; // 0 到 30
+              } else if (value >= 30 && value < 60) {
+                return '#00C35A'; // 30 到 60
+              } else if (value >= 60 && value <= 100) {
+                return '#00B248'; // 60 到 100
+              }
+              return 'transparent'; // 其他情况
+            };
+
+            const progressBarColor = getProgressBarColor(food.evaluation_value);
+
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
+                  <div class="chinese-text">${food.chinese_name}</div>
+                  <div class="latin-text">${food.english_name}</div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">
-                ${food.evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress bg-green-500" style="width: ${Math.abs(food.evaluation_value)}%;"></div>
-                </div>
+                  ${food.evaluation_value}
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+                  </div>
               </td>
               <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
@@ -5427,7 +5652,8 @@
               <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-            `;
+          `;
+
 
             // 添加到表格
             tableBody.appendChild(dataRow);
