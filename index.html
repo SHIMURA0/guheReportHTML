@@ -3481,6 +3481,8 @@
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
+            // 对 slow_disease_data 按照 detected_abundance 从大到小排序
+            data.slow_disease_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
             renderSlowDiseaseTable(data.slow_disease_data);
           } catch (error) {
             console.error('Error loading slow disease data:', error);
