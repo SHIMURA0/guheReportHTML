@@ -1168,7 +1168,8 @@
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            本报告列出了 17 种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
+            肠道致病菌是指能直接引起疾病的肠道病原微生物，它们具有明确的致病性，一旦在肠道中检出就可能对健康造成
+            威胁。这类细菌通常具有特定的致病机制，如产生毒素、侵犯宿主细胞、触发炎症反应等。本报告列出了54种常见的肠道致病菌，按照在您肠道中检出丰度递减排序。
           </p>
         </div>
       </div>
@@ -1188,62 +1189,84 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="pathogenic-bacteria-table-body">
+        <tbody id="gut-pathogenic-bacteria-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
 
       <script>
-        async function loadPathogenicBacteriaData() {
+        async function loadGutPathogenicBacteriaData() {
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
-            renderPathogenicBacteriaTable(data.gut_pathogens_data);
+            // 对 gut_pathogens_data 按照 detected_abundance 从大到小排序
+            data.gut_pathogens_bacteria_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
+            renderGutPathogenicBacteriaTable(data.gut_pathogens_bacteria_data);
           } catch (error) {
-            console.error('Error loading pathogenic bacteria data:', error);
+            console.error('Error loading gut pathogenic bacteria data:', error);
           }
         }
 
-        function renderPathogenicBacteriaTable(bacteriaData) {
-          const tableBody = document.getElementById('pathogenic-bacteria-table-body');
+        function renderGutPathogenicBacteriaTable(pathogenicBacteriaData) {
+          const tableBody = document.getElementById('gut-pathogenic-bacteria-data-table-body');
           if (!tableBody) {
-            console.error('Pathogenic bacteria table body not found');
+            console.error('Gut pathogenic bacteria data table body not found');
             return;
           }
 
           tableBody.innerHTML = '';
 
-          bacteriaData.forEach(bacteria => {
+          pathogenicBacteriaData.forEach(pathogenicBacteria => {
             // 创建数据行
             const dataRow = document.createElement('tr');
-            dataRow.classList.add('pathogenic-bacteria-row');
+            dataRow.classList.add('gut-pathogenic-bacteria-data-row');
             dataRow.innerHTML = `
               <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${bacteria.chinese_name}</div>
-                <div class="latin-text">${bacteria.latin_name}</div>
+                <div class="chinese-text">${pathogenicBacteria.chinese_name}</div>
+                <div class="latin-text">${pathogenicBacteria.latin_name}</div>
               </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
               <td class="py-2 px-4 text-center column-text">
-                ${bacteria.detected_abundance}
+                ${[pathogenicBacteria.normal_range.min_normal_value, pathogenicBacteria.normal_range.max_normal_value].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${pathogenicBacteria.detected_abundance === 0 ? 'ND' : pathogenicBacteria.detected_abundance}
                 <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                  <div class="progress
+                    ${pathogenicBacteria.detected_abundance <= pathogenicBacteria.normal_range.max_normal_value && pathogenicBacteria.detected_abundance >= pathogenicBacteria.normal_range.min_normal_value
+                    ? 'bg-green-600'
+                    : 'bg-red-600'
+                  }" style="width:
+                      ${pathogenicBacteria.detected_abundance === 0
+                      ? 0
+                      : Math.min((pathogenicBacteria.detected_abundance / pathogenicBacteria.normal_range.max_normal_value) * 100, 100)}%;
+                  ">
+                  </div>
                 </div>
               </td>
-              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                ${bacteria.evaluation.status}
+              <td class="py-2 px-4 text-center bold-text column-text
+                ${pathogenicBacteria.detected_abundance === 0 ? 'text-gray-600' :
+                  pathogenicBacteria.detected_abundance < pathogenicBacteria.normal_range.min_normal_value ? 'text-gray-600' :
+                  pathogenicBacteria.detected_abundance > pathogenicBacteria.normal_range.max_normal_value ? 'text-red-600' :
+                  'text-green-600'}"
+                  >
+                    ${pathogenicBacteria.detected_abundance === 0 ? '未检出' :
+                    pathogenicBacteria.detected_abundance < pathogenicBacteria.normal_range.min_normal_value ? '低于正常' :
+                    pathogenicBacteria.detected_abundance > pathogenicBacteria.normal_range.max_normal_value ? '超标 ↑' :
+                    '正常'
+              }
               </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+              <td class="py-2 px-4 text-center column-text">${pathogenicBacteria.higher_than_percentage !== null ? pathogenicBacteria.higher_than_percentage + '%' : '-'}</td>
+              <td class="py-2 px-4 text-center column-text">${pathogenicBacteria.normal_detection_rate}%</td>
             `;
 
             // 创建描述行
             const descRow = document.createElement('tr');
-            descRow.classList.add('pathogenic-bacteria-desc-row');
+            descRow.classList.add('gut-pathogenic-bacteria-desc-row');
             descRow.innerHTML = `
               <td colspan="6" class="py-2 px-4 text-left">
                 <div class="description-container text-gray-600">
-                  ${bacteria.descriptions.map(desc => `
-                    <div class="pathogenic-bacteria-description">
+                  ${pathogenicBacteria.descriptions.map(desc => `
+                    <div class="gut-pathogenic-bacteria-description">
                       <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
                          style="color: ${desc.color};"></i>
                       ${desc.text}
@@ -1260,7 +1283,7 @@
         }
 
         // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadPathogenicBacteriaData);
+        document.addEventListener('DOMContentLoaded', loadGutPathogenicBacteriaData);
       </script>
 
     </div>
