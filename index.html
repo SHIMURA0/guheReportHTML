@@ -5747,12 +5747,13 @@
                   </div>
               </td>
               <td class="py-2 px-4 text-center text-${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'yellow' :
-              Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+                Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text font-bold">
                 ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? '缺乏' :
                 Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? '超标' : '正常'}
-                <i class="fas ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'fa-arrow-down' :
-                Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
+                    <i class="fas ${Bacteria.detected_value < Bacteria.normal_range.min_normal_value ? 'fa-arrow-down' :
+                      Bacteria.detected_value > Bacteria.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
               </td>
+
             `;
 
             // 创建描述行
@@ -5850,7 +5851,7 @@
                   </div>
               </td>
               <td class="py-2 px-4 text-center text-${fungi.detected_value < fungi.normal_range.min_normal_value ? 'yellow' :
-              fungi.detected_value > fungi.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+              fungi.detected_value > fungi.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text font-bold">
                 ${fungi.detected_value < fungi.normal_range.min_normal_value ? '缺乏' :
               fungi.detected_value > fungi.normal_range.max_normal_value ? '超标' : '正常'}
                 <i class="fas ${fungi.detected_value < fungi.normal_range.min_normal_value ? 'fa-arrow-down' :
@@ -5953,7 +5954,7 @@
                   </div>
               </td>
               <td class="py-2 px-4 text-center text-${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
-              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
+              eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text font-bold">
                 ${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? '缺乏' :
               eukaryotes.detected_value > eukaryotes.normal_range.max_normal_value ? '超标' : '正常'}
                 <i class="fas ${eukaryotes.detected_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
