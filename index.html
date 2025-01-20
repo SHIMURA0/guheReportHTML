@@ -1309,7 +1309,7 @@
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
             // 对 gut_fungi_data 按照 detected_abundance 从大到小排序
-            data.gut_fungi_dataa.sort((a, b) => b.detected_abundance - a.detected_abundance);
+            data.gut_fungi_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
             renderGutFungiTable(data.gut_fungi_data);
           } catch (error) {
             console.error('Error loading fungi data:', error);
@@ -1334,15 +1334,35 @@
                 <div class="chinese-text">${fungi.chinese_name}</div>
                 <div class="latin-text">${fungi.latin_name}</div>
               </td>
-              <td class="py-2 px-4 text-center column-text">${fungi.normal_range}</td>
               <td class="py-2 px-4 text-center column-text">
-                ${fungi.detected_abundance}
+                ${[fungi.normal_range.min_normal_value, fungi.normal_range.max_normal_value].join('-')}
+              </td>
+              <td class="py-2 px-4 text-center column-text">
+                ${fungi.detected_abundance === 0 ? 'ND' : fungi.detected_abundance}
                 <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${fungi.progress_percentage}%;"></div>
+                  <div class="progress
+                    ${fungi.detected_abundance <= fungi.normal_range.max_normal_value && fungi.detected_abundance >= fungi.normal_range.min_normal_value
+                    ? 'bg-green-600'
+                    : 'bg-red-600'
+                  }" style="width:
+                          ${fungi.detected_abundance === 0
+                    ? 0
+                    : Math.min((fungi.detected_abundance / fungi.normal_range.max_normal_value) * 100, 100)}%;
+                        ">
+                  </div>
                 </div>
               </td>
-              <td class="py-2 px-4 text-center bold-text text-${fungi.evaluation.color}-600 column-text">
-                ${fungi.evaluation.status}
+              <td class="py-2 px-4 text-center bold-text column-text
+                ${fungi.detected_abundance === 0 ? 'text-gray-600' :
+                fungi.detected_abundance < fungi.normal_range.min_normal_value ? 'text-gray-600' :
+                fungi.detected_abundance > fungi.normal_range.max_normal_value ? 'text-red-600' :
+                'text-green-600'}"
+                >
+                  ${fungi.detected_abundance === 0 ? '未检出' :
+                  fungi.detected_abundance < fungi.normal_range.min_normal_value ? '低于正常' :
+                  fungi.detected_abundance > fungi.normal_range.max_normal_value ? '超标 ↑' :
+                  '正常'
+              }
               </td>
               <td class="py-2 px-4 text-center column-text">${fungi.higher_than_percentage !== null ? fungi.higher_than_percentage + '%' : '-'}</td>
               <td class="py-2 px-4 text-center column-text">${fungi.normal_detection_rate}%</td>
@@ -1454,8 +1474,16 @@
               <td class="py-2 px-4 text-center column-text">
                 ${parasite.detected_abundance === 0 ? 'ND' : parasite.detected_abundance}
                 <div class="progress-bar w-full mt-1">
-                  <div class="progress ${parasite.detected_abundance <= parasite.normal_range.max_normal_value && parasite.detected_abundance >= parasite.normal_range.min_normal_value ? 'bg-green-600' : 'bg-red-600'}"
-                       style="width: ${parasite.detected_abundance === 0 ? 0 : Math.min((parasite.detected_abundance / parasite.normal_range.max_normal_value) * 100, 100)}%;"></div>
+                  <div class="progress
+                    ${parasite.detected_abundance <= parasite.normal_range.max_normal_value && parasite.detected_abundance >= parasite.normal_range.min_normal_value
+                    ? 'bg-green-600'
+                    : 'bg-red-600'
+                  }" style="width:
+                    ${parasite.detected_abundance === 0
+                    ? 0
+                    : Math.min((parasite.detected_abundance / parasite.normal_range.max_normal_value) * 100, 100)}%;
+                  ">
+                  </div>
                 </div>
               </td>
               <td class="py-2 px-4 text-center bold-text column-text

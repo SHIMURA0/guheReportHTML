@@ -49,9 +49,11 @@ body {
   .no-print {
     display: none; /* 不打印的元素 */
   }
+
   @page {
     margin: 10mm; /* 设置每一页的边距 */
   }
+
   .page-break {
     page-break-before: always; /* 强制分页 */
     /*margin-top: 20mm; !* 为分页元素添加上边距 *!*/
@@ -72,6 +74,7 @@ body {
   td {
     page-break-inside: avoid;
   }
+
 
 
 }
