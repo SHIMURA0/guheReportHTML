@@ -42,7 +42,7 @@ body {
 }
 
 .custom-title-first-level {
-  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  width: 94%; /* 设置标题宽度为页面宽度的85% */
   margin: 0 auto; /* 居中对齐 */
   padding: 0; /* 内边距 */
   background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
@@ -94,9 +94,12 @@ body {
     page-break-before: always; /* 强制分页 */
     /*margin-top: 20mm; !* 为分页元素添加上边距 *!*/
   }
-  h1, h2, h3 {
-    margin-top: 10mm; /* 为标题添加上边距 */
-  }
+  /*h1, h2, h3 {*/
+  /*  margin-top: 10mm; !* 为标题添加上边距 *!*/
+  /*}*/
+  /*h1, h2, h3 {*/
+  /*  margin-top: calc(10mm - 10mm); !* 将上边距设置为页面边距的值 *!*/
+  /*}*/
   .rounded-table {
     width: 100%; /* 确保表格宽度为100% */
   }
@@ -128,8 +131,8 @@ body {
   /*background-color: rgba(236, 254, 255, 0.5);*/
   background-color: rgba(211, 211, 211, 0.15);
   border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
+  padding: 15px;
+  margin-bottom: 2px;
 }
 .summary-title {
   color: rgb(45, 166, 168);
