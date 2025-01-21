@@ -41,6 +41,42 @@ body {
   font-weight: bold; /* 使用 'bold' 使字体变粗 */
 }
 
+.custom-title-first-level {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 3.5rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
+}
+
+.custom-title-second-level {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 3rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
+}
+
+.custom-title-third-level {
+  width: 95%; /* 设置标题宽度为页面宽度的85% */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 0; /* 内边距 */
+  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
+  border-radius: 8px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  color: rgb(0, 178, 180); /* 字体颜色 */
+  font-size: 2.5rem; /* 字体大小 */
+  font-weight: bold; /* 使用 'bold' 使字体变粗 */
+}
+
 /* 打印样式 */
 @media print {
   body {
@@ -89,7 +125,8 @@ body {
 /* 宏基因组报告第一页 */
 
 .summary-info-card {
-  background-color: rgba(236, 254, 255, 0.5);
+  /*background-color: rgba(236, 254, 255, 0.5);*/
+  background-color: rgba(211, 211, 211, 0.15);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 16px;
@@ -117,7 +154,8 @@ body {
 }
 .summary-circle {
   fill: none;
-  stroke: rgb(45, 166, 168);
+  /*stroke: rgb(45, 166, 168);*/
+  stroke: #FF5733;
   stroke-width: 10;
   stroke-linecap: round;
   transform: rotate(-90deg);
@@ -827,17 +865,6 @@ tr {
 
 /* 个性化饮食推荐 */
 
-.custom-title-food-top {
-  width: 95%; /* 设置标题宽度为页面宽度的85% */
-  margin: 0 auto; /* 居中对齐 */
-  padding: 0; /* 内边距 */
-  background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
-  border-radius: 8px; /* 圆角 */
-  text-align: center; /* 文本居中 */
-  color: rgb(0, 178, 180); /* 字体颜色 */
-  font-size: 2rem; /* 字体大小 */
-  font-weight: bold; /* 使用 'bold' 使字体变粗 */
-}
 
 /* 个性化饮食推荐 : 推荐食物TOP比较信息图样式 */
 

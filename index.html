@@ -57,12 +57,12 @@
                     dominant-baseline="middle"
                     font-size="30"
                     font-weight="bold"
-                    fill="rgb(45, 166, 168)">64</text>
+                    fill="#FF5733">64</text>
               <text x="50" y="68"
                     class="summary-score-text"
                     text-anchor="middle"
                     font-size="10"
-                    fill="rgb(71, 85, 105)">总分: 100</text>
+                    fill="#2DA6A8">总分: 100</text>
             </svg>
           </div>
           <div class="summary-description text-center">
@@ -373,7 +373,7 @@
           }
         }
 
-        function renderEvaluationOfGutMicrobiomeTable(detectedGutFungiData) {
+        function renderEvaluationOfGutMicrobiomeTable(overallGutMicrobiomeData) {
           const tableBody = document.getElementById('overall-evaluation-of-gut-microbiome-data-table-body');
           if (!tableBody) {
             console.error('Overall evaluation of gut microbiome data table body not found');
@@ -382,7 +382,7 @@
 
           tableBody.innerHTML = '';
 
-          detectedGutFungiData.forEach(microbiome => {
+          overallGutMicrobiomeData.forEach(microbiome => {
             // 创建数据行
             const dataRow = document.createElement('tr');
             dataRow.classList.add('overall-evaluation-of-gut-data-row');
@@ -446,19 +446,21 @@
   </div>
 
   <!-- 肠道菌群检测模块 -->
-  <h1 class="custom-title page-break">肠道菌群检测</h1>
+  <h1 class="custom-title-first-level page-break">肠道菌群检测</h1>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
         <i class="fas fa-info-circle icon"></i>
-        <div class="ml-2">
+        <div class="ml-1.5">
           <p class="text-lg text-custom-teal">
-            肠道菌群可以大分类成细菌，病毒，真菌，原生生物和寄生虫 5 个类别，下列是对各项组成部分的介绍及他们在您肠道中的分布比例图。
+            肠道菌群可以大分类成细菌，病毒，真菌，原生生物和寄生虫 5 个类别，下列是各项组成部分的介绍及他们在您肠道中的分布比例图。
           </p>
         </div>
       </div>
     </div>
+
     <!-- 肠道菌群组成比例信息图   -->
     <div class="container mx-auto space-y-2">
       <!-- 细菌 -->
@@ -566,16 +568,16 @@
   </div>
 
   <!-- 肠道细菌板块 -->
-  <h2 class="custom-title page-break">肠道细菌</h2>
+  <h2 class="custom-title-second-level page-break">肠道细菌</h2>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
         <i class="fas fa-info-circle icon"></i>
-        <div class="ml-2">
+        <div class="ml-1.5">
           <p class="text-lg text-custom-teal">
-            肠道微生物以细菌为主要组成部分，在人体肠道中约有数千种不同的细菌物种，总数量高达数十万亿个。健康成年人肠道中的细菌主要由厚壁菌门（Firmicutes）、拟杆菌门（Bacteroidetes）、放线菌门（Actinobacteria）和变形菌门（Proteobacteria）等构成，其中厚壁菌门和拟杆菌门的数量占比最高，可达 90% 以上。我们可以从两个重要维度来评估肠道菌群中的细菌：丰度和致病性，这两个维度的组合可以帮助我们更全面地理解不同菌属在肠道微生态中的重要性和分布特征。
+            肠道微生物主要由肠道细菌组成，人体肠道中存在数千种细菌，总数量可达数十万亿个。健康成年人的肠道细菌主要分为厚壁菌门（Firmicutes）、拟杆菌门（Bacteroidetes）、放线菌门（Actinobacteria）和变形菌门（Proteobacteria），其中厚壁菌门和拟杆菌门占据了90%以上的比例。评估肠道菌群时，我们可以从丰度和菌群特性两个维度入手，这两者的结合有助于深入理解不同菌属在肠道微生态中的重要性和分布特征。
           </p>
         </div>
       </div>
@@ -628,7 +630,7 @@
   </div>
 
   <!-- 核心菌属板块 -->
-  <h3 class="custom-title-1 page-break">核心菌属</h3>
+  <h3 class="custom-title-third-level page-break">核心菌属</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -637,7 +639,8 @@
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            核心菌属是指在肠道菌群中丰度（相对数量）较高、具有重要生理功能的优势菌群，它们在维持肠道健康、参与营养物质代谢、调节免疫系统等方面发挥着主导作用，是构成肠道微生态系统的基石。主要包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等，这些菌群在正常情况下能帮助消化纤维、产生短链脂肪酸、维持肠道屏障功能。如果这些核心菌属丰度异常（过高或过低），可能导致肠道菌群失衡，引发炎症反应、免疫功能紊乱，甚至增加肥胖、糖尿病等代谢性疾病的风险。糖尿病等代谢性疾病的风险糖尿病等代谢性疾病的风险糖尿病等代谢性疾病的风险糖尿病等代谢性疾病的风险糖尿病等代谢性疾病的风险糖尿病等代谢性疾病的风险
+            核心菌属是指在肠道菌群中相对丰度较高、对生理功能具有重要作用的优势菌群。它们在维持肠道健康、参与营养物质代谢和调节免疫系统等方面发挥着主导作用，构成了肠道微生态系统的基石。主要的核心菌属包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等。在正常情况下，这些菌群能帮助消化纤维、产生短链脂肪酸，维持肠道屏障功能。
+            此外，核心肠道菌属还在合成维生素、促进矿物质吸收和抑制病原菌生长中发挥重要作用。它们通过与肠道内的免疫系统相互作用，增强机体的免疫反应，抵御外界的病原体侵袭。因此，保持核心菌属的平衡与多样性是维护肠道健康的关键。对于饮食和生活方式的调整，能够有效影响这些核心菌属的构成，从而促进整体健康。
           </p>
           <ul class="list-disc ml-5">
             <li>在本报告中，核心菌属指的是在90%人群中可被检测出，且人群平均丰度在1%以上的菌属。</li>
@@ -4417,7 +4420,7 @@
 
 
   <!-- 个性化饮食板块 -->
-  <h1 class="custom-title-1 page-break">个性化饮食推荐</h1>
+  <h1 class="custom-title-first-level page-break">个性化饮食推荐</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -4435,19 +4438,10 @@
 
   </div>
 
-  <h2 class="custom-title-food-top page-break">个性化饮食推荐TOP30</h2>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <h2 class="custom-title-second-level page-break">个性化饮食推荐TOP30</h2>
+  <div class="bg-white rounded-lg mt-4 mx-auto" style="width: 100%;">
 
     <!-- 图例 -->
-
-<!--    <div class="food-recommendation-top-legend-container">-->
-<!--      <div class="bg-[#FF3B30] text-center text-white text-sm py-1">避免摄入</div>-->
-<!--      <div class="bg-[#FF9500] text-center text-white text-sm py-1">控制摄入</div>-->
-<!--      <div class="bg-[#FFCC00] text-center text-gray-700 text-sm py-1">适当摄入</div>-->
-<!--      <div class="bg-[#B4CD3C] text-center text-gray-700 text-sm py-1">建议食用</div>-->
-<!--      <div class="bg-[#87B550] text-center text-white text-sm py-1">建议多食用</div>-->
-<!--      <div class="bg-[#34C759] text-center text-white text-sm py-1">强烈推荐</div>-->
-<!--    </div>-->
 
     <div class="food-recommendation-top-legend-container">
       <div class="bg-[#FF3B30] text-center text-white text-sm py-1">避免摄入</div>
@@ -4470,56 +4464,6 @@
     </div>
 
     <!-- 食品条目 -->
-<!--    <div>-->
-<!--      &lt;!&ndash; 第一行：最不推荐 vs 最推荐 &ndash;&gt;-->
-<!--      <div class="flex items-center">-->
-<!--        <div class="w-20 text-right pr-4">反式脂肪</div>-->
-<!--        <div class="food-recommendation-top-score-bar-container">-->
-<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
-<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(1)"></div>-->
-<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(1)"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="w-20 pl-4">菊苣</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第二行：次不推荐 vs 次推荐 &ndash;&gt;-->
-<!--      <div class="flex items-center mt-[1px]">-->
-<!--        <div class="w-20 text-right pr-4">黄油</div>-->
-<!--        <div class="food-recommendation-top-score-bar-container">-->
-<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
-<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.85)"></div>-->
-<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.85)"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="w-20 pl-4">波菜</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第三行 &ndash;&gt;-->
-<!--      <div class="flex items-center mt-[1px]">-->
-<!--        <div class="w-20 text-right pr-4">猪培根</div>-->
-<!--        <div class="food-recommendation-top-score-bar-container">-->
-<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
-<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.80)"></div>-->
-<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.81)"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="w-20 pl-4">菜豆</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第四行 &ndash;&gt;-->
-<!--      <div class="flex items-center mt-[1px]">-->
-<!--        <div class="w-20 text-right pr-4">加工肉</div>-->
-<!--        <div class="food-recommendation-top-score-bar-container">-->
-<!--          <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">-->
-<!--            <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(0.73)"></div>-->
-<!--            <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(0.73)"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="w-20 pl-4">茄子</div>-->
-<!--      </div>-->
-<!--    </div>-->
-
     <div id="food-container"></div> <!-- 用于展示食品条目的容器 -->
 
     <script>
@@ -4601,19 +4545,6 @@
               </div>
           `;
 
-
-            // const foodRow = `
-            //   <div class="flex items-center mt-[1px]">
-            //       <div class="w-20 text-right pr-4">${lowestFood.chinese_name || '未定义'}</div>
-            //       <div class="food-recommendation-top-score-bar-container">
-            //           <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
-            //               <div class="food-recommendation-top-negative-score bg-red-500" style="transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
-            //               <div class="food-recommendation-top-positive-score bg-green-400" style="transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
-            //           </div>
-            //       </div>
-            //       <div class="w-20 pl-4">${topFood.chinese_name || '未定义'}</div>
-            //   </div>
-            // `;
             foodContainer.innerHTML += foodRow; // 动态添加到 DOM 中
           }
 
@@ -4625,9 +4556,6 @@
       // 调用函数
       fetchAndRenderTopAndLowestFoods();
     </script>
-
-
-
   </div>
 
   <h2 class="custom-title-1 page-break">主食类饮食推荐</h2>
@@ -5237,7 +5165,7 @@
         </tr>
         </thead>
         <tbody id="fruit-data-table-body">
-
+        <!-- 数据将通过 JavaScript 动态插入 -->
         </tbody>
       </table>
 
@@ -5305,7 +5233,6 @@
               <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
               <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
           `;
-
 
             // 添加到表格
             tableBody.appendChild(dataRow);
