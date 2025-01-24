@@ -5433,67 +5433,10 @@
           "text": "与奖励、愉悦、运动功能相关的神经递质，影响动机和行为。"
         }
       ]
-    }
-  ],
-
-  "compounds_data": [
-    {
-      "chinese_name": "丁酸盐",
-      "latin_name": "Butyrate",
-      "normal_range": "15-98",
-      "detected_abundance": 24,
-      "progress_percentage": 24,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "参与血液凝固过程，促进骨骼钙化，具有抗动脉粥样硬化的作用。"
-        }
-      ]
     },
     {
-      "chinese_name": "丙酸盐",
-      "latin_name": "Propionate",
-      "normal_range": "15-98",
-      "detected_abundance": 62,
-      "progress_percentage": 62,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道菌群代谢芳香族氨基酸产生的代谢物，反映肠道菌群的代谢活性。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "乙酸盐",
-      "latin_name": "Acetate",
-      "normal_range": "15-98",
-      "detected_abundance": 7,
-      "progress_percentage": 7,
-      "evaluation": {
-        "status": "缺乏",
-        "color": "yellow"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "参与细胞信号传导，对神经系统功能和胰岛素敏感性有重要影响。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "异戊酸盐",
-      "latin_name": "Isovaleric",
+      "chinese_name": "谷氨酸",
+      "latin_name": "Glutamate",
       "normal_range": "15-98",
       "detected_abundance": 11,
       "progress_percentage": 11,
@@ -5505,10 +5448,49 @@
         {
           "type": "info",
           "color": "rgb(0, 178, 180)",
-          "text": "蛋白质代谢产物，其水平反映肠道菌群的蛋白质降解能力。"
+          "text": "参与血液凝固过程，促进骨骼钙化，具有抗动脉粥样硬化的作用。"
         }
       ]
     },
+    {
+      "chinese_name": "色氨",
+      "latin_name": "Tryptophan",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "肠道菌群代谢芳香族氨基酸产生的代谢物，反映肠道菌群的代谢活性。"
+        }
+      ]
+    },
+    {
+      "chinese_name": "喹啉",
+      "latin_name": "Quinolinic",
+      "normal_range": "15-98",
+      "detected_abundance": 11,
+      "progress_percentage": 11,
+      "evaluation": {
+        "status": "缺乏",
+        "color": "yellow"
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "rgb(0, 178, 180)",
+          "text": "参与细胞信号传导，对神经系统功能和胰岛素敏感性有重要影响。"
+        }
+      ]
+    }
+  ],
+
+  "compounds_data": [
     {
       "chinese_name": "谷氨酸",
       "latin_name": "Glutamate",
