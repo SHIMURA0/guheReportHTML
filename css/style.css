@@ -10,10 +10,10 @@
 }
 
 body {
-
-  font-family: "Microsoft YaHei", Arial, sans-serif; /* 设置字体为微软雅黑 */
+  /* 设置字体族，从左到右按优先级排列 */
+  font-family: "Microsoft YaHei", Arial, sans-serif; /* 如果找不到微软雅黑，就使用 Arial，如果 Arial 也没有，就使用系统默认无衬线字体 */
   margin: 0; /* 去掉默认边距 */
-  padding: 40mm; /* 设置内边距 */
+  padding: 20mm; /* 设置内边距 */
   box-sizing: border-box; /* 包含边框和内边距 */
 }
 
