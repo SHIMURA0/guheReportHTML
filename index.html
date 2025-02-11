@@ -310,7 +310,9 @@
   </div>
 
   <!-- 肠道整体评估板块 -->
-  <h1 class="custom-title-second-level page-break">肠道整体评估</h1>
+  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
+    <h1 class="custom-title-second-level page-break">肠道整体评估</h1>
+  </div>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -335,7 +337,9 @@
 
 
   <!-- 肠道整体评估 : 肠道基础功能评估 -->
-  <h2 class="custom-title-third-level page-break">肠道基础功能评估</h2>
+  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
+    <h2 class="custom-title-third-level page-break">肠道基础功能评估</h2>
+  </div>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -354,9 +358,9 @@
       <table class="min-w-full">
         <thead>
         <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left basic-function-of-gut-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-left basic-function-of-gut-first-column">评估项目</th>
           <th class="py-2 px-4 text-center basic-function-of-gut-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-third-column">评估数值</th>
           <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column">结果评价</th>
         </tr>
         </thead>
@@ -403,18 +407,21 @@
               <td class="py-2 px-4 text-center disease-column-text">
                   ${eukaryotes.evaluated_value}
                   <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                      <div class="progress bg-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
-                           style="width: ${Math.min(100, (eukaryotes.evaluated_value / eukaryotes.normal_range.max_normal_value * 100))}%;"></div>
+                      <div class="progress ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
+                                    eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-green-500'} rounded-full h-2"
+                           style="width: ${Math.min(100, (eukaryotes.evaluated_value / eukaryotes.normal_range.max_normal_value * 100))}%;">
+                      </div>
+
                   </div>
               </td>
-              <td class="py-2 px-4 text-center text-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'yellow' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
-                ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '缺乏' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '超标' : '正常'}
+              <td class="py-2 px-4 bold-text text-center text-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '[#ff4d4f]' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '[#ff4d4f]' : '[#52c41a]'} disease-column-text">
+                ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '异常' :
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '异常' : '正常'}
                 <i class="fas ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
               eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
               </td>
+
             `;
 
             // 创建描述行
@@ -449,7 +456,9 @@
   </div>
 
   <!-- 肠道整体评估 : 肠道菌群整体评估 -->
-  <h2 class="custom-title-third-level page-break">肠道菌群整体评估</h2>
+  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
+    <h2 class="custom-title-third-level page-break">肠道菌群整体评估</h2>
+  </div>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -517,15 +526,16 @@
                 <td class="py-2 px-4 text-center disease-column-text">
                     ${microbiome.evaluated_value}
                     <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                        <div class="progress bg-${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'yellow' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'red' : 'green'}-500 rounded-full h-2"
-                             style="width: ${Math.min(100, (microbiome.evaluated_value / microbiome.normal_range.max_normal_value * 100))}%;"></div>
-                    </div>
+    <div class="progress ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
+              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#52c41a]'} rounded-full h-2"
+         style="width: ${Math.min(100, (microbiome.evaluated_value / microbiome.normal_range.max_normal_value * 100))}%;">
+    </div>
+</div>
                 </td>
-                <td class="py-2 px-4 text-center text-${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'yellow' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'red' : 'green'}-600 disease-column-text">
-                  ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '缺乏' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '超标' : '正常'}
+                <td class="py-2 px-4 bold-text text-center text-${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '[#ff4d4f]' :
+              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '[#ff4d4f]' : '[#52c41a]'} disease-column-text">
+                  ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '异常' :
+              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '异常' : '正常'}
                   <i class="fas ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'fa-arrow-down' :
               microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
                 </td>
