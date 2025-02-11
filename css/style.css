@@ -192,7 +192,7 @@ body {
   background-color: rgba(200, 180, 255, 0.15); /* 浅紫色背景 */
   border: none; /* 边框颜色 */
   border-radius: 3mm; /* 圆角 */
-  padding: 10px; /* 增加内边距以改善布局 */
+  padding: 13px; /* 增加内边距以改善布局 */
   margin-bottom: 14px; /* 下边距 */
   display: flex; /* 使用 Flexbox 布局 */
   flex-direction: column; /* 垂直排列内容 */
@@ -200,7 +200,7 @@ body {
 }
 
 .qa-box .icon {
-  font-size: 0.75rem; /* 增加图标大小以提高可见性 */
+  font-size: 0.85rem; /* 增加图标大小以提高可见性 */
   margin-right: 5px; /* 增加图标与文本之间的间距 */
   align-self: flex-start; /* 确保图标与文本顶部对齐 */
 }
@@ -214,10 +214,10 @@ body {
 }
 
 .qa-box p {
-  font-size: 0.75rem; /* 段落字体大小 */
+  font-size: 0.85rem; /* 段落字体大小 */
   margin: 0; /* 去掉段落的上下边距 */
   padding: 0; /* 去掉段落的内边距 */
-  line-height: 1.5; /* 设置行高，调整行距 */
+  line-height: 1.7; /* 设置行高，调整行距 */
 }
 
 .qa-box .answer-text {
@@ -453,15 +453,15 @@ td.sixth-column {
   background-color: rgba(0, 198, 200, 0.1); /* 自定义背景色 */
   border: none; /* 边框颜色 */
   border-radius: 3mm; /* 圆角 */
-  padding: 10px; /* 增加内边距以改善布局 */
-  margin-bottom: 14px; /* 下边距 */
+  padding: 13px;    /* 只改变下padding */
+  margin-bottom: 13px; /* 下边距 */
   display: flex; /* 使用 Flexbox 布局 */
   align-items: flex-start; /* 垂直对齐方式 */
 }
 
 .info-box .icon {
   color: rgb(0, 178, 180); /* 图标颜色 */
-  font-size: 0.75rem; /* 增加图标大小以提高可见性 */
+  font-size: 0.85rem; /* 增加图标大小以提高可见性 */
   margin-right: 0px; /* 增加图标与文本之间的间距 */
   margin-top: 3px;
   align-self: flex-start; /* 确保图标与文本顶部对齐 */
@@ -473,14 +473,14 @@ td.sixth-column {
 }
 
 .info-box p {
-  font-size: 0.75rem; /* 段落字体大小 */
+  font-size: 0.85rem; /* 段落字体大小 */
   margin: 0; /* 去掉段落的上下边距 */
   padding: 0; /* 去掉段落的内边距 */
-  line-height: 1.5; /* 设置行高，调整行距 */
+  line-height: 1.7; /* 设置行高，调整行距 */
 }
 
 .info-box ul {
-  font-size: 0.75rem; /* 列表字体大小 */
+  font-size: 0.85rem; /* 列表字体大小 */
   margin: 0; /* 去掉列表的上下边距 */
   padding-left: 1.25rem; /* 调整列表的左侧内边距 */
   margin-top: 0.5rem; /* 设置列表与段落之间的间隔 */
