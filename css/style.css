@@ -43,13 +43,13 @@ body {
 
 .custom-title-first-level {
   width: 94%; /* 设置标题宽度为页面宽度的85% */
-  margin: 0 auto; /* 居中对齐 */
-  padding: 0; /* 内边距 */
+  margin: 0 auto 20px auto;  /* 上 右 下 左 */
+  padding: 5px; /* 内边距 */
   background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
   border-radius: 8px; /* 圆角 */
   text-align: center; /* 文本居中 */
   color: rgb(0, 178, 180); /* 字体颜色 */
-  font-size: 3.5rem; /* 字体大小 */
+  font-size: 4.0rem; /* 字体大小 */
   font-weight: bold; /* 使用 'bold' 使字体变粗 */
 }
 
@@ -136,7 +136,7 @@ body {
 }
 .summary-title {
   color: rgb(45, 166, 168);
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 .summary-value {

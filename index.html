@@ -14,12 +14,12 @@
 </head>
 
 <!-- 页面主体，四周内边距5-->
-<body class="bg-white p-5">
+<body class="bg-white p-6">
 
   <!-- 宏基因组检测报告总结页 -->
 
   <!-- 顶部标题容器：设置3mm的顶部内边距，内部包含一级标题 -->
-  <div class="pt-[3mm]">
+  <div class="pt-[5mm]">
     <!-- h1标题：使用自定义样式类custom-title-first-level来定制"宏基因组检测报告"的样式 -->
     <h1 class="custom-title-first-level">宏基因组检测报告</h1>
   </div>
@@ -27,7 +27,7 @@
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 基本信息行 -->
-    <div class="grid grid-cols-4 gap-4 mb-3">
+    <div class="grid grid-cols-4 gap-4 mb-5">
       <div class="summary-info-card">
         <div class="summary-title font-bold">姓名</div>
         <div class="font-bold text-gray-800">张三</div>
@@ -47,11 +47,11 @@
     </div>
 
     <!-- 健康总分和肠道年龄并排显示 -->
-    <div class="grid grid-cols-2 gap-4 mb-3">
+    <div class="grid grid-cols-2 gap-4 mb-5">
       <div class="summary-info-card">
-        <div class="summary-title"><b>健康总分</b></div>
+        <div class="summary-title mb-7"><b>健康总分</b></div>
         <div class="flex flex-col items-center">
-          <div class="w-40 h-40 mb-4">
+          <div class="w-40 h-40 mb-5">
             <svg viewBox="0 0 100 100">
               <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
               <circle class="summary-circle" cx="50" cy="50" r="45"
@@ -81,7 +81,7 @@
         <div class="flex flex-col">
           <div class="relative w-full">
             <!-- 真实年龄部分 -->
-            <div class="mb-6">
+            <div class="mb-9">
               <div class="flex items-center">
                 <!-- 标签文字 -->
                 <div class="text-gray-600 mr-4 w-20">实际年龄</div>
@@ -109,27 +109,18 @@
               </div>
             </div>
           </div>
-          <div class="summary-description mt-8">
+          <div class="summary-description mt-10">
             当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后
           </div>
         </div>
       </div>
     </div>
 
-<!--    &lt;!&ndash; 肠型信息 &ndash;&gt;-->
-<!--    <div class="summary-info-card">-->
-<!--      <div class="summary-title"><b>肠型</b></div>-->
-<!--      <div class="summary-value">普雷沃氏菌型</div>-->
-<!--      <div class="summary-description">-->
-<!--        肠型为"普雷沃氏菌"，意味着在您的肠道菌群中，普雷沃氏菌是主要优势菌，这种肠型通常与高碳水化合物、高纤维的饮食方式相关，常见于偏好植物性食物的人群中。-->
-<!--      </div>-->
-<!--    </div>-->
-
     <div class="summary-info-card">
       <div class="summary-title"><b>肠型</b></div>
       <div class="flex gap-4 mt-4">
         <!-- 拟杆菌型 -->
-        <div class="w-1/3 rounded-2xl bg-white shadow-sm border border-gray-100 overflow-hidden">
+        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">
           <div class="p-3">
             <div class="flex justify-between items-start mb-2">
               <div>
@@ -187,7 +178,7 @@
         </div>
 
         <!-- 厚壁菌型 -->
-        <div class="w-1/3 rounded-2xl bg-white shadow-sm border border-gray-100 overflow-hidden">
+        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">
           <div class="p-3">
             <div class="flex justify-between items-start mb-2">
               <div>
