@@ -87,7 +87,7 @@ body {
   }
 
   @page {
-    margin: 10mm; /* 设置每一页的边距 */
+    margin: 20mm 10mm 20mm 10mm; /* 上、右、下、左 */
   }
 
   .page-break {
@@ -114,8 +114,9 @@ body {
     page-break-inside: avoid;
   }
 
-
-
+  /*thead {*/
+  /*  padding-top: 20mm; !* 根据需要调整间距 *!*/
+  /*}*/
 }
 
 .custom-teal {
@@ -370,7 +371,7 @@ body {
 }
 /* 新增样式：整体表格圆角 */
 .rounded-table {
-  border-radius: 8px; /* 圆角 */
+  border-radius: 0 0 8px 8px; /* 只设置左下角和右下角的圆角 */
   overflow: hidden; /* 确保内容不超出圆角 */
   border: 1px solid #e2e8f0; /* 添加边框以增强视觉效果 */
   width: 100%; /* 确保表格宽度为100% */
