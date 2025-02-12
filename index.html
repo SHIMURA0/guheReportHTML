@@ -1,7 +1,7 @@
 <!-- Author: Honglie Zhang -->
 <!DOCTYPE html>
 <!-- 帮助浏览器正确显示（通用）中文文字 -->
-<html lang="zh">
+<html lang="zh" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8">
@@ -5035,53 +5035,94 @@
       }
 
       document.addEventListener('DOMContentLoaded', loadInsomniaData);
+
     </script>
+
   </div>
 
 
   <!-- 个性化饮食板块 -->
-  <h1 class="custom-title-first-level page-break">个性化饮食推荐</h1>
+  <h1 class="custom-title-second-level page-break">个性化饮食推荐</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 信息框 -->
+
     <div class="info-box">
       <div class="flex items-start">
         <div class="ml-2">
+
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            我们为您提供了200多种常见食物的个性化推荐指数，评分范围从-100到100，并附有每种食物的详细营养成分构成（基于每100g计算）。
+            我们为您提供了200多种常见食物的个性化推荐指数，评分范围从 -100 到 100，并附有每种食物的详细营养成分构成（基于每 100g 计算）。
           </p>
-          <div class="mt-3">
-            <p class="font-bold mb-4">推荐原理</p>
-            <ul class="list-disc ml-10 mt-3"> <!-- 这里添加了 padding-left，以增加整体缩进 -->
-              <li class="mb-3">基于您的肠道菌群构成、营养状况和疾病风险进行综合评估</li>
-              <li class="mb-4 custom-leading">计算每种食物的营养构成与您当前营养状况的匹配程度</li>
-              <li class="mb-4 custom-leading">考虑特定疾病需要避免的食物</li>
-              <li class="mb-4 custom-leading">正分值表示建议增加摄入，负分值表示建议减少摄入</li>
-              <li class="mb-4 custom-leading">对于营养缺乏的成分，含该营养较高的食物会获得更高的推荐分值</li>
-            </ul>
-          </div>
-          <div class="mt-3">
-            <p class="font-bold mb-4">使用说明</p>
-            <ul class="list-disc ml-10 mb-3">
-              <li class="mb-3">本推荐适用于成年人，不适合2岁以下婴幼儿</li>
-              <li class="mb-4 custom-leading">母乳喂养期间，可作为母亲的膳食参考</li>
-              <li class="mb-4 custom-leading">建议2个月后重新检测更新建议，以适应健康状况变化</li>
-            </ul>
-          </div>
-          <div class="mt-3">
-            <p class="font-bold mb-4">数据来源</p>
-            <ul class="list-disc ml-10 mb-3">
-              <li class="mb-3">基于大规模人群营养饮食调查</li>
-              <li class="mb-4 custom-leading">参考2017中国居民膳食指南</li>
-              <li class="mb-4 custom-leading">采用机器学习和统计方法计算</li>
-              <li class="mb-4 custom-leading">营养成分数据参考了来自USDA食品成分数据库</li>
-            </ul>
-          </div>
+
+          <ul class="list-disc ml-5">
+
+            <li>
+              <strong>推荐原理</strong>
+              <ul class="list-disc ml-5">
+                <li>
+                  基于您的肠道菌群构成、营养状况和疾病风险进行综合评估
+                </li>
+                <li>
+                  计算每种食物的营养构成与您当前营养状况的匹配程度
+                </li>
+                <li>
+                  考虑特定疾病需要避免的食物
+                </li>
+                <li>
+                  正分值表示建议增加摄入，负分值表示建议减少摄入
+                </li>
+                <li>
+                  对于营养缺乏的成分，含该营养较高的食物会获得更高的推荐分值
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>使用说明</strong>
+              <ul class="list-disc ml-5">
+                <li>
+                  本推荐适用于成年人，不适合 2 岁以下婴幼儿<
+                </li>
+                <li>
+                  母乳喂养期间，可作为母亲的膳食参考
+                </li>
+                <li>
+                  建议2个月后重新检测更新建议，以适应健康状况变化
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>数据来源</strong>
+              <ul class="list-disc ml-5">
+                <li>
+                  基于大规模人群营养饮食调查
+                </li>
+                <li>
+                  参考《2017中国居民膳食指南》
+                </li>
+                <li>
+                  采用机器学习和统计方法计算
+                </li>
+                <li>
+                  营养成分数据参考了来自 USDA 食品成分数据库
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
         </div>
+
       </div>
+
     </div>
+
+
+
   </div>
 
     <!-- 个性化饮食板块 : 个性化饮食推荐TOP30 -->
@@ -6575,9 +6616,9 @@
 
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             下列是本宏基因组报告作参考的文献资料。
           </p>
         </div>
