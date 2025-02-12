@@ -87,7 +87,7 @@ body {
   }
 
   @page {
-    margin: 20mm 10mm 20mm 10mm; /* 上、右、下、左 */
+    margin: 20mm 10mm 10mm 10mm; /* 上、右、下、左 */
   }
 
   .page-break {
@@ -109,6 +109,13 @@ body {
   .description-container {
     page-break-inside: avoid;
   }
+  .bacteria-info-container {
+    page-break-inside: avoid; /* 防止在打印时分页 */
+    break-inside: avoid; /* 现代浏览器支持 */
+  }
+  /*.description-row td {*/
+  /*  background-color: #f8f9fa; !* 可选：给描述行添加背景色 *!*/
+  /*}*/
 
   td {
     page-break-inside: avoid;

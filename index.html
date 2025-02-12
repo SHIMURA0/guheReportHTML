@@ -19,10 +19,10 @@
   <!-- 宏基因组检测报告总结页 -->
 
   <!-- 顶部标题容器：设置3mm的顶部内边距，内部包含一级标题 -->
-  <div class="pt-[5mm]">
+<!--  <div class="mt-[-5mm]">-->
     <!-- h1标题：使用自定义样式类custom-title-first-level来定制"宏基因组检测报告"的样式 -->
-    <h1 class="custom-title-first-level">宏基因组检测报告</h1>
-  </div>
+    <h1 class="custom-title-first-level mt-[-5mm]">宏基因组检测报告</h1>
+<!--  </div>-->
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -212,9 +212,7 @@
   <!-- 宏基因组报告阅读指南 -->
 
 <!--  <div class="pt-[5mm] page-break">-->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h1 class="custom-title-first-level">报告阅读指南</h1>
-  </div>
+  <h1 class="custom-title-first-level">报告阅读指南</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -310,9 +308,7 @@
   </div>
 
   <!-- 肠道整体评估板块 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h1 class="custom-title-second-level page-break">肠道整体评估</h1>
-  </div>
+  <h1 class="custom-title-second-level page-break">肠道整体评估</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -337,7 +333,7 @@
 
 
   <!-- 肠道整体评估 : 肠道基础功能评估 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
+  <div class="page-break">
     <h2 class="custom-title-third-level page-break">肠道基础功能评估</h2>
   </div>
 
@@ -456,9 +452,7 @@
   </div>
 
   <!-- 肠道整体评估 : 肠道菌群整体评估 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h2 class="custom-title-third-level page-break">肠道菌群整体评估</h2>
-  </div>
+  <h2 class="custom-title-third-level page-break">肠道菌群整体评估</h2>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -573,9 +567,7 @@
   </div>
 
   <!-- 肠道菌群检测模块 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h1 class="custom-title-first-level page-break">肠道菌群检测</h1>
-  </div>
+  <h1 class="custom-title-first-level page-break">肠道菌群检测</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -698,9 +690,8 @@
   </div>
 
   <!-- 肠道细菌板块 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h2 class="custom-title-second-level page-break">肠道细菌</h2>
-  </div>
+  <h2 class="custom-title-second-level page-break">肠道细菌</h2>
+
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
@@ -763,9 +754,8 @@
   </div>
 
   <!-- 核心菌属板块 -->
-  <div class="pt-[5mm] page-break" style="margin-top: 5mm;">
-    <h3 class="custom-title-third-level page-break">核心菌属</h3>
-  </div>
+  <h3 class="custom-title-third-level page-break">核心菌属</h3>
+
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -784,96 +774,277 @@
       </div>
     </div>
 
+<!--    &lt;!&ndash; 核心菌属表格 &ndash;&gt;-->
+<!--    <div class="rounded-table">-->
+<!--      <table class="min-w-full">-->
+<!--        <thead>-->
+<!--          &lt;!&ndash; 标题行 &ndash;&gt;-->
+<!--          <tr class="bg-teal-600 text-white">-->
+<!--            <th class="py-2 px-4 text-left first-column">菌种名称</th>-->
+<!--            <th class="py-2 px-4 text-center second-column">正常范围</th>-->
+<!--            <th class="py-2 px-4 text-center third-column">检测丰度</th>-->
+<!--            <th class="py-2 px-4 text-center fourth-column">结果评价</th>-->
+<!--            <th class="py-2 px-4 text-center fifth-column">超过%的人</th>-->
+<!--            <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>-->
+<!--          </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="core-gut-bacteria-table-body">-->
+<!--          &lt;!&ndash; 数据将通过 JavaScript 动态插入 &ndash;&gt;-->
+<!--        </tbody>-->
+<!--      </table>-->
+
+<!--      <script>-->
+<!--        async function loadCoreBacteriaData() {  // 改名为loadCoreBacteriaData-->
+<!--          try {-->
+<!--            const response = await fetch('./data/bacteria_data.json');-->
+<!--            // const response = await fetch("http://localhost:8000/data/bacteria_data.json");-->
+<!--            // const response = await fetch("file:///Users/shimura/WebstormProject/guheReport/data/bacteria_data.json");-->
+<!--            const data = await response.json();-->
+<!--            renderCoreBacteriaTable(data.core_gut_bacteria_data);  // 保持data.core_gut_bacteria_data不变-->
+<!--          } catch (error) {-->
+<!--            console.error('Error loading core bacteria data:', error);-->
+<!--          }-->
+<!--        }-->
+
+<!--        function renderCoreBacteriaTable(bacteriaData) {-->
+<!--          const tableBody = document.getElementById('core-gut-bacteria-table-body');-->
+<!--          tableBody.innerHTML = '';-->
+
+<!--          bacteriaData.forEach(bacteria => {-->
+<!--            // 创建一个tbody容器-->
+<!--            const container = document.createElement('tbody');-->
+<!--            container.className = 'bacteria-info-container';-->
+
+<!--            // 创建数据行-->
+<!--            const dataRow = document.createElement('tr');-->
+<!--            dataRow.innerHTML = `-->
+<!--            <td class="py-2 px-4 text-left first-column">-->
+<!--                <div class="chinese-text">${bacteria.chinese_name}</div>-->
+<!--                <div class="latin-text">${bacteria.latin_name}</div>-->
+<!--            </td>-->
+<!--            <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>-->
+<!--            <td class="py-2 px-4 text-center column-text">-->
+<!--                ${bacteria.detected_abundance}-->
+<!--                <div class="progress-bar w-full mt-1">-->
+<!--                    <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>-->
+<!--                </div>-->
+<!--            </td>-->
+<!--            <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">-->
+<!--                ${bacteria.evaluation.status}-->
+<!--            </td>-->
+<!--            <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>-->
+<!--            <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>-->
+<!--        `;-->
+
+<!--            // 创建描述行-->
+<!--            const descRow = document.createElement('tr');-->
+<!--            descRow.className = 'description-row';-->
+<!--            descRow.innerHTML = `-->
+<!--            <td colspan="6" class="py-2 px-4 text-left border-t border-gray-200">-->
+<!--                <div class="description-container text-gray-600">-->
+<!--                    ${bacteria.descriptions.map(desc => `-->
+<!--                        <div>-->
+<!--                            <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"-->
+<!--                               style="color: ${desc.color};"></i>-->
+<!--                            ${desc.text}-->
+<!--                        </div>-->
+<!--                    `).join('')}-->
+<!--                </div>-->
+<!--            </td>-->
+<!--        `;-->
+
+<!--            // 将行添加到容器中-->
+<!--            container.appendChild(dataRow);-->
+<!--            container.appendChild(descRow);-->
+
+<!--            // 将容器添加到表格主体-->
+<!--            tableBody.appendChild(container);-->
+<!--          });-->
+<!--        }-->
+
+
+<!--        // function renderCoreBacteriaTable(bacteriaData) {  // 改名为renderCoreBacteriaTable-->
+<!--        //   const tableBody = document.getElementById('core-gut-bacteria-table-body');-->
+<!--        //   tableBody.innerHTML = '';-->
+<!--        //-->
+<!--        //   bacteriaData.forEach(bacteria => {-->
+<!--        //     // 创建数据行-->
+<!--        //     const dataRow = document.createElement('tr');-->
+<!--        //     dataRow.innerHTML = `-->
+<!--        //       <td class="py-2 px-4 text-left first-column">-->
+<!--        //           <div class="chinese-text">${bacteria.chinese_name}</div>-->
+<!--        //           <div class="latin-text">${bacteria.latin_name}</div>-->
+<!--        //       </td>-->
+<!--        //       <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>-->
+<!--        //       <td class="py-2 px-4 text-center column-text">-->
+<!--        //           ${bacteria.detected_abundance}-->
+<!--        //           <div class="progress-bar w-full mt-1">-->
+<!--        //               <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>-->
+<!--        //           </div>-->
+<!--        //       </td>-->
+<!--        //       <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">-->
+<!--        //           ${bacteria.evaluation.status}-->
+<!--        //       </td>-->
+<!--        //       <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>-->
+<!--        //       <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>-->
+<!--        //   `;-->
+<!--        //-->
+<!--        //     // 创建描述行-->
+<!--        //     const descRow = document.createElement('tr');-->
+<!--        //     descRow.innerHTML = `-->
+<!--        //       <td colspan="6" class="py-2 px-4 text-left">-->
+<!--        //           <div class="description-container text-gray-600">-->
+<!--        //               ${bacteria.descriptions.map(desc => `-->
+<!--        //                   <div>-->
+<!--        //                       <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"-->
+<!--        //                          style="color: ${desc.color};"></i>-->
+<!--        //                       ${desc.text}-->
+<!--        //                   </div>-->
+<!--        //               `).join('')}-->
+<!--        //           </div>-->
+<!--        //       </td>-->
+<!--        //   `;-->
+<!--        //-->
+<!--        //     // 添加到表格-->
+<!--        //     tableBody.appendChild(dataRow);-->
+<!--        //     tableBody.appendChild(descRow);-->
+<!--        //   });-->
+<!--        // }-->
+
+<!--        // 页面加载时获取数据-->
+<!--        document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);  // 改为loadCoreBacteriaData-->
+<!--      </script>-->
+
+<!--    </div>-->
+
     <!-- 核心菌属表格 -->
     <div class="rounded-table">
+      <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-          <!-- 标题行 -->
-          <tr class="bg-teal-600 text-white">
-            <th class="py-2 px-4 text-left first-column">菌种名称</th>
-            <th class="py-2 px-4 text-center second-column">正常范围</th>
-            <th class="py-2 px-4 text-center third-column">检测丰度</th>
-            <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-            <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
-            <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
-          </tr>
+        <tr class="bg-teal-600 text-white">
+          <th class="py-2 px-4 text-left first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center second-column">正常范围</th>
+          <th class="py-2 px-4 text-center third-column">检测丰度</th>
+          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        </tr>
         </thead>
-        <tbody id="core-gut-bacteria-table-body">
-          <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadCoreBacteriaData() {  // 改名为loadCoreBacteriaData
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            // const response = await fetch("http://localhost:8000/data/bacteria_data.json");
-            // const response = await fetch("file:///Users/shimura/WebstormProject/guheReport/data/bacteria_data.json");
-            const data = await response.json();
-            renderCoreBacteriaTable(data.core_gut_bacteria_data);  // 保持data.core_gut_bacteria_data不变
-          } catch (error) {
-            console.error('Error loading core bacteria data:', error);
-          }
-        }
-
-        function renderCoreBacteriaTable(bacteriaData) {  // 改名为renderCoreBacteriaTable
-          const tableBody = document.getElementById('core-gut-bacteria-table-body');
-          tableBody.innerHTML = '';
-
-          bacteriaData.forEach(bacteria => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                  <div class="chinese-text">${bacteria.chinese_name}</div>
-                  <div class="latin-text">${bacteria.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${bacteria.detected_abundance}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
-                  </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                  ${bacteria.evaluation.status}
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
-          `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                  <div class="description-container text-gray-600">
-                      ${bacteria.descriptions.map(desc => `
-                          <div>
-                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                 style="color: ${desc.color};"></i>
-                              ${desc.text}
-                          </div>
-                      `).join('')}
-                  </div>
-              </td>
-          `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时获取数据
-        document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);  // 改为loadCoreBacteriaData
-      </script>
-
+      <!-- 数据表格容器 -->
+      <div id="core-gut-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <style>
+      /* 添加必要的样式 */
+      .bacteria-info-container {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .bacteria-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .first-column { width: 20%; }
+      .second-column { width: 15%; }
+      .third-column { width: 20%; }
+      .fourth-column { width: 15%; }
+      .fifth-column { width: 15%; }
+      .sixth-column { width: 15%; }
+
+      /*.description-row td {*/
+      /*  background-color: #f8f9fa;*/
+      /*}*/
+
+      /*!* 确保连续的细菌信息之间有分隔 *!*/
+      /*.bacteria-info-container:not(:last-child) {*/
+      /*  border-bottom: 1px solid #e2e8f0;*/
+      /*}*/
+    </style>
+
+    <script>
+      async function loadCoreBacteriaData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderCoreBacteriaTable(data.core_gut_bacteria_data);
+        } catch (error) {
+          console.error('Error loading core bacteria data:', error);
+        }
+      }
+
+      function renderCoreBacteriaTable(bacteriaData) {
+        const container = document.getElementById('core-gut-bacteria-table-body');
+        container.innerHTML = '';
+
+        bacteriaData.forEach(bacteria => {
+          // 为每个细菌创建一个独立的表格
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          // 数据行
+          const dataRow = `
+            <tr>
+                <td class="py-2 px-4 text-left first-column">
+                    <div class="chinese-text">${bacteria.chinese_name}</div>
+                    <div class="latin-text">${bacteria.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center column-text second-column">${bacteria.normal_range}</td>
+                <td class="py-2 px-4 text-center column-text third-column">
+                    ${bacteria.detected_abundance}
+                    <div class="progress-bar w-full mt-1">
+                        <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                    </div>
+                </td>
+                <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text fourth-column">
+                    ${bacteria.evaluation.status}
+                </td>
+                <td class="py-2 px-4 text-center column-text fifth-column">${bacteria.higher_than_percentage}%</td>
+                <td class="py-2 px-4 text-center column-text sixth-column">${bacteria.normal_detection_rate}%</td>
+            </tr>
+        `;
+
+          // 描述行
+          const descRow = `
+            <tr class="description-row">
+                <td colspan="6" class="py-2 px-4 text-left">
+                    <div class="description-container text-gray-600">
+                        ${bacteria.descriptions.map(desc => `
+                            <div>
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};"></i>
+                                ${desc.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            </tr>
+        `;
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      // 页面加载时调用
+      document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);
+    </script>
+
 
   </div>
 
   <!-- 其他非核心菌属板块 -->
-  <h3 class="custom-title-1 page-break">其他非核心菌属</h3>
+  <h3 class="custom-title-third-level page-break">其他非核心菌属</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
