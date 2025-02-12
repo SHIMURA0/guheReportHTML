@@ -267,13 +267,11 @@
     {
       "chinese_name": "梭菌属",
       "latin_name": "Clostridium",
-      "normal_range": "0-4.464",
-      "detected_abundance": 1.90370,
-      "progress_percentage": 42.6,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 4.464
       },
+      "detected_abundance": 1.90370,
       "higher_than_percentage": 67,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -292,13 +290,11 @@
     {
       "chinese_name": "普雷沃氏菌属",
       "latin_name": "Prevotella",
-      "normal_range": "0-67.8009",
-      "detected_abundance": 0.04290,
-      "progress_percentage": 0.06,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 67.8009
       },
+      "detected_abundance": 0.04290,
       "higher_than_percentage": 50,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -312,13 +308,11 @@
     {
       "chinese_name": "瘤胃球菌属",
       "latin_name": "Ruminococcus",
-      "normal_range": "0.0544-19.7985",
-      "detected_abundance": 9.84521,
-      "progress_percentage": 49.7,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.0544,
+        "normal_range_max": 19.7985
       },
+      "detected_abundance": 9.84521,
       "higher_than_percentage": 44,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -332,13 +326,11 @@
     {
       "chinese_name": "拟杆菌属",
       "latin_name": "Bacteroides",
-      "normal_range": "1.0578-47.3225",
-      "detected_abundance": 0.08974,
-      "progress_percentage": 0.19,
-      "evaluation": {
-        "status": "偏低 ↓",
-        "color": "orange"
+      "normal_range": {
+        "normal_range_min": 1.0578,
+        "normal_range_max": 47.3225
       },
+      "detected_abundance": 0.08974,
       "higher_than_percentage": 2,
       "normal_detection_rate": 99.04,
       "descriptions": [
@@ -357,13 +349,11 @@
     {
       "chinese_name": "真杆菌属",
       "latin_name": "Eubacterium",
-      "normal_range": "0.1146-9.4883",
-      "detected_abundance": 5.75186,
-      "progress_percentage": 60.6,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.1146,
+        "normal_range_max": 9.4883
       },
+      "detected_abundance": 5.75186,
       "higher_than_percentage": 95,
       "normal_detection_rate": 98.56,
       "descriptions": [
@@ -377,13 +367,11 @@
     {
       "chinese_name": "乳酸杆菌属",
       "latin_name": "Lactobacillus",
-      "normal_range": "0-0.4302",
-      "detected_abundance": 0.00660,
-      "progress_percentage": 1.5,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.4302
       },
+      "detected_abundance": 0.00660,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -397,13 +385,11 @@
     {
       "chinese_name": "芽孢杆菌属",
       "latin_name": "Bacillus",
-      "normal_range": "0.0001-0.5535",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0.0001,
+        "normal_range_max": 0.5535
       },
+      "detected_abundance": "未检出",
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -422,13 +408,11 @@
     {
       "chinese_name": "Lachnoclostridium",
       "latin_name": "Lachnoclostridium",
-      "normal_range": "0-0.2086",
-      "detected_abundance": 0.17516,
-      "progress_percentage": 84,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.2086
       },
+      "detected_abundance": 0.17516,
       "higher_than_percentage": 8,
       "normal_detection_rate": 98.56,
       "descriptions": [
@@ -442,13 +426,11 @@
     {
       "chinese_name": "粪杆菌属",
       "latin_name": "Faecalibacterium",
-      "normal_range": "1.9351-17.7942",
-      "detected_abundance": 28.86665,
-      "progress_percentage": 162.2,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 1.9351,
+        "normal_range_max": 17.7942
       },
+      "detected_abundance": 28.86665,
       "higher_than_percentage": 99,
       "normal_detection_rate": 98.08,
       "descriptions": [
@@ -467,13 +449,11 @@
     {
       "chinese_name": "经黏液真杆菌属",
       "latin_name": "Blautia",
-      "normal_range": "0.0846-6.9056",
-      "detected_abundance": 10.17279,
-      "progress_percentage": 147.3,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0.0846,
+        "normal_range_max": 6.9056
       },
+      "detected_abundance": 10.17279,
       "higher_than_percentage": 75,
       "normal_detection_rate": 97.60,
       "descriptions": [
@@ -492,13 +472,11 @@
     {
       "chinese_name": "戴阿利斯特杆菌属",
       "latin_name": "Dialister",
-      "normal_range": "0-3.7365",
-      "detected_abundance": 2.74325,
-      "progress_percentage": 73.4,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 3.7365
       },
+      "detected_abundance": 2.74325,
       "higher_than_percentage": 79,
       "normal_detection_rate": 96.15,
       "descriptions": [
@@ -512,13 +490,11 @@
     {
       "chinese_name": "罗氏菌属",
       "latin_name": "Roseburia",
-      "normal_range": "0.583-16.3581",
-      "detected_abundance": 6.33667,
-      "progress_percentage": 38.7,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.583,
+        "normal_range_max": 16.3581
       },
+      "detected_abundance": 6.33667,
       "higher_than_percentage": 10,
       "normal_detection_rate": 96.15,
       "descriptions": [
@@ -532,13 +508,11 @@
     {
       "chinese_name": "直肠真杆菌属",
       "latin_name": "Agathobacter",
-      "normal_range": "0-8.6328",
-      "detected_abundance": 0.00038,
-      "progress_percentage": 0.004,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 8.6328
       },
+      "detected_abundance": 0.00038,
       "higher_than_percentage": 27,
       "normal_detection_rate": 95.67,
       "descriptions": [
@@ -552,13 +526,11 @@
     {
       "chinese_name": "吉米菌属",
       "latin_name": "Gemmiger",
-      "normal_range": "0.0038-0.973",
-      "detected_abundance": 0.18163,
-      "progress_percentage": 18.7,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.0038,
+        "normal_range_max": 0.973
       },
+      "detected_abundance": 0.18163,
       "higher_than_percentage": 9,
       "normal_detection_rate": 95.67,
       "descriptions": [
@@ -572,13 +544,11 @@
     {
       "chinese_name": "副拟杆菌属",
       "latin_name": "Parabacteroides",
-      "normal_range": "0.1095-8.7303",
-      "detected_abundance": 0.00675,
-      "progress_percentage": 0.08,
-      "evaluation": {
-        "status": "偏低 ↓",
-        "color": "orange"
+      "normal_range": {
+        "normal_range_min": 0.1095,
+        "normal_range_max": 8.7303
       },
+      "detected_abundance": 0.00675,
       "higher_than_percentage": 9,
       "normal_detection_rate": 95.19,
       "descriptions": [
@@ -597,13 +567,11 @@
     {
       "chinese_name": "另枝菌属",
       "latin_name": "Alistipes",
-      "normal_range": "0.0807-18.1199",
-      "detected_abundance": 0.00099,
-      "progress_percentage": 0.005,
-      "evaluation": {
-        "status": "偏低 ↓",
-        "color": "orange"
+      "normal_range": {
+        "normal_range_min": 0.0807,
+        "normal_range_max": 18.1199
       },
+      "detected_abundance": 0.00099,
       "higher_than_percentage": 15,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -622,13 +590,11 @@
     {
       "chinese_name": "毛螺菌属",
       "latin_name": "Lachnospira",
-      "normal_range": "0.0347-8.6596",
-      "detected_abundance": 5.02851,
-      "progress_percentage": 58.1,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.0347,
+        "normal_range_max": 8.6596
       },
+      "detected_abundance": 5.02851,
       "higher_than_percentage": 70,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -642,13 +608,11 @@
     {
       "chinese_name": "考拉杆菌属",
       "latin_name": "Phascolarctobacterium",
-      "normal_range": "0-3.7492",
-      "detected_abundance": 0.00081,
-      "progress_percentage": 0.02,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 3.7492
       },
+      "detected_abundance": 0.00081,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -656,121 +620,6 @@
           "type": "info",
           "color": "rgb(0, 178, 180)",
           "text": "专性厌氧菌，利用琥珀酸产生丙酸盐，参与肠道代谢物质转化，与肠道稳态维持相关"
-        }
-      ]
-    },
-    {
-      "chinese_name": "巨单胞菌属",
-      "latin_name": "Megamonas",
-      "normal_range": "0-0.6916",
-      "detected_abundance": 0.00049,
-      "progress_percentage": 0.07,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
-      },
-      "higher_than_percentage": 58,
-      "normal_detection_rate": 87.50,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "厌氧菌，专门降解复杂碳水化合物，产生乙酸盐、丙酸盐和乳酸盐，参与肠道能量代谢，与神经系统功能和免疫调节相关"
-        }
-      ]
-    },
-    {
-      "chinese_name": "粪球菌属",
-      "latin_name": "Coprococcus",
-      "normal_range": "0.0826-9.4195",
-      "detected_abundance": 0.05595,
-      "progress_percentage": 0.6,
-      "evaluation": {
-        "status": "偏低 ↓",
-        "color": "orange"
-      },
-      "higher_than_percentage": 64,
-      "normal_detection_rate": 86.06,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "专性厌氧产丁酸菌，通过代谢膳食纤维产生丁酸盐，具有免疫调节功能，参与色氨酸代谢，与神经递质合成相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：补充水溶性膳食纤维（菊粉、燕麦β-葡聚糖）；适量添加全谷物；可搭配益生元"
-        }
-      ]
-    },
-    {
-      "chinese_name": "双歧杆菌属",
-      "latin_name": "Bifidobacterium",
-      "normal_range": "1.7546-35.5006",
-      "detected_abundance": 0.03296,
-      "progress_percentage": 0.09,
-      "evaluation": {
-        "status": "偏低 ↓",
-        "color": "orange"
-      },
-      "higher_than_percentage": 24,
-      "normal_detection_rate": 97.12,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性厌氧菌，核心益生菌，产生乙酸盐和乳酸盐，合成B族维生素和GABA，增强肠道屏障功能，调节免疫系统"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：补充低聚果糖（FOS）和菊粉；添加发酵乳制品；可选用含双歧杆菌的益生菌制剂；减少精制糖摄入"
-        }
-      ]
-    },
-    {
-      "chinese_name": "乳杆菌属",
-      "latin_name": "Lactobacillus",
-      "normal_range": "0-0.4302",
-      "detected_abundance": 0.00660,
-      "progress_percentage": 1.5,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
-      },
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性兼性厌氧菌，产生乳酸和抗菌物质，参与碳水化合物发酵，合成维生素B族和维生素K，增强肠道屏障功能"
-        }
-      ]
-    },
-    {
-      "chinese_name": "芽孢杆菌属",
-      "latin_name": "Bacillus",
-      "normal_range": "0.0001-0.5535",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
-      },
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性需氧菌，产生多种水解酶和抗菌肽，增强肠道免疫功能，参与碳水化合物和蛋白质代谢"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：补充含枯草芽孢杆菌的益生菌制剂；增加发酵食品摄入；适量添加膳食纤维"
         }
       ]
     }

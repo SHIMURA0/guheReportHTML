@@ -94,12 +94,7 @@ body {
     page-break-before: always; /* 强制分页 */
     /*margin-top: 20mm; !* 为分页元素添加上边距 *!*/
   }
-  /*h1, h2, h3 {*/
-  /*  margin-top: 10mm; !* 为标题添加上边距 *!*/
-  /*}*/
-  /*h1, h2, h3 {*/
-  /*  margin-top: calc(10mm - 10mm); !* 将上边距设置为页面边距的值 *!*/
-  /*}*/
+
   .rounded-table {
     width: 100%; /* 确保表格宽度为100% */
   }
@@ -124,10 +119,6 @@ body {
   td {
     page-break-inside: avoid;
   }
-
-  /*thead {*/
-  /*  padding-top: 20mm; !* 根据需要调整间距 *!*/
-  /*}*/
 }
 
 .custom-teal {
@@ -510,6 +501,27 @@ td {
 
 tr {
   page-break-inside: avoid; /* 避免在行内分页 */
+}
+
+/* 肠道菌群检测 : 肠道细菌板块 : 核心菌属*/
+
+.core-gut-bacteria-first-column {
+  width: 22%; /* 菌种名称 */
+}
+.core-gut-bacteria-second-column {
+  width: 19%; /* 正常范围 */
+}
+.core-gut-bacteria-third-column {
+  width: 14%; /* 检测丰度 */
+}
+.core-gut-bacteria-fourth-column {
+  width: 12.5%; /* 结果评价 */
+}
+.core-gut-bacteria-fifth-column {
+  width: 13.5%; /* 超过%的人 */
+}
+.core-gut-bacteria-sixth-column {
+  width: 20%; /* 有%的正常人检出 */
 }
 
 /* 肠道菌群检测 : 常见肠道寄生虫板块*/

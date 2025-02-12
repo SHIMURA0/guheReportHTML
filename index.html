@@ -518,13 +518,13 @@
                     ${microbiome.evaluated_value}
                     <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
     <div class="progress ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#52c41a]'} rounded-full h-2"
+              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#389e0d]'} rounded-full h-2"
          style="width: ${Math.min(100, (microbiome.evaluated_value / microbiome.normal_range.max_normal_value * 100))}%;">
     </div>
 </div>
                 </td>
                 <td class="py-2 px-4 bold-text text-center text-${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '[#ff4d4f]' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '[#ff4d4f]' : '[#52c41a]'} disease-column-text">
+              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '[#ff4d4f]' : '[#389e0d]'} disease-column-text">
                   ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '异常' :
               microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '异常' : '正常'}
                   <i class="fas ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'fa-arrow-down' :
@@ -761,7 +761,7 @@
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            核心菌属是指在肠道菌群中相对丰度较高、对生理功能具有重要作用的优势菌群。它们在维持肠道健康、参与营养物质代谢和调节免疫系统等方面发挥着主导作用，构成了肠道微生态系统的基石。主要的核心菌属包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等。在正常情况下，这些菌群能帮助消化纤维、产生短链脂肪酸，维持肠道屏障功能。
+            <strong>核心菌属</strong>是指在肠道菌群中相对丰度较高、对生理功能具有重要作用的优势菌群。它们在维持肠道健康、参与营养物质代谢和调节免疫系统等方面发挥着主导作用，构成了肠道微生态系统的基石。主要的核心菌属包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等。在正常情况下，这些菌群能帮助消化纤维、产生短链脂肪酸，维持肠道屏障功能。
             此外，核心肠道菌属还在合成维生素、促进矿物质吸收和抑制病原菌生长中发挥重要作用。它们通过与肠道内的免疫系统相互作用，增强机体的免疫反应，抵御外界的病原体侵袭。因此，保持核心菌属的平衡与多样性是维护肠道健康的关键。对于饮食和生活方式的调整，能够有效影响这些核心菌属的构成，从而促进整体健康。
           </p>
           <ul class="list-disc ml-5">
@@ -919,13 +919,13 @@
       <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+        <tr style="background-color: #00B2B4; color: white;">
+        <th class="py-2 px-4 text-left core-gut-bacteria-first-column">菌种名称</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-second-column">正常范围%</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-third-column">检测丰度%</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column">超过%的人</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
       </table>
@@ -976,46 +976,150 @@
         }
       }
 
+      function formatNumber(value) {
+        if (typeof value === "string" && value === "未检出") {
+          return value;
+        }
+
+        const num = Number(value);
+
+        // 如果数字大于等于1，从左边开始保留4位有效数字
+        if (num >= 1) {
+          const integerDigits = Math.floor(Math.log10(num)) + 1;
+          const decimalPlaces = Math.max(0, 4 - integerDigits);
+          return num.toFixed(decimalPlaces);
+        }
+        // 如果数字小于1，从第一个非零数字开始保留4位有效数字
+        else {
+          const str = num.toPrecision(4);
+          // 移除末尾的0
+          return str.replace(/\.?0+$/, '');
+        }
+      }
+
+      // 使用相同的格式化函数处理检测值和范围值
+      function formatDetectedValue(value) {
+        return formatNumber(value);
+      }
+
+      function formatRangeValue(value) {
+        return formatNumber(value);
+      }
+
+      function calculateProgressPercentageForThirdColumn(value) {
+        if (value === "未检出" || value === 0) {
+          return 0;
+        }
+
+        const num = Number(value);
+        const logValue = Math.log10(num);
+        const minLog = -1; // log10(0.0001)
+        const maxLog = 3;  // log10(100)
+
+        // 将对数值映射到5-50的范围
+        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+
+        return Math.max(5, Math.min(50, percentage));
+      }
+
       function renderCoreBacteriaTable(bacteriaData) {
         const container = document.getElementById('core-gut-bacteria-table-body');
         container.innerHTML = '';
 
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          gray: '#808080'
+        };
+
         bacteriaData.forEach(bacteria => {
-          // 为每个细菌创建一个独立的表格
+          let statusColor, statusText, statusIcon;
+          const detected = bacteria.detected_abundance;
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+
+          const formattedDetectedValue = formatDetectedValue(detected);
+          const formattedMinRange = formatRangeValue(minRange);
+          const formattedMaxRange = formatRangeValue(maxRange);
+
+          // 第四列的进度条百分比直接用检测值除以100
+          const fourthColumnPercentage = detected === "未检出" ? 0 : Math.min(100, (Number(detected) / 100) * 100);
+
+          let isNormal = true;
+
+          if (detected === "未检出") {
+            if (minRange > 0) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            }
+          } else {
+            if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
+          }
+
           const bacteriaContainer = document.createElement('div');
           bacteriaContainer.className = 'bacteria-info-container';
 
           const table = document.createElement('table');
           table.className = 'bacteria-table';
 
-          // 数据行
           const dataRow = `
             <tr>
-                <td class="py-2 px-4 text-left first-column">
+                <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
                     <div class="chinese-text">${bacteria.chinese_name}</div>
                     <div class="latin-text">${bacteria.latin_name}</div>
                 </td>
-                <td class="py-2 px-4 text-center column-text second-column">${bacteria.normal_range}</td>
-                <td class="py-2 px-4 text-center column-text third-column">
-                    ${bacteria.detected_abundance}
+                <td class="py-2 px-4 text-center column-text core-gut-bacteria-second-column">
+                    ${formattedMinRange}-${formattedMaxRange}
+                </td>
+                <td class="py-2 px-4 text-center column-text core-gut-bacteria-third-column">
+                    <span>${formattedDetectedValue}</span>
                     <div class="progress-bar w-full mt-1">
-                        <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                        <div class="progress"
+                             style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
+                                    background-color: #00B2B4;
+                                    transition: width 0.3s ease;">
+                        </div>
                     </div>
                 </td>
-                <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text fourth-column">
-                    ${bacteria.evaluation.status}
+                <td class="py-2 px-4 text-center column-text core-gut-bacteria-fourth-column">
+                    <span class="font-bold" style="color: ${CUSTOM_COLORS[statusColor]}">
+                        ${statusText}${statusIcon}
+                    </span>
                 </td>
-                <td class="py-2 px-4 text-center column-text fifth-column">${bacteria.higher_than_percentage}%</td>
-                <td class="py-2 px-4 text-center column-text sixth-column">${bacteria.normal_detection_rate}%</td>
+                <td class="py-2 px-4 text-center column-text core-gut-bacteria-fifth-column">${bacteria.higher_than_percentage}%</td>
+                <td class="py-2 px-4 text-center column-text core-gut-bacteria-sixth-column">${bacteria.normal_detection_rate}%</td>
             </tr>
         `;
 
-          // 描述行
-          const descRow = `
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          const descRow = filteredDescriptions.length > 0 ? `
             <tr class="description-row">
                 <td colspan="6" class="py-2 px-4 text-left">
                     <div class="description-container text-gray-600">
-                        ${bacteria.descriptions.map(desc => `
+                        ${filteredDescriptions.map(desc => `
                             <div>
                                 <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
                                    style="color: ${desc.color};"></i>
@@ -1025,13 +1129,19 @@
                     </div>
                 </td>
             </tr>
-        `;
+        ` : '';
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
           bacteriaContainer.appendChild(table);
           container.appendChild(bacteriaContainer);
         });
       }
+
+
+
+
+
+
 
       // 页面加载时调用
       document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);
