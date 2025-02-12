@@ -10473,19 +10473,14 @@
     {
       "chinese_name": "拟杆菌属",
       "latin_name": "Bacteroides",
-      "range": "1.0578-47.3225",
-      "current_value": 0.08974,
-      "progress_percentage": 0,
-      "progress_color": "yellow",
-      "status": {
-        "text": "偏低",
-        "color": "yellow",
-        "direction": "down"
+      "normal_range": {
+        "normal_range_min": 1.0578,
+        "normal_range_max": 47.3225
       },
-      "percentage": "2%",
-      "correlation": "正相关",
+      "detected_abundance": 0.08974,
+      "higher_than_percentage": 0.02,
+      "correlation": "positive",
       "stars": 3,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10502,19 +10497,14 @@
     {
       "chinese_name": "梭菌目",
       "latin_name": "Clostridiales",
-      "range": "6.2649-69.865",
-      "current_value": 87.70725,
-      "progress_percentage": 100,
-      "progress_color": "red",
-      "status": {
-        "text": "超标",
-        "color": "red",
-        "direction": "up"
+      "normal_range": {
+        "normal_range_min": 6.2649,
+        "normal_range_max": 69.865
       },
-      "percentage": "90%",
-      "correlation": "正相关",
+      "detected_abundance": 87.70725,
+      "higher_than_percentage": 0.90,
+      "correlation": "positive",
       "stars": 3,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10531,19 +10521,14 @@
     {
       "chinese_name": "经黏液真杆菌属",
       "latin_name": "Blautia",
-      "range": "0.0846204-6.9055608",
-      "current_value": 10.17279,
-      "progress_percentage": 100,
-      "progress_color": "red",
-      "status": {
-        "text": "超标",
-        "color": "red",
-        "direction": "up"
+      "normal_range": {
+        "normal_range_min": 0.0846204,
+        "normal_range_max": 6.9055608
       },
-      "percentage": "75%",
-      "correlation": "正相关",
+      "detected_abundance": 10.17279,
+      "higher_than_percentage": 0.75,
+      "correlation": "positive",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10560,18 +10545,14 @@
     {
       "chinese_name": "梭菌属",
       "latin_name": "Clostridium",
-      "range": "0-4.4645924",
-      "current_value": 1.90370,
-      "progress_percentage": 43,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 4.4645924
       },
-      "percentage": "67%",
-      "correlation": "正相关",
+      "detected_abundance": 1.90370,
+      "higher_than_percentage": 0.67,
+      "correlation": "positive",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10583,18 +10564,14 @@
     {
       "chinese_name": "链球菌属",
       "latin_name": "Streptococcus",
-      "range": "0-0.3495704",
-      "current_value": 0.31690,
-      "progress_percentage": 91,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.3495704
       },
-      "percentage": "13%",
-      "correlation": "正相关",
+      "detected_abundance": 0.31690,
+      "higher_than_percentage": 0.13,
+      "correlation": "positive",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10606,18 +10583,14 @@
     {
       "chinese_name": "普雷沃氏菌属",
       "latin_name": "Prevotella",
-      "range": "0-67.8009886",
-      "current_value": 0.04290,
-      "progress_percentage": 0.06,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 67.8009886
       },
-      "percentage": "50%",
-      "correlation": "正相关",
+      "detected_abundance": 0.04290,
+      "higher_than_percentage": 0.50,
+      "correlation": "positive",
       "stars": 1,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10629,18 +10602,14 @@
     {
       "chinese_name": "龙包茨氏菌属",
       "latin_name": "Romboutsia",
-      "range": "0-0.021404",
-      "current_value": 0.01546,
-      "progress_percentage": 72,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.021404
       },
-      "percentage": "73%",
-      "correlation": "正相关",
+      "detected_abundance": 0.01546,
+      "higher_than_percentage": 0.73,
+      "correlation": "positive",
       "stars": 1,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10652,19 +10621,14 @@
     {
       "chinese_name": "粪杆菌属",
       "latin_name": "Faecalibacterium",
-      "range": "1.9350868-17.7942438",
-      "current_value": 28.86665,
-      "progress_percentage": 100,
-      "progress_color": "red",
-      "status": {
-        "text": "超标",
-        "color": "red",
-        "direction": "up"
+      "normal_range": {
+        "normal_range_min": 1.9350868,
+        "normal_range_max": 17.7942438
       },
-      "percentage": "99%",
-      "correlation": "负相关",
+      "detected_abundance": 28.86665,
+      "higher_than_percentage": 0.99,
+      "correlation": "negative",
       "stars": 3,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10681,18 +10645,14 @@
     {
       "chinese_name": "阿克曼氏菌属",
       "latin_name": "Akkermansia",
-      "range": "0-5.7984096",
-      "current_value": 0.00460,
-      "progress_percentage": 0.07,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 5.7984096
       },
-      "percentage": "44%",
-      "correlation": "负相关",
+      "detected_abundance": 0.00460,
+      "higher_than_percentage": 0.44,
+      "correlation": "negative",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10703,19 +10663,15 @@
     },
     {
       "chinese_name": "长双歧杆菌",
-      "latin_name": "Bifidobacterium longum",
-      "range": "0-6.854",
-      "current_value": 0.01861,
-      "progress_percentage": 0.27,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "latin_name": "B. longum",
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 6.854
       },
-      "percentage": "99%",
-      "correlation": "负相关",
+      "detected_abundance": 0.01861,
+      "higher_than_percentage": 0.99,
+      "correlation": "negative",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",
@@ -10727,18 +10683,14 @@
     {
       "chinese_name": "Lachnoclostridium",
       "latin_name": "Lachnoclostridium",
-      "range": "0-0.2086068",
-      "current_value": 0.17516,
-      "progress_percentage": 83,
-      "progress_color": "green",
-      "status": {
-        "text": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.2086068
       },
-      "percentage": "8%",
-      "correlation": "负相关",
+      "detected_abundance": 0.17516,
+      "higher_than_percentage": 0.08,
+      "correlation": "negative",
       "stars": 2,
-      "star_color": "lightgray",
       "descriptions": [
         {
           "type": "info",

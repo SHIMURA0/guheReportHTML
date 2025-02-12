@@ -354,7 +354,7 @@ body {
 /*}*/
 
 .chinese-text {
-  font-size: 0.65rem; /* 中文字体大小 */
+  font-size: 0.75rem; /* 中文字体大小 */
   /*margin-top: 0rem;*/
   font-weight: bold; /* 加粗 */
   margin-bottom: 0; /* 去掉底部外边距 */
@@ -362,7 +362,7 @@ body {
 }
 
 .latin-text {
-  font-size: 0.55rem; /* 拉丁文字体大小 */
+  font-size: 0.70rem; /* 拉丁文字体大小 */
   color: #6b7280; /* 灰色 */
   margin-top: 1px; /* 去掉与中文行的间隔 */
   /*margin-bottom: -5px;*/
@@ -967,30 +967,30 @@ tr {
 /* 疾病相关菌表格样式 */
 
 .disease-first-column {
-  width: 19%; /* 菌种名称需要足够空间显示中英文 */
+  width: 23%; /* 菌种名称需要足够空间显示中英文 */
 }
 .disease-second-column {
-  width: 14%; /* 正常范围数值 */
+  width: 16%; /* 正常范围数值 */
 }
 .disease-third-column {
-  width: 13%; /* 检测丰度+进度条需要较大空间 */
+  width: 15%; /* 检测丰度+进度条需要较大空间 */
 }
 .disease-fourth-column {
-  width: 12%; /* 结果评价 */
+  width: 11%; /* 结果评价 */
 }
 .disease-fifth-column {
-  width: 13%; /* 超过%的人 */
+  width: 11%; /* 超过%的人 */
 }
 .disease-sixth-column {
-  width: 10%; /* 失眠相关性 */
+  width: 11%; /* 失眠相关性 */
 }
 .disease-seventh-column {
-  width: 19%; /* 相关性强度（点状图标较紧凑） */
+  width: 13%; /* 相关性强度（点状图标较紧凑） */
 }
 
 
 .disease-column-text {
-  font-size: 0.6rem; /* 控制每一列的字体大小 */
+  font-size: 0.65rem; /* 控制每一列的字体大小 */
 }
 
 
