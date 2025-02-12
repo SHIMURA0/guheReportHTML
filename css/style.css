@@ -905,6 +905,67 @@ tr {
 
 /* 疾病相关菌 */
 
+/* 疾病相关菌 : 总结页信息图表卡片样式 */
+
+.disease-card {
+  display: flex;
+  align-items: stretch;  /* 改为stretch，使子元素高度相等 */
+  margin-bottom: 20px;
+  gap: 10px;
+  min-height: 80px;    /* 设置最小高度 */
+}
+
+.disease-icon-box {
+  width: 150px;
+  /* 删除固定高度，让它自适应父容器高度 */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  padding: 20px;        /* 添加内边距 */
+  gap: 10px;
+}
+
+.disease-content-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  flex-grow: 1;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  display: flex;        /* 添加flex布局 */
+  align-items: center;  /* 文字垂直居中 */
+}
+
+.obesity {
+  background: #ff9f1c;
+}
+
+.constipation {
+  background: #8b5e34;
+}
+
+.bloating {
+  background: #219ebc;
+}
+
+.allergy {
+  background: #ff4d6d;
+}
+
+.depression {
+  background: #7209b7;
+}
+
+.insomnia {
+  background: #3d405b;
+}
+
+/* 疾病相关菌表格样式 */
+
 .disease-first-column {
   width: 19%; /* 菌种名称需要足够空间显示中英文 */
 }

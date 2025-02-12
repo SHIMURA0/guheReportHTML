@@ -2637,10 +2637,10 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            免疫指标是评估人体免疫系统功能状态的重要参数，主要包括体液免疫、细胞免疫、炎症因子和代谢物质等多个类别，总计涵盖数十种具体指标。健康成年人的免疫系统主要由免疫球蛋白（如 IgG、IgA、IgM）、补体系统（C3、C4 等）、细胞因子（IL-1β、IL-6、TNF-α 等）和免疫细胞（T 细胞、B 细胞、NK 细胞等）构成，其中免疫球蛋白和免疫细胞在免疫防御中发挥核心作用，占据免疫防御功能的 80% 以上。我们可以从两个关键维度来评估免疫指标：活性和特异性，这两个维度的结合可以帮助我们更全面地理解不同免疫指标在人体免疫系统中的功能地位和分布特点。
+            <i class="fas fa-info-circle icon"></i>
+            <strong>免疫指标</strong>是评估免疫系统的核心参数，涵盖体液免疫（IgG/IgA/IgM、补体系统）、细胞免疫（T/B/NK细胞及IL-6/TNF-α等因子）及免疫代谢网络，其中免疫球蛋白与免疫细胞承担80%以上的特异性防御功能。研究揭示肠道菌群通过短链脂肪酸等代谢产物，直接激活树突状细胞促进IgA分泌，并调控Th17/Treg平衡影响IL-10/IL-17表达，形成菌群-免疫互作网络。这种协同作用既维持免疫活性（吞噬指数、补体效价），又保障免疫特异性（抗体亲和力、TCR多样性），其代谢产物丁酸盐可同步提升NK细胞活性并抑制过度炎症反应，构成免疫稳态的双向调节枢纽。
           </p>
         </div>
       </div>
@@ -4016,14 +4016,77 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-          肠道菌群与疾病的关联性研究已成为现代医学研究的重要领域。通过大规模人群研究和临床观察，我们发现多种健康问题与肠道菌群的特定丰度水平直接相关。
+            <i class="fas fa-info-circle icon"></i>
+            临床研究数据揭示，肠道菌群丰度特征与疾病发生呈现显著相关性。特定菌群失调（如拟杆菌/厚壁菌比值异常）与代谢性疾病（肥胖、糖尿病）、免疫性疾病（过敏、IBD）及神经精神类疾病（抑郁、自闭症）存在明确生物标志物关联。通过菌群检测可识别微生态失衡特征，为疾病早期预警和精准干预提供重要依据。
           </p>
         </div>
       </div>
     </div>
+
+    <!-- 6中疾病症状总结性的信息图表 -->
+
+    <div class="disease-card">
+      <div class="disease-icon-box obesity">
+        <i class="fas fa-weight"></i>
+        肥胖
+      </div>
+      <div class="disease-content-box">
+        肥胖与肠道菌群失调密切相关，研究表明肥胖人群的肠道菌群多样性显著降低，拟杆菌/厚壁菌比例失衡。这种失衡会影响能量代谢、脂肪存储和食欲调节，同时增加炎症因子水平，形成恶性循环。益生菌干预可通过调节GLP-1和PYY等饱腹激素，帮助改善代谢功能。
+      </div>
+    </div>
+
+    <div class="disease-card">
+      <div class="disease-icon-box constipation">
+        <i class="fas fa-exclamation-circle"></i>
+        便秘
+      </div>
+      <div class="disease-content-box">
+        便秘往往反映肠道菌群功能紊乱，主要表现为产丁酸菌群减少、肠道蠕动功能受损。健康菌群通过产生短链脂肪酸促进肠道蠕动，调节水分代谢，维持正常排便功能。双歧杆菌和乳酸菌的补充可有效改善肠道微环境，促进肠道蠕动。
+      </div>
+    </div>
+
+    <div class="disease-card">
+      <div class="disease-icon-box bloating">
+        <i class="fas fa-expand-alt"></i>
+        腹胀
+      </div>
+      <div class="disease-content-box">
+        腹胀常见于肠道菌群发酵异常，产气菌群过度生长。这种状况会导致肠道气体产生增多，肠壁张力改变，引起腹部不适。调节肠道菌群结构，特别是限制产气菌群过度生长，同时增加有益菌数量，可有效缓解腹胀症状。
+      </div>
+    </div>
+
+    <div class="disease-card">
+      <div class="disease-icon-box allergy">
+        <i class="fas fa-allergies"></i>
+        过敏
+      </div>
+      <div class="disease-content-box">
+        过敏与免疫系统过度反应及肠道屏障功能受损有关。健康的肠道菌群可通过调节Th1/Th2平衡，促进调节性T细胞生成，抑制过度免疫反应。益生菌干预能够增强肠道屏障功能，降低过敏原穿透，减轻过敏症状。
+      </div>
+    </div>
+
+    <div class="disease-card">
+      <div class="disease-icon-box depression">
+        <i class="fas fa-brain"></i>
+        抑郁
+      </div>
+      <div class="disease-content-box">
+        肠-脑轴研究表明，肠道菌群通过神经递质、内分泌和免疫调节影响情绪。菌群失调会降低血清素、GABA等神经递质水平，增加炎症因子表达，影响认知功能和情绪调节。补充特定益生菌可改善肠道微生态，帮助缓解抑郁症状。
+      </div>
+    </div>
+
+    <div class="disease-card">
+      <div class="disease-icon-box insomnia">
+        <i class="fas fa-moon"></i>
+        失眠
+      </div>
+      <div class="disease-content-box">
+        失眠与昼夜节律紊乱和神经递质失衡相关。肠道菌群参与褪黑激素、血清素等睡眠相关物质的合成与代谢，影响睡眠-觉醒周期。改善肠道菌群结构可以优化褪黑激素分泌节律，帮助调节睡眠周期。
+      </div>
+    </div>
+
   </div>
 
   <!-- 疾病症状相关菌 : 肥胖相关菌 -->
