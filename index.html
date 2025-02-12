@@ -4780,17 +4780,45 @@
 
     <!-- 失眠相关菌群表格 -->
     <div class="rounded-table">
-      <!-- 主表格只包含标题 -->
+      <!-- 创建一个表格，其最小宽度被设置为其父元素的宽度。这在响应式设计中非常有用 -->
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left disease-first-column" style="font-size: 11px;">失眠相关菌种名称</th>
-          <th class="py-2 px-4 text-center disease-second-column" style="font-size: 11px; padding: 5px 5px;">正常范围%</th>
-          <th class="py-2 px-4 text-center disease-third-column" style="font-size: 11px; padding: 5px 5px;">检测丰度%</th>
-          <th class="py-2 px-4 text-center disease-fourth-column" style="font-size: 11px; padding: 5px 5px;">结果评价</th>
-          <th class="py-2 px-4 text-center disease-fifth-column" style="font-size: 11px; padding: 5px 5px;">超过%的人</th>
-          <th class="py-2 px-4 text-center disease-sixth-column" style="font-size: 11px; padding: 5px 5px;">相关性</th>
-          <th class="py-2 px-4 text-center disease-seventh-column" style="font-size: 11px; padding: 5px 5px;">相关性强度</th>
+          <th
+            class="py-2 px-4 text-left disease-first-column"
+            style="font-size: 11px;">
+            失眠相关菌种名称
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-second-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            正常范围%
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-third-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            检测丰度%
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-fourth-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            结果评价
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-fifth-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            超过%的人
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-sixth-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            相关性
+          </th>
+          <th
+            class="py-2 px-4 text-center disease-seventh-column"
+            style="font-size: 11px; padding: 5px 5px;">
+            相关性强度
+          </th>
         </tr>
         </thead>
       </table>
@@ -4799,196 +4827,214 @@
       <div id="insomnia-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
+
     </div>
 
-    <!-- 动态加载数据Javascript代码 -->
+    <!-- Javascript script to fulfill data into table data row dynamically -->
     <script>
-        async function loadInsomniaData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderInsomniaDataTable(data.insomnia_data);
-          } catch (error) {
-            console.error('Error loading insomnia data:', error);
-          }
+
+      // Javascript function to load the insomnia data
+      async function loadInsomniaData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderInsomniaDataTable(data.insomnia_data);
+        } catch (error) {
+          console.error('Error loading insomnia data:', error);
+        }
+      }
+
+      // Javascript function to format numeric value in decimal places
+      function formatNumber(value, precision = 3) {
+        if (typeof value === "string") {
+          return value;
         }
 
-        function formatNumber(value, precision = 3) {
-          if (typeof value === "string") {
-            return value;
-          }
+        const num = Number(value);
+        return num.toPrecision(precision).replace(/\.?0+$/, '');
+      }
 
-          const num = Number(value);
-          return num.toPrecision(precision).replace(/\.?0+$/, '');
+      // Javascript function to scale progress bar
+      function calculateProgressPercentage(value) {
+        // 输入范围检查
+        if (value < 0) return 0; // 小于0返回0
+        if (value > 100) return 100; // 大于100返回100
+
+        const num = Number(value); // 转换输入为数字
+
+        // 小范围数字的放大处理
+        if (num <= 20) {
+          return Math.min(20, Math.max(5, num * 1.5)); // 在0到20之间放大
         }
 
-        // function calculateProgressPercentage(value) {
-        //   if (value === 0) return 0;
-        //   const num = Number(value);
-        //   const logValue = Math.log10(num);
-        //   const minLog = -1;
-        //   const maxLog = 5;
-        //   const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        //   return Math.max(5, Math.min(50, percentage));
-        // }
+        // 大范围数字时，直接返回输入值
+        return num; // 返回输入值，保持接近性的要求
+      }
 
-        function calculateProgressPercentage(value) {
-          // 输入范围检查
-          if (value < 0) return 0; // 小于0返回0
-          if (value > 100) return 100; // 大于100返回100
-
-          const num = Number(value); // 转换输入为数字
-
-          // 小范围数字的放大处理
-          if (num <= 20) {
-            return Math.min(20, Math.max(5, num * 1.5)); // 在0到20之间放大
-          }
-
-          // 大范围数字时，直接返回输入值
-          return num; // 返回输入值，保持接近性的要求
-        }
-
-
-        function determineStatus(value, minRange, maxRange) {
-          if (value < minRange) {
-            return {
-              text: '偏低',
-              color: 'red',
-              direction: 'down'
-            };
-          } else if (value > maxRange) {
-            return {
-              text: '超标',
-              color: 'red',
-              direction: 'up'
-            };
-          } else {
-            return {
-              text: '正常',
-              color: 'green',
-              direction: null
-            };
-          }
-        }
-
-        function generateStars(count, isPositive) {
-          const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
-          return Array(3).fill().map((_, i) =>
-            `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}"
-        aria-hidden="true"></i>`
-          ).join('');
-        }
-
-        function renderInsomniaDataTable(insomniaData) {
-          const container = document.getElementById('insomnia-data-table-body');
-          container.innerHTML = '';
-
-          const CUSTOM_COLORS = {
-            red: '#ff4d4f',
-            green: '#389e0d',
-            yellow: '#faad14'
+      // Javascript function to determine the status of the detection abundance of gut bacteria
+      function determineStatus(value, minRange, maxRange) {
+        if (value < minRange) {
+          return {
+            text: '偏低',
+            color: 'red',
+            direction: 'down'
           };
-
-          insomniaData.forEach(bacteria => {
-            const bacteriaContainer = document.createElement('div');
-            bacteriaContainer.className = 'bacteria-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'bacteria-table';
-
-            const minRange = bacteria.normal_range.normal_range_min;
-            const maxRange = bacteria.normal_range.normal_range_max;
-            const currentValue = bacteria.detected_abundance;
-
-            // 格式化数值，保留3位有效数字
-            const formattedCurrentValue = formatNumber(currentValue);
-            const formattedMinRange = formatNumber(minRange);
-            const formattedMaxRange = formatNumber(maxRange);
-
-            // 确定状态
-            const status = determineStatus(currentValue, minRange, maxRange);
-            const isNormal = status.text === '正常';
-
-            // 确定相关性文本
-            const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
-            const isPositive = bacteria.correlation === 'positive';
-
-            // 添加这段代码：判断是否同时满足"超标"和"正相关"
-            if (status.text === '超标' && isPositive) {
-              bacteriaContainer.style.border = '1px solid #ff4d4f';
-              bacteriaContainer.style.borderRadius = '4px';
-              bacteriaContainer.style.margin = '4px 0';
-            } else {
-              bacteriaContainer.style.border = '1px solid transparent';
-            }
-
-            const dataRow = `
-      <tr>
-        <td class="py-2 px-4 text-left disease-first-column">
-          <div class="chinese-text">${bacteria.chinese_name}</div>
-          <div class="latin-text text-gray-500">${bacteria.latin_name}</div>
-        </td>
-        <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-          ${formattedMinRange}-${formattedMaxRange}
-        </td>
-        <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-          <span>${formattedCurrentValue}</span>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress"
-                 style="width: ${calculateProgressPercentage(currentValue)}%;
-                        background-color: #00B2B4;
-                        transition: width 0.3s ease;">
-            </div>
-          </div>
-        </td>
-        <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-          <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-            ${status.text}
-            ${status.direction ?
-              `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-          </span>
-        </td>
-        <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-        ${(bacteria.higher_than_percentage * 100)}%
-</td>
-        <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">${correlationText}</td>
-        <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-          <div class="flex justify-center items-center">
-            ${generateStars(bacteria.stars, isPositive)}
-          </div>
-        </td>
-      </tr>
-    `;
-
-            // 过滤描述：始终显示info类型，只在不正常时显示warning类型
-            const filteredDescriptions = bacteria.descriptions.filter(desc =>
-              desc.type === 'info' || (!isNormal && desc.type === 'warning')
-            );
-
-            // 只有在有描述时才添加描述行
-            const descRow = filteredDescriptions.length > 0 ? `
-      <tr class="description-row">
-        <td colspan="7" class="py-2 px-4 text-left">
-          <div class="description-container text-gray-600" style="font-size: 10px;">
-            ${filteredDescriptions.map(desc => `
-              <div>
-                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                   style="color: ${desc.color};"></i>
-                ${desc.text}
-              </div>
-            `).join('')}
-          </div>
-        </td>
-      </tr>
-    ` : '';
-
-            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-            bacteriaContainer.appendChild(table);
-            container.appendChild(bacteriaContainer);
-          });
+        } else if (value > maxRange) {
+          return {
+            text: '超标',
+            color: 'red',
+            direction: 'up'
+          };
+        } else {
+          return {
+            text: '正常',
+            color: 'green',
+            direction: null
+          };
         }
+      }
 
-        document.addEventListener('DOMContentLoaded', loadInsomniaData);
+      function generateStars(count, isPositive) {
+        const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
+        return Array(3).fill().map((_, i) =>
+          `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
+        ).join('');
+      }
+
+      function renderInsomniaDataTable(insomniaData) {
+        const container = document.getElementById('insomnia-data-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          yellow: '#faad14'
+        };
+
+        insomniaData.forEach(bacteria => {
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+          const currentValue = bacteria.detected_abundance;
+
+          // 格式化数值，保留3位有效数字
+          const formattedCurrentValue = formatNumber(currentValue);
+          const formattedMinRange = formatNumber(minRange);
+          const formattedMaxRange = formatNumber(maxRange);
+
+          // 确定状态
+          const status = determineStatus(currentValue, minRange, maxRange);
+          const isNormal = status.text === '正常';
+
+          // 确定相关性文本
+          const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
+          const isPositive = bacteria.correlation === 'positive';
+          const isNegative = bacteria.correlation === 'negative';
+
+          // 判断边框颜色条件
+          if (status.text === '超标' && isPositive) {
+            // 超标且正相关时显示红色边框
+            bacteriaContainer.style.border = '1px solid #ff4d4f';
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else if (status.text === '偏低' && isNegative) {
+            // 偏低且负相关时显示蓝色边框
+            bacteriaContainer.style.border = '1px solid #3b82f6'; // text-blue-500的十六进制颜色值
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else {
+            // 其他情况显示透明边框
+            bacteriaContainer.style.border = '1px solid transparent';
+          }
+
+          const dataRow = `
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                    ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                    ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>
+                    ${formattedCurrentValue}
+                </span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span
+                  class="font-bold"
+                  style="color: ${CUSTOM_COLORS[status.color]}">
+                    ${status.text}
+                    ${status.direction ?
+                    `<i class="fas fa-arrow-${status.direction} ml-1"></i>`
+                    : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${(bacteria.higher_than_percentage * 100)}%
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
+
+          // 过滤描述：始终显示info类型，只在不正常时显示warning类型
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          // 只有在有描述时才添加描述行
+          const descRow = filteredDescriptions.length > 0 ? `
+            <tr class="description-row">
+              <td
+                colspan="7"
+                class="py-2 px-4 text-left">
+                  <div
+                    class="description-container text-gray-600"
+                    style="font-size: 10px;">
+                      ${filteredDescriptions.map(desc => `
+                        <div>
+                          <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                             style="color: ${desc.color};">
+                          </i>
+                            ${desc.text}
+                        </div>
+                      `).join('')}
+                  </div>
+              </td>
+            </tr>
+          ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', loadInsomniaData);
     </script>
   </div>
 
