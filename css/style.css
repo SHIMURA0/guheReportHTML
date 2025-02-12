@@ -106,12 +106,16 @@ body {
   tr {
     page-break-inside: avoid;
   }
+  .bacteria-info-container:first-child .bacteria-table tr:first-child td {
+    padding-top: 8px; /* 增加第一行数据的顶部内边距 */
+  }
   .description-container {
     page-break-inside: avoid;
   }
   .bacteria-info-container {
     page-break-inside: avoid; /* 防止在打印时分页 */
     break-inside: avoid; /* 现代浏览器支持 */
+    /*margin-top: 5px; !* 添加上边距 *!*/
   }
   /*.description-row td {*/
   /*  background-color: #f8f9fa; !* 可选：给描述行添加背景色 *!*/
