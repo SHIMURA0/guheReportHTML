@@ -1453,13 +1453,11 @@
     {
       "chinese_name": "埃希氏菌属",
       "latin_name": "Escherichia",
-      "normal_range": "0-3.83",
-      "detected_abundance": 0.14296,
-      "progress_percentage": 3.73,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 3.83
       },
+      "detected_abundance": 0.14296,
       "higher_than_percentage": 6,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1478,13 +1476,11 @@
     {
       "chinese_name": "链球菌属",
       "latin_name": "Streptococcus",
-      "normal_range": "0-0.3496",
-      "detected_abundance": 0.31690,
-      "progress_percentage": 90.65,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.3496
       },
+      "detected_abundance": 0.31690,
       "higher_than_percentage": 13,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1503,13 +1499,11 @@
     {
       "chinese_name": "韦荣菌属",
       "latin_name": "Veillonella",
-      "normal_range": "0-0.0086",
-      "detected_abundance": 0.38326,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.0086
       },
+      "detected_abundance": 0.38326,
       "higher_than_percentage": 7,
       "normal_detection_rate": 98.56,
       "descriptions": [
@@ -1528,14 +1522,12 @@
     {
       "chinese_name": "泛菌属",
       "latin_name": "Pantoea",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00225,
-      "progress_percentage": 4.5,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00225,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 0.02,
       "descriptions": [
         {
@@ -1553,13 +1545,11 @@
     {
       "chinese_name": "梭杆菌属",
       "latin_name": "Fusobacterium",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00976,
-      "progress_percentage": 19.52,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
+      "detected_abundance": 0.00976,
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -1578,14 +1568,12 @@
     {
       "chinese_name": "志贺氏菌属",
       "latin_name": "Shigella",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.04732,
-      "progress_percentage": 94.64,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.04732,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 62.98,
       "descriptions": [
         {
@@ -1603,14 +1591,12 @@
     {
       "chinese_name": "弯曲杆菌属",
       "latin_name": "Campylobacter",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.04799,
-      "progress_percentage": 95.98,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.04799,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 55.29,
       "descriptions": [
         {
@@ -1628,14 +1614,12 @@
     {
       "chinese_name": "克雷伯氏菌属",
       "latin_name": "Klebsiella",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.09652,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.09652,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 89.06,
       "descriptions": [
         {
@@ -1653,14 +1637,12 @@
     {
       "chinese_name": "脱硫弧菌属",
       "latin_name": "Desulfovibrio",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.02325,
-      "progress_percentage": 46.5,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.02325,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 33.65,
       "descriptions": [
         {
@@ -1678,14 +1660,12 @@
     {
       "chinese_name": "螺杆菌属",
       "latin_name": "Helicobacter",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00373,
-      "progress_percentage": 7.46,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00373,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 22.12,
       "descriptions": [
         {
@@ -1703,14 +1683,12 @@
     {
       "chinese_name": "弓形菌属",
       "latin_name": "Arcobacter",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00209,
-      "progress_percentage": 4.18,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00209,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 7.69,
       "descriptions": [
         {
@@ -1728,14 +1706,12 @@
     {
       "chinese_name": "厌氧螺菌属",
       "latin_name": "Anaerobiospirillum",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00044,
-      "progress_percentage": 0.88,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00044,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 0.00,
       "descriptions": [
         {
@@ -1753,13 +1729,11 @@
     {
       "chinese_name": "肠球菌属",
       "latin_name": "Enterococcus",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.12259,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
+      "detected_abundance": 0.12259,
       "higher_than_percentage": 52,
       "normal_detection_rate": 81.25,
       "descriptions": [
@@ -1778,14 +1752,12 @@
     {
       "chinese_name": "奈瑟氏菌属",
       "latin_name": "Neisseria",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.00957,
-      "progress_percentage": 19.14,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00957,
+      "higher_than_percentage": 0,
       "normal_detection_rate": 46.15,
       "descriptions": [
         {
@@ -1803,13 +1775,11 @@
     {
       "chinese_name": "不动杆菌属",
       "latin_name": "Acinetobacter",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.11947,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
+      "detected_abundance": 0.11947,
       "higher_than_percentage": 83,
       "normal_detection_rate": 45.19,
       "descriptions": [
@@ -1828,13 +1798,11 @@
     {
       "chinese_name": "假单胞菌属",
       "latin_name": "Pseudomonas",
-      "normal_range": "0-0.05",
-      "detected_abundance": 0.07830,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
+      "detected_abundance": 0.07830,
       "higher_than_percentage": 69,
       "normal_detection_rate": 45.19,
       "descriptions": [
@@ -1853,13 +1821,11 @@
     {
       "chinese_name": "霍尔德曼氏菌属",
       "latin_name": "Holdemania",
-      "normal_range": "0-0.0003",
-      "detected_abundance": 0.10581,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.0003
       },
+      "detected_abundance": 0.10581,
       "higher_than_percentage": 98,
       "normal_detection_rate": 29.33,
       "descriptions": [
