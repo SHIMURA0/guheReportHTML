@@ -2324,10 +2324,10 @@
       "chinese_name": "豚鼠气单胞菌",
       "latin_name": "Aeromonas caviae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2347,10 +2347,10 @@
       "chinese_name": "嗜水气单胞菌",
       "latin_name": "Aeromonas hydrophila",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2370,8 +2370,8 @@
       "chinese_name": "温和气单胞菌",
       "latin_name": "Aeromonas sobria",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00037,
       "higher_than_percentage": 27,
@@ -2393,10 +2393,10 @@
       "chinese_name": "牛布鲁氏杆菌",
       "latin_name": "Brucella abortus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2416,10 +2416,10 @@
       "chinese_name": "犬布鲁氏杆菌",
       "latin_name": "Brucella canis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2439,8 +2439,8 @@
       "chinese_name": "羊布鲁氏杆菌",
       "latin_name": "Brucella melitensis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00142,
       "higher_than_percentage": 38,
@@ -2462,10 +2462,10 @@
       "chinese_name": "绵羊布鲁氏杆菌",
       "latin_name": "Brucella ovis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2485,10 +2485,10 @@
       "chinese_name": "猪布鲁氏杆菌",
       "latin_name": "Brucella suis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2508,8 +2508,8 @@
       "chinese_name": "唐菖蒲伯克霍尔德氏菌",
       "latin_name": "Burkholderia gladioli",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00049,
       "higher_than_percentage": 27,
@@ -2531,8 +2531,8 @@
       "chinese_name": "大肠弯曲菌",
       "latin_name": "Campylobacter coli",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00283,
       "higher_than_percentage": 38,
@@ -2554,8 +2554,8 @@
       "chinese_name": "胎儿弯曲菌",
       "latin_name": "Campylobacter fetus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00034,
       "higher_than_percentage": 15,
@@ -2577,8 +2577,8 @@
       "chinese_name": "空肠弯曲菌",
       "latin_name": "Campylobacter jejuni",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.03914,
       "higher_than_percentage": 52,
@@ -2600,8 +2600,8 @@
       "chinese_name": "肉毒梭菌",
       "latin_name": "Clostridium botulinum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00372,
       "higher_than_percentage": 38,
@@ -2623,8 +2623,8 @@
       "chinese_name": "产气荚膜梭菌",
       "latin_name": "Clostridium perfringens",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00419,
       "higher_than_percentage": 27,
@@ -2646,8 +2646,8 @@
       "chinese_name": "阪崎肠杆菌",
       "latin_name": "Cronobacter sakazakii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00482,
       "higher_than_percentage": 38,
@@ -2669,8 +2669,8 @@
       "chinese_name": "猪红斑丹毒丝菌",
       "latin_name": "Erysipelothrix rhusiopathiae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00020,
       "higher_than_percentage": 15,
@@ -2692,10 +2692,10 @@
       "chinese_name": "大肠埃希菌O157:H7",
       "latin_name": "Escherichia coli O157:H7",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2715,8 +2715,8 @@
       "chinese_name": "幽门螺杆菌",
       "latin_name": "Helicobacter pylori",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00204,
       "higher_than_percentage": 38,
@@ -2738,10 +2738,10 @@
       "chinese_name": "博杰曼军团菌",
       "latin_name": "Legionella bozemanae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2761,10 +2761,10 @@
       "chinese_name": "杜莫夫军团菌",
       "latin_name": "Legionella dumoffii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2784,10 +2784,10 @@
       "chinese_name": "长滩军团菌",
       "latin_name": "Legionella longbeachae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2807,8 +2807,8 @@
       "chinese_name": "嗜肺军团菌",
       "latin_name": "Legionella pneumophila",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00115,
       "higher_than_percentage": 27,
@@ -2830,8 +2830,8 @@
       "chinese_name": "单核细胞增生李斯特菌",
       "latin_name": "L. monocytogenes",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.02299,
       "higher_than_percentage": 52,
@@ -2853,10 +2853,10 @@
       "chinese_name": "鸟分枝杆菌复合群",
       "latin_name": "M. avium complex sp.",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -2876,10 +2876,10 @@
       "chinese_name": "龟分枝杆菌",
       "latin_name": "M. chelonae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -2899,8 +2899,8 @@
       "chinese_name": "偶发分枝杆菌",
       "latin_name": "M. fortuitum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00024,
       "higher_than_percentage": 27,
@@ -2922,8 +2922,8 @@
       "chinese_name": "堪萨斯分枝杆菌",
       "latin_name": "M. kansasii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00026,
       "higher_than_percentage": 38,
@@ -2945,8 +2945,8 @@
       "chinese_name": "海洋分枝杆菌",
       "latin_name": "M. marinum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00031,
       "higher_than_percentage": 27,
@@ -2968,8 +2968,8 @@
       "chinese_name": "瘰疬分枝杆菌",
       "latin_name": "M. scrofulaceum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00020,
       "higher_than_percentage": 15,
@@ -2991,8 +2991,8 @@
       "chinese_name": "结核分枝杆菌",
       "latin_name": "M. tuberculosis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.13505,
       "higher_than_percentage": 95,
@@ -3014,10 +3014,10 @@
       "chinese_name": "溃疡分枝杆菌",
       "latin_name": "M. ulcerans",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3037,8 +3037,8 @@
       "chinese_name": "类志贺邻单胞菌",
       "latin_name": "P. shigelloides",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00020,
       "higher_than_percentage": 27,
@@ -3060,10 +3060,10 @@
       "chinese_name": "猪霍乱沙门氏菌",
       "latin_name": "S. enterica Choleraesuis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3083,10 +3083,10 @@
       "chinese_name": "肠炎沙门氏菌",
       "latin_name": "S. Enteritidis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3106,10 +3106,10 @@
       "chinese_name": "副伤寒沙门氏菌-A",
       "latin_name": "S. Paratyphi A",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3129,10 +3129,10 @@
       "chinese_name": "副伤寒沙门氏菌-B",
       "latin_name": "S. Paratyphi B",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3152,10 +3152,10 @@
       "chinese_name": "副伤寒沙门氏菌-C",
       "latin_name": "S. Paratyphi C",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3175,10 +3175,10 @@
       "chinese_name": "伤寒沙门氏菌",
       "latin_name": "S. Typhi",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -3198,10 +3198,10 @@
       "chinese_name": "鼠伤寒沙门菌",
       "latin_name": "S. Typhimurium",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3221,10 +3221,10 @@
       "chinese_name": "鲍氏志贺氏菌",
       "latin_name": "Shigella boydii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3244,10 +3244,10 @@
       "chinese_name": "痢疾志贺氏菌",
       "latin_name": "Shigella dysenteriae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3267,8 +3267,8 @@
       "chinese_name": "福氏志贺氏菌",
       "latin_name": "Shigella flexneri",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.03009,
       "higher_than_percentage": 52,
@@ -3290,8 +3290,8 @@
       "chinese_name": "宋内志贺氏菌",
       "latin_name": "Shigella sonnei",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.01473,
       "higher_than_percentage": 38,
@@ -3313,8 +3313,8 @@
       "chinese_name": "金黄色葡萄球菌",
       "latin_name": "S. aureus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.08
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
       "detected_abundance": 0.50389,
       "higher_than_percentage": 95,
@@ -3336,8 +3336,8 @@
       "chinese_name": "猪链球菌",
       "latin_name": "S. suis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00938,
       "higher_than_percentage": 27,
@@ -3359,8 +3359,8 @@
       "chinese_name": "齿垢密螺旋体",
       "latin_name": "T. denticola",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00071,
       "higher_than_percentage": 15,
@@ -3382,10 +3382,10 @@
       "chinese_name": "梅毒密螺旋体",
       "latin_name": "T. pallidum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3405,10 +3405,10 @@
       "chinese_name": "文氏密螺旋体",
       "latin_name": "T. vincentii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3428,8 +3428,8 @@
       "chinese_name": "霍乱弧菌",
       "latin_name": "V. cholerae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00047,
       "higher_than_percentage": 27,
@@ -3451,10 +3451,10 @@
       "chinese_name": "拟态弧菌",
       "latin_name": "V. mimicus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3474,8 +3474,8 @@
       "chinese_name": "副溶血弧菌",
       "latin_name": "V. parahaemolyticus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00119,
       "higher_than_percentage": 38,
@@ -3497,8 +3497,8 @@
       "chinese_name": "创伤弧菌",
       "latin_name": "V. vulnificus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00188,
       "higher_than_percentage": 38,
@@ -3520,10 +3520,10 @@
       "chinese_name": "小肠结肠炎耶尔森菌",
       "latin_name": "Y. enterocolitica",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3543,10 +3543,10 @@
       "chinese_name": "鼠疫耶尔森菌",
       "latin_name": "Yersinia pestis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3566,10 +3566,10 @@
       "chinese_name": "假结核耶尔森菌",
       "latin_name": "Y. pseudotuberculosis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
