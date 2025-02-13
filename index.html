@@ -4106,121 +4106,229 @@
       </div>
     </div>
 
-
     <div class="rounded-table">
+      <!-- 创建表格头部 -->
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
-          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left disease-first-column" style="font-size: 11px;">
+            肥胖相关菌种名称
+          </th>
+          <th class="py-2 px-4 text-center disease-second-column" style="font-size: 11px; padding: 5px 5px;">
+            正常范围%
+          </th>
+          <th class="py-2 px-4 text-center disease-third-column" style="font-size: 11px; padding: 5px 5px;">
+            检测丰度%
+          </th>
+          <th class="py-2 px-4 text-center disease-fourth-column" style="font-size: 11px; padding: 5px 5px;">
+            结果评价
+          </th>
+          <th class="py-2 px-4 text-center disease-fifth-column" style="font-size: 11px; padding: 5px 5px;">
+            超过%的人
+          </th>
+          <th class="py-2 px-4 text-center disease-sixth-column" style="font-size: 11px; padding: 5px 5px;">
+            相关性
+          </th>
+          <th class="py-2 px-4 text-center disease-seventh-column" style="font-size: 11px; padding: 5px 5px;">
+            相关性强度
+          </th>
         </tr>
         </thead>
-        <tbody id="fatdata-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadFatData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderFatDataTable(data.fatdata);
-          } catch (error) {
-            console.error('Error loading fat data:', error);
-          }
-        }
-
-        function generateStars(count) {
-          let stars = '';
-          // 添加橙色星星
-          for (let i = 0; i < count; i++) {
-            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
-          }
-          // 添加灰色星星
-          for (let i = count; i < 3; i++) {
-            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
-          }
-          return stars;
-        }
-
-        function renderFatDataTable(fatData) {
-          const tableBody = document.getElementById('fatdata-table-body');
-          if (!tableBody) {
-            console.error('Fat data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          fatData.forEach(item => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            // dataRow.className = 'border-b border-gray-200';
-            dataRow.classList.add('fat-row');
-            dataRow.innerHTML = `
-                <td class="py-2 px-4 text-left first-column">
-                    <div class="chinese-text">${item.chinese_name}</div>
-                    <div class="latin-text text-gray-500">${item.latin_name}</div>
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${item.current_value}
-                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
-                             style="width: ${item.progress_percentage}%;"></div>
-                    </div>
-                </td>
-                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
-                    ${item.status.text}
-                    ${item.status.direction ?
-              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    <div class="flex justify-center items-center">
-                        <span class="text-orange-500">
-                            ${generateStars(item.stars)}
-                        </span>
-                    </div>
-                </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('fatdata-desc-row')
-            // colSpan="7" 因为肥胖相关菌的表格有7列
-            descRow.innerHTML = `
-                <td colSpan="7" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600">
-                        ${item.descriptions.map(desc => `
-                            <div class="fat-description">
-                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                   style="color: ${desc.color};"></i>
-                                ${desc.text}
-                            </div>
-                        `).join('')}
-                    </div>
-                </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadFatData);
-      </script>
-
+      <!-- 数据表格容器 -->
+      <div id="obesity-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <script>
+      async function loadObesityData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderObesityDataTable(data.obesity_data);
+        } catch (error) {
+          console.error('Error loading obesity data:', error);
+        }
+      }
+
+      function formatNumber(value, precision = 3) {
+        if (value === "ND") return value;
+        if (typeof value === "string") {
+          return value;
+        }
+        const num = Number(value);
+        return num.toPrecision(precision).replace(/\.?0+$/, '');
+      }
+
+      function calculateProgressPercentage(value) {
+        if (value === "ND") return 0;
+        if (value < 0) return 0;
+        if (value > 100) return 100;
+
+        const num = Number(value);
+
+        if (num <= 20) {
+          return Math.min(20, Math.max(5, num * 1.5));
+        }
+        return num;
+      }
+
+      function determineStatus(value, minRange, maxRange) {
+        if (value === "ND") {
+          return {
+            text: '缺乏',
+            color: 'yellow',
+            direction: 'down'
+          };
+        }
+
+        if (value < minRange) {
+          return {
+            text: '偏低',
+            color: 'red',
+            direction: 'down'
+          };
+        } else if (value > maxRange) {
+          return {
+            text: '超标',
+            color: 'red',
+            direction: 'up'
+          };
+        } else {
+          return {
+            text: '正常',
+            color: 'green',
+            direction: null
+          };
+        }
+      }
+
+      function generateStars(count, isPositive) {
+        const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
+        return Array(3).fill().map((_, i) =>
+          `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
+        ).join('');
+      }
+
+      function renderObesityDataTable(obesityData) {
+        const container = document.getElementById('obesity-data-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          yellow: '#faad14'
+        };
+
+        obesityData.forEach(bacteria => {
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+          const currentValue = bacteria.detected_abundance;
+
+          const formattedCurrentValue = formatNumber(currentValue);
+          const formattedMinRange = formatNumber(minRange);
+          const formattedMaxRange = formatNumber(maxRange);
+
+          const status = determineStatus(currentValue, minRange, maxRange);
+          const isNormal = status.text === '正常';
+
+          const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
+          const isPositive = bacteria.correlation === 'positive';
+          const isNegative = bacteria.correlation === 'negative';
+
+          if (status.text === '超标' && isPositive) {
+            bacteriaContainer.style.border = '1px solid #ff4d4f';
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else if (status.text === '偏低' && isNegative) {
+            bacteriaContainer.style.border = '1px solid #3b82f6';
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else {
+            bacteriaContainer.style.border = '1px solid transparent';
+          }
+
+          const dataRow = `
+        <tr>
+          <td class="py-2 px-4 text-left disease-first-column">
+            <div class="chinese-text">
+              ${bacteria.chinese_name}
+            </div>
+            <div class="latin-text text-gray-500">
+              ${bacteria.latin_name}
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+            ${formattedMinRange}-${formattedMaxRange}
+          </td>
+          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+            <span>${formattedCurrentValue}</span>
+            <div class="progress-bar w-full mt-1">
+              <div class="progress"
+                   style="width: ${calculateProgressPercentage(currentValue)}%;
+                          background-color: #00B2B4;
+                          transition: width 0.3s ease;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+              ${status.text}
+              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+            </span>
+          </td>
+          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+          </td>
+          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+            ${correlationText}
+          </td>
+          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+            <div class="flex justify-center items-center">
+              ${generateStars(bacteria.stars, isPositive)}
+            </div>
+          </td>
+        </tr>
+      `;
+
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          const descRow = filteredDescriptions.length > 0 ? `
+        <tr class="description-row">
+          <td colspan="7" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600" style="font-size: 10px;">
+              ${filteredDescriptions.map(desc => `
+                <div>
+                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                     style="color: ${desc.color};">
+                  </i>
+                  ${desc.text}
+                </div>
+              `).join('')}
+            </div>
+          </td>
+        </tr>
+      ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', loadObesityData);
+    </script>
+
   </div>
 
 
@@ -4232,130 +4340,238 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。
+            <i class="fas fa-info-circle icon"></i>
+            肠道菌群失调通过减少短链脂肪酸（如丁酸）合成削弱肠蠕动，甲烷菌过度增殖抑制肠道推进运动（便秘患者甲烷呼气浓度升高1.8倍），而拟杆菌/普雷沃菌比例失衡导致肠道神经递质5-HT合成减少。临床研究显示，益生菌联合膳食纤维干预可使排便频率提升65%，产丁酸菌丰度恢复至健康水平82%。
           </p>
         </div>
       </div>
     </div>
 
-
     <div class="rounded-table">
+      <!-- 创建表格头部 -->
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left disease-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center disease-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center disease-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center disease-fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center disease-fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center disease-sixth-column">相关性</th>
-          <th class="py-2 px-4 text-center disease-seventh-column">相关性强度</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left disease-first-column" style="font-size: 11px;">
+            便秘相关菌种名称
+          </th>
+          <th class="py-2 px-4 text-center disease-second-column" style="font-size: 11px; padding: 5px 5px;">
+            正常范围%
+          </th>
+          <th class="py-2 px-4 text-center disease-third-column" style="font-size: 11px; padding: 5px 5px;">
+            检测丰度%
+          </th>
+          <th class="py-2 px-4 text-center disease-fourth-column" style="font-size: 11px; padding: 5px 5px;">
+            结果评价
+          </th>
+          <th class="py-2 px-4 text-center disease-fifth-column" style="font-size: 11px; padding: 5px 5px;">
+            超过%的人
+          </th>
+          <th class="py-2 px-4 text-center disease-sixth-column" style="font-size: 11px; padding: 5px 5px;">
+            相关性
+          </th>
+          <th class="py-2 px-4 text-center disease-seventh-column" style="font-size: 11px; padding: 5px 5px;">
+            相关性强度
+          </th>
         </tr>
         </thead>
-        <tbody id="constipation-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadConstipationData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderConstipationDataTable(data.constipation_data);
-          } catch (error) {
-            console.error('Error loading fat data:', error);
-          }
-        }
-
-        function generateStars(count) {
-          let stars = '';
-          // 添加橙色星星
-          for (let i = 0; i < count; i++) {
-            stars += '<i class="fa fa-star text-orange-500" aria-hidden="true"></i>';
-          }
-          // 添加灰色星星
-          for (let i = count; i < 3; i++) {
-            stars += '<i class="fa fa-star text-gray-300" aria-hidden="true"></i>';
-          }
-          return stars;
-        }
-
-        function renderConstipationDataTable(fatData) {
-          const tableBody = document.getElementById('constipation-data-table-body');
-          if (!tableBody) {
-            console.error('Constipation data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          fatData.forEach(item => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            // dataRow.className = 'border-b border-gray-200';
-            dataRow.classList.add('constipation-row');
-            dataRow.innerHTML = `
-                <td class="py-2 px-4 text-left first-column">
-                    <div class="chinese-text">${item.chinese_name}</div>
-                    <div class="latin-text text-gray-500">${item.latin_name}</div>
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.range}</td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${item.current_value}
-                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                        <div class="progress bg-${item.progress_color}-500 rounded-full h-2"
-                             style="width: ${item.progress_percentage}%;"></div>
-                    </div>
-                </td>
-                <td class="py-2 px-4 text-center text-${item.status.color}-600 disease-column-text">
-                    ${item.status.text}
-                    ${item.status.direction ?
-              `<i class="fas fa-arrow-${item.status.direction}"></i>` : ''}
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.percentage}</td>
-                <td class="py-2 px-4 text-center disease-column-text">${item.correlation}</td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    <div class="flex justify-center items-center">
-                        <span class="text-orange-500">
-                            ${generateStars(item.stars)}
-                        </span>
-                    </div>
-                </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('constipationdata-desc-row')
-            // colSpan="7" 因为肥胖相关菌的表格有7列
-            descRow.innerHTML = `
-                <td colSpan="7" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600">
-                        ${item.descriptions.map(desc => `
-                            <div class="constipation-description">
-                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                   style="color: ${desc.color};"></i>
-                                ${desc.text}
-                            </div>
-                        `).join('')}
-                    </div>
-                </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadConstipationData);
-      </script>
-
+      <!-- 数据表格容器 -->
+      <div id="constipation-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <script>
+      async function loadConstipationData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderConstipationDataTable(data.constipation_data);
+        } catch (error) {
+          console.error('Error loading constipation data:', error);
+        }
+      }
+
+      function formatNumber(value, precision = 3) {
+        if (value === "ND") return value;
+        if (typeof value === "string") {
+          return value;
+        }
+        const num = Number(value);
+        return num.toPrecision(precision).replace(/\.?0+$/, '');
+      }
+
+      function calculateProgressPercentage(value) {
+        if (value === "ND") return 0;
+        if (value < 0) return 0;
+        if (value > 100) return 100;
+
+        const num = Number(value);
+
+        if (num <= 20) {
+          return Math.min(20, Math.max(5, num * 1.5));
+        }
+        return num;
+      }
+
+      function determineStatus(value, minRange, maxRange) {
+        if (value === "ND") {
+          return {
+            text: '缺乏',
+            color: 'yellow',
+            direction: 'down'
+          };
+        }
+
+        if (value < minRange) {
+          return {
+            text: '偏低',
+            color: 'red',
+            direction: 'down'
+          };
+        } else if (value > maxRange) {
+          return {
+            text: '超标',
+            color: 'red',
+            direction: 'up'
+          };
+        } else {
+          return {
+            text: '正常',
+            color: 'green',
+            direction: null
+          };
+        }
+      }
+
+      function generateStars(count, isPositive) {
+        const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
+        return Array(3).fill().map((_, i) =>
+          `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
+        ).join('');
+      }
+
+      function renderConstipationDataTable(constipationData) {
+        const container = document.getElementById('constipation-data-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          yellow: '#faad14'
+        };
+
+        constipationData.forEach(bacteria => {
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+          const currentValue = bacteria.detected_abundance;
+
+          const formattedCurrentValue = formatNumber(currentValue);
+          const formattedMinRange = formatNumber(minRange);
+          const formattedMaxRange = formatNumber(maxRange);
+
+          const status = determineStatus(currentValue, minRange, maxRange);
+          const isNormal = status.text === '正常';
+
+          const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
+          const isPositive = bacteria.correlation === 'positive';
+          const isNegative = bacteria.correlation === 'negative';
+
+          if (status.text === '超标' && isPositive) {
+            bacteriaContainer.style.border = '1px solid #ff4d4f';
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else if (status.text === '偏低' && isNegative) {
+            bacteriaContainer.style.border = '1px solid #3b82f6';
+            bacteriaContainer.style.borderRadius = '4px';
+            bacteriaContainer.style.margin = '4px 0';
+          } else {
+            bacteriaContainer.style.border = '1px solid transparent';
+          }
+
+          const dataRow = `
+        <tr>
+          <td class="py-2 px-4 text-left disease-first-column">
+            <div class="chinese-text">
+              ${bacteria.chinese_name}
+            </div>
+            <div class="latin-text text-gray-500">
+              ${bacteria.latin_name}
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+            ${formattedMinRange}-${formattedMaxRange}
+          </td>
+          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+            <span>${formattedCurrentValue}</span>
+            <div class="progress-bar w-full mt-1">
+              <div class="progress"
+                   style="width: ${calculateProgressPercentage(currentValue)}%;
+                          background-color: #00B2B4;
+                          transition: width 0.3s ease;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+              ${status.text}
+              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+            </span>
+          </td>
+          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+          </td>
+          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+            ${correlationText}
+          </td>
+          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+            <div class="flex justify-center items-center">
+              ${generateStars(bacteria.stars, isPositive)}
+            </div>
+          </td>
+        </tr>
+      `;
+
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          const descRow = filteredDescriptions.length > 0 ? `
+        <tr class="description-row">
+          <td colspan="7" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600" style="font-size: 10px;">
+              ${filteredDescriptions.map(desc => `
+                <div>
+                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                     style="color: ${desc.color};">
+                  </i>
+                  ${desc.text}
+                </div>
+              `).join('')}
+            </div>
+          </td>
+        </tr>
+      ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', loadConstipationData);
+    </script>
+
   </div>
 
   <!-- 疾病症状相关菌 : 腹胀相关菌 -->
