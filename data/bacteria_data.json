@@ -3591,8 +3591,8 @@
       "chinese_name": "白色念珠菌",
       "latin_name": "Candida albicans",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00034,
       "higher_than_percentage": 27,
@@ -3614,8 +3614,8 @@
       "chinese_name": "酿酒酵母",
       "latin_name": "S. cerevisiae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00022,
       "higher_than_percentage": 15,
@@ -3632,10 +3632,10 @@
       "chinese_name": "真贝酵母",
       "latin_name": "S. eubayanus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3650,10 +3650,10 @@
       "chinese_name": "奇异酵母",
       "latin_name": "S. paradoxus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3668,10 +3668,10 @@
       "chinese_name": "木糖发酵酵母",
       "latin_name": "S. stipitis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3686,10 +3686,10 @@
       "chinese_name": "黄曲霉",
       "latin_name": "A. flavus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -3709,10 +3709,10 @@
       "chinese_name": "烟曲霉",
       "latin_name": "A. fumigatus",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 38,
       "normal_detection_rate": 80.29,
       "descriptions": [
@@ -3732,10 +3732,10 @@
       "chinese_name": "米曲霉",
       "latin_name": "A. oryzae",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3750,10 +3750,10 @@
       "chinese_name": "新型隐球菌",
       "latin_name": "C. neoformans",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3773,8 +3773,8 @@
       "chinese_name": "汉氏德巴利氏酵母",
       "latin_name": "D. hansenii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00022,
       "higher_than_percentage": 27,
@@ -3791,10 +3791,10 @@
       "chinese_name": "产甘油假丝酵母",
       "latin_name": "E. gossypii",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3809,10 +3809,10 @@
       "chinese_name": "轮枝镰刀菌",
       "latin_name": "F. verticillioides",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3832,8 +3832,8 @@
       "chinese_name": "尖孢镰刀菌",
       "latin_name": "F. oxysporum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00073,
       "higher_than_percentage": 27,
@@ -3855,10 +3855,10 @@
       "chinese_name": "禾谷镰刀菌",
       "latin_name": "F. graminearum",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3878,10 +3878,10 @@
       "chinese_name": "乳酸克鲁维酵母",
       "latin_name": "K. lactis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -3896,10 +3896,10 @@
       "chinese_name": "稻瘟病菌",
       "latin_name": "P. grisea",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -3914,10 +3914,10 @@
       "chinese_name": "玉米黑粉菌",
       "latin_name": "U. maydis",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
-      "detected_abundance": 0,
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
