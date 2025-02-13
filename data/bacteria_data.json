@@ -8950,14 +8950,14 @@
       ]
     },
     {
-      "chinese_name": "构橘酸杆菌属",
+      "chinese_name": "枸橼酸杆菌",
       "latin_name": "Citrobacter",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0.5
       },
       "detected_abundance": 0.07731,
-      "higher_than_percentage": null,
+      "higher_than_percentage": "-",
       "correlation": "positive",
       "stars": 2,
       "descriptions": [
@@ -8981,7 +8981,7 @@
         "normal_range_max": 0.05
       },
       "detected_abundance": 0.09652,
-      "higher_than_percentage": null,
+      "higher_than_percentage": "-",
       "correlation": "positive",
       "stars": 2,
       "descriptions": [
@@ -9238,319 +9238,21 @@
       ]
     },
     {
-      "chinese_name": "链状双歧杆菌",
-      "latin_name": "Bifidobacterium catenulatum",
+      "chinese_name": "青春双歧杆菌",
+      "latin_name": "Bifidobacterium adolescentis",
       "normal_range": {
         "normal_range_min": 0,
-        "normal_range_max": 0.50838
-      },
-      "detected_abundance": null,
-      "higher_than_percentage": 0.99,
-      "correlation": "positive",
-      "stars": 1,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "成人型哮喘可能会促进过敏炎症所特有的Th2偏向免疫反应。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议适量补充双歧杆菌，调节免疫反应。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "铜绿假单胞菌",
-      "latin_name": "Pseudomonas aeruginosa",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.04152,
-      "higher_than_percentage": null,
-      "correlation": "positive",
-      "stars": 1,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "感染也可能会引起过敏反应，感染可能会导致过敏性支气管曲霉病（ABPA）的发生，增加宿主患上过敏性疾病的风险。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议注意卫生，预防感染。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "双歧杆菌属",
-      "latin_name": "Bifidobacterium",
-      "normal_range": {
-        "normal_range_min": 1.7545796,
-        "normal_range_max": 35.500554
-      },
-      "detected_abundance": 0.03296,
-      "higher_than_percentage": 0.24,
-      "correlation": "negative",
-      "stars": 3,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "可以调节肠道免疫系统，减少过敏反应。双歧杆菌属可以改善过敏症状，如哮喘和湿疹，可以进一步提高其对过敏的保护作用。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议适量补充双歧杆菌，增加益生菌摄入。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "乳杆菌属",
-      "latin_name": "Lactobacillus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.4302374
-      },
-      "detected_abundance": 0.00660,
-      "higher_than_percentage": 0.08,
-      "correlation": "negative",
-      "stars": 3,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "可以减轻食物过敏和湿疹等过敏症状，可以通过降低食物中过敏原的含量来减轻过敏症状。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议适量补充乳酸菌，改善免疫功能。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "粪杆菌属",
-      "latin_name": "Faecalibacterium",
-      "normal_range": {
-        "normal_range_min": 1.9350868,
-        "normal_range_max": 17.7942438
-      },
-      "detected_abundance": 28.86665,
-      "higher_than_percentage": 0.99,
-      "correlation": "negative",
-      "stars": 3,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "产生丰富的短链脂肪酸，如丙酸、丁酸和乙酸等，维持肠道健康和免疫系统的正常功能，减少过敏症状的发生。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）"
-        }
-      ]
-    },
-    {
-      "chinese_name": "艾克曼氏菌",
-      "latin_name": "Akkermansia muciniphila",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 6.6395
-      },
-      "detected_abundance": 0.00394,
-      "higher_than_percentage": 0.45,
-      "correlation": "negative",
-      "stars": 3,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "调节肠道微生物群和短链脂肪酸预防过敏，阻断免疫细胞的流入，减轻病理，降低了炎症水平。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议增加膳食纤维摄入，改善肠道环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "阿克曼氏菌属",
-      "latin_name": "Akkermansia",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 5.7984096
-      },
-      "detected_abundance": 0.00460,
-      "higher_than_percentage": 0.44,
-      "correlation": "negative",
-      "stars": 2,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "减少多种炎症标志物，修复肠道，富含多糖的蔓越莓提取物和其他富含类黄酮的食物，包括绿茶和红茶可增高Akk水平。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议增加富含多糖和类黄酮的食物摄入。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "拟杆菌属",
-      "latin_name": "Bacteroides",
-      "normal_range": {
-        "normal_range_min": 1.0577624,
-        "normal_range_max": 47.3225368
-      },
-      "detected_abundance": 0.08974,
-      "higher_than_percentage": 0.02,
-      "correlation": "negative",
-      "stars": 2,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "在婴儿期和幼儿期，丰度降低与食物过敏或特应性皮炎的发生有关，过多也与过敏结果有关，包括哮喘、花粉症和食物过敏等。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议调节肠道菌群平衡。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "经黏液真杆菌属",
-      "latin_name": "Blautia",
-      "normal_range": {
-        "normal_range_min": 0.0846204,
-        "normal_range_max": 6.9055608
-      },
-      "detected_abundance": 10.17279,
-      "higher_than_percentage": 0.75,
-      "correlation": "negative",
-      "stars": 2,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "高丰度可能会导致过敏疾病的发展，如婴儿的食物过敏和儿童的1型糖尿病。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议：高脂汁酸、红酒、啤酒"
-        }
-      ]
-    },
-    {
-      "chinese_name": "Dorea菌属",
-      "latin_name": "Dorea",
-      "normal_range": {
-        "normal_range_min": 0.05807,
-        "normal_range_max": 5.2120164
-      },
-      "detected_abundance": 0.43735,
-      "higher_than_percentage": 0.20,
-      "correlation": "negative",
-      "stars": 2,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "Dorea与食物过敏和免疫有关，有助于保护免疫系统免受食物敏感和食物过敏的影响。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议保持均衡饮食，改善肠道环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "普雷沃氏菌属",
-      "latin_name": "Prevotella",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 67.8009886
-      },
-      "detected_abundance": 0.04290,
-      "higher_than_percentage": 0.50,
-      "correlation": "negative",
-      "stars": 2,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "孕期母亲肠道微生物中Prevotella的丰度增加可以预防食物过敏，在食物过敏患者中，Prevotella的丰度较低。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议调节肠道菌群，改善免疫功能。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "罗氏菌属",
-      "latin_name": "Roseburia",
-      "normal_range": {
-        "normal_range_min": 0.5829956,
-        "normal_range_max": 16.3580638
-      },
-      "detected_abundance": 6.33667,
-      "higher_than_percentage": 0.10,
-      "correlation": "positive",
-      "stars": 1,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "可产生丁酸的益生菌，食物过敏患者的肠道中罗氏菌属的丰度较低。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议增加膳食纤维摄入，改善肠道环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "链状双歧杆菌",
-      "latin_name": "Bifidobacterium catenulatum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.50838
+        "normal_range_max": 14.286
       },
       "detected_abundance": "ND",
       "higher_than_percentage": 0.99,
-      "correlation": "positive",
-      "stars": 1,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
+      "correlation": "negative",
+      "stars": 2,
       "descriptions": [
         {
           "type": "info",
           "color": "#3498db",
-          "text": "成人型哮喘可能会促进过敏炎症所特有的Th2偏向免疫反应。"
+          "text": "过敏儿童的肠道中数量较少。缺乏可能导致免疫系统的失调，使食物过敏原更容易穿过肠道屏障，导致食物敏感性的增加。"
         },
         {
           "type": "warning",
@@ -9560,26 +9262,21 @@
       ]
     },
     {
-      "chinese_name": "铜绿假单胞菌",
-      "latin_name": "Pseudomonas aeruginosa",
+      "chinese_name": "Lachnoclostridium",
+      "latin_name": "Lachnoclostridiuma",
       "normal_range": {
         "normal_range_min": 0,
-        "normal_range_max": 0.05
+        "normal_range_max": 0.2086068
       },
-      "detected_abundance": 0.04152,
-      "higher_than_percentage": "-",
-      "correlation": "positive",
+      "detected_abundance": 0.17516,
+      "higher_than_percentage": 0.08,
+      "correlation": "negative",
       "stars": 1,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
       "descriptions": [
         {
           "type": "info",
           "color": "#3498db",
-          "text": "感染也可能会引起过敏反应，感染可能会导致过敏性支气管曲霉病（ABPA）的发生，增加宿主患上过敏性疾病的风险。"
+          "text": "Lachnoclostridium可产生短链脂肪酸，减少食物过敏的发生。"
         },
         {
           "type": "warning",
@@ -9589,263 +9286,26 @@
       ]
     },
     {
-      "chinese_name": "双歧杆菌属",
-      "latin_name": "Bifidobacterium",
+      "chinese_name": "普通拟杆菌",
+      "latin_name": "Bacteroides vulgatus",
       "normal_range": {
-        "normal_range_min": 1.7545796,
-        "normal_range_max": 35.500554
+        "normal_range_min": 0,
+        "normal_range_max": 20.066
       },
-      "detected_abundance": 0.03296,
+      "detected_abundance": "ND",
       "higher_than_percentage": 0.24,
       "correlation": "negative",
-      "stars": 3,
-      "status": {
-        "text": "偏低",
-        "color": "yellow",
-        "direction": "down"
-      },
+      "stars": 1,
       "descriptions": [
         {
           "type": "info",
           "color": "#3498db",
-          "text": "可以调节肠道免疫系统，减少过敏反应。双歧杆菌属可以改善过敏症状，如哮喘和湿疹，可以进一步提高其对过敏的保护作用。"
+          "text": "食物过敏与普通拟杆菌相对丰度呈负相关。"
         },
         {
           "type": "warning",
           "color": "#e74c3c",
           "text": "建议适量补充双歧杆菌，增加益生菌摄入。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "乳杆菌属",
-      "latin_name": "Lactobacillus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.4302374
-      },
-      "detected_abundance": 0.00660,
-      "higher_than_percentage": 0.08,
-      "correlation": "negative",
-      "stars": 3,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "可以减轻食物过敏和湿疹等过敏症状，可以通过降低食物中过敏原的含量来减轻过敏症状。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议适量补充乳酸菌，改善免疫功能。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "粪杆菌属",
-      "latin_name": "Faecalibacterium",
-      "normal_range": {
-        "normal_range_min": 1.9350868,
-        "normal_range_max": 17.7942438
-      },
-      "detected_abundance": 28.86665,
-      "higher_than_percentage": 0.99,
-      "correlation": "negative",
-      "stars": 3,
-      "status": {
-        "text": "超标",
-        "color": "red",
-        "direction": "up"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "产生丰富的短链脂肪酸，如丙酸、丁酸和乙酸等，维持肠道健康和免疫系统的正常功能，减少过敏症状的发生。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）"
-        }
-      ]
-    },
-    {
-      "chinese_name": "艾克曼氏菌",
-      "latin_name": "Akkermansia muciniphila",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 6.6395
-      },
-      "detected_abundance": 0.00394,
-      "higher_than_percentage": 0.45,
-      "correlation": "negative",
-      "stars": 3,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "调节肠道微生物群和短链脂肪酸预防过敏，阻断免疫细胞的流入，减轻病理，降低了炎症水平。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议增加膳食纤维摄入，改善肠道环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "阿克曼氏菌属",
-      "latin_name": "Akkermansia",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 5.7984096
-      },
-      "detected_abundance": 0.00460,
-      "higher_than_percentage": 0.44,
-      "correlation": "negative",
-      "stars": 2,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "减少多种炎症标志物，修复肠道，富含多糖的蔓越莓提取物和其他富含类黄酮的食物，包括绿茶和红茶可增高Akk水平。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议增加富含多糖和类黄酮的食物摄入。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "拟杆菌属",
-      "latin_name": "Bacteroides",
-      "normal_range": {
-        "normal_range_min": 1.0577624,
-        "normal_range_max": 47.3225368
-      },
-      "detected_abundance": 0.08974,
-      "higher_than_percentage": 0.02,
-      "correlation": "negative",
-      "stars": 2,
-      "status": {
-        "text": "偏低",
-        "color": "yellow",
-        "direction": "down"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "在婴儿期和幼儿期，丰度降低与食物过敏或特应性皮炎的发生有关，过多也与过敏结果有关，包括哮喘、花粉症和食物过敏等。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议调节肠道菌群平衡。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "经黏液真杆菌属",
-      "latin_name": "Blautia",
-      "normal_range": {
-        "normal_range_min": 0.0846204,
-        "normal_range_max": 6.9055608
-      },
-      "detected_abundance": 10.17279,
-      "higher_than_percentage": 0.75,
-      "correlation": "negative",
-      "stars": 2,
-      "status": {
-        "text": "超标",
-        "color": "red",
-        "direction": "up"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "高丰度可能会导致过敏疾病的发展，如婴儿的食物过敏和儿童的1型糖尿病。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议：高脂汁酸、红酒、啤酒"
-        }
-      ]
-    },
-    {
-      "chinese_name": "Dorea菌属",
-      "latin_name": "Dorea",
-      "normal_range": {
-        "normal_range_min": 0.05807,
-        "normal_range_max": 5.2120164
-      },
-      "detected_abundance": 0.43735,
-      "higher_than_percentage": 0.20,
-      "correlation": "negative",
-      "stars": 2,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "Dorea与食物过敏和免疫有关，有助于保护免疫系统免受食物敏感和食物过敏的影响。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议保持均衡饮食，改善肠道环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "普雷沃氏菌属",
-      "latin_name": "Prevotella",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 67.8009886
-      },
-      "detected_abundance": 0.04290,
-      "higher_than_percentage": 0.50,
-      "correlation": "negative",
-      "stars": 2,
-      "status": {
-        "text": "正常",
-        "color": "green",
-        "direction": "normal"
-      },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "#3498db",
-          "text": "孕期母亲肠道微生物中Prevotella的丰度增加可以预防食物过敏，在食物过敏患者中，Prevotella的丰度较低。"
-        },
-        {
-          "type": "warning",
-          "color": "#e74c3c",
-          "text": "建议调节肠道菌群，改善免疫功能。"
         }
       ]
     }

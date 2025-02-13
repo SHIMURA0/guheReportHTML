@@ -948,12 +948,12 @@
         border-collapse: collapse;
       }
 
-      .first-column { width: 20%; }
-      .second-column { width: 15%; }
-      .third-column { width: 20%; }
-      .fourth-column { width: 15%; }
-      .fifth-column { width: 15%; }
-      .sixth-column { width: 15%; }
+      /*.first-column { width: 20%; }*/
+      /*.second-column { width: 15%; }*/
+      /*.third-column { width: 20%; }*/
+      /*.fourth-column { width: 15%; }*/
+      /*.fifth-column { width: 15%; }*/
+      /*.sixth-column { width: 15%; }*/
 
       /*.description-row td {*/
       /*  background-color: #f8f9fa;*/
@@ -4097,10 +4097,10 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            肠道菌群通过影响能量吸收、脂肪代谢和免疫功能，在肥胖发生发展中扮演重要角色。
+            <i class="fas fa-info-circle icon"></i>
+            肠道菌群失衡会显著影响人体的代谢功能，研究表明，肥胖人群的肠道菌群结构与正常体重人群存在明显差异，这种失衡可能是导致肥胖的重要因素之一
           </p>
         </div>
       </div>
@@ -4154,7 +4154,7 @@
       }
 
       function formatNumber(value, precision = 3) {
-        if (value === "ND") return value;
+        if (value === "ND") return "未检出";
         if (typeof value === "string") {
           return value;
         }
@@ -4257,47 +4257,47 @@
           }
 
           const dataRow = `
-        <tr>
-          <td class="py-2 px-4 text-left disease-first-column">
-            <div class="chinese-text">
-              ${bacteria.chinese_name}
-            </div>
-            <div class="latin-text text-gray-500">
-              ${bacteria.latin_name}
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-            <span>${formattedCurrentValue}</span>
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(currentValue)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-              ${status.text}
-              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-            </span>
-          </td>
-          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-          </td>
-          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-            ${correlationText}
-          </td>
-          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-            <div class="flex justify-center items-center">
-              ${generateStars(bacteria.stars, isPositive)}
-            </div>
-          </td>
-        </tr>
-      `;
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                  ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                  ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                  ${status.text}
+                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
@@ -4500,47 +4500,47 @@
           }
 
           const dataRow = `
-        <tr>
-          <td class="py-2 px-4 text-left disease-first-column">
-            <div class="chinese-text">
-              ${bacteria.chinese_name}
-            </div>
-            <div class="latin-text text-gray-500">
-              ${bacteria.latin_name}
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-            <span>${formattedCurrentValue}</span>
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(currentValue)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-              ${status.text}
-              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-            </span>
-          </td>
-          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-          </td>
-          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-            ${correlationText}
-          </td>
-          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-            <div class="flex justify-center items-center">
-              ${generateStars(bacteria.stars, isPositive)}
-            </div>
-          </td>
-        </tr>
-      `;
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                  ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                  ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                  ${status.text}
+                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
@@ -4742,47 +4742,47 @@
           }
 
           const dataRow = `
-        <tr>
-          <td class="py-2 px-4 text-left disease-first-column">
-            <div class="chinese-text">
-              ${bacteria.chinese_name}
-            </div>
-            <div class="latin-text text-gray-500">
-              ${bacteria.latin_name}
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-            <span>${formattedCurrentValue}</span>
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(currentValue)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-              ${status.text}
-              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-            </span>
-          </td>
-          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-          </td>
-          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-            ${correlationText}
-          </td>
-          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-            <div class="flex justify-center items-center">
-              ${generateStars(bacteria.stars, isPositive)}
-            </div>
-          </td>
-        </tr>
-      `;
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                  ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                  ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                  ${status.text}
+                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
@@ -4984,47 +4984,47 @@
           }
 
           const dataRow = `
-        <tr>
-          <td class="py-2 px-4 text-left disease-first-column">
-            <div class="chinese-text">
-              ${bacteria.chinese_name}
-            </div>
-            <div class="latin-text text-gray-500">
-              ${bacteria.latin_name}
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-            <span>${formattedCurrentValue}</span>
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(currentValue)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-              ${status.text}
-              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-            </span>
-          </td>
-          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-            ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-          </td>
-          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-            ${correlationText}
-          </td>
-          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-            <div class="flex justify-center items-center">
-              ${generateStars(bacteria.stars, isPositive)}
-            </div>
-          </td>
-        </tr>
-      `;
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                  ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                  ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                  ${status.text}
+                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
@@ -5219,48 +5219,49 @@
             bacteriaContainer.style.border = '1px solid transparent';
           }
 
+          // 在 dataRow 模板中修改第三列的内容
           const dataRow = `
-        <tr>
-          <td class="py-2 px-4 text-left disease-first-column">
-            <div class="chinese-text">
-              ${bacteria.chinese_name}
-            </div>
-            <div class="latin-text text-gray-500">
-              ${bacteria.latin_name}
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-            <span>${formattedCurrentValue}</span>
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(currentValue)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-            <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-              ${status.text}
-              ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-            </span>
-          </td>
-          <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-            ${bacteria.higher_than_percentage === "-" ? '-%' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-          </td>
-          <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-            ${correlationText}
-          </td>
-          <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-            <div class="flex justify-center items-center">
-              ${generateStars(bacteria.stars, isPositive)}
-            </div>
-          </td>
-        </tr>
-      `;
+            <tr>
+              <td class="py-2 px-4 text-left disease-first-column">
+                <div class="chinese-text">
+                  ${bacteria.chinese_name}
+                </div>
+                <div class="latin-text text-gray-500">
+                  ${bacteria.latin_name}
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
+                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress"
+                       style="width: ${currentValue === "ND" ? 0 : calculateProgressPercentage(currentValue)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                  ${status.text}
+                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                </span>
+              </td>
+              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
+                ${bacteria.higher_than_percentage === "-" ? '-%' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+              </td>
+              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
+                ${correlationText}
+              </td>
+              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+                <div class="flex justify-center items-center">
+                  ${generateStars(bacteria.stars, isPositive)}
+                </div>
+              </td>
+            </tr>
+          `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
