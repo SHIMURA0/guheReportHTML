@@ -818,13 +818,11 @@
     {
       "chinese_name": "嗜粘蛋白-艾克曼菌",
       "latin_name": "A. muciniphila",
-      "normal_range": "0-6.6395",
-      "detected_abundance": 0.00394,
-      "progress_percentage": 0.06,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 6.6395
       },
+      "detected_abundance": 0.00394,
       "higher_than_percentage": 27,
       "normal_detection_rate": 95.67,
       "descriptions": [
@@ -838,13 +836,11 @@
     {
       "chinese_name": "凝结芽孢杆菌",
       "latin_name": "B. coagulans",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00027,
-      "progress_percentage": 0.34,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00027,
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -858,13 +854,11 @@
     {
       "chinese_name": "枯草芽孢杆菌",
       "latin_name": "B. subtilis",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00185,
-      "progress_percentage": 2.31,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00185,
       "higher_than_percentage": 58,
       "normal_detection_rate": 87.50,
       "descriptions": [
@@ -878,13 +872,11 @@
     {
       "chinese_name": "多形拟杆菌",
       "latin_name": "B. thetaiotaomicron",
-      "normal_range": "0-2.7856",
-      "detected_abundance": 0.00020,
-      "progress_percentage": 0.01,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 2.7856
       },
+      "detected_abundance": 0.00020,
       "higher_than_percentage": 64,
       "normal_detection_rate": 86.06,
       "descriptions": [
@@ -898,13 +890,11 @@
     {
       "chinese_name": "青春双歧杆菌",
       "latin_name": "B. adolescentis",
-      "normal_range": "0-14.286",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 14.286
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 24,
       "normal_detection_rate": 97.12,
       "descriptions": [
@@ -923,13 +913,11 @@
     {
       "chinese_name": "角双歧杆菌",
       "latin_name": "B. angulatum",
-      "normal_range": "0-0.15257",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.15257
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -948,13 +936,11 @@
     {
       "chinese_name": "动物双歧杆菌",
       "latin_name": "B. animalis",
-      "normal_range": "0-0.18833",
-      "detected_abundance": 0.00113,
-      "progress_percentage": 0.60,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.18833
       },
+      "detected_abundance": 0.00113,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -968,13 +954,11 @@
     {
       "chinese_name": "两歧双歧杆菌",
       "latin_name": "B. bifidum",
-      "normal_range": "0-2.1225",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 2.1225
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 98.56,
       "descriptions": [
@@ -993,13 +977,11 @@
     {
       "chinese_name": "短双歧杆菌",
       "latin_name": "B. breve",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00158,
-      "progress_percentage": 1.98,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00158,
       "higher_than_percentage": 67,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1013,13 +995,11 @@
     {
       "chinese_name": "链状双歧杆菌",
       "latin_name": "B. catenulatum",
-      "normal_range": "0-0.50838",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.50838
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 50,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1038,13 +1018,11 @@
     {
       "chinese_name": "乳双歧杆菌",
       "latin_name": "B. crudilactis",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 44,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1063,13 +1041,11 @@
     {
       "chinese_name": "婴儿双歧杆菌",
       "latin_name": "B. infantis",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 2,
       "normal_detection_rate": 99.04,
       "descriptions": [
@@ -1088,13 +1064,11 @@
     {
       "chinese_name": "长双歧杆菌",
       "latin_name": "B. longum",
-      "normal_range": "0-6.854",
-      "detected_abundance": 0.01861,
-      "progress_percentage": 0.27,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 6.854
       },
+      "detected_abundance": 0.01861,
       "higher_than_percentage": 95,
       "normal_detection_rate": 98.56,
       "descriptions": [
@@ -1108,13 +1082,11 @@
     {
       "chinese_name": "胃痛双歧杆菌",
       "latin_name": "B. merycicum",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -1133,13 +1105,11 @@
     {
       "chinese_name": "穆卡拉巴双歧杆菌",
       "latin_name": "B. moukalabense",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00021,
-      "progress_percentage": 0.26,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00021,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -1153,13 +1123,11 @@
     {
       "chinese_name": "假长双歧杆菌",
       "latin_name": "B. pseudolongum",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00142,
-      "progress_percentage": 1.78,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00142,
       "higher_than_percentage": 83,
       "normal_detection_rate": 5.77,
       "descriptions": [
@@ -1173,13 +1141,11 @@
     {
       "chinese_name": "分支双歧杆菌",
       "latin_name": "B. ramosum",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 98,
       "normal_detection_rate": 35.58,
       "descriptions": [
@@ -1198,13 +1164,11 @@
     {
       "chinese_name": "罗伊氏双歧杆菌",
       "latin_name": "B. reuteri",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 83,
       "normal_detection_rate": 5.77,
       "descriptions": [
@@ -1223,13 +1187,11 @@
     {
       "chinese_name": "短柄双歧杆菌",
       "latin_name": "B. stellenboschense",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -1248,13 +1210,11 @@
     {
       "chinese_name": "粪双歧杆菌",
       "latin_name": "B. stercoris",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -1273,13 +1233,11 @@
     {
       "chinese_name": "布劳特氏菌属氢营养菌",
       "latin_name": "B. hydrogenotropica",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00262,
-      "progress_percentage": 3.28,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00262,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -1293,13 +1251,11 @@
     {
       "chinese_name": "穗状丁酸弧菌",
       "latin_name": "B. crossotus",
-      "normal_range": "0-2.9334",
-      "detected_abundance": 0.00239,
-      "progress_percentage": 0.08,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 2.9334
       },
+      "detected_abundance": 0.00239,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -1313,13 +1269,11 @@
     {
       "chinese_name": "丁酸梭菌",
       "latin_name": "C. butyricum",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.01350,
-      "progress_percentage": 16.88,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.01350,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -1333,13 +1287,11 @@
     {
       "chinese_name": "霍氏真杆菌",
       "latin_name": "E. hallii",
-      "normal_range": "0-3.5506",
-      "detected_abundance": 0.02035,
-      "progress_percentage": 0.57,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 3.5506
       },
+      "detected_abundance": 0.02035,
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -1353,13 +1305,11 @@
     {
       "chinese_name": "直肠真杆菌",
       "latin_name": "E. rectale",
-      "normal_range": "0-13.029",
-      "detected_abundance": 2.14287,
-      "progress_percentage": 16.45,
-      "evaluation": {
-        "status": "检出",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 13.029
       },
+      "detected_abundance": 2.14287,
       "higher_than_percentage": 75,
       "normal_detection_rate": 95.67,
       "descriptions": [
@@ -1373,13 +1323,11 @@
     {
       "chinese_name": "普拉梭菌",
       "latin_name": "F. prausnitzii",
-      "normal_range": "0.18043-14.003",
-      "detected_abundance": 26.23325,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0.18043,
+        "normal_range_max": 14.003
       },
+      "detected_abundance": 26.23325,
       "higher_than_percentage": 98,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1398,13 +1346,11 @@
     {
       "chinese_name": "嗜酸乳杆菌",
       "latin_name": "L. acidophilus",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 15,
       "normal_detection_rate": 88.94,
       "descriptions": [
@@ -1423,13 +1369,11 @@
     {
       "chinese_name": "短乳杆菌",
       "latin_name": "L. brevis",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00028,
-      "progress_percentage": 0.35,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00028,
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -1443,13 +1387,11 @@
     {
       "chinese_name": "干酪乳杆菌",
       "latin_name": "L. casei",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 8,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -1468,13 +1410,11 @@
     {
       "chinese_name": "卷曲乳杆菌",
       "latin_name": "L. crispatus",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00489,
-      "progress_percentage": 6.11,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": 0.00489,
       "higher_than_percentage": 67,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1488,13 +1428,11 @@
     {
       "chinese_name": "德氏乳杆菌",
       "latin_name": "L. delbrueckii",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.08
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 44,
       "normal_detection_rate": 99.52,
       "descriptions": [
@@ -1502,76 +1440,6 @@
           "type": "info",
           "color": "rgb(0, 178, 180)",
           "text": "德氏乳杆菌是一种乳酸菌，它能够在酸性环境中生存，具有良好的发酵能力，并能产生多种代谢产物，能够促进消化和增强免疫功能。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
-    },
-    {
-      "chinese_name": "发酵乳杆菌",
-      "latin_name": "L. fermentum",
-      "normal_range": "0-0.08",
-      "detected_abundance": 0.00013,
-      "progress_percentage": 0.16,
-      "evaluation": {
-        "status": "丰度较低",
-        "color": "yellow"
-      },
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "发酵乳杆菌是一种常见的乳酸菌，具有促进消化、增强免疫功能和抑制有害病原体生长的潜力，对肠道健康有益。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "格氏乳杆菌",
-      "latin_name": "L. gasseri",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
-      },
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "格氏乳杆菌是一种重要的乳酸菌，具有促进消化、增强免疫功能和维持阴道健康的潜力，对于肠道和生殖道的健康有益。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
-    },
-    {
-      "chinese_name": "瑞士乳杆菌",
-      "latin_name": "L. helveticus",
-      "normal_range": "0-0.08",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
-      },
-      "higher_than_percentage": 44,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "瑞士乳杆菌是一种重要的乳酸菌，有助于分解乳蛋白，释放出有益的氨基酸和生物活性肽，从而促进消化、增强免疫功能等。"
         },
         {
           "type": "warning",

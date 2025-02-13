@@ -1361,9 +1361,9 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             有益菌是指对宿主健康有积极影响的微生物，特别是在肠道内，有助于维持菌群平衡、促进消化和增强免疫力。常见的有益菌包括双歧杆菌（Bifidobacterium）、乳酸菌（Lactobacillus）、嗜酸乳杆菌（Lactobacillus acidophilus）等。
           </p>
         </div>
@@ -1372,10 +1372,10 @@
 
     <!-- 常见有益菌表格 -->
     <div class="rounded-table">
+      <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
+        <tr style="background-color: #00B2B4; color: white;">
           <th class="py-2 px-4 text-left first-column">菌种名称</th>
           <th class="py-2 px-4 text-center second-column">正常范围</th>
           <th class="py-2 px-4 text-center third-column">检测丰度</th>
@@ -1384,75 +1384,181 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="beneficial-bacteria-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadBeneficialBacteriaData() {  // 改为loadBeneficialBacteriaData
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderBeneficialBacteriaTable(data.beneficial_gut_bacteria_data);  // 改为beneficial_bacteria_data
-          } catch (error) {
-            console.error('Error loading beneficial bacteria data:', error);
-          }
-        }
-
-        function renderBeneficialBacteriaTable(bacteriaData) {  // 改为renderBeneficialBacteriaTable
-          const tableBody = document.getElementById('beneficial-bacteria-table-body');  // 改为beneficial-bacteria-table-body
-          tableBody.innerHTML = '';
-
-          bacteriaData.forEach(bacteria => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                  <div class="chinese-text">${bacteria.chinese_name}</div>
-                  <div class="latin-text">${bacteria.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${bacteria.detected_abundance}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
-                  </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                  ${bacteria.evaluation.status}
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage}%</td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
-          `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                  <div class="description-container text-gray-600">
-                      ${bacteria.descriptions.map(desc => `
-                          <div>
-                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                 style="color: ${desc.color};"></i>
-                              ${desc.text}
-                          </div>
-                      `).join('')}
-                  </div>
-              </td>
-          `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时获取数据
-        document.addEventListener('DOMContentLoaded', loadBeneficialBacteriaData);  // 改为loadBeneficialBacteriaData
-      </script>
-
+      <!-- 数据表格容器 -->
+      <div id="beneficial-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <script>
+      async function loadBeneficialBacteriaData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderBeneficialBacteriaTable(data.beneficial_gut_bacteria_data);
+        } catch (error) {
+          console.error('Error loading beneficial bacteria data:', error);
+        }
+      }
+
+      function formatNumber(value) {
+        if (typeof value === "string" && value === "未检出") {
+          return value;
+        }
+
+        const num = Number(value);
+
+        if (num >= 1) {
+          const integerDigits = Math.floor(Math.log10(num)) + 1;
+          const decimalPlaces = Math.max(0, 4 - integerDigits);
+          return num.toFixed(decimalPlaces);
+        } else {
+          const str = num.toPrecision(4);
+          return str.replace(/\.?0+$/, '');
+        }
+      }
+
+      function formatDetectedValue(value) {
+        if (value === "ND") {
+          return "未检出";
+        }
+        return formatNumber(value);
+      }
+
+      function formatRangeValue(value) {
+        return formatNumber(value);
+      }
+
+      function calculateProgressPercentageForThirdColumn(value) {
+        if (value === "ND" || value === 0) {
+          return 0;
+        }
+
+        const num = Number(value);
+        const logValue = Math.log10(num);
+        const minLog = -1;
+        const maxLog = 3;
+
+        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+        return Math.max(5, Math.min(50, percentage));
+      }
+
+      function renderBeneficialBacteriaTable(bacteriaData) {
+        const container = document.getElementById('beneficial-bacteria-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          gray: '#808080'
+        };
+
+        bacteriaData.forEach(bacteria => {
+          let statusColor, statusText, statusIcon;
+          const detected = bacteria.detected_abundance;
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+
+          const formattedDetectedValue = formatDetectedValue(detected);
+          const formattedMinRange = formatRangeValue(minRange);
+          const formattedMaxRange = formatRangeValue(maxRange);
+
+          let isNormal = true;
+
+          if (detected === "ND") {
+            if (minRange > 0) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            }
+          } else {
+            if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
+          }
+
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const dataRow = `
+        <tr>
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">${bacteria.chinese_name}</div>
+            <div class="latin-text">${bacteria.latin_name}</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text second-column">
+            ${formattedMinRange}-${formattedMaxRange}
+          </td>
+          <td class="py-2 px-4 text-center column-text third-column">
+            <span>${detected === "ND" ? "未检出" : formattedDetectedValue}</span>
+            <div class="progress-bar w-full mt-1">
+              <div class="progress"
+                   style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
+                          background-color: #00B2B4;
+                          transition: width 0.3s ease;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center column-text fourth-column">
+            <span class="font-bold" style="color: ${CUSTOM_COLORS[statusColor]}">
+              ${statusText}${statusIcon}
+            </span>
+          </td>
+          <td class="py-2 px-4 text-center column-text fifth-column">${bacteria.higher_than_percentage}%</td>
+          <td class="py-2 px-4 text-center column-text sixth-column">${bacteria.normal_detection_rate}%</td>
+        </tr>
+      `;
+
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          const descRow = filteredDescriptions.length > 0 ? `
+        <tr class="description-row">
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              ${filteredDescriptions.map(desc => `
+                <div>
+                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                     style="color: ${desc.color};"></i>
+                  ${desc.text}
+                </div>
+              `).join('')}
+            </div>
+          </td>
+        </tr>
+      ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', loadBeneficialBacteriaData);
+    </script>
 
   </div>
 
