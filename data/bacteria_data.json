@@ -607,7 +607,7 @@
     },
     {
       "chinese_name": "考拉杆菌属",
-      "latin_name": "Phascolarctobacterium",
+      "latin_name": "Phas.",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 3.7492
@@ -629,13 +629,11 @@
     {
       "chinese_name": "柯林斯氏菌属",
       "latin_name": "Collinsella",
-      "normal_range": "0-9.1529",
-      "detected_abundance": 0.01763,
-      "progress_percentage": 0.19,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 9.1529
       },
+      "detected_abundance": 0.01763,
       "higher_than_percentage": 82,
       "normal_detection_rate": 90.38,
       "descriptions": [
@@ -643,20 +641,23 @@
           "type": "info",
           "color": "rgb(0, 178, 180)",
           "text": "柯林斯氏菌是一类革兰氏阳性细菌，其水平与肥胖、糖尿病和心血管疾病等代谢病风险相关。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "改善柯林斯氏菌可通过控制高脂饮食、增加膳食纤维的摄入。建议多食用全谷物、新鲜蔬果，适当补充益生菌，保持均衡饮食结构。"
         }
       ]
     },
     {
       "chinese_name": "嗜酸菌属",
       "latin_name": "Bilophila",
-      "normal_range": "0-0.1545",
-      "detected_abundance": 0.73111,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.1545
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.73111,
+      "higher_than_percentage": "-",
       "normal_detection_rate": 66.83,
       "descriptions": [
         {
@@ -674,13 +675,11 @@
     {
       "chinese_name": "黄酮还原菌属",
       "latin_name": "Flavonifractor",
-      "normal_range": "0-0.7285",
-      "detected_abundance": 2.44087,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.7285
       },
+      "detected_abundance": 2.44087,
       "higher_than_percentage": 57,
       "normal_detection_rate": 91.83,
       "descriptions": [
@@ -699,13 +698,11 @@
     {
       "chinese_name": "多雷氏菌属",
       "latin_name": "Dorea",
-      "normal_range": "0.0581-5.212",
-      "detected_abundance": 0.43735,
-      "progress_percentage": 8.4,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0.0581,
+        "normal_range_max": 5.212
       },
+      "detected_abundance": 0.43735,
       "higher_than_percentage": 20,
       "normal_detection_rate": 89.42,
       "descriptions": [
@@ -719,13 +716,11 @@
     {
       "chinese_name": "洪氏菌属",
       "latin_name": "Hungatella",
-      "normal_range": "0-0.027",
-      "detected_abundance": 0.14743,
-      "progress_percentage": 100,
-      "evaluation": {
-        "status": "超标",
-        "color": "red"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.027
       },
+      "detected_abundance": 0.14743,
       "higher_than_percentage": 18,
       "normal_detection_rate": 89.42,
       "descriptions": [
@@ -744,13 +739,11 @@
     {
       "chinese_name": "颤螺菌属",
       "latin_name": "Oscillospira",
-      "normal_range": "0.0033-0.5346",
-      "detected_abundance": "ND",
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "未检出",
-        "color": "gray"
+      "normal_range": {
+        "normal_range_min": 0.0033,
+        "normal_range_max": 0.5346
       },
+      "detected_abundance": "ND",
       "higher_than_percentage": 36,
       "normal_detection_rate": 87.50,
       "descriptions": [
@@ -769,14 +762,12 @@
     {
       "chinese_name": "图里希菌属",
       "latin_name": "Turicibacter",
-      "normal_range": "0-0.1234",
-      "detected_abundance": 0.00252,
-      "progress_percentage": 2.0,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.1234
       },
-      "higher_than_percentage": null,
+      "detected_abundance": 0.00252,
+      "higher_than_percentage": "-",
       "normal_detection_rate": 49.52,
       "descriptions": [
         {
@@ -789,13 +780,11 @@
     {
       "chinese_name": "丁酸弧菌属",
       "latin_name": "Butyrivibrio",
-      "normal_range": "0-3.2594",
-      "detected_abundance": 0.02421,
-      "progress_percentage": 0.7,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 3.2594
       },
+      "detected_abundance": 0.02421,
       "higher_than_percentage": 98,
       "normal_detection_rate": 35.58,
       "descriptions": [
@@ -809,13 +798,11 @@
     {
       "chinese_name": "克里斯滕森菌属",
       "latin_name": "Christensenella",
-      "normal_range": "0-0.0054",
-      "detected_abundance": 0.00192,
-      "progress_percentage": 35.6,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 0.0054
       },
+      "detected_abundance": 0.00192,
       "higher_than_percentage": 83,
       "normal_detection_rate": 5.77,
       "descriptions": [

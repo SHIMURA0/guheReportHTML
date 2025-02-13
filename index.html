@@ -1137,12 +1137,6 @@
         });
       }
 
-
-
-
-
-
-
       // 页面加载时调用
       document.addEventListener('DOMContentLoaded', loadCoreBacteriaData);
     </script>
@@ -1157,21 +1151,21 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             其他非核心重要菌属指的是在人群中丰度不高，但对肠道健康有重要影响的菌属。
           </p>
         </div>
       </div>
     </div>
 
-    <!-- 其他非核心菌属表格 -->
+    <!-- 非核心菌属表格 -->
     <div class="rounded-table">
+      <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
+        <tr style="background-color: #00B2B4; color: white;">
           <th class="py-2 px-4 text-left first-column">菌种名称</th>
           <th class="py-2 px-4 text-center second-column">正常范围</th>
           <th class="py-2 px-4 text-center third-column">检测丰度</th>
@@ -1180,83 +1174,183 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="non-core-gut-bacteria-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadNonCoreBacteriaData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            // const response = await fetch("http://localhost:8000/data/bacteria_data.json");
-            const data = await response.json();
-            renderNonCoreBacteriaTable(data.non_core_gut_bacteria_data); // 修改数据源名称
-          } catch (error) {
-            console.error('Error loading non-core bacteria data:', error);
-          }
+      <!-- 数据表格容器 -->
+      <div id="non-core-gut-bacteria-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
+
+    <script>
+      async function loadNonCoreBacteriaData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderNonCoreBacteriaTable(data.non_core_gut_bacteria_data);
+        } catch (error) {
+          console.error('Error loading non-core bacteria data:', error);
+        }
+      }
+
+      function formatNumber(value) {
+        if (typeof value === "string" && value === "未检出") {
+          return value;
         }
 
-        function renderNonCoreBacteriaTable(bacteriaData) {
-          const tableBody = document.getElementById('non-core-gut-bacteria-table-body');
-          if (!tableBody) {
-            console.error('Non-core bacteria table body not found');
-            return;
+        const num = Number(value);
+
+        if (num >= 1) {
+          const integerDigits = Math.floor(Math.log10(num)) + 1;
+          const decimalPlaces = Math.max(0, 4 - integerDigits);
+          return num.toFixed(decimalPlaces);
+        } else {
+          const str = num.toPrecision(4);
+          return str.replace(/\.?0+$/, '');
+        }
+      }
+
+      function formatDetectedValue(value) {
+        if (value === "ND") {
+          return "未检出";
+        }
+        return formatNumber(value);
+      }
+
+      function formatRangeValue(value) {
+        return formatNumber(value);
+      }
+
+      function calculateProgressPercentageForThirdColumn(value) {
+        if (value === "ND" || value === 0) {
+          return 0;
+        }
+
+        const num = Number(value);
+        const logValue = Math.log10(num);
+        const minLog = -1;
+        const maxLog = 3;
+
+        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+        return Math.max(5, Math.min(50, percentage));
+      }
+
+      function renderNonCoreBacteriaTable(bacteriaData) {
+        const container = document.getElementById('non-core-gut-bacteria-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          gray: '#808080'
+        };
+
+        bacteriaData.forEach(bacteria => {
+          let statusColor, statusText, statusIcon;
+          const detected = bacteria.detected_abundance;
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
+
+          const formattedDetectedValue = formatDetectedValue(detected);
+          const formattedMinRange = formatRangeValue(minRange);
+          const formattedMaxRange = formatRangeValue(maxRange);
+
+          const fourthColumnPercentage = detected === "未检出" ? 0 : Math.min(100, (Number(detected) / 100) * 100);
+
+          let isNormal = true;
+
+          if (detected === "ND") {  // 修改这里的判断条件，从 "未检出" 改为 "ND"
+            if (minRange > 0) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            }
+          } else {
+            if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
           }
 
-          tableBody.innerHTML = '';
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
 
-          bacteriaData.forEach(bacteria => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('non-core-data-row'); // 添加特定的类名
-            dataRow.innerHTML = `
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const dataRow = `
+            <tr>
               <td class="py-2 px-4 text-left first-column">
                 <div class="chinese-text">${bacteria.chinese_name}</div>
                 <div class="latin-text">${bacteria.latin_name}</div>
               </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${bacteria.detected_abundance}
+              <td class="py-2 px-4 text-center column-text second-column">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-center column-text third-column">
+                <span>${detected === "ND" ? "未检出" : formattedDetectedValue}</span>
                 <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
+                  <div class="progress"
+                       style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
+                              background-color: #00B2B4;
+                              transition: width 0.3s ease;">
+                  </div>
                 </div>
               </td>
-              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                ${bacteria.evaluation.status}
+              <td class="py-2 px-4 text-center column-text fourth-column">
+                <span class="font-bold" style="color: ${CUSTOM_COLORS[statusColor]}">
+                  ${statusText}${statusIcon}
+                </span>
               </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
-            `;
+              <td class="py-2 px-4 text-center column-text fifth-column">${bacteria.higher_than_percentage}%</td>
+              <td class="py-2 px-4 text-center column-text sixth-column">${bacteria.normal_detection_rate}%</td>
+            </tr>
+          `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('non-core-desc-row'); // 添加特定的类名
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${bacteria.descriptions.map(desc => `
-                    <div class="non-core-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
+          const descRow = filteredDescriptions.length > 0 ? `
+      <tr class="description-row">
+        <td colspan="6" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600">
+            ${filteredDescriptions.map(desc => `
+              <div>
+                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                   style="color: ${desc.color};"></i>
+                ${desc.text}
+              </div>
+            `).join('')}
+          </div>
+        </td>
+      </tr>
+    ` : '';
 
-        // 页面加载时仅加载非核心菌属数据
-        document.addEventListener('DOMContentLoaded', loadNonCoreBacteriaData);
-      </script>
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
 
-    </div>
+      document.addEventListener('DOMContentLoaded', loadNonCoreBacteriaData);
+    </script>
 
   </div>
 
