@@ -4788,8 +4788,8 @@
       "chinese_name": "分枝杆菌噬菌体 Echild",
       "latin_name": "Mycobacterium phage Echild",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00331,
       "classification": "噬菌体",
