@@ -5002,13 +5002,21 @@
         }
       }
 
-      function formatNumber(value, precision = 3) {
-        if (value === "ND") return value;
-        if (typeof value === "string") {
-          return value;
-        }
+      function formatNumber(value, precision = 2) {
+        // 处理特殊值
+        if (value === "ND" || value === "-") return value;
+
         const num = Number(value);
-        return num.toPrecision(precision).replace(/\.?0+$/, '');
+        if (isNaN(num)) return value;
+
+        // 处理0或接近0的特殊情况
+        if (Math.abs(num) < 1e-10) return "0";
+
+        // 使用toPrecision保留3位有效数字
+        let formattedValue = num.toPrecision(precision);
+
+        // 将结果转为数字以去除多余的零
+        return Number(formattedValue).toString();
       }
 
       function calculateProgressPercentage(value) {
@@ -5082,9 +5090,12 @@
           const maxRange = bacteria.normal_range.normal_range_max;
           const currentValue = bacteria.detected_abundance;
 
-          const formattedCurrentValue = formatNumber(currentValue);
-          const formattedMinRange = formatNumber(minRange);
-          const formattedMaxRange = formatNumber(maxRange);
+          const formattedCurrentValue = formatNumber(currentValue, 2);
+          const formattedMinRange = formatNumber(minRange, 2); // 确保使用3位有效数字
+          const formattedMaxRange = formatNumber(maxRange, 2); // 确保使用3位有效数字
+
+          // console.log(currentValue, typeof currentValue);
+          // console.log(formattedCurrentValue, typeof formattedCurrentValue);
 
           const status = determineStatus(currentValue, minRange, maxRange);
           const isNormal = status.text === '正常';
@@ -5105,69 +5116,76 @@
             bacteriaContainer.style.border = '1px solid transparent';
           }
 
+          // 在生成 dataRow 之前
+          console.log('detected_abundance:', bacteria.detected_abundance, 'type:', typeof bacteria.detected_abundance);
+          console.log('formattedCurrentValue:', formattedCurrentValue, 'type:', typeof formattedCurrentValue);
+          console.log('Condition result:', bacteria.detected_abundance === "ND");
+          console.log('Final display value:', bacteria.detected_abundance === "ND" ? "未检出" : formattedCurrentValue);
+
+
           const dataRow = `
             <tr>
               <td class="py-2 px-4 text-left disease-first-column">
-                <div class="chinese-text">
-                  ${bacteria.chinese_name}
-                </div>
-                <div class="latin-text text-gray-500">
-                  ${bacteria.latin_name}
-                </div>
+                  <div class="chinese-text">
+                      ${bacteria.chinese_name}
+                  </div>
+                  <div class="latin-text text-gray-500">
+                      ${bacteria.latin_name}
+                  </div>
               </td>
               <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-                ${formattedMinRange}-${formattedMaxRange}
+                  ${formattedMinRange}-${formattedMaxRange}
               </td>
               <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-                <span>${currentValue === "ND" ? "未检出" : formattedCurrentValue}</span>
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress"
-                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
-                              background-color: #00B2B4;
-                              transition: width 0.3s ease;">
+                  <span>${bacteria.detected_abundance === "ND" ? "未检出" : formattedCurrentValue}</span>
+                  <div class="progress-bar w-full mt-1">
+                      <div class="progress"
+                           style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                                  background-color: #00B2B4;
+                                  transition: width 0.3s ease;">
+                      </div>
                   </div>
-                </div>
               </td>
               <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-                  ${status.text}
-                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-                </span>
+                  <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
+                      ${status.text}
+                      ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
+                  </span>
               </td>
               <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
+                  ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
               </td>
               <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-                ${correlationText}
+                  ${correlationText}
               </td>
               <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
-                <div class="flex justify-center items-center">
-                  ${generateStars(bacteria.stars, isPositive)}
-                </div>
+                  <div class="flex justify-center items-center">
+                      ${generateStars(bacteria.stars, isPositive)}
+                  </div>
               </td>
             </tr>
-          `;
+        `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
           );
 
           const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="description-row">
-          <td colspan="7" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600" style="font-size: 10px;">
-              ${filteredDescriptions.map(desc => `
-                <div>
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};">
-                  </i>
-                  ${desc.text}
-                </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+                <tr class="description-row">
+                    <td colspan="7" class="py-2 px-4 text-left">
+                        <div class="description-container text-gray-600" style="font-size: 10px;">
+                            ${filteredDescriptions.map(desc => `
+                                <div>
+                                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                       style="color: ${desc.color};">
+                                    </i>
+                                    ${desc.text}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </td>
+                </tr>
+            ` : '';
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
           bacteriaContainer.appendChild(table);
