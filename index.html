@@ -1789,9 +1789,9 @@
 
     <!-- 常见机会致病菌表格 -->
     <div class="rounded-table">
+      <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
         <tr class="bg-teal-600 text-white">
           <th class="py-2 px-4 text-left first-column">菌种名称</th>
           <th class="py-2 px-4 text-center second-column">正常范围</th>
@@ -1801,83 +1801,108 @@
           <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
         </tr>
         </thead>
-        <tbody id="opportunistic-pathogen-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadOpportunisticPathogenData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderOpportunisticPathogenTable(data.opportunistic_gut_pathogens_data);
-          } catch (error) {
-            console.error('Error loading opportunistic pathogen data:', error);
-          }
-        }
-
-        function renderOpportunisticPathogenTable(bacteriaData) {
-          const tableBody = document.getElementById('opportunistic-pathogen-table-body');
-          if (!tableBody) {
-            console.error('Opportunistic pathogen table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          bacteriaData.forEach(bacteria => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('opportunistic-pathogen-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${bacteria.chinese_name}</div>
-                <div class="latin-text">${bacteria.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${bacteria.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${bacteria.progress_percentage}%;"></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${bacteria.evaluation.color}-600 column-text">
-                ${bacteria.evaluation.status}
-              </td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
-              <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('opportunistic-pathogen-desc-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${bacteria.descriptions.map(desc => `
-                    <div class="opportunistic-pathogen-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载机会致病菌数据
-        document.addEventListener('DOMContentLoaded', loadOpportunisticPathogenData);
-
-      </script>
-
+      <!-- 数据表格容器 -->
+      <div id="opportunistic-pathogen-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <script>
+      async function loadOpportunisticPathogenData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderOpportunisticPathogenTable(data.opportunistic_gut_pathogens_data);
+        } catch (error) {
+          console.error('Error loading opportunistic pathogen data:', error);
+        }
+      }
+
+      function calculateProgressPercentage(value) {
+        if (value === "ND" || value === 0) {
+          return 0;
+        }
+        const num = Number(value);
+        const logValue = Math.log10(num);
+        const minLog = -1;
+        const maxLog = 3;
+        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+        return Math.max(5, Math.min(50, percentage));
+      }
+
+      function renderOpportunisticPathogenTable(bacteriaData) {
+        const container = document.getElementById('opportunistic-pathogen-table-body');
+        if (!container) {
+          console.error('Opportunistic pathogen table body not found');
+          return;
+        }
+
+        container.innerHTML = '';
+
+        bacteriaData.forEach(bacteria => {
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table min-w-full';
+
+          // 创建数据行
+          const dataRow = `
+        <tr class="opportunistic-pathogen-row">
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">${bacteria.chinese_name}</div>
+            <div class="latin-text">${bacteria.latin_name}</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text second-column">
+            ${bacteria.normal_range.normal_range_min}-${bacteria.normal_range.normal_range_max}
+          </td>
+          <td class="py-2 px-4 text-center column-text third-column">
+            ${bacteria.detected_abundance === "ND" ? "未检出" : bacteria.detected_abundance}
+            <div class="progress-bar w-full mt-1">
+              <div class="progress"
+                   style="width: ${bacteria.detected_abundance === "ND" ? "0" : calculateProgressPercentage(bacteria.detected_abundance)}%;
+                          background-color: #00B2B4;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center bold-text column-text">
+            ${bacteria.detected_abundance > bacteria.normal_range.normal_range_max ?
+            '<span style="color: #ff4d4f">超标<i class="fas fa-arrow-up ml-1"></i></span>' :
+            '<span style="color: #389e0d">正常</span>'}
+          </td>
+          <td class="py-2 px-4 text-center column-text">${bacteria.higher_than_percentage !== null ? bacteria.higher_than_percentage + '%' : '-'}</td>
+          <td class="py-2 px-4 text-center column-text">${bacteria.normal_detection_rate}%</td>
+        </tr>
+      `;
+
+          // 创建描述行
+          const descRow = `
+        <tr class="opportunistic-pathogen-desc-row">
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600">
+              ${bacteria.descriptions.map(desc => `
+                <div class="opportunistic-pathogen-description">
+                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                     style="color: ${desc.color};"></i>
+                  ${desc.text}
+                </div>
+              `).join('')}
+            </div>
+          </td>
+        </tr>
+      `;
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
+        });
+      }
+
+      // 页面加载时加载数据
+      document.addEventListener('DOMContentLoaded', loadOpportunisticPathogenData);
+    </script>
 
   </div>
 
