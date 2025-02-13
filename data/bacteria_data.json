@@ -10478,7 +10478,7 @@
         "normal_range_max": 47.3225
       },
       "detected_abundance": 0.08974,
-      "higher_than_percentage": 0.02,
+      "higher_than_percentage": "-",
       "correlation": "positive",
       "stars": 3,
       "descriptions": [

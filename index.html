@@ -4988,7 +4988,7 @@
                 </span>
               </td>
               <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-                ${(bacteria.higher_than_percentage * 100)}%
+                ${bacteria.higher_than_percentage === "-" ? '-%' : (bacteria.higher_than_percentage * 100) + '%'}
               </td>
               <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
                 ${correlationText}
