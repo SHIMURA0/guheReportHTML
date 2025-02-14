@@ -119,6 +119,12 @@ body {
   td {
     page-break-inside: avoid;
   }
+
+  .resistance-info-container:nth-child(even) .resistance-row {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #f8f9fa !important;
+  }
 }
 
 .custom-teal {
@@ -575,6 +581,7 @@ tr {
   display: flex; /* 使用Flexbox布局 */
   justify-content: space-between; /* 在盒子之间留出空间 */
   width: 100%; /* 使容器宽度为100% */
+  padding-bottom: 20px; /* 添加下方内边距 */
 }
 .card { /* 每一个卡片的样式 */
   width: 33.3%; /* 每个卡片占容器的33.3% */
@@ -605,6 +612,95 @@ tr {
 .blue { color: blue; }
 .orange { color: orange; }
 
+/* 修改后的CSS代码 */
+.resistance-first-column { width: 20%; }
+.resistance-second-column { width: 20%; }
+.resistance-third-column { width: 20%; }
+.resistance-fourth-column { width: 24%; }
+.resistance-fifth-column { width: 16%; }
+
+/* 修改交替行背景色的部分 */
+.resistance-row {
+  min-height: 48px;
+  background-color: white; /* 默认背景色 */
+  page-break-inside: avoid; /* 防止在打印时行被分割 */
+}
+
+/* 使用伪类设置交替行背景色 */
+.resistance-info-container:nth-child(even) .resistance-row {
+  background-color: #f8f9fa;
+}
+
+.resistance-row {
+  min-height: 48px;
+}
+
+.resistance-row td {
+  vertical-align: middle;
+}
+
+.resistance-column-text {
+  font-size: 0.65rem;
+}
+
+/* 耐药基因样式 */
+.resistance-gene {
+  font-family: 'Monaco', monospace;
+  font-size: 10px;
+  color: #2563eb;
+  background-color: #f0f7ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* reads数量样式 */
+.reads-count {
+  font-family: 'Monaco', monospace;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.reads-count.high {
+  color: #059669;
+  background-color: #d1fae5;
+}
+
+.reads-count.low {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+/* 堆叠容器样式 */
+.stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0;
+  width: 100%;
+  align-items: flex-end; /* 右对齐 */
+}
+
+/* 堆叠项样式 */
+.stack-item {
+  padding: 5px 6px;
+  font-size: 10px;
+  text-align: right;
+  /*background-color: #f1f5f9;*/
+  background-color: transparent;
+  /*border: 1px solid #e2e8f0;*/
+  /*border-radius: 4px;*/
+  max-width: fit-content; /* 宽度适应内容 */
+  color: #475569; /* 深灰色，柔和的文字颜色 */
+}
+
+.resistance-description {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
 
 /* 菌群代谢物及神经递质评估板块 */
 

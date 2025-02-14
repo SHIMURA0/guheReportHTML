@@ -2732,35 +2732,126 @@
       </div>
     </div>
 
-    <!-- 核心菌属表格 -->
+    <!-- 细菌耐药性基因表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left first-column">来源菌株</th>
-          <th class="py-2 px-4 text-center second-column">耐药基因</th>
-          <th class="py-2 px-4 text-center third-column">耐药类型</th>
-          <th class="py-2 px-4 text-center fourth-column">reads数量</th>
-          <th class="py-2 px-4 text-center fifth-column">耐药药物</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left resistance-first-column"
+              style="font-size: 11px;">
+            来源菌株
+          </th>
+          <th class="py-2 px-4 text-center resistance-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            耐药基因
+          </th>
+          <th class="py-2 px-4 text-right resistance-third-column"
+              style="font-size: 11px;
+                    padding: 5px 20px 5px 5px;"
+          >
+            耐药类型
+          </th>
+          <th class="py-2 px-4 text-center resistance-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            reads数量
+          </th>
+          <th class="py-2 px-4 text-right resistance-fifth-column"
+              style="font-size: 11px; padding: 5px 20px 5px 5px;">
+            耐药药物
+          </th>
         </tr>
         </thead>
-        <tbody>
-        <!-- 数据行 -->
-        <tr>
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">细菌</div>
-            <div class="latin-text">Bacterium</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text">aac(6')-E111</td>
-          <td class="py-2 px-4 text-center column-text">
-            氨基糖苷类
-          </td>
-          <td class="py-2 px-4 text-center bold-text text-green-600 column-text">974</td>
-          <td class="py-2 px-4 text-center column-text">阿米卡星</td>
-        </tr>
-        </tbody>
       </table>
+
+      <div id="resistance-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
+      <script>
+        async function loadResistanceData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            data.resistance_data.sort((a, b) => b.reads_count - a.reads_count);
+            renderResistanceTable(data.resistance_data);
+          } catch (error) {
+            console.error('Error loading resistance data:', error);
+          }
+        }
+
+        function renderResistanceTable(resistanceData) {
+          const container = document.getElementById('resistance-data-table-body');
+          if (!container) {
+            console.error('Resistance table body not found');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          resistanceData.forEach(resistance => {
+            const resistanceContainer = document.createElement('div');
+            resistanceContainer.className = 'resistance-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'resistance-table min-w-full';
+
+            const dataRow = `
+  <tr class="resistance-row">
+    <td class="py-2 px-4 text-left resistance-first-column">
+      <div class="chinese-text">${resistance.chinese_name}</div>
+      <div class="latin-text">${resistance.latin_name}</div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text resistance-second-column">
+      <span class="resistance-gene">${resistance.resistance_gene}</span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text resistance-third-column">
+      <div class="stack-container">
+        ${resistance.resistance_type.map(type => `
+          <div class="stack-item">${type}</div>
+        `).join('')}
+      </div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text resistance-fourth-column">
+      <span class="reads-count ${parseInt(resistance.reads_count) > 500 ? 'high' : 'low'}">
+        ${resistance.reads_count}
+      </span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text resistance-fifth-column">
+      <div class="stack-container">
+        ${resistance.resistance_drugs.map(drug => `
+          <div class="stack-item">${drug}</div>
+        `).join('')}
+      </div>
+    </td>
+  </tr>
+`;
+
+            const descRow = resistance.descriptions ? `
+          <tr class="resistance-desc-row">
+            <td colspan="5" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${resistance.descriptions.map(desc => `
+                  <div class="resistance-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            resistanceContainer.appendChild(table);
+            container.appendChild(resistanceContainer);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadResistanceData);
+      </script>
+
     </div>
 
   </div>

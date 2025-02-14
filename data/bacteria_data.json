@@ -4870,6 +4870,209 @@
       ]
     }
   ],
+  "resistance_data": [
+    {
+      "chinese_name": "细菌",
+      "latin_name": "bacterium",
+      "resistance_gene": "aac(6')_E111",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "974",
+      "resistance_drugs": ["阿米卡星", "卡那霉素", "妥布霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "地球菌门",
+      "latin_name": "Terrabacteria group",
+      "resistance_gene": "dfrF",
+      "resistance_type": ["甲氧苄啶"],
+      "reads_count": "28043",
+      "resistance_drugs": ["甲氧苄啶"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "瘤胃球菌",
+      "latin_name": "Ruminococcus sp. OM05-10BH",
+      "resistance_gene": "catA14",
+      "resistance_type": ["氯霉素"],
+      "reads_count": "1446",
+      "resistance_drugs": ["氯霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "路德乳杆菌",
+      "latin_name": "Limosilactobacillus reuteri",
+      "resistance_gene": "aadE",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "76331",
+      "resistance_drugs": ["链霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "路德乳杆菌",
+      "latin_name": "Limosilactobacillus reuteri",
+      "resistance_gene": "aad9",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "76331",
+      "resistance_drugs": ["氨基糖苷类"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "拉克诺螺旋菌科",
+      "latin_name": "Lachnospiraceae",
+      "resistance_gene": "aac(6')-Im",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "364",
+      "resistance_drugs": ["阿米卡星", "卡那霉素", "妥布霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "厚壁菌门",
+      "latin_name": "Firmicutes",
+      "resistance_gene": "mef(A)",
+      "resistance_type": ["大环内酯"],
+      "reads_count": "1476",
+      "resistance_drugs": ["阿奇霉素", "红霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "厚壁菌门",
+      "latin_name": "Firmicutes",
+      "resistance_gene": "lnu(C)",
+      "resistance_type": ["林可酰胺"],
+      "reads_count": "26567",
+      "resistance_drugs": ["林可酰胺"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "厚壁菌门",
+      "latin_name": "Firmicutes",
+      "resistance_gene": "cfr(C)",
+      "resistance_type": [
+        "氯霉素",
+        "林可酰胺",
+        "恶唑烷酮",
+        "胸膜菌素",
+        "链球菌"
+      ],
+      "reads_count": "149256",
+      "resistance_drugs": ["氯霉素", "克林霉素", "氟苯尼考", "利奈唑胺", "链脲菌素", "硫木林"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "真细菌目",
+      "latin_name": "Eubacteriales",
+      "resistance_gene": "fosXCC",
+      "resistance_type": ["磷霉素"],
+      "reads_count": "22920",
+      "resistance_drugs": ["磷霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "真细菌目",
+      "latin_name": "Eubacteriales",
+      "resistance_gene": "cfr(E)",
+      "resistance_type": [
+        "氯霉素",
+        "林可酰胺",
+        "恶唑烷酮",
+        "胸膜菌素",
+        "链球菌"
+      ],
+      "reads_count": "95648",
+      "resistance_drugs": ["林可酰胺", "利奈唑胺", "甲砜霉素", "硫霉素", "维珍霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "大肠杆菌",
+      "latin_name": "Escherichia coli",
+      "resistance_gene": "npmA",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "8649",
+      "resistance_drugs": ["氨基糖苷类"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "粪肠球菌",
+      "latin_name": "Enterococcus faecium EnGen0025",
+      "resistance_gene": "aac(6')-Ie",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "79765",
+      "resistance_drugs": ["阿米卡星", "庆大霉素", "卡那霉素", "妥布霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "肠道梭菌",
+      "latin_name": "Enterocloster clostridioformis",
+      "resistance_gene": "vanS-D",
+      "resistance_type": ["糖肽"],
+      "reads_count": "746",
+      "resistance_drugs": ["万古霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "tet(W)",
+      "resistance_type": ["四环素"],
+      "reads_count": "321552",
+      "resistance_drugs": ["四环素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "tet(40)",
+      "resistance_type": ["四环素"],
+      "reads_count": "201180",
+      "resistance_drugs": ["四环素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "sat4",
+      "resistance_type": ["链菌素"],
+      "reads_count": "43447",
+      "resistance_drugs": ["链菌素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "mef(A)",
+      "resistance_type": ["大环内酯"],
+      "reads_count": "630",
+      "resistance_drugs": ["阿奇霉素", "红霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "catP",
+      "resistance_type": ["氯霉素"],
+      "reads_count": "8811",
+      "resistance_drugs": ["氯霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "aph(3')-IIIa",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "43447",
+      "resistance_drugs": ["阿米卡星", "卡那霉素"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "aac(6')-Ie2",
+      "resistance_type": ["氨基糖苷类"],
+      "reads_count": "128573",
+      "resistance_drugs": ["阿米卡星", "庆大霉素", "卡那霉素", "妥布霉素"],
+      "descriptions": ""
+    }
+  ],
   "organic_acids_data": [
     {
       "chinese_name": "丁酸盐",
