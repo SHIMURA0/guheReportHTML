@@ -4805,8 +4805,8 @@
       "chinese_name": "Cbastvirus ST",
       "latin_name": "Cbastvirus ST",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00274,
       "classification": "噬菌体",
@@ -4822,8 +4822,8 @@
       "chinese_name": "Shalavirus Shbh1",
       "latin_name": "Shalavirus Shbh1",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00265,
       "classification": "噬菌体",
@@ -4839,8 +4839,8 @@
       "chinese_name": "草履虫绿藻病毒 1 号",
       "latin_name": "PbCV-1",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00318,
       "classification": "植物性病毒",
@@ -4856,8 +4856,8 @@
       "chinese_name": "人内源逆转录病毒 K",
       "latin_name": "Human endogenous retrovirus K",
       "normal_range": {
-        "min_normal_value": 0,
-        "max_normal_value": 0.05
+        "normal_range_min": 0,
+        "normal_range_max": 0.05
       },
       "detected_abundance": 0.00308,
       "classification": "内源性病毒",
@@ -5246,31 +5246,32 @@
     {
       "chinese_name": "免疫球蛋白A",
       "latin_name": "IgA",
-      "normal_range": "15-98",
-      "detected_abundance": 62,
-      "progress_percentage": 62,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 15,
+        "normal_range_max": 98
       },
+      "detected_abundance": 62,
       "descriptions": [
         {
           "type": "info",
           "color": "rgb(0, 178, 180)",
           "text": "主要分布于呼吸道、消化道等黏膜表面，是抵抗病原体入侵的第一道防线。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "增加优质蛋白质摄入、改善基础疾病、补充营养剂和定期监测。"
         }
       ]
     },
     {
       "chinese_name": "免疫球蛋白D",
       "latin_name": "IgD",
-      "normal_range": "15-98",
-      "detected_abundance": 62,
-      "progress_percentage": 62,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 15,
+        "normal_range_max": 98
       },
+      "detected_abundance": 62,
       "descriptions": [
         {
           "type": "info",
@@ -5282,13 +5283,11 @@
     {
       "chinese_name": "免疫球蛋白M",
       "latin_name": "IgM",
-      "normal_range": "15-98",
-      "detected_abundance": 7,
-      "progress_percentage": 7,
-      "evaluation": {
-        "status": "缺乏",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 15,
+        "normal_range_max": 98
       },
+      "detected_abundance": 7,
       "descriptions": [
         {
           "type": "info",
@@ -5298,20 +5297,18 @@
         {
           "type": "warning",
           "color": "rgb(255, 0, 0)",
-          "text": "增加优质蛋白质摄入、改善基础疾病、补充营养剂和定期监测。"
+          "text": "建议增加优质蛋白质摄入、保持规律作息、适量运动，必要时在医生指导下补充免疫调节剂。"
         }
       ]
     },
     {
       "chinese_name": "白蛋白",
       "latin_name": "Albumin",
-      "normal_range": "15-98",
-      "detected_abundance": 11,
-      "progress_percentage": 11,
-      "evaluation": {
-        "status": "缺乏",
-        "color": "yellow"
+      "normal_range": {
+        "normal_range_min": 15,
+        "normal_range_max": 98
       },
+      "detected_abundance": 11,
       "descriptions": [
         {
           "type": "info",
@@ -5321,7 +5318,7 @@
         {
           "type": "warning",
           "color": "rgb(255, 0, 0)",
-          "text": "增加优质蛋白质摄入、改善基础疾病、补充营养剂和定期监测。"
+          "text": "白蛋白水平偏低可能提示营养不良或肝功能异常，建议增加优质蛋白质摄入（瘦肉、鱼、蛋、奶制品等）。"
         }
       ]
     }
@@ -5329,92 +5326,128 @@
 
   "inflammatory_infection_data": [
     {
-      "chinese_name": "白细胞总数及分类",
-      "latin_name": "IgA",
-      "normal_range": "3.5-9.5",
-      "detected_abundance": 7.35,
-      "progress_percentage": 65,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "chinese_name": "白蛋白",
+      "latin_name": "Albumin",
+      "normal_range": {
+        "normal_range_min": 15,
+        "normal_range_max": 98
       },
+      "detected_abundance": 11,
       "descriptions": [
         {
           "type": "info",
           "color": "rgb(0, 178, 180)",
-          "text": "机体抵抗感染的重要免疫细胞，数量变化可反映炎症感染状态。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "降钙素原",
-      "latin_name": "PCT",
-      "normal_range": "0-0",
-      "detected_abundance": 0,
-      "progress_percentage": 0,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
-      },
-      "descriptions": [
+          "text": "由肝脏合成的重要蛋白质，维持血浆渗透压，反映营养状况和肝功能。"
+        },
         {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "细菌感染的特异性标志物，对全身性感染和脓毒症具有重要诊断价值。"
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "白蛋白水平偏低可能提示营养不良或肝功能异常，建议：增加优质蛋白质摄入（瘦肉、鱼、蛋、奶制品等）、保护肝脏功能、定期监测肝功能指标。"
         }
       ]
     },
-    {
-      "chinese_name": "高敏C反应蛋白",
-      "latin_name": "hsCRP",
-      "normal_range": "0.068-8.2",
-      "detected_abundance": 4.48,
-      "progress_percentage": 54,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      {
+        "chinese_name": "白细胞总数及分类",
+        "latin_name": "IgA",
+        "normal_range": {
+          "normal_range_min": 3.5,
+          "normal_range_max": 9.5
+        },
+        "detected_abundance": 7.35,
+        "descriptions": [
+          {
+            "type": "info",
+            "color": "rgb(0, 178, 180)",
+            "text": "机体抵抗感染的重要免疫细胞，数量变化可反映炎症感染状态。"
+          },
+          {
+            "type": "warning",
+            "color": "rgb(255, 0, 0)",
+            "text": "白细胞计数异常可能提示感染或免疫功能异常，建议：定期监测血常规、注意个人卫生、增强免疫力。"
+          }
+        ]
       },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "心脑血管系统炎症的敏感指标，可预测心血管疾病风险。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "类便钙蛋白",
-      "latin_name": "FC",
-      "normal_range": "0-85",
-      "detected_abundance": 1,
-      "progress_percentage": 1,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      {
+        "chinese_name": "降钙素原",
+        "latin_name": "PCT",
+        "normal_range": {
+          "normal_range_min": 0,
+          "normal_range_max": 0
+        },
+        "detected_abundance": 0,
+        "descriptions": [
+          {
+            "type": "info",
+            "color": "rgb(0, 178, 180)",
+            "text": "细菌感染的特异性标志物，对全身性感染和脓毒症具有重要诊断价值。"
+          },
+          {
+            "type": "warning",
+            "color": "rgb(255, 0, 0)",
+            "text": "降钙素原升高提示可能存在细菌感染，建议：及时就医检查、遵医嘱用药、注意休息和营养。"
+          }
+        ]
       },
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "来源于中性粒细胞，是炎症性肠病的特异性标志物。"
-        }
-      ]
-    },
+      {
+        "chinese_name": "高敏C反应蛋白",
+        "latin_name": "hsCRP",
+        "normal_range": {
+          "normal_range_min": 0.068,
+          "normal_range_max": 8.2
+        },
+        "detected_abundance": 4.48,
+        "descriptions": [
+          {
+            "type": "info",
+            "color": "rgb(0, 178, 180)",
+            "text": "心脑血管系统炎症的敏感指标，可预测心血管疾病风险。"
+          },
+          {
+            "type": "warning",
+            "color": "rgb(255, 0, 0)",
+            "text": "hsCRP升高提示心血管系统炎症风险增加，建议：调整生活方式、控制血压血脂、戒烟限酒、规律运动。"
+          }
+        ]
+      },
+      {
+        "chinese_name": "类便钙蛋白",
+        "latin_name": "FC",
+        "normal_range": {
+          "normal_range_min": 0,
+          "normal_range_max": 85
+        },
+        "detected_abundance": 1,
+        "descriptions": [
+          {
+            "type": "info",
+            "color": "rgb(0, 178, 180)",
+            "text": "来源于中性粒细胞，是炎症性肠病的特异性标志物。"
+          },
+          {
+            "type": "warning",
+            "color": "rgb(255, 0, 0)",
+            "text": "类便钙蛋白升高提示肠道炎症活动，建议：就医检查肠道情况、调整饮食结构、避免刺激性食物。"
+          }
+        ]
+      },
     {
       "chinese_name": "粪便嗜酸性粒细胞蛋白X",
       "latin_name": "EPX",
-      "normal_range": "0-85",
-      "detected_abundance": 1,
-      "progress_percentage": 1,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 85
       },
+      "detected_abundance": 1,
       "descriptions": [
         {
           "type": "info",
           "color": "rgb(0, 178, 180)",
           "text": "反映肠道嗜酸性粒细胞介导的炎症反应，与食物过敏和肠道炎症相关。"
+        },
+        {
+          "type": "warning",
+          "color": "rgb(255, 0, 0)",
+          "text": "EPX升高提示可能存在食物过敏或肠道炎症，建议：进行过敏原检测、记录饮食日记、避免过敏食物。"
         }
       ]
     }
@@ -8074,7 +8107,7 @@
         {
           "type": "info",
           "color": "#3498db",
-          "text": "便秘患者的肠道中Lachnospira和Clostridium的水平明显升高，而Clostridium difficile则被证明增加了后感染性肠易激综合征的风险。"
+          "text": "便秘患者的肠道中梭菌属的水平明显升高。"
         },
         {
           "type": "warning",
@@ -8103,7 +8136,7 @@
         {
           "type": "info",
           "color": "#3498db",
-          "text": "可以与其他菌种合作转放短链脂肪酸和气体，促进肠道蠕动缓解便秘症状。可以增加乳酸菌的丰度，从而缓解便秘。但也可能会促进胆脂症的发生。"
+          "text": "可以与其他菌种合作转放短链脂肪酸和气体，促进肠道蠕动缓解便秘症状。可以增加乳酸菌的丰度，从而缓解便秘。"
         },
         {
           "type": "warning",
@@ -8190,7 +8223,7 @@
         {
           "type": "info",
           "color": "#3498db",
-          "text": "在便秘患者中明显降低。通过摄入亚麻籽等食物，可以增加Blautia的数量，从而改善便秘症状。能够产生丁酸可以促进肠道蠕动，从而改善便秘。"
+          "text": "在便秘患者中明显降低。能够产生丁酸可以促进肠道蠕动，从而改善便秘。"
         },
         {
           "type": "warning",

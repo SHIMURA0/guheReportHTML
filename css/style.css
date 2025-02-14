@@ -335,7 +335,7 @@ body {
 .progress {
   height: 100%;
   border-radius: 4px;
-  /*background-color: #48bb78; !* 绿色 *!*/
+  transition: width 0.3s ease;
 }
 .description-container {
   width: 100%;
@@ -745,6 +745,10 @@ tr {
 }
 .immunity-fourth-column {
   width: 25%;
+}
+
+.immunity-column-text {
+  font-size: 0.65rem; /* 控制每一列的字体大小 */
 }
 
 
