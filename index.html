@@ -2768,7 +2768,12 @@
   <!-- 菌群代谢物及神经递质评估板块 ： 首页 -->
 
   <h1 class="custom-title-1 page-break">菌群代谢物及神经递质评估</h1>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;"
+  >
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
@@ -3575,23 +3580,43 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             炎症标志物是评估机体炎症状态的重要指标。通过检测不同的炎症标志物，可以了解系统的炎症程度。
           </p>
         </div>
       </div>
     </div>
 
+    <!-- 炎症感染评估表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left immunity-first-column">炎症感染指标</th>
-          <th class="py-2 px-4 text-center immunity-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center immunity-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center immunity-fourth-column">评估结果</th>
+          <th
+            class="py-2 px-4 text-left immunity-first-column"
+            style="font-size: 11px;">
+            炎症感染指标
+          </th>
+          <th
+            class="py-2 px-4 text-center immunity-second-column"
+            style="font-size: 11px;
+                  padding: 5px 5px;">
+            正常范围
+          </th>
+          <th
+            class="py-2 px-4 text-center immunity-third-column"
+            style="font-size: 11px;
+                  padding: 5px 5px;">
+            评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center immunity-fourth-column"
+            style="font-size: 11px;
+                  padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
       </table>
@@ -3703,14 +3728,14 @@
 
           const dataRow = `
           <tr class="inflammatory-row">
-            <td class="py-2 px-4 text-left immunity-fourth-columnn">
+            <td class="py-2 px-4 text-left immunity-first-columnn">
               <div class="chinese-text">${inflammatory.chinese_name}</div>
               <div class="latin-text">${inflammatory.latin_name}</div>
             </td>
-            <td class="py-2 px-4 text-center column-text immunity-fourth-column">
+            <td class="py-2 px-4 text-center immunity-column-text immunity-second-column">
               ${formattedMinRange}-${formattedMaxRange}
             </td>
-            <td class="py-2 px-4 text-center column-text immunity-fourth-column">
+            <td class="py-2 px-4 text-center immunity-column-text immunity-third-column">
               ${formattedDetectedValue}
               <div class="progress-bar w-full mt-2">
                 <div class="progress"
@@ -3723,7 +3748,7 @@
 
               </div>
             </td>
-            <td class="py-2 px-4 text-center bold-text immunity-fourth-column column-text">
+            <td class="py-2 px-4 text-center bold-text immunity-fourth-column immunity-column-text">
               <span style="color: ${CUSTOM_COLORS[statusColor]}">
                 ${statusText}${statusIcon}
               </span>
@@ -3738,7 +3763,7 @@
           const descRow = filteredDescriptions.length > 0 ? `
           <tr class="inflammatory-desc-row">
             <td colspan="6" class="py-2 px-4 text-left">
-              <div class="description-container text-gray-600">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
                 ${filteredDescriptions.map(desc => `
                   <div class="inflammatory-description">
                     <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
@@ -3772,9 +3797,9 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             肠道菌群代谢物是评估肠道健康和免疫功能的重要指标。这些指标可以反应肠道微生态平衡状况和炎症反应水平。
           </p>
         </div>
@@ -3784,17 +3809,30 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">菌群代谢物指标</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left immunity-first-column"
+              style="font-size: 11px;">
+            菌群代谢物指标
+          </th>
+          <th class="py-2 px-4 text-center immunity-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            正常范围
+          </th>
+          <th class="py-2 px-4 text-center immunity-third-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th class="py-2 px-4 text-center immunity-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="microbial-metabolites-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
+
+      <div id="microbial-metabolites-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
 
       <script>
         async function loadMicrobialMetabolitesData() {
@@ -3807,76 +3845,177 @@
           }
         }
 
-        function renderMicrobialMetabolitesTable(organicacidsData) {
-          const tableBody = document.getElementById('microbial-metabolites-data-table-body');
-          if (!tableBody) {
-            console.error('microbial metabolites data table body not found');
+        function calculateProgressPercentage(detected, maxRange) {
+          if (detected === "ND" || detected === 0 || detected === "0") {
+            return 0;
+          }
+
+          const detectedValue = parseFloat(detected);
+          const maxRangeValue = parseFloat(maxRange);
+
+          if (isNaN(detectedValue) || isNaN(maxRangeValue) || maxRangeValue <= 0) {
+            console.error('无效的输入值:', { detected, maxRange });
+            return 0;
+          }
+
+          const percentage = (detectedValue / maxRangeValue) * 100;
+          return parseFloat(percentage.toFixed(2));
+        }
+
+        function getProgressBarColor(detected, minRange, maxRange) {
+          if (detected >= minRange && detected <= maxRange) {
+            return '#389e0d'; // 绿色
+          }
+          return '#ff4d4f'; // 红色
+        }
+
+        function renderMicrobialMetabolitesTable(metabolitesData) {
+          const container = document.getElementById('microbial-metabolites-data-table-body');
+          if (!container) {
+            console.error('Microbial metabolites table body not found');
             return;
           }
 
-          tableBody.innerHTML = '';
+          container.innerHTML = '';
 
-          organicacidsData.forEach(metabolites=> {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('microbial-metabolites-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${metabolites.chinese_name}</div>
-                <div class="latin-text">${metabolites.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${metabolites.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${metabolites.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${metabolites.progress_percentage}%;"></div>
+          const CUSTOM_COLORS = {
+            red: '#ff4d4f',
+            green: '#389e0d',
+            gray: '#808080'
+          };
+
+          metabolitesData.forEach(metabolite => {
+            console.group(`处理: ${metabolite.chinese_name}`);
+
+            let statusColor, statusText, statusIcon;
+            const detected = metabolite.detected_abundance;
+            const minRange = metabolite.normal_range.normal_range_min;
+            const maxRange = metabolite.normal_range.normal_range_max;
+
+            const formattedDetectedValue = detected === "ND" ? "未检出" : detected;
+            const formattedMinRange = minRange;
+            const formattedMaxRange = maxRange;
+
+            let isNormal = true;
+
+            if (detected === "ND") {
+              if (minRange > 0) {
+                statusColor = 'red';
+                statusText = '偏低';
+                statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+                isNormal = false;
+              } else {
+                statusColor = 'green';
+                statusText = '正常';
+                statusIcon = '';
+              }
+            } else if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
+
+            const progressPercentage = calculateProgressPercentage(detected, maxRange);
+            const progressBarColor = getProgressBarColor(detected, minRange, maxRange);
+
+            const metaboliteContainer = document.createElement('div');
+            metaboliteContainer.className = 'metabolite-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'metabolite-table min-w-full';
+
+            const dataRow = `
+          <tr class="metabolite-row">
+            <td class="py-2 px-4 text-left immunity-first-column">
+              <div class="chinese-text">${metabolite.chinese_name}</div>
+              <div class="latin-text">${metabolite.latin_name}</div>
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-second-column">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-third-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-2">
+                <div class="progress"
+                     style="width: ${!metabolite.detected_abundance || metabolite.detected_abundance === 'ND' || metabolite.detected_abundance === 0
+              ? 0
+              : (metabolite.detected_abundance / metabolite.normal_range.normal_range_max * 100)}%;
+                            background-color: ${progressBarColor};
+                            transition: width 0.3s ease;">
                 </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${metabolites.evaluation.color}-600 column-text">
-                ${metabolites.evaluation.status}
-              </td>
-            `;
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center bold-text immunity-fourth-column immunity-column-text">
+              <span style="color: ${CUSTOM_COLORS[statusColor]}">
+                ${statusText}${statusIcon}
+              </span>
+            </td>
+          </tr>
+        `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('microbial-metabolites-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${metabolites.descriptions.map(desc => `
-                    <div class="microbial-metabolites-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
+            const filteredDescriptions = metabolite.descriptions.filter(desc =>
+              desc.type === 'info' || (!isNormal && desc.type === 'warning')
+            );
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
+            const descRow = filteredDescriptions.length > 0 ? `
+          <tr class="metabolite-desc-row">
+            <td colspan="6" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${filteredDescriptions.map(desc => `
+                  <div class="metabolite-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            metaboliteContainer.appendChild(table);
+            container.appendChild(metaboliteContainer);
+
+            console.groupEnd();
           });
         }
 
-        // 页面加载时加载有机酸数据
+        // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadMicrobialMetabolitesData);
       </script>
-
     </div>
+
   </div>
 
   <!-- 免疫指标评估板块 : 细胞因子指标评估 -->
 
-  <h2 class="custom-title-1 page-break">细胞因子指标评估</h2>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <h2
+    class="custom-title-1 page-break">
+    细胞因子指标评估
+  </h2>
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;"
+  >
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             细胞因子是免疫系统中重要的信号分子，通过检测不同的细胞因子水平，可以了解机体的免疫状态和炎症程度。
           </p>
         </div>
@@ -3886,17 +4025,30 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">细胞因子</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left immunity-first-column"
+              style="font-size: 11px;">
+            细胞因子
+          </th>
+          <th class="py-2 px-4 text-center immunity-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            正常范围
+          </th>
+          <th class="py-2 px-4 text-center immunity-third-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th class="py-2 px-4 text-center immunity-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="cytokines-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
+
+      <div id="cytokines-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
 
       <script>
         async function loadCytokinesData() {
@@ -3909,76 +4061,176 @@
           }
         }
 
-        function renderCytokinesTable(organicacidsData) {
-          const tableBody = document.getElementById('cytokines-data-table-body');
-          if (!tableBody) {
-            console.error('Cytokines data table body not found');
+        function calculateProgressPercentage(detected, maxRange) {
+          if (detected === "ND" || detected === 0 || detected === "0") {
+            return 0;
+          }
+
+          const detectedValue = parseFloat(detected);
+          const maxRangeValue = parseFloat(maxRange);
+
+          if (isNaN(detectedValue) || isNaN(maxRangeValue) || maxRangeValue <= 0) {
+            console.error('无效的输入值:', { detected, maxRange });
+            return 0;
+          }
+
+          const percentage = (detectedValue / maxRangeValue) * 100;
+          return parseFloat(percentage.toFixed(2));
+        }
+
+        function getProgressBarColor(detected, minRange, maxRange) {
+          if (detected >= minRange && detected <= maxRange) {
+            return '#389e0d'; // 绿色
+          }
+          return '#ff4d4f'; // 红色
+        }
+
+        function renderCytokinesTable(cytokinesData) {
+          const container = document.getElementById('cytokines-data-table-body');
+          if (!container) {
+            console.error('Cytokines table body not found');
             return;
           }
 
-          tableBody.innerHTML = '';
+          container.innerHTML = '';
 
-          organicacidsData.forEach(cytokines=> {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('cytokines-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${cytokines.chinese_name}</div>
-                <div class="latin-text">${cytokines.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${cytokines.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${cytokines.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${cytokines.progress_percentage}%;"></div>
+          const CUSTOM_COLORS = {
+            red: '#ff4d4f',
+            green: '#389e0d',
+            gray: '#808080'
+          };
+
+          cytokinesData.forEach(cytokine => {
+            console.group(`处理: ${cytokine.chinese_name}`);
+
+            let statusColor, statusText, statusIcon;
+            const detected = cytokine.detected_abundance;
+            const minRange = cytokine.normal_range.normal_range_min;
+            const maxRange = cytokine.normal_range.normal_range_max;
+
+            const formattedDetectedValue = detected === "ND" ? "未检出" : detected;
+            const formattedMinRange = minRange;
+            const formattedMaxRange = maxRange;
+
+            let isNormal = true;
+
+            if (detected === "ND") {
+              if (minRange > 0) {
+                statusColor = 'red';
+                statusText = '偏低';
+                statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+                isNormal = false;
+              } else {
+                statusColor = 'green';
+                statusText = '正常';
+                statusIcon = '';
+              }
+            } else if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
+
+            const progressPercentage = calculateProgressPercentage(detected, maxRange);
+            const progressBarColor = getProgressBarColor(detected, minRange, maxRange);
+
+            const cytokineContainer = document.createElement('div');
+            cytokineContainer.className = 'cytokine-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'cytokine-table min-w-full';
+
+            const dataRow = `
+          <tr class="cytokine-row">
+            <td class="py-2 px-4 text-left immunity-first-column">
+              <div class="chinese-text">${cytokine.chinese_name}</div>
+              <div class="latin-text">${cytokine.latin_name}</div>
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-second-column">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-third-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-2">
+                <div class="progress"
+                     style="width: ${!cytokine.detected_abundance || cytokine.detected_abundance === 'ND' || cytokine.detected_abundance === 0
+              ? 0
+              : (cytokine.detected_abundance / cytokine.normal_range.normal_range_max * 100)}%;
+                            background-color: ${progressBarColor};
+                            transition: width 0.3s ease;">
                 </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${cytokines.evaluation.color}-600 column-text">
-                ${cytokines.evaluation.status}
-              </td>
-            `;
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center bold-text immunity-fourth-column immunity-column-text">
+              <span style="color: ${CUSTOM_COLORS[statusColor]}">
+                ${statusText}${statusIcon}
+              </span>
+            </td>
+          </tr>
+        `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('cytokines-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${cytokines.descriptions.map(desc => `
-                    <div class="microbial-metabolites-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
+            const filteredDescriptions = cytokine.descriptions.filter(desc =>
+              desc.type === 'info' || (!isNormal && desc.type === 'warning')
+            );
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
+            const descRow = filteredDescriptions.length > 0 ? `
+          <tr class="cytokine-desc-row">
+            <td colspan="6" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${filteredDescriptions.map(desc => `
+                  <div class="cytokine-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            cytokineContainer.appendChild(table);
+            container.appendChild(cytokineContainer);
+
+            console.groupEnd();
           });
         }
 
-        // 页面加载时加载有机酸数据
+        // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadCytokinesData);
       </script>
-
     </div>
   </div>
 
   <!-- 免疫指标评估板块 : 免疫肿瘤指标评估 -->
 
-  <h2 class="custom-title-1 page-break">免疫肿瘤指标评估</h2>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <h2
+    class="custom-title-1 page-break">
+    免疫肿瘤指标评估
+  </h2>
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;"
+  >
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             肿瘤免疫指标是评估机体抗肿瘤免疫功能的重要标志物，通过检测这些指标可以了解机体的免疫监视和抗肿瘤能力。这些指标的变化可以反映肿瘤的发生发展，也可用于免疫治疗的疗效评估和预后判断。
           </p>
         </div>
@@ -3988,17 +4240,30 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">免疫肿瘤指标</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left immunity-first-column"
+              style="font-size: 11px;">
+            免疫肿瘤指标
+          </th>
+          <th class="py-2 px-4 text-center immunity-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            正常范围
+          </th>
+          <th class="py-2 px-4 text-center immunity-third-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th class="py-2 px-4 text-center immunity-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="immune-oncology-markers-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
+
+      <div id="immune-oncology-markers-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
 
       <script>
         async function loadImmuneOncologyData() {
@@ -4007,68 +4272,161 @@
             const data = await response.json();
             renderImmuneOncologyTable(data.immune_oncology_markers_data);
           } catch (error) {
-            console.error('Error loading cytokines data:', error);
+            console.error('Error loading immune oncology data:', error);
           }
         }
 
-        function renderImmuneOncologyTable(organicacidsData) {
-          const tableBody = document.getElementById('immune-oncology-markers-data-table-body');
-          if (!tableBody) {
-            console.error('Cytokines data table body not found');
+        function calculateProgressPercentage(detected, maxRange) {
+          if (detected === "ND" || detected === 0 || detected === "0") {
+            return 0;
+          }
+
+          const detectedValue = parseFloat(detected);
+          const maxRangeValue = parseFloat(maxRange);
+
+          if (isNaN(detectedValue) || isNaN(maxRangeValue) || maxRangeValue <= 0) {
+            console.error('无效的输入值:', { detected, maxRange });
+            return 0;
+          }
+
+          const percentage = (detectedValue / maxRangeValue) * 100;
+          return parseFloat(percentage.toFixed(2));
+        }
+
+        function getProgressBarColor(detected, minRange, maxRange) {
+          if (detected >= minRange && detected <= maxRange) {
+            return '#389e0d'; // 绿色
+          }
+          return '#ff4d4f'; // 红色
+        }
+
+        function renderImmuneOncologyTable(immuneData) {
+          const container = document.getElementById('immune-oncology-markers-data-table-body');
+          if (!container) {
+            console.error('Immune oncology table body not found');
             return;
           }
 
-          tableBody.innerHTML = '';
+          container.innerHTML = '';
 
-          organicacidsData.forEach(immune => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('cytokines-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${immune.chinese_name}</div>
-                <div class="latin-text">${immune.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${immune.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${immune.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${immune.progress_percentage}%;"></div>
+          const CUSTOM_COLORS = {
+            red: '#ff4d4f',
+            green: '#389e0d',
+            gray: '#808080'
+          };
+
+          immuneData.forEach(immune => {
+            console.group(`处理: ${immune.chinese_name}`);
+
+            let statusColor, statusText, statusIcon;
+            const detected = immune.detected_abundance;
+            const minRange = immune.normal_range.normal_range_min;
+            const maxRange = immune.normal_range.normal_range_max;
+
+            const formattedDetectedValue = detected === "ND" ? "未检出" : detected;
+            const formattedMinRange = minRange;
+            const formattedMaxRange = maxRange;
+
+            let isNormal = true;
+
+            if (detected === "ND") {
+              if (minRange > 0) {
+                statusColor = 'red';
+                statusText = '偏低';
+                statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+                isNormal = false;
+              } else {
+                statusColor = 'green';
+                statusText = '正常';
+                statusIcon = '';
+              }
+            } else if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
+
+            const progressPercentage = calculateProgressPercentage(detected, maxRange);
+            const progressBarColor = getProgressBarColor(detected, minRange, maxRange);
+
+            const immuneContainer = document.createElement('div');
+            immuneContainer.className = 'immune-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'immune-table min-w-full';
+
+            const dataRow = `
+          <tr class="immune-row">
+            <td class="py-2 px-4 text-left immunity-first-column">
+              <div class="chinese-text">${immune.chinese_name}</div>
+              <div class="latin-text">${immune.latin_name}</div>
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-second-column">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-center immunity-column-text immunity-third-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-2">
+                <div class="progress"
+                     style="width: ${!immune.detected_abundance || immune.detected_abundance === 'ND' || immune.detected_abundance === 0
+              ? 0
+              : (immune.detected_abundance / immune.normal_range.normal_range_max * 100)}%;
+                            background-color: ${progressBarColor};
+                            transition: width 0.3s ease;">
                 </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${immune.evaluation.color}-600 column-text">
-                ${immune.evaluation.status}
-              </td>
-            `;
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center bold-text immunity-fourth-column immunity-column-text">
+              <span style="color: ${CUSTOM_COLORS[statusColor]}">
+                ${statusText}${statusIcon}
+              </span>
+            </td>
+          </tr>
+        `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('cytokines-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${immune.descriptions.map(desc => `
-                    <div class="microbial-metabolites-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
+            const filteredDescriptions = immune.descriptions.filter(desc =>
+              desc.type === 'info' || (!isNormal && desc.type === 'warning')
+            );
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
+            const descRow = filteredDescriptions.length > 0 ? `
+          <tr class="immune-desc-row">
+            <td colspan="6" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${filteredDescriptions.map(desc => `
+                  <div class="immune-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            immuneContainer.appendChild(table);
+            container.appendChild(immuneContainer);
+
+            console.groupEnd();
           });
         }
 
-        // 页面加载时加载有机酸数据
+        // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadImmuneOncologyData);
       </script>
-
     </div>
+
   </div>
 
   <!-- 营养评估板块 -->
