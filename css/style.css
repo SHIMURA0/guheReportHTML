@@ -355,9 +355,13 @@ body {
 .description-container > div {
   padding: 2px; /* 增加内边距 */
 }
-/*.description-container:not(:last-child) {*/
-/*  margin-bottom: -10px;*/
-/*}*/
+.description-container p {
+  line-height: 1.4;
+  margin: 0;
+}
+.description-container i {
+  margin-right: 2px; /* 图标和文本之间的间距 */
+}
 
 .chinese-text {
   font-size: 0.75rem; /* 中文字体大小 */

@@ -314,13 +314,52 @@
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            本部分总结了您本次肠道菌群检测的各项整体关键指标，主要包含两个核心维度：
+            本部分总结了您本次肠道菌群检测的整体关键指标，主要涵盖以下两个核心维度：
           </p>
           <ul class="list-disc ml-5">
-            <li><b>肠道基础功能：</b>评估肠道的基础生理功能，包括蛋白质发酵能力、消化吸收效率、肠道产气情况、肠道屏障完整性以及肠道炎症状态。</li>
+            <li><strong>肠道基础功能：</strong> 评估肠道的基本生理功能，包括：
+              <ul class="list-disc ml-5">
+                <li>
+                  蛋白质发酵能力：测定肠道中细菌对蛋白质的发酵和利用能力，反映肠道微生物的代谢功能。
+                </li>
+                <li>
+                  消化吸收效率：评估肠道对营养物质的消化与吸收能力，影响整体营养状态。
+                </li>
+                <li>
+                  肠道产气情况：监测肠道气体的生成量，过量气体可能提示消化不良或肠道菌群失衡。
+                </li>
+                <li>
+                  肠道屏障完整性：评估肠道粘膜的健康状况，影响体内物质的吸收和免疫反应。
+                </li>
+                <li>
+                  肠道炎症状态：评估肠道内的炎症反应，可能与各种消化系统疾病关联。
+                </li>
+              </ul>
+            </li>
           </ul>
           <ul class="list-disc ml-5">
-            <li><b>肠道菌群整体：</b>评估肠道菌群的整体性功能状态，包括菌种数量，菌群多样性，肠道菌群平衡，菌群恢复力，有益菌，有害菌，革兰氏阴性菌和好氧菌。</li>
+            <li><strong>肠道菌群整体：</strong> 评估肠道菌群的整体功能状态，包括：
+              <ul class="list-disc ml-5">
+                <li>
+                  菌种数量：反映肠道中微生物菌种的多样性，多样性越高，通常代表健康的肠道环境。
+                </li>
+                <li>
+                  菌群多样性：评估不同类型菌群的存在比例，有助于判断肠道生态平衡。
+                </li>
+                <li>
+                  肠道菌群平衡：分析有益菌与有害菌的比例，维持平衡对健康至关重要。
+                </li>
+                <li>
+                  菌群恢复力：衡量菌群在遭受外部干扰后恢复到正常状态的能力，表示肠道的抗压能力。
+                </li>
+                <li>
+                  有益菌和有害菌的比例：评估有益菌（如乳酸菌）与有害菌（如病原菌）的相对数量，直接影响健康。
+                </li>
+                <li>
+                  革兰氏阴性菌和好氧菌的分布：分析不同类别细菌的比例，帮助了解肠道生态及其对健康的影响。
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -350,11 +389,11 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left basic-function-of-gut-first-column">评估项目</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column">结果评价</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left basic-function-of-gut-first-column" style="font-size: 11px;">评估项目</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-second-column" style="font-size: 11px; padding: 5px 5px;">正常范围</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-third-column" style="font-size: 11px; padding: 5px 5px;">评估数值</th>
+          <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column" style="font-size: 11px; padding: 5px 5px;">结果评价</th>
         </tr>
         </thead>
         <tbody id="basic-functions-of-gut-data-table-body">
@@ -423,7 +462,7 @@
             // colSpan="7" 因为肥胖相关菌的表格有7列
             descRow.innerHTML = `
               <td colSpan="7" class="py-2 px-4 text-left">
-                  <div class="description-container text-gray-600">
+                  <div class="description-container text-gray-600" style="font-size: 10px;">
                       ${eukaryotes.descriptions.map(desc => `
                           <div class="detected-gut-eukaryotes-description">
                               <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
@@ -467,7 +506,7 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <tr class="bg-teal-600 text-white">
+        <tr style="background-color: #00B2B4; color: white;">
           <th class="py-2 px-4 text-left overall-evaluation-of-gut-first-column">评估项目</th>
           <th class="py-2 px-4 text-center overall-evaluation-of-gut-second-column">正常范围</th>
           <th class="py-2 px-4 text-center overall-evaluation-of-gut-third-column">评估数值</th>
@@ -538,7 +577,7 @@
             // colSpan="7" 因为肥胖相关菌的表格有7列
             descRow.innerHTML = `
                 <td colSpan="7" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600">
+                    <div class="description-container text-gray-600" style="font-size: 10px;">
                         ${microbiome.descriptions.map(desc => `
                             <div class="overall-evaluation-of-gut-data-description">
                                 <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
@@ -920,12 +959,12 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-        <th class="py-2 px-4 text-left core-gut-bacteria-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-second-column">正常范围%</th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-third-column">检测丰度%</th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-sixth-column">有%的正常人检出</th>
+        <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 11px;">菌种名称</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 11px; padding: 5px 5px;">正常范围%</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 11px; padding: 5px 5px;">检测丰度%</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 11px; padding: 5px 5px;">结果评价</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 11px; padding: 5px 5px;">超过%的人</th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-sixth-column" style="font-size: 11px; padding: 5px 5px;">有%的正常人检出</th>
         </tr>
         </thead>
       </table>
@@ -1116,20 +1155,68 @@
           );
 
           const descRow = filteredDescriptions.length > 0 ? `
-            <tr class="description-row">
-                <td colspan="6" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600">
-                        ${filteredDescriptions.map(desc => `
-                            <div>
-                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                   style="color: ${desc.color};"></i>
-                                ${desc.text}
-                            </div>
-                        `).join('')}
+            <tr class="virus-desc-row">
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 10px;">
+                  ${filteredDescriptions.map(desc => `
+                    <div class="flex items-start">
+                      <div class="ml-1">
+                        <p>
+                          <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                             style="color: ${desc.color};">
+                          </i>
+                          ${desc.text}
+                        </p>
+                      </div>
                     </div>
-                </td>
+                  `).join('')}
+                </div>
+              </td>
             </tr>
-        ` : '';
+          ` : '';
+
+//           const filteredDescriptions = bacteria.descriptions.filter(desc =>
+//             desc.type === 'info' || (!isNormal && desc.type === 'warning')
+//           );
+//
+//           const descRow = filteredDescriptions.length > 0 ? `
+//     <tr class="description-row">
+//         <td colspan="6" class="py-2 px-4 text-left">
+//             <div class="description-container text-gray-600" style="font-size: 10px;">
+//                 ${
+//             // Info 部分
+//             filteredDescriptions.filter(desc => desc.type === 'info').length > 0 ? `
+//                         <div class="info-section">
+//                             ${filteredDescriptions
+//               .filter(desc => desc.type === 'info')
+//               .map(desc => `
+//                                     <p class="flex items-start gap-2 mb-2 mt-2">
+//                                         <i class="fas fa-info-circle" style="color: ${desc.color};"></i>
+//                                         ${desc.text}
+//                                     </p>
+//                                 `).join('')}
+//                         </div>
+//                     ` : ''
+//           }
+//                 ${
+//             // Warning 部分 (只在 !isNormal 时显示)
+//             !isNormal && filteredDescriptions.filter(desc => desc.type === 'warning').length > 0 ? `
+//                         <div class="warning-section">
+//                             ${filteredDescriptions
+//               .filter(desc => desc.type === 'warning')
+//               .map(desc => `
+//                                     <p class="flex items-start gap-2 mb-2 mt-2">
+//                                         <i class="fas fa-bell" style="color: ${desc.color};"></i>
+//                                         ${desc.text}
+//                                     </p>
+//                                 `).join('')}
+//                         </div>
+//                     ` : ''
+//           }
+//             </div>
+//         </td>
+//     </tr>
+// ` : '';
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
           bacteriaContainer.appendChild(table);
@@ -2521,19 +2608,38 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left virus-first-column">病毒名称</th>
-          <th class="py-2 px-4 text-center virus-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center virus-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center virus-fourth-column">结果评价</th>
-<!--          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>-->
-<!--          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>-->
+          <th
+            class="py-2 px-4 text-left virus-first-column"
+            style="font-size: 11px;"
+          >
+            病毒名称
+          </th>
+          <th
+            class="py-2 px-4 text-center virus-second-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            正常范围
+          </th>
+          <th
+            class="py-2 px-4 text-center virus-third-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            检测丰度
+          </th>
+          <th
+            class="py-2 px-4 text-center virus-fourth-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            结果评价
+          </th>
         </tr>
         </thead>
       </table>
 
       <div id="gut-virus-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
+        <!-- Data rows will be generated by Javascript code dynamically -->
       </div>
+
     </div>
 
     <script>
@@ -2642,10 +2748,10 @@
             <div class="chinese-text">${virus.chinese_name}</div>
             <div class="latin-text">${virus.latin_name}</div>
           </td>
-          <td class="py-2 px-4 text-center column-text virus-second-column">
+          <td class="py-2 px-4 text-center column-text virus-second-column" style="font-size: 0.65rem;">
             ${formattedMinRange}-${formattedMaxRange}
           </td>
-          <td class="py-2 px-4 text-center column-text virus-third-column">
+          <td class="py-2 px-4 text-center column-text virus-third-column" style="font-size: 0.65rem;">
             ${formattedDetectedValue}
             <div class="progress-bar w-full mt-1">
               <div class="progress"
@@ -2655,7 +2761,7 @@
               </div>
             </div>
           </td>
-          <td class="py-2 px-4 text-center bold-text virus-fourth-column column-text">
+          <td class="py-2 px-4 text-center bold-text virus-fourth-column column-text" style="font-size: 0.65rem;">
             <span style="color: ${CUSTOM_COLORS[statusColor]}">
               ${statusText}${statusIcon}
             </span>
@@ -2668,20 +2774,25 @@
           );
 
           const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="virus-desc-row">
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              ${filteredDescriptions.map(desc => `
-                <div class="virus-description">
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};"></i>
-                  ${desc.text}
+            <tr class="virus-desc-row">
+              <td colspan="6" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 10px;">
+                  ${filteredDescriptions.map(desc => `
+                    <div class="flex items-start">
+                      <div class="ml-1">
+                        <p>
+                          <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                             style="color: ${desc.color};">
+                          </i>
+                          ${desc.text}
+                        </p>
+                      </div>
+                    </div>
+                  `).join('')}
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </td>
+            </tr>
+          ` : '';
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
           virusContainer.appendChild(table);
@@ -5743,15 +5854,15 @@
   </div>
 
   <!-- 慢病风险评估板块 -->
-  <h1 class="custom-title-1 page-break">慢病风险评估</h1>
+  <h1 class="custom-title-second-level page-break">慢病风险评估</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             肠道菌群是人体最大的微生物群落，在维持人体健康中发挥着关键作用。大量研究表明，肠道菌群的失衡与多种慢性疾病（包括但不限于消化系统疾病，免疫系统疾病，代谢性疾病，心脑血管疾病，神经系统疾病等）的发生发展密切相关。通过对肠道菌群的分析，我们可以及早发现疾病风险，实现疾病的预防和干预。
           </p>
         </div>
@@ -5763,7 +5874,7 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
+        <tr style="background-color: #00B2B4; color: white;">
           <th class="py-2 px-4 text-left slow-disease-first-column">评估疾病</th>
           <th class="py-2 px-4 text-center slow-disease-second-column">风险评估数值</th>
           <th class="py-2 px-4 text-center slow-disease-third-column">风险评估</th>
@@ -5886,6 +5997,7 @@
       </script>
 
     </div>
+
 
   </div>
 
