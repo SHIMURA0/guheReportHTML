@@ -373,6 +373,7 @@ body {
   margin-top: 1px; /* 去掉与中文行的间隔 */
   /*margin-bottom: -5px;*/
   line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
 }
 .column-text {
   font-size: 0.6rem; /* 控制每一列的字体大小 */
@@ -618,6 +619,12 @@ tr {
 .resistance-third-column { width: 20%; }
 .resistance-fourth-column { width: 24%; }
 .resistance-fifth-column { width: 16%; }
+
+.metal-tolerance-first-column { width: 25%; }
+.metal-tolerance-second-column { width: 20%; }
+.metal-tolerance-third-column { width: 15%; }
+.metal-tolerance-fourth-column { width: 24%; }
+.metal-tolerance-fifth-column { width: 16%; }
 
 /* 修改交替行背景色的部分 */
 .resistance-row {

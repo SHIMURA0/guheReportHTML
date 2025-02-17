@@ -4870,7 +4870,7 @@
       ]
     }
   ],
-  "resistance_data": [
+  "antimicrobial_resistance_genes_data": [
     {
       "chinese_name": "细菌",
       "latin_name": "bacterium",
@@ -5070,6 +5070,91 @@
       "resistance_type": ["氨基糖苷类"],
       "reads_count": "128573",
       "resistance_drugs": ["阿米卡星", "庆大霉素", "卡那霉素", "妥布霉素"],
+      "descriptions": ""
+    }
+  ],
+  "metal_tolerance_genes_data": [
+    {
+      "chinese_name": "伽马变形菌纲",
+      "latin_name": "Gammaproteobacteria",
+      "resistance_gene": "terZ",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "380",
+      "resistance_drugs": ["碲"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "resistance_gene": "silS",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "939",
+      "resistance_drugs": ["铜", "银"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "resistance_gene": "pcoD",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "1221",
+      "resistance_drugs": ["铜"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "resistance_gene": "pcoC",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "1221",
+      "resistance_drugs": ["铜"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "肠杆菌目",
+      "latin_name": "Enterobacterales",
+      "resistance_gene": "arsD",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "0",
+      "resistance_drugs": ["砷"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "弗氏柠檬酸杆菌",
+      "latin_name": "Citrobacter freundii",
+      "resistance_gene": "silR",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "534",
+      "resistance_drugs": ["铜", "银"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "细菌",
+      "latin_name": "Bacteria",
+      "resistance_gene": "pcoC",
+      "resistance_type": ["金属耐受"],
+      "reads_count": "214",
+      "resistance_drugs": ["铜"],
+      "descriptions": ""
+    },
+    {
+      "chinese_name": "弗氏柠檬酸杆菌复合体",
+      "latin_name": "Citrobacter freundii complex",
+      "resistance_gene": "fieF",
+      "resistance_type": ["金属代谢"],
+      "reads_count": "0",
+      "resistance_drugs": ["铁"],
+      "descriptions": ""
+    }
+  ],
+  "efflux_genes_data": [
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "resistance_gene": "emrE",
+      "resistance_type": ["杀生物剂耐受"],
+      "reads_count": "234",
+      "resistance_drugs": ["杀生物剂"],
       "descriptions": ""
     }
   ],

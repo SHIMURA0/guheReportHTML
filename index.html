@@ -2698,39 +2698,103 @@
   <!-- 肠道菌群抗性和基因分布板块 -->
 
   <!-- 整体页面容器 -->
-  <h2 class="custom-title-1 page-break">肠道菌群抗性与基因分布</h2>
+  <h2 class="custom-title-second-level page-break">肠道菌群抗性与基因分布</h2>
+
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            肠道菌群抗性是指细菌在肠道环境中通过不同基因的协同作用，抵抗抗生素、重金属及其他有害物质的能力。肠道菌群中的耐药基因、金属耐受基因和外排基因共同构成了细菌应对环境压力的重要机制，保障其生存与繁殖。
+          </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>耐药基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>作用机制：编码特定酶或改变靶点，减弱抗生素的效力。</li>
+                <li>常见耐药基因：blaTEM (β-lactamase)、mecA (青霉素结合蛋白改变)。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>金属耐受基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>作用机制：帮助细菌在重金属环境中生存，通过排出或转化金属降低其毒性。</li>
+                <li>常见金属耐受基因：czrC (锌的外排相关)。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>外排基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>作用机制：通过编码外排泵积极排除抗生素和毒素，提高耐药性。</li>
+                <li>常见外排基因：AcrAB-TolC (多种抗生素外排)、MexAB-OprM (对β-lactam抗生素的外排)。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <h3 class="custom-title-third-level page-break">耐药基因分布</h3>
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            下列是在您肠道内检测到的肠道细菌抗生素耐药基因。
+            <i class="fas fa-info-circle icon"></i>
+            耐药基因是指生物体内存在的一类基因，使得生物能够抵御或适应抗生素等药物的影响。这些基因广泛存在于细菌中，特别是在病原菌中，发挥着保护细胞、维持生存的重要作用。耐药基因使得肠道菌群能够在不利环境中生存，从而影响治疗效果和公共健康。
           </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>作用机制</strong>：
+              <ul class="list-disc ml-5">
+                <li>药物排除：通过编码泵类蛋白，增强细菌细胞膜对抗生素的排出能力。</li>
+                <li>药物失活：产生酶来分解或改变药物的活性，从而降低其毒性。</li>
+                <li>靶点改变：通过基因突变或重组改变抗生素的靶标，从而使药物无法有效结合。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>常见耐药基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>blaTEM：编码β-lactam酶，能够分解青霉素类抗生素。</li>
+                <li>mecA：与耐甲氧西林的金黄色葡萄球菌（MRSA）相关，改变青霉素结合蛋白，使其对青霉素耐受。</li>
+                <li>tetM：赋予细菌对四环素的耐药能力，通过改变抗生素的靶点机制。</li>
+                <li>aac(3)-IV：编码一种酰胺酶，能够失活氨基糖苷类抗生素。</li>
+                <li>vanA：与万古霉素耐药相关，改变细菌对万古霉素的靶标。</li>
+              </ul>
+            </li>
+          </ul>
+          <p>下列是您肠道中检出的耐药基因，按照相关耐药基因片段reads数量递减排列。</p>
+          <!-- 在这里插入相关数据 -->
         </div>
       </div>
     </div>
 
+
     <!-- 包裹三个卡片的容器 -->
-    <div class="card-container">
-      <div class="card">
-        <div class="title">检测菌株</div>
-        <div class="number">21株</div>
-        <div class="status green">100% 完成检测</div>
-      </div>
-      <div class="card">
-        <div class="title">耐药基因种类</div>
-        <div class="number">12种</div>
-        <div class="status blue">覆盖3大类别</div>
-      </div>
-      <div class="card">
-        <div class="title">最高reads数</div>
-        <div class="number">321,552</div>
-        <div class="status orange">四环素类耐药</div>
-      </div>
-    </div>
+<!--    <div class="card-container">-->
+<!--      <div class="card">-->
+<!--        <div class="title">检测菌株</div>-->
+<!--        <div class="number">21株</div>-->
+<!--        <div class="status green">100% 完成检测</div>-->
+<!--      </div>-->
+<!--      <div class="card">-->
+<!--        <div class="title">耐药基因种类</div>-->
+<!--        <div class="number">12种</div>-->
+<!--        <div class="status blue">覆盖3大类别</div>-->
+<!--      </div>-->
+<!--      <div class="card">-->
+<!--        <div class="title">最高reads数</div>-->
+<!--        <div class="number">321,552</div>-->
+<!--        <div class="status orange">四环素类耐药</div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-- 细菌耐药性基因表格 -->
     <div class="rounded-table">
@@ -2763,7 +2827,7 @@
         </thead>
       </table>
 
-      <div id="resistance-data-table-body">
+      <div id="antimicrobial-resistance-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
 
@@ -2772,15 +2836,15 @@
           try {
             const response = await fetch('./data/bacteria_data.json');
             const data = await response.json();
-            data.resistance_data.sort((a, b) => b.reads_count - a.reads_count);
-            renderResistanceTable(data.resistance_data);
+            data.antimicrobial_resistance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
+            renderResistanceTable(data.antimicrobial_resistance_genes_data);
           } catch (error) {
             console.error('Error loading resistance data:', error);
           }
         }
 
         function renderResistanceTable(resistanceData) {
-          const container = document.getElementById('resistance-data-table-body');
+          const container = document.getElementById('antimicrobial-resistance-data-table-body');
           if (!container) {
             console.error('Resistance table body not found');
             return;
@@ -2812,7 +2876,7 @@
       </div>
     </td>
     <td class="py-2 px-4 text-center resistance-column-text resistance-fourth-column">
-      <span class="reads-count ${parseInt(resistance.reads_count) > 500 ? 'high' : 'low'}">
+      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
         ${resistance.reads_count}
       </span>
     </td>
@@ -2850,6 +2914,332 @@
 
         // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadResistanceData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h3 class="custom-title-third-level page-break">金属耐受基因分布</h3>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            金属耐受基因是指生物体内存在的一类基因，使得生物能够抵御和适应环境中有毒金属离子的影响。这些基因广泛存在于微生物、植物和动物中，发挥着保护细胞、维持生存的重要作用。金属耐受基因使得肠道菌群能够在负有重金属污染的环境中生存，并帮助维持肠道生态系统的平衡。
+          </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>作用机制</strong>：
+              <ul class="list-disc ml-5">
+                <li>金属转运：通过转运蛋白将金属离子有效排出细胞或将其吸收。</li>
+                <li>金属螯合：合成小分子或蛋白质与金属离子结合，形成无毒的络合物，以降低金属的毒性。</li>
+                <li>去毒化反应：通过酶促反应改变金属离子的化学形态，从而减轻其对细胞的伤害。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>常见金属耐受基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>cusC：负责铜离子的耐受，促进细菌排除体内多余的铜离子。</li>
+                <li>copA：参与铜离子的运输和排出，帮助细菌防止铜的毒性影响。</li>
+                <li>zntA：与锌和镉的耐受相关，能够排出细胞内有害的锌和镉离子。</li>
+                <li>silE：与硅化合物的耐受性相关，帮助细菌生存于含硅的环境。</li>
+                <li>merA：编码汞还原酶，将有毒的二价汞还原为较不活泼的一价汞。</li>
+                <li>chrB：负责铬的耐受，促进细菌在铬污染环境中的存活。</li>
+              </ul>
+            </li>
+          </ul>
+          <p>下列是您肠道中检出的肠道菌群的金属耐受基因，按照相关金属耐受基因片段reads数量递减排列。</p>
+          <!-- 在这里插入相关数据 -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 细菌耐药性基因表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left metal-tolerance-first-column"
+              style="font-size: 11px;">
+            来源菌株
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            相关基因
+          </th>
+          <th class="py-2 px-4 text-right metal-tolerance-third-column"
+              style="font-size: 11px;
+                    padding: 5px 20px 5px 5px;"
+          >
+            机制类型
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            reads数量
+          </th>
+          <th class="py-2 px-4 text-right metal-tolerance-fifth-column"
+              style="font-size: 11px; padding: 5px 20px 5px 5px;">
+            相关金属
+          </th>
+        </tr>
+        </thead>
+      </table>
+
+      <div id="metal-tolerance-genes-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
+      <script>
+        async function loadMetalToleranceData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            data.metal_tolerance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
+            renderMetalToleranceTable(data.metal_tolerance_genes_data);
+          } catch (error) {
+            console.error('Error loading resistance data:', error);
+          }
+        }
+
+        function renderMetalToleranceTable(resistanceData) {
+          const container = document.getElementById('metal-tolerance-genes-data-table-body');
+          if (!container) {
+            console.error('Resistance table body not found');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          resistanceData.forEach(resistance => {
+            const resistanceContainer = document.createElement('div');
+            resistanceContainer.className = 'resistance-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'resistance-table min-w-full';
+
+            const dataRow = `
+  <tr class="resistance-row">
+    <td class="py-2 px-4 text-left metal-tolerance-first-column">
+      <div class="chinese-text">${resistance.chinese_name}</div>
+      <div class="latin-text">${resistance.latin_name}</div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-second-column">
+      <span class="resistance-gene">${resistance.resistance_gene}</span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
+      <div class="stack-container">
+        ${resistance.resistance_type.map(type => `
+          <div class="stack-item">${type}</div>
+        `).join('')}
+      </div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
+      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
+        ${resistance.reads_count}
+      </span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fifth-column">
+      <div class="stack-container">
+        ${resistance.resistance_drugs.map(drug => `
+          <div class="stack-item">${drug}</div>
+        `).join('')}
+      </div>
+    </td>
+  </tr>
+`;
+
+            const descRow = resistance.descriptions ? `
+          <tr class="resistance-desc-row">
+            <td colspan="5" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${resistance.descriptions.map(desc => `
+                  <div class="resistance-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            resistanceContainer.appendChild(table);
+            container.appendChild(resistanceContainer);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadMetalToleranceData);
+      </script>
+
+    </div>
+
+  </div>
+
+  <h3 class="custom-title-third-level page-break">外排基因分布</h3>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            外排基因是指一类生物体内的基因，通过编码特定的蛋白质，促进细菌将有害物质，如抗生素、毒素及重金属等，从细胞内泵出。外排基因广泛存在于多种细菌中，尤其是在病原菌中，能够增强其生存能力，增加对环境压力的抵抗力。
+          </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>作用机制</strong>：
+              <ul class="list-disc ml-5">
+                <li>主动外排：通过形成外排泵，增强细菌对外界有害物质的排除能力。</li>
+                <li>协同外排：与其他外排蛋白协同工作，提高细菌对多种抗生素或毒素的耐受性。</li>
+                <li>膜透过性调节：调节细菌膜的通透性，以减少有害物质的内流。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>常见外排基因</strong>：
+              <ul class="list-disc ml-5">
+                <li> AcrAB-TolC：编码一套外排泵，能够排出多种抗生素和毒素。</li>
+                <li>MexAB-OprM：存在于铜绿假单胞菌中，具有对多种β-lactam抗生素的外排能力。</li>
+                <li>NorA：使某些细菌对氟喹诺酮类药物具有耐受性，增强细菌抵御药物的能力。</li>
+                <li>CzrC：与锌和其他金属的外排相关，帮助细菌在重金属污染环境中生存。</li>
+                <li>RND家族基因：包括多种外排蛋白家族，广泛存在于革兰氏阴性细菌中，负责多种化学物质的外排。</li>
+              </ul>
+            </li>
+          </ul>
+          <p>下列是您肠道中检出的外排基因，按照相关外排基因片段reads数量递减排列。</p>
+          <!-- 在这里插入相关数据 -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- 外排基因表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left metal-tolerance-first-column"
+              style="font-size: 11px;">
+            来源菌株
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            相关基因
+          </th>
+          <th class="py-2 px-4 text-right metal-tolerance-third-column"
+              style="font-size: 11px;
+                    padding: 5px 20px 5px 5px;"
+          >
+            机制类型
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            reads数量
+          </th>
+          <th class="py-2 px-4 text-right metal-tolerance-fifth-column"
+              style="font-size: 11px; padding: 5px 20px 5px 5px;">
+            外排物质
+          </th>
+        </tr>
+        </thead>
+      </table>
+
+      <div id="efflux-genes-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
+      <script>
+        async function loadEffluxData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            data.efflux_genes_data.sort((a, b) => b.reads_count - a.reads_count);
+            renderEffluxTable(data.efflux_genes_data);
+          } catch (error) {
+            console.error('Error loading resistance data:', error);
+          }
+        }
+
+        function renderEffluxTable(resistanceData) {
+          const container = document.getElementById('efflux-genes-data-table-body');
+          if (!container) {
+            console.error('Resistance table body not found');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          resistanceData.forEach(resistance => {
+            const resistanceContainer = document.createElement('div');
+            resistanceContainer.className = 'resistance-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'resistance-table min-w-full';
+
+            const dataRow = `
+  <tr class="resistance-row">
+    <td class="py-2 px-4 text-left metal-tolerance-first-column">
+      <div class="chinese-text">${resistance.chinese_name}</div>
+      <div class="latin-text">${resistance.latin_name}</div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-second-column">
+      <span class="resistance-gene">${resistance.resistance_gene}</span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
+      <div class="stack-container">
+        ${resistance.resistance_type.map(type => `
+          <div class="stack-item">${type}</div>
+        `).join('')}
+      </div>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
+      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
+        ${resistance.reads_count}
+      </span>
+    </td>
+    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fifth-column">
+      <div class="stack-container">
+        ${resistance.resistance_drugs.map(drug => `
+          <div class="stack-item">${drug}</div>
+        `).join('')}
+      </div>
+    </td>
+  </tr>
+`;
+
+            const descRow = resistance.descriptions ? `
+          <tr class="resistance-desc-row">
+            <td colspan="5" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${resistance.descriptions.map(desc => `
+                  <div class="resistance-description">
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};"></i>
+                    ${desc.text}
+                  </div>
+                `).join('')}
+              </div>
+            </td>
+          </tr>
+        ` : '';
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            resistanceContainer.appendChild(table);
+            container.appendChild(resistanceContainer);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadEffluxData);
       </script>
 
     </div>
