@@ -3246,6 +3246,167 @@
 
   </div>
 
+  <h3 class="custom-title-third-level page-break">毒力基因分布</h3>
+  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            毒力基因是指一类生物体内的基因，通过编码特定的蛋白质，使病原菌能够造成宿主细胞的伤害，从而引发感染和疾病。这些基因广泛存在于各种病原菌中，例如细菌、病毒和真菌，能够增强其致病能力和生存优势。
+          </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>作用机制</strong>：
+              <ul class="list-disc ml-5">
+                <li>细胞破坏：通过产生毒素或酶破坏宿主细胞结构，从而导致宿主细胞死亡。</li>
+                <li>免疫逃逸：通过抑制宿主免疫反应，帮助病原体在宿主体内存活和繁殖。</li>
+                <li>定殖能力：促进病原体在宿主组织中的定殖和生长，增强感染的能力。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>常见毒力基因</strong>：
+              <ul class="list-disc ml-5">
+                <li>shiga toxin (stx)：由志贺氏菌产生，能够抑制宿主蛋白合成，引发严重的肠道疾病。</li>
+                <li>enterotoxin (eae)：由某些大肠杆菌产生，能够引发腹泻和肠炎。</li>
+                <li>cholera toxin (ctx)：由霍乱弧菌产生，导致宿主细胞大量排泄水分，造成失水和电解质紊乱。</li>
+                <li>pore-forming toxins (PFTs)：能够在宿主细胞膜上形成孔洞，破坏细胞完整性。</li>
+                <li>adhesin genes：促进细菌与宿主细胞结合，从而增强感染能力。</li>
+              </ul>
+            </li>
+          </ul>
+          <p>下列是您肠道中检出的毒力基因，按照相关毒力基因片段reads数量递减排列。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 毒力基因表格 -->
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left metal-tolerance-first-column"
+              style="font-size: 11px;">
+            来源菌株
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            毒力基因
+          </th>
+          <th class="py-2 px-4 text-right metal-tolerance-third-column"
+              style="font-size: 11px;
+              padding: 5px 20px 5px 5px;"
+          >
+            机制类型
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            reads数量
+          </th>
+          <th class="py-2 px-4 text-center metal-tolerance-fifth-column"
+              style="font-size: 11px; padding: 5px 5px 5px 5px;">
+            检测结果
+          </th>
+        </tr>
+        </thead>
+      </table>
+
+      <div id="virulence-genes-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
+      <script>
+        async function loadVirulenceData() {
+          try {
+            const response = await fetch('./data/bacteria_data.json');
+            const data = await response.json();
+            // data.virulence_genes_data.sort((a, b) => b.reads_count - a.reads_count);
+            renderVirulenceTable(data.virulence_genes_data);
+          } catch (error) {
+            console.error('Error loading resistance data:', error);
+          }
+        }
+
+        function renderVirulenceTable(resistanceData) {
+          const container = document.getElementById('virulence-genes-data-table-body');
+          if (!container) {
+            console.error('Resistance table body not found');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          resistanceData.forEach(resistance => {
+            const resistanceContainer = document.createElement('div');
+            resistanceContainer.className = 'resistance-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'resistance-table min-w-full';
+
+            // 修改 renderVirulenceTable 函数中的 dataRow 模板
+            const dataRow = `
+              <tr class="resistance-row">
+                <td class="py-2 px-4 text-left metal-tolerance-first-column">
+                  <div class="chinese-text">${resistance.chinese_name}</div>
+                  <div class="latin-text">${resistance.latin_name}</div>
+                </td>
+                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-second-column">
+                  <div class="genes-and-reads-stack-container">
+                    ${resistance.resistance_gene.map(gene => `
+                      <div class="stack-item">
+                        <span class="resistance-gene">${gene}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
+                  <div class="stack-container text-center">
+                    ${resistance.resistance_type.map(type => `
+                      <div class="stack-item text-center">${type}</div>
+                    `).join('')}
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
+                  <div class="genes-and-reads-stack-container">
+                    ${resistance.reads_count.map(count => `
+                      <div class="stack-item">
+                        <span class="reads-count ${parseInt(count) > 0 ? 'high' : 'low'}">
+                          ${count}
+                        </span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fifth-column">
+                  <div class="genes-and-reads-stack-container">
+                    ${resistance.resistance_drugs.map((drug, index) => `
+                      <div class="stack-item">
+                        <span class="reads-count ${parseInt(resistance.reads_count[index]) > 0 ? 'high' : 'low'}">
+                          ${drug}
+                        </span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </td>
+              </tr>
+            `;
+
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            resistanceContainer.appendChild(table);
+            container.appendChild(resistanceContainer);
+          });
+        }
+
+        // 页面加载时加载数据
+        document.addEventListener('DOMContentLoaded', loadVirulenceData);
+      </script>
+
+    </div>
+
+  </div>
+
   <!-- 菌群代谢物及神经递质评估板块 ： 首页 -->
 
   <h1 class="custom-title-1 page-break">菌群代谢物及神经递质评估</h1>
@@ -3258,9 +3419,9 @@
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
             菌群代谢物和神经递质是肠道微生物与宿主相互作用的重要媒介，已发现数百种不同的活性分子。这些代谢物在维持肠道健康和影响宿主生理功能方面发挥着关键作用。健康成年人肠道中的主要代谢产物包括短链脂肪酸（SCFAs）、胆汁酸、色氨酸代谢物和神经递质等。以下是对这些代谢物的详细介绍。
           </p>
         </div>

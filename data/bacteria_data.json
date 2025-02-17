@@ -5152,10 +5152,84 @@
       "chinese_name": "肠杆菌科",
       "latin_name": "Enterobacteriaceae",
       "resistance_gene": "emrE",
-      "resistance_type": ["杀生物剂耐受"],
+      "resistance_type": ["外排"],
       "reads_count": "234",
       "resistance_drugs": ["杀生物剂"],
       "descriptions": ""
+    }
+  ],
+  "virulence_genes_data": [
+    {
+      "chinese_name": "肠杆菌科",
+      "latin_name": "Enterobacteriaceae",
+      "resistance_gene": ["iss"],
+      "resistance_type": ["免疫逃逸"],
+      "reads_count": ["0"],
+      "resistance_drugs": ["阴性"],
+      "descriptions": "Iss基因是一个与铁相关的基因，能够促进细菌在铁匮乏环境下的生存。它通过调控铁的储存和利用，增强细菌在宿主中的生存能力。这对于一些病原菌的致病性至关重要，因为宿主通常会通过限制可用铁来抑制感染。"
+    },
+    {
+      "chinese_name": "产志贺毒素大肠杆菌",
+      "latin_name": "STEC",
+      "resistance_gene": ["stx1A", "stx1B", "stx2A", "stx2B"],
+      "resistance_type": ["细胞破坏", "细胞破坏", "细胞破坏", "细胞破坏"],
+      "reads_count": ["0", "1", "0", "0"],
+      "resistance_drugs": ["阴性", "阳性", "阴性", "阴性"],
+      "descriptions": "Shiga毒素导致宿主细胞死亡"
+    },
+    {
+      "chinese_name": "肠集聚性大肠埃希氏菌",
+      "latin_name": "EAggEC",
+      "resistance_gene": ["aggR", "aggA", "aggB", "aggC", "aggD", "aafA", "aafB", "aafC", "aafD", "agg3A", "agg3B", "agg3C", "agg3D"],
+      "resistance_type": ["定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力"],
+      "reads_count": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+      "resistance_drugs": ["阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性"],
+      "descriptions": "调控其他聚集因子的表达，促进聚集"
+    },
+    {
+      "chinese_name": "肠致病性大肠杆菌",
+      "latin_name": "EPEC",
+      "resistance_gene": ["eae", "bfpA"],
+      "resistance_type": ["细胞破坏", "定殖能力"],
+      "reads_count": ["0", "0"],
+      "resistance_drugs": ["阴性", "阴性"],
+      "descriptions": "促进细菌进入宿主细胞并损伤其功能"
+    },
+    {
+      "chinese_name": "肠产毒性大肠埃希氏菌",
+      "latin_name": "ETEC",
+      "resistance_gene": ["eltA", "eltB"],
+      "resistance_type": ["细胞破坏", "细胞破坏"],
+      "reads_count": ["0", "0"],
+      "resistance_drugs": ["阴性", "阴性"],
+      "descriptions": "肠毒素引起水分和电解质的分泌，导致腹泻"
+    },
+    {
+      "chinese_name": "肠侵袭性大肠埃希氏菌",
+      "latin_name": "EIEC",
+      "resistance_gene": ["ipaH"],
+      "resistance_type": ["免疫逃逸"],
+      "reads_count": ["0"],
+      "resistance_drugs": ["阴性"],
+      "descriptions": "促进细菌侵入宿主细胞并触发免疫反应"
+    },
+    {
+      "chinese_name": "艰难梭菌",
+      "latin_name": "Clostridium difficile",
+      "resistance_gene": ["tcdA", "tcdB"],
+      "resistance_type": ["细胞破坏", "细胞破坏"],
+      "reads_count": ["0", "0"],
+      "resistance_drugs": ["阴性", "阴性"],
+      "descriptions": "破坏宿主细胞并引起炎症"
+    },
+    {
+      "chinese_name": "志贺肠毒素",
+      "latin_name": "Shiga toxin",
+      "resistance_gene": ["set1A", "set1B", "senB", "gtrA", "gtrB", "ipaH7.8", "ipaH9.8", "ipaH1.4", "ipaH2.5", "ipaH4.5"],
+      "resistance_type": ["细胞破坏", "细胞破坏", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸"],
+      "reads_count": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+      "resistance_drugs": ["阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性"],
+      "descriptions": "促进液体分泌，引起腹泻"
     }
   ],
   "organic_acids_data": [

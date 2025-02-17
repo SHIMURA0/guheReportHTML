@@ -668,12 +668,12 @@ tr {
   border-radius: 4px;
 }
 
-.reads-count.high {
+.reads-count.low {
   color: #059669;
   background-color: #d1fae5;
 }
 
-.reads-count.low {
+.reads-count.high {
   color: #dc2626;
   background-color: #fee2e2;
 }
@@ -686,6 +686,15 @@ tr {
   padding: 4px 0;
   width: 100%;
   align-items: flex-end; /* 右对齐 */
+}
+
+.genes-and-reads-stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0;
+  width: 100%;
+  align-items: center; /* 右对齐 */
 }
 
 /* 堆叠项样式 */
