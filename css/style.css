@@ -112,6 +112,11 @@ body {
     break-inside: avoid; /* 现代浏览器支持 */
     /*margin-top: 5px; !* 添加上边距 *!*/
   }
+  .metabolites-info-container {
+    page-break-inside: avoid; /* 防止在打印时分页 */
+    break-inside: avoid; /* 现代浏览器支持 */
+    /*margin-top: 5px; !* 添加上边距 *!*/
+  }
   /*.description-row td {*/
   /*  background-color: #f8f9fa; !* 可选：给描述行添加背景色 *!*/
   /*}*/
@@ -789,6 +794,16 @@ tr {
 }
 .microbial-metabolites-fourth-column {
   width: 25%;
+}
+
+/* 其他代谢物 */
+
+.metabolites-info-container {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metabolites-info-container:last-child {
+  border-bottom: none;
 }
 
 /* 免疫指标评估板块 */

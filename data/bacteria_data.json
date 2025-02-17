@@ -5533,13 +5533,11 @@
     {
       "chinese_name": "维生素K2",
       "latin_name": "Vitamin K2",
-      "normal_range": "5-95",
-      "detected_abundance": 9,
-      "progress_percentage": 9,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 5,
+        "normal_range_max": 95
       },
+      "detected_abundance": 9,
       "descriptions": [
         {
           "type": "info",
@@ -5551,13 +5549,11 @@
     {
       "chinese_name": "对甲酚",
       "latin_name": "p-Cresol",
-      "normal_range": "0-83",
-      "detected_abundance": 43,
-      "progress_percentage": 52,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 0,
+        "normal_range_max": 83
       },
+      "detected_abundance": 43,
       "descriptions": [
         {
           "type": "info",
@@ -5569,13 +5565,11 @@
     {
       "chinese_name": "肌醇",
       "latin_name": "Inositol",
-      "normal_range": "5-95",
-      "detected_abundance": 35,
-      "progress_percentage": 35,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 5,
+        "normal_range_max": 95
       },
+      "detected_abundance": 35,
       "descriptions": [
         {
           "type": "info",
@@ -5587,13 +5581,11 @@
     {
       "chinese_name": "苯酚",
       "latin_name": "Phenol",
-      "normal_range": "5-85",
-      "detected_abundance": 5,
-      "progress_percentage": 5,
-      "evaluation": {
-        "status": "正常",
-        "color": "green"
+      "normal_range": {
+        "normal_range_min": 5,
+        "normal_range_max": 85
       },
+      "detected_abundance": 5,
       "descriptions": [
         {
           "type": "info",
