@@ -12,10 +12,17 @@
 body {
   /* 设置字体族，从左到右按优先级排列 */
   font-family: "Microsoft YaHei", Arial, sans-serif; /* 如果找不到微软雅黑，就使用 Arial，如果 Arial 也没有，就使用系统默认无衬线字体 */
+  /*font-family: 'Source Han Sans', sans-serif; !* 使用思源黑体，并设置后备字体 *!*/
+  font-weight: 500; /* 使用 medium 字重 */
   margin: 0; /* 去掉默认边距 */
   padding: 20mm; /* 设置内边距 */
   box-sizing: border-box; /* 包含边框和内边距 */
 }
+
+/*b, strong {*/
+/*  font-family: 'Source Han Sans SC Bold', 'Source Han Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;*/
+/*  font-weight: 700;*/
+/*}*/
 
 .custom-title-1 {
   width: 95%; /* 设置标题宽度为页面宽度的85% */

@@ -11,6 +11,7 @@
 <!--  <link rel="stylesheet" href="file:///Users/shimura/WebstormProject/guheReport/css/style.css">-->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!--  <link href="https://fonts.googleapis.com/css2?family=Source+Han+Sans:wght@400;700&display=swap" rel="stylesheet">-->
 </head>
 
 <!-- 页面主体，四周内边距5-->
@@ -1046,7 +1047,7 @@
       }
 
       function calculateProgressPercentageForThirdColumn(value) {
-        if (value === "未检出" || value === 0) {
+        if (value === "ND" || value === 0) {
           return 0;
         }
 
@@ -6390,10 +6391,17 @@
                 <span>${currentValue === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                 <div class="progress-bar w-full mt-2">
                   <div class="progress"
-                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
-                              background-color: #00B2B4;
-                              transition: width 0.3s ease;">
-                  </div>
+     style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+            Math.min(100,
+              Math.max(0,
+                bacteria.detected_abundance <= 20
+                  ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                  : bacteria.detected_abundance
+              )
+            )}%;
+            background-color: #00B2B4;
+            transition: width 0.3s ease;">
+</div>
                 </div>
               </td>
               <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
@@ -6651,7 +6659,14 @@
                   <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                   <div class="progress-bar w-full mt-2">
                       <div class="progress"
-                           style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                           style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+                                  Math.min(100,
+                                    Math.max(0,
+                                      bacteria.detected_abundance <= 20
+                                        ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                                        : bacteria.detected_abundance
+                                    )
+                                  )}%;
                                   background-color: #00B2B4;
                                   transition: width 0.3s ease;">
                       </div>
@@ -6893,7 +6908,14 @@
                 <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                 <div class="progress-bar w-full mt-2">
                   <div class="progress"
-                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                       style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+                              Math.min(100,
+                                Math.max(0,
+                                  bacteria.detected_abundance <= 20
+                                    ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                                    : bacteria.detected_abundance
+                                )
+                              )}%;
                               background-color: #00B2B4;
                               transition: width 0.3s ease;">
                   </div>
@@ -7135,7 +7157,14 @@
                 <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                 <div class="progress-bar w-full mt-2">
                   <div class="progress"
-                       style="width: ${currentValue === "ND" ? "0" : calculateProgressPercentage(currentValue)}%;
+                       style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+                              Math.min(100,
+                                Math.max(0,
+                                  bacteria.detected_abundance <= 20
+                                    ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                                    : bacteria.detected_abundance
+                                )
+                              )}%;
                               background-color: #00B2B4;
                               transition: width 0.3s ease;">
                   </div>
@@ -7372,7 +7401,14 @@
                 <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                 <div class="progress-bar w-full mt-2">
                   <div class="progress"
-                       style="width: ${currentValue === "ND" ? 0 : calculateProgressPercentage(currentValue)}%;
+                       style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+                              Math.min(100,
+                                Math.max(0,
+                                  bacteria.detected_abundance <= 20
+                                    ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                                    : bacteria.detected_abundance
+                                )
+                              )}%;
                               background-color: #00B2B4;
                               transition: width 0.3s ease;">
                   </div>
@@ -7639,7 +7675,14 @@
                 <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
                 <div class="progress-bar w-full mt-2">
                   <div class="progress"
-                       style="width: ${calculateProgressPercentage(currentValue)}%;
+                       style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
+                              Math.min(100,
+                                Math.max(0,
+                                  bacteria.detected_abundance <= 20
+                                    ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
+                                    : bacteria.detected_abundance
+                                )
+                              )}%;
                               background-color: #00B2B4;
                               transition: width 0.3s ease;">
                   </div>
@@ -7934,16 +7977,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="staple-food-data-table-body">
@@ -8048,16 +8091,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="dairy-products-data-table-body">
@@ -8162,16 +8205,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="dried-fruits-data-table-body">
@@ -8276,16 +8319,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="fast-food-data-table-body">
@@ -8392,16 +8435,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="aquatic-products-data-table-body">
@@ -8508,16 +8551,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="fruit-data-table-body">
@@ -8623,16 +8666,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="soup-data-table-body">
@@ -8739,16 +8782,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="meat-data-table-body">
@@ -8855,16 +8898,16 @@
       <table class="min-w-full">
         <thead>
         <!-- 标题行 -->
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 7px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 7px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 7px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 7px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 7px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 7px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 7px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 7px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 7px;">胆固醇(mg)</th>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
+          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
+          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
+          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
+          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
+          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
+          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
+          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
+          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
         <tbody id="vegetables-data-table-body">
