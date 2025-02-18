@@ -25,27 +25,98 @@
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 基本信息行 -->
-    <div class="grid grid-cols-4 gap-4 mb-5">
+    <div class="grid grid-cols-4 gap-4 mb-2">
       <div class="summary-info-card">
         <div class="summary-title font-bold">姓名</div>
-        <div class="font-bold text-gray-800">张三</div>
+        <div class="font-bold text-gray-500">张三</div>
       </div>
       <div class="summary-info-card">
         <div class="summary-title font-bold">年龄</div>
-        <div class="font-bold text-gray-800">3岁0月</div>
+        <div class="font-bold text-gray-500">3岁0月</div>
       </div>
       <div class="summary-info-card">
         <div class="summary-title font-bold">样本编号</div>
-        <div class="font-bold text-gray-800">64XXXXX09</div>
+        <div class="font-bold text-gray-500">64XXXXX09</div>
       </div>
       <div class="summary-info-card">
         <div class="summary-title font-bold">报告日期</div>
-        <div class="font-bold text-gray-800">2024-04-05</div>
+        <div class="font-bold text-gray-500">2024-04-05</div>
       </div>
     </div>
 
     <!-- 健康总分和肠道年龄并排显示 -->
-    <div class="grid grid-cols-2 gap-4 mb-5">
+<!--    <div class="grid grid-cols-2 gap-4 mb-5">-->
+<!--      <div class="summary-info-card">-->
+<!--        <div class="summary-title mb-7"><b>健康总分</b></div>-->
+<!--        <div class="flex flex-col items-center">-->
+<!--          <div class="w-40 h-40 mb-5">-->
+<!--            <svg viewBox="0 0 100 100">-->
+<!--              <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>-->
+<!--              <circle class="summary-circle" cx="50" cy="50" r="45"-->
+<!--                      stroke-dasharray="282.7"-->
+<!--                      stroke-dashoffset="101.772"/>-->
+<!--              <text x="50" y="45"-->
+<!--                    class="summary-score-text"-->
+<!--                    text-anchor="middle"-->
+<!--                    dominant-baseline="middle"-->
+<!--                    font-size="30"-->
+<!--                    font-weight="bold"-->
+<!--                    fill="#FF5733">64</text>-->
+<!--              <text x="50" y="68"-->
+<!--                    class="summary-score-text"-->
+<!--                    text-anchor="middle"-->
+<!--                    font-size="10"-->
+<!--                    fill="#2DA6A8">总分: 100</text>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="summary-description text-center">-->
+<!--            处于亚健康及营养饮食不合理状态，表明目前健康状况处于中等偏下水平，主要原因是饮食营养不均衡，需要通过调整饮食结构和生活习惯来改善健康状况。-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="summary-info-card">-->
+<!--        <div class="summary-title mb-12"><b>肠道年龄</b></div>-->
+<!--        <div class="flex flex-col">-->
+<!--          <div class="relative w-full">-->
+<!--            &lt;!&ndash; 真实年龄部分 &ndash;&gt;-->
+<!--            <div class="mb-9">-->
+<!--              <div class="flex items-center">-->
+<!--                &lt;!&ndash; 标签文字 &ndash;&gt;-->
+<!--                <div class="text-gray-600 mr-4 w-20">实际年龄</div>-->
+<!--                &lt;!&ndash; 进度条和上方数字 &ndash;&gt;-->
+<!--                <div class="flex-1 relative">-->
+<!--                  <div class="absolute -top-6 left-[3%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">3岁</div>-->
+<!--                  <div class="summary-age-bar bg-gray-200">-->
+<!--                    <div class="summary-age-bar bg-blue-200" style="width: 3%"></div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; 肠道年龄部分 &ndash;&gt;-->
+<!--            <div>-->
+<!--              <div class="flex items-center">-->
+<!--                &lt;!&ndash; 标签文字 &ndash;&gt;-->
+<!--                <div class="text-gray-600 mr-4 w-20">肠道年龄</div>-->
+<!--                &lt;!&ndash; 进度条和上方数字 &ndash;&gt;-->
+<!--                <div class="flex-1 relative">-->
+<!--                  <div class="absolute -top-6 left-[5.47%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">5.47岁</div>-->
+<!--                  <div class="summary-age-bar bg-gray-200">-->
+<!--                    <div class="summary-age-bar" style="width: 5.47%; background-color: rgb(45, 166, 168)"></div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="summary-description mt-10">-->
+<!--            当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <!-- 健康总分和右侧三个框并排显示 -->
+    <div class="grid grid-cols-2 gap-4 mb-2">
+      <!-- 左侧健康总分 -->
       <div class="summary-info-card">
         <div class="summary-title mb-7"><b>健康总分</b></div>
         <div class="flex flex-col items-center">
@@ -74,20 +145,73 @@
           </div>
         </div>
       </div>
-      <div class="summary-info-card">
-        <div class="summary-title mb-12"><b>肠道年龄</b></div>
+
+      <!-- 右侧三个框堆叠 -->
+      <div class="flex flex-col gap-2 h-full">
+        <!-- 菌群健康 -->
+        <div class="flex-1 summary-info-card p-4">
+          <div class="summary-title font-bold mb-3">菌群健康</div>
+          <div class="flex w-full items-center">
+            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+              <div class="bg-[#FFD700] h-3 rounded-full" style="width: 73%"></div>
+            </div>
+            <div class="text-[#2DA6A8] font-bold w-16 text-right">
+              <span class="text-[#FFD700]">73</span>/100
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 mt-2">
+            肠道菌群多样性良好
+          </div>
+        </div>
+
+        <!-- 慢病控制 -->
+        <div class="flex-1 summary-info-card p-4">
+          <div class="summary-title font-bold mb-3">慢病控制</div>
+          <div class="flex w-full items-center">
+            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 81%"></div>
+            </div>
+            <div class="text-[#2DA6A8] font-bold w-16 text-right">
+              <span class="text-[#9ACD32]">81</span>/100
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 mt-2">
+            慢性疾病风险较低
+          </div>
+        </div>
+
+        <!-- 营养均衡 -->
+        <div class="flex-1 summary-info-card p-4">
+          <div class="summary-title font-bold mb-3">营养均衡</div>
+          <div class="flex w-full items-center">
+            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 80%"></div>
+            </div>
+            <div class="text-[#2DA6A8] font-bold w-16 text-right">
+              <span class="text-[#9ACD32]">80</span>/100
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 mt-2">
+            营养摄入基本均衡
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <!-- 肠道年龄容器 (占7份) -->
+      <div class="summary-info-card flex-[7]">
+        <div class="summary-title mb-10"><b>肠道年龄</b></div>
         <div class="flex flex-col">
           <div class="relative w-full">
             <!-- 真实年龄部分 -->
             <div class="mb-9">
               <div class="flex items-center">
-                <!-- 标签文字 -->
                 <div class="text-gray-600 mr-4 w-20">实际年龄</div>
-                <!-- 进度条和上方数字 -->
                 <div class="flex-1 relative">
-                  <div class="absolute -top-6 left-[3%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">3岁</div>
+                  <div class="absolute -top-6 left-[30%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">30岁</div>
                   <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar bg-blue-200" style="width: 3%"></div>
+                    <div class="summary-age-bar bg-blue-200" style="width: 30%"></div>
                   </div>
                 </div>
               </div>
@@ -95,35 +219,32 @@
             <!-- 肠道年龄部分 -->
             <div>
               <div class="flex items-center">
-                <!-- 标签文字 -->
                 <div class="text-gray-600 mr-4 w-20">肠道年龄</div>
-                <!-- 进度条和上方数字 -->
                 <div class="flex-1 relative">
-                  <div class="absolute -top-6 left-[5.47%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">5.47岁</div>
+                  <div class="absolute -top-6 left-[54.7%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">54.7岁</div>
                   <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar" style="width: 5.47%; background-color: rgb(45, 166, 168)"></div>
+                    <div class="summary-age-bar" style="width: 54.7%; background-color: rgb(45, 166, 168)"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="summary-description mt-10">
+          <div class="summary-description mt-5">
             当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="summary-info-card">
-      <div class="summary-title"><b>肠型</b></div>
-      <div class="flex gap-4 mt-4">
-        <!-- 拟杆菌型 -->
-        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">
-          <div class="p-3">
-            <div class="flex justify-between items-start mb-2">
+      <!-- 肠型容器 (占3份) -->
+      <div class="summary-info-card flex-[3]">
+        <div class="summary-title mb-3"><b>肠型</b></div>
+        <div class="flex flex-col gap-2">
+          <!-- 拟杆菌型 -->
+          <div class="rounded-xl bg-white p-3">
+            <div class="flex justify-between items-start">
               <div>
                 <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 A</span>
-                <h2 class="text-base font-bold text-gray-900">拟杆菌型</h2>
+                <h2 class="text-base font-bold text-gray-500">拟杆菌型</h2>
               </div>
               <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">
                 <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,27 +252,14 @@
                 </svg>
               </div>
             </div>
-            <div class="space-y-2">
-              <p class="text-gray-600 text-xs leading-relaxed">擅长分解复杂的植物纤维，与植物性饮食密切相关。</p>
-              <div class="space-y-1.5">
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">
-                  <span class="text-gray-700 text-[11px]">善于消化膳食纤维</span>
-                </div>
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">
-                  <span class="text-gray-700 text-[11px]">有益于肠道健康</span>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
 
-        <!-- 普雷沃氏菌型（当前用户类型） -->
-        <div class="w-1/3 rounded-2xl overflow-hidden" style="background: #D0E7FF"> <!-- 浅蓝色背景 -->
-          <div class="p-3">
-            <div class="flex justify-between items-start mb-2">
+          <!-- 普雷沃氏菌型（当前用户类型） -->
+          <div class="rounded-xl p-3" style="background: #D0E7FF">
+            <div class="flex justify-between items-start">
               <div>
-                <span class="text-[10px] font-medium text-blue-600 block mb-0.5">类型 B（您的类型）</span> <!-- 浅蓝色 -->
-                <h2 class="text-base font-bold text-gray-800">普雷沃氏菌型</h2> <!-- 深灰色 -->
+                <span class="text-[10px] font-medium text-blue-600 block mb-0.5">类型 B（您的类型）</span>
+                <h2 class="text-base font-bold text-gray-500">普雷沃氏菌型</h2>
               </div>
               <div class="w-6 h-6 rounded-lg bg-blue-600 bg-opacity-30 flex items-center justify-center">
                 <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,29 +267,14 @@
                 </svg>
               </div>
             </div>
-            <div class="space-y-2">
-              <p class="text-blue-600 text-xs leading-relaxed"> <!-- 浅蓝色 -->
-                以普雷沃氏菌为主导菌群，与高碳水化合物、高纤维的饮食方式相关。常见于偏好植物性食物的人群。
-              </p>
-              <div class="space-y-1.5">
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-blue-600 bg-opacity-30">
-                  <span class="text-white text-[11px]">高碳水化合物代谢能力</span>
-                </div>
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-blue-600 bg-opacity-30">
-                  <span class="text-white text-[11px]">适合植物性饮食</span>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
 
-        <!-- 厚壁菌型 -->
-        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">
-          <div class="p-3">
-            <div class="flex justify-between items-start mb-2">
+          <!-- 厚壁菌型 -->
+          <div class="rounded-xl bg-white p-3">
+            <div class="flex justify-between items-start">
               <div>
                 <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 C</span>
-                <h2 class="text-base font-bold text-gray-900">厚壁菌型</h2>
+                <h2 class="text-base font-bold text-gray-500">厚壁菌型</h2>
               </div>
               <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">
                 <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,21 +282,101 @@
                 </svg>
               </div>
             </div>
-            <div class="space-y-2">
-              <p class="text-gray-600 text-xs leading-relaxed">以厚壁菌为主要菌群，对脂肪和蛋白质的代谢能力较强，常见于高蛋白饮食。</p>
-              <div class="space-y-1.5">
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">
-                  <span class="text-gray-700 text-[11px]">脂肪代谢能力强</span>
-                </div>
-                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">
-                  <span class="text-gray-700 text-[11px]">促进肠道健康</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
+
+<!--    <div class="summary-info-card">-->
+<!--      <div class="summary-title"><b>肠型</b></div>-->
+<!--      <div class="flex gap-4 mt-4">-->
+<!--        &lt;!&ndash; 拟杆菌型 &ndash;&gt;-->
+<!--        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">-->
+<!--          <div class="p-3">-->
+<!--            <div class="flex justify-between items-start mb-2">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 A</span>-->
+<!--                <h2 class="text-base font-bold text-gray-900">拟杆菌型</h2>-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="space-y-2">-->
+<!--              <p class="text-gray-600 text-xs leading-relaxed">擅长分解复杂的植物纤维，与植物性饮食密切相关。</p>-->
+<!--              <div class="space-y-1.5">-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">-->
+<!--                  <span class="text-gray-700 text-[11px]">善于消化膳食纤维</span>-->
+<!--                </div>-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">-->
+<!--                  <span class="text-gray-700 text-[11px]">有益于肠道健康</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 普雷沃氏菌型（当前用户类型） &ndash;&gt;-->
+<!--        <div class="w-1/3 rounded-2xl overflow-hidden" style="background: #D0E7FF"> &lt;!&ndash; 浅蓝色背景 &ndash;&gt;-->
+<!--          <div class="p-3">-->
+<!--            <div class="flex justify-between items-start mb-2">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-blue-600 block mb-0.5">类型 B（您的类型）</span> &lt;!&ndash; 浅蓝色 &ndash;&gt;-->
+<!--                <h2 class="text-base font-bold text-gray-800">普雷沃氏菌型</h2> &lt;!&ndash; 深灰色 &ndash;&gt;-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-blue-600 bg-opacity-30 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="space-y-2">-->
+<!--              <p class="text-blue-600 text-xs leading-relaxed"> &lt;!&ndash; 浅蓝色 &ndash;&gt;-->
+<!--                以普雷沃氏菌为主导菌群，与高碳水化合物、高纤维的饮食方式相关。常见于偏好植物性食物的人群。-->
+<!--              </p>-->
+<!--              <div class="space-y-1.5">-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-blue-600 bg-opacity-30">-->
+<!--                  <span class="text-white text-[11px]">高碳水化合物代谢能力</span>-->
+<!--                </div>-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-blue-600 bg-opacity-30">-->
+<!--                  <span class="text-white text-[11px]">适合植物性饮食</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 厚壁菌型 &ndash;&gt;-->
+<!--        <div class="w-1/3 rounded-2xl bg-white overflow-hidden">-->
+<!--          <div class="p-3">-->
+<!--            <div class="flex justify-between items-start mb-2">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 C</span>-->
+<!--                <h2 class="text-base font-bold text-gray-900">厚壁菌型</h2>-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="space-y-2">-->
+<!--              <p class="text-gray-600 text-xs leading-relaxed">以厚壁菌为主要菌群，对脂肪和蛋白质的代谢能力较强，常见于高蛋白饮食。</p>-->
+<!--              <div class="space-y-1.5">-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">-->
+<!--                  <span class="text-gray-700 text-[11px]">脂肪代谢能力强</span>-->
+<!--                </div>-->
+<!--                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-gray-50">-->
+<!--                  <span class="text-gray-700 text-[11px]">促进肠道健康</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </div>
 
@@ -391,10 +564,30 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left basic-function-of-gut-first-column" style="font-size: 11px;">评估项目</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-second-column" style="font-size: 11px; padding: 5px 5px;">正常范围</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-third-column" style="font-size: 11px; padding: 5px 5px;">评估数值</th>
-          <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column" style="font-size: 11px; padding: 5px 5px;">结果评价</th>
+          <th
+            class="py-2 px-4 text-left basic-function-of-gut-first-column"
+            style="font-size: 11px;"
+          >
+            评估项目
+          </th>
+          <th
+            class="py-2 px-4 text-center basic-function-of-gut-second-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            参考范围
+          </th>
+          <th
+            class="py-2 px-4 text-center basic-function-of-gut-third-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center basic-function-of-gut-fourth-column"
+            style="font-size: 11px; padding: 5px 5px;"
+          >
+            结果评价
+          </th>
         </tr>
         </thead>
         <tbody id="basic-functions-of-gut-data-table-body">
@@ -441,14 +634,14 @@
                   ${eukaryotes.evaluated_value}
                   <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
                       <div class="progress ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
-                                    eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-green-500'} rounded-full h-2"
+                                    eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#4CAF50]'} rounded-full h-2"
                            style="width: ${Math.min(100, (eukaryotes.evaluated_value / eukaryotes.normal_range.max_normal_value * 100))}%;">
                       </div>
 
                   </div>
               </td>
               <td class="py-2 px-4 bold-text text-center text-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '[#ff4d4f]' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '[#ff4d4f]' : '[#52c41a]'} disease-column-text">
+              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '[#ff4d4f]' : '[#4CAF50]'} disease-column-text">
                 ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '异常' :
               eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '异常' : '正常'}
                 <i class="fas ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
@@ -5498,10 +5691,10 @@
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left nutrition-first-column">饮食指标</th>
-          <th class="py-2 px-4 text-center nutrition-second-column">正常范围（缺乏-不足-过量）</th>
-          <th class="py-2 px-4 text-center nutrition-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center nutrition-fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left nutrition-first-column" style="font-size: 10px;">饮食指标</th>
+          <th class="py-2 px-4 text-center nutrition-second-column" style="font-size: 10px; padding: 5px 5px;">正常范围（缺乏-不足-过量）</th>
+          <th class="py-2 px-4 text-center nutrition-third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
+          <th class="py-2 px-4 text-center nutrition-fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
         </tr>
         </thead>
         <tbody id="daily-food-data-table-body">
@@ -5622,10 +5815,10 @@
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left nutrition-first-column">评估指标</th>
-          <th class="py-2 px-4 text-center nutrition-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center nutrition-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center nutrition-fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left nutrition-first-column" style="font-size: 10px;">评估指标</th>
+          <th class="py-2 px-4 text-center nutrition-second-column" style="font-size: 10px; padding: 5px 5px;">正常范围</th>
+          <th class="py-2 px-4 text-center nutrition-third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
+          <th class="py-2 px-4 text-center nutrition-fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
         </tr>
         </thead>
         <tbody id="short-chain-fatty-acids-data-table-body">
@@ -5747,10 +5940,10 @@
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column">评估指标</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left first-column" style="font-size: 10px;">评估指标</th>
+          <th class="py-2 px-4 text-center second-column" style="font-size: 10px; padding: 5px 5px;">正常范围</th>
+          <th class="py-2 px-4 text-center third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
+          <th class="py-2 px-4 text-center fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
         </tr>
         </thead>
         <tbody id="vitamins-data-table-body">
@@ -5870,108 +6063,179 @@
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column">评估指标</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column">评估结果</th>
+          <th class="py-2 px-4 text-left first-column"
+              style="font-size: 11px;">
+            氨基酸名称
+          </th>
+          <th class="py-2 px-4 text-center second-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            正常范围
+          </th>
+          <th class="py-2 px-4 text-center third-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th class="py-2 px-4 text-center fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="amino-acids-data-table-body">
-        <!-- 数据行 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadAminoAcidsData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderAminoAcidsTable(data.amino_acids_data);
-          } catch (error) {
-            console.error('Error loading amino acids data:', error);
-          }
-        }
-
-        function renderAminoAcidsTable(aminoacidsData) {
-          const tableBody = document.getElementById('amino-acids-data-table-body');
-          if (!tableBody) {
-            console.error('Amino acids data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          aminoacidsData.forEach(aminoacids => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('amino-acids-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${aminoacids.chinese_name}</div>
-                <div class="latin-text">${aminoacids.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${[
-                    aminoacids.normal_range.Deficiency ?? 0,
-                    aminoacids.normal_range.Insufficiency ?? 0,
-                    aminoacids.normal_range.Excess ?? 0
-                  ].join('-')}
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                ${aminoacids.Evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="
-                    width: ${Math.min(100, Math.round((aminoacids.Evaluation_value / aminoacids.normal_range.Excess) * 100))}%;
-                    background-color: #00B2B4;
-                  "></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center column-text" style="
-                color: ${
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Deficiency ? '#ff4d4f' :
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Insufficiency ? '#fadb14' :
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Excess ? '#52c41a' : '#1890ff'
-                };
-                font-weight : bold;
-              ">
-                ${
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Deficiency ? '缺乏' :
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Insufficiency ? '不足' :
-                  aminoacids.Evaluation_value < aminoacids.normal_range.Excess ? '正常' : '过量'
-                }
-              </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('amino-acids-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${aminoacids.descriptions.map(desc => `
-                    <div class="amino-acids-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadAminoAcidsData);
-      </script>
-
+      <div id="amino-acids-data-table-body">
+        <!-- Data rows will be generated by Javascript code dynamically -->
+      </div>
     </div>
+
+    <script>
+      async function loadAminoAcidsData() {
+        try {
+          const response = await fetch('./data/bacteria_data.json');
+          const data = await response.json();
+          renderAminoAcidsTable(data.amino_acids_data);
+        } catch (error) {
+          console.error('Error loading amino acids data:', error);
+        }
+      }
+
+      function getStatusColor(value, deficiency, insufficiency, excess) {
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          yellow: '#fadb14',
+          green: '#389e0d',
+          blue: '#1890ff'
+        };
+
+        if (value < deficiency) return CUSTOM_COLORS.red;
+        if (value < insufficiency) return CUSTOM_COLORS.yellow;
+        if (value < excess) return CUSTOM_COLORS.green;
+        return CUSTOM_COLORS.blue;
+      }
+
+      function getStatusText(value, deficiency, insufficiency, excess) {
+        if (value < deficiency) return '缺乏';
+        if (value < insufficiency) return '不足';
+        if (value < excess) return '正常';
+        return '过量';
+      }
+
+      function getStatusIcon(status) {
+        if (status === '缺乏' || status === '不足') {
+          return '<i class="fas fa-arrow-down ml-1"></i>';
+        } else if (status === '过量') {
+          return '<i class="fas fa-arrow-up ml-1"></i>';
+        }
+        return '';
+      }
+
+      function calculateProgressPercentage(value, excess) {
+        if (value === "ND" || value === 0) {
+          return 0;
+        }
+        const percentage = (value / excess) * 50; // 最大宽度设为50%
+        return Math.max(5, Math.min(50, percentage));
+      }
+
+      function renderAminoAcidsTable(aminoacidsData) {
+        const container = document.getElementById('amino-acids-data-table-body');
+        if (!container) {
+          console.error('Amino acids table body not found');
+          return;
+        }
+
+        container.innerHTML = '';
+
+        aminoacidsData.forEach(aminoacids => {
+          const aminoAcidsContainer = document.createElement('div');
+          aminoAcidsContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table';
+
+          const status = getStatusText(
+            aminoacids.Evaluation_value,
+            aminoacids.normal_range.Deficiency,
+            aminoacids.normal_range.Insufficiency,
+            aminoacids.normal_range.Excess
+          );
+          const isNormal = status === '正常';
+
+          const dataRow = `
+        <tr class="amino-acids-data-row">
+          <td class="py-2 px-4 text-left first-column">
+            <div class="chinese-text">${aminoacids.chinese_name}</div>
+            <div class="latin-text">${aminoacids.english_name}</div>
+          </td>
+          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
+            ${[
+            aminoacids.normal_range.Deficiency ?? 0,
+            aminoacids.normal_range.Insufficiency ?? 0,
+            aminoacids.normal_range.Excess ?? 0
+          ].join('-')}
+          </td>
+          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
+            ${aminoacids.Evaluation_value}
+            <div class="progress-bar w-full mt-1">
+              <div class="progress"
+                   style="width: ${calculateProgressPercentage(aminoacids.Evaluation_value, aminoacids.normal_range.Excess)}%;
+                          background-color: #00B2B4;
+                          transition: width 0.3s ease;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
+            <span style="color: ${getStatusColor(
+            aminoacids.Evaluation_value,
+            aminoacids.normal_range.Deficiency,
+            aminoacids.normal_range.Insufficiency,
+            aminoacids.normal_range.Excess
+          )}; font-weight: bold;">
+              ${status}${getStatusIcon(status)}
+            </span>
+          </td>
+        </tr>
+      `;
+
+          const filteredDescriptions = aminoacids.descriptions.filter(desc =>
+            desc.type === 'info' || (!isNormal && desc.type === 'warning')
+          );
+
+          const descRow = filteredDescriptions.length > 0 ? `
+        <tr class="amino-acids-data-row">
+          <td colspan="6" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600 mt-0.5" style="font-size: 10px;">
+              ${filteredDescriptions.map(desc => `
+                <div class="flex items-start">
+                  <div class="ml-1">
+                    <p>
+                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
+                         style="color: ${desc.color};">
+                      </i>
+                      ${desc.text}
+                      <ul class="list-disc ml-5" style="margin-top: 10px; margin-bottom: -5px;">
+                        <li><strong>超标的影响：</strong> 超标可能导致健康风险，包括但不限于心脏病、高血压及其他代谢性疾病。</li>
+                        <li><strong>偏低的影响：</strong> 偏低的水平可能导致营养不足、免疫力下降以及其他相关健康问题。</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </td>
+        </tr>
+      ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          aminoAcidsContainer.appendChild(table);
+          container.appendChild(aminoAcidsContainer);
+        });
+      }
+
+      // 页面加载时加载数据
+      document.addEventListener('DOMContentLoaded', loadAminoAcidsData);
+    </script>
 
   </div>
 
@@ -6127,7 +6391,7 @@
 
   <!-- 疾病症状相关菌首页 -->
 
-  <h1 class="custom-title-1 page-break">疾病症状相关菌</h1>
+  <h1 class="custom-title-second-level page-break">疾病症状相关菌</h1>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -6206,11 +6470,100 @@
 
   </div>
 
+  <!-- 疾病相关菌阅读指南 -->
+  <h1 class="custom-title-third-level page-break">疾病症状相关菌-阅读指南</h1>
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;"
+  >
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            临床研究数据揭示，肠道菌群丰度特征与疾病发生呈现显著相关性。特定菌群失调（如拟杆菌/厚壁菌比值异常）与代谢性疾病（肥胖、糖尿病）、免疫性疾病（过敏、IBD）及神经精神类疾病（抑郁、自闭症）存在明确生物标志物关联。通过菌群检测可识别微生态失衡特征，为疾病早期预警和精准干预提供重要依据。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 问答信息框 -->
+    <div class="qa-box">
+      <div class="flex items-start ml-2">
+        <p class="text-lg font-bold text-lightpurple">
+          <i class="fas fa-question-circle icon icon-purple"></i>
+          如何阅读疾病症状相关菌的表格？
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <p class="answer-text">
+          <i class="fas fa-comments icon icon-orange"></i>
+          以下是对疾病症状相关菌的表格各列进行的说明解释：
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <ul style="margin-left: 50px; list-style-type: disc;">
+          <li class="answer-text">
+            <strong>疾病症状相关菌名称：</strong>
+            这一列列出特定的细菌名称，这些细菌与某些疾病症状有直接关联。通过识别这些细菌，可以帮助医生和研究人员更好地理解肠道菌群如何影响健康状况。
+          </li>
+          <li class="answer-text">
+            <strong>参考范围%：</strong>
+            此列显示该细菌在健康人群中的正常丰度范围，以百分比表示。此范围为比较您的检测结果提供了参考标准，有助于判断当前细菌丰度是否正常。
+          </li>
+          <li class="answer-text">
+            <strong>检测丰度%：</strong>
+            这一列显示经过检测后您体内该菌的相对丰度，以百分比形式展示。这一数据可用于评估您是否处于参考范围内，并决定接下来是否需要进一步的干预或调整。
+          </li>
+          <li class="answer-text">
+            <strong>超过%的人：</strong>
+            此列提供在检测中丰度超过正常范围的个体百分比。这一数据可以帮助您了解在大人群样本中，多少比例的人存在同样的细菌丰度问题，并为疾病风险评估提供支持。
+          </li>
+          <li class="answer-text">
+            <strong>相关性：</strong>
+            这一列标示该菌丰度与特定疾病症状之间的关系。若标记为“正相关”，则表示细菌丰度的升高与症状呈正相关；若标记为“负相关”，则表示细菌丰度的降低与症状呈负相关。此信息有助于快速识别潜在的健康风险。
+          </li>
+          <li class="answer-text">
+            <strong>相关性强度：</strong>
+            这一列表明相关性证据的强度，分为1到3级。级别1表明依据的是单一研究或人群数据统计，级别2表示基于大规模人群样本统计和至少一项研究的支持，而级别3则表示有大量研究论文对此结果的确认。相关性强度的分级可以帮助判断结果的可靠性及其在临床上的应用价值。
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- 问答信息框 -->
+    <div class="qa-box">
+      <div class="flex items-start ml-2">
+        <p class="text-lg font-bold text-lightpurple">
+          <i class="fas fa-question-circle icon icon-purple"></i>
+          如何阅读疾病症状相关菌的表格？
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <p class="answer-text">
+          <i class="fas fa-comments icon icon-orange"></i>
+          肠道菌群的宏基因组是指从肠道微生物群体中提取的所有微生物（如细菌、古菌、真菌和病毒等）的遗传物质（DNA）进行分析和研究的领域。宏基因组报告提供更为详尽和全面的微生物分析，可以揭示微生物的功能和相互作用，而16S rRNA报告则更侧重于分类学上的信息，适合用作微生物群落的初步分析。
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
   <!-- 疾病症状相关菌 : 肥胖相关菌 -->
 
-  <h2 class="custom-title-1 page-break">肥胖相关菌</h2>
+  <h2
+    class="custom-title-third-level page-break">
+    肥胖相关菌
+  </h2>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;"
+  >
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">

@@ -245,6 +245,21 @@ body {
   font-weight: normal; /* 使文本不加粗 */
 }
 
+.qa-box ul {
+  font-size: 0.85rem; /* 列表字体大小 */
+  margin: 0; /* 去掉列表的外边距 */
+  padding: 0; /* 去掉列表的内边距 */
+  line-height: 1.7; /* 设置行高，调整行距 */
+  list-style-type: disc; /* 设置列表项目符号样式 */
+  margin-left: 20px; /* 设置列表的左侧缩进 */
+}
+
+.qa-box li {
+  font-weight: normal; /* 使列表项文本不加粗 */
+  margin-bottom: 0.5rem; /* 控制列表项之间的间距 */
+}
+
+
 
 /* 肠道整体评估 : 肠道基础功能 */
 
