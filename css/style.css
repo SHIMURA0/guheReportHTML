@@ -74,7 +74,7 @@ body {
 
 .custom-title-third-level {
   width: 94%; /* 设置标题宽度为页面宽度的85% */
-  margin: 0 auto 20px auto;  /* 上 右 下 左 */
+  margin: 0 auto 10px auto;  /* 上 右 下 左 */
   padding: 5px; /* 内边距 */
   background-color: rgba(0, 178, 180, 0.1); /* 背景色，带透明度 */
   border-radius: 8px; /* 圆角 */
