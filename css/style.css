@@ -124,13 +124,18 @@ body {
     break-inside: avoid; /* 现代浏览器支持 */
     /*margin-top: 5px; !* 添加上边距 *!*/
   }
+
+  /*.description-row {*/
+  /*  page-break-inside: avoid; !* 防止在打印时分页 *!*/
+  /*  break-inside: avoid; !* 现代浏览器支持 *!*/
+  /*}*/
   /*.description-row td {*/
   /*  background-color: #f8f9fa; !* 可选：给描述行添加背景色 *!*/
   /*}*/
 
-  td {
-    page-break-inside: avoid;
-  }
+  /*td {*/
+  /*  page-break-inside: avoid;*/
+  /*}*/
 
   .resistance-info-container:nth-child(even) .resistance-row {
     -webkit-print-color-adjust: exact !important;
@@ -378,7 +383,7 @@ body {
   padding: 5px; /* 内边距 */
   margin-top: -8px; /* 设置负上边距 */
   font-size: 0.5rem; /* 描述框内字体大小 */
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .description-container > div {
   padding: 2px; /* 增加内边距 */

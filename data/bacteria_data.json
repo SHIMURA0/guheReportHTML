@@ -7032,7 +7032,7 @@
         {
           "type": "info",
           "color": "#3498db",
-          "text": "肥胖人群丰度明显增加，能够产生酒精，从而导致血液中酒精水平升高，可能是肥胖人群易患非酒精性脂肪性肝的原因之一。"
+          "text": "肥胖人群丰度明显增加，能够产生酒精，从而导致血液中酒精水平升高，可能是肥胖人群易患非酒精性脂肪性肝的"
         },
         {
           "type": "warning",
@@ -7217,7 +7217,7 @@
     },
     {
       "chinese_name": "牙龈卟啉单胞菌",
-      "latin_name": "Porphyromonas gingivalis",
+      "latin_name": " P. gingivalis",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0.05
@@ -7246,7 +7246,7 @@
     },
     {
       "chinese_name": "活波瘤胃球菌",
-      "latin_name": "Ruminococcus gnavus",
+      "latin_name": "R. gnavus",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0.05
@@ -7565,7 +7565,7 @@
     },
     {
       "chinese_name": "具核梭杆菌",
-      "latin_name": "Fusobacterium nucleatum",
+      "latin_name": "F. nucleatum",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0.05
@@ -7594,7 +7594,7 @@
     },
     {
       "chinese_name": "扭链瘤胃球菌",
-      "latin_name": "Ruminococcus torques",
+      "latin_name": "R. torques",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 3.8364
@@ -7855,7 +7855,7 @@
     },
     {
       "chinese_name": "赭色噬帽菌",
-      "latin_name": "Capnocytophaga ochracea",
+      "latin_name": "C. ochracea",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0
@@ -7884,7 +7884,7 @@
     },
     {
       "chinese_name": "柯氏菌",
-      "latin_name": "Collinsella aerofaciens",
+      "latin_name": "C. aerofaciens",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 10.121
@@ -7913,7 +7913,7 @@
     },
     {
       "chinese_name": "长链多尔氏菌",
-      "latin_name": "Dorea longicatena",
+      "latin_name": "D. longicatena",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 4.2889
@@ -7942,7 +7942,7 @@
     },
     {
       "chinese_name": "史氏甲烷短杆菌",
-      "latin_name": "Methanobrevibacter smithii",
+      "latin_name": "M. smithii",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 3.3301
@@ -7971,7 +7971,7 @@
     },
     {
       "chinese_name": "血链球菌",
-      "latin_name": "Streptococcus sanguinis",
+      "latin_name": "S. sanguinis",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 0.05
@@ -8000,7 +8000,7 @@
     },
     {
       "chinese_name": "艾克曼菌",
-      "latin_name": "Akkermansia muciniphila",
+      "latin_name": "A. muciniphila",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 6.6395
@@ -8116,7 +8116,7 @@
     },
     {
       "chinese_name": "卵形拟杆菌",
-      "latin_name": "Bacteroides ovatus",
+      "latin_name": "B. ovatus",
       "normal_range": {
         "normal_range_min": 0,
         "normal_range_max": 3.0624
