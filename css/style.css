@@ -378,6 +378,7 @@ body {
   padding: 5px; /* 内边距 */
   margin-top: -8px; /* 设置负上边距 */
   font-size: 0.5rem; /* 描述框内字体大小 */
+  line-height: 1.6;
 }
 .description-container > div {
   padding: 2px; /* 增加内边距 */
@@ -1120,6 +1121,54 @@ tr {
 .insomnia {
   background: #3d405b;
 }
+
+/* 疾病症状相关菌板块 : 肥胖表格列样式 */
+
+.obesity-first-column {
+  width: 27.5%; /* 正常范围数值 */
+}
+
+.obesity-second-column {
+  width: 15%; /* 正常范围数值 */
+}
+
+.obesity-third-column {
+  width: 20%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.obesity-fourth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.obesity-fifth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.obesity-sixth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.obesity-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: bold; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+.obesity-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+
+.obesity-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
 
 /* 疾病相关菌表格样式 */
 
