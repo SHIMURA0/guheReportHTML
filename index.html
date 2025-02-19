@@ -25,24 +25,74 @@
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 基本信息行 -->
-    <div class="grid grid-cols-4 gap-4 mb-2">
-      <div class="summary-info-card">
-        <div class="summary-title font-bold">姓名</div>
-        <div class="font-bold text-gray-500">张三</div>
+    <div class="grid grid-cols-2 gap-4 mb-2">
+      <!-- 左边三个 summary-info-card -->
+      <div class="flex gap-2">
+        <div class="summary-info-card" style="flex: 75;">
+          <div class="summary-title font-bold">姓名</div>
+          <div class="font-bold text-gray-500">张三</div>
+        </div>
+        <div class="summary-info-card" style="flex: 75;">
+          <div class="summary-title font-bold">性别</div>
+          <div class="font-bold text-gray-500">男性</div>
+        </div>
+        <div class="summary-info-card" style="flex: 100;">
+          <div class="summary-title font-bold">年龄</div>
+          <div class="font-bold text-gray-500">3岁0月</div>
+        </div>
       </div>
-      <div class="summary-info-card">
-        <div class="summary-title font-bold">年龄</div>
-        <div class="font-bold text-gray-500">3岁0月</div>
-      </div>
-      <div class="summary-info-card">
-        <div class="summary-title font-bold">样本编号</div>
-        <div class="font-bold text-gray-500">64XXXXX09</div>
-      </div>
-      <div class="summary-info-card">
-        <div class="summary-title font-bold">报告日期</div>
-        <div class="font-bold text-gray-500">2024-04-05</div>
+
+      <!-- 右边两个 summary-info-card -->
+      <div class="flex gap-2">
+        <div class="summary-info-card flex-1">
+          <div class="summary-title font-bold">样本编号</div>
+          <div class="font-bold text-gray-500">681364179</div>
+        </div>
+        <div class="summary-info-card flex-1">
+          <div class="summary-title font-bold">报告日期</div>
+          <div class="font-bold text-gray-500">2025-02-11</div>
+        </div>
       </div>
     </div>
+
+
+    <!--    <div class="flex w-full gap-4 mb-2">-->
+<!--      &lt;!&ndash; 第一列：15% &ndash;&gt;-->
+<!--      <div class="flex-[15] summary-info-card">-->
+<!--        <div class="summary-title font-bold">姓名</div>-->
+<!--        <div class="font-bold text-gray-500">张三</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第二列：15% &ndash;&gt;-->
+<!--      <div class="flex-[15] summary-info-card">-->
+<!--        <div class="summary-title font-bold">性别</div>-->
+<!--        <div class="font-bold text-gray-500">男性</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第三列：20% &ndash;&gt;-->
+<!--      <div class="flex-[15] summary-info-card">-->
+<!--        <div class="summary-title font-bold">年龄</div>-->
+<!--        <div class="font-bold text-gray-500">3岁0月</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第四列：25% &ndash;&gt;-->
+<!--      <div class="flex-[25] summary-info-card">-->
+<!--        <div class="summary-title font-bold">样本编号</div>-->
+<!--        <div class="font-bold text-gray-500">64XXXXX09</div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 第五列：25% &ndash;&gt;-->
+<!--      <div class="flex-[25] summary-info-card">-->
+<!--        <div class="summary-title font-bold">报告日期</div>-->
+<!--        <div class="font-bold text-gray-500">2024-04-05</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+
+
+
 
     <!-- 健康总分和肠道年龄并排显示 -->
 <!--    <div class="grid grid-cols-2 gap-4 mb-5">-->
