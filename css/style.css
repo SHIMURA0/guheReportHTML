@@ -117,6 +117,10 @@ body {
   .bacteria-info-container {
     page-break-inside: avoid; /* 防止在打印时分页 */
     break-inside: avoid; /* 现代浏览器支持 */
+    /* 添加以下样式 */
+    min-height: fit-content;    /* 确保容器高度适应内容 */
+    overflow: visible;          /* 防止内容被截断 */
+    margin-bottom: 2px;        /* 增加一点间距，避免临界值问题 */latin
     /*margin-top: 5px; !* 添加上边距 *!*/
   }
   .metabolites-info-container {
@@ -411,6 +415,8 @@ body {
   /*margin-bottom: -5px;*/
   line-height: 1; /* 设置行高为1，减少行间距 */
   /*font-style: italic; !* 设置文本为斜体 *!*/
+  max-height: 2.4em;         /* 限制最大高度为两行 */
+  overflow: hidden;          /* 超出部分隐藏 */
 }
 .column-text {
   font-size: 0.6rem; /* 控制每一列的字体大小 */
