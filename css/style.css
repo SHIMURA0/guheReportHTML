@@ -1060,6 +1060,19 @@ tr {
   transform: translateX(-50%);
 }
 
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.slow-disease-summary-info-card {
+  /*background-color: rgba(236, 254, 255, 0.5);*/
+  background-color: rgba(211, 211, 211, 0.15);
+  border-radius: 12px;
+  padding: 2px;
+  /*margin-bottom: 2px;*/
+}
+
 
 /* 疾病相关菌 */
 
