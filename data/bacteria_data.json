@@ -389,7 +389,7 @@
         "normal_range_min": 0.0001,
         "normal_range_max": 0.5535
       },
-      "detected_abundance": "未检出",
+      "detected_abundance": "ND",
       "higher_than_percentage": 27,
       "normal_detection_rate": 77.88,
       "descriptions": [
@@ -10747,45 +10747,6 @@
       "starch": 1,
       "fiber": 3,
       "cholesterol": 0
-    }
-  ],
-
-  "fast_food_data": [
-    {
-      "chinese_name": "比萨",
-      "english_name": "Pizza",
-      "evaluation_value": -27,
-      "calories": 1121,
-      "protein": 10,
-      "fat": 12,
-      "carbohydrates": 29,
-      "starch": 18,
-      "fiber": 2,
-      "cholesterol": 14
-    },
-    {
-      "chinese_name": "热狗",
-      "english_name": "Hot Dog",
-      "evaluation_value": -53,
-      "calories": 1167,
-      "protein": 9,
-      "fat": 3,
-      "carbohydrates": 50,
-      "starch": 36,
-      "fiber": 1,
-      "cholesterol": 0
-    },
-    {
-      "chinese_name": "鸡米花",
-      "english_name": "Chicken Nuggets",
-      "evaluation_value": -61,
-      "calories": 1469,
-      "protein": 17,
-      "fat": 21,
-      "carbohydrates": 18,
-      "starch": 1,
-      "fiber": 1,
-      "cholesterol": 40
     }
   ],
 
