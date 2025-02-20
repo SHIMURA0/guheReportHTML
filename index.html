@@ -616,6 +616,7 @@
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
+    <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
         <div class="ml-2">
@@ -627,124 +628,155 @@
       </div>
     </div>
 
+    <!-- 肠道基础功能表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th
-            class="py-2 px-4 text-left basic-function-of-gut-first-column"
-            style="font-size: 11px;"
-          >
-            评估项目
+          <th class="py-2 px-4 text-left basic-function-of-gut-first-column"
+              style="font-size: 13px;">
+            肠道基础功能项目
           </th>
-          <th
-            class="py-2 px-4 text-center basic-function-of-gut-second-column"
-            style="font-size: 11px; padding: 5px 5px;"
-          >
+          <th class="py-2 px-4 text-center basic-function-of-gut-second-column"
+              style="font-size: 13px; padding: 5px 5px;">
             参考范围
           </th>
-          <th
-            class="py-2 px-4 text-center basic-function-of-gut-third-column"
-            style="font-size: 11px; padding: 5px 5px;"
-          >
+          <th class="py-2 px-4 text-center basic-function-of-gut-third-column"
+              style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th
-            class="py-2 px-4 text-center basic-function-of-gut-fourth-column"
-            style="font-size: 11px; padding: 5px 5px;"
-          >
+          <th class="py-2 px-4 text-center basic-function-of-gut-fourth-column"
+              style="font-size: 13px; padding: 5px 5px;">
             结果评价
           </th>
         </tr>
         </thead>
-        <tbody id="basic-functions-of-gut-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadBasicFunctionOfGutData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderBasicFunctionOfGutTable(data.basic_function_of_gut_data);
-          } catch (error) {
-            console.error('Error loading detected gut eukaryotes data:', error);
-          }
-        }
-
-        function renderBasicFunctionOfGutTable(detectedGutFungiData) {
-          const tableBody = document.getElementById('basic-functions-of-gut-data-table-body');
-          if (!tableBody) {
-            console.error('Detected gut eukaryotes data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          detectedGutFungiData.forEach(eukaryotes => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('depression-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                  <div class="chinese-text">${eukaryotes.chinese_name}</div>
-                  <div class="latin-text text-gray-500">${eukaryotes.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center disease-column-text">
-                  ${[
-              eukaryotes.normal_range.min_normal_value ?? 0,
-              eukaryotes.normal_range.max_normal_value ?? 0
-            ].join('-')}
-              </td>
-              <td class="py-2 px-4 text-center disease-column-text">
-                  ${eukaryotes.evaluated_value}
-                  <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-                      <div class="progress ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
-                                    eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#4CAF50]'} rounded-full h-2"
-                           style="width: ${Math.min(100, (eukaryotes.evaluated_value / eukaryotes.normal_range.max_normal_value * 100))}%;">
-                      </div>
-
-                  </div>
-              </td>
-              <td class="py-2 px-4 bold-text text-center text-${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '[#ff4d4f]' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '[#ff4d4f]' : '[#4CAF50]'} disease-column-text">
-                ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? '异常' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? '异常' : '正常'}
-                <i class="fas ${eukaryotes.evaluated_value < eukaryotes.normal_range.min_normal_value ? 'fa-arrow-down' :
-              eukaryotes.evaluated_value > eukaryotes.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
-              </td>
-
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('detected-gut-eukaryotes-data-desc-row')
-            // colSpan="7" 因为肥胖相关菌的表格有7列
-            descRow.innerHTML = `
-              <td colSpan="7" class="py-2 px-4 text-left">
-                  <div class="description-container text-gray-600" style="font-size: 10px;">
-                      ${eukaryotes.descriptions.map(desc => `
-                          <div class="detected-gut-eukaryotes-description">
-                              <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                 style="color: ${desc.color};"></i>
-                              ${desc.text}
-                          </div>
-                      `).join('')}
-                  </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadBasicFunctionOfGutData);
-      </script>
+      <div id="basic-functions-of-gut-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
+
+    <script>
+      async function loadBasicFunctionOfGutData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          const data = await response.json();
+          renderBasicFunctionOfGutTable(data.basic_function_of_gut_data);
+        } catch (error) {
+          console.error('Error loading basic function of gut data:', error);
+        }
+      }
+
+      function calculateProgressPercentage(value, maxValue) {
+        if (!value || !maxValue) return 0;
+        const percentage = (value / maxValue) * 100;
+        return Math.min(100, Math.max(5, percentage));
+      }
+
+      function renderBasicFunctionOfGutTable(functionData) {
+        const container = document.getElementById('basic-functions-of-gut-data-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          gray: '#808080'
+        };
+
+        functionData.forEach(item => {
+          let statusColor, statusText, statusIcon;
+          const value = item.evaluated_value;
+          const minRange = item.normal_range.min_normal_value;
+          const maxRange = item.normal_range.max_normal_value;
+
+          let isNormal = true;
+
+          if (value < minRange) {
+            statusColor = 'red';
+            statusText = '异常';
+            statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+            isNormal = false;
+          } else if (value > maxRange) {
+            statusColor = 'red';
+            statusText = '异常';
+            statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+            isNormal = false;
+          } else {
+            statusColor = 'green';
+            statusText = '正常';
+            statusIcon = '';
+          }
+
+          const itemContainer = document.createElement('div');
+          itemContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table min-w-full';
+
+          const dataRow = `
+      <tr>
+        <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
+          <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
+          <div class="core-gut-bacteria-latin-text">${item.latin_name}</div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-second-column">
+          ${minRange}-${maxRange}
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-third-column">
+          <div class="flex items-center justify-center">
+            <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
+              ${value}
+            </span>
+            ${!isNormal ? `<i class="fas fa-arrow-${value < minRange ? 'down' : 'up'} ml-1" style="color: ${CUSTOM_COLORS.red};"></i>` : ''}
+          </div>
+          <div class="progress-bar w-full mt-1">
+            <div class="progress mt-2"
+                 style="width: ${calculateProgressPercentage(value, maxRange)}%;
+                        background-color: ${!isNormal ? CUSTOM_COLORS.red : '#00B2B4'};
+                        transition: width 0.3s ease;">
+            </div>
+          </div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-fourth-column">
+          <span style="color: ${CUSTOM_COLORS[statusColor]}">
+            ${statusText}${statusIcon}
+          </span>
+        </td>
+      </tr>
+    `;
+
+          const descRow = item.descriptions.length > 0 ? `
+      <tr class="virus-desc-row">
+        <td colspan="4" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600" style="font-size: 10px;">
+            ${item.descriptions.map(desc => `
+              <div class="flex items-start">
+                <div class="ml-1">
+                  <p>
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};">
+                    </i>
+                    ${desc.text}
+                  </p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </td>
+      </tr>
+    ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          itemContainer.appendChild(table);
+          container.appendChild(itemContainer);
+        });
+      }
+
+      // 页面加载时调用
+      document.addEventListener('DOMContentLoaded', loadBasicFunctionOfGutData);
+    </script>
 
   </div>
 
@@ -753,6 +785,7 @@
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
+    <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
         <div class="ml-2">
@@ -764,102 +797,151 @@
       </div>
     </div>
 
+    <!-- 肠道菌群整体评估表格 -->
     <div class="rounded-table">
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left overall-evaluation-of-gut-first-column">评估项目</th>
-          <th class="py-2 px-4 text-center overall-evaluation-of-gut-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center overall-evaluation-of-gut-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center overall-evaluation-of-gut-fourth-column">结果评价</th>
+          <th class="py-2 px-4 text-left overall-evaluation-of-gut-first-column" style="font-size: 13px;">
+            肠道菌群整体项目
+          </th>
+          <th class="py-2 px-4 text-center overall-evaluation-of-gut-second-column" style="font-size: 13px; padding: 5px 5px;">
+            参考范围
+          </th>
+          <th class="py-2 px-4 text-center overall-evaluation-of-gut-third-column" style="font-size: 13px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th class="py-2 px-4 text-center overall-evaluation-of-gut-fourth-column" style="font-size: 13px; padding: 5px 5px;">
+            结果评价
+          </th>
         </tr>
         </thead>
-        <tbody id="overall-evaluation-of-gut-microbiome-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadEvaluationOfGutMicrobiomeData() {
-          try {
-            const response = await fetch('./data/bacteria_data.json');
-            const data = await response.json();
-            renderEvaluationOfGutMicrobiomeTable(data.overall_evaluation_of_gut_microbiome_data);
-          } catch (error) {
-            console.error('Error loading overall evaluation of gut microbiome data:', error);
-          }
-        }
-
-        function renderEvaluationOfGutMicrobiomeTable(overallGutMicrobiomeData) {
-          const tableBody = document.getElementById('overall-evaluation-of-gut-microbiome-data-table-body');
-          if (!tableBody) {
-            console.error('Overall evaluation of gut microbiome data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          overallGutMicrobiomeData.forEach(microbiome => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('overall-evaluation-of-gut-data-row');
-            dataRow.innerHTML = `
-                <td class="py-2 px-4 text-left first-column">
-                    <div class="chinese-text">${microbiome.chinese_name}</div>
-                    <div class="latin-text text-gray-500">${microbiome.latin_name}</div>
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${[
-              microbiome.normal_range.min_normal_value ?? 0,
-              microbiome.normal_range.max_normal_value ?? 0
-            ].join('-')}
-                </td>
-                <td class="py-2 px-4 text-center disease-column-text">
-                    ${microbiome.evaluated_value}
-                    <div class="progress-bar w-full mt-1 bg-gray-200 rounded-full h-2">
-    <div class="progress ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'bg-[#ff4d4f]' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'bg-[#ff4d4f]' : 'bg-[#389e0d]'} rounded-full h-2"
-         style="width: ${Math.min(100, (microbiome.evaluated_value / microbiome.normal_range.max_normal_value * 100))}%;">
+      <div id="overall-evaluation-of-gut-microbiome-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
     </div>
-</div>
-                </td>
-                <td class="py-2 px-4 bold-text text-center text-${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '[#ff4d4f]' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '[#ff4d4f]' : '[#389e0d]'} disease-column-text">
-                  ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? '异常' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? '异常' : '正常'}
-                  <i class="fas ${microbiome.evaluated_value < microbiome.normal_range.min_normal_value ? 'fa-arrow-down' :
-              microbiome.evaluated_value > microbiome.normal_range.max_normal_value ? 'fa-arrow-up' : ''}"></i>
-                </td>
-              `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('overall-evaluation-of-gut-data-desc-row')
-            // colSpan="7" 因为肥胖相关菌的表格有7列
-            descRow.innerHTML = `
-                <td colSpan="7" class="py-2 px-4 text-left">
-                    <div class="description-container text-gray-600" style="font-size: 10px;">
-                        ${microbiome.descriptions.map(desc => `
-                            <div class="overall-evaluation-of-gut-data-description">
-                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                   style="color: ${desc.color};"></i>
-                                ${desc.text}
-                            </div>
-                        `).join('')}
-                    </div>
-                </td>
-              `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
+    <script>
+      async function loadEvaluationOfGutMicrobiomeData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          const data = await response.json();
+          renderEvaluationOfGutMicrobiomeTable(data.overall_evaluation_of_gut_microbiome_data);
+        } catch (error) {
+          console.error('Error loading overall evaluation of gut microbiome data:', error);
         }
+      }
 
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadEvaluationOfGutMicrobiomeData);
-      </script>
-    </div>
+      function calculateProgressPercentage(value, maxValue) {
+        if (!value || !maxValue) return 0;
+        const percentage = (value / maxValue) * 100;
+        return Math.min(100, Math.max(5, percentage));
+      }
+
+      function renderEvaluationOfGutMicrobiomeTable(microbiomeData) {
+        const container = document.getElementById('overall-evaluation-of-gut-microbiome-data-table-body');
+        container.innerHTML = '';
+
+        const CUSTOM_COLORS = {
+          red: '#ff4d4f',
+          green: '#389e0d',
+          gray: '#808080'
+        };
+
+        microbiomeData.forEach(item => {
+          let statusColor, statusText, statusIcon;
+          const value = item.evaluated_value;
+          const minRange = item.normal_range.min_normal_value;
+          const maxRange = item.normal_range.max_normal_value;
+
+          let isNormal = true;
+
+          if (value < minRange) {
+            statusColor = 'red';
+            statusText = '异常';
+            statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+            isNormal = false;
+          } else if (value > maxRange) {
+            statusColor = 'red';
+            statusText = '异常';
+            statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+            isNormal = false;
+          } else {
+            statusColor = 'green';
+            statusText = '正常';
+            statusIcon = '';
+          }
+
+          const itemContainer = document.createElement('div');
+          itemContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table min-w-full';
+
+          const dataRow = `
+      <tr>
+        <td class="py-2 px-4 text-left overall-evaluation-of-gut-first-column">
+          <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
+          <div class="core-gut-bacteria-latin-text">${item.latin_name}</div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text overall-evaluation-of-gut-second-column">
+          ${minRange}-${maxRange}
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text overall-evaluation-of-gut-third-column">
+          <div class="flex items-center justify-center">
+            <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
+              ${value}
+            </span>
+            ${!isNormal ? `<i class="fas fa-arrow-${value < minRange ? 'down' : 'up'} ml-1" style="color: ${CUSTOM_COLORS.red};"></i>` : ''}
+          </div>
+          <div class="progress-bar w-full mt-1">
+            <div class="progress mt-2"
+                 style="width: ${calculateProgressPercentage(value, maxRange)}%;
+                        background-color: ${!isNormal ? CUSTOM_COLORS.red : '#00B2B4'};
+                        transition: width 0.3s ease;">
+            </div>
+          </div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text overall-evaluation-of-gut-fourth-column">
+          <span style="color: ${CUSTOM_COLORS[statusColor]}">
+            ${statusText}${statusIcon}
+          </span>
+        </td>
+      </tr>
+    `;
+
+          const descRow = item.descriptions.length > 0 ? `
+      <tr class="virus-desc-row">
+        <td colspan="4" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600" style="font-size: 10px;">
+            ${item.descriptions.map(desc => `
+              <div class="flex items-start">
+                <div class="ml-1">
+                  <p>
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};">
+                    </i>
+                    ${desc.text}
+                  </p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </td>
+      </tr>
+    ` : '';
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          itemContainer.appendChild(table);
+          container.appendChild(itemContainer);
+        });
+      }
+
+      // 页面加载时调用
+      document.addEventListener('DOMContentLoaded', loadEvaluationOfGutMicrobiomeData);
+    </script>
 
   </div>
 

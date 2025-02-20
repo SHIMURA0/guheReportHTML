@@ -7,7 +7,26 @@
 @page {
   size: A4; /* 设置纸张大小为 A4 */
   /*margin: 40mm; !* 设置边距 *!*/
+  /*@bottom-right {*/
+  /*  content: "第" counter(page) "页";*/
+  /*  font-size: 20px;*/
+  /*}*/
+  /*!* 设置页码计数器 *!*/
+  /*counter-reset: page;*/
 }
+
+/* 每页右下角的页码样式 */
+/*.page-number {*/
+/*  position: fixed;*/
+/*  bottom: 20px;*/
+/*  right: 20px;*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.page-number::after {*/
+/*  content: "第" counter(page) "页";*/
+/*  counter-increment: page;*/
+/*}*/
 
 body {
   font-family: 'Noto Sans SC', sans-serif;
@@ -277,18 +296,35 @@ strong, b {
 
 /* 肠道整体评估 : 肠道基础功能 */
 
-.basic-function-of-gut-first-column{ width: 25% }
-.basic-function-of-gut-second-column{ width: 25% }
-.basic-function-of-gut-third-column{ width: 25% }
-.basic-function-of-gut-fourth-column{ width: 25% }
+/* 肠道基础功能表格列样式 */
+.basic-function-of-gut-first-column{
+  width: 25%
+}
+.basic-function-of-gut-second-column{
+  width: 25%
+}
+.basic-function-of-gut-third-column{
+  width: 25%
+}
+.basic-function-of-gut-fourth-column{
+  width: 25%
+}
 
 
 /* 肠道整体评估 : 肠道菌群评估 */
 
-.overall-evaluation-of-gut-first-column{ width: 25% }
-.overall-evaluation-of-gut-second-column{ width: 25% }
-.overall-evaluation-of-gut-third-column{ width: 25% }
-.overall-evaluation-of-gut-fourth-column{ width: 25% }
+.overall-evaluation-of-gut-first-column{
+  width: 25%
+}
+.overall-evaluation-of-gut-second-column{
+  width: 25%
+}
+.overall-evaluation-of-gut-third-column{
+  width: 25%
+}
+.overall-evaluation-of-gut-fourth-column{
+  width: 25%
+}
 
 
 
