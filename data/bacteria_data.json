@@ -195,6 +195,22 @@
       ]
     },
     {
+      "chinese_name": "生物膜形成",
+      "english_name": "Biofilm Formation",
+      "evaluated_value": 0,
+      "normal_range": {
+        "min_normal_value": 0,
+        "max_normal_value": 0.5
+      },
+      "descriptions": [
+        {
+          "type": "info",
+          "color": "#3498db",
+          "text": "生物膜（Biofilm） 是由微生物形成的一种细胞聚集体，细胞黏附在彼此之间以及表面（如肠壁）形成保护性屏障。生物膜可以形成在肠道上皮细胞表面，称为“菌群生物膜”。健康的肠道中，有益菌的生物膜有助于保护肠道屏障完整性和防止病原菌的黏附，如一些乳酸杆菌和双歧杆菌能形成保护性生物膜。高表示菌群具有较强的生物膜形成能力。"
+        }
+      ]
+    },
+    {
       "chinese_name": "有益菌",
       "english_name": "Beneficial bacteria",
       "normal_range": {
