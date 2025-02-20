@@ -298,10 +298,10 @@ strong, b {
 
 /* 肠道基础功能表格列样式 */
 .basic-function-of-gut-first-column{
-  width: 25%
+  width: 30%
 }
 .basic-function-of-gut-second-column{
-  width: 25%
+  width: 20%
 }
 .basic-function-of-gut-third-column{
   width: 25%
@@ -313,11 +313,12 @@ strong, b {
 
 /* 肠道整体评估 : 肠道菌群评估 */
 
+/* 肠道菌群整体评估表格列样式 */
 .overall-evaluation-of-gut-first-column{
-  width: 25%
+  width: 30%
 }
 .overall-evaluation-of-gut-second-column{
-  width: 25%
+  width: 20%
 }
 .overall-evaluation-of-gut-third-column{
   width: 25%

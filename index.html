@@ -1,7 +1,7 @@
 <!-- Author: Honglie Zhang -->
 <!DOCTYPE html>
 <!-- 帮助浏览器正确显示（通用）中文文字 -->
-<html lang="zh" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="zh" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8">
@@ -671,6 +671,7 @@
 
       function calculateProgressPercentage(value, maxValue) {
         if (!value || !maxValue) return 0;
+        // 使用 detected abundance 除以 normal range max 计算进度
         const percentage = (value / maxValue) * 100;
         return Math.min(100, Math.max(5, percentage));
       }
@@ -715,11 +716,14 @@
           const table = document.createElement('table');
           table.className = 'bacteria-table min-w-full';
 
+          // 计算进度条百分比
+          const progressPercentage = calculateProgressPercentage(value, maxRange);
+
           const dataRow = `
       <tr>
         <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
           <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${item.latin_name}</div>
+          <div class="core-gut-bacteria-latin-text">${item.english_name}</div>
         </td>
         <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-second-column">
           ${minRange}-${maxRange}
@@ -729,12 +733,11 @@
             <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
               ${value}
             </span>
-            ${!isNormal ? `<i class="fas fa-arrow-${value < minRange ? 'down' : 'up'} ml-1" style="color: ${CUSTOM_COLORS.red};"></i>` : ''}
           </div>
           <div class="progress-bar w-full mt-1">
             <div class="progress mt-2"
-                 style="width: ${calculateProgressPercentage(value, maxRange)}%;
-                        background-color: ${!isNormal ? CUSTOM_COLORS.red : '#00B2B4'};
+                 style="width: ${progressPercentage}%;
+                        background-color: ${!isNormal ? CUSTOM_COLORS.red : CUSTOM_COLORS.green};
                         transition: width 0.3s ease;">
             </div>
           </div>
@@ -842,6 +845,10 @@
 
       function renderEvaluationOfGutMicrobiomeTable(microbiomeData) {
         const container = document.getElementById('overall-evaluation-of-gut-microbiome-data-table-body');
+        if (!container) {
+          console.error('Container element not found');
+          return;
+        }
         container.innerHTML = '';
 
         const CUSTOM_COLORS = {
@@ -884,7 +891,7 @@
       <tr>
         <td class="py-2 px-4 text-left overall-evaluation-of-gut-first-column">
           <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${item.latin_name}</div>
+          <div class="core-gut-bacteria-latin-text">${item.english_name}</div>
         </td>
         <td class="py-2 px-4 text-center core-gut-bacteria-column-text overall-evaluation-of-gut-second-column">
           ${minRange}-${maxRange}
@@ -894,12 +901,11 @@
             <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
               ${value}
             </span>
-            ${!isNormal ? `<i class="fas fa-arrow-${value < minRange ? 'down' : 'up'} ml-1" style="color: ${CUSTOM_COLORS.red};"></i>` : ''}
           </div>
           <div class="progress-bar w-full mt-1">
             <div class="progress mt-2"
                  style="width: ${calculateProgressPercentage(value, maxRange)}%;
-                        background-color: ${!isNormal ? CUSTOM_COLORS.red : '#00B2B4'};
+                        background-color: ${!isNormal ? CUSTOM_COLORS.red : CUSTOM_COLORS.green};
                         transition: width 0.3s ease;">
             </div>
           </div>
@@ -912,7 +918,7 @@
       </tr>
     `;
 
-          const descRow = item.descriptions.length > 0 ? `
+          const descRow = item.descriptions && item.descriptions.length > 0 ? `
       <tr class="virus-desc-row">
         <td colspan="4" class="py-2 px-4 text-left">
           <div class="description-container text-gray-600" style="font-size: 10px;">
@@ -1446,7 +1452,7 @@
     <script>
       async function loadNonCoreBacteriaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderNonCoreBacteriaTable(data.non_core_gut_bacteria_data);
         } catch (error) {
@@ -1682,7 +1688,7 @@
     <script>
       async function loadBeneficialBacteriaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderBeneficialBacteriaTable(data.beneficial_gut_bacteria_data);
         } catch (error) {
@@ -1919,7 +1925,7 @@
     <script>
       async function loadHarmfulBacteriaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderHarmfulBacteriaTable(data.harmful_gut_bacteria_data);
         } catch (error) {
@@ -2156,7 +2162,7 @@
     <script>
       async function loadOpportunisticPathogenData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderOpportunisticPathogenTable(data.opportunistic_gut_pathogens_data);
         } catch (error) {
@@ -2394,7 +2400,7 @@
     <script>
       async function loadGutPathogenicBacteriaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderGutPathogenicBacteriaTable(data.gut_pathogens_bacteria_data);
         } catch (error) {
@@ -2630,7 +2636,7 @@
     <script>
       async function loadGutFungiData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderGutFungiTable(data.gut_fungi_data);
         } catch (error) {
@@ -2866,7 +2872,7 @@
     <script>
       async function loadGutParasitesData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderGutParasitesTable(data.gut_parasites_data);
         } catch (error) {
@@ -3099,7 +3105,7 @@
     <script>
       async function loadGutVirusData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderGutVirusTable(data.gut_virus_data);
         } catch (error) {
@@ -3424,7 +3430,7 @@
       <script>
         async function loadResistanceData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             data.antimicrobial_resistance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
             renderResistanceTable(data.antimicrobial_resistance_genes_data);
@@ -3587,7 +3593,7 @@
       <script>
         async function loadMetalToleranceData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             data.metal_tolerance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
             renderMetalToleranceTable(data.metal_tolerance_genes_data);
@@ -3750,7 +3756,7 @@
       <script>
         async function loadEffluxData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             data.efflux_genes_data.sort((a, b) => b.reads_count - a.reads_count);
             renderEffluxTable(data.efflux_genes_data);
@@ -3910,7 +3916,7 @@
       <script>
         async function loadVirulenceData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // data.virulence_genes_data.sort((a, b) => b.reads_count - a.reads_count);
             renderVirulenceTable(data.virulence_genes_data);
@@ -4096,7 +4102,7 @@
       <script>
         async function loadOrganicAcidsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderOrganicAcidsTable(data.organic_acids_data);
           } catch (error) {
@@ -4198,7 +4204,7 @@
       <script>
         async function loadNeuroActiveData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderNeuroActiveTable(data.neuroactive_substances_data);
           } catch (error) {
@@ -4300,7 +4306,7 @@
 <!--      <script>-->
 <!--        async function loadCompoundsData() {-->
 <!--          try {-->
-<!--            const response = await fetch('./data/bacteria_data.json');-->
+<!--            const response = await fetch(DATA_PATHS.DATA);-->
 <!--            const data = await response.json();-->
 <!--            renderCompoundsTable(data.compounds_data);-->
 <!--          } catch (error) {-->
@@ -4417,7 +4423,7 @@
     <script>
       async function loadOtherMetabolitesData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderOtherMetabolitesTable(data.other_metabolites_data);
         } catch (error) {
@@ -4701,7 +4707,7 @@
     <script>
       async function loadHumoralImmunityData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderHumoralImmunityTable(data.humoral_immunity_data);
         } catch (error) {
@@ -4982,7 +4988,7 @@
     <script>
       async function loadInflammatoryInfectionData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderInflammatoryInfectionTable(data.inflammatory_infection_data);
         } catch (error) {
@@ -5190,7 +5196,7 @@
       <script>
         async function loadMicrobialMetabolitesData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderMicrobialMetabolitesTable(data.microbial_metabolites_data);
           } catch (error) {
@@ -5406,7 +5412,7 @@
       <script>
         async function loadCytokinesData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderCytokinesTable(data.cytokines_data);
           } catch (error) {
@@ -5621,7 +5627,7 @@
       <script>
         async function loadImmuneOncologyData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderImmuneOncologyTable(data.immune_oncology_markers_data);
           } catch (error) {
@@ -5990,7 +5996,7 @@
       <script>
         async function loadDailyFoodData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderDailyFoodTable(data.daily_food_data);
           } catch (error) {
@@ -6115,7 +6121,7 @@
         <!-- SCFAs is an abbreviation for short chain fatty acids -->
         async function loadSCFAsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderSCFAsTable(data.short_chain_fatty_acids_data);
           } catch (error) {
@@ -6239,7 +6245,7 @@
       <script>
         async function loadVitaminsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderVitaminsTable(data.vitamins_data);
           } catch (error) {
@@ -6377,7 +6383,7 @@
     <script>
       async function loadAminoAcidsData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderAminoAcidsTable(data.amino_acids_data);
         } catch (error) {
@@ -6991,7 +6997,7 @@
       <script>
         async function loadSlowDiseaseData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 slow_disease_data 按照 detected_abundance 从大到小排序
             data.slow_disease_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -7420,7 +7426,7 @@
     <script>
       async function loadObesityData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderObesityDataTable(data.obesity_data);
         } catch (error) {
@@ -7732,7 +7738,7 @@
     <script>
       async function loadConstipationData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderConstipationDataTable(data.constipation_data);
         } catch (error) {
@@ -7994,7 +8000,7 @@
     <script>
       async function loadBloatingData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderBloatingDataTable(data.bloating_data);
         } catch (error) {
@@ -8243,7 +8249,7 @@
     <script>
       async function loadAllergyData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderAllergyDataTable(data.allergy_data);
         } catch (error) {
@@ -8493,7 +8499,7 @@
       // Javascript function to load the depression data
       async function loadDepressionData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderDepressionDataTable(data.depression_data);
         } catch (error) {
@@ -8756,7 +8762,7 @@
       // Javascript function to load the insomnia data
       async function loadInsomniaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           renderInsomniaDataTable(data.insomnia_data);
         } catch (error) {
@@ -9083,7 +9089,7 @@
       async function fetchAndRenderTopAndLowestFoods() {
         try {
           // 1. 获取数据
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
 
           // 2. 创建包含要合并的键的列表
@@ -9211,7 +9217,7 @@
       <script>
         async function loadStapleFoodData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderStapleFoodTable(data.staple_food_data);
           } catch (error) {
@@ -9325,7 +9331,7 @@
       <script>
         async function loadMeatData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
             data.meat_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -9441,7 +9447,7 @@
       <script>
         async function loadAquaticProductsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
             data.aquatic_products_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -9557,7 +9563,7 @@
       <script>
         async function loadDairyProductsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderDairyProductsTable(data.dairy_products_data);
           } catch (error) {
@@ -9671,7 +9677,7 @@
       <script>
         async function loadSoupData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
             data.soup_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -9787,7 +9793,7 @@
       <script>
         async function loadVegetablesData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
             data.vegetables_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -9903,7 +9909,7 @@
       <script>
         async function loadDriedFruitsData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             renderDriedFruitsTable(data.dried_fruits_data);
           } catch (error) {
@@ -10017,7 +10023,7 @@
 <!--      <script>-->
 <!--        async function loadFastFoodData() {-->
 <!--          try {-->
-<!--            const response = await fetch('./data/bacteria_data.json');-->
+<!--            const response = await fetch(DATA_PATHS.DATA);-->
 <!--            const data = await response.json();-->
 <!--            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序-->
 <!--            data.fast_food_data.sort((a, b) => b.evaluation_value - a.evaluation_value);-->
@@ -10133,7 +10139,7 @@
       <script>
         async function loadFruitData() {
           try {
-            const response = await fetch('./data/bacteria_data.json');
+            const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
             // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
             data.fruit_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
@@ -10258,7 +10264,7 @@
     <script>
       async function loadDetectedGutBacteriaData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           data.detected_gut_bacteria_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
           renderDetectedGutBacteriaTable(data.detected_gut_bacteria_data);
@@ -10467,7 +10473,7 @@
     <script>
       async function loadDetectedGutFungiData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           data.detected_gut_fungi_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
           renderDetectedGutFungiTable(data.detected_gut_fungi_data);
@@ -10676,7 +10682,7 @@
     <script>
       async function loadDetectedGutEukaryotesData() {
         try {
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
           data.detected_gut_eukaryotes_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
           renderDetectedGutEukaryotesTable(data.detected_gut_eukaryotes_data);
@@ -10873,7 +10879,7 @@
       async function loadReferences() {
         try {
           // 使用 fetch API 获取数据
-          const response = await fetch('./data/bacteria_data.json');
+          const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
 
           // 确保获取到的 data 具有 reference_data 属性
