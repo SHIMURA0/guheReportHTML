@@ -2754,12 +2754,21 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column">寄生虫名称</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
+            寄生虫名称
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+            检测丰度%
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
+            超过%的人
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
+            有%的正常人检出
+          </th>
         </tr>
         </thead>
       </table>
@@ -2781,8 +2790,8 @@
       }
 
       function formatNumber(value) {
-        if (value === "ND" || value === "未检出" || value === 0) {
-          return "未检出";
+        if (typeof value === "string" && value === "ND") {
+          return value;
         }
 
         const num = Number(value);
@@ -2797,25 +2806,30 @@
         }
       }
 
-      function calculateProgressPercentage(value) {
+      function formatDetectedValue(value) {
+        return formatNumber(value);
+      }
+
+      function formatRangeValue(value) {
+        return formatNumber(value);
+      }
+
+      function calculateProgressPercentageForThirdColumn(value) {
         if (value === "ND" || value === 0) {
           return 0;
         }
+
         const num = Number(value);
         const logValue = Math.log10(num);
-        const minLog = -1;
-        const maxLog = 3;
+        const minLog = -1; // log10(0.0001)
+        const maxLog = 3;  // log10(100)
+
         const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
         return Math.max(5, Math.min(50, percentage));
       }
 
-      function renderGutParasitesTable(gutParasitesData) {
+      function renderGutParasitesTable(bacteriaData) {
         const container = document.getElementById('gut-parasites-data-table-body');
-        if (!container) {
-          console.error('Parasites table body not found');
-          return;
-        }
-
         container.innerHTML = '';
 
         const CUSTOM_COLORS = {
@@ -2824,15 +2838,15 @@
           gray: '#808080'
         };
 
-        gutParasitesData.forEach(parasite => {
+        bacteriaData.forEach(bacteria => {
           let statusColor, statusText, statusIcon;
-          const detected = parasite.detected_abundance;
-          const minRange = parasite.normal_range.normal_range_min;
-          const maxRange = parasite.normal_range.normal_range_max;
+          const detected = bacteria.detected_abundance;
+          const minRange = bacteria.normal_range.normal_range_min;
+          const maxRange = bacteria.normal_range.normal_range_max;
 
-          const formattedDetectedValue = detected === "ND" ? "未检出" : formatNumber(detected);
-          const formattedMinRange = formatNumber(minRange);
-          const formattedMaxRange = formatNumber(maxRange);
+          const formattedDetectedValue = formatDetectedValue(detected);
+          const formattedMinRange = formatRangeValue(minRange);
+          const formattedMaxRange = formatRangeValue(maxRange);
 
           let isNormal = true;
 
@@ -2847,83 +2861,108 @@
               statusText = '正常';
               statusIcon = '';
             }
-          } else if (detected < minRange) {
-            statusColor = 'gray';
-            statusText = '低于正常';
-            statusIcon = '';
-            isNormal = false;
-          } else if (detected <= maxRange) {
-            statusColor = 'green';
-            statusText = '正常';
-            statusIcon = '';
           } else {
-            statusColor = 'red';
-            statusText = '超标';
-            statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-            isNormal = false;
+            if (detected < minRange) {
+              statusColor = 'red';
+              statusText = '偏低';
+              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
+              isNormal = false;
+            } else if (detected <= maxRange) {
+              statusColor = 'green';
+              statusText = '正常';
+              statusIcon = '';
+            } else {
+              statusColor = 'red';
+              statusText = '超标';
+              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
+              isNormal = false;
+            }
           }
 
-          const parasiteContainer = document.createElement('div');
-          parasiteContainer.className = 'parasite-info-container';
+          const bacteriaContainer = document.createElement('div');
+          bacteriaContainer.className = 'bacteria-info-container';
 
           const table = document.createElement('table');
-          table.className = 'parasite-table min-w-full';
+          table.className = 'bacteria-table min-w-full';
 
           const dataRow = `
-        <tr class="parasite-row">
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">${parasite.chinese_name}</div>
-            <div class="latin-text">${parasite.latin_name}</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text second-column">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center column-text third-column">
-            ${formattedDetectedValue}
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${detected === "ND" ? "0" : calculateProgressPercentage(detected)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text column-text">
-            <span style="color: ${CUSTOM_COLORS[statusColor]}">
-              ${statusText}${statusIcon}
+      <tr>
+        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
+          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
+          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
+          ${formattedMinRange}-${formattedMaxRange}
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
+          <div class="flex items-center justify-center">
+            <span style="color: ${
+            (detected === "ND" && minRange > 0) ||
+            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
+              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
+                '#000000'
+          }">
+              ${detected === "ND" ? "未检出" : formattedDetectedValue}
             </span>
-          </td>
-          <td class="py-2 px-4 text-center column-text">${parasite.higher_than_percentage}%</td>
-          <td class="py-2 px-4 text-center column-text">${parasite.normal_detection_rate}%</td>
-        </tr>
-      `;
+            ${
+            (detected === "ND" && minRange > 0) ||
+            (detected !== "ND" && detected < minRange) ?
+              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
+              (detected !== "ND" && detected > maxRange) ?
+                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
+                ''
+          }
+          </div>
+          <div class="progress-bar w-full mt-1">
+            <div class="progress mt-2"
+                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
+                        background-color: #00B2B4;
+                        transition: width 0.3s ease;">
+            </div>
+          </div>
+        </td>
 
-          const filteredDescriptions = parasite.descriptions.filter(desc =>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
+          ${bacteria.higher_than_percentage}%
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
+          ${bacteria.normal_detection_rate}%
+        </td>
+      </tr>
+    `;
+
+          const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
           );
 
           const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="parasite-desc-row">
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              ${filteredDescriptions.map(desc => `
-                <div class="parasite-description">
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};"></i>
-                  ${desc.text}
+      <tr class="virus-desc-row">
+        <td colspan="6" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600" style="font-size: 10px;">
+            ${filteredDescriptions.map(desc => `
+              <div class="flex items-start">
+                <div class="ml-1">
+                  <p>
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};">
+                    </i>
+                    ${desc.text}
+                  </p>
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </div>
+            `).join('')}
+          </div>
+        </td>
+      </tr>
+    ` : '';
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          parasiteContainer.appendChild(table);
-          container.appendChild(parasiteContainer);
+          bacteriaContainer.appendChild(table);
+          container.appendChild(bacteriaContainer);
         });
       }
 
+      // 页面加载时调用
       document.addEventListener('DOMContentLoaded', loadGutParasitesData);
     </script>
 
