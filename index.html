@@ -4395,20 +4395,20 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column"
-              style="font-size: 11px;">
+          <th class="py-2 px-4 text-left other-microbial-metabolites-first-column"
+              style="font-size: 13px;">
             其他代谢物名称
           </th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            正常范围
+          <th class="py-2 px-4 text-center other-microbial-metabolites-second-column"
+              style="font-size: 13px; padding: 5px 5px;">
+            参考范围
           </th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column"
-              style="font-size: 11px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center other-microbial-metabolites-third-column"
+              style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column"
-              style="font-size: 11px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center other-microbial-metabolites-fourth-column"
+              style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
         </tr>
@@ -4507,16 +4507,16 @@
 
           const dataRow = `
         <tr class="metabolites-row">
-          <td class="py-2 px-4 text-left first-column">
+          <td class="py-2 px-4 text-left other-microbial-metabolites-first-column">
             <div class="chinese-text">${other.chinese_name}</div>
             <div class="latin-text">${other.latin_name}</div>
           </td>
-          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
+          <td class="py-2 px-4 text-center column-text other-microbial-metabolites-second-column" style="font-size: 0.65rem;">
             ${min}-${max}
           </td>
-          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
+          <td class="py-2 px-4 text-center column-text other-microbial-metabolites-third-column" style="font-size: 0.65rem;">
             ${formatNumber(detected)}
-            <div class="progress-bar w-full mt-1">
+            <div class="progress-bar w-full mt-2">
               <div class="progress"
                    style="width: ${calculateProgressPercentage(detected, max)}%;
                           background-color: #00B2B4;
@@ -4524,7 +4524,7 @@
               </div>
             </div>
           </td>
-          <td class="py-2 px-4 text-center bold-text column-text" style="font-size: 0.65rem;">
+          <td class="py-2 px-4 text-center bold-text column-text other-microbial-metabolites-fourth-column" style="font-size: 0.65rem;">
             <span style="color: ${getStatusColor(detected, min, max)}">
               ${status}${getStatusIcon(status)}
             </span>
@@ -4536,55 +4536,32 @@
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
           );
 
-          // const descRow = filteredDescriptions.length > 0 ? `
-          //   <tr class="metabolites-desc-row">
-          //     <td colspan="6" class="py-2 px-4 text-left">
-          //       <div class="description-container text-gray-600" style="font-size: 10px;">
-          //         ${filteredDescriptions.map(desc => `
-          //           <div class="flex items-start">
-          //             <div class="ml-1">
-          //               <p>
-          //                 <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
-          //                    style="color: ${desc.color};">
-          //                 </i>
-          //                 ${desc.text}
-          //               </p>
-          //             </div>
-          //           </div>
-          //         `).join('')}
-          //       </div>
-          //     </td>
-          //   </tr>
-          // ` : '';
-
           const descRow = filteredDescriptions.length > 0 ? `
-    <tr class="metabolites-desc-row">
-      <td colspan="6" class="py-2 px-4 text-left">
-        <div class="description-container text-gray-600 mt-0.5" style="font-size: 10px;">
-          ${filteredDescriptions.map(desc => `
-            <div class="flex items-start">
-              <div class="ml-1">
-                <p>
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
-                     style="color: ${desc.color};">
-                  </i>
-                  ${desc.text}
-                  <ul class="list-disc ml-5" style="margin-top: 10px; margin-bottom: -5px;">
-            <li><strong>超标的影响：</strong> 超标可能导致健康风险，包括但不限于心脏病、高血压及其他代谢性疾病。</li>
-            <li><strong>偏低的影响：</strong> 偏低的水平可能导致营养不足、免疫力下降以及其他相关健康问题。</li>
-          </ul>
-                </p>
-              </div>
+    <tr class="virus-desc-row">
+        <td colspan="4" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600" style="font-size: 10px;">
+                ${filteredDescriptions.map(desc => `
+                    <div class="flex items-start">
+                        <div class="ml-1">
+                            <p>
+                                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                                   style="color: ${desc.color};">
+                                </i>
+                                ${desc.text}
+                                ${!desc.hideImpacts ? `
+                                    <div class="ml-1 mt-1">
+                                        • <strong>超标的影响：</strong> 超标可能导致健康风险，包括但不限于心脏病、高血压及其他代谢性疾病。<br>
+                                        • <strong>偏低的影响：</strong> 偏低的水平可能导致营养不足、免疫力下降以及其他相关健康问题。
+                                    </div>
+                                ` : ''}
+                            </p>
+                        </div>
+                    </div>
+                `).join('')}
             </div>
-          `).join('')}
-<!--          <p style="margin-top: 8px; font-weight: bold;">影响摘要：</p>-->
-
-        </div>
-      </td>
+        </td>
     </tr>
 ` : '';
-
-
 
           table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
           metabolitesContainer.appendChild(table);

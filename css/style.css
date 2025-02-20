@@ -438,6 +438,16 @@ strong, b {
   line-height: 1.4;
   margin: 0;
 }
+
+.description-container ul {
+  margin-top: 2px; /* 上方距离 */
+  margin-bottom: 1px; /* 下方距离 */
+}
+
+.description-container ul li {
+  margin-bottom: 1px; /* 每个列表项的间距 */
+}
+
 .description-container i {
   margin-right: 2px; /* 图标和文本之间的间距 */
 }
@@ -901,7 +911,21 @@ tr {
   width: 25%;
 }
 
-/* 其他代谢物 */
+
+/* 菌群代谢物及神经递质评估板块 : 其他代谢物 */
+
+.other-microbial-metabolites-first-column { /* 其他代谢物名称 */
+  width: 25%;
+}
+.other-microbial-metabolites-second-column { /* 参考范围 */
+  width: 25%;
+}
+.other-microbial-metabolites-third-column { /* 评估数值 */
+  width: 25%;
+}
+.other-microbial-metabolites-fourth-column { /* 评估结果 */
+  width: 25%;
+}
 
 .metabolites-info-container {
   border-bottom: 1px solid #e5e7eb;
