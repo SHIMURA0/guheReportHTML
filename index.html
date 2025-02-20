@@ -1333,12 +1333,21 @@
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center second-column">正常范围</th>
-          <th class="py-2 px-4 text-center third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center fourth-column">结果评价</th>
-          <th class="py-2 px-4 text-center fifth-column">超过%的人</th>
-          <th class="py-2 px-4 text-center sixth-column">有%的正常人检出</th>
+          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
+            菌种名称
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
+            正常范围
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+            检测丰度
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
+            超过%的人
+          </th>
+          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
+            有%的正常人检出
+          </th>
         </tr>
         </thead>
       </table>
@@ -1361,7 +1370,7 @@
       }
 
       function formatNumber(value) {
-        if (typeof value === "string" && value === "未检出") {
+        if (typeof value === "string" && value === "ND") {
           return value;
         }
 
@@ -1378,9 +1387,6 @@
       }
 
       function formatDetectedValue(value) {
-        if (value === "ND") {
-          return "未检出";
-        }
         return formatNumber(value);
       }
 
@@ -1395,8 +1401,8 @@
 
         const num = Number(value);
         const logValue = Math.log10(num);
-        const minLog = -1;
-        const maxLog = 3;
+        const minLog = -1; // log10(0.0001)
+        const maxLog = 3;  // log10(100)
 
         const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
         return Math.max(5, Math.min(50, percentage));
@@ -1422,11 +1428,9 @@
           const formattedMinRange = formatRangeValue(minRange);
           const formattedMaxRange = formatRangeValue(maxRange);
 
-          const fourthColumnPercentage = detected === "未检出" ? 0 : Math.min(100, (Number(detected) / 100) * 100);
-
           let isNormal = true;
 
-          if (detected === "ND") {  // 修改这里的判断条件，从 "未检出" 改为 "ND"
+          if (detected === "ND") {
             if (minRange > 0) {
               statusColor = 'red';
               statusText = '偏低';
@@ -1462,47 +1466,68 @@
           table.className = 'bacteria-table min-w-full';
 
           const dataRow = `
-            <tr>
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${bacteria.chinese_name}</div>
-                <div class="latin-text">${bacteria.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text second-column">
-                ${formattedMinRange}-${formattedMaxRange}
-              </td>
-              <td class="py-2 px-4 text-center column-text third-column">
-                <span>${detected === "ND" ? "未检出" : formattedDetectedValue}</span>
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress"
-                       style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
-                              background-color: #00B2B4;
-                              transition: width 0.3s ease;">
-                  </div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center column-text fourth-column">
-                <span class="font-bold" style="color: ${CUSTOM_COLORS[statusColor]}">
-                  ${statusText}${statusIcon}
-                </span>
-              </td>
-              <td class="py-2 px-4 text-center column-text fifth-column">${bacteria.higher_than_percentage}%</td>
-              <td class="py-2 px-4 text-center column-text sixth-column">${bacteria.normal_detection_rate}%</td>
-            </tr>
-          `;
+      <tr>
+        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
+          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
+          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
+          ${formattedMinRange}-${formattedMaxRange}
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
+          <div class="flex items-center justify-center">
+            <span style="color: ${
+            (detected === "ND" && minRange > 0) ||
+            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
+              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
+                '#000000'
+          }">
+              ${detected === "ND" ? "未检出" : formattedDetectedValue}
+            </span>
+            ${
+            (detected === "ND" && minRange > 0) ||
+            (detected !== "ND" && detected < minRange) ?
+              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
+              (detected !== "ND" && detected > maxRange) ?
+                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
+                ''
+          }
+          </div>
+          <div class="progress-bar w-full mt-1">
+            <div class="progress mt-2"
+                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
+                        background-color: #00B2B4;
+                        transition: width 0.3s ease;">
+            </div>
+          </div>
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
+          ${bacteria.higher_than_percentage}%
+        </td>
+        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
+          ${bacteria.normal_detection_rate}%
+        </td>
+      </tr>
+    `;
 
           const filteredDescriptions = bacteria.descriptions.filter(desc =>
             desc.type === 'info' || (!isNormal && desc.type === 'warning')
           );
 
           const descRow = filteredDescriptions.length > 0 ? `
-      <tr class="description-row">
-        <td colspan="6" class="py-2 px-4 text-left">
-          <div class="description-container text-gray-600">
+      <tr class="virus-desc-row">
+        <td colspan="5" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600" style="font-size: 10px;">
             ${filteredDescriptions.map(desc => `
-              <div>
-                <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                   style="color: ${desc.color};"></i>
-                ${desc.text}
+              <div class="flex items-start">
+                <div class="ml-1">
+                  <p>
+                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+                       style="color: ${desc.color};">
+                    </i>
+                    ${desc.text}
+                  </p>
+                </div>
               </div>
             `).join('')}
           </div>
@@ -1516,6 +1541,7 @@
         });
       }
 
+      // 页面加载时调用
       document.addEventListener('DOMContentLoaded', loadNonCoreBacteriaData);
     </script>
 
