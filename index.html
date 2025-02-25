@@ -1,21 +1,67 @@
 <!-- Author: Honglie Zhang -->
 <!DOCTYPE html>
-<!-- 帮助浏览器正确显示（通用）中文文字 -->
-<html lang="zh" xmlns="http://www.w3.org/1999/html">
+<html lang="zh-CN"> <!-- 更准确的中文语言代码 -->
 
 <head>
+  <!-- Meta Tags (最优先加载) -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>宏基因组报告</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-<!--  <link rel="stylesheet" href="file:///Users/shimura/WebstormProject/guheReport/css/style.css">-->
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!--  <link href="https://fonts.googleapis.com/css2?family=Source+Han+Sans:wght@400;700&display=swap" rel="stylesheet">-->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="宏基因组报告分析系统">
+  <meta name="author" content="Honglie Zhang"> <!-- 建议添加作者信息 -->
 
-  <!-- 先引入配置文件 -->
-  <script src="./config/config.js"></script>
+  <title>宏基因组报告</title>
+
+  <!-- Critical CSS (如果有) -->
+  <style>
+    /* 关键渲染路径的CSS */
+  </style>
+
+  <!-- 预加载关键资源 -->
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800&display=swap"
+    as="style"
+    crossorigin="anonymous"
+  >
+
+  <!-- 第三方CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous"
+  >
+
+  <!-- 字体资源 -->
+  <!-- 优化字体加载 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+    crossorigin="anonymous"
+  >
+
+  <!-- 自定义CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- 全局配置（在框架之前） -->
+  <script>
+    window.DATA_PATHS = {
+      DATA: './data/bacteria_data.json'
+    };
+  </script>
+
+  <!-- 框架/库（使用 defer 确保不阻塞） -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- 无JS时的降级方案 -->
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800&display=swap"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    >
+  </noscript>
 </head>
 
 <!-- 页面主体，四周内边距5-->
