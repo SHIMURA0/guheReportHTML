@@ -722,6 +722,99 @@ tr {
 
 /* 有害菌表格第一列中的菌群拉丁名样式 */
 
+.harmful-gut-bacteria-donut-chart-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: transparent;
+}
+
+.harmful-gut-bacteria-donut-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff4d4f 0% 17.6%,
+    #52c41a 17.6% 64.7%,
+    #d9d9d9 64.7% 100%
+  );
+  /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+.harmful-gut-bacteria-center-hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);*/
+}
+
+.harmful-gut-bacteria-center-value {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
+.harmful-gut-bacteria-center-label {
+  font-size: 18px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.harmful-gut-bacteria-center-sublabel {
+  font-size: 14px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.harmful-gut-bacteria-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.harmful-gut-bacteria-legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.harmful-gut-bacteria-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+.harmful-gut-bacteria-legend-color.harmful-gut-bacteria-exceeded {
+  background-color: #ff4d4f;
+}
+
+.harmful-gut-bacteria-legend-color.harmful-gut-bacteria-normal {
+  background-color: #52c41a;
+}
+
+.harmful-gut-bacteria-legend-color.harmful-gut-bacteria-not-detected {
+  background-color: #d9d9d9;
+}
+
+.harmful-gut-bacteria-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
 .harmful-gut-bacteria-latin-text {
   font-size: 0.75rem; /* 拉丁文字体大小 */
   color: #6b7280; /* 灰色 */

@@ -1990,7 +1990,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            有益菌是指对宿主健康有积极影响的微生物，特别是在肠道内，有助于维持菌群平衡、促进消化和增强免疫力。常见的有益菌包括双歧杆菌（Bifidobacterium）、乳酸菌（Lactobacillus）、嗜酸乳杆菌（Lactobacillus acidophilus）等。
+            有益菌是指对宿主健康有积极影响的微生物，特别是在肠道内，有助于维持菌群平衡、促进消化和增强免疫力。下列是常见有益菌在您肠道中的检测情况。（中文名称后的符号表示： # 为益生菌； * 为食品可添加菌；未标注特殊符号为对人体有益微生物；）
           </p>
         </div>
       </div>
@@ -2001,13 +2001,17 @@ ${d.summarized_health_index.gut_type.value ? `
       <div class="flex items-start ml-2">
         <p class="text-lg font-bold text-lightpurple">
           <i class="fas fa-question-circle icon icon-purple"></i>
-          如何阅读下列有益菌的表格？
+          肠道有益菌是越多越好吗？
         </p>
       </div>
       <div class="flex items-start ml-2 mt-2">
         <p class="answer-text">
           <i class="fas fa-comments icon icon-orange"></i>
-          中文名称后的符号表示： # 为益生菌； * 为食品可添加菌；未标注特殊符号为对人体有益微生物；
+          肠道有益菌并不是越多越好，关键在于微生物的多样性与平衡：
+          多样性: 健康的肠道微生物群依赖于多样性，不同菌种间的相互作用有助于维持肠道功能和免疫系统。
+          过度生长: 虽然有益菌有助于消化和防病，但过多可能导致代谢问题或肠道不适。
+          个体差异: 每个人的肠道微生物群组成不同，适宜的有益菌数量因人而异。
+          总之，保持有益菌的多样性和适宜数量是促进肠道健康的关键。
         </p>
       </div>
     </div>
@@ -2301,9 +2305,56 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            本报告列出了 17 种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
+            肠道有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。下列是17种常见肠道有害菌在您的肠道中的检测情况。（可以优先关注异常菌和其对应的改善方法）
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- 有害菌检测情况总结圆环 -->
+    <div class="harmful-gut-bacteria-container mt-10 mb-5">
+      <div class="harmful-gut-bacteria-donut-chart-container">
+        <div class="harmful-gut-bacteria-donut-chart"></div>
+        <div class="harmful-gut-bacteria-center-hole">
+          <div class="harmful-gut-bacteria-center-value">3/17</div>
+          <div class="harmful-gut-bacteria-center-label">异常</div>
+          <div class="harmful-gut-bacteria-center-sublabel">常见有害菌检测结果</div>
+        </div>
+      </div>
+
+      <div class="harmful-gut-bacteria-legend">
+        <div class="harmful-gut-bacteria-legend-item">
+          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-exceeded"></div>
+          <span>异常 (3项)</span>
+        </div>
+        <div class="harmful-gut-bacteria-legend-item">
+          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-normal"></div>
+          <span>参考范围内 (8项)</span>
+        </div>
+        <div class="harmful-gut-bacteria-legend-item">
+          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-not-detected"></div>
+          <span>未检出 (6项)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 问答信息框 -->
+    <div class="qa-box">
+      <div class="flex items-start ml-2">
+        <p class="text-lg font-bold text-lightpurple">
+          <i class="fas fa-question-circle icon icon-purple"></i>
+          肠道有害菌是越少越好吗？
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <p class="answer-text">
+          <i class="fas fa-comments icon icon-orange"></i>
+          肠道有害菌并不是越少越好。关键在于维持肠道微生物的平衡：
+          适度存在: 有害菌在一定数量下可以与有益菌竞争，并促进微生物生态的平衡。
+          过度抑制风险: 过度抑制有害菌可能会导致有益菌失衡，破坏微生物群落。
+          健康维持: 健康饮食和生活方式有助于控制有害菌的数量，保持整体肠道健康。
+          总之，重要的是保持有益菌占主导，有害菌在可控范围内。
+        </p>
       </div>
     </div>
 
