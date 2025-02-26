@@ -2225,8 +2225,8 @@ ${d.summarized_health_index.gut_type.value ? `
       <td class="py-2 px-4 text-center beneficial-gut-bacteria-column-text beneficial-gut-bacteria-second-column">
         <div class="flex items-center justify-center">
           <span style="color: ${status.color}">
-            ${detected === "ND" ? "未检出" : formattedDetectedValue}
-            ${status.icon}
+            <strong>${detected === "ND" ? "未检出" : formattedDetectedValue}
+            ${status.icon}</strong>
           </span>
         </div>
         <!-- 使用直接内联的进度条宽度逻辑 -->
@@ -2294,6 +2294,7 @@ ${d.summarized_health_index.gut_type.value ? `
   <h3 class="custom-title-1 page-break">常见有害菌</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
@@ -2312,20 +2313,25 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
+          <th
+            class="py-2 px-4 text-left harmful-gut-bacteria-first-column"
+            style="font-size: 13px;">
             有害菌名称
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
-            参考范围%
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center harmful-gut-bacteria-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
             检测丰度%
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
-            超过%的人
+          <th
+            class="py-2 px-4 text-center harmful-gut-bacteria-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
-            有%的正常人检出
+          <th
+            class="py-2 px-4 text-center harmful-gut-bacteria-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            %正常人有检出
           </th>
         </tr>
         </thead>
@@ -2338,42 +2344,92 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
+      // 常量定义
+      const HARMFUL_CONSTANTS = {
+        COLORS: {
+          RED: '#ff4d4f',
+          GREEN: '#389e0d',
+          GRAY: '#808080',
+          PRIMARY: '#00B2B4',
+          WARNING: '#FFA500',
+          BLACK: '#000000'
+        }
+      };
+
+      // 加载数据
       async function loadHarmfulBacteriaData() {
         try {
           const response = await fetch(DATA_PATHS.DATA);
+          if (!response.ok) {
+            throw new Error(`Network response error: ${response.status}`);
+          }
           const data = await response.json();
-          renderHarmfulBacteriaTable(data.harmful_gut_bacteria_data);
+          renderHarmfulBacteriaTable(data["有害菌属"] || []);
         } catch (error) {
           console.error('Error loading harmful bacteria data:', error);
+          document.getElementById('harmful-bacteria-table-body').innerHTML =
+            '<div class="error-message">数据加载失败，请稍后再试</div>';
         }
       }
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "ND") {
-          return value;
-        }
+      // 格式化数字
+      function formatHarmfulNumber(value) {
+        // 处理特殊值"ND"
+        if (value === "ND") return value;
 
+        // 确保转换为数字类型
         const num = Number(value);
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
+        // 保留2位有效数字
+        return num.toPrecision(2);
+      }
+
+      // 获取状态信息
+      function getHarmfulBacteriaStatus(detected, minRange, maxRange) {
+        // 默认为正常状态
+        let status = {
+          color: HARMFUL_CONSTANTS.COLORS.BLACK,
+          text: '正常',
+          icon: '',
+          isNormal: true
+        };
+
+        // 未检出的情况
+        if (detected === "ND") {
+          if (minRange > 0) {
+            status.color = HARMFUL_CONSTANTS.COLORS.RED;
+            status.text = '偏低';
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + HARMFUL_CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
+          }
+          return status;
         }
+
+        // 低于参考范围
+        if (detected < minRange) {
+          status.color = HARMFUL_CONSTANTS.COLORS.RED;
+          status.text = '偏低';
+          status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + HARMFUL_CONSTANTS.COLORS.RED + ';"></i>';
+          status.isNormal = false;
+        }
+        // 高于参考范围
+        else if (detected > maxRange) {
+          status.color = HARMFUL_CONSTANTS.COLORS.RED;
+          status.text = '超标';
+          status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + HARMFUL_CONSTANTS.COLORS.RED + ';"></i>';
+          status.isNormal = false;
+        }
+
+        return status;
       }
 
-      function formatDetectedValue(value) {
-        return formatNumber(value);
+      // 检查字符串是否为空
+      function isEmptyString(str) {
+        return !str || typeof str !== 'string' || str.trim() === '';
       }
 
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
-
-      function calculateProgressPercentageForThirdColumn(value) {
+      // 计算进度条百分比
+      function calculateProgressPercentage(value) {
         if (value === "ND" || value === 0) {
           return 0;
         }
@@ -2387,138 +2443,161 @@ ${d.summarized_health_index.gut_type.value ? `
         return Math.max(5, Math.min(50, percentage));
       }
 
-      function renderHarmfulBacteriaTable(bacteriaData) {
-        const container = document.getElementById('harmful-bacteria-table-body');
-        container.innerHTML = '';
+      // 创建描述行 - 修复处理"说明"字段的逻辑
+      function createHarmfulDescriptionRow(bacteria, status) {
+        // 确保"说明"字段存在且不为空
+        if (isEmptyString(bacteria["说明"])) {
+          return ''; // 如果没有描述，返回空字符串
+        }
 
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        bacteriaData.forEach(bacteria => {
-          let statusColor, statusText, statusIcon;
-          const detected = bacteria.detected_abundance;
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
-
-          if (detected === "ND") {
-            if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            }
-          } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
-            }
-          }
-
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
-
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          const dataRow = `
-      <tr>
-        <td class="py-2 pl-4 pr-2 text-left core-gut-bacteria-first-column">
-          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
-        </td>
-        <td class="py-2 px-6 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
-          ${formattedMinRange}-${formattedMaxRange}
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
-              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
-                '#000000'
-          }">
-              ${detected === "ND" ? "未检出" : formattedDetectedValue}
-            </span>
-            ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ?
-              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
-              (detected !== "ND" && detected > maxRange) ?
-                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
-                ''
-          }
-          </div>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress mt-2"
-                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
-                        background-color: #00B2B4;
-                        transition: width 0.3s ease;">
+        let descriptionContent = `
+          <div class="flex items-start mb-0">
+            <div class="ml-1">
+              <p>
+                <i class="fas fa-info-circle" style="color: ${HARMFUL_CONSTANTS.COLORS.PRIMARY};"></i>
+                ${bacteria["说明"]}
+              </p>
             </div>
           </div>
-        </td>
+        `;
 
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
-          ${bacteria.higher_than_percentage}%
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
-          ${bacteria.normal_detection_rate}%
-        </td>
-      </tr>
-    `;
-
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
-
-          const descRow = filteredDescriptions.length > 0 ? `
-      <tr class="virus-desc-row">
-        <td colspan="6" class="py-2 px-4 text-left">
-          <div class="description-container text-gray-600" style="font-size: 10px;">
-            ${filteredDescriptions.map(desc => `
-              <div class="flex items-start">
-                <div class="ml-1">
-                  <p>
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};">
-                    </i>
-                    ${desc.text}
-                  </p>
-                </div>
+        // 如果状态不正常且有改善方式，显示改善建议
+        // 明确检查改善方式是否为空字符串
+        const hasImprovement = !isEmptyString(bacteria["改善方式"]);
+        if (!status.isNormal && hasImprovement) {
+          descriptionContent += `
+            <div class="flex items-start mt-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-bell" style="color: ${HARMFUL_CONSTANTS.COLORS.WARNING};"></i>
+                  <strong>改善建议：</strong> ${bacteria["改善方式"]}
+                </p>
               </div>
-            `).join('')}
-          </div>
-        </td>
-      </tr>
-    ` : '';
+            </div>
+          `;
+        }
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
+        return `
+          <tr class="virus-desc-row">
+            <td colspan="4" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 11px;">
+                ${descriptionContent}
+              </div>
+            </td>
+          </tr>
+        `;
+      }
+
+      // 创建表格行
+      function createHarmfulBacteriaRow(bacteria) {
+        // 解析数据
+        const detected = bacteria["丰度%"] === "ND" ? "ND" : parseFloat(bacteria["丰度%"] || 0);
+
+        // 解析范围（格式为"0-3.83"）
+        let minRange = 0, maxRange = 0;
+        if (bacteria["正常范围"] && typeof bacteria["正常范围"] === 'string') {
+          const rangeParts = bacteria["正常范围"].split("-");
+          minRange = parseFloat(rangeParts[0] || 0);
+          maxRange = parseFloat(rangeParts[1] || 0);
+        }
+
+        // 格式化数据
+        const formattedDetectedValue = formatHarmfulNumber(detected);
+        const formattedMinRange = formatHarmfulNumber(minRange);
+        const formattedMaxRange = formatHarmfulNumber(maxRange);
+
+        // 获取状态
+        const status = getHarmfulBacteriaStatus(detected, minRange, maxRange);
+
+        // 创建行元素
+        const bacteriaContainer = document.createElement('div');
+        bacteriaContainer.className = 'bacteria-info-container';
+
+        const table = document.createElement('table');
+        table.className = 'bacteria-table min-w-full';
+
+        // 从名称中提取中文名和拉丁文名（假设格式为"中文名 拉丁名"）
+        const nameParts = bacteria["名称"].split(" ");
+        const chineseName = nameParts[0] || '';
+        const latinName = nameParts.slice(1).join(" ") || ''; // 防止拉丁名有空格
+
+        // 计算进度条百分比
+        const progressPercentage = calculateProgressPercentage(detected);
+
+        // 生成显示值的行
+        const dataRow = `
+        <tr>
+          <td class="py-2 pl-4 pr-2 text-left harmful-gut-bacteria-first-column">
+            <div class="harmful-gut-bacteria-chinese-text"><strong>${chineseName}</strong></div>
+            <div class="harmful-gut-bacteria-latin-text">${latinName}</div>
+          </td>
+          <td class="py-2 px-4 text-center harmful-gut-bacteria-column-text harmful-gut-bacteria-second-column">
+            <div class="flex items-center justify-center">
+              <span style="color: ${status.color}">
+                <strong>${detected === "ND" ? "未检出" : formattedDetectedValue}
+                ${status.icon}</strong>
+              </span>
+            </div>
+            <!-- 进度条 -->
+            <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+              <div class="progress"
+                   style="width: ${progressPercentage}%;
+                          height: 100%;
+                          background-color: ${HARMFUL_CONSTANTS.COLORS.PRIMARY};
+                          transition: width 0.3s ease;">
+              </div>
+            </div>
+          </td>
+          <td class="py-2 px-4 text-center harmful-gut-bacteria-column-text harmful-gut-bacteria-third-column">
+            ${formattedMinRange}-${formattedMaxRange}
+          </td>
+          <td class="py-2 px-4 text-center harmful-gut-bacteria-column-text harmful-gut-bacteria-fourth-column">
+            ${bacteria["%正常人有检出"] || "0%"}
+          </td>
+        </tr>
+      `;
+
+        // 生成描述行
+        const descRow = createHarmfulDescriptionRow(bacteria, status);
+
+        table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+        bacteriaContainer.appendChild(table);
+
+        return bacteriaContainer;
+      }
+
+      // 主渲染函数
+      function renderHarmfulBacteriaTable(bacteriaData) {
+        const container = document.getElementById('harmful-bacteria-table-body');
+        if (!container) {
+          console.error('Cannot find container element: harmful-bacteria-table-body');
+          return;
+        }
+
+        container.innerHTML = '';
+
+        // 如果没有数据
+        if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+          container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+          return;
+        }
+
+        // 使用DocumentFragment批量处理DOM操作
+        const fragment = document.createDocumentFragment();
+
+        bacteriaData.forEach(bacteria => {
+          if (bacteria) {  // 确保bacteria存在
+            try {
+              const bacteriaElement = createHarmfulBacteriaRow(bacteria);
+              fragment.appendChild(bacteriaElement);
+            } catch (error) {
+              console.error('Error creating row for bacteria:', bacteria, error);
+            }
+          }
         });
+
+        // 一次性添加所有元素到DOM
+        container.appendChild(fragment);
       }
 
       // 页面加载时调用
@@ -6938,6 +7017,7 @@ ${d.summarized_health_index.gut_type.value ? `
         </div>
       </div>
     </div>
+
     <div class="flex flex-col gap-4 w-full">
       <!-- 第一行 -->
       <div class="flex gap-2">
@@ -7402,6 +7482,7 @@ ${d.summarized_health_index.gut_type.value ? `
   <h3 class="custom-title-third-level page-break">慢病风险评估表格</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
@@ -7416,133 +7497,225 @@ ${d.summarized_health_index.gut_type.value ? `
 
     <!-- 慢病风险评估板块 : 慢病风险表格 -->
     <div class="rounded-table">
+      <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
-        <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left slow-disease-first-column">评估疾病</th>
-          <th class="py-2 px-4 text-center slow-disease-second-column">风险评估数值</th>
-          <th class="py-2 px-4 text-center slow-disease-third-column">风险评估</th>
-          <th class="py-2 px-4 text-center slow-disease-fourth-column">疾病分类</th>
+          <th
+            class="py-2 px-4 text-left slow-disease-first-column"
+            style="font-size: 13px;">
+            评估慢病名称
+          </th>
+          <th
+            class="py-2 px-4 text-center slow-disease-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            风险评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center slow-disease-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            风险评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="slow-disease-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadSlowDiseaseData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 slow_disease_data 按照 detected_abundance 从大到小排序
-            data.slow_disease_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderSlowDiseaseTable(data.slow_disease_data);
-          } catch (error) {
-            console.error('Error loading slow disease data:', error);
-          }
-        }
+      <!-- 数据表格容器 -->
+      <div id="slow-disease-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderSlowDiseaseTable(slowdiseaseData) {
-          const tableBody = document.getElementById('slow-disease-table-body');
-          if (!tableBody) {
-            console.error('Slow disease data table body not found');
+    <script>
+      // 确保 DATA_PATHS 已定义
+      if (typeof DATA_PATHS === 'undefined') {
+        var DATA_PATHS = {
+          DATA: './data.json' // 默认路径，请确保这个路径是正确的
+        };
+      }
+
+      // 常量定义
+      const CONSTANTS = {
+        COLORS: {
+          RED: '#ff4d4f',
+          GREEN: '#389e0d',
+          GRAY: '#808080',
+          PRIMARY: '#00B2B4',
+          WARNING: '#FF0000',
+          BLACK: '#000000',
+          LOW_RISK: '#52c41a',    // 低风险
+          ATTENTION: '#fadb14',   // 注意
+          MEDIUM_RISK: '#faad14', // 中高风险
+          HIGH_RISK: '#ff4d4f'    // 高风险
+        }
+      };
+
+      // 加载数据
+      async function loadSlowDiseaseData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          if (!response.ok) {
+            document.getElementById('slow-disease-table-body').innerHTML =
+              '<div class="error-message">数据加载失败，请稍后再试</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const data = await response.json();
 
-          slowdiseaseData.forEach(disease => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('slow-disease-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${disease.chinese_name}</div>
-                <div class="latin-text">${disease.english_name}</div>
-              </td>
+          // 检查慢病风险数据是否存在
+          if (!data["慢病风险"] || !Array.isArray(data["慢病风险"])) {
+            document.getElementById('slow-disease-table-body').innerHTML =
+              '<div class="error-message">数据格式不正确</div>';
+            return;
+          }
 
-              <td class="py-2 px-4 text-center column-text" style="
-                  color: ${
-              disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
-                disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
-                  disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
-                    '#ff4d4f' /* 红色，高风险 */
-            };
-                  font-weight: bold;
-              ">
-                ${disease.evaluation_value} <!-- 动态显示评估值 -->
-                <div class="slow-disease-progress-container w-full mt-1 h-2">
-                    <!-- 进度条背景 -->
-                  <div class="h-full bg-gray-200 rounded-full relative overflow-hidden">
-                      <!-- 进度条，根据evaluation_value设置颜色和宽度 -->
-                    <div class="h-full rounded-full" style="
-                        width: ${disease.evaluation_value * 100}%; /* 根据评估值设置进度条的宽度 */
-                        background-color: ${
-              disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
-                disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
-                  disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
-                    '#ff4d4f' /* 红色，高风险 */
-            };
-                    "></div>
-                      <!-- 分界线 -->
-                    <div class="slow-disease-level-marker" style="left: 30%"></div>
-                    <div class="slow-disease-level-marker" style="left: 50%"></div>
-                    <div class="slow-disease-level-marker" style="left: 70%"></div>
-                  </div>
-                </div>
-              </td>
-
-              <td class="py-2 px-4 text-center column-text" style="
-                  color: ${
-              disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '#52c41a' :  /* 绿色，低风险 */
-                disease.evaluation_value < 0.5 ? '#fadb14' :   /* 黄色，注意 */
-                  disease.evaluation_value < 0.7 ? '#faad14' :   /* 橙色，中高风险 */
-                    '#ff4d4f' /* 红色，高风险 */
-            };
-                  font-weight: bold;
-              ">
-                ${
-              disease.evaluation_value >= 0 && disease.evaluation_value < 0.3 ? '低风险' :
-                disease.evaluation_value < 0.5 ? '注意' :
-                  disease.evaluation_value < 0.7 ? '中高风险' :
-                    '高风险'
-            }
-              </td>
-
-              <td class="py-2 px-4 text-center column-text">${disease.classification}</td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('slow-disease-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${disease.descriptions.map(desc => `
-                    <div class="slow-disease-data-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
+          // 对慢病风险按照评估值从大到小排序
+          data["慢病风险"].sort((a, b) => {
+            // 处理数字类型的评估值
+            const valueA = typeof a["评估值"] === 'number' ? a["评估值"] : parseFloat(a["评估值"] || 0);
+            const valueB = typeof b["评估值"] === 'number' ? b["评估值"] : parseFloat(b["评估值"] || 0);
+            return valueB - valueA;
           });
+
+          renderSlowDiseaseTable(data["慢病风险"]);
+        } catch (error) {
+          document.getElementById('slow-disease-table-body').innerHTML =
+            '<div class="error-message">数据加载失败，请稍后再试</div>';
+        }
+      }
+
+      // 获取风险级别颜色
+      function getRiskColor(evaluationValue) {
+        // 这里不需要再转换，因为已经确保evaluationValue是数字
+        if (evaluationValue < 0.3) return CONSTANTS.COLORS.LOW_RISK;
+        if (evaluationValue < 0.5) return CONSTANTS.COLORS.ATTENTION;
+        if (evaluationValue < 0.7) return CONSTANTS.COLORS.MEDIUM_RISK;
+        return CONSTANTS.COLORS.HIGH_RISK;
+      }
+
+      // 创建描述行
+      function createDiseaseDescriptionRow(disease) {
+        // 如果没有说明，返回空字符串
+        if (!disease["说明"] || disease["说明"].trim() === '') {
+          return '';
         }
 
-        // 页面加载时加载有机酸数据
+        return `
+        <tr class="disease-desc-row">
+          <td colspan="3" class="py-2 px-4 text-left">
+            <div class="description-container text-gray-600" style="font-size: 11px;">
+              <div class="flex items-start mb-0">
+                <div class="ml-1">
+                  <p>
+                    <i class="fas fa-info-circle" style="color: ${CONSTANTS.COLORS.PRIMARY};"></i>
+                    ${disease["说明"]}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      `;
+      }
+
+      // 创建疾病行 - 适应数字类型评估值
+      function createDiseaseRow(disease) {
+        // 处理评估值 - 直接使用数字类型
+        const evaluationValue = typeof disease["评估值"] === 'number'
+          ? disease["评估值"]
+          : parseFloat(disease["评估值"] || 0);
+
+        if (isNaN(evaluationValue)) {
+          return document.createElement('div'); // 返回空div避免错误
+        }
+
+        const riskColor = getRiskColor(evaluationValue);
+
+        // 创建行容器
+        const diseaseContainer = document.createElement('div');
+        diseaseContainer.className = 'bacteria-info-container';
+
+        const table = document.createElement('table');
+        table.className = 'bacteria-table min-w-full';
+
+        // 生成显示值的行
+        const dataRow = `
+      <tr>
+        <td class="py-2 pl-4 pr-2 text-left slow-disease-first-column">
+          <div class="slow-disease-chinese-text"><strong>${disease["检测项目"] || '未知项目'}</strong></div>
+        </td>
+        <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-second-column">
+          <div class="flex items-center justify-center">
+            <span style="color: ${riskColor}">
+              <strong>${evaluationValue.toFixed(2)}</strong>
+            </span>
+          </div>
+          <!-- 进度条 - 明确转换为带百分比的字符串 -->
+          <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden; position: relative;">
+            <div class="progress"
+                style="width: ${(evaluationValue * 100) + '%'};
+                      height: 100%;
+                      background-color: ${riskColor};
+                      transition: width 0.3s ease;">
+            </div>
+            <!-- 分界线 -->
+            <div style="position: absolute; top: 0; bottom: 0; left: 30%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+            <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+            <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+          </div>
+        </td>
+        <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-third-column">
+          <span style="color: ${riskColor}; font-weight: bold;">${disease["结果评价"] || '-'}</span>
+        </td>
+      </tr>
+    `;
+
+        // 生成描述行
+        const descRow = createDiseaseDescriptionRow(disease);
+
+        table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+        diseaseContainer.appendChild(table);
+
+        return diseaseContainer;
+      }
+
+      // 主渲染函数
+      function renderSlowDiseaseTable(diseaseData) {
+        const container = document.getElementById('slow-disease-table-body');
+        if (!container) {
+          console.error('Cannot find container element: slow-disease-table-body');
+          return;
+        }
+
+        container.innerHTML = '';
+
+        // 如果没有数据
+        if (!diseaseData || !Array.isArray(diseaseData) || diseaseData.length === 0) {
+          container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+          return;
+        }
+
+        // 使用DocumentFragment批量处理DOM操作
+        const fragment = document.createDocumentFragment();
+
+        diseaseData.forEach(disease => {
+          if (disease) {  // 确保disease存在
+            const diseaseElement = createDiseaseRow(disease);
+            fragment.appendChild(diseaseElement);
+          }
+        });
+
+        // 一次性添加所有元素到DOM
+        container.appendChild(fragment);
+      }
+
+      // 立即调用加载函数，同时保留DOMContentLoaded事件监听
+      if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadSlowDiseaseData);
-      </script>
-
-    </div>
-
+      } else {
+        loadSlowDiseaseData();
+      }
+    </script>
 
   </div>
 

@@ -890,7 +890,7 @@
       "结果评价": "超标",
       "正常范围": "0-0.001",
       "简介": "广泛分布于土壤的革兰氏阳性芽孢杆菌，能产生多种抗菌物质，促进消化酶分泌，增强免疫功能，维持肠道菌群平衡，常用作益生菌制剂。",
-      "超标改善": "",
+      "超标改善": "调整饮食结构，增加膳食纤维摄入。",
       "偏低改善": ""
     },
     {
@@ -1456,397 +1456,159 @@
     }
   ],
 
-  "harmful_gut_bacteria_data": [
+  "有害菌属": [
     {
-      "chinese_name": "埃希氏菌属",
-      "latin_name": "Escherichia",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 3.83
-      },
-      "detected_abundance": 0.14296,
-      "higher_than_percentage": 6,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性兼性厌氧菌，正常菌群成员，参与维生素K和B族维生素合成，但部分菌株可致病。过度生长可导致肠道屏障功能受损"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：加强肠道屏障，补充益生菌；注意饮食卫生；可适量补充乳酸菌制剂"
-        }
-      ]
+      "超标倍数": "1.55X",
+      "名称": "埃希氏菌属 Escherichia",
+      "丰度%": "5.94342",
+      "正常范围": "0-3.83",
+      "%正常人有检出": "99.52%",
+      "说明": "正常菌属，条件致病菌，过多致病，导致菌群失衡",
+      "改善方式": "乳杆菌补充、双歧杆菌补充、大麦、大蒜"
     },
     {
-      "chinese_name": "链球菌属",
-      "latin_name": "Streptococcus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.3496
-      },
-      "detected_abundance": 0.31690,
-      "higher_than_percentage": 13,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性兼性厌氧菌，产生乳酸和短链脂肪酸，部分菌株具有益生作用，但也可能导致机会性感染"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意口腔卫生；补充益生菌；增加膳食纤维摄入"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "链球菌属 Streptococcus",
+      "丰度%": "0.04830",
+      "正常范围": "0-0.3496",
+      "%正常人有检出": "99.52%",
+      "说明": "可引起化脓性炎症，个别菌为益生菌，常见皮肤，口腔，肠道，婴幼儿常见菌",
+      "改善方式": ""
     },
     {
-      "chinese_name": "韦荣菌属",
-      "latin_name": "Veillonella",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.0086
-      },
-      "detected_abundance": 0.38326,
-      "higher_than_percentage": 7,
-      "normal_detection_rate": 98.56,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性厌氧菌，利用乳酸产生丙酸盐，参与口腔和肠道微生态平衡，与运动耐力相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：控制乳制品摄入；加强口腔卫生；可补充益生菌调节菌群平衡"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "韦荣菌属 Veillonella",
+      "丰度%": "0.00637",
+      "正常范围": "0-0.0086",
+      "%正常人有检出": "98.56%",
+      "说明": "过多导致菌群失衡，也见于口腔、咽部、呼吸道菌，健康口腔核心菌，幼儿常见影响早期免疫系统，代谢乳酸产生丙酸可以提供运动耐力，容易形成生物膜耐药，与过敏，哮喘负相关，可能影响几种癌症的发生，例如肝癌，肺癌",
+      "改善方式": ""
     },
     {
-      "chinese_name": "泛菌属",
-      "latin_name": "Pantoea",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00225,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 0.02,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性兼性厌氧菌，环境中常见，机会性致病菌，与免疫功能密切相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：加强免疫力；注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "泛菌属 Pantoea",
+      "丰度%": "0.00498",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "0.02%",
+      "说明": "属于变形菌门肠杆菌科，条件致病菌，环境土壤、水、植物常见菌，免疫力低下，幼儿和老年人常检出，过多导致菌群紊乱，炎症和感染",
+      "改善方式": ""
     },
     {
-      "chinese_name": "梭杆菌属",
-      "latin_name": "Fusobacterium",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00976,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性厌氧菌，产生短链脂肪酸和致炎因子，参与黏膜免疫调节，过度生长可能导致炎症反应"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：增加膳食纤维；补充抗炎益生菌"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "梭杆菌属 Fusobacterium",
+      "丰度%": "0.00087",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "80.29%",
+      "说明": "聚合梭杆菌可诱发促进结直肠癌，产生脂多糖，代谢生成苯酚，引发感染和并发症，胃肠到肿瘤患者富集",
+      "改善方式": ""
     },
     {
-      "chinese_name": "志贺氏菌属",
-      "latin_name": "Shigella",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.04732,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 62.98,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性兼性厌氧菌，侵袭性肠道病原菌，与饮食卫生密切相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意饮食卫生；避免生食；加强肠道屏障功能"
-        }
-      ]
+      "超标倍数": "8.75X",
+      "名称": "志贺氏菌属 Shigella",
+      "丰度%": "0.43772",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "62.98%",
+      "说明": "致病菌，引发腹泻等疾病，有不同的血清型，人类是该菌唯一宿主，粪口途径传播，通常与卫生条件差和食品安全有关",
+      "改善方式": "乳杆菌补充、双歧杆菌补充、大麦、乳清"
     },
     {
-      "chinese_name": "弯曲杆菌属",
-      "latin_name": "Campylobacter",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.04799,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 55.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性微需氧菌，人畜共患病原菌，与食品安全密切相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意食品卫生；充分烹饪肉类；避免交叉污染"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "弯曲杆菌属 Campylobacter",
+      "丰度%": "0.00731",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "55.29%",
+      "说明": "人和动物条件致病菌，导致肠道疾病，常见肠胃炎和菌群紊乱，空肠弯曲杆菌会引起腹泻发烧，食物家养宠物都可能携带弯曲杆菌",
+      "改善方式": ""
     },
     {
-      "chinese_name": "克雷伯氏菌属",
-      "latin_name": "Klebsiella",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.09652,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 89.06,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性兼性厌氧菌，条件致病菌，参与碳水化合物代谢，过度生长可能导致免疫失衡"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：调节肠道菌群；补充益生菌；加强口腔卫生；控制碳水化合物摄入"
-        }
-      ]
+      "超标倍数": "3.82X",
+      "名称": "克雷伯氏菌属 Klebsiella",
+      "丰度%": "0.19117",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "89.06%",
+      "说明": "条件致病菌，人群检出率较高，过高导致肠道菌群紊乱，在口腔和肠道均有分布，易引发感染炎症，耐药， 易感因素包括营养不良，抗生素，开放性伤口，肠球菌属肝病肾病，不卫生的环境和遗传易感性等",
+      "改善方式": "乳杆菌补充、双歧杆菌补充、大麦、低聚果糖"
     },
     {
-      "chinese_name": "脱硫弧菌属",
-      "latin_name": "Desulfovibrio",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.02325,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 33.65,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性厌氧菌，硫酸盐还原菌，产生硫化氢，参与硫代谢，过度生长可能影响肠道屏障"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：减少含硫氨基酸食物摄入；增加膳食纤维；补充益生菌"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "脱硫弧菌属 Desulfovibrio",
+      "丰度%": "0.03146",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "33.65%",
+      "说明": "属于变形菌门，产生硫化氢，导致炎症、腹泻，对肠道上皮具产生毒性，导致胃肠道疾病，约50%人的口腔和肠道携带，过多通常肥胖，便秘型肠易激综合征患者，帕金森，系统性硬化症患者患者富集，与普拉梭菌共存有利于丁酸生产",
+      "改善方式": ""
     },
     {
-      "chinese_name": "螺杆菌属",
-      "latin_name": "Helicobacter",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00373,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 22.12,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性微需氧菌，定植于胃肠道黏膜，部分菌种可能影响胃肠道健康"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意饮食卫生；避免刺激性食物；保持规律作息"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "螺杆菌属 Helicobacter",
+      "丰度%": "0.00173",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "22.12%",
+      "说明": "革兰氏阴性菌，微需氧菌，该菌属一些菌种被发现在人类上消化道内壁，部分种为致病菌，与消化性溃疡、慢性胃炎、十二指肠炎、胃癌有关。包括幽门螺旋杆菌",
+      "改善方式": ""
     },
     {
-      "chinese_name": "弓形菌属",
-      "latin_name": "Arcobacter",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00209,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 7.69,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性微需氧菌，环境中常见的潜在致病菌，与水源污染相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意饮用水卫生；避免生食海产品；加强食品卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "弓形菌属 Arcobacter",
+      "丰度%": "0.00032",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "7.69%",
+      "说明": "好氧菌，腹泻致病菌，与河流海洋污染相关的潜在病原菌，人畜共患菌",
+      "改善方式": ""
     },
     {
-      "chinese_name": "厌氧螺菌属",
-      "latin_name": "Anaerobiospirillum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00044,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 0.00,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性专性厌氧菌，主要分布在肠道，具有极强的运动性，参与碳水化合物代谢，过度生长可能影响肠道稳态"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意饮食卫生；避免生食；补充益生菌调节菌群"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "厌氧螺菌 Anaerobiospirillum",
+      "丰度%": "ND",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "0.00%",
+      "说明": "引起腹泻，感染，常见于猫狗体内，过多会导致菌群紊乱",
+      "改善方式": ""
     },
     {
-      "chinese_name": "肠球菌属",
-      "latin_name": "Enterococcus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.12259,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性兼性厌氧菌，产生细菌素，参与肠道微生态平衡，具有一定益生作用，但过度生长可能影响菌群稳态"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：适当补充益生菌；控制碳水化合物摄入；增加膳食纤维；注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "肠球菌属 Enterococcus",
+      "丰度%": "0.04472",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "81.25%",
+      "说明": "常见上呼吸道，口腔或肠道的常居菌，也分布在畜、禽养殖环境，饲料或肠道，抑菌调节肠道菌群，部分病原体引起菌血症，很多菌耐药，在肝癌，房颤患者中富集，锌缺会增加",
+      "改善方式": ""
     },
     {
-      "chinese_name": "奈瑟氏菌属",
-      "latin_name": "Neisseria",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00957,
-      "higher_than_percentage": 0,
-      "normal_detection_rate": 46.15,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性需氧菌，主要定植于黏膜表面，参与口腔微生态平衡，产生脂多糖，与局部免疫功能相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：加强口腔卫生；增强免疫力；保持环境通风"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "奈瑟氏菌属 Neisseria",
+      "丰度%": "0.00733",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "46.15%",
+      "说明": "部分为人体病原菌，口腔，唾液，鼻腔，肺部正常菌，需氧，对干燥、热、消毒剂敏感，部分菌种产生内毒素LPS引起坏死、出血，微循环障碍，婴幼儿易检出",
+      "改善方式": ""
     },
     {
-      "chinese_name": "不动杆菌属",
-      "latin_name": "Acinetobacter",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.11947,
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性需氧菌，环境适应力强，参与有机物降解，过度生长可能影响免疫平衡"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：加强个人卫生；避免环境污染；提高免疫力；可补充益生菌"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "不动杆菌属 Acinetobacter",
+      "丰度%": "0.02147",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "45.19%",
+      "说明": "条件致病菌，医院感染病原体之一，尤其ICU，易引起呼吸道感染、泌尿道感染、创伤感染，累积不同耐药基因多多种抗生素耐药，<br>风险因素包括抗生素使用，人群接触，识别感染源，主动监测",
+      "改善方式": ""
     },
     {
-      "chinese_name": "假单胞菌属",
-      "latin_name": "Pseudomonas",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.07830,
-      "higher_than_percentage": 69,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阴性需氧菌，具有多样代谢能力，产生多种次级代谢产物，与环境适应性相关，过度生长可能影响微生态平衡"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：注意环境卫生；加强饮食卫生；补充有益菌群；增强免疫力"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "假单胞菌属 Pseudomonas",
+      "丰度%": "0.03203",
+      "正常范围": "0-0.05",
+      "%正常人有检出": "45.19%",
+      "说明": "属于变形菌们，环境广泛存在，代谢多变适应力强，好氧或微需，会导致感染和食物变质，医院获得性感染主要原因，免疫抑制个体和住院患者丰度增加，肠道定植会增加肺部感染风险损，损伤肠道屏障，包括病原菌铜绿假单胞菌，消化道症状为腹痛、腹胀和腹泻，长时间住院、创伤ICU住院、消毒干预等与肠道假单胞菌过度生长有关",
+      "改善方式": ""
     },
     {
-      "chinese_name": "霍尔德曼氏菌属",
-      "latin_name": "Holdemania",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.0003
-      },
-      "detected_abundance": 0.10581,
-      "higher_than_percentage": 98,
-      "normal_detection_rate": 29.33,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "革兰氏阳性厌氧菌，参与蛋白质代谢，产生短链脂肪酸，与肠道代谢功能相关"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议：调节饮食结构；适量补充益生菌；增加膳食纤维摄入"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "霍尔德曼氏菌属 Holdemania",
+      "丰度%": "0.23044",
+      "正常范围": "0-0.0003",
+      "%正常人有检出": "29.33%",
+      "说明": "肠道共生菌，降解黏蛋白，机会致病菌，少数研究表明与痛风正相关，帕金森，双向情感障碍患者富集",
+      "改善方式": ""
     }
   ],
   "opportunistic_gut_pathogens_data": [
@@ -6661,186 +6423,13 @@
     }
   ],
 
-  "slow_disease_data": [
+  "慢病风险": [
     {
-      "chinese_name": "炎症性肠炎",
-      "english_name": "Inflammatory bowel disease",
-      "evaluation_value": "0.25",
-      "classification": "肠道疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "肠易激综合征",
-      "english_name": "Irritable Bowel Syndrome",
-      "evaluation_value": "0.52",
-      "classification": "肠道疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠易激综合征是一种常见的功能性胃肠道疾病，以腹痛、腹胀和排便习惯改变为主要表现。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患肠易激综合征的风险处于中等水平，建议关注饮食习惯和生活压力管理。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "感染性腹泻",
-      "english_name": "Infectious Diarrhea",
-      "evaluation_value": "0.14",
-      "classification": "肠道疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "感染性腹泻是由病原微生物感染引起的急性腹泻疾病。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患感染性腹泻的风险较低，建议保持良好的个人卫生习惯。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "肠道病毒感染",
-      "english_name": "Enterovirus Infection",
-      "evaluation_value": "0.15",
-      "classification": "肠道疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道病毒感染是一种常见的病毒性感染疾病，可引起多种症状。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患肠道病毒感染的风险较低，建议注意个人防护。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "过敏性腹泻",
-      "english_name": "Allergic Diarrhea",
-      "evaluation_value": "0.03",
-      "classification": "肠道疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "过敏性腹泻是由食物或其他过敏原引起的腹泻症状。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患过敏性腹泻的风险很低，建议继续保持当前的饮食习惯。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "肝病",
-      "english_name": "Liver Disease",
-      "evaluation_value": "0.30",
-      "classification": "消化系统疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肝病包括各种影响肝脏功能的疾病，可能由多种因素引起。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患肝病的风险处于中低水平，建议定期进行肝功能检查。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "心脑血管疾病",
-      "english_name": "Cardiovascular and Cerebrovascular Disease",
-      "evaluation_value": "0.15",
-      "classification": "循环系统疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "心脑血管疾病是影响心脏和大脑血管的一系列疾病。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患心脑血管疾病的风险较低，建议保持健康的生活方式。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "甲状腺疾病",
-      "english_name": "Thyroid Disease",
-      "evaluation_value": "0.19",
-      "classification": "内分泌系统疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "甲状腺疾病包括影响甲状腺功能的各种疾病。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患甲状腺疾病的风险较低，建议定期进行甲状腺功能检查。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "肺部疾病",
-      "english_name": "Lung Disease",
-      "evaluation_value": "0.15",
-      "classification": "呼吸系统疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肺部疾病包括影响肺部功能的各种疾病。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前患肺部疾病的风险较低，建议保持良好的呼吸环境。"
-        }
-      ]
-    },
-    {
-      "chinese_name": "神经行为发育异常",
-      "english_name": "Neurobehavioral Development Disorder",
-      "evaluation_value": "0.39",
-      "classification": "神经系统疾病",
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "神经行为发育异常是影响神经系统发育和行为表现的一系列疾病。"
-        },
-        {
-          "type": "bell",
-          "color": "rgb(255, 0, 0)",
-          "text": "该风险提示目前出现神经行为发育异常的风险处于中等水平，建议进行专业评估和早期干预。"
-        }
-      ]
+      "检测项目": "炎症性肠炎",
+      "参考范围": "0.3-0.5-0.7",
+      "评估值": 0.1,
+      "结果评价": "低风险",
+      "说明": "您的风险值在0.3以下，风险较低，如果分值接近0.3仍然需要注意生活方式以及炎症性肠炎风险因素。"
     }
   ],
 

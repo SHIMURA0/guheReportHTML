@@ -143,7 +143,7 @@ strong, b {
     /* 添加以下样式 */
     min-height: fit-content;    /* 确保容器高度适应内容 */
     /*overflow: visible;          !* 防止内容被截断 *!*/
-    margin-bottom: -1px;         /* 增加一点间距，避免临界值问题 */
+    margin-bottom: -2px;         /* 增加一点间距，避免临界值问题 */
     /*margin-top: 5px; !* 添加上边距 *!*/
   }
   .metabolites-info-container {
@@ -695,6 +695,45 @@ tr {
   font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
+/* 肠道菌群检测 : 常见有害菌板块*/
+/* 肠道菌群检测 : 常见有害菌板块 : 表格样式*/
+
+.harmful-gut-bacteria-first-column {
+  width: 35%; /* 有害菌名称 */
+}
+.harmful-gut-bacteria-second-column {
+  width: 25%; /* 检测丰度% */
+}
+.harmful-gut-bacteria-third-column {
+  width: 20%; /* 参考范围% */
+}
+.harmful-gut-bacteria-fourth-column {
+  width: 20%; /* %正常人有检出 */
+}
+/* 有害菌表格第一列中的菌群中文名样式 */
+
+.harmful-gut-bacteria-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有害菌表格第一列中的菌群拉丁名样式 */
+
+.harmful-gut-bacteria-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.harmful-gut-bacteria-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
 /* 肠道菌群检测 : 常见肠道寄生虫板块*/
 
 /* 肠道菌群检测 : 常见肠道寄生虫 : 表格列样式*/
@@ -1189,9 +1228,8 @@ tr {
 
 /* 慢病风险评估板块 : 慢病风险表格 : 列样式*/
 .slow-disease-first-column { width: 40%; }
-.slow-disease-second-column { width: 25%; }
-.slow-disease-third-column { width: 15%; }
-.slow-disease-fourth-column { width: 20%; }
+.slow-disease-second-column { width: 30%; }
+.slow-disease-third-column { width: 30%; }
 
 /* 慢病风险评估板块 : 慢病风险表格 : 进度条样式*/
 .slow-disease-progress-container {
