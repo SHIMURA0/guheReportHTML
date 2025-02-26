@@ -209,15 +209,22 @@ strong, b {
   stroke: #edf2f7;
   stroke-width: 10;
 }
+/*.summary-circle {*/
+/*  fill: none;*/
+/*  !*stroke: rgb(45, 166, 168);*!*/
+/*  stroke: #FF5733;*/
+/*  stroke-width: 10;*/
+/*  stroke-linecap: round;*/
+/*  transform: rotate(-90deg);*/
+/*  transform-origin: 50% 50%;*/
+/*  transition: stroke-dashoffset 0.5s ease;*/
+/*}*/
 .summary-circle {
   fill: none;
-  /*stroke: rgb(45, 166, 168);*/
-  stroke: #FF5733;
-  stroke-width: 10;
-  stroke-linecap: round;
+  stroke-width: 8;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  transition: stroke-dashoffset 0.5s ease;
+  transition: stroke-dashoffset 0.5s, stroke 0.5s; /* 添加颜色过渡效果 */
 }
 .summary-age-bar {
   height: 24px;
@@ -652,8 +659,41 @@ tr {
   font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
+/* 肠道菌群检测 : 常见有益菌板块*/
+/* 肠道菌群检测 : 常见有益菌板块 : 表格样式*/
 
+.beneficial-gut-bacteria-first-column {
+  width: 35%; /* 有益菌名称 */
+}
+.beneficial-gut-bacteria-second-column {
+  width: 32.5%; /* 检测丰度% */
+}
+.beneficial-gut-bacteria-third-column {
+  width: 32.5%; /* 参考范围% */
+}
+/* 有益菌表格第一列中的菌群中文名样式 */
 
+.beneficial-gut-bacteria-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.beneficial-gut-bacteria-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.beneficial-gut-bacteria-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
 
 /* 肠道菌群检测 : 常见肠道寄生虫板块*/
 

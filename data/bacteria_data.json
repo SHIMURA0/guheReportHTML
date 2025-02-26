@@ -1,4 +1,33 @@
 {
+  "general_summary": {
+    "sample_info": {
+      "sample_id": "681364179",
+      "patient_name": "张三",
+      "sex": "女性",
+      "age": "5岁5个月",
+      "collection_date": "",
+      "report_date": "2025-02-11"
+    },
+    "summarized_health_index": {
+      "overall_health_score": {
+        "value": "84",
+        "analysis": "处于亚健康及营养饮食不合理状态，表明目前健康状况处于中等偏下水平，主要原因是饮食营养不均衡，需要通过调整饮食结构和生活习惯来改善健康状况。"
+      },
+      "gut_age": {
+        "value": "50岁",
+        "analysis": "当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后。"
+      },
+      "gut_type": {
+        "value": "拟杆菌型",
+        "analysis": ""
+      }
+    },
+    "analysis_status": {
+      "status": "",
+      "comments": ""
+    }
+  },
+
   "basic_function_of_gut_data": [
     {
       "chinese_name": "蛋白发酵",
@@ -830,641 +859,603 @@
       ]
     }
   ],
-  "beneficial_gut_bacteria_data": [
+  "有益菌": [
     {
-      "chinese_name": "嗜粘蛋白-艾克曼菌",
-      "latin_name": "A. muciniphila",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 6.6395
-      },
-      "detected_abundance": 0.00394,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 95.67,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "嗜粘蛋白-艾克曼菌是一种革兰氏阴性细菌，能够分解肠道黏液，有助于维持肠道屏障功能和调节代谢健康。"
-        }
-      ]
+      "超标倍数": "1.22X",
+      "名称": "Akkermansia muciniphila",
+      "中文名": "嗜粘蛋白-艾克曼菌",
+      "丰度%": "89.09515",
+      "结果评价": "超标",
+      "正常范围": "0-6.6395",
+      "简介": "专性厌氧革兰氏阴性菌，产生乙酸盐和丁酸盐，具有显著的遗传相关性，参与脂质代谢和葡萄糖稳态，与宿主代谢健康密切相关。",
+      "超标改善": "吃太好了",
+      "偏低改善": "吃太差了"
     },
     {
-      "chinese_name": "凝结芽孢杆菌",
-      "latin_name": "B. coagulans",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00027,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "凝结芽孢杆菌是一种耐热的革兰氏阳性芽孢杆菌，常用于作为益生菌，具有促进肠道健康和改善消化的潜在益处。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bacillus coagulans",
+      "中文名": "凝结芽孢杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性芽孢杆菌，产生乳酸，耐高温和胃酸环境，具有益生特性，能促进消化健康，调节免疫功能，对肠易激综合征有改善作用。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "枯草芽孢杆菌",
-      "latin_name": "B. subtilis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00185,
-      "higher_than_percentage": 58,
-      "normal_detection_rate": 87.50,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "枯草芽孢杆菌是一种广泛存在的革兰氏阳性芽孢杆菌，常用于发酵食品，有助于改善肠道微生态和促进植物生长。"
-        }
-      ]
+      "超标倍数": "3.00X",
+      "名称": "Bacillus subtilis",
+      "中文名": "枯草芽孢杆菌",
+      "丰度%": "0.00303",
+      "结果评价": "超标",
+      "正常范围": "0-0.001",
+      "简介": "广泛分布于土壤的革兰氏阳性芽孢杆菌，能产生多种抗菌物质，促进消化酶分泌，增强免疫功能，维持肠道菌群平衡，常用作益生菌制剂。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "多形拟杆菌",
-      "latin_name": "B. thetaiotaomicron",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 2.7856
-      },
-      "detected_abundance": 0.00020,
-      "higher_than_percentage": 64,
-      "normal_detection_rate": 86.06,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "多形拟杆菌是一种革兰氏阴性厌氧细菌，能够有效分解复杂碳水化合物，并在维持肠道微生态平衡和健康方面发挥重要作用。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bacteroides thetaiotaomicron",
+      "中文名": "多形拟杆菌",
+      "丰度%": "0.03866",
+      "结果评价": "丰度较低",
+      "正常范围": "0-2.7856",
+      "简介": "厌氧革兰氏阴性菌，在肠道微生物组中占主导地位，参与复杂多糖降解，产生短链脂肪酸，影响宿主免疫系统发育，维护肠道屏障功能。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "青春双歧杆菌",
-      "latin_name": "B. adolescentis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 14.286
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 24,
-      "normal_detection_rate": 97.12,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "青春双歧杆菌是一种革兰氏阳性益生菌，参与消化过程并有助于维持肠道健康，常被作为益生菌补充剂的一部分。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium adolescentis",
+      "中文名": "青春双歧杆菌 *",
+      "丰度%": "0.01061",
+      "结果评价": "丰度较低",
+      "正常范围": "0-14.286",
+      "简介": "厌氧革兰氏阳性菌，是成人肠道中常见的双歧杆菌种类，能分解复杂碳水化合物，产生乳酸和乙酸，维持肠道pH值，抑制有害菌生长。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "角双歧杆菌",
-      "latin_name": "B. angulatum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.15257
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "角双歧杆菌是一种革兰氏阳性益生菌，有助于维持肠道微生物平衡，并可能对宿主的免疫系统发挥积极作用。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium angulatum",
+      "中文名": "角双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.15257",
+      "简介": "厌氧革兰氏阳性菌，能代谢多种碳源，产生短链脂肪酸，调节肠道免疫功能，降低肠道炎症反应，促进肠道健康。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "动物双歧杆菌",
-      "latin_name": "B. animalis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.18833
-      },
-      "detected_abundance": 0.00113,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "动物双歧杆菌是一种革兰氏阳性益生菌，具有促进消化健康、增强免疫功能以及改善肠道微生态的潜在益处。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium animalis",
+      "中文名": "动物双歧杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.18833",
+      "简介": "耐氧厌氧革兰氏阳性菌，具有较强耐酸性，能代谢多种寡糖，缓解便秘症状，增强肠道屏障功能，降低肠道病原菌感染风险。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "两歧双歧杆菌",
-      "latin_name": "B. bifidum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 2.1225
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 98.56,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "两歧双歧杆菌是一种革兰氏阳性益生菌，能够帮助分解食物，促进营养吸收，有助于维护肠道健康和增强免疫系统功能。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium bifidum",
+      "中文名": "两歧双歧杆菌 #",
+      "丰度%": "0.00547",
+      "结果评价": "丰度较低",
+      "正常范围": "0-2.1225",
+      "简介": "主要定植于人体肠道的革兰氏阳性菌，能降解黏蛋白，产生乳酸和乙酸，促进肠道屏障功能，增强免疫系统，降低过敏风险。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "短双歧杆菌",
-      "latin_name": "B. breve",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00158,
-      "higher_than_percentage": 67,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "短双歧杆菌是一种革兰氏阳性益生菌，它在消化过程中发挥重要作用，能够帮助分解乳糖和其他碳水化合物，促进肠道健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium breve",
+      "中文名": "短双歧杆菌 #",
+      "丰度%": "0.00084",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，是婴幼儿肠道中优势菌种，能利用多种碳水化合物，产生乳酸和乙酸，维持肠道菌群平衡，促进肠道健康。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "链状双歧杆菌",
-      "latin_name": "B. catenulatum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.50838
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 50,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "链状双歧杆菌是一种革兰氏阳性益生菌，它有助于改善肠道微生物群的平衡，促进消化健康，可能在发酵过程中可能产生有益的代谢物。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium catenulatum",
+      "中文名": "链状双歧杆菌",
+      "丰度%": "0.00029",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.50838",
+      "简介": "厌氧革兰氏阳性菌，能分解多种碳水化合物，产生抗氧化物质，维持肠道微生态平衡，减少肠道有害菌群，促进肠道健康。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "乳双歧杆菌",
-      "latin_name": "B. crudilactis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 44,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "乳双歧杆菌是一种革兰氏阳性益生菌，它在乳糖代谢方面发挥作用，能够帮助消化乳制品，维持肠道健康和增强免疫系统。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium crudilactis",
+      "中文名": "乳双歧杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，主要存在于乳制品中，能降解乳糖和半乳糖，耐酸性强，调节肠道菌群，增强肠道屏障功能。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "婴儿双歧杆菌",
-      "latin_name": "B. infantis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 2,
-      "normal_detection_rate": 99.04,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "婴儿双歧杆菌是一种革兰氏阳性益生菌，主要存在于新生儿和婴儿的肠道中。这种细菌对婴儿的消化系统发育至关重要。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium infantis",
+      "中文名": "婴儿双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，是婴儿肠道的优势菌种，能分解人乳寡糖，产生短链脂肪酸，维持肠道屏障完整性，预防婴儿肠道感染。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "长双歧杆菌",
-      "latin_name": "B. longum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 6.854
-      },
-      "detected_abundance": 0.01861,
-      "higher_than_percentage": 95,
-      "normal_detection_rate": 98.56,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "长双歧杆菌是一种革兰氏阳性益生菌，它可以促进消化、增强免疫系统、帮助维持肠道微生物平衡、减少肠道炎症等。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium longum",
+      "中文名": "长双歧杆菌 #",
+      "丰度%": "0.01169",
+      "结果评价": "丰度较低",
+      "正常范围": "0-6.854",
+      "简介": "厌氧革兰氏阳性菌，是人体肠道中最常见的双歧杆菌之一，能分解复杂碳水化合物，产生乳酸和乙酸，降低肠道pH值，抑制有害菌生长。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "胃痛双歧杆菌",
-      "latin_name": "B. merycicum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "胃痛双歧杆菌是一种相对较少研究的双歧杆菌，它具有促进肠道健康、改善消化和增强免疫反应的潜力。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium merycicum",
+      "中文名": "胃瘤双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，主要存在于反刍动物消化道，能分解植物纤维素，产生抗氧化物质，对消化系统健康有益。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "穆卡拉巴双歧杆菌",
-      "latin_name": "B. moukalabense",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00021,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "穆卡拉巴双歧杆菌是一种相对较新的双歧杆菌菌株，对肠道健康有积极影响。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium moukalabense",
+      "中文名": "穆卡拉巴双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，与长双歧杆菌亲缘关系较近，能利用复杂碳水化合物，产生短链脂肪酸，维持肠道微生态平衡。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "假长双歧杆菌",
-      "latin_name": "B. pseudolongum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00142,
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 5.77,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "假长双歧杆菌是一种革兰氏阳性益生菌，具有促进肠道健康和改善消化的能力。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium pseudolongum",
+      "中文名": "假长双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，主要存在于动物消化道，能分解多种碳水化合物，产生抗菌物质，对宿主肠道健康有保护作用。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "分支双歧杆菌",
-      "latin_name": "B. ramosum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 98,
-      "normal_detection_rate": 35.58,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "分支双歧杆菌是一种革兰氏阳性益生菌，它主要存在于人类的肠道中，尤其是在婴儿期和幼儿期。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium ramosum",
+      "中文名": "分支双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，形态特征为分枝状，能分解多种膳食纤维，产生有机酸，维持肠道酸碱平衡，抑制有害微生物生长。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "罗伊氏双歧杆菌",
-      "latin_name": "B. reuteri",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 5.77,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "罗伊氏双歧杆菌是一种特有的益生菌，以其能在肠道中产生抗菌物质并改善消化健康而著称，有助于缓解腹泻和增强免疫功能。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium reuteri",
+      "中文名": "罗伊氏双歧杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，能分解多种膳食纤维，产生抗菌物质，增强肠道免疫功能，改善肠道微生态环境。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "短柄双歧杆菌",
-      "latin_name": "B. stellenboschense",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "短柄双歧杆菌是一种益生菌，能够促进肠道健康并可能改善消化功能，常见于人类和动物的肠道微生物群中。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium stellenboschense",
+      "中文名": "短柄双岐杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，来源于非洲野生动物肠道，能利用多种复杂碳水化合物，产生乳酸和乙酸，维持肠道健康。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "粪双歧杆菌",
-      "latin_name": "B. stercoris",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "粪双歧杆菌是一种益生菌，主要存在于人类和动物的肠道中，以其助于维持肠道微生物平衡和促进消化健康而受到关注。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bifidobacterium stercoris",
+      "中文名": "粪双歧杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性菌，主要存在于人类粪便中，能降解多种碳水化合物，产生乳酸和乙酸，维持肠道菌群平衡，抑制病原菌生长。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "布劳特氏菌属氢营养菌",
-      "latin_name": "B. hydrogenotropica",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00262,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "布劳特氏菌属氢营养菌是一种厌氧细菌，以其能够利用氢气作为电子供体并产生短链脂肪酸而著称。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Blautia hydrogenotrophica",
+      "中文名": "布劳特氏菌属氢营养菌",
+      "丰度%": "0.00146",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.025629",
+      "简介": "厌氧革兰氏阳性菌，能利用氢气和二氧化碳产生乙酸，参与肠道气体代谢，维持肠道微生态平衡，与宿主代谢健康密切相关。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "穗状丁酸弧菌",
-      "latin_name": "B. crossotus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 2.9334
-      },
-      "detected_abundance": 0.00239,
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "穗状丁酸弧菌是一种厌氧细菌，以其发酵纤维素产生丁酸的能力而闻名，有助于促进肠道健康和维持消化功能。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Butyrivibrio crossotus",
+      "中文名": "穗状丁酸弧菌",
+      "丰度%": "0.00125",
+      "结果评价": "丰度较低",
+      "正常范围": "0-2.9334",
+      "简介": "厌氧革兰氏阴性菌，能发酵多种碳水化合物产生丁酸盐，为结肠细胞提供能量，维持肠道上皮完整性，减少肠道炎症反应。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "丁酸梭菌",
-      "latin_name": "C. butyricum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.01350,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "丁酸梭菌是一种厌氧性细菌，能够产生丁酸，对于肠道健康和食品发酵具有重要作用。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Clostridium butyricum",
+      "中文名": "丁酸梭菌",
+      "丰度%": "0.00025",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阳性芽孢形成菌，产生丁酸，具有调节肠道菌群、抑制肠道病原菌、促进肠黏膜修复和增强肠道免疫功能的作用。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "霍氏真杆菌",
-      "latin_name": "E. hallii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 3.5506
-      },
-      "detected_abundance": 0.02035,
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "霍氏真杆菌是一种厌氧细菌，以其能够发酵膳食纤维并产生丁酸而著称，促进肠道健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Eubacterium hallii",
+      "中文名": "霍氏真杆菌",
+      "丰度%": "0.01015",
+      "结果评价": "丰度较低",
+      "正常范围": "0-3.5506",
+      "简介": "厌氧革兰氏阳性菌，能将乳酸转化为丁酸，代谢胆汁酸，参与肠道微生物间交叉喂养，维持肠道菌群稳态，减少肠道炎症。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "直肠真杆菌",
-      "latin_name": "E. rectale",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 13.029
-      },
-      "detected_abundance": 2.14287,
-      "higher_than_percentage": 75,
-      "normal_detection_rate": 95.67,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "直肠真杆菌是一种厌氧细菌，以其能发酵膳食纤维并产生短链脂肪酸，尤其是丁酸，促进肠道健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Eubacterium rectale",
+      "中文名": "直肠真杆菌",
+      "丰度%": "0.04981",
+      "结果评价": "丰度较低",
+      "正常范围": "0-13.029",
+      "简介": "厌氧革兰氏阳性菌，人体肠道中主要的丁酸盐产生菌之一，能降解多种碳水化合物，参与肠道微生物代谢网络，维持结肠健康。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "普拉梭菌",
-      "latin_name": "F. prausnitzii",
-      "normal_range": {
-        "normal_range_min": 0.18043,
-        "normal_range_max": 14.003
-      },
-      "detected_abundance": 26.23325,
-      "higher_than_percentage": 98,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "普拉梭菌是一种益生菌，以其产生丁酸和抗炎作用而著称，对维持肠道健康和整体免疫功能有重要的积极影响。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "可以通过增加纤维摄入、食用发酵食品以及减少糖和加工食品的摄入来改善普拉梭菌超标情况。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Faecalibacterium prausnitzii",
+      "中文名": "普拉梭菌",
+      "丰度%": "4.06378",
+      "结果评价": "检出",
+      "正常范围": "0.18043-14.003",
+      "简介": "厌氧革兰氏阳性菌，人体肠道中主要的丁酸盐产生菌，具有抗炎、抗氧化特性，维持肠道屏障功能，被视为肠道健康的关键指标菌。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "嗜酸乳杆菌",
-      "latin_name": "L. acidophilus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "嗜酸乳杆菌是一种常见的益生菌，以其能够发酵乳糖并生成乳酸而著称，具有助于消化、增强免疫力以及维持肠道微生物平衡的潜力。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Lactobacillus acidophilus",
+      "中文名": "嗜酸乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "微需氧革兰氏阳性菌，能产生乳酸和抗菌物质，降低肠道pH值，抑制有害菌生长，增强肠道屏障功能，改善乳糖不耐症状。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "短乳杆菌",
-      "latin_name": "L. brevis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00028,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "短乳杆菌是一种乳酸菌，以其发酵能力和产生乳酸而著称，具有促进消化、增强免疫力和抗菌特性。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Lactobacillus brevis",
+      "中文名": "短乳杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "异型发酵乳杆菌，耐酸耐胆盐，能产生抗菌肽和外多糖，具有抗氧化特性，促进肠道屏障功能，增强免疫系统。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "干酪乳杆菌",
-      "latin_name": "L. casei",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "干酪乳杆菌是一种乳酸菌，它以其良好的发酵特性和能够耐受酸性环境而著称，具有促进消化、增强免疫力、改善肠道菌群平衡等益处。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Lactobacillus casei",
+      "中文名": "干酪乳杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，具有较高的胆盐和酸耐受性，能分解多种碳水化合物，产生乳酸，抑制肠道病原体，减轻过敏反应。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "卷曲乳杆菌",
-      "latin_name": "L. crispatus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.00489,
-      "higher_than_percentage": 67,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "卷曲乳杆菌是一种重要的乳酸菌，它以其对维持阴道健康和抑制病原体生长的能力而闻名，同时也能促进消化系统的健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Lactobacillus crispatus",
+      "中文名": "卷曲乳杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，主要定植于女性生殖道，能产生过氧化氢和乳酸，维持阴道酸性环境，抑制病原菌生长，预防泌尿生殖系统感染。",
+      "超标改善": "",
+      "偏低改善": ""
     },
     {
-      "chinese_name": "德氏乳杆菌",
-      "latin_name": "L. delbrueckii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 44,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "德氏乳杆菌是一种乳酸菌，它能够在酸性环境中生存，具有良好的发酵能力，并能产生多种代谢产物，能够促进消化和增强免疫功能。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌制剂"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Lactobacillus curvatus",
+      "中文名": "弯曲乳杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，能在低温环境生长，产生乳酸和抗菌肽，广泛应用于发酵食品制备，具有延长食品保质期的作用。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus delbrueckii",
+      "中文名": "德氏乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.010302",
+      "简介": "革兰氏阳性菌，广泛应用于乳制品发酵，包括酸奶和奶酪制作，能产生乳酸，改善乳糖不耐受，增强肠道免疫功能，促进矿物质吸收。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus fermentum",
+      "中文名": "发酵乳杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "异型发酵乳杆菌，耐酸耐胆盐，能产生乳酸和抗氧化物质，具有抗菌特性，降低血清胆固醇，增强肠道屏障功能，促进免疫调节。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus gasseri",
+      "中文名": "格氏乳杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，是人体肠道和生殖道的常驻菌，能产生乳酸和过氧化氢，抑制病原菌生长，减少肠道炎症，参与脂质代谢，促进体重管理。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus helveticus",
+      "中文名": "瑞士乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，常用于奶酪发酵，具有较强的蛋白质水解活性，产生生物活性肽，具有降血压、抗氧化作用，改善睡眠，增强钙吸收。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus johnsonii",
+      "中文名": "约氏乳杆菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，主要定植于小肠，能产生抗菌物质，增强肠道屏障功能，缓解过敏反应，抑制幽门螺杆菌，具有免疫调节作用。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus paracasei",
+      "中文名": "副干酪乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，耐酸耐胆盐，能产生多种抗菌物质，调节肠道菌群平衡，增强免疫功能，减轻肠道炎症，预防呼吸道感染。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus plantarum",
+      "中文名": "植物乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，耐酸耐胆盐，能产生多种抗菌物质，分解植物来源的多酚类化合物，增强肠道屏障功能，减少IBS症状，调节免疫功能。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "2.73X",
+      "名称": "Lactobacillus reuteri",
+      "中文名": "罗伊氏乳杆菌 #",
+      "丰度%": "0.00276",
+      "结果评价": "超标",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，能产生抗菌素(罗伊氏菌素)，抑制有害细菌，产生维生素B12，参与胆固醇代谢，维持口腔和肠道微生态平衡。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus rhamnosus",
+      "中文名": "鼠李糖乳杆菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，耐酸耐胆盐性强，能黏附于肠粘膜，产生抗菌物质，增强肠道屏障功能，减少湿疹和过敏，预防腹泻和呼吸道感染。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactobacillus salivarius",
+      "中文名": "唾液乳杆菌 *",
+      "丰度%": "0.00048",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，定植于口腔、肠道和阴道，能产生抗菌肽和有机酸，具有抗炎特性，抑制幽门螺杆菌生长，减轻结肠炎症状，改善口腔健康。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactococcus lactis",
+      "中文名": "乳酸乳球菌 *",
+      "丰度%": "0.00025",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.041602",
+      "简介": "兼性厌氧革兰氏阳性菌，广泛用于乳制品发酵，产生乳酸和多种抗菌物质，如乳链菌素，抑制病原菌生长，增强肠道免疫功能，改善肠道菌群结构。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactococcus raffinolactis",
+      "中文名": "棉子糖乳球菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，能代谢多种碳水化合物，包括棉子糖，产生乳酸和芳香化合物，参与发酵食品制备，维持肠道微生态平衡。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Lactococcus taiwanensis",
+      "中文名": "台湾乳球菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "革兰氏阳性菌，首次从台湾地区分离，能产生乳酸和抗氧化物质，参与发酵过程，具有潜在益生功能，促进肠道微生态平衡。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Oxalobacter formigenes",
+      "中文名": "草酸杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "厌氧革兰氏阴性菌，专一性分解草酸盐，降低尿液中草酸浓度，减少肾结石形成风险，维持肠道微生态平衡，促进肾脏健康。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Pediococcus acidilactici",
+      "中文名": "乳酸片球菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，耐酸耐热，产生细菌素和乳酸，抑制多种病原菌和腐败菌，应用于食品保存和发酵，促进肠道健康，增强免疫功能。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Pediococcus pentosaceus",
+      "中文名": "戊糖片球菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，能发酵多种碳水化合物，包括戊糖，产生抗菌物质，应用于肉制品和蔬菜发酵，增强肠道屏障功能，调节免疫系统。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Phascolarctobacterium succinatutens",
+      "中文名": "琥珀酸考拉杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-2.4798",
+      "简介": "厌氧革兰氏阴性菌，利用肠道中的琥珀酸盐产生丙酸盐，参与肠道微生物代谢网络，维持肠道微生态平衡，与宿主代谢健康相关。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Roseburia intestinalis",
+      "中文名": "肠道罗斯拜瑞氏菌",
+      "丰度%": "0.03853",
+      "结果评价": "丰度较低",
+      "正常范围": "0-4.8346",
+      "简介": "厌氧革兰氏阳性菌，主要产丁酸盐菌群之一，能降解复杂碳水化合物，产生丁酸，为结肠细胞提供能量，维持肠道健康，减少炎症反应。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Roseburia inulinivorans",
+      "中文名": "食葡糖罗斯拜瑞氏菌",
+      "丰度%": "0.18695",
+      "结果评价": "检出",
+      "正常范围": "0-2.7653",
+      "简介": "厌氧革兰氏阳性菌，能降解菊粉等膳食纤维，产生丁酸盐和丙酸盐，维持肠道屏障功能，调节胰岛素敏感性，减少代谢性疾病风险。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Staphylococcus carnosus",
+      "中文名": "肉葡萄球菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，不产生肠毒素，广泛应用于发酵肉制品生产，产生风味物质，抑制亚硝酸盐形成，具有食品安全促进作用。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Staphylococcus vitulinus",
+      "中文名": "小牛葡萄球菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，主要存在于动物皮肤和粘膜表面，能产生多种酶和抗氧化物质，参与皮肤微生态平衡维持，抑制病原菌定植。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Staphylococcus xylosus",
+      "中文名": "木糖葡萄球菌 *",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.001",
+      "简介": "兼性厌氧革兰氏阳性菌，能降解木糖等多种碳水化合物，应用于肉制品发酵，产生特殊风味物质，抑制脂质氧化，具有抗氧化作用。",
+      "超标改善": "",
+      "偏低改善": ""
+    },
+    {
+      "超标倍数": "",
+      "名称": "Streptococcus thermophilus",
+      "中文名": "嗜热链球菌 #",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-1.0107",
+      "简介": "兼性厌氧革兰氏阳性菌，耐高温，广泛用于酸奶和奶酪制作，能产生乳酸和细菌素，改善乳糖不耐症状，增强肠道屏障功能，促进免疫调节。",
+      "超标改善": "",
+      "偏低改善": ""
     }
   ],
+
   "harmful_gut_bacteria_data": [
     {
       "chinese_name": "埃希氏菌属",

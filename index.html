@@ -64,7 +64,7 @@
   </noscript>
 </head>
 
-<!-- 页面主体，四周内边距5-->
+<!-- 页面主体 -->
 <body class="bg-white p-6">
 
   <!-- 宏基因组检测报告总结页 -->
@@ -72,80 +72,42 @@
   <!-- h1标题：使用自定义样式类custom-title-first-level来定制"宏基因组检测报告"的样式 -->
   <h1 class="custom-title-first-level mt-[-5mm]">宏基因组检测报告</h1>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+<!--  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
 
-    <!-- 基本信息行 -->
-    <div class="grid grid-cols-2 gap-4 mb-2">
-      <!-- 左边三个 summary-info-card -->
-      <div class="flex gap-2">
-        <div class="summary-info-card" style="flex: 75;">
-          <div class="summary-title font-bold">姓名</div>
-          <div class="font-bold text-gray-500">张三</div>
-        </div>
-        <div class="summary-info-card" style="flex: 75;">
-          <div class="summary-title font-bold">性别</div>
-          <div class="font-bold text-gray-500">男性</div>
-        </div>
-        <div class="summary-info-card" style="flex: 100;">
-          <div class="summary-title font-bold">年龄</div>
-          <div class="font-bold text-gray-500">3岁0月</div>
-        </div>
-      </div>
-
-      <!-- 右边两个 summary-info-card -->
-      <div class="flex gap-2">
-        <div class="summary-info-card flex-1">
-          <div class="summary-title font-bold">样本编号</div>
-          <div class="font-bold text-gray-500">681364179</div>
-        </div>
-        <div class="summary-info-card flex-1">
-          <div class="summary-title font-bold">报告日期</div>
-          <div class="font-bold text-gray-500">2025-02-11</div>
-        </div>
-      </div>
-    </div>
-
-
-    <!--    <div class="flex w-full gap-4 mb-2">-->
-<!--      &lt;!&ndash; 第一列：15% &ndash;&gt;-->
-<!--      <div class="flex-[15] summary-info-card">-->
-<!--        <div class="summary-title font-bold">姓名</div>-->
-<!--        <div class="font-bold text-gray-500">张三</div>-->
+<!--    &lt;!&ndash; 基本信息行 &ndash;&gt;-->
+<!--    <div class="grid grid-cols-2 gap-4 mb-2">-->
+<!--      &lt;!&ndash; 左边三个 summary-info-card &ndash;&gt;-->
+<!--      <div class="flex gap-2">-->
+<!--        <div class="summary-info-card" style="flex: 75;">-->
+<!--          <div class="summary-title font-bold">姓名</div>-->
+<!--          <div class="font-bold text-gray-500">张三</div>-->
+<!--        </div>-->
+<!--        <div class="summary-info-card" style="flex: 75;">-->
+<!--          <div class="summary-title font-bold">性别</div>-->
+<!--          <div class="font-bold text-gray-500">男性</div>-->
+<!--        </div>-->
+<!--        <div class="summary-info-card" style="flex: 100;">-->
+<!--          <div class="summary-title font-bold">年龄</div>-->
+<!--          <div class="font-bold text-gray-500">3岁0月</div>-->
+<!--        </div>-->
 <!--      </div>-->
 
-<!--      &lt;!&ndash; 第二列：15% &ndash;&gt;-->
-<!--      <div class="flex-[15] summary-info-card">-->
-<!--        <div class="summary-title font-bold">性别</div>-->
-<!--        <div class="font-bold text-gray-500">男性</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第三列：20% &ndash;&gt;-->
-<!--      <div class="flex-[15] summary-info-card">-->
-<!--        <div class="summary-title font-bold">年龄</div>-->
-<!--        <div class="font-bold text-gray-500">3岁0月</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第四列：25% &ndash;&gt;-->
-<!--      <div class="flex-[25] summary-info-card">-->
-<!--        <div class="summary-title font-bold">样本编号</div>-->
-<!--        <div class="font-bold text-gray-500">64XXXXX09</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 第五列：25% &ndash;&gt;-->
-<!--      <div class="flex-[25] summary-info-card">-->
-<!--        <div class="summary-title font-bold">报告日期</div>-->
-<!--        <div class="font-bold text-gray-500">2024-04-05</div>-->
+<!--      &lt;!&ndash; 右边两个 summary-info-card &ndash;&gt;-->
+<!--      <div class="flex gap-2">-->
+<!--        <div class="summary-info-card flex-1">-->
+<!--          <div class="summary-title font-bold">样本编号</div>-->
+<!--          <div class="font-bold text-gray-500">681364179</div>-->
+<!--        </div>-->
+<!--        <div class="summary-info-card flex-1">-->
+<!--          <div class="summary-title font-bold">报告日期</div>-->
+<!--          <div class="font-bold text-gray-500">2025-02-11</div>-->
+<!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
 
-
-
-
-
-
-
-    <!-- 健康总分和肠道年龄并排显示 -->
-<!--    <div class="grid grid-cols-2 gap-4 mb-5">-->
+<!--    &lt;!&ndash; 健康总分和右侧三个框并排显示 &ndash;&gt;-->
+<!--    <div class="grid grid-cols-2 gap-4 mb-2">-->
+<!--      &lt;!&ndash; 左侧健康总分 &ndash;&gt;-->
 <!--      <div class="summary-info-card">-->
 <!--        <div class="summary-title mb-7"><b>健康总分</b></div>-->
 <!--        <div class="flex flex-col items-center">-->
@@ -174,20 +136,73 @@
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
-<!--      <div class="summary-info-card">-->
-<!--        <div class="summary-title mb-12"><b>肠道年龄</b></div>-->
+
+<!--      &lt;!&ndash; 右侧三个框堆叠 &ndash;&gt;-->
+<!--      <div class="flex flex-col gap-2 h-full">-->
+<!--        &lt;!&ndash; 菌群健康 &ndash;&gt;-->
+<!--        <div class="flex-1 summary-info-card p-4">-->
+<!--          <div class="summary-title font-bold mb-3">菌群健康</div>-->
+<!--          <div class="flex w-full items-center">-->
+<!--            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">-->
+<!--              <div class="bg-[#FFD700] h-3 rounded-full" style="width: 73%"></div>-->
+<!--            </div>-->
+<!--            <div class="text-[#2DA6A8] font-bold w-16 text-right">-->
+<!--              <span class="text-[#FFD700]">73</span>/100-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="text-sm text-gray-600 mt-2">-->
+<!--            肠道菌群多样性良好-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 慢病控制 &ndash;&gt;-->
+<!--        <div class="flex-1 summary-info-card p-4">-->
+<!--          <div class="summary-title font-bold mb-3">慢病控制</div>-->
+<!--          <div class="flex w-full items-center">-->
+<!--            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">-->
+<!--              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 81%"></div>-->
+<!--            </div>-->
+<!--            <div class="text-[#2DA6A8] font-bold w-16 text-right">-->
+<!--              <span class="text-[#9ACD32]">81</span>/100-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="text-sm text-gray-600 mt-2">-->
+<!--            慢性疾病风险较低-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 营养均衡 &ndash;&gt;-->
+<!--        <div class="flex-1 summary-info-card p-4">-->
+<!--          <div class="summary-title font-bold mb-3">营养均衡</div>-->
+<!--          <div class="flex w-full items-center">-->
+<!--            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">-->
+<!--              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 80%"></div>-->
+<!--            </div>-->
+<!--            <div class="text-[#2DA6A8] font-bold w-16 text-right">-->
+<!--              <span class="text-[#9ACD32]">80</span>/100-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="text-sm text-gray-600 mt-2">-->
+<!--            营养摄入基本均衡-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="flex gap-4">-->
+<!--      &lt;!&ndash; 肠道年龄容器 (占7份) &ndash;&gt;-->
+<!--      <div class="summary-info-card flex-[7]">-->
+<!--        <div class="summary-title mb-10"><b>肠道年龄</b></div>-->
 <!--        <div class="flex flex-col">-->
 <!--          <div class="relative w-full">-->
 <!--            &lt;!&ndash; 真实年龄部分 &ndash;&gt;-->
 <!--            <div class="mb-9">-->
 <!--              <div class="flex items-center">-->
-<!--                &lt;!&ndash; 标签文字 &ndash;&gt;-->
 <!--                <div class="text-gray-600 mr-4 w-20">实际年龄</div>-->
-<!--                &lt;!&ndash; 进度条和上方数字 &ndash;&gt;-->
 <!--                <div class="flex-1 relative">-->
-<!--                  <div class="absolute -top-6 left-[3%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">3岁</div>-->
+<!--                  <div class="absolute -top-6 left-[30%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">30岁</div>-->
 <!--                  <div class="summary-age-bar bg-gray-200">-->
-<!--                    <div class="summary-age-bar bg-blue-200" style="width: 3%"></div>-->
+<!--                    <div class="summary-age-bar bg-blue-200" style="width: 30%"></div>-->
 <!--                  </div>-->
 <!--                </div>-->
 <!--              </div>-->
@@ -195,197 +210,477 @@
 <!--            &lt;!&ndash; 肠道年龄部分 &ndash;&gt;-->
 <!--            <div>-->
 <!--              <div class="flex items-center">-->
-<!--                &lt;!&ndash; 标签文字 &ndash;&gt;-->
 <!--                <div class="text-gray-600 mr-4 w-20">肠道年龄</div>-->
-<!--                &lt;!&ndash; 进度条和上方数字 &ndash;&gt;-->
 <!--                <div class="flex-1 relative">-->
-<!--                  <div class="absolute -top-6 left-[5.47%] transform -translate-x-1/2 text-gray-600 font-bold text-lg">5.47岁</div>-->
+<!--                  <div class="absolute -top-6 left-[54.7%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">54.7岁</div>-->
 <!--                  <div class="summary-age-bar bg-gray-200">-->
-<!--                    <div class="summary-age-bar" style="width: 5.47%; background-color: rgb(45, 166, 168)"></div>-->
+<!--                    <div class="summary-age-bar" style="width: 54.7%; background-color: rgb(45, 166, 168)"></div>-->
 <!--                  </div>-->
 <!--                </div>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->
-<!--          <div class="summary-description mt-10">-->
+<!--          <div class="summary-description mt-5">-->
 <!--            当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后-->
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
+
+<!--      &lt;!&ndash; 肠型容器 (占3份) &ndash;&gt;-->
+<!--      <div class="summary-info-card flex-[3]">-->
+<!--        <div class="summary-title mb-3"><b>肠型</b></div>-->
+
+<!--        <div class="flex flex-col gap-2">-->
+
+<!--          &lt;!&ndash; 拟杆菌型 &ndash;&gt;-->
+<!--          <div class="rounded-xl bg-white p-3">-->
+<!--            <div class="flex justify-between items-start">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 A</span>-->
+<!--                <h2 class="text-base font-bold text-gray-500">拟杆菌型</h2>-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          &lt;!&ndash; 普雷沃氏菌型（当前用户类型） &ndash;&gt;-->
+<!--          <div class="rounded-xl p-3" style="background: #D0E7FF">-->
+<!--            <div class="flex justify-between items-start">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-blue-600 block mb-0.5">类型 B（您的类型）</span>-->
+<!--                <h2 class="text-base font-bold text-gray-500">普雷沃氏菌型</h2>-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-blue-600 bg-opacity-30 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          &lt;!&ndash; 厚壁菌型 &ndash;&gt;-->
+<!--          <div class="rounded-xl bg-white p-3">-->
+<!--            <div class="flex justify-between items-start">-->
+<!--              <div>-->
+<!--                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 C</span>-->
+<!--                <h2 class="text-base font-bold text-gray-500">厚壁菌型</h2>-->
+<!--              </div>-->
+<!--              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">-->
+<!--                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
 <!--    </div>-->
 
-    <!-- 健康总分和右侧三个框并排显示 -->
-    <div class="grid grid-cols-2 gap-4 mb-2">
-      <!-- 左侧健康总分 -->
-      <div class="summary-info-card">
-        <div class="summary-title mb-7"><b>健康总分</b></div>
-        <div class="flex flex-col items-center">
-          <div class="w-40 h-40 mb-5">
-            <svg viewBox="0 0 100 100">
-              <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
-              <circle class="summary-circle" cx="50" cy="50" r="45"
-                      stroke-dasharray="282.7"
-                      stroke-dashoffset="101.772"/>
-              <text x="50" y="45"
-                    class="summary-score-text"
-                    text-anchor="middle"
-                    dominant-baseline="middle"
-                    font-size="30"
-                    font-weight="bold"
-                    fill="#FF5733">64</text>
-              <text x="50" y="68"
-                    class="summary-score-text"
-                    text-anchor="middle"
-                    font-size="10"
-                    fill="#2DA6A8">总分: 100</text>
-            </svg>
-          </div>
-          <div class="summary-description text-center">
-            处于亚健康及营养饮食不合理状态，表明目前健康状况处于中等偏下水平，主要原因是饮食营养不均衡，需要通过调整饮食结构和生活习惯来改善健康状况。
-          </div>
-        </div>
-      </div>
-
-      <!-- 右侧三个框堆叠 -->
-      <div class="flex flex-col gap-2 h-full">
-        <!-- 菌群健康 -->
-        <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">菌群健康</div>
-          <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#FFD700] h-3 rounded-full" style="width: 73%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#FFD700]">73</span>/100
-            </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-            肠道菌群多样性良好
-          </div>
-        </div>
-
-        <!-- 慢病控制 -->
-        <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">慢病控制</div>
-          <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 81%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#9ACD32]">81</span>/100
-            </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-            慢性疾病风险较低
-          </div>
-        </div>
-
-        <!-- 营养均衡 -->
-        <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">营养均衡</div>
-          <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 80%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#9ACD32]">80</span>/100
-            </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-            营养摄入基本均衡
-          </div>
-        </div>
-      </div>
+    <div id="container" class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+      <!-- 内容将通过JavaScript动态加载 -->
     </div>
 
-    <div class="flex gap-4">
-      <!-- 肠道年龄容器 (占7份) -->
-      <div class="summary-info-card flex-[7]">
-        <div class="summary-title mb-10"><b>肠道年龄</b></div>
-        <div class="flex flex-col">
-          <div class="relative w-full">
-            <!-- 真实年龄部分 -->
-            <div class="mb-9">
-              <div class="flex items-center">
-                <div class="text-gray-600 mr-4 w-20">实际年龄</div>
-                <div class="flex-1 relative">
-                  <div class="absolute -top-6 left-[30%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">30岁</div>
-                  <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar bg-blue-200" style="width: 30%"></div>
-                  </div>
+    <script>
+      // 根据健康总分动态改变颜色
+      function getScoreColor(score) {
+        const numScore = parseInt(score);
+        if (numScore >= 85) {
+          return {
+            circle: '#7CB342', // 柔和的绿色
+            text: '#558B2F'    // 深橄榄绿
+          };
+        } else if (numScore >= 75) {
+          return {
+            circle: '#9CCC65', // 淡青绿色
+            text: '#689F38'    // 中青绿色
+          };
+        } else if (numScore >= 60) {
+          return {
+            circle: '#FFB74D', // 温和的橙色
+            text: '#F57C00'    // 中橙色
+          };
+        } else if (numScore >= 40) {
+          return {
+            circle: '#FF8A65', // 柔和的珊瑚色
+            text: '#E64A19'    // 深珊瑚色
+          };
+        } else {
+          return {
+            circle: '#EF5350', // 柔和的红色
+            text: '#D32F2F'    // 深红色
+          };
+        }
+      }
+
+      function calculateAgeBarMetrics(actualAge, gutAge) {
+        // 基础配置
+        const minAge = 0;
+        const maxAge = 120;
+        const minWidth = 5; // 最小显示宽度百分比
+        const youngAge = 7; // 年轻年龄的分界点
+        const youngAgeScale = 0.3; // 0-7岁占总宽度的比例
+        const remainingScale = 1 - youngAgeScale; // 剩余年龄占总宽度的比例
+
+        // 计算函数
+        function calculatePosition(age) {
+          if (age <= youngAge) {
+            // 0-7岁范围内的计算
+            return (age / youngAge) * (youngAgeScale * 100);
+          } else {
+            // 7岁以上范围的计算
+            const remainingAge = age - youngAge;
+            const remainingMaxAge = maxAge - youngAge;
+            return (youngAgeScale * 100) + ((remainingAge / remainingMaxAge) * (remainingScale * 100));
+          }
+        }
+
+        // 计算实际年龄和肠道年龄的位置
+        const actualAgePercent = calculatePosition(actualAge);
+        const gutAgePercent = calculatePosition(gutAge);
+
+        return {
+          actualAge: {
+            width: Math.max(minWidth, Math.min(actualAgePercent, 100)),
+            position: Math.min(actualAgePercent, 100)
+          },
+          gutAge: {
+            width: Math.max(minWidth, Math.min(gutAgePercent, 100)),
+            position: Math.min(gutAgePercent, 100)
+          }
+        };
+      }
+
+      // 生成肠型卡片的辅助函数
+      function generateGutTypeCards(currentType) {
+        const gutTypes = [
+          {
+            type: "A",
+            name: "拟杆菌型",
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'
+          },
+          {
+            type: "B",
+            name: "普雷沃氏菌型",
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+          },
+          {
+            type: "C",
+            name: "厚壁菌型",
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>'
+          }
+        ];
+
+        return gutTypes.map(gutType => {
+          const isActive = gutType.name === currentType;
+          return `
+                    <div class="rounded-xl ${isActive ? 'bg-[#D0E7FF]' : 'bg-white'} p-3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] font-medium ${isActive ? 'text-blue-600' : 'text-gray-400'} block mb-0.5">
+                                    类型 ${gutType.type}${isActive ? '（您的类型）' : ''}
+                                </span>
+                                <h2 class="text-base font-bold text-gray-500">${gutType.name}</h2>
+                            </div>
+                            <div class="w-6 h-6 rounded-lg ${isActive ? 'bg-blue-600 bg-opacity-30' : 'bg-gray-100'} flex items-center justify-center">
+                                <svg class="w-3 h-3 ${isActive ? 'text-white' : 'text-gray-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    ${gutType.icon}
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }).join('');
+      }
+
+      // 主渲染函数
+      function renderSummary(data) {
+        const d = data.general_summary;
+        const container = document.getElementById('container');
+
+        if (!d) return;
+
+        // 获取健康总分的颜色
+        const scoreColors = getScoreColor(d.summarized_health_index.overall_health_score.value);
+
+        container.innerHTML = `
+        <!-- 基本信息行 -->
+        <div class="grid grid-cols-2 gap-4 mb-2">
+            <!-- 左边三个 summary-info-card -->
+            <div class="flex gap-2">
+                ${d.sample_info.patient_name ? `
+                <div class="summary-info-card" style="flex: 75;">
+                    <div class="summary-title font-bold">姓名</div>
+                    <div class="font-bold text-gray-500">${d.sample_info.patient_name}</div>
                 </div>
-              </div>
-            </div>
-            <!-- 肠道年龄部分 -->
-            <div>
-              <div class="flex items-center">
-                <div class="text-gray-600 mr-4 w-20">肠道年龄</div>
-                <div class="flex-1 relative">
-                  <div class="absolute -top-6 left-[54.7%] transform -translate-x-1/2 text-gray-500 font-bold text-lg">54.7岁</div>
-                  <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar" style="width: 54.7%; background-color: rgb(45, 166, 168)"></div>
-                  </div>
+                ` : ''}
+                ${d.sample_info.sex ? `
+                <div class="summary-info-card" style="flex: 75;">
+                    <div class="summary-title font-bold">性别</div>
+                    <div class="font-bold text-gray-500">${d.sample_info.sex}</div>
                 </div>
-              </div>
+                ` : ''}
+                ${d.sample_info.age ? `
+                <div class="summary-info-card" style="flex: 100;">
+                    <div class="summary-title font-bold">年龄</div>
+                    <div class="font-bold text-gray-500">${d.sample_info.age}</div>
+                </div>
+                ` : ''}
             </div>
-          </div>
-          <div class="summary-description mt-5">
-            当肠道菌群反映的年龄大幅偏离真实年龄时道常代表您的肠道菌群出现了紊乱，存在疾病风险或发育滞后
-          </div>
+
+            <!-- 右边两个 summary-info-card -->
+            <div class="flex gap-2">
+                ${d.sample_info.sample_id ? `
+                <div class="summary-info-card flex-1">
+                    <div class="summary-title font-bold">样本编号</div>
+                    <div class="font-bold text-gray-500">${d.sample_info.sample_id}</div>
+                </div>
+                ` : ''}
+                ${d.sample_info.report_date ? `
+                <div class="summary-info-card flex-1">
+                    <div class="summary-title font-bold">报告日期</div>
+                    <div class="font-bold text-gray-500">${d.sample_info.report_date}</div>
+                </div>
+                ` : ''}
+            </div>
         </div>
-      </div>
 
-      <!-- 肠型容器 (占3份) -->
-      <div class="summary-info-card flex-[3]">
-        <div class="summary-title mb-3"><b>肠型</b></div>
-        <div class="flex flex-col gap-2">
-          <!-- 拟杆菌型 -->
-          <div class="rounded-xl bg-white p-3">
-            <div class="flex justify-between items-start">
-              <div>
-                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 A</span>
-                <h2 class="text-base font-bold text-gray-500">拟杆菌型</h2>
-              </div>
-              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">
-                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                </svg>
-              </div>
+        <!-- 健康总分和指标框 -->
+        <div class="grid grid-cols-2 gap-4 mb-2">
+            ${d.summarized_health_index.overall_health_score.value ? `
+            <div class="summary-info-card">
+                <div class="summary-title mb-7"><b>健康总分</b></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 mb-5">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
+                            <circle class="summary-circle"
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    stroke="${scoreColors.circle}"
+                                    stroke-dasharray="282.7"
+                                    stroke-dashoffset="${282.7 - (282.7 * parseInt(d.summarized_health_index.overall_health_score.value) / 100)}"/>
+                            <text x="50"
+                                  y="45"
+                                  class="summary-score-text"
+                                  text-anchor="middle"
+                                  dominant-baseline="middle"
+                                  font-size="30"
+                                  font-weight="bold"
+                                  fill="${scoreColors.text}">${d.summarized_health_index.overall_health_score.value}</text>
+                            <text x="50"
+                                  y="68"
+                                  class="summary-score-text"
+                                  text-anchor="middle"
+                                  font-size="10"
+                                  fill="#2DA6A8">总分: 100</text>
+                        </svg>
+                    </div>
+                    ${d.summarized_health_index.overall_health_score.analysis ? `
+                    <div class="summary-description text-center">
+                        ${d.summarized_health_index.overall_health_score.analysis}
+                    </div>
+                    ` : ''}
+                </div>
             </div>
-          </div>
+            ` : ''}
 
-          <!-- 普雷沃氏菌型（当前用户类型） -->
-          <div class="rounded-xl p-3" style="background: #D0E7FF">
-            <div class="flex justify-between items-start">
-              <div>
-                <span class="text-[10px] font-medium text-blue-600 block mb-0.5">类型 B（您的类型）</span>
-                <h2 class="text-base font-bold text-gray-500">普雷沃氏菌型</h2>
-              </div>
-              <div class="w-6 h-6 rounded-lg bg-blue-600 bg-opacity-30 flex items-center justify-center">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
+            <!-- 右侧指标栏 -->
+            <div class="flex flex-col gap-2 h-full">
+                <div class="flex-1 summary-info-card p-4">
+                    <div class="summary-title font-bold mb-3">菌群健康</div>
+                    <div class="flex w-full items-center">
+                        <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                            <div class="bg-[#FFD700] h-3 rounded-full" style="width: 73%"></div>
+                        </div>
+                        <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                            <span class="text-[#FFD700]">73</span>/100
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-2">肠道菌群多样性良好</div>
+                </div>
 
-          <!-- 厚壁菌型 -->
-          <div class="rounded-xl bg-white p-3">
-            <div class="flex justify-between items-start">
-              <div>
-                <span class="text-[10px] font-medium text-gray-400 block mb-0.5">类型 C</span>
-                <h2 class="text-base font-bold text-gray-500">厚壁菌型</h2>
-              </div>
-              <div class="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center">
-                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
+                <div class="flex-1 summary-info-card p-4">
+                    <div class="summary-title font-bold mb-3">慢病控制</div>
+                    <div class="flex w-full items-center">
+                        <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                            <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 81%"></div>
+                        </div>
+                        <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                            <span class="text-[#9ACD32]">81</span>/100
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-2">慢性疾病风险较低</div>
+                </div>
+
+                <div class="flex-1 summary-info-card p-4">
+                    <div class="summary-title font-bold mb-3">营养均衡</div>
+                    <div class="flex w-full items-center">
+                        <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                            <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                            <span class="text-[#9ACD32]">80</span>/100
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-2">营养摄入基本均衡</div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+
+        <!-- 肠道年龄和肠型 -->
+        <div class="flex gap-4">
+            ${d.summarized_health_index.gut_age.value ? `
+            <div class="summary-info-card flex-[7]">
+    <div class="summary-title mb-10"><b>肠道年龄</b></div>
+    <div class="flex flex-col">
+        <div class="relative w-full">
+            ${(() => {
+          const ageMetrics = calculateAgeBarMetrics(
+            parseInt(d.sample_info.age),
+            parseInt(d.summarized_health_index.gut_age.value)
+          );
+          return `
+    <div class="mb-9">
+        <div class="flex items-center">
+            <div class="text-gray-600 mr-4 w-20">实际年龄</div>
+            <div class="flex-1 relative">
+                <div class="absolute -top-6 left-[${ageMetrics.actualAge.position}%]">
+                    <div class="text-gray-500 font-bold text-lg whitespace-nowrap"
+                         style="
+                            ${ageMetrics.actualAge.position >= 95 ? 'transform: translateX(-100%);' :
+            ageMetrics.actualAge.position <= 5 ? 'transform: translateX(0);' :
+              'transform: translateX(-50%);'}
+                         ">
+                        ${d.sample_info.age}
+                    </div>
+                </div>
+                <div class="summary-age-bar bg-gray-200">
+                    <div class="summary-age-bar bg-blue-200"
+                         style="width: ${ageMetrics.actualAge.width}%"></div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div>
+        <div class="flex items-center">
+            <div class="text-gray-600 mr-4 w-20">肠道年龄</div>
+            <div class="flex-1 relative">
+                <div class="absolute -top-6 left-[${ageMetrics.gutAge.position}%]">
+                    <div class="transform -translate-x-1/2 text-gray-500 font-bold text-lg whitespace-nowrap"
+                         style="
+                            ${ageMetrics.gutAge.position >= 95 ? 'transform: translateX(-100%);' :
+            ageMetrics.gutAge.position <= 5 ? 'transform: translateX(0);' :
+              'transform: translateX(-50%);'}
+                         ">
+                        ${d.summarized_health_index.gut_age.value}
+                    </div>
+                </div>
+                <div class="summary-age-bar bg-gray-200">
+                    <div class="summary-age-bar"
+                         style="width: ${ageMetrics.gutAge.width}%; background-color: rgb(45, 166, 168)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+        })()}
+</div>
+${d.summarized_health_index.gut_age.analysis ? `
+<div class="summary-description mt-5">
+    ${d.summarized_health_index.gut_age.analysis}
+</div>
+` : ''}
+</div>
+</div>
+` : ''}
+
+${d.summarized_health_index.gut_type.value ? `
+<div class="summary-info-card flex-[3]">
+    <div class="summary-title mb-3"><b>肠型</b></div>
+    <div class="flex flex-col gap-2">
+        ${generateGutTypeCards(d.summarized_health_index.gut_type.value)}
+    </div>
+</div>
+` : ''}
+</div>
+`;
+      }
+
+      // 加载数据的异步函数
+      async function loadData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          const data = await response.json();
+          renderSummary(data);
+        } catch (error) {
+          console.error('Error loading data:', error);
+          document.getElementById('container').innerHTML = `
+                    <div class="text-red-500 text-center p-4">
+                        加载数据时发生错误，请稍后重试
+                    </div>
+                `;
+        }
+      }
+
+      // 页面加载完成后自动加载数据
+      document.addEventListener('DOMContentLoaded', () => {
+        loadData();
+      });
+
+      // 错误处理函数
+      function handleError(error) {
+        console.error('Error:', error);
+        document.getElementById('container').innerHTML = `
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">错误！</strong>
+                    <span class="block sm:inline">加载数据时发生错误，请刷新页面重试。</span>
+                </div>
+            `;
+      }
+
+      // 数据格式化辅助函数
+      function formatValue(value, type) {
+        if (!value) return '';
+
+        switch(type) {
+          case 'percentage':
+            return `${Math.round(value)}%`;
+          case 'age':
+            return `${value}岁`;
+          case 'date':
+            return new Date(value).toLocaleDateString('zh-CN');
+          default:
+            return value;
+        }
+      }
+
+      // 防抖函数，用于优化窗口调整时的重新渲染
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+
+      // 窗口调整时重新渲染的处理函数
+      const handleResize = debounce(() => {
+        loadData();
+      }, 250);
+
+      // 添加窗口调整事件监听
+      window.addEventListener('resize', handleResize);
+    </script>
 
 <!--    <div class="summary-info-card">-->
 <!--      <div class="summary-title"><b>肠型</b></div>-->
@@ -478,7 +773,7 @@
 <!--      </div>-->
 <!--    </div>-->
 
-  </div>
+
 
   <!-- 宏基因组报告阅读指南 -->
 
@@ -766,35 +1061,35 @@
           const progressPercentage = calculateProgressPercentage(value, maxRange);
 
           const dataRow = `
-      <tr>
-        <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
-          <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${item.english_name}</div>
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-second-column">
-          ${minRange}-${maxRange}
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-third-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
-              ${value}
-            </span>
-          </div>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress mt-2"
-                 style="width: ${progressPercentage}%;
-                        background-color: ${!isNormal ? CUSTOM_COLORS.red : CUSTOM_COLORS.green};
-                        transition: width 0.3s ease;">
-            </div>
-          </div>
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-fourth-column">
-          <span style="color: ${CUSTOM_COLORS[statusColor]}">
-            <strong>${statusText}</strong>${statusIcon}
-          </span>
-        </td>
-      </tr>
-    `;
+            <tr>
+              <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
+                <div class="core-gut-bacteria-chinese-text"><strong>${item.chinese_name}</strong></div>
+                <div class="core-gut-bacteria-latin-text">${item.english_name}</div>
+              </td>
+              <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-second-column">
+                ${minRange}-${maxRange}
+              </td>
+              <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-third-column">
+                <div class="flex items-center justify-center">
+                  <span style="color: ${!isNormal ? CUSTOM_COLORS.red : '#000000'}">
+                    ${value}
+                  </span>
+                </div>
+                <div class="progress-bar w-full mt-1">
+                  <div class="progress mt-2"
+                       style="width: ${progressPercentage}%;
+                              background-color: ${!isNormal ? CUSTOM_COLORS.red : CUSTOM_COLORS.green};
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center core-gut-bacteria-column-text basic-function-of-gut-fourth-column">
+                <span style="color: ${CUSTOM_COLORS[statusColor]}">
+                  <strong>${statusText}</strong>${statusIcon}
+                </span>
+              </td>
+            </tr>
+          `;
 
           const descRow = item.descriptions.length > 0 ? `
       <tr class="virus-desc-row">
@@ -1685,9 +1980,10 @@
   </div>
 
   <!-- 常见有益菌版块 -->
-  <h3 class="custom-title-1 page-break">常见益生菌</h3>
+  <h3 class="custom-title-1 page-break">常见有益菌</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
@@ -1700,26 +1996,42 @@
       </div>
     </div>
 
+    <!-- 问答信息框 -->
+    <div class="qa-box">
+      <div class="flex items-start ml-2">
+        <p class="text-lg font-bold text-lightpurple">
+          <i class="fas fa-question-circle icon icon-purple"></i>
+          如何阅读下列有益菌的表格？
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <p class="answer-text">
+          <i class="fas fa-comments icon icon-orange"></i>
+          中文名称后的符号表示： # 为益生菌； * 为食品可添加菌；未标注特殊符号为对人体有益微生物；
+        </p>
+      </div>
+    </div>
+
     <!-- 常见益生菌表格 -->
     <div class="rounded-table">
       <!-- 主表格只包含标题 -->
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
-            益生菌名称
+          <th
+            class="py-2 px-4 text-left beneficial-gut-bacteria-first-column"
+            style="font-size: 13px;">
+            有益菌名称
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
-            参考范围%
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center beneficial-gut-bacteria-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
             检测丰度%
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
-            超过%的人
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
-            有%的正常人检出
+          <th
+            class="py-2 px-4 text-center beneficial-gut-bacteria-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
           </th>
         </tr>
         </thead>
@@ -1732,187 +2044,244 @@
     </div>
 
     <script>
+      // 常量定义
+      const CONSTANTS = {
+        COLORS: {
+          RED: '#ff4d4f',
+          GREEN: '#389e0d',
+          GRAY: '#808080',
+          PRIMARY: '#00B2B4',  // rgb(0, 178, 180) 的十六进制表示
+          WARNING: '#FF0000',  // rgb(255, 0, 0) 的十六进制表示
+          BLACK: '#000000'
+        }
+      };
+
+      // 加载数据
       async function loadBeneficialBacteriaData() {
         try {
           const response = await fetch(DATA_PATHS.DATA);
+          if (!response.ok) {
+            throw new Error(`Network response error: ${response.status}`);
+          }
           const data = await response.json();
-          renderBeneficialBacteriaTable(data.beneficial_gut_bacteria_data);
+          renderBeneficialBacteriaTable(data["有益菌"] || []);
         } catch (error) {
           console.error('Error loading beneficial bacteria data:', error);
+          document.getElementById('beneficial-bacteria-table-body').innerHTML =
+            '<div class="error-message">数据加载失败，请稍后再试</div>';
         }
       }
 
+      // 格式化数字 - 保留2位有效数字
       function formatNumber(value) {
-        if (typeof value === "string" && value === "ND") {
-          return value;
-        }
+        // 处理特殊值"ND"
+        if (value === "ND") return value;
 
+        // 确保转换为数字类型
         const num = Number(value);
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
+        // 保留2位有效数字
+        return num.toPrecision(2);
       }
 
-      function formatDetectedValue(value) {
-        return formatNumber(value);
-      }
-
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
-
-      function calculateProgressPercentageForThirdColumn(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
-
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1; // log10(0.0001)
-        const maxLog = 3;  // log10(100)
-
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
-
-      function renderBeneficialBacteriaTable(bacteriaData) {
-        const container = document.getElementById('beneficial-bacteria-table-body');
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
+      // 获取状态信息
+      function getBacteriaStatus(detected, minRange, maxRange) {
+        // 默认为正常状态
+        let status = {
+          color: CONSTANTS.COLORS.BLACK, // 正常为黑色文字
+          text: '正常',
+          icon: '',
+          isNormal: true
         };
 
-        bacteriaData.forEach(bacteria => {
-          let statusColor, statusText, statusIcon;
-          const detected = bacteria.detected_abundance;
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
-
-          if (detected === "ND") {
-            if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            }
-          } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
-            }
+        // 未检出的情况
+        if (detected === "ND") {
+          if (minRange > 0) {
+            // 未检出但参考范围最小值大于0，视为偏低
+            status.color = CONSTANTS.COLORS.RED;
+            status.text = '偏低';
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
           }
+          return status;
+        }
 
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
+        // 低于参考范围
+        if (detected < minRange) {
+          status.color = CONSTANTS.COLORS.RED;
+          status.text = '偏低';
+          status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + CONSTANTS.COLORS.RED + ';"></i>';
+          status.isNormal = false;
+        }
+        // 高于参考范围
+        else if (detected > maxRange) {
+          status.color = CONSTANTS.COLORS.RED;
+          status.text = '超标';
+          status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + CONSTANTS.COLORS.RED + ';"></i>';
+          status.isNormal = false;
+        }
+        // 正常范围内，默认状态，无需修改
 
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
+        return status;
+      }
 
-          const dataRow = `
-      <tr>
-        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
-          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
-          ${formattedMinRange}-${formattedMaxRange}
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
-              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
-                '#000000'
-          }">
-              ${detected === "ND" ? "未检出" : formattedDetectedValue}
-            </span>
-            ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ?
-              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
-              (detected !== "ND" && detected > maxRange) ?
-                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
-                ''
+      // 创建描述行 - 更新为新的数据结构和逻辑
+      function createDescriptionRow(bacteria, status) {
+        let descriptionContent = '';
+
+        // 首先添加常规简介
+        if (bacteria["简介"] && bacteria["简介"].trim()) {
+          descriptionContent += `
+      <div class="flex items-start mb-0">
+        <div class="ml-1">
+          <p>
+            <i class="fas fa-info-circle" style="color: ${CONSTANTS.COLORS.PRIMARY};"></i>
+            ${bacteria["简介"]}
+          </p>
+        </div>
+      </div>
+    `;
+        }
+
+        // 如果状态不是正常，根据状态添加相应的改善建议
+        if (!status.isNormal) {
+          if (status.text === '超标' && bacteria["超标改善"] && bacteria["超标改善"].trim()) {
+            descriptionContent += `
+        <div class="flex items-start mt-0">
+          <div class="ml-1">
+            <p>
+              <i class="fas fa-bell" style="color: #FFA500;"></i>
+              <strong>改善建议：</strong> ${bacteria["超标改善"]}
+            </p>
+          </div>
+        </div>
+      `;
+          } else if (status.text === '偏低' && bacteria["偏低改善"] && bacteria["偏低改善"].trim()) {
+            descriptionContent += `
+        <div class="flex items-start mt-0">
+          <div class="ml-1">
+            <p>
+              <i class="fas fa-bell" style="color: #FFA500;"></i>
+              <strong>改善建议：</strong> ${bacteria["偏低改善"]}
+            </p>
+          </div>
+        </div>
+      `;
           }
-          </div>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress mt-2"
-                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
-                        background-color: #00B2B4;
-                        transition: width 0.3s ease;">
-            </div>
-          </div>
-        </td>
+        }
 
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
-          ${bacteria.higher_than_percentage}%
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
-          ${bacteria.normal_detection_rate}%
+        // 如果有内容需要显示，返回完整的行
+        if (descriptionContent.trim()) {
+          return `
+      <tr class="virus-desc-row">
+        <td colspan="6" class="py-2 px-4 text-left">
+          <div class="description-container text-gray-600" style="font-size: 11px;">
+            ${descriptionContent}
+          </div>
         </td>
       </tr>
     `;
+        }
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+        // 如果没有描述内容，返回空字符串
+        return '';
+      }
 
-          const descRow = filteredDescriptions.length > 0 ? `
-            <tr class="virus-desc-row">
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600" style="font-size: 10px;">
-                  ${filteredDescriptions.map(desc => `
-                    <div class="flex items-start">
-                      <div class="ml-1">
-                        <p>
-                          <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                             style="color: ${desc.color};">
-                          </i>
-                          ${desc.text}
-                        </p>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            </tr>
-          ` : '';
+      // 创建表格行
+      function createBacteriaRow(bacteria) {
+        // 解析数据，添加安全检查
+        const detected = bacteria["丰度%"] === "ND" ? "ND" : parseFloat(bacteria["丰度%"] || 0);
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
+        // 安全解析范围值
+        let minRange = 0, maxRange = 0;
+        if (bacteria["正常范围"] && typeof bacteria["正常范围"] === 'string') {
+          const rangeParts = bacteria["正常范围"].split("-");
+          minRange = parseFloat(rangeParts[0] || 0);
+          maxRange = parseFloat(rangeParts[1] || 0);
+        }
+
+        // 格式化数据 - 保留2位有效数字
+        const formattedDetectedValue = formatNumber(detected);
+        const formattedMinRange = formatNumber(minRange);
+        const formattedMaxRange = formatNumber(maxRange);
+
+        // 获取状态
+        const status = getBacteriaStatus(detected, minRange, maxRange);
+
+        // 创建行元素
+        const bacteriaContainer = document.createElement('div');
+        bacteriaContainer.className = 'bacteria-info-container';
+
+        const table = document.createElement('table');
+        table.className = 'bacteria-table min-w-full';
+
+        // 生成显示值的行
+        const dataRow = `
+    <tr>
+      <td class="py-2 pl-4 pr-2 text-left beneficial-gut-bacteria-first-column">
+        <div class="beneficial-gut-bacteria-chinese-text"><strong>${bacteria["中文名"] || ''}</strong></div>
+        <div class="beneficial-gut-bacteria-latin-text">${bacteria["名称"] || ''}</div>
+      </td>
+      <td class="py-2 px-4 text-center beneficial-gut-bacteria-column-text beneficial-gut-bacteria-second-column">
+        <div class="flex items-center justify-center">
+          <span style="color: ${status.color}">
+            ${detected === "ND" ? "未检出" : formattedDetectedValue}
+            ${status.icon}
+          </span>
+        </div>
+        <!-- 使用直接内联的进度条宽度逻辑 -->
+        <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+          <div class="progress"
+               style="width: ${bacteria["丰度%"] === "ND" ? 0 : parseFloat(bacteria["丰度%"])}%;
+                      height: 100%;
+                      background-color: ${CONSTANTS.COLORS.PRIMARY};
+                      transition: width 0.3s ease;">
+          </div>
+        </div>
+      </td>
+      <td class="py-2 px-4 text-center beneficial-gut-bacteria-column-text beneficial-gut-bacteria-third-column">
+        ${formattedMinRange}-${formattedMaxRange}
+      </td>
+    </tr>
+  `;
+
+        // 生成描述行 - 传递整个bacteria对象和status
+        const descRow = createDescriptionRow(bacteria, status);
+
+        table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+        bacteriaContainer.appendChild(table);
+
+        return bacteriaContainer;
+      }
+
+      // 主渲染函数
+      function renderBeneficialBacteriaTable(bacteriaData) {
+        const container = document.getElementById('beneficial-bacteria-table-body');
+        if (!container) {
+          console.error('Cannot find container element');
+          return;
+        }
+
+        container.innerHTML = '';
+
+        // 如果没有数据
+        if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+          container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+          return;
+        }
+
+        // 使用DocumentFragment批量处理DOM操作
+        const fragment = document.createDocumentFragment();
+
+        bacteriaData.forEach(bacteria => {
+          if (bacteria) {  // 确保bacteria存在
+            const bacteriaElement = createBacteriaRow(bacteria);
+            fragment.appendChild(bacteriaElement);
+          }
         });
+
+        // 一次性添加所有元素到DOM
+        container.appendChild(fragment);
       }
 
       // 页面加载时调用
@@ -2077,11 +2446,11 @@
 
           const dataRow = `
       <tr>
-        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
+        <td class="py-2 pl-4 pr-2 text-left core-gut-bacteria-first-column">
           <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
           <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
         </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
+        <td class="py-2 px-6 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
           ${formattedMinRange}-${formattedMaxRange}
         </td>
         <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
@@ -6623,7 +6992,9 @@
         <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
         <div class="w-[400px] flex gap-2">
           <!-- 肠道疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card p-2 flex justify-center items-center">
+          <div class="w-[80px] slow-disease-summary-info-card p-2 flex justify-center items-center" style="
+    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
+">
             <div class="writing-vertical text-lg font-bold">
               肠道疾病
             </div>
@@ -6632,71 +7003,92 @@
           <!-- 疾病名称列表 -->
           <div class="flex-1 flex flex-col gap-2">
             <!-- IBD -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">炎症性肠炎</div>
             </div>
             <!-- IBS -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">肠易激综合征</div>
             </div>
             <!-- 结肠炎 -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">感染型腹泻</div>
             </div>
             <!-- 肠道息肉 -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">肠道病毒感染</div>
             </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">过敏性腹泻</div>
             </div>
           </div>
         </div>
 
         <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
+        <!-- 右侧进度条列表 -->
         <div class="w-[600px] flex flex-col gap-2">
           <!-- IBD 进度条 -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 45%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
+                  <span class="text-white text-sm font-medium">45%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">45/100</div>
             </div>
           </div>
+
           <!-- IBS 进度条 -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 35%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 35%">
+                  <span class="text-white text-sm font-medium">35%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">35/100</div>
             </div>
           </div>
+
           <!-- 结肠炎进度条 -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 55%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-orange-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 55%">
+                  <span class="text-white text-sm font-medium">55%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">55/100</div>
             </div>
           </div>
+
           <!-- 肠道息肉进度条 -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 25%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
+                  <span class="text-white text-sm font-medium">25%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">25/100</div>
             </div>
           </div>
+
+          <!-- 过敏性腹泻进度条 -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 25%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
+                  <span class="text-white text-sm font-medium">25%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">25/100</div>
             </div>
           </div>
         </div>
@@ -6707,7 +7099,9 @@
         <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
         <div class="w-[400px] flex gap-2">
           <!-- 器官性疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center">
+          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center" style="
+    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
+">
             <div class="writing-vertical text-base font-bold">
               器官性疾病
             </div>
@@ -6715,16 +7109,24 @@
 
           <!-- 疾病名称列表 -->
           <div class="flex-1 flex flex-col gap-2">
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">肝病</div>
             </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">心脑血管疾病</div>
             </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">甲状腺疾病</div>
             </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">肺部疾病</div>
             </div>
           </div>
@@ -6732,40 +7134,47 @@
 
         <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
         <div class="w-[600px] flex flex-col gap-2">
-          <!-- 进度条1 -->
+          <!-- 进度条1 (45% - 中等风险) -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 45%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
+                  <span class="text-white text-sm font-medium">45%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">45/100</div>
             </div>
           </div>
-          <!-- 进度条2 -->
+
+          <!-- 进度条2 (35% - 注意) -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 35%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 35%">
+                  <span class="text-white text-sm font-medium">35%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">35/100</div>
             </div>
           </div>
-          <!-- 进度条3 -->
+
+          <!-- 进度条3 (55% - 高风险) -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 55%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-orange-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 55%">
+                  <span class="text-white text-sm font-medium">55%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">55/100</div>
             </div>
           </div>
-          <!-- 进度条4 -->
+
+          <!-- 进度条4 (25% - 低风险) -->
           <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 25%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
+                  <span class="text-white text-sm font-medium">25%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">25/100</div>
             </div>
           </div>
         </div>
@@ -6776,7 +7185,9 @@
         <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
         <div class="w-[400px] flex gap-2">
           <!-- 神经系统疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center">
+          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center" style="
+    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
+">
             <div class="text-base font-bold">
               神经系统
             </div>
@@ -6784,7 +7195,9 @@
 
           <!-- 疾病名称列表 -->
           <div class="flex-1">
-            <div class="slow-disease-summary-info-card py-1 px-4 h-full flex justify-end items-center">
+            <div class="slow-disease-summary-info-card py-1 px-4 h-full flex justify-end items-center" style="
+    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
+">
               <div class="text-base font-bold">神经行为发育异常</div>
             </div>
           </div>
@@ -6793,11 +7206,12 @@
         <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
         <div class="w-[600px] flex flex-col gap-2">
           <div class="summary-info-card py-1 px-4 h-full flex items-center">
-            <div class="flex-1 flex items-center gap-2">
-              <div class="flex-1 bg-gray-200 rounded-full h-2">
-                <div class="bg-[#2DA6A8] h-2 rounded-full" style="width: 45%"></div>
+            <div class="flex-1">
+              <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
+                  <span class="text-white text-sm font-medium">45%</span>
+                </div>
               </div>
-              <div class="text-[#2DA6A8] font-bold text-base w-[60px] text-right">45/100</div>
             </div>
           </div>
         </div>
