@@ -1659,6 +1659,54 @@ tr {
 }
 
 
+/* 疾病症状相关菌板块 : 便秘表格列样式 */
+
+.constipation-first-column {
+  width: 27.5%; /* 正常范围数值 */
+}
+
+.constipation-second-column {
+  width: 15%; /* 正常范围数值 */
+}
+
+.constipation-third-column {
+  width: 20%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.constipation-fourth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.constipation-fifth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.constipation-sixth-column {
+  width: 12.5%; /* 检测丰度+进度条需要较大空间 */
+}
+
+.constipation-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: bold; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+.constipation-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+
+.constipation-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+
 /* 疾病相关菌表格样式 */
 
 .disease-first-column {
