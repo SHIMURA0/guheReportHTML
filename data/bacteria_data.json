@@ -2241,857 +2241,348 @@
       "说明": "玉米常见真菌，低水平存在不影响健康"
     }
   ],
-  "gut_parasites_data": [
+  "寄生虫": [
     {
-      "chinese_name": "人隐孢子虫",
-      "latin_name": "C. hominis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "寄生虫病原体，可引起腹泻。主要通过被污染的水传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议注意饮水卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Cryptosporidium hominis",
+      "中文名": "人隐孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "人类特异性原虫，主要通过粪-口途径传播，可引起腹泻、腹痛等肠道症状，免疫力低下者症状更为严重。"
     },
     {
-      "chinese_name": "布氏麦片吸虫",
-      "latin_name": "F. buski",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00207,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "消化道寄生虫。通过食用受污染的水生植物感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Fasciolopsis buski",
+      "中文名": "布氏姜片吸虫",
+      "丰度%": "0.00208",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "主要通过食用受污染的水生植物感染，寄生于小肠，可引起腹痛、腹泻和消化不良等症状。"
     },
     {
-      "chinese_name": "脑炎微孢子虫",
-      "latin_name": "E. hellem",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "机会性病原体。可引起免疫力低下者感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Encephalitozoon hellem",
+      "中文名": "脑炎微孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "机会性病原体，主要影响免疫功能低下患者，可引起角膜炎、结膜炎和全身性感染。"
     },
     {
-      "chinese_name": "卫氏并殖吸虫",
-      "latin_name": "P. westermani",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00256,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肺部寄生虫。通过食用未煮熟的淡水蟹类感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品安全"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Paragonimus westermani",
+      "中文名": "卫氏并殖吸虫",
+      "丰度%": "0.00319",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过食用含有囊蚴的淡水蟹或虾感染，主要寄生于肺部，可引起慢性咳嗽、咯血和胸痛等肺吸虫病症状。"
     },
     {
-      "chinese_name": "毛首鞭形线虫",
-      "latin_name": "T. trichiura",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00173,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道蠕虫。通过污染的土壤和食物传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "保持个人卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Trichuris trichiura",
+      "中文名": "毛首鞭形线虫",
+      "丰度%": "0.00055",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入被污染的土壤或食物感染，寄生于大肠，轻度感染通常无症状，重度感染可引起腹痛、腹泻和贫血。"
     },
     {
-      "chinese_name": "疟原虫",
-      "latin_name": "P. ovale",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00389,
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "通过蚊虫叮咬传播。可引起间日疟。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好防蚊措施"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Plasmodium ovale",
+      "中文名": "疟原虫",
+      "丰度%": "0.00017",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "卵形疟原虫，通过带有原虫的雌性按蚊叮咬传播，可引起间歇性发热、寒战、出汗等症状，具有潜伏期长和复发特性。"
     },
     {
-      "chinese_name": "肉胞子虫",
-      "latin_name": "S. neurona",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "寄生原虫。主要感染神经系统。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Sarcocystis neurona",
+      "中文名": "肉孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要通过摄入含有孢子囊的食物感染，可寄生于中枢神经系统，在免疫缺陷者中可引起神经系统疾病。"
     },
     {
-      "chinese_name": "十二指肠钩口线虫",
-      "latin_name": "A. duodenale",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00136,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土源性线虫。可引起贫血。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Ancylostoma duodenale",
+      "中文名": "十二指肠钩口线虫",
+      "丰度%": "0.00157",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "钩虫幼虫可通过皮肤侵入，成虫寄生于小肠，可吸血引起缺铁性贫血、腹痛和消化不良等症状。"
     },
     {
-      "chinese_name": "蠕形住肠线虫",
-      "latin_name": "E. vermicularis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00456,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见蠕虫。引起肛门瘙痒。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "保持个人卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Enterobius vermicularis",
+      "中文名": "蠕形住肠线虫",
+      "丰度%": "0.00108",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "俗称蛲虫，主要通过粪-口途径传播，成虫寄生于盲肠和阑尾，可引起肛门瘙痒、睡眠障碍和易怒等症状。"
     },
     {
-      "chinese_name": "美洲钩口线虫",
-      "latin_name": "Necator americanus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00252,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土源性线虫。可致贫血和营养不良。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好个人防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Necator americanus",
+      "中文名": "美洲板口线虫",
+      "丰度%": "0.00041",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "钩虫的一种，幼虫通过皮肤侵入体内，成虫附着于小肠壁吸血，可导致缺铁性贫血和营养不良。"
     },
     {
-      "chinese_name": "巴西利士曼原虫",
-      "latin_name": "L. braziliensis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "通过白蛉叮咬传播。可引起皮肤病变。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免被虫叮咬"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Leishmania braziliensis",
+      "中文名": "巴西利士曼原虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过白蛉叮咬传播，可引起美洲黏膜皮肤利什曼病，特征为皮肤和黏膜部位的损伤和溃疡。"
     },
     {
-      "chinese_name": "杜氏利什曼原虫",
-      "latin_name": "L. donovani",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "内脏利什曼病病原体。影响免疫系统。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防虫措施"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Leishmania donovani",
+      "中文名": "杜氏利什曼原虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过白蛉叮咬传播，引起内脏利什曼病（黑热病），侵犯肝脾等器官，可导致肝脾肿大、发热和贫血。"
     },
     {
-      "chinese_name": "硕大利什曼虫",
-      "latin_name": "L. major",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "皮肤利什曼病病原体。通过昆虫叮咬传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好防护措施"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Leishmania major",
+      "中文名": "硕大利什曼虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过白蛉叮咬传播，引起皮肤利什曼病，特征为皮肤出现自限性溃疡，通常数月后愈合但留有疤痕。"
     },
     {
-      "chinese_name": "婴儿利什曼虫",
-      "latin_name": "L. infantum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "可引起内脏利什曼病。儿童易感。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "预防虫媒传播"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Leishmania infantum",
+      "中文名": "婴儿利什曼虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过白蛉叮咬传播，可引起地中海型内脏利什曼病，常见于儿童，症状包括发热、肝脾肿大和贫血。"
     },
     {
-      "chinese_name": "布氏锥虫",
-      "latin_name": "T. brucei",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00028,
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "非洲锥虫病病原体。通过采采蝇传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防虫措施"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Trypanosoma brucei",
+      "中文名": "布氏锥虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过采采蝇叮咬传播，引起非洲睡眠病，早期侵犯血液和淋巴系统，晚期侵犯中枢神经系统导致嗜睡等症状。"
     },
     {
-      "chinese_name": "柱氏锥虫",
-      "latin_name": "T. cruzi",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00859,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "美洲锥虫病病原体。通过锥蝽叮咬传播。可引起心脏和消化道病变。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免虫媒接触"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Trypanosoma cruzi",
+      "中文名": "枯氏锥虫",
+      "丰度%": "0.00208",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过锥面臭虫叮咬传播，引起查加斯病，急性期可出现发热和局部水肿，慢性期可导致心脏和消化系统损害。"
     },
     {
-      "chinese_name": "阴道毛滴虫",
-      "latin_name": "T. vaginalis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00693,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "泌尿生殖道寄生虫。可引起感染性疾病。需及时诊治。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Trichomonas vaginalis",
+      "中文名": "阴道毛滴虫",
+      "丰度%": "0.00217",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "常通过性接触传播，主要侵犯泌尿生殖系统，引起阴道炎症状，如分泌物增多、外阴瘙痒和尿道炎。"
     },
     {
-      "chinese_name": "蓝氏贾第鞭毛虫",
-      "latin_name": "Giardia intestinalis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道原虫。通过污染的水和食物传播。可致腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Giardia intestinalis",
+      "中文名": "肠贾第虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入被污染的水或食物感染，寄生于小肠，可引起腹泻、腹痛、腹胀和营养不良等贾第虫病症状。"
     },
     {
-      "chinese_name": "溶组织内阿米巴",
-      "latin_name": "E. histolytica",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00062,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "致病性原虫。可引起肠道和肝脏感染。需警惕。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Giardia intestinalis",
+      "中文名": "蓝氏贾第鞭毛",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "与肠贾第虫同种不同名，通过摄入被囊包裹的寄生虫引起感染，可导致急性或慢性腹泻和吸收不良综合征。"
     },
     {
-      "chinese_name": "小隐孢子虫",
-      "latin_name": "C. parvum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人畜共患寄生虫。通过污染的水传播。可致腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮水卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Entamoeba histolytica",
+      "中文名": "溶组织内阿米巴",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过粪-口途径传播，可引起阿米巴痢疾，表现为腹痛、痢疾样腹泻，严重可侵入肠壁形成溃疡或扩散至肝脏。"
     },
     {
-      "chinese_name": "鼠隐孢子虫",
-      "latin_name": "C. muris",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00012,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "主要感染啮齿类动物。偶见人类感染。可致消化道症状。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意环境卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Cryptosporidium parvum",
+      "中文名": "小隐孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入被污染的水或食物感染，寄生于肠上皮细胞，可引起水样腹泻，免疫力低下者症状更持久严重。"
     },
     {
-      "chinese_name": "刚地弓形虫",
-      "latin_name": "T. gondii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00767,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人畜共患虫病。通过生食传播。孕妇需特别注意。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生食"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Cryptosporidium muris",
+      "中文名": "鼠隐孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染啮齿类动物，偶尔可感染人类，在人体内主要寄生于胃部，可引起上腹疼痛和消化不良。"
     },
     {
-      "chinese_name": "恶性疟原虫",
-      "latin_name": "P. falciparum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00137,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最严重的疟疾病原体。通过按蚊传播。可致重症疟疾。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好防蚊措施"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Toxoplasma gondii",
+      "中文名": "刚地弓形虫",
+      "丰度%": "0.00017",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过食用含有囊包的肉类或接触猫粪便感染，大多数感染者无症状，但可对孕妇和免疫力低下者造成严重后果。"
     },
     {
-      "chinese_name": "间日疟原虫",
-      "latin_name": "P. vivax",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00318,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最常见的疟原虫。可引起间日疟。有潜伏期。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防蚊防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Plasmodium falciparum",
+      "中文名": "恶性疟原虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过带有原虫的雌性按蚊叮咬传播，引起恶性疟疾，特征为高热、寒战和出汗，可发展为重症疟疾危及生命。"
     },
     {
-      "chinese_name": "牛环形泰勒虫",
-      "latin_name": "T. annulata",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "主要感染牛。通过蜱虫传播。人类较少感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防虫"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Plasmodium vivax",
+      "中文名": "间日疟原虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过带有原虫的雌性按蚊叮咬传播，引起间日疟，特征为每48小时发作一次的高热、寒战和出汗，具有复发性。"
     },
     {
-      "chinese_name": "小泰勒虫",
-      "latin_name": "T. parva",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "牛重要病原体。通过蜱虫传播。人类不易感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Theileria annulata",
+      "中文名": "牛环形泰勒虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染牛，通过蜱虫叮咬传播，极少感染人类，一般通过接触受感染动物或其制品偶尔传播至人体。"
     },
     {
-      "chinese_name": "肠脑炎微孢子虫",
-      "latin_name": "E. intestinalis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "机会性病原体。可感染免疫力低下者。影响消化道。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强卫生防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Theileria parva",
+      "中文名": "小泰勒虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染牛，通过蜱虫叮咬传播，人感染极为罕见，主要在与受感染动物密切接触的人群中可能发现。"
     },
     {
-      "chinese_name": "兔脑炎微孢子虫",
-      "latin_name": "E. cuniculi",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "主要感染兔类。人类偶见感染。可致神经系统疾病。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意接触防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Encephalitozoon intestinalis",
+      "中文名": "肠脑炎微孢子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "机会性病原体，主要影响免疫力低下患者，可引起持续性腹泻、腹痛和胆道疾病等症状。"
     },
     {
-      "chinese_name": "日本血吸虫",
-      "latin_name": "S. japonicum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00343,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要人体寄生虫。通过受染水体感染。可致肝纤维化。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免接触疫水"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Encephalitozoon cuniculi",
+      "中文名": "兔脑炎微胞子虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要通过接触受感染的兔子或其排泄物传播，在免疫功能低下者可引起脑炎、眼部感染和全身性微孢子虫病。"
     },
     {
-      "chinese_name": "曼氏血吸虫",
-      "latin_name": "S. mansoni",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00349,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人体寄生虫。通过淡水感染。影响肝脏和肠道。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "预防水体接触"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Schistosoma japonicum",
+      "中文名": "日本血吸虫",
+      "丰度%": "0.00140",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过皮肤接触含有尾蚴的淡水感染，寄生于肠系膜静脉，可导致腹痛、腹泻和肝脾肿大等慢性血吸虫病症状。"
     },
     {
-      "chinese_name": "埃及血吸虫",
-      "latin_name": "S. haematobium",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00308,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "泌尿生殖系统寄生虫。通过接触被污染水体感染。可引起尿路系统损害。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免接触疫水，加强个人防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Schistosoma mansoni",
+      "中文名": "曼氏血吸虫",
+      "丰度%": "0.00070",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过皮肤接触含有尾蚴的淡水感染，主要寄生于肠系膜静脉，慢性感染可导致肠道和肝脏纤维化。"
     },
     {
-      "chinese_name": "猪带绦虫",
-      "latin_name": "T. solium",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00044,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要人兽共患寄生虫。通过食用感染猪肉传播。可引起囊虫病。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生猪肉，注意肉品烹饪"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Schistosoma haematotium",
+      "中文名": "埃及血吸虫",
+      "丰度%": "0.00040",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过皮肤接触含有尾蚴的淡水感染，主要寄生于膀胱静脉，可引起尿血、尿频和膀胱病变等泌尿系统症状。"
     },
     {
-      "chinese_name": "牛带绦虫",
-      "latin_name": "T. saginata",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00046,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人畜共患寄生虫。经感染牛肉传播。主要寄生于小肠。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "确保牛肉充分煮熟，注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Taenia solium",
+      "中文名": "链状带绦虫",
+      "丰度%": "0.00030",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过食用含有囊尾蚴的生猪肉或猪肉制品感染，成虫寄生于小肠，卵可发展为囊尾蚴在多器官引起囊虫病。"
     },
     {
-      "chinese_name": "蛔蚴蠕虫",
-      "latin_name": "A. lumbricoides",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00358,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最常见的人体蠕虫。通过被污染的土壤和食物传播。可致营养不良。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，勤洗手"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Taenia saginata",
+      "中文名": "肥胖带绦虫",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入含有囊尾蚴的生牛肉或牛肉制品感染，成虫寄生于小肠，可引起腹痛、腹泻或食欲增加等症状。"
     },
     {
-      "chinese_name": "旋毛形线虫",
-      "latin_name": "T. spiralis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00099,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人兽共患寄生虫。通过食用感染肉类传播。可致肌肉疼痛。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生肉，确保肉类煮熟"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Ascaris lumbricoides",
+      "中文名": "似蚓蛔线虫",
+      "丰度%": "0.00078",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入含有感染性卵的食物或水感染，成虫寄生于小肠，可引起腹痛、消化不良，严重时可阻塞肠道或胆道。"
     },
     {
-      "chinese_name": "华支睾吸虫",
-      "latin_name": "C. sinensis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00137,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肝胆管寄生虫。通过食用生鱼传播。可引起肝胆疾病。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生鱼片，注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Trichinella spiralis",
+      "中文名": "旋毛形线虫",
+      "丰度%": "0.00016",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过食用含有幼虫的生肉或肉制品感染，幼虫可侵入肌肉组织形成囊包，引起肌痛、发热和面部水肿等症状。"
     },
     {
-      "chinese_name": "环孢子虫",
-      "latin_name": "C. cayetanensis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00635,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "食源性原虫。通过污染的水果蔬菜传播。可致腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "彻底清洗蔬果，注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Clonorchis sinensis",
+      "中文名": "华支睾吸虫",
+      "丰度%": "0.00070",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过食用含有囊蚴的生鱼或半生鱼感染，寄生于胆管，可引起胆道炎症、肝脏损害，长期感染增加胆管癌风险。"
+    },
+    {
+      "超标倍数": "",
+      "名称": "Cyclospora cayetanensis",
+      "中文名": "环孢子虫",
+      "丰度%": "0.00138",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "通过摄入被污染的水或食物感染，寄生于小肠上皮细胞，可引起水样腹泻、腹痛、恶心和体重减轻等症状。"
     }
   ],
   "gut_virus_data": [

@@ -931,27 +931,109 @@ tr {
 }
 
 
-/* 肠道菌群检测 : 常见肠道寄生虫板块*/
+/* 肠道菌群检测 : 常见机会致病菌板块 */
 
-/* 肠道菌群检测 : 常见肠道寄生虫 : 表格列样式*/
+/* 肠道菌群检测 : 常见机会致病菌板块 : 表格列样式 */
+.opportunistic-pathogen-first-column {
+  width: 35%;
+}
+.opportunistic-pathogen-second-column {
+  width: 32.5%;
+}
+.opportunistic-pathogen-third-column {
+  width: 32.5%;
+}
 
+.opportunistic-pathogen-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.opportunistic-pathogen-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.opportunistic-pathogen-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+/* 肠道菌群检测 : 常见致病菌板块 */
+
+/* 肠道菌群检测 : 常见致病菌板块 : 表格列样式 */
+.pathogenic-bacteria-first-column {
+  width: 35%;
+}
+.pathogenic-bacteria-second-column {
+  width: 32.5%;
+}
+.pathogenic-bacteria-third-column {
+  width: 32.5%;
+}
+
+.pathogenic-bacteria-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.pathogenic-bacteria-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.pathogenic-bacteria-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+
+/* 肠道菌群检测 : 常见肠道寄生虫板块 */
+
+/* 肠道菌群检测 : 常见肠道寄生虫板块 : 表格列样式 */
 .parasite-first-column {
-  width: 20%; /* 寄生虫名称 */
+  width: 35%;
 }
 .parasite-second-column {
-  width: 13%; /* 正常范围数值 */
+  width: 32.5%;
 }
 .parasite-third-column {
-  width: 20%; /* 检测丰度+进度条 */
+  width: 32.5%;
 }
-.parasite-fourth-column {
-  width: 12%; /* 结果评价 */
+
+/* 寄生虫表格第一列中的菌群中文名和拉丁名样式 */
+.parasite-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
 }
-.parasite-fifth-column {
-  width: 13%; /* 超过%的人 */
+.parasite-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
 }
-.parasite-sixth-column {
-  width: 22%; /* 有%的正常人检出 */
+
+.parasite-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
 
