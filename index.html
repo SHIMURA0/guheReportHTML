@@ -1376,7 +1376,7 @@ ${d.summarized_health_index.gut_type.value ? `
       <!-- 原生生物 -->
       <div class="flex gap-6">
         <div class="w-2/6 flex items-center justify-center bg-amber-100 rounded-md">
-          <span class="text-amber-500 text-2xl font-bold">原生生物</span>
+          <span class="text-amber-500 text-2xl font-bold">真核生物</span>
         </div>
         <div class="w-4/6">
           <div class="flex items-center gap-4 mb-3">
@@ -12376,177 +12376,232 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadDetectedGutFungiData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          data.detected_gut_fungi_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
-          renderDetectedGutFungiTable(data.detected_gut_fungi_data);
-        } catch (error) {
-          console.error('Error loading detected gut fungi data:', error);
-        }
-      }
+      // 创建独立的命名空间对象，避免作用域冲突
+      const DetectedGutFungi = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080'
+          }
+        },
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "未检出") {
-          return value;
-        }
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "未检出";
+          }
 
-        const num = Number(value);
+          const num = Number(value);
+          if (isNaN(num)) return value;
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
-      }
+          if (num >= 1) {
+            const integerDigits = Math.floor(Math.log10(num)) + 1;
+            const decimalPlaces = Math.max(0, 4 - integerDigits);
+            return num.toFixed(decimalPlaces);
+          } else {
+            const str = num.toPrecision(4);
+            return str.replace(/\.?0+$/, '');
+          }
+        },
 
-      function formatDetectedValue(value) {
-        if (value === "ND") {
-          return "未检出";
-        }
-        return formatNumber(value);
-      }
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
+        },
 
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
+        // 计算进度条百分比
+        calculateProgressPercentage(value) {
+          if (value === "ND" || value === "未检出" || value === 0) {
+            return 0;
+          }
 
-      function calculateProgressPercentage(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+          const num = Number(value);
+          if (isNaN(num)) return 0;
 
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1;
-        const maxLog = 3;
+          const logValue = Math.log10(num);
+          const minLog = -1;
+          const maxLog = 3;
 
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
+          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+          return Math.max(5, Math.min(50, percentage));
+        },
 
-      function renderDetectedGutFungiTable(fungiData) {
-        const container = document.getElementById('detected-gut-fungi-data-table-body');
-        if (!container) {
-          console.error('Detected gut fungi table body not found');
-          return;
-        }
+        // 获取状态信息
+        getStatus(detected, minRange, maxRange) {
+          let status = {
+            color: this.CONSTANTS.COLORS.GREEN,
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
 
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        fungiData.forEach(fungi => {
-          let statusColor, statusText, statusIcon;
-          const detected = fungi.detected_abundance;
-          const minRange = fungi.normal_range.min_normal_value;
-          const maxRange = fungi.normal_range.max_normal_value;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
-
-          if (detected === "ND") {
+          if (detected === "ND" || detected === "未检出") {
             if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
             }
           } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
+            const numDetected = parseFloat(detected);
+            if (numDetected < minRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
+            } else if (numDetected > maxRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '超标';
+              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
+              status.isNormal = false;
             }
           }
 
-          const fungiContainer = document.createElement('div');
-          fungiContainer.className = 'fungi-info-container';
+          return status;
+        },
 
-          const table = document.createElement('table');
-          table.className = 'fungi-table min-w-full';
+        // 渲染表格
+        renderTable(fungiData) {
+          const container = document.getElementById('detected-gut-fungi-data-table-body');
+          if (!container) return;
 
-          const dataRow = `
-        <tr class="fungi-row">
-          <td class="py-2 px-4 text-left detected-gut-microbiota-first-column">
-            <div class="chinese-text">${fungi.chinese_name}</div>
-            <div class="latin-text text-gray-500">${fungi.latin_name}</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-second-column">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-third-column">
-            ${formattedDetectedValue}
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(detected)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text column-text detected-gut-microbiota-fourth-column">
-            <span style="color: ${CUSTOM_COLORS[statusColor]}">
-              ${statusText}${statusIcon}
-            </span>
-          </td>
-        </tr>
-      `;
+          container.innerHTML = '';
 
-          const filteredDescriptions = fungi.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+          if (!fungiData || !Array.isArray(fungiData) || fungiData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无检出真菌数据</div>';
+            return;
+          }
 
-          const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="fungi-desc-row">
-          <td colspan="4" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              ${filteredDescriptions.map(desc => `
-                <div class="fungi-description">
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};"></i>
-                  ${desc.text}
+          const fragment = document.createDocumentFragment();
+
+          fungiData.forEach(fungi => {
+            const detected = fungi["丰度%"];
+            const { min: minRange, max: maxRange } = this.parseRange(fungi["正常范围"]);
+
+            const formattedDetectedValue = this.formatNumber(detected);
+            const formattedMinRange = this.formatNumber(minRange);
+            const formattedMaxRange = this.formatNumber(maxRange);
+
+            const status = this.getStatus(detected, minRange, maxRange);
+
+            const fungiContainer = document.createElement('div');
+            fungiContainer.className = 'fungi-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'fungi-table min-w-full';
+
+            // 分离中文名和拉丁名
+            const chineseName = fungi["中文名"] || "";
+            const latinName = fungi["名称"] || "";
+
+            const dataRow = `
+          <tr class="fungi-row">
+            <td class="py-2 px-4 text-left detected-gut-microbiota-first-column">
+              <div class="chinese-text"><strong>${chineseName}</strong></div>
+              <div class="latin-text text-gray-500">${latinName}</div>
+            </td>
+            <td class="py-2 px-4 text-center column-text detected-gut-microbiota-second-column">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-center column-text detected-gut-microbiota-third-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-1" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div class="progress"
+                     style="width: ${this.calculateProgressPercentage(detected)}%;
+                            height: 100%;
+                            background-color: #00B2B4;
+                            transition: width 0.3s ease;">
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center bold-text column-text detected-gut-microbiota-fourth-column">
+              <span style="color: ${status.color}">
+                ${status.text}${status.icon}
+              </span>
+            </td>
+          </tr>
+        `;
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          fungiContainer.appendChild(table);
-          container.appendChild(fungiContainer);
-        });
-      }
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            fungiContainer.appendChild(table);
+            fragment.appendChild(fungiContainer);
+          });
 
-      document.addEventListener('DOMContentLoaded', loadDetectedGutFungiData);
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取真菌数据，检查各种可能的位置
+            let fungiData = null;
+
+            if (data["检出菌"] && data["检出菌"]["fungi"] && Array.isArray(data["检出菌"]["fungi"])) {
+              fungiData = data["检出菌"]["fungi"];
+            }
+            else if (data["检出菌"] && data["检出菌"]["真菌"] && Array.isArray(data["检出菌"]["真菌"])) {
+              fungiData = data["检出菌"]["真菌"];
+            }
+            else if (data["fungi"] && Array.isArray(data["fungi"])) {
+              fungiData = data["fungi"];
+            }
+            else if (data["真菌"] && Array.isArray(data["真菌"])) {
+              fungiData = data["真菌"];
+            }
+
+            if (fungiData && Array.isArray(fungiData) && fungiData.length > 0) {
+              // 按丰度递减排序
+              fungiData.sort((a, b) => {
+                const abundanceA = parseFloat(a["丰度%"] || 0);
+                const abundanceB = parseFloat(b["丰度%"] || 0);
+                return abundanceB - abundanceA;
+              });
+
+              // 限制显示前35个
+              if (fungiData.length > 35) {
+                fungiData = fungiData.slice(0, 35);
+              }
+
+              this.renderTable(fungiData);
+            } else {
+              document.getElementById('detected-gut-fungi-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无检出真菌数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('detected-gut-fungi-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化检出真菌模块
+      DetectedGutFungi.init();
     </script>
-
   </div>
 
   <!-- 实际检出肠道菌群板块 : 检出真核生物 -->
