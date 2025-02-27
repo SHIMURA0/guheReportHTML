@@ -1589,1271 +1589,501 @@
       "说明": "口腔和肠道中发现的厌氧共生菌，很少致病，但可引起罕见的机会性感染，包括心内膜炎"
     }
   ],
-  "gut_pathogens_bacteria_data": [
+  "致病菌": [
     {
-      "chinese_name": "豚鼠气单胞菌",
-      "latin_name": "Aeromonas caviae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水环境常见病原菌。可引起胃肠道感染，常见腹泻症状。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮水卫生，避免生食水产品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aeromonas caviae",
+      "中文名": "豚鼠气单胞菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见于水环境和水产品中，可引起胃肠道感染和伤口感染"
     },
     {
-      "chinese_name": "嗜水气单胞菌",
-      "latin_name": "Aeromonas hydrophila",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "广泛分布于水环境中。可引起皮肤软组织感染和腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免接触污染水体，及时处理伤口"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aeromonas hydrophila",
+      "中文名": "嗜水气单胞菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "广泛分布于淡水环境，可导致腹泻和软组织感染"
     },
     {
-      "chinese_name": "温和气单胞菌",
-      "latin_name": "Aeromonas sobria",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00037,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水生环境常见菌。可引起急性胃肠炎和腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免食用生食"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aeromonas sobria",
+      "中文名": "温和气单胞菌",
+      "丰度%": "0.00094",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "水生环境常见菌种，可引起胃肠道感染和创伤感染"
     },
     {
-      "chinese_name": "牛布鲁氏杆菌",
-      "latin_name": "Brucella abortus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要人畜共患病原体。通过接触感染牛或食用污染乳制品传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免接触感染动物，注意饮食卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Brucella abortus",
+      "中文名": "牛布鲁氏杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通过未经消毒的乳制品传播，可引起布鲁氏病"
     },
     {
-      "chinese_name": "犬布鲁氏杆菌",
-      "latin_name": "Brucella canis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "犬类布鲁氏菌病病原体。可引起慢性感染和发热。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防护，避免与患病犬类密切接触"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Brucella canis",
+      "中文名": "犬布鲁氏杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染犬类，人类通过接触感染犬感染"
     },
     {
-      "chinese_name": "羊布鲁氏杆菌",
-      "latin_name": "Brucella melitensis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00142,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最主要的人畜共患布鲁氏菌。可引起多系统感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生羊奶制品，加强职业防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Brucella melitensis",
+      "中文名": "羊布鲁氏杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "感染绵羊和山羊，是人类布鲁氏病最常见病原"
     },
     {
-      "chinese_name": "绵羊布鲁氏杆菌",
-      "latin_name": "Brucella ovis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "主要感染绵羊。人类感染风险较低。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "做好职业防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Brucella ovis",
+      "中文名": "绵羊布鲁氏杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染绵羊，引起公羊附睾炎"
     },
     {
-      "chinese_name": "猪布鲁氏杆菌",
-      "latin_name": "Brucella suis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "猪群常见布鲁氏菌。可引起关节炎和全身症状。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意职业防护，避免接触感染动物"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Brucella suis",
+      "中文名": "猪布鲁氏杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染猪，可通过接触感染猪或食用未熟肉类传播"
     },
     {
-      "chinese_name": "唐菖蒲伯克霍尔德氏菌",
-      "latin_name": "Burkholderia gladioli",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00049,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "主要与植物相关的环境菌。免疫力低下者易感。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强个人防护，注意环境卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Burkholderia gladioli",
+      "中文名": "唐菖蒲伯克霍尔德氏菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "植物病原菌，可引起免疫力低下者呼吸道感染"
     },
     {
-      "chinese_name": "大肠弯曲菌",
-      "latin_name": "Campylobacter coli",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00283,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见食源性致病菌。可引起急性肠炎和腹痛。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品卫生，避免生食"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Campylobacter coli",
+      "中文名": "大肠弯曲菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "食源性致病菌，可引起急性肠胃炎"
     },
     {
-      "chinese_name": "胎儿弯曲菌",
-      "latin_name": "Campylobacter fetus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00034,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "生殖系统感染菌。可引起流产和全身感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强孕期防护，注意个人卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Campylobacter fetus",
+      "中文名": "胎儿弯曲菌",
+      "丰度%": "0.00027",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "可引起孕妇流产和全身性感染"
     },
     {
-      "chinese_name": "空肠弯曲菌",
-      "latin_name": "Campylobacter jejuni",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.03914,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最常见的弯曲菌属致病菌。可引起急性肠炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免食用未熟食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Campylobacter jejuni",
+      "中文名": "空肠弯曲菌",
+      "丰度%": "0.00124",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "最常见的食源性腹泻致病菌之一"
     },
     {
-      "chinese_name": "肉毒梭菌",
-      "latin_name": "Clostridium botulinum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00372,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "产生致命神经毒素的土壤菌。可引起重症肉毒中毒。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品储存，避免食用可疑罐头"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Clostridium botulinum",
+      "中文名": "肉毒梭菌",
+      "丰度%": "0.00055",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "产生肉毒毒素，可引起致命性食物中毒"
     },
     {
-      "chinese_name": "产气荚膜梭菌",
-      "latin_name": "Clostridium perfringens",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00419,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见食源性致病菌。可引起急性食物中毒。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "确保食品充分加热，注意储存温度"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Clostridium perfringens",
+      "中文名": "产气荚膜梭菌",
+      "丰度%": "0.00059",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "常见食物中毒病原，可引起气性坏疽"
     },
     {
-      "chinese_name": "阪崎肠杆菌",
-      "latin_name": "Cronobacter sakazakii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00482,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境条件致病菌。新生儿易感，可致严重感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意婴儿配方奶粉卫生，谨慎储存"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Cronobacter sakazakii",
+      "中文名": "阪崎肠杆菌",
+      "丰度%": "0.00614",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "可污染婴儿配方奶粉，引起新生儿脑膜炎"
     },
     {
-      "chinese_name": "猪红斑丹毒丝菌",
-      "latin_name": "Erysipelothrix rhusiopathiae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00020,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "动物源性致病菌。主要感染猪类。可引起人类皮肤蜂窝织炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意职业防护，避免直接接触感染动物"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Erysipelothrix rhusiopathiae",
+      "中文名": "猪红斑丹毒丝菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染猪，人类可因职业接触感染"
     },
     {
-      "chinese_name": "大肠埃希菌O157:H7",
-      "latin_name": "Escherichia coli O157:H7",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要食源性致病菌。可引起出血性腹泻和肾功能损害。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免生食或未煮熟食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Escherichia coli O157:H7",
+      "中文名": "大肠埃希菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "产生志贺毒素，可引起出血性腹泻"
     },
     {
-      "chinese_name": "幽门螺杆菌",
-      "latin_name": "Helicobacter pylori",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00204,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "胃部定植菌。可引起慢性胃炎、消化性溃疡和胃癌。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，必要时就医检查"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Helicobacter pylori",
+      "中文名": "幽门螺杆菌",
+      "丰度%": "0.00116",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "定植于胃部，与胃炎和胃癌发生相关"
     },
     {
-      "chinese_name": "博杰曼军团菌",
-      "latin_name": "Legionella bozemanae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水环境中的机会性致病菌。可引起军团菌病。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意环境卫生，定期清洁水系统"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Legionella bozemanae",
+      "中文名": "博杰曼军团菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可通过吸入污染气溶胶引起肺炎"
     },
     {
-      "chinese_name": "杜莫夫军团菌",
-      "latin_name": "Legionella dumoffii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见于空调冷却系统。可引起呼吸道感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "定期维护空调系统，保持环境卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Legionella dumoffii",
+      "中文名": "杜莫夫军团菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "存在于水系统中，可引起军团菌病"
     },
     {
-      "chinese_name": "长滩军团菌",
-      "latin_name": "Legionella longbeachae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土壤环境常见菌。可引起肺部感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "接触土壤时注意防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Legionella longbeachae",
+      "中文名": "长滩军团菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见于园艺土壤，可引起严重肺炎"
     },
     {
-      "chinese_name": "嗜肺军团菌",
-      "latin_name": "Legionella pneumophila",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00115,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水系统常见致病菌。可引起严重肺炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "定期消毒水系统，注意环境卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Legionella pneumophila",
+      "中文名": "嗜肺军团菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "军团菌病最主要病原，可引起严重肺炎"
     },
     {
-      "chinese_name": "单核细胞增生李斯特菌",
-      "latin_name": "L. monocytogenes",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.02299,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境和食品中常见。可引起脑膜炎，孕妇需特别注意。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用未经充分加热的食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Listeria monocytogenes",
+      "中文名": "单核细胞增生李斯特菌",
+      "丰度%": "0.00542",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "可通过污染食品引起李斯特菌病"
     },
     {
-      "chinese_name": "鸟分枝杆菌复合群",
-      "latin_name": "M. avium complex sp.",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境常见机会性致病菌。免疫力低下者易感。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强个人防护，注意环境卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium avium complex sp.",
+      "中文名": "鸟胞内分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起免疫力低下者肺部感染"
     },
     {
-      "chinese_name": "龟分枝杆菌",
-      "latin_name": "M. chelonae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水环境常见菌。可引起皮肤和软组织感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免接触污染水体，及时处理伤口"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacteroides chelonae",
+      "中文名": "龟分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起皮肤、软组织和手术部位感染"
     },
     {
-      "chinese_name": "偶发分枝杆菌",
-      "latin_name": "M. fortuitum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00024,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "广泛分布于环境中。可引起皮肤和软组织感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，避免环境污染"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium fortuitum",
+      "中文名": "偶发分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "环境中常见，可引起皮肤和软组织感染"
     },
     {
-      "chinese_name": "堪萨斯分枝杆菌",
-      "latin_name": "M. kansasii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00026,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "自来水系统常见。可引起类结核样肺部感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮用水卫生，定期维护水系统"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium kansasii",
+      "中文名": "堪萨斯分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起类似肺结核的慢性肺部感染"
     },
     {
-      "chinese_name": "海洋分枝杆菌",
-      "latin_name": "M. marinum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00031,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水生环境常见。可引起游泳池肉芽肿。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "接触水体时注意防护，及时处理伤口"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium marinum",
+      "中文名": "海分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "水生环境常见，可引起皮肤肉芽肿"
     },
     {
-      "chinese_name": "瘰疬分枝杆菌",
-      "latin_name": "M. scrofulaceum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00020,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境中广泛分布。可引起颈部淋巴结炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，加强环境防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium scrofulaceum",
+      "中文名": "瘰疠分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起儿童颈部淋巴结炎"
     },
     {
-      "chinese_name": "结核分枝杆菌",
-      "latin_name": "M. tuberculosis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.13505,
-      "higher_than_percentage": 95,
-      "normal_detection_rate": 35.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要呼吸道传染病病原体。可引起肺结核等。需高度重视。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "及时就医检查，进行规范治疗"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium tuberculosis",
+      "中文名": "结核分枝杆菌",
+      "丰度%": "0.00411",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "肺结核主要病原菌，通过飞沫传播"
     },
     {
-      "chinese_name": "溃疡分枝杆菌",
-      "latin_name": "M. ulcerans",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "热带地区特有菌种。可引起伯鲁利溃疡。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意皮肤防护，及时处理伤口"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Mycobacterium ulcerans",
+      "中文名": "溃疡分枝杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起布鲁利溃疡，主要感染皮肤"
     },
     {
-      "chinese_name": "类志贺邻单胞菌",
-      "latin_name": "P. shigelloides",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00020,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水生环境常见。可引起胃肠道感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免生食水产品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Plesiomonas shigelloides",
+      "中文名": "类志贺邻单胞菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "水源性致病菌，可引起腹泻"
     },
     {
-      "chinese_name": "猪霍乱沙门氏菌",
-      "latin_name": "S. enterica Choleraesuis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "猪群常见致病菌。可引起人类严重感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品卫生，避免食用未熟食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Choleraesuis",
+      "中文名": "猪霍乱沙氏菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要感染猪，可引起人类肠胃炎"
     },
     {
-      "chinese_name": "肠炎沙门氏菌",
-      "latin_name": "S. Enteritidis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要食源性致病菌。是沙门氏菌感染的主要原因之一。可引起急性胃肠炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品卫生，避免食用未熟食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Enteritidis",
+      "中文名": "肠炎沙门氏菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见食源性致病菌，可引起肠胃炎"
     },
     {
-      "chinese_name": "副伤寒沙门氏菌-A",
-      "latin_name": "S. Paratyphi A",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人类特异性致病菌。可引起副伤寒，症状类似伤寒但较轻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，预防粪-口传播"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Paratyphi A",
+      "中文名": "副伤寒沙门氏菌-A",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起副伤寒，症状类似伤寒但较轻"
     },
     {
-      "chinese_name": "副伤寒沙门氏菌-B",
-      "latin_name": "S. Paratyphi B",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人类特异性病原体。引起B型副伤寒。发热和胃肠道症状显著。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强个人卫生，注意饮食安全"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Paratyphi B",
+      "中文名": "副伤寒沙门氏菌-B",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "引起B型副伤寒，通过污染食物传播"
     },
     {
-      "chinese_name": "副伤寒沙门氏菌-C",
-      "latin_name": "S. Paratyphi C",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "致病性相对较弱的副伤寒菌。可引起C型副伤寒。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免交叉感染"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Paratyphi C",
+      "中文名": "副伤寒沙门氏菌-C",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "引起C型副伤寒，较少见"
     },
     {
-      "chinese_name": "伤寒沙门氏菌",
-      "latin_name": "S. Typhi",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "严重的人类特异性病原体。可引起伤寒，威胁生命。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强个人卫生，注意饮食和饮水安全"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Typhi",
+      "中文名": "伤寒沙门氏菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "伤寒的病原体，可引起严重全身感染"
     },
     {
-      "chinese_name": "鼠伤寒沙门菌",
-      "latin_name": "S. Typhimurium",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "广谱性致病菌。可感染多种宿主，引起急性胃肠炎。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品安全，避免生食"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Salmonella enterica subsp. enterica serovar Typhimurium",
+      "中文名": "鼠伤寒沙门菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见食源性感染病原，可引起胃肠炎"
     },
     {
-      "chinese_name": "鲍氏志贺氏菌",
-      "latin_name": "Shigella boydii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道致病菌。可引起细菌性痢疾，主要在发展中国家流行。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，预防粪-口传播"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Shigella boydii",
+      "中文名": "鲍氏志贺氏菌",
+      "丰度%": "0.04640",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "可引起细菌性痢疾，传播途径主要是粪-口途径"
     },
     {
-      "chinese_name": "痢疾志贺氏菌",
-      "latin_name": "Shigella dysenteriae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "最严重的志贺氏菌。可引起出血性痢疾，产生致命毒素。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强卫生防护，及时就医治疗"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Shigella dysenteriae",
+      "中文名": "痢疾志贺氏菌",
+      "丰度%": "0.02061",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "最严重的志贺氏菌，可产生志贺毒素"
     },
     {
-      "chinese_name": "福氏志贺氏菌",
-      "latin_name": "Shigella flexneri",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.03009,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "痢疾常见病原体。可引起急性细菌性痢疾。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，预防交叉感染"
-        }
-      ]
+      "超标倍数": "4.59X",
+      "名称": "Shigella flexneri",
+      "中文名": "福氏志贺氏菌",
+      "丰度%": "0.22959",
+      "结果评价": "超标",
+      "正常范围": "0-0.05",
+      "说明": "发展中国家最常见的细菌性痢疾病原"
     },
     {
-      "chinese_name": "宋内志贺氏菌",
-      "latin_name": "Shigella sonnei",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.01473,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "相对温和的痢疾菌。常引起轻症腹泻和肠道感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，加强饮食卫生"
-        }
-      ]
+      "超标倍数": "2.79X",
+      "名称": "Shigella sonnei",
+      "中文名": "宋内志贺氏菌",
+      "丰度%": "0.13971",
+      "结果评价": "超标",
+      "正常范围": "0-0.05",
+      "说明": "发达国家最常见的志贺氏菌，症状较轻"
     },
     {
-      "chinese_name": "金黄色葡萄球菌",
-      "latin_name": "S. aureus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.08
-      },
-      "detected_abundance": 0.50389,
-      "higher_than_percentage": 95,
-      "normal_detection_rate": 35.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要致病菌。可引起皮肤感染、食物中毒等多种疾病。需警惕。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "及时就医诊治，注意个人卫生"
-        }
-      ]
+      "超标倍数": "21.34X",
+      "名称": "Staphylococcus aureus",
+      "中文名": "金黄色葡萄球菌",
+      "丰度%": "1.06720",
+      "结果评价": "超标",
+      "正常范围": "0-0.05",
+      "说明": "常见致病菌，可引起多种感染和食物中毒"
     },
     {
-      "chinese_name": "猪链球菌",
-      "latin_name": "S. suis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00938,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要人兽共患病原体。可引起脑膜炎等严重感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意职业防护，避免接触感染动物"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Streptococcus suis",
+      "中文名": "猪链球菌",
+      "丰度%": "0.00162",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "主要感染猪，人类可因职业接触感染"
     },
     {
-      "chinese_name": "齿垢密螺旋体",
-      "latin_name": "T. denticola",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00071,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "口腔常见菌。与牙周疾病发生相关。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强口腔卫生，定期洁牙"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Treponema denticola",
+      "中文名": "齿垢密螺旋体",
+      "丰度%": "0.00078",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "口腔常见菌，与牙周病发生相关"
     },
     {
-      "chinese_name": "梅毒密螺旋体",
-      "latin_name": "T. pallidum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "性传播疾病病原体。可引起梅毒，需及时治疗。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意防护，必要时及时就医"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Treponema pallidum",
+      "中文名": "梅毒密螺旋体",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "梅毒病原体，主要通过性接触传播"
     },
     {
-      "chinese_name": "文氏密螺旋体",
-      "latin_name": "T. vincentii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "口腔常见螺旋体。与急性坏死性龈炎有关。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "保持口腔卫生，预防牙龈疾病"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Treponema vincentii",
+      "中文名": "文氏密螺旋体",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "口腔厌氧菌，与急性坏死性龈炎有关"
     },
     {
-      "chinese_name": "霍乱弧菌",
-      "latin_name": "V. cholerae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00047,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要肠道致病菌。可引起霍乱，造成严重腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免生食海产品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Vibrio cholerae",
+      "中文名": "霍乱弧菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "霍乱病原体，可引起严重腹泻和脱水"
     },
     {
-      "chinese_name": "拟态弧菌",
-      "latin_name": "V. mimicus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "海洋环境常见菌。可引起胃肠炎和腹泻。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意海产品卫生，避免生食"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Vibrio mimicus",
+      "中文名": "拟态弧菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "海产品常见，可引起胃肠道感染"
     },
     {
-      "chinese_name": "副溶血弧菌",
-      "latin_name": "V. parahaemolyticus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00119,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "海产品相关致病菌。可引起急性胃肠炎和食物中毒。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免食用生海产品，注意加热充分"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Vibrio parahaemolyticus",
+      "中文名": "副溶血弧菌",
+      "丰度%": "0.00116",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "海产品中常见，主要引起食物中毒"
     },
     {
-      "chinese_name": "创伤弧菌",
-      "latin_name": "V. vulnificus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00188,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "海洋环境中的严重致病菌。可通过伤口感染或食用海产品引起重症感染，免疫力低下者风险更高。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "避免生食海产品，伤口避免接触海水，及时处理伤口"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Vibrio vulnificus",
+      "中文名": "创伤弧菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可通过海产品或伤口感染，病死率高"
     },
     {
-      "chinese_name": "小肠结肠炎耶尔森菌",
-      "latin_name": "Y. enterocolitica",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要食源性致病菌。可引起急性肠炎，常通过污染的食品和水传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品卫生，避免食用未充分加热的猪肉制品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Yersinia enterocolitica",
+      "中文名": "小肠结肠炎耶尔森氏菌",
+      "丰度%": "0.00117",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "可通过污染食物引起肠炎"
     },
     {
-      "chinese_name": "鼠疫耶尔森菌",
-      "latin_name": "Yersinia pestis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要烈性传染病病原体。可引起鼠疫，主要通过啮齿类动物和跳蚤传播。需严格防控。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强环境卫生，避免接触啮齿类动物"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Yersinia pestis",
+      "中文名": "鼠疫耶尔森菌",
+      "丰度%": "0.00377",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "鼠疫病原体，通过跳蚤叮咬传播"
     },
     {
-      "chinese_name": "假结核耶尔森菌",
-      "latin_name": "Y. pseudotuberculosis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人兽共患病病原体。可引起类似结核的症状，通过污染的食物和水传播。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意饮食卫生，避免食用未经充分处理的食品"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Yersinia pseudotuberculosis",
+      "中文名": "假结核耶尔森氏菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可引起类似阑尾炎的肠道感染"
     }
   ],
   "gut_fungi_data": [

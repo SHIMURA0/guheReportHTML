@@ -2845,246 +2845,224 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      // 常量定义
-      const PATHOGEN_CONSTANTS = {
-        COLORS: {
-          RED: '#ff4d4f',
-          GREEN: '#389e0d',
-          GRAY: '#808080',
-          PRIMARY: '#00B2B4',
-          WARNING: '#FFA500',
-          BLACK: '#000000'
+      // 使用命名空间封装机会致病菌相关代码
+      const OpportunisticPathogen = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080',
+            PRIMARY: '#00B2B4',
+            WARNING: '#FFA500',
+            BLACK: '#000000'
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && value === "ND") return value;
+          const num = Number(value);
+          return num.toPrecision(2);
+        },
+
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
+        },
+
+        // 获取状态信息
+        getStatus(detected, normalRange) {
+          const { min, max } = normalRange;
+
+          let status = {
+            color: this.CONSTANTS.COLORS.BLACK,
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
+
+          if (detected === "ND") {
+            if (min > 0) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+              status.isNormal = false;
+            }
+            return status;
+          }
+
+          const detectedNum = parseFloat(detected);
+
+          if (detectedNum < min) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '偏低';
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
+          }
+          else if (detectedNum > max) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '超标';
+            status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
+          }
+
+          return status;
+        },
+
+        // 创建描述行
+        createDescriptionRow(bacteria, status) {
+          let descriptionContent = '';
+
+          if (bacteria["说明"] && bacteria["说明"].trim()) {
+            descriptionContent += `
+            <div class="flex items-start mb-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                  ${bacteria["说明"]}
+                </p>
+              </div>
+            </div>
+          `;
+          }
+
+          if (descriptionContent.trim()) {
+            return `
+            <tr class="virus-desc-row">
+              <td colspan="5" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  ${descriptionContent}
+                </div>
+              </td>
+            </tr>
+          `;
+          }
+
+          return '';
+        },
+
+        // 计算进度条百分比
+        calculateProgress(value) {
+          if (value === "ND" || value === 0) {
+            return 0;
+          }
+
+          const num = Number(value);
+          return Math.min(100, Math.max(5,
+            num <= 1 ? num * 30 :
+              num <= 10 ? 30 + (num - 1) * 5 :
+                75 + (Math.min(num, 100) - 10) * 0.25
+          ));
+        },
+
+        // 渲染表格
+        renderTable(bacteriaData) {
+          const container = document.getElementById('opportunistic-pathogen-table-body');
+          if (!container) {
+            console.error('Cannot find container element');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+            container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+
+          bacteriaData.forEach(bacteria => {
+            if (!bacteria) return;
+
+            const detected = bacteria["丰度%"];
+            const normalRange = this.parseRange(bacteria["正常范围"]);
+            const latinName = bacteria["名称"] || "";
+            const chineseName = bacteria["中文名"] || "";
+
+            const formattedDetectedValue = detected === "ND" ? detected : this.formatNumber(detected);
+            const formattedMinRange = this.formatNumber(normalRange.min);
+            const formattedMaxRange = this.formatNumber(normalRange.max);
+
+            const status = this.getStatus(detected, normalRange);
+            const progressPercentage = this.calculateProgress(detected === "ND" ? 0 : detected);
+
+            const bacteriaContainer = document.createElement('div');
+            bacteriaContainer.className = 'bacteria-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'bacteria-table min-w-full';
+
+            const dataRow = `
+            <tr>
+              <td class="py-2 pl-4 pr-2 text-left opportunistic-pathogen-first-column">
+                <div class="opportunistic-pathogen-chinese-text"><strong>${chineseName}</strong></div>
+                <div class="opportunistic-pathogen-latin-text">${latinName}</div>
+              </td>
+              <td class="py-2 px-4 text-center opportunistic-pathogen-column-text opportunistic-pathogen-second-column">
+                <div class="flex items-center justify-center">
+                  <span style="color: ${status.color}">
+                    <strong>${detected === "ND" ? "未检出" : formattedDetectedValue}
+                    ${status.icon}</strong>
+                  </span>
+                </div>
+                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div class="progress"
+                       style="width: ${progressPercentage}%;
+                              height: 100%;
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center opportunistic-pathogen-column-text opportunistic-pathogen-third-column">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+            </tr>
+          `;
+
+            const descRow = this.createDescriptionRow(bacteria, status);
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            bacteriaContainer.appendChild(table);
+            fragment.appendChild(bacteriaContainer);
+          });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+            this.renderTable(data["机会致病菌"] || []);
+          } catch (error) {
+            console.error('Error loading opportunistic pathogen data:', error);
+            document.getElementById('opportunistic-pathogen-table-body').innerHTML =
+              '<div class="no-data-message">暂无数据</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          document.addEventListener('DOMContentLoaded', () => this.loadData());
         }
       };
 
-      // 读取数据
-      async function loadOpportunisticPathogenData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          if (!response.ok) {
-            throw new Error(`Network response error: ${response.status}`);
-          }
-          const data = await response.json();
-          renderOpportunisticPathogenTable(data["机会致病菌"] || []);
-        } catch (error) {
-          console.error('Error loading opportunistic pathogen data:', error);
-          document.getElementById('opportunistic-pathogen-table-body').innerHTML =
-            '<div class="no-data-message">暂无数据</div>';
-        }
-      }
-
-      // 格式化数字 - 保留2位有效数字
-      function formatPathogenNumber(value) {
-        // 处理特殊值"ND"
-        if (typeof value === "string" && value === "ND") return value;
-
-        // 确保转换为数字类型
-        const num = Number(value);
-
-        // 保留2位有效数字
-        return num.toPrecision(2);
-      }
-
-      // 解析正常范围
-      function parseNormalRange(rangeStr) {
-        if (!rangeStr || typeof rangeStr !== 'string') {
-          return { min: 0, max: 0 };
-        }
-
-        const parts = rangeStr.split('-');
-        return {
-          min: parseFloat(parts[0] || 0),
-          max: parseFloat(parts[1] || 0)
-        };
-      }
-
-      // 获取状态信息
-      function getPathogenStatus(detected, normalRange) {
-        const { min, max } = normalRange;
-
-        // 默认为正常状态
-        let status = {
-          color: PATHOGEN_CONSTANTS.COLORS.BLACK, // 正常为黑色文字
-          text: '正常',
-          icon: '',
-          isNormal: true
-        };
-
-        // 未检出的情况
-        if (detected === "ND") {
-          if (min > 0) {
-            // 未检出但参考范围最小值大于0，视为偏低
-            status.color = PATHOGEN_CONSTANTS.COLORS.RED;
-            status.text = '偏低';
-            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + PATHOGEN_CONSTANTS.COLORS.RED + ';"></i>';
-            status.isNormal = false;
-          }
-          return status;
-        }
-
-        // 数值型检测值
-        const detectedNum = parseFloat(detected);
-
-        // 低于参考范围
-        if (detectedNum < min) {
-          status.color = PATHOGEN_CONSTANTS.COLORS.RED;
-          status.text = '偏低';
-          status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + PATHOGEN_CONSTANTS.COLORS.RED + ';"></i>';
-          status.isNormal = false;
-        }
-        // 高于参考范围
-        else if (detectedNum > max) {
-          status.color = PATHOGEN_CONSTANTS.COLORS.RED;
-          status.text = '超标';
-          status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + PATHOGEN_CONSTANTS.COLORS.RED + ';"></i>';
-          status.isNormal = false;
-        }
-        // 正常范围内，默认状态，无需修改
-
-        return status;
-      }
-
-      // 创建描述行
-      function createPathogenDescriptionRow(bacteria, status) {
-        let descriptionContent = '';
-
-        // 添加结果评价
-        if (bacteria["说明"] && bacteria["说明"].trim()) {
-          descriptionContent += `
-          <div class="flex items-start mb-0">
-            <div class="ml-1">
-              <p>
-                <i class="fas fa-info-circle" style="color: ${PATHOGEN_CONSTANTS.COLORS.PRIMARY};"></i>
-                ${bacteria["说明"]}
-              </p>
-            </div>
-          </div>
-        `;
-        }
-
-        // 如果有内容需要显示，返回完整的行
-        if (descriptionContent.trim()) {
-          return `
-          <tr class="virus-desc-row">
-            <td colspan="5" class="py-2 px-4 text-left">
-              <div class="description-container text-gray-600" style="font-size: 11px;">
-                ${descriptionContent}
-              </div>
-            </td>
-          </tr>
-        `;
-        }
-
-        // 如果没有描述内容，返回空字符串
-        return '';
-      }
-
-      // 计算进度条百分比
-      function calculateProgressPercentage(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
-
-        const num = Number(value);
-
-        // 使用与其他表格相同的进度条计算方式
-        return Math.min(100, Math.max(5,
-          num <= 1 ? num * 30 :
-            num <= 10 ? 30 + (num - 1) * 5 :
-              75 + (Math.min(num, 100) - 10) * 0.25
-        ));
-      }
-
-      function renderOpportunisticPathogenTable(bacteriaData) {
-        const container = document.getElementById('opportunistic-pathogen-table-body');
-        if (!container) {
-          console.error('Cannot find container element');
-          return;
-        }
-
-        container.innerHTML = '';
-
-        // 如果没有数据
-        if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
-          container.innerHTML = '<div class="no-data-message">暂无数据</div>';
-          return;
-        }
-
-        // 使用DocumentFragment批量处理DOM操作
-        const fragment = document.createDocumentFragment();
-
-        bacteriaData.forEach(bacteria => {
-          if (!bacteria) return;
-
-          // 解析数据
-          const detected = bacteria["丰度%"];
-          const normalRange = parseNormalRange(bacteria["正常范围"]);
-          const latinName = bacteria["名称"] || "";
-          const chineseName = bacteria["中文名"] || "";
-          const excessMultiple = bacteria["超标倍数"] || "";
-          const detectionRate = bacteria["%正常人有检出"] || "";
-
-          // 格式化数据
-          const formattedDetectedValue = detected === "ND" ? detected : formatPathogenNumber(detected);
-          const formattedMinRange = formatPathogenNumber(normalRange.min);
-          const formattedMaxRange = formatPathogenNumber(normalRange.max);
-
-          // 获取状态
-          const status = getPathogenStatus(detected, normalRange);
-
-          // 计算进度条百分比
-          const progressPercentage = calculateProgressPercentage(detected === "ND" ? 0 : detected);
-
-          // 创建菌属容器
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
-
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          // 生成数据行
-          const dataRow = `
-          <tr>
-            <td class="py-2 pl-4 pr-2 text-left opportunistic-pathogen-first-column">
-              <div class="opportunistic-pathogen-chinese-text"><strong>${chineseName}</strong></div>
-              <div class="opportunistic-pathogen-latin-text">${latinName}</div>
-            </td>
-            <td class="py-2 px-4 text-center opportunistic-pathogen-column-text opportunistic-pathogen-second-column">
-              <div class="flex items-center justify-center">
-                <span style="color: ${status.color}">
-                  <strong>${detected === "ND" ? "未检出" : formattedDetectedValue}
-                  ${status.icon}</strong>
-                </span>
-              </div>
-              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                <div class="progress"
-                     style="width: ${progressPercentage}%;
-                            height: 100%;
-                            background-color: ${status.isNormal ? PATHOGEN_CONSTANTS.COLORS.PRIMARY : PATHOGEN_CONSTANTS.COLORS.RED};
-                            transition: width 0.3s ease;">
-                </div>
-              </div>
-            </td>
-            <td class="py-2 px-4 text-center opportunistic-pathogen-column-text opportunistic-pathogen-third-column">
-              ${formattedMinRange}-${formattedMaxRange}
-            </td>
-          </tr>
-        `;
-
-          // 生成描述行
-          const descRow = createPathogenDescriptionRow(bacteria, status);
-
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          fragment.appendChild(bacteriaContainer);
-        });
-
-        // 一次性添加所有元素到DOM
-        container.appendChild(fragment);
-      }
-
-      // 页面加载时调用
-      document.addEventListener('DOMContentLoaded', loadOpportunisticPathogenData);
+      // 初始化机会致病菌模块
+      OpportunisticPathogen.init();
     </script>
   </div>
 
@@ -3095,11 +3073,10 @@ ${d.summarized_health_index.gut_type.value ? `
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
-            肠道致病菌是指能直接引起疾病的肠道病原微生物，它们具有明确的致病性，一旦在肠道中检出就可能对健康造成
-            威胁。这类细菌通常具有特定的致病机制，如产生毒素、侵犯宿主细胞、触发炎症反应等。本报告列出了54种常见的肠道致病菌，按照在您肠道中检出丰度递减排序。
+            肠道致病菌是指能直接引起疾病的肠道病原微生物，它们具有明确的致病性，一旦在肠道中检出就可能对健康造成威胁。这类细菌通常具有特定的致病机制，如产生毒素、侵犯宿主细胞、触发炎症反应等。
           </p>
         </div>
       </div>
@@ -3111,219 +3088,245 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
+          <th class="py-2 px-4 text-left pathogenic-bacteria-first-column" style="font-size: 13px;">
             致病菌名称
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
-            参考范围%
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center pathogenic-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
             检测丰度%
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
-            超过%的人
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
-            有%的正常人检出
+          <th class="py-2 px-4 text-center pathogenic-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
           </th>
         </tr>
         </thead>
       </table>
 
       <!-- 数据表格容器 -->
-      <div id="gut-pathogenic-bacteria-data-table-body">
+      <div id="pathogenic-bacteria-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
     </div>
 
     <script>
-      async function loadGutPathogenicBacteriaData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          renderGutPathogenicBacteriaTable(data.gut_pathogens_bacteria_data);
-        } catch (error) {
-          console.error('Error loading gut pathogenic bacteria data:', error);
-        }
-      }
+      // 致病菌命名空间
+      const PathogenicBacteria = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080',
+            PRIMARY: '#00B2B4',
+            WARNING: '#FFA500',
+            BLACK: '#000000'
+          }
+        },
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "ND") {
-          return value;
-        }
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && value === "ND") return value;
+          const num = Number(value);
+          return num.toPrecision(2);
+        },
 
-        const num = Number(value);
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
+        },
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
-      }
+        // 获取状态信息
+        getStatus(detected, normalRange) {
+          const { min, max } = normalRange;
 
-      function formatDetectedValue(value) {
-        return formatNumber(value);
-      }
-
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
-
-      function calculateProgressPercentageForThirdColumn(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
-
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1; // log10(0.0001)
-        const maxLog = 3;  // log10(100)
-
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
-
-      function renderGutPathogenicBacteriaTable(bacteriaData) {
-        const container = document.getElementById('gut-pathogenic-bacteria-data-table-body');
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        bacteriaData.forEach(bacteria => {
-          let statusColor, statusText, statusIcon;
-          const detected = bacteria.detected_abundance;
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
+          let status = {
+            color: this.CONSTANTS.COLORS.BLACK,
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
 
           if (detected === "ND") {
-            if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
+            if (min > 0) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+              status.isNormal = false;
             }
-          } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
-            }
+            return status;
           }
 
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
+          const detectedNum = parseFloat(detected);
 
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          const dataRow = `
-      <tr>
-        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
-          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
-          ${formattedMinRange}-${formattedMaxRange}
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
-              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
-                '#000000'
-          }">
-              ${detected === "ND" ? "未检出" : formattedDetectedValue}
-            </span>
-            ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ?
-              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
-              (detected !== "ND" && detected > maxRange) ?
-                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
-                ''
+          if (detectedNum < min) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '偏低';
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
           }
-          </div>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress mt-2"
-                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
-                        background-color: #00B2B4;
-                        transition: width 0.3s ease;">
-            </div>
-          </div>
-        </td>
+          else if (detectedNum > max) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '超标';
+            status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
+          }
 
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
-          ${bacteria.higher_than_percentage}%
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
-          ${bacteria.normal_detection_rate}%
-        </td>
-      </tr>
-    `;
+          return status;
+        },
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+        // 创建描述行
+        createDescriptionRow(bacteria, status) {
+          let descriptionContent = '';
 
-          const descRow = filteredDescriptions.length > 0 ? `
-      <tr class="virus-desc-row">
-        <td colspan="6" class="py-2 px-4 text-left">
-          <div class="description-container text-gray-600" style="font-size: 10px;">
-            ${filteredDescriptions.map(desc => `
-              <div class="flex items-start">
-                <div class="ml-1">
-                  <p>
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};">
-                    </i>
-                    ${desc.text}
-                  </p>
-                </div>
+          if (bacteria["说明"] && bacteria["说明"].trim()) {
+            descriptionContent += `
+            <div class="flex items-start mb-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                  ${bacteria["说明"]}
+                </p>
               </div>
-            `).join('')}
-          </div>
-        </td>
-      </tr>
-    ` : '';
+            </div>
+          `;
+          }
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
-        });
-      }
+          if (descriptionContent.trim()) {
+            return `
+            <tr class="virus-desc-row">
+              <td colspan="5" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  ${descriptionContent}
+                </div>
+              </td>
+            </tr>
+          `;
+          }
 
-      // 页面加载时调用
-      document.addEventListener('DOMContentLoaded', loadGutPathogenicBacteriaData);
+          return '';
+        },
+
+        // 计算进度条百分比
+        calculateProgress(value) {
+          if (value === "ND" || value === 0) {
+            return 0;
+          }
+
+          const num = Number(value);
+          return Math.min(100, Math.max(5,
+            num <= 1 ? num * 30 :
+              num <= 10 ? 30 + (num - 1) * 5 :
+                75 + (Math.min(num, 100) - 10) * 0.25
+          ));
+        },
+
+        // 渲染表格
+        renderTable(bacteriaData) {
+          const container = document.getElementById('pathogenic-bacteria-table-body');
+          if (!container) {
+            console.error('Cannot find container element');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+            container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+
+          bacteriaData.forEach(bacteria => {
+            if (!bacteria) return;
+
+            const detected = bacteria["丰度%"];
+            const normalRange = this.parseRange(bacteria["正常范围"]);
+            const latinName = bacteria["名称"] || "";
+            const chineseName = bacteria["中文名"] || "";
+
+            const formattedDetectedValue = detected === "ND" ? detected : this.formatNumber(detected);
+            const formattedMinRange = this.formatNumber(normalRange.min);
+            const formattedMaxRange = this.formatNumber(normalRange.max);
+
+            const status = this.getStatus(detected, normalRange);
+            const progressPercentage = this.calculateProgress(detected === "ND" ? 0 : detected);
+
+            const bacteriaContainer = document.createElement('div');
+            bacteriaContainer.className = 'bacteria-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'bacteria-table min-w-full';
+
+            const dataRow = `
+            <tr>
+              <td class="py-2 pl-4 pr-2 text-left pathogenic-bacteria-first-column">
+                <div class="pathogenic-bacteria-chinese-text"><strong>${chineseName}</strong></div>
+                <div class="pathogenic-bacteria-latin-text">${latinName}</div>
+              </td>
+              <td class="py-2 px-4 text-center pathogenic-bacteria-column-text pathogenic-bacteria-second-column">
+                <div class="flex items-center justify-center">
+                  <span style="color: ${status.color}">
+                    <strong>${detected === "ND" ? "未检出" : formattedDetectedValue}
+                    ${status.icon}</strong>
+                  </span>
+                </div>
+                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div class="progress"
+                       style="width: ${progressPercentage}%;
+                              height: 100%;
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center pathogenic-bacteria-column-text pathogenic-bacteria-third-column">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+            </tr>
+          `;
+
+            const descRow = this.createDescriptionRow(bacteria, status);
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            bacteriaContainer.appendChild(table);
+            fragment.appendChild(bacteriaContainer);
+          });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+            this.renderTable(data["致病菌"] || []);
+          } catch (error) {
+            console.error('Error loading pathogenic bacteria data:', error);
+            document.getElementById('pathogenic-bacteria-table-body').innerHTML =
+              '<div class="no-data-message">暂无数据</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          document.addEventListener('DOMContentLoaded', () => this.loadData());
+        }
+      };
+
+      // 初始化致病菌模块
+      PathogenicBacteria.init();
     </script>
-
   </div>
 
   <!-- 常见真菌版块 -->
