@@ -9152,7 +9152,9 @@ ${d.summarized_health_index.gut_type.value ? `
 
   <!-- 疾病症状相关菌 : 腹胀相关菌 -->
 
-  <h2 class="custom-title-1 page-break">腹胀相关菌</h2>
+  <h3 class="custom-title-third-level page-break">
+    腹胀相关菌
+  </h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -9172,25 +9174,34 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left disease-first-column" style="font-size: 11px;">
-            腹胀相关菌种名称
+          <th
+            class="py-2 px-4 text-left bloating-first-column"
+            style="font-size: 13px;"
+          >
+            腹胀相关菌名称
           </th>
-          <th class="py-2 px-4 text-center disease-second-column" style="font-size: 11px; padding: 5px 5px;">
-            正常范围%
+          <th
+            class="py-2 px-4 text-center bloating-second-column"
+            style="font-size: 13px; padding: 5px 5px;"
+          >
+            参考范围%
           </th>
-          <th class="py-2 px-4 text-center disease-third-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center bloating-third-column"
+            style="font-size: 13px; padding: 5px 5px;"
+          >
             检测丰度%
           </th>
-          <th class="py-2 px-4 text-center disease-fourth-column" style="font-size: 11px; padding: 5px 5px;">
-            结果评价
-          </th>
-          <th class="py-2 px-4 text-center disease-fifth-column" style="font-size: 11px; padding: 5px 5px;">
-            超过%的人
-          </th>
-          <th class="py-2 px-4 text-center disease-sixth-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center bloating-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;"
+          >
             相关性
           </th>
-          <th class="py-2 px-4 text-center disease-seventh-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center bloating-fifth-column"
+            style="font-size: 13px; padding: 5px 5px;"
+          >
             相关性强度
           </th>
         </tr>
@@ -9204,199 +9215,362 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadBloatingData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          renderBloatingDataTable(data.bloating_data);
-        } catch (error) {
-          console.error('Error loading bloating data:', error);
-        }
-      }
+      // 腹胀相关菌数据展示模块
+      const BloatingBacteria = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            YELLOW: '#faad14',
+            BLUE: '#3b82f6',
+            GRAY: '#808080',
+            BLACK: '#000000',
+            PRIMARY: '#00B2B4',
+            WARNING: '#faad14',
+            ORANGE: '#fa8c16'
+          },
+          CORRELATION: {
+            "+": {
+              text: "正相关",
+              textColor: "text-black",
+              starColor: "text-orange-500"
+            },
+            "-": {
+              text: "负相关",
+              textColor: "text-black",
+              starColor: "text-blue-500"
+            }
+          }
+        },
 
-      function formatNumber(value, precision = 3) {
-        if (value === "ND") return value;
-        if (typeof value === "string") {
-          return value;
-        }
-        const num = Number(value);
-        return num.toPrecision(precision).replace(/\.?0+$/, '');
-      }
+        // 格式化数字
+        formatNumber(value, precision = 2) {
+          if (value === "ND" || value === "-") return value;
+          const num = Number(value);
+          if (isNaN(num)) return value;
+          return num.toPrecision(precision).replace(/\.?0+$/, '');
+        },
 
-      function calculateProgressPercentage(value) {
-        if (value === "ND") return 0;
-        if (value < 0) return 0;
-        if (value > 100) return 100;
-
-        const num = Number(value);
-
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
-        }
-        return num;
-      }
-
-      function determineStatus(value, minRange, maxRange) {
-        if (value === "ND") {
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
           return {
-            text: '缺乏',
-            color: 'yellow',
-            direction: 'down'
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
           };
-        }
+        },
 
-        if (value < minRange) {
-          return {
-            text: '偏低',
-            color: 'red',
-            direction: 'down'
-          };
-        } else if (value > maxRange) {
-          return {
-            text: '超标',
-            color: 'red',
-            direction: 'up'
-          };
-        } else {
-          return {
-            text: '正常',
-            color: 'green',
-            direction: null
-          };
-        }
-      }
+        // 分离中文名和拉丁名
+        separateName(fullName) {
+          if (!fullName) return { chineseName: '', latinName: '' };
 
-      function generateStars(count, isPositive) {
-        const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
-        return Array(3).fill().map((_, i) =>
-          `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
-        ).join('');
-      }
+          // 假设格式是"中文名 拉丁名"，用空格分隔
+          const parts = fullName.split(' ');
 
-      function renderBloatingDataTable(bloatingData) {
-        const container = document.getElementById('bloating-data-table-body');
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          yellow: '#faad14'
-        };
-
-        bloatingData.forEach(bacteria => {
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
-
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-          const currentValue = bacteria.detected_abundance;
-
-          const formattedCurrentValue = formatNumber(currentValue);
-          const formattedMinRange = formatNumber(minRange);
-          const formattedMaxRange = formatNumber(maxRange);
-
-          const status = determineStatus(currentValue, minRange, maxRange);
-          const isNormal = status.text === '正常';
-
-          const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
-          const isPositive = bacteria.correlation === 'positive';
-          const isNegative = bacteria.correlation === 'negative';
-
-          if (status.text === '超标' && isPositive) {
-            bacteriaContainer.style.border = '1px solid #ff4d4f';
-            bacteriaContainer.style.borderRadius = '4px';
-            bacteriaContainer.style.margin = '4px 0';
-          } else if (status.text === '偏低' && isNegative) {
-            bacteriaContainer.style.border = '1px solid #3b82f6';
-            bacteriaContainer.style.borderRadius = '4px';
-            bacteriaContainer.style.margin = '4px 0';
-          } else {
-            bacteriaContainer.style.border = '1px solid transparent';
+          // 如果只有一个部分，或者没有包含拉丁字符的部分
+          if (parts.length === 1) {
+            return { chineseName: parts[0], latinName: '' };
           }
 
-          const dataRow = `
+          // 找到第一个包含拉丁字符的部分
+          let latinIndex = -1;
+          for (let i = 0; i < parts.length; i++) {
+            if (/[a-zA-Z]/.test(parts[i])) {
+              latinIndex = i;
+              break;
+            }
+          }
+
+          if (latinIndex === -1) {
+            // 如果没有找到拉丁字符，全部作为中文名
+            return { chineseName: fullName, latinName: '' };
+          }
+
+          // 分离中文名和拉丁名
+          const chineseName = parts.slice(0, latinIndex).join(' ');
+          const latinName = parts.slice(latinIndex).join(' ');
+
+          return { chineseName, latinName };
+        },
+
+        // 获取状态信息
+        getStatus(detected, normalRange) {
+          const { min, max } = this.parseRange(normalRange);
+
+          if (detected === "ND") {
+            if (min > 0) {
+              return {
+                text: '缺乏',
+                color: this.CONSTANTS.COLORS.RED,
+                icon: '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+                isNormal: false,
+                direction: 'down',
+                isGrayND: false
+              };
+            } else {
+              return {
+                text: '正常',
+                color: this.CONSTANTS.COLORS.GRAY,
+                icon: '',
+                isNormal: true,
+                direction: null,
+                isGrayND: true
+              };
+            }
+          }
+
+          // 如果检测值不是ND，转换为数字进行比较
+          const numDetected = Number(detected);
+
+          if (numDetected < min) {
+            return {
+              text: '偏低',
+              color: this.CONSTANTS.COLORS.RED,
+              icon: '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+              isNormal: false,
+              direction: 'down',
+              isGrayND: false
+            };
+          } else if (numDetected > max) {
+            return {
+              text: '超标',
+              color: this.CONSTANTS.COLORS.RED,
+              icon: '<i class="fas fa-arrow-up ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+              isNormal: false,
+              direction: 'up',
+              isGrayND: false
+            };
+          } else {
+            return {
+              text: '正常',
+              color: this.CONSTANTS.COLORS.GREEN,
+              icon: '',
+              isNormal: true,
+              direction: null,
+              isGrayND: false
+            };
+          }
+        },
+
+        // 生成星星评级
+        generateStars(count, correlationType) {
+          const starColor = this.CONSTANTS.CORRELATION[correlationType].starColor;
+          return Array(3).fill().map((_, i) =>
+            `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
+          ).join('');
+        },
+
+        // 计算进度条百分比
+        calculateProgressWidth(value) {
+          if (value === 'ND' || value === 0) return 0;
+
+          const num = Number(value);
+          if (isNaN(num)) return 0;
+
+          if (num <= 20) {
+            return Math.min(20, Math.max(5, num * 1.5));
+          }
+          return Math.min(100, Math.max(0, num));
+        },
+
+        // 创建描述行
+        createDescriptionRow(bacteria, status) {
+          let descriptionContent = '';
+
+          // 添加常规说明
+          if (bacteria.说明 && bacteria.说明.trim()) {
+            descriptionContent += `
+            <div class="flex items-start mb-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                  ${bacteria.说明}
+                </p>
+              </div>
+            </div>
+          `;
+          }
+
+          // 如果状态不是正常，并且有改善方式，添加改善建议
+          if (!status.isNormal && bacteria.改善方式 && bacteria.改善方式.trim()) {
+            descriptionContent += `
+            <div class="flex items-start mt-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-bell" style="color: ${this.CONSTANTS.COLORS.WARNING};"></i>
+                  <strong>改善建议：</strong> ${bacteria.改善方式}
+                </p>
+              </div>
+            </div>
+          `;
+          }
+
+          // 如果有内容需要显示，返回完整的行
+          if (descriptionContent.trim()) {
+            return `
+            <tr class="description-row">
+              <td colspan="7" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  ${descriptionContent}
+                </div>
+              </td>
+            </tr>
+          `;
+          }
+
+          // 如果没有描述内容，返回空字符串
+          return '';
+        },
+
+        // 渲染表格
+        renderTable(bloatingData) {
+          const container = document.getElementById('bloating-data-table-body');
+          if (!container) {
+            console.error('Cannot find container element');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          if (!bloatingData || !Array.isArray(bloatingData) || bloatingData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4 text-red-500">暂无腹胀相关菌数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+
+          bloatingData.forEach(bacteria => {
+            const { chineseName, latinName } = this.separateName(bacteria.名称);
+            const normalRange = bacteria.正常范围;
+            const detected = bacteria["丰度%"];
+            const higherThanPercentage = bacteria.超过人群百分比 || "-";
+            const correlation = bacteria.问题相关性;
+            const evidenceStrength = parseInt(bacteria.证据强度 || "0", 10);
+
+            const { min, max } = this.parseRange(normalRange);
+            const status = this.getStatus(detected, normalRange);
+            const isPositive = correlation === "+";
+            const isNegative = correlation === "-";
+
+            // 创建容器
+            const bacteriaContainer = document.createElement('div');
+            bacteriaContainer.className = 'bacteria-info-container';
+
+            // 高亮风险组合
+            if ((status.text === '超标' && isPositive) ||
+              ((status.text === '偏低' || status.text === '缺乏') && isNegative)) {
+              // 选择合适的边框颜色
+              let borderColor;
+              if (isPositive) {
+                borderColor = this.CONSTANTS.COLORS.RED; // 正相关+超标用红色
+              } else {
+                borderColor = this.CONSTANTS.COLORS.ORANGE; // 负相关+偏低/缺乏用橙色
+              }
+
+              bacteriaContainer.style.border = `1px solid ${borderColor}`;
+              bacteriaContainer.style.borderRadius = '4px';
+              bacteriaContainer.style.margin = '4px 0';
+            } else {
+              bacteriaContainer.style.border = '1px solid transparent';
+            }
+
+            // 创建表格
+            const table = document.createElement('table');
+            table.className = 'bacteria-table min-w-full';
+
+            // 格式化数值
+            const formattedMinRange = this.formatNumber(min, 2);
+            const formattedMaxRange = this.formatNumber(max, 2);
+
+            // 数据行
+            const progressPercentage = this.calculateProgressWidth(detected);
+
+            // 根据状态确定未检出的颜色
+            const detectedText = detected === "ND"
+              ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">未检出</span>` : '未检出')
+              : this.formatNumber(detected);
+
+            const dataRow = `
             <tr>
-              <td class="py-2 px-4 text-left disease-first-column">
-                <div class="chinese-text">
-                  ${bacteria.chinese_name}
-                </div>
-                <div class="latin-text text-gray-500">
-                  ${bacteria.latin_name}
-                </div>
+              <td class="py-2 px-4 text-left bloating-first-column">
+                <div class="obesity-chinese-text"><strong>${chineseName || '未知'}</strong></div>
+                <div class="obesity-latin-text text-gray-500">${latinName || ''}</div>
               </td>
-              <td class="py-2 px-4 text-center disease-second-column disease-column-text">
-                ${parseFloat(Number(formattedMinRange).toPrecision(2))}-${parseFloat(Number(formattedMaxRange).toPrecision(2))}
+              <td class="py-2 px-4 text-center bloating-second-column obesity-column-text">
+                ${formattedMinRange}-${formattedMaxRange}
               </td>
-              <td class="py-2 px-4 text-center disease-third-column disease-column-text">
-                <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
-                <div class="progress-bar w-full mt-2">
+              <td class="py-2 px-4 text-center bloating-third-column disease-column-text">
+                <span style="color: ${status.isNormal && !status.isGrayND ? 'inherit' : status.color}">
+                  ${detectedText}
+                  ${status.icon || ''}
+                </span>
+                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                   <div class="progress"
-                       style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
-                              Math.min(100,
-                                Math.max(0,
-                                  bacteria.detected_abundance <= 20
-                                    ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
-                                    : bacteria.detected_abundance
-                                )
-                              )}%;
-                              background-color: #00B2B4;
+                       style="width: ${progressPercentage}%;
+                              height: 100%;
+                              background-color: ${this.CONSTANTS.COLORS.PRIMARY};
                               transition: width 0.3s ease;">
                   </div>
                 </div>
               </td>
-              <td class="py-2 px-4 text-center disease-fourth-column disease-column-text">
-                <span class="font-bold" style="color: ${CUSTOM_COLORS[status.color]}">
-                  ${status.text}
-                  ${status.direction ? `<i class="fas fa-arrow-${status.direction} ml-1"></i>` : ''}
-                </span>
+              <td class="py-2 px-4 text-center bloating-fourth-column disease-column-text">
+                <span class="${this.CONSTANTS.CORRELATION[correlation].textColor}">${this.CONSTANTS.CORRELATION[correlation].text}</span>
               </td>
-              <td class="py-2 px-4 text-center disease-fifth-column disease-column-text">
-                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-              </td>
-              <td class="py-2 px-4 text-center disease-sixth-column disease-column-text">
-                ${correlationText}
-              </td>
-              <td class="py-2 px-4 text-center disease-seventh-column disease-column-text">
+              <td class="py-2 px-4 text-center bloating-fifth-column disease-column-text">
                 <div class="flex justify-center items-center">
-                  ${generateStars(bacteria.stars, isPositive)}
+                  ${this.generateStars(evidenceStrength, correlation)}
                 </div>
               </td>
             </tr>
           `;
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+            // 描述行
+            const descRow = this.createDescriptionRow(bacteria, status);
 
-          const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="description-row">
-          <td colspan="7" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600" style="font-size: 10px;">
-              ${filteredDescriptions.map(desc => `
-                <div>
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};">
-                  </i>
-                  ${desc.text}
-                </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            bacteriaContainer.appendChild(table);
+            fragment.appendChild(bacteriaContainer);
+          });
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
-        });
-      }
+          container.appendChild(fragment);
+        },
 
-      document.addEventListener('DOMContentLoaded', loadBloatingData);
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // 提取腹胀相关菌数据
+            const bloatingData = data["疾病相关菌"] ? data["疾病相关菌"]["腹胀"] : [];
+            this.renderTable(bloatingData);
+          } catch (error) {
+            console.error('Error loading bloating bacteria data:', error);
+            document.getElementById('bloating-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化腹胀相关菌模块
+      BloatingBacteria.init();
     </script>
-
   </div>
 
   <!-- 疾病症状相关菌 : 过敏相关菌 -->
