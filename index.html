@@ -7333,285 +7333,257 @@ ${d.summarized_health_index.gut_type.value ? `
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 w-full">
-      <!-- 第一行 -->
-      <div class="flex gap-2">
-
-        <!-- 风险评估参考标准 -->
-        <div class="w-[410px] slow-disease-summary-info-card py-2 flex justify-center items-center">
-          <div class="text-base font-bold">风险评估参考标准</div>
-        </div>
-
-        <!-- 风险进度条 -->
-        <!-- 风险进度条 -->
-        <div class="w-[600px] summary-info-card p-4 flex flex-col justify-center gap-1">
-          <!-- 风险标签 -->
-          <div class="flex w-full">
-            <div class="w-[30%] text-center">
-              <span class="text-sm text-gray-600">低风险</span>
-            </div>
-            <div class="w-[20%] text-center">
-              <span class="text-sm text-gray-600">注意</span>
-            </div>
-            <div class="w-[20%] text-center">
-              <span class="text-sm text-gray-600">中高风险</span>
-            </div>
-            <div class="w-[30%] text-center">
-              <span class="text-sm text-gray-600">高风险</span>
-            </div>
-          </div>
-
-          <!-- 分段进度条 -->
-          <div class="flex w-full h-3 rounded-full overflow-hidden">
-            <div class="bg-green-400" style="width: 30%"></div>
-            <div class="bg-yellow-400" style="width: 20%"></div>
-            <div class="bg-orange-400" style="width: 20%"></div>
-            <div class="bg-red-400" style="width: 30%"></div>
-          </div>
-
-          <!-- 刻度值 -->
-          <div class="flex w-full h-4 relative">
-            <div class="absolute w-full flex">
-              <span class="absolute left-0 -translate-x-1/2 text-xs text-gray-500">0</span>
-              <span class="absolute left-[30%] -translate-x-1/2 text-xs text-gray-500">0.3</span>
-              <span class="absolute left-[50%] -translate-x-1/2 text-xs text-gray-500">0.5</span>
-              <span class="absolute left-[70%] -translate-x-1/2 text-xs text-gray-500">0.7</span>
-              <span class="absolute right-0 -translate-x-1/2 text-xs text-gray-500">1</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 第二行 -->
-      <div class="flex gap-2 h-[250px]">
-        <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
-        <div class="w-[400px] flex gap-2">
-          <!-- 肠道疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card p-2 flex justify-center items-center" style="
-    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
-">
-            <div class="writing-vertical text-lg font-bold">
-              肠道疾病
-            </div>
-          </div>
-
-          <!-- 疾病名称列表 -->
-          <div class="flex-1 flex flex-col gap-2">
-            <!-- IBD -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">炎症性肠炎</div>
-            </div>
-            <!-- IBS -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">肠易激综合征</div>
-            </div>
-            <!-- 结肠炎 -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">感染型腹泻</div>
-            </div>
-            <!-- 肠道息肉 -->
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">肠道病毒感染</div>
-            </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">过敏性腹泻</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
-        <!-- 右侧进度条列表 -->
-        <div class="w-[600px] flex flex-col gap-2">
-          <!-- IBD 进度条 -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
-                  <span class="text-white text-sm font-medium">45%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- IBS 进度条 -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 35%">
-                  <span class="text-white text-sm font-medium">35%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 结肠炎进度条 -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-orange-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 55%">
-                  <span class="text-white text-sm font-medium">55%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 肠道息肉进度条 -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
-                  <span class="text-white text-sm font-medium">25%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 过敏性腹泻进度条 -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
-                  <span class="text-white text-sm font-medium">25%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 第三行 : 器官性疾病 -->
-      <div class="flex gap-2 h-[200px]">
-        <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
-        <div class="w-[400px] flex gap-2">
-          <!-- 器官性疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center" style="
-    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
-">
-            <div class="writing-vertical text-base font-bold">
-              器官性疾病
-            </div>
-          </div>
-
-          <!-- 疾病名称列表 -->
-          <div class="flex-1 flex flex-col gap-2">
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">肝病</div>
-            </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">心脑血管疾病</div>
-            </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">甲状腺疾病</div>
-            </div>
-            <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">肺部疾病</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
-        <div class="w-[600px] flex flex-col gap-2">
-          <!-- 进度条1 (45% - 中等风险) -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
-                  <span class="text-white text-sm font-medium">45%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 进度条2 (35% - 注意) -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 35%">
-                  <span class="text-white text-sm font-medium">35%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 进度条3 (55% - 高风险) -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-orange-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 55%">
-                  <span class="text-white text-sm font-medium">55%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 进度条4 (25% - 低风险) -->
-          <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-green-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 25%">
-                  <span class="text-white text-sm font-medium">25%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 第三行 -->
-      <div class="flex gap-2 h-[50px]">
-        <!-- 左侧区域（包含标题和疾病列表，宽度与上方风险评估标准一致） -->
-        <div class="w-[400px] flex gap-2">
-          <!-- 神经系统疾病标题 -->
-          <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center" style="
-    background: linear-gradient(135deg, #E6F4F1, #F0F7F7);
-">
-            <div class="text-base font-bold">
-              神经系统
-            </div>
-          </div>
-
-          <!-- 疾病名称列表 -->
-          <div class="flex-1">
-            <div class="slow-disease-summary-info-card py-1 px-4 h-full flex justify-end items-center" style="
-    background: linear-gradient(135deg, #F5F8FF, #FAFBFF);
-">
-              <div class="text-base font-bold">神经行为发育异常</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 右侧进度条列表（宽度与上方标准进度条一致） -->
-        <div class="w-[600px] flex flex-col gap-2">
-          <div class="summary-info-card py-1 px-4 h-full flex items-center">
-            <div class="flex-1">
-              <div class="w-full bg-gray-200 rounded-full h-6 relative">
-                <div class="bg-yellow-400 h-6 rounded-full flex items-center justify-end pr-2" style="width: 45%">
-                  <span class="text-white text-sm font-medium">45%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="slow-disease-summary-container" class="flex flex-col gap-4 w-full">
+      <!-- 内容将通过JavaScript动态生成 -->
     </div>
+
+    <script>
+      // 确保 DATA_PATHS 已定义
+      if (typeof DATA_PATHS === 'undefined') {
+        var DATA_PATHS = {
+          DATA: './data.json' // 默认路径，请确保这个路径是正确的
+        };
+      }
+
+      // 慢病风险评估汇总图示模块
+      const SlowDiseaseSummary = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            GREEN: '#4ade80',   // 低风险 (绿色)
+            YELLOW: '#facc15',  // 注意 (黄色)
+            ORANGE: '#fb923c',  // 中高风险 (橙色)
+            RED: '#f87171',     // 高风险 (红色)
+            GRAY: '#e5e7eb'     // 背景色 (灰色)
+          },
+          CATEGORIES: {
+            INTESTINAL: {
+              name: "肠道疾病",
+              diseases: ["炎症性肠炎", "肠易激综合征", "感染型腹泻", "肠道病毒感染", "过敏性腹泻"]
+            },
+            ORGAN: {
+              name: "器官性疾病",
+              diseases: ["肝病", "心脑血管疾病", "甲状腺疾病", "肺部疾病"]
+            },
+            NEURO: {
+              name: "神经系统",
+              diseases: ["神经行为发育异常"]
+            }
+          }
+        },
+
+        // 获取风险颜色
+        getRiskColor(value) {
+          if (value < 0.3) return this.CONSTANTS.COLORS.GREEN;
+          if (value < 0.5) return this.CONSTANTS.COLORS.YELLOW;
+          if (value < 0.7) return this.CONSTANTS.COLORS.ORANGE;
+          return this.CONSTANTS.COLORS.RED;
+        },
+
+        // 创建标准风险进度条
+        createRiskStandardRow() {
+          return `
+          <!-- 第一行 -->
+          <div class="flex gap-2">
+            <!-- 风险评估参考标准 -->
+            <div class="w-[410px] slow-disease-summary-info-card py-2 flex justify-center items-center">
+              <div class="text-base font-bold">风险评估参考标准</div>
+            </div>
+
+            <!-- 风险进度条 -->
+            <div class="w-[600px] summary-info-card p-4 flex flex-col justify-center gap-1">
+              <!-- 风险标签 -->
+              <div class="flex w-full">
+                <div class="w-[30%] text-center">
+                  <span class="text-sm text-gray-600">低风险</span>
+                </div>
+                <div class="w-[20%] text-center">
+                  <span class="text-sm text-gray-600">注意</span>
+                </div>
+                <div class="w-[20%] text-center">
+                  <span class="text-sm text-gray-600">中高风险</span>
+                </div>
+                <div class="w-[30%] text-center">
+                  <span class="text-sm text-gray-600">高风险</span>
+                </div>
+              </div>
+
+              <!-- 分段进度条 -->
+              <div class="flex w-full h-3 rounded-full overflow-hidden">
+                <div class="bg-green-400" style="width: 30%"></div>
+                <div class="bg-yellow-400" style="width: 20%"></div>
+                <div class="bg-orange-400" style="width: 20%"></div>
+                <div class="bg-red-400" style="width: 30%"></div>
+              </div>
+
+              <!-- 刻度值 -->
+              <div class="flex w-full h-4 relative">
+                <div class="absolute w-full flex">
+                  <span class="absolute left-0 -translate-x-1/2 text-xs text-gray-500">0</span>
+                  <span class="absolute left-[30%] -translate-x-1/2 text-xs text-gray-500">0.3</span>
+                  <span class="absolute left-[50%] -translate-x-1/2 text-xs text-gray-500">0.5</span>
+                  <span class="absolute left-[70%] -translate-x-1/2 text-xs text-gray-500">0.7</span>
+                  <span class="absolute right-0 -translate-x-1/2 text-xs text-gray-500">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        },
+
+        // 创建疾病名称列表HTML
+        createDiseaseNamesList(diseases) {
+          return diseases.map(disease => `
+          <div class="slow-disease-summary-info-card py-1 px-4 flex-1 flex justify-end items-center"
+               style="background: linear-gradient(135deg, #F5F8FF, #FAFBFF);">
+            <div class="text-base font-bold">${disease.name}</div>
+          </div>
+        `).join('');
+        },
+
+        // 创建进度条HTML
+        createProgressBars(diseases) {
+          return diseases.map(disease => {
+            const percentage = (disease.value * 100).toFixed(0);
+            const color = this.getRiskColor(disease.value);
+
+            return `
+            <div class="summary-info-card py-1 px-4 flex-1 flex items-center">
+              <div class="flex-1">
+                <div class="w-full bg-gray-200 rounded-full h-6 relative">
+                  <div class="${this.getColorClass(color)} h-6 rounded-full flex items-center justify-end pr-2"
+                       style="width: ${percentage}%">
+                    <span class="text-white font-medium" style="font-size: 0.5rem;"><strong>${percentage}%</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          }).join('');
+        },
+
+        // 获取颜色类
+        getColorClass(color) {
+          const colorMap = {
+            [this.CONSTANTS.COLORS.GREEN]: 'bg-green-400',
+            [this.CONSTANTS.COLORS.YELLOW]: 'bg-yellow-400',
+            [this.CONSTANTS.COLORS.ORANGE]: 'bg-orange-400',
+            [this.CONSTANTS.COLORS.RED]: 'bg-red-400'
+          };
+          return colorMap[color] || 'bg-gray-400';
+        },
+
+        // 创建分类行
+        createCategoryRow(categoryKey, categoryData, diseaseDataMap) {
+          const category = this.CONSTANTS.CATEGORIES[categoryKey];
+          const rowHeight = category.diseases.length * 50; // 每个疾病50px高度
+
+          // 找出此分类中的所有疾病数据
+          const diseasesInCategory = category.diseases
+            .map(diseaseName => {
+              const diseaseData = diseaseDataMap[diseaseName];
+              return diseaseData ? {
+                name: diseaseName,
+                value: diseaseData.评估值
+              } : null;
+            })
+            .filter(data => data !== null);
+
+          // 如果没有此分类的疾病数据，则不生成此行
+          if (diseasesInCategory.length === 0) return '';
+
+          return `
+          <div class="flex gap-2" style="height: ${rowHeight}px">
+            <!-- 左侧区域（包含标题和疾病列表） -->
+            <div class="w-[400px] flex gap-2">
+              <!-- 分类标题 -->
+              <div class="w-[80px] slow-disease-summary-info-card py-2 flex justify-center items-center"
+                   style="background: linear-gradient(135deg, #E6F4F1, #F0F7F7);">
+                <div class="${categoryKey === 'INTESTINAL' || categoryKey === 'ORGAN' ? 'writing-vertical' : ''} text-base font-bold">
+                  ${category.name}
+                </div>
+              </div>
+
+              <!-- 疾病名称列表 -->
+              <div class="flex-1 flex flex-col gap-2">
+                ${this.createDiseaseNamesList(diseasesInCategory)}
+              </div>
+            </div>
+
+            <!-- 右侧进度条列表 -->
+            <div class="w-[600px] flex flex-col gap-2">
+              ${this.createProgressBars(diseasesInCategory)}
+            </div>
+          </div>
+        `;
+        },
+
+        // 处理数据并生成HTML
+        generateHTML(data) {
+          if (!data || !data.慢病风险 || !Array.isArray(data.慢病风险)) {
+            return '<div class="text-center p-4 text-red-500">暂无慢病风险数据</div>';
+          }
+
+          // 创建疾病名称到数据的映射
+          const diseaseDataMap = {};
+          data.慢病风险.forEach(disease => {
+            if (disease && disease.检测项目) {
+              diseaseDataMap[disease.检测项目] = disease;
+            }
+          });
+
+          // 生成HTML
+          let html = this.createRiskStandardRow();
+
+          // 生成每个分类的行
+          for (const categoryKey in this.CONSTANTS.CATEGORIES) {
+            html += this.createCategoryRow(categoryKey, this.CONSTANTS.CATEGORIES[categoryKey], diseaseDataMap);
+          }
+
+          return html;
+        },
+
+        // 渲染图表
+        render(data) {
+          const container = document.getElementById('slow-disease-summary-container');
+          if (!container) {
+            console.error('找不到慢病风险汇总容器元素');
+            return;
+          }
+
+          container.innerHTML = this.generateHTML(data);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`网络响应错误: ${response.status}`);
+            }
+
+            const data = await response.json();
+            this.render(data);
+          } catch (error) {
+            console.error('加载慢病风险数据时出错:', error);
+            document.getElementById('slow-disease-summary-container').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化慢病风险汇总模块
+      SlowDiseaseSummary.init();
+    </script>
   </div>
 
   <h3 class="custom-title-third-level page-break">阅读指南</h3>
@@ -7794,10 +7766,9 @@ ${d.summarized_health_index.gut_type.value ? `
 
 
   <!-- 慢病风险评估板块 -->
-  <h3 class="custom-title-third-level page-break">慢病风险评估表格</h3>
+  <h3 class="custom-title-1 page-break">慢病风险评估表格</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
@@ -7816,19 +7787,13 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th
-            class="py-2 px-4 text-left slow-disease-first-column"
-            style="font-size: 13px;">
+          <th class="py-2 px-4 text-left slow-disease-first-column" style="font-size: 13px;">
             评估慢病名称
           </th>
-          <th
-            class="py-2 px-4 text-center slow-disease-second-column"
-            style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center slow-disease-second-column" style="font-size: 13px; padding: 5px 5px;">
             风险评估数值
           </th>
-          <th
-            class="py-2 px-4 text-center slow-disease-third-column"
-            style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center slow-disease-third-column" style="font-size: 13px; padding: 5px 5px;">
             风险评估结果
           </th>
         </tr>
@@ -7849,189 +7814,219 @@ ${d.summarized_health_index.gut_type.value ? `
         };
       }
 
-      // 常量定义
-      const CONSTANTS = {
-        COLORS: {
-          RED: '#ff4d4f',
-          GREEN: '#389e0d',
-          GRAY: '#808080',
-          PRIMARY: '#00B2B4',
-          WARNING: '#FF0000',
-          BLACK: '#000000',
-          LOW_RISK: '#52c41a',    // 低风险
-          ATTENTION: '#fadb14',   // 注意
-          MEDIUM_RISK: '#faad14', // 中高风险
-          HIGH_RISK: '#ff4d4f'    // 高风险
+      // 慢病风险评估命名空间
+      const SlowDiseaseRisk = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080',
+            PRIMARY: '#00B2B4',
+            WARNING: '#FF0000',
+            BLACK: '#000000',
+            LOW_RISK: '#52c41a',    // 低风险
+            ATTENTION: '#fadb14',   // 注意
+            MEDIUM_RISK: '#faad14', // 中高风险
+            HIGH_RISK: '#ff4d4f'    // 高风险
+          },
+          RANGE_MARKERS: [0.3, 0.5, 0.7] // 风险阈值标记
+        },
+
+        // 获取风险级别颜色
+        getRiskColor(evaluationValue) {
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[0]) return this.CONSTANTS.COLORS.LOW_RISK;
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[1]) return this.CONSTANTS.COLORS.ATTENTION;
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[2]) return this.CONSTANTS.COLORS.MEDIUM_RISK;
+          return this.CONSTANTS.COLORS.HIGH_RISK;
+        },
+
+        // 获取风险级别标签
+        getRiskLabel(evaluationValue) {
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[0]) return "低风险";
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[1]) return "注意";
+          if (evaluationValue < this.CONSTANTS.RANGE_MARKERS[2]) return "中等风险";
+          return "高风险";
+        },
+
+        // 创建描述行
+        createDescriptionRow(disease) {
+          // 如果没有说明，返回空字符串
+          if (!disease["说明"] || disease["说明"].trim() === '') {
+            return '';
+          }
+
+          return `
+          <tr class="disease-desc-row">
+            <td colspan="3" class="py-2 px-4 text-left">
+              <div class="description-container text-gray-600" style="font-size: 11px;">
+                <div class="flex items-start mb-0">
+                  <div class="ml-1">
+                    <p>
+                      <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                      ${disease["说明"]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        `;
+        },
+
+        // 创建疾病行
+        createDiseaseRow(disease) {
+          // 处理评估值 - 直接使用数字类型
+          const evaluationValue = typeof disease["评估值"] === 'number'
+            ? disease["评估值"]
+            : parseFloat(disease["评估值"] || 0);
+
+          if (isNaN(evaluationValue)) {
+            return document.createElement('div'); // 返回空div避免错误
+          }
+
+          const riskColor = this.getRiskColor(evaluationValue);
+          const resultLabel = disease["结果评价"] || this.getRiskLabel(evaluationValue);
+
+          // 创建行容器
+          const diseaseContainer = document.createElement('div');
+          diseaseContainer.className = 'bacteria-info-container';
+
+          const table = document.createElement('table');
+          table.className = 'bacteria-table min-w-full';
+
+          // 生成显示值的行
+          const dataRow = `
+          <tr>
+            <td class="py-2 pl-4 pr-2 text-left slow-disease-first-column">
+              <div class="slow-disease-chinese-text"><strong>${disease["检测项目"] || '未知项目'}</strong></div>
+              <div class="slow-disease-english-text">${disease["英文名"] || '未知'}</div>
+            </td>
+            <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-second-column">
+              <div class="flex items-center justify-center">
+                <span style="color: ${riskColor}">
+                  <strong>${evaluationValue.toFixed(2)}</strong>
+                </span>
+              </div>
+              <!-- 进度条及分界线 -->
+              <div class="progress-bar-container w-full mt-2 relative">
+                <div class="progress-bar w-full" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div class="progress"
+                      style="width: ${(evaluationValue * 100) + '%'};
+                            height: 100%;
+                            background-color: ${riskColor};
+                            transition: width 0.3s ease;">
+                  </div>
+                </div>
+                <!-- 分界线 -->
+                <div class="division-line" style="position: absolute; top: 0; bottom: 0; left: 30%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+                <div class="division-line" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+                <div class="division-line" style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
+
+                <!-- 范围标记 -->
+                <div class="range-labels flex justify-between mt-1" style="font-size: 9px; color: #666;">
+                  <span>0</span>
+                  <span>0.3</span>
+                  <span>0.5</span>
+                  <span>0.7</span>
+                  <span>1</span>
+                </div>
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-third-column">
+              <span class="risk-label px-4 py-2 rounded-full text-white"
+                    style="background-color: ${riskColor}; font-size: 12px; display: inline-block; min-width: 70px;">
+                <strong>${resultLabel}</strong>
+              </span>
+            </td>
+          </tr>
+        `;
+
+          // 生成描述行
+          const descRow = this.createDescriptionRow(disease);
+
+          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+          diseaseContainer.appendChild(table);
+
+          return diseaseContainer;
+        },
+
+        // 主渲染函数
+        renderTable(diseaseData) {
+          const container = document.getElementById('slow-disease-table-body');
+          if (!container) {
+            console.error('Cannot find container element: slow-disease-table-body');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          // 如果没有数据
+          if (!diseaseData || !Array.isArray(diseaseData) || diseaseData.length === 0) {
+            container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+            return;
+          }
+
+          // 使用DocumentFragment批量处理DOM操作
+          const fragment = document.createDocumentFragment();
+
+          diseaseData.forEach(disease => {
+            if (disease) {  // 确保disease存在
+              const diseaseElement = this.createDiseaseRow(disease);
+              fragment.appendChild(diseaseElement);
+            }
+          });
+
+          // 一次性添加所有元素到DOM
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 检查慢病风险数据是否存在
+            if (!data["慢病风险"] || !Array.isArray(data["慢病风险"])) {
+              document.getElementById('slow-disease-table-body').innerHTML =
+                '<div class="error-message">数据格式不正确</div>';
+              return;
+            }
+
+            // 对慢病风险按照评估值从大到小排序
+            data["慢病风险"].sort((a, b) => {
+              // 处理数字类型的评估值
+              const valueA = typeof a["评估值"] === 'number' ? a["评估值"] : parseFloat(a["评估值"] || 0);
+              const valueB = typeof b["评估值"] === 'number' ? b["评估值"] : parseFloat(b["评估值"] || 0);
+              return valueB - valueA;
+            });
+
+            this.renderTable(data["慢病风险"]);
+          } catch (error) {
+            console.error('Error loading slow disease risk data:', error);
+            document.getElementById('slow-disease-table-body').innerHTML =
+              '<div class="error-message">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
       };
 
-      // 加载数据
-      async function loadSlowDiseaseData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          if (!response.ok) {
-            document.getElementById('slow-disease-table-body').innerHTML =
-              '<div class="error-message">数据加载失败，请稍后再试</div>';
-            return;
-          }
-
-          const data = await response.json();
-
-          // 检查慢病风险数据是否存在
-          if (!data["慢病风险"] || !Array.isArray(data["慢病风险"])) {
-            document.getElementById('slow-disease-table-body').innerHTML =
-              '<div class="error-message">数据格式不正确</div>';
-            return;
-          }
-
-          // 对慢病风险按照评估值从大到小排序
-          data["慢病风险"].sort((a, b) => {
-            // 处理数字类型的评估值
-            const valueA = typeof a["评估值"] === 'number' ? a["评估值"] : parseFloat(a["评估值"] || 0);
-            const valueB = typeof b["评估值"] === 'number' ? b["评估值"] : parseFloat(b["评估值"] || 0);
-            return valueB - valueA;
-          });
-
-          renderSlowDiseaseTable(data["慢病风险"]);
-        } catch (error) {
-          document.getElementById('slow-disease-table-body').innerHTML =
-            '<div class="error-message">数据加载失败，请稍后再试</div>';
-        }
-      }
-
-      // 获取风险级别颜色
-      function getRiskColor(evaluationValue) {
-        // 这里不需要再转换，因为已经确保evaluationValue是数字
-        if (evaluationValue < 0.3) return CONSTANTS.COLORS.LOW_RISK;
-        if (evaluationValue < 0.5) return CONSTANTS.COLORS.ATTENTION;
-        if (evaluationValue < 0.7) return CONSTANTS.COLORS.MEDIUM_RISK;
-        return CONSTANTS.COLORS.HIGH_RISK;
-      }
-
-      // 创建描述行
-      function createDiseaseDescriptionRow(disease) {
-        // 如果没有说明，返回空字符串
-        if (!disease["说明"] || disease["说明"].trim() === '') {
-          return '';
-        }
-
-        return `
-        <tr class="disease-desc-row">
-          <td colspan="3" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600" style="font-size: 11px;">
-              <div class="flex items-start mb-0">
-                <div class="ml-1">
-                  <p>
-                    <i class="fas fa-info-circle" style="color: ${CONSTANTS.COLORS.PRIMARY};"></i>
-                    ${disease["说明"]}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-      `;
-      }
-
-      // 创建疾病行 - 适应数字类型评估值
-      function createDiseaseRow(disease) {
-        // 处理评估值 - 直接使用数字类型
-        const evaluationValue = typeof disease["评估值"] === 'number'
-          ? disease["评估值"]
-          : parseFloat(disease["评估值"] || 0);
-
-        if (isNaN(evaluationValue)) {
-          return document.createElement('div'); // 返回空div避免错误
-        }
-
-        const riskColor = getRiskColor(evaluationValue);
-
-        // 创建行容器
-        const diseaseContainer = document.createElement('div');
-        diseaseContainer.className = 'bacteria-info-container';
-
-        const table = document.createElement('table');
-        table.className = 'bacteria-table min-w-full';
-
-        // 生成显示值的行
-        const dataRow = `
-      <tr>
-        <td class="py-2 pl-4 pr-2 text-left slow-disease-first-column">
-          <div class="slow-disease-chinese-text"><strong>${disease["检测项目"] || '未知项目'}</strong></div>
-        </td>
-        <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-second-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${riskColor}">
-              <strong>${evaluationValue.toFixed(2)}</strong>
-            </span>
-          </div>
-          <!-- 进度条 - 明确转换为带百分比的字符串 -->
-          <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden; position: relative;">
-            <div class="progress"
-                style="width: ${(evaluationValue * 100) + '%'};
-                      height: 100%;
-                      background-color: ${riskColor};
-                      transition: width 0.3s ease;">
-            </div>
-            <!-- 分界线 -->
-            <div style="position: absolute; top: 0; bottom: 0; left: 30%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
-            <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
-            <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background-color: rgba(0,0,0,0.1);"></div>
-          </div>
-        </td>
-        <td class="py-2 px-4 text-center slow-disease-column-text slow-disease-third-column">
-          <span style="color: ${riskColor}; font-weight: bold;">${disease["结果评价"] || '-'}</span>
-        </td>
-      </tr>
-    `;
-
-        // 生成描述行
-        const descRow = createDiseaseDescriptionRow(disease);
-
-        table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-        diseaseContainer.appendChild(table);
-
-        return diseaseContainer;
-      }
-
-      // 主渲染函数
-      function renderSlowDiseaseTable(diseaseData) {
-        const container = document.getElementById('slow-disease-table-body');
-        if (!container) {
-          console.error('Cannot find container element: slow-disease-table-body');
-          return;
-        }
-
-        container.innerHTML = '';
-
-        // 如果没有数据
-        if (!diseaseData || !Array.isArray(diseaseData) || diseaseData.length === 0) {
-          container.innerHTML = '<div class="no-data-message">暂无数据</div>';
-          return;
-        }
-
-        // 使用DocumentFragment批量处理DOM操作
-        const fragment = document.createDocumentFragment();
-
-        diseaseData.forEach(disease => {
-          if (disease) {  // 确保disease存在
-            const diseaseElement = createDiseaseRow(disease);
-            fragment.appendChild(diseaseElement);
-          }
-        });
-
-        // 一次性添加所有元素到DOM
-        container.appendChild(fragment);
-      }
-
-      // 立即调用加载函数，同时保留DOMContentLoaded事件监听
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadSlowDiseaseData);
-      } else {
-        loadSlowDiseaseData();
-      }
+      // 初始化慢病风险评估模块
+      SlowDiseaseRisk.init();
     </script>
-
   </div>
 
 
