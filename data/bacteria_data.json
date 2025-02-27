@@ -1362,481 +1362,231 @@
       "改善方式": ""
     }
   ],
-  "opportunistic_gut_pathogens_data": [
+  "机会致病菌": [
     {
-      "chinese_name": "鲍曼不动杆菌",
-      "latin_name": "A. baumannii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.11308,
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "医院感染常见病原菌，正常存在于呼吸道。免疫力低下时可致肺炎，具有多重耐药性。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议加强消毒防护，避免医院感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Acinetobacter baumannii",
+      "中文名": "鲍曼不动杆菌",
+      "丰度%": "0.01941",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "医疗环境中常见的条件致病菌，具有多重耐药性，可引起院内感染，尤其在免疫力低下患者中"
     },
     {
-      "chinese_name": "醋酸钙不动杆菌",
-      "latin_name": "A. calcoaceticus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.01
-      },
-      "detected_abundance": 0.00023,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见于人体皮肤和黏膜。条件致病菌，可引起伤口感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Acinetobacter calcoaceticus",
+      "中文名": "醋酸钙不动杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "环境中的革兰氏阴性菌，偶尔在医疗环境中引起机会性感染"
     },
     {
-      "chinese_name": "约氏不动杆菌",
-      "latin_name": "A. johnsonii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.02
-      },
-      "detected_abundance": 0.00145,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人体正常菌群成员。免疫力降低时可引起尿路感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Acinetobacter johnsonii",
+      "中文名": "约氏不动杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "通常无致病性的环境菌种，在免疫功能低下宿主中可偶尔引起机会性感染"
     },
     {
-      "chinese_name": "琼氏不动杆菌",
-      "latin_name": "A. junii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.03
-      },
-      "detected_abundance": 0.00567,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "存在于人体皮肤表面的常见菌。可能引起软组织感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Acinetobacter junii",
+      "中文名": "琼氏不动杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "土壤和水中常见的细菌，在人体中很少引起感染，但在医院环境中可成为机会致病菌"
     },
     {
-      "chinese_name": "鲁氏不动杆菌",
-      "latin_name": "A. lwoffii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.01
-      },
-      "detected_abundance": 0.02145,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "皮肤正常菌群成员。医院感染的重要条件致病菌。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议注意个人卫生，预防院内感染"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Acinetobacter lwoffii",
+      "中文名": "鲁氏不动杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "环境中常见细菌，偶尔作为正常皮肤菌群，仅在免疫力低下个体中罕见致病"
     },
     {
-      "chinese_name": "蜡样芽孢杆菌",
-      "latin_name": "B. cereus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.02
-      },
-      "detected_abundance": 0.00089,
-      "higher_than_percentage": 13,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土壤中常见细菌。过量可导致食物中毒。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bacillus cereus",
+      "中文名": "蜡样芽孢杆菌",
+      "丰度%": "0.00133",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "食源性致病菌，能产生毒素引起两种类型的胃肠疾病：呕吐型和腹泻型"
     },
     {
-      "chinese_name": "脆弱拟杆菌",
-      "latin_name": "B. fragilis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 1.8852
-      },
-      "detected_abundance": 0.00145,
-      "higher_than_percentage": 7,
-      "normal_detection_rate": 98.56,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要肠道共生菌。参与维生素K的合成，维持肠道健康。"
-        }
-      ]
+      "超标倍数": "7.80X",
+      "名称": "Bacteroides fragilis",
+      "中文名": "脆弱拟杆菌",
+      "丰度%": "14.70456",
+      "结果评价": "超标",
+      "正常范围": "0-1.8852",
+      "说明": "人体肠道常见厌氧共生菌，当逸出肠道时可致病，引起腹腔内感染和脓肿"
     },
     {
-      "chinese_name": "普通拟杆菌",
-      "latin_name": "B. vulgatus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 20.066
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道重要益生菌。维持肠道菌群平衡，促进免疫系统发育。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议补充益生菌"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Bacteroides vulgatus",
+      "中文名": "普通拟杆菌",
+      "丰度%": "8.72459",
+      "结果评价": "检出",
+      "正常范围": "0-20.066",
+      "说明": "人类肠道微生物区系中的常见厌氧菌，通常有益，但离开正常栖息地时可引起机会性感染"
     },
     {
-      "chinese_name": "难辨梭菌",
-      "latin_name": "C. difficile",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.08647,
-      "higher_than_percentage": 98,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "正常菌群成员，使用抗生素后易过度生长。可引起腹泻等症状。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议谨慎使用抗生素，必要时进行菌群干预"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Clostridioides difficile",
+      "中文名": "艰难梭菌",
+      "丰度%": "0.02834",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "厌氧产孢菌，可引起抗生素相关性腹泻和假膜性结肠炎，尤其在抗生素治疗破坏正常肠道菌群后"
     },
     {
-      "chinese_name": "阴沟肠杆菌",
-      "latin_name": "E. cloacae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00692,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道常驻菌群。免疫力低下时可致感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Enterobacter cloacae",
+      "中文名": "阴沟肠杆菌",
+      "丰度%": "0.01254",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "人类肠道和污水中常见的革兰氏阴性菌，是住院患者泌尿系统感染和菌血症的机会致病菌"
     },
     {
-      "chinese_name": "粪肠球菌",
-      "latin_name": "E. faecalis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.01415,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道正常菌群成员。过量可致多器官感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Enterococcus faecalis",
+      "中文名": "粪肠球菌",
+      "丰度%": "0.00181",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "人类胃肠道共生菌，可引起心内膜炎、尿路感染和伤口感染，常表现抗生素耐药性"
     },
     {
-      "chinese_name": "屎肠球菌",
-      "latin_name": "E. faecium",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.10070,
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道共生菌，具有较强耐药性。过量可致感染。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "建议调节肠道菌群平衡"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Enterococcus faecium",
+      "中文名": "屎肠球菌",
+      "丰度%": "0.03882",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "肠道共生菌，可引起医疗相关感染，包括菌血症、心内膜炎和尿路感染，常具多重耐药性"
     },
     {
-      "chinese_name": "大肠埃希氏菌",
-      "latin_name": "E. coli",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 3.8364
-      },
-      "detected_abundance": 0.14497,
-      "higher_than_percentage": 6,
-      "normal_detection_rate": 99.52,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "肠道优势菌，维持肠道稳态。过量可致腹泻发热。"
-        }
-      ]
+      "超标倍数": "1.55X",
+      "名称": "Escherichia coli",
+      "中文名": "大肠埃希氏菌",
+      "丰度%": "5.94677",
+      "结果评价": "超标",
+      "正常范围": "0-3.8364",
+      "说明": "肠道常见菌，多数无害，特定菌株可引起尿路感染、腹泻等。高水平提示可能存在炎症或感染"
     },
     {
-      "chinese_name": "具核梭杆菌",
-      "latin_name": "F. nucleatum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00459,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "口腔常见菌。可引起牙周感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Fusobacterium nucleatum",
+      "中文名": "具核梭杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "口腔厌氧菌，与牙周疾病相关，在肠道中发现时与结直肠癌和炎症性肠病有关联"
     },
     {
-      "chinese_name": "肺炎克雷伯菌",
-      "latin_name": "K. pneumoniae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.24019
-      },
-      "detected_abundance": 0.09579,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "呼吸道定植菌。免疫力低下时可致肺炎。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Klebsiella pneumoniae",
+      "中文名": "肺炎克雷伯菌",
+      "丰度%": "0.15029",
+      "结果评价": "检出",
+      "正常范围": "0-0.24019",
+      "说明": "革兰氏阴性菌，可引起肺炎、尿路感染和血流感染，尤其在住院或免疫力低下个体中"
     },
     {
-      "chinese_name": "铜绿假单胞菌",
-      "latin_name": "P. aeruginosa",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.04152,
-      "higher_than_percentage": 69,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境常见菌，具有适应性强特点。可引起呼吸道感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas aeruginosa",
+      "中文名": "铜绿假单胞菌",
+      "丰度%": "0.00452",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "多功能机会致病菌，以内在抗生素耐药性著称，可引起伤口、烧伤和呼吸道感染，尤其在囊性纤维化患者中"
     },
     {
-      "chinese_name": "脱氮假单胞杆菌",
-      "latin_name": "P. denitrificans",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土壤中的分解菌。参与环境氮循环。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas denitrificans",
+      "中文名": "脱氮假单胞杆菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "参与氮循环的环境菌，很少与人类感染相关，但在免疫功能低下个体中可成为机会致病菌"
     },
     {
-      "chinese_name": "荧光假单胞菌",
-      "latin_name": "P. fluorescens",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00093,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水体常见菌。可引起局部感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas fluorescens",
+      "中文名": "荧光假单胞菌",
+      "丰度%": "0.00100",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "产荧光色素的常见土壤和水生菌，很少致病，但可在免疫力低下宿主中引起机会性感染"
     },
     {
-      "chinese_name": "黄褐假单胞菌",
-      "latin_name": "P. fulva",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境菌群成员。很少引起感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas fulva",
+      "中文名": "黄褐假单胞菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "低毒力的环境菌种，偶尔与严重免疫功能低下患者的医院内感染相关"
     },
     {
-      "chinese_name": "门多萨假单胞菌",
-      "latin_name": "P. mendocina",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "土壤常见菌。极少引起感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas mendocina",
+      "中文名": "门多萨假单胞菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "土壤细菌，极少与人类感染相关，偶见于心内膜炎或菌血症病例报道"
     },
     {
-      "chinese_name": "恶臭假单胞菌",
-      "latin_name": "P. putida",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00065,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境中的益生菌。促进植物生长。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas putida",
+      "中文名": "恶臭假单胞菌",
+      "丰度%": "0.00127",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "具生物技术应用价值的环境菌，一般认为无致病性，但可引起罕见的机会性感染"
     },
     {
-      "chinese_name": "斯氏假单胞菌",
-      "latin_name": "P. stutzeri",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00116,
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "环境脱氮菌。参与环境净化。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pseudomonas stutzeri",
+      "中文名": "斯氏假单胞菌",
+      "丰度%": "0.00084",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "反硝化土壤细菌，很少致病，但可在免疫力低下个体中引起机会性感染，包括菌血症和肺炎"
     },
     {
-      "chinese_name": "咽峡链球菌",
-      "latin_name": "S. anginosus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00280,
-      "higher_than_percentage": 52,
-      "normal_detection_rate": 81.25,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "口咽部定植菌。可引起口腔感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Streptococcus anginosus",
+      "中文名": "咽峡链球菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "口腔和胃肠道正常菌群的一部分，当进入通常无菌部位时与脓肿和化脓性感染相关"
     },
     {
-      "chinese_name": "肺炎链球菌",
-      "latin_name": "S. pneumoniae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.03111,
-      "higher_than_percentage": 69,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "上呼吸道定植菌。可导致肺部感染。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Streptococcus pneumoniae",
+      "中文名": "肺炎链球菌",
+      "丰度%": "0.01863",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "主要人类病原体，引起肺炎、脑膜炎和中耳炎，尤其在儿童和老年人中"
     },
     {
-      "chinese_name": "小韦荣球菌",
-      "latin_name": "V. parvula",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.13203
-      },
-      "detected_abundance": 0.07774,
-      "higher_than_percentage": 83,
-      "normal_detection_rate": 45.19,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "口腔常驻菌。参与乳酸代谢，维持口腔健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Veillonella parvula",
+      "中文名": "小韦荣球菌",
+      "丰度%": "0.00211",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.13203",
+      "说明": "口腔和肠道中发现的厌氧共生菌，很少致病，但可引起罕见的机会性感染，包括心内膜炎"
     }
   ],
   "gut_pathogens_bacteria_data": [
