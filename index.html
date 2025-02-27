@@ -3333,13 +3333,12 @@ ${d.summarized_health_index.gut_type.value ? `
   <h3 class="custom-title-1 page-break">常见真菌</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
+        <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
             真菌检测对于评估免疫状态和潜在感染风险非常重要。尽管一些真菌在正常情况下不会引起健康问题，但对于免疫系统较弱的人群来说，持续监测是预防真菌感染的关键。下列是一些常见肠道真菌在您肠道中的检测情况。
           </p>
         </div>
@@ -3351,20 +3350,20 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left core-gut-bacteria-first-column" style="font-size: 13px;">
+          <th
+            class="py-2 px-4 text-left fungi-first-column"
+            style="font-size: 13px;">
             真菌名称
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-second-column" style="font-size: 13px; padding: 5px 5px;">
-            参考范围%
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-third-column" style="font-size: 13px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center fungi-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
             检测丰度%
           </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fourth-column" style="font-size: 13px; padding: 5px 5px;">
-            超过%的人
-          </th>
-          <th class="py-2 px-4 text-center core-gut-bacteria-fifth-column" style="font-size: 13px; padding: 5px 5px;">
-            有%的正常人检出
+          <th
+            class="py-2 px-4 text-center fungi-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
           </th>
         </tr>
         </thead>
@@ -3376,193 +3375,223 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadGutFungiData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          renderGutFungiTable(data.gut_fungi_data);
-        } catch (error) {
-          console.error('Error loading fungi data:', error);
-        }
-      }
+      // 真菌数据展示模块
+      const GutFungi = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080',
+            PRIMARY: '#00B2B4'
+          }
+        },
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "ND") {
-          return value;
-        }
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && value === "ND") {
+            return value;
+          }
 
-        const num = Number(value);
+          const num = Number(value);
+          return num.toPrecision(2);
+        },
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
-      }
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
+        },
 
-      function formatDetectedValue(value) {
-        return formatNumber(value);
-      }
+        // 获取状态信息
+        getStatus(detected, normalRange) {
+          const { min, max } = this.parseRange(normalRange);
 
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
-
-      function calculateProgressPercentageForThirdColumn(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
-
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1; // log10(0.0001)
-        const maxLog = 3;  // log10(100)
-
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
-
-      function renderGutFungiTable(bacteriaData) {
-        const container = document.getElementById('gut-fungi-data-table-body');
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        bacteriaData.forEach(bacteria => {
-          let statusColor, statusText, statusIcon;
-          const detected = bacteria.detected_abundance;
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
+          let status = {
+            color: '#000000',
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
 
           if (detected === "ND") {
-            if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
+            if (min > 0) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+              status.isNormal = false;
             }
-          } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
-            }
+            return status;
           }
 
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
+          const detectedNum = parseFloat(detected);
 
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          const dataRow = `
-      <tr>
-        <td class="py-2 px-4 text-left core-gut-bacteria-first-column">
-          <div class="core-gut-bacteria-chinese-text"><strong>${bacteria.chinese_name}</strong></div>
-          <div class="core-gut-bacteria-latin-text">${bacteria.latin_name}</div>
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-second-column">
-          ${formattedMinRange}-${formattedMaxRange}
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-third-column">
-          <div class="flex items-center justify-center">
-            <span style="color: ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ? '#ff4d4f' :
-              (detected !== "ND" && detected > maxRange) ? '#ff4d4f' :
-                '#000000'
-          }">
-              ${detected === "ND" ? "未检出" : formattedDetectedValue}
-            </span>
-            ${
-            (detected === "ND" && minRange > 0) ||
-            (detected !== "ND" && detected < minRange) ?
-              '<i class="fas fa-arrow-down ml-1" style="color: #ff4d4f;"></i>' :
-              (detected !== "ND" && detected > maxRange) ?
-                '<i class="fas fa-arrow-up ml-1" style="color: #ff4d4f;"></i>' :
-                ''
+          if (detectedNum < min) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '偏低';
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
           }
-          </div>
-          <div class="progress-bar w-full mt-1">
-            <div class="progress mt-2"
-                 style="width: ${calculateProgressPercentageForThirdColumn(detected)}%;
-                        background-color: #00B2B4;
-                        transition: width 0.3s ease;">
-            </div>
-          </div>
-        </td>
+          else if (detectedNum > max) {
+            status.color = this.CONSTANTS.COLORS.RED;
+            status.text = '超标';
+            status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
+            status.isNormal = false;
+          }
 
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fourth-column">
-          ${bacteria.higher_than_percentage}%
-        </td>
-        <td class="py-2 px-4 text-center core-gut-bacteria-column-text core-gut-bacteria-fifth-column">
-          ${bacteria.normal_detection_rate}%
-        </td>
-      </tr>
-    `;
+          return status;
+        },
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+        // 创建描述行
+        createDescriptionRow(fungi, status) {
+          let descriptionContent = '';
 
-          const descRow = filteredDescriptions.length > 0 ? `
-      <tr class="virus-desc-row">
-        <td colspan="6" class="py-2 px-4 text-left">
-          <div class="description-container text-gray-600" style="font-size: 10px;">
-            ${filteredDescriptions.map(desc => `
-              <div class="flex items-start">
-                <div class="ml-1">
-                  <p>
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};">
-                    </i>
-                    ${desc.text}
-                  </p>
-                </div>
+          if (fungi["说明"] && fungi["说明"].trim()) {
+            descriptionContent += `
+            <div class="flex items-start mb-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                  ${fungi["说明"]}
+                </p>
               </div>
-            `).join('')}
-          </div>
-        </td>
-      </tr>
-    ` : '';
+            </div>
+          `;
+          }
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
-        });
-      }
+          if (descriptionContent.trim()) {
+            return `
+            <tr class="fungi-desc-row">
+              <td colspan="3" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  ${descriptionContent}
+                </div>
+              </td>
+            </tr>
+          `;
+          }
 
-      // 页面加载时调用
-      document.addEventListener('DOMContentLoaded', loadGutFungiData);
+          return '';
+        },
+
+        // 计算进度条百分比
+        calculateProgress(value) {
+          if (value === "ND" || value === 0) {
+            return 0;
+          }
+
+          const num = Number(value);
+          return Math.min(100, Math.max(5,
+            num <= 1 ? num * 30 :
+              num <= 10 ? 30 + (num - 1) * 5 :
+                75 + (Math.min(num, 100) - 10) * 0.25
+          ));
+        },
+
+        // 渲染表格
+        renderTable(fungiData) {
+          const container = document.getElementById('gut-fungi-data-table-body');
+          if (!container) {
+            console.error('Cannot find container element');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          if (!fungiData || !Array.isArray(fungiData) || fungiData.length === 0) {
+            container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+
+          fungiData.forEach(fungi => {
+            const detected = fungi["丰度%"];
+            const normalRange = fungi["正常范围"];
+            const latinName = fungi["名称"];
+            const chineseName = fungi["中文名"];
+            const evaluation = fungi["结果评价"];
+            const exceededTimes = fungi["超标倍数"];
+
+            const status = this.getStatus(detected, normalRange);
+            const progressPercentage = this.calculateProgress(detected === "ND" ? 0 : detected);
+
+            const fungiContainer = document.createElement('div');
+            fungiContainer.className = 'fungi-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'fungi-table min-w-full';
+
+            const dataRow = `
+            <tr>
+              <td class="py-2 px-4 text-left fungi-first-column">
+                <div class="fungi-chinese-text"><strong>${chineseName}</strong></div>
+                <div class="fungi-latin-text">${latinName}</div>
+              </td>
+
+              <td class="py-2 px-4 text-center fungi-column-text fungi-second-column">
+                <div class="flex items-center justify-center">
+                  <span style="color: ${status.color}">
+                    <strong>${detected === "ND" ? "未检出" : this.formatNumber(detected)}
+                    ${status.icon}</strong>
+                  </span>
+                </div>
+                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div class="progress"
+                       style="width: ${progressPercentage}%;
+                              height: 100%;
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center fungi-column-text fungi-third-column">
+                ${normalRange}
+              </td>
+            </tr>
+          `;
+
+            const descRow = this.createDescriptionRow(fungi, status);
+
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            fungiContainer.appendChild(table);
+            fragment.appendChild(fungiContainer);
+          });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+            this.renderTable(data["真菌"] || []);
+          } catch (error) {
+            console.error('Error loading fungi data:', error);
+            document.getElementById('gut-fungi-data-table-body').innerHTML =
+              '<div class="no-data-message">暂无数据</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          document.addEventListener('DOMContentLoaded', () => this.loadData());
+        }
+      };
+
+      // 初始化真菌模块
+      GutFungi.init();
     </script>
-
   </div>
 
   <!-- 肠道菌群检测 : 常见肠道寄生虫版块 -->

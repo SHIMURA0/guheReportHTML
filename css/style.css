@@ -895,6 +895,42 @@ tr {
 }
 
 
+/* 肠道菌群检测 : 常见真菌板块 */
+
+/* 肠道菌群检测 : 常见真菌板块 : 表格列样式 */
+.fungi-first-column {
+  width: 35%;
+}
+.fungi-second-column {
+  width: 32.5%;
+}
+.fungi-third-column {
+  width: 32.5%;
+}
+
+.fungi-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.fungi-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.fungi-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+
 /* 肠道菌群检测 : 常见肠道寄生虫板块*/
 
 /* 肠道菌群检测 : 常见肠道寄生虫 : 表格列样式*/

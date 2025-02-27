@@ -2086,350 +2086,161 @@
       "说明": "可引起类似阑尾炎的肠道感染"
     }
   ],
-  "gut_fungi_data": [
+  "真菌": [
     {
-      "chinese_name": "白色念珠菌",
-      "latin_name": "Candida albicans",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00034,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "人体常见条件致病菌。正常菌群成员，免疫力下降时可过度生长。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意个人卫生，增强免疫力"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Candida albicans",
+      "中文名": "白色念珠菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见条件致病菌，过度生长可能导致口腔或生殖道感染"
     },
     {
-      "chinese_name": "酿酒酵母",
-      "latin_name": "S. cerevisiae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00022,
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "益生菌，广泛应用于发酵工业。参与营养代谢，促进肠道健康。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Saccharomyces cerevisiae",
+      "中文名": "酿酒酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "益生真菌，参与发酵过程，有助于维持肠道微生态平衡"
     },
     {
-      "chinese_name": "真贝酵母",
-      "latin_name": "S. eubayanus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "低温发酵酵母。参与啤酒发酵过程。对人体无害。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Saccharomyces eubayanus",
+      "中文名": "真贝酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "啤酒发酵菌种，低温发酵能力强，一般不影响人体健康"
     },
     {
-      "chinese_name": "奇异酵母",
-      "latin_name": "S. paradoxus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "野生酵母菌种。与酿酒酵母亲缘关系密切。一般不致病。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Saccharomyces paradoxus",
+      "中文名": "奇异酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "野生酵母菌种，存在于自然环境中，对人体通常无害"
     },
     {
-      "chinese_name": "木糖发酵酵母",
-      "latin_name": "S. stipitis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "特殊碳源利用菌。可发酵木糖。工业应用菌种。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Scheffersomyces stipitis",
+      "中文名": "木糖发酵酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "能发酵木糖的特殊酵母，在肠道中参与碳水化合物代谢"
     },
     {
-      "chinese_name": "黄曲霉",
-      "latin_name": "A. flavus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见真菌。可产生黄曲霉毒素。注意储存食品防霉。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强食品储存管理"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aspergillus flavus",
+      "中文名": "黄曲霉",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可产生黄曲霉毒素，高水平检出需警惕肝肾功能损害"
     },
     {
-      "chinese_name": "烟曲霉",
-      "latin_name": "A. fumigatus",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 38,
-      "normal_detection_rate": 80.29,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "重要条件致病真菌。可引起肺部感染。免疫力低下者易感。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "预防真菌感染"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aspergillus fumigatus",
+      "中文名": "烟曲霉",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "常见致病真菌，可引起肺部感染，免疫力低下者需警惕"
     },
     {
-      "chinese_name": "米曲霉",
-      "latin_name": "A. oryzae",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "食品发酵工业常用菌种。参与酱油等发酵食品制作。益生菌。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Aspergillus oryzae",
+      "中文名": "米曲霉",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "食品发酵工业常用菌种，具有促进消化吸收的作用"
     },
     {
-      "chinese_name": "新型隐球菌",
-      "latin_name": "C. neoformans",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "条件致病真菌。可引起中枢神经系统感染。需警惕。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强防护，注意卫生"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Cryptococcus neoformans",
+      "中文名": "新型隐球菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "机会性致病菌，可引起隐球菌病，免疫缺陷者易感"
     },
     {
-      "chinese_name": "汉氏德巴利氏酵母",
-      "latin_name": "D. hansenii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00022,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "耐盐酵母。参与发酵食品制作。对人体无害。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Debaryomyces hansenii",
+      "中文名": "汉氏德巴利氏酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "耐盐酵母，常见于发酵食品中，对人体通常无害"
     },
     {
-      "chinese_name": "产甘油假丝酵母",
-      "latin_name": "E. gossypii",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "工业微生物。用于维生素B2生产。一般不致病。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Eremothecium gossypii",
+      "中文名": "产甘油假丝酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "维生素B2产生菌，在工业发酵中应用广泛"
     },
     {
-      "chinese_name": "轮枝镰刀菌",
-      "latin_name": "F. verticillioides",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "植物病原真菌。可产生真菌毒素。注意食品储存。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意食品储存条件"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Fusarium verticillioides",
+      "中文名": "轮枝镰刀菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可产生伏马毒素，高水平检出需关注免疫功能"
     },
     {
-      "chinese_name": "尖孢镰刀菌",
-      "latin_name": "F. oxysporum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": 0.00073,
-      "higher_than_percentage": 27,
-      "normal_detection_rate": 77.88,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "常见土壤真菌。部分株系可致病。注意防护。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "加强卫生防护"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Fusarium oxysporum",
+      "中文名": "尖孢镰刀菌",
+      "丰度%": "0.00054",
+      "结果评价": "丰度较低",
+      "正常范围": "0-0.05",
+      "说明": "常见土壤真菌，少量存在不影响健康，过量可致感染"
     },
     {
-      "chinese_name": "禾谷镰刀菌",
-      "latin_name": "F. graminearum",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "作物病原真菌。可产生真菌毒素。影响粮食安全。"
-        },
-        {
-          "type": "warning",
-          "color": "rgb(255, 0, 0)",
-          "text": "注意储存防霉"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Fusarium graminearum",
+      "中文名": "禾谷镰刀菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "可产生脱氧雪腐镰刀菌烯醇，需警惕其毒素效应"
     },
     {
-      "chinese_name": "乳酸克鲁维酵母",
-      "latin_name": "K. lactis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "工业发酵菌种。参与乳制品发酵。益生作用。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Kluyveromyces lactis",
+      "中文名": "乳酸克鲁维酵母",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "能发酵乳糖的益生真菌，有助于乳糖不耐受者消化"
     },
     {
-      "chinese_name": "稻瘟病菌",
-      "latin_name": "P. grisea",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 15,
-      "normal_detection_rate": 88.94,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "水稻重要病原真菌。一般不感染人类。环境真菌。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Pyricularia grisea",
+      "中文名": "稻瘟病菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "主要为植物病原菌，对人体健康影响较小"
     },
     {
-      "chinese_name": "玉米黑粉菌",
-      "latin_name": "U. maydis",
-      "normal_range": {
-        "normal_range_min": 0,
-        "normal_range_max": 0.05
-      },
-      "detected_abundance": "ND",
-      "higher_than_percentage": 8,
-      "normal_detection_rate": 91.83,
-      "descriptions": [
-        {
-          "type": "info",
-          "color": "rgb(0, 178, 180)",
-          "text": "玉米特异性病原菌。食用菌品种。对人体无害。"
-        }
-      ]
+      "超标倍数": "",
+      "名称": "Ustilago maydis",
+      "中文名": "玉米黑粉菌",
+      "丰度%": "ND",
+      "结果评价": "未检出",
+      "正常范围": "0-0.05",
+      "说明": "玉米常见真菌，低水平存在不影响健康"
     }
   ],
-
   "gut_parasites_data": [
     {
       "chinese_name": "人隐孢子虫",
