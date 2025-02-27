@@ -617,19 +617,16 @@ tr {
 /* 核心菌属表格列样式 */
 
 .core-gut-bacteria-first-column {
-  width: 27%; /* 核心菌名称 */
+  width: 35%; /* 核心菌名称 */
 }
 .core-gut-bacteria-second-column {
-  width: 20%; /* 参考范围 */
+  width: 25%; /* 检测丰度% */
 }
 .core-gut-bacteria-third-column {
-  width: 20%; /* 检测丰度 */
+  width: 20%; /* 参考范围% */
 }
 .core-gut-bacteria-fourth-column {
-  width: 14%; /* 超过%的人 */
-}
-.core-gut-bacteria-fifth-column {
-  width: 19%; /* 有%的正常人检出 */
+  width: 20%; /* 超过%的人 */
 }
 
 /* 核心菌属表格第一列中的菌群中文名样式 */
