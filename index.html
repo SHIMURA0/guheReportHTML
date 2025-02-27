@@ -8329,12 +8329,21 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left obesity-first-column" style="font-size: 13px;">肥胖相关菌名称</th>
-          <th class="py-2 px-4 text-center obesity-second-column" style="font-size: 13px; padding: 5px 5px;">参考范围%</th>
-          <th class="py-2 px-4 text-center obesity-third-column" style="font-size: 13px; padding: 5px 5px;">检测丰度%</th>
-          <th class="py-2 px-4 text-center obesity-fourth-column" style="font-size: 13px; padding: 5px 5px;">超过%的人</th>
-          <th class="py-2 px-4 text-center obesity-fifth-column" style="font-size: 13px; padding: 5px 5px;">相关性</th>
-          <th class="py-2 px-4 text-center obesity-sixth-column" style="font-size: 13px; padding: 5px 5px;">相关性强度</th>
+          <th
+            class="py-2 px-4 text-left obesity-first-column"
+            style="font-size: 13px;">肥胖相关菌名称</th>
+          <th
+            class="py-2 px-4 text-center obesity-second-column"
+            style="font-size: 13px; padding: 5px 5px;">参考范围%</th>
+          <th
+            class="py-2 px-4 text-center obesity-third-column"
+            style="font-size: 13px; padding: 5px 5px;">检测丰度%</th>
+          <th
+            class="py-2 px-4 text-center obesity-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">相关性</th>
+          <th
+            class="py-2 px-4 text-center obesity-fifth-column"
+            style="font-size: 13px; padding: 5px 5px;">相关性强度</th>
         </tr>
         </thead>
       </table>
@@ -8344,242 +8353,378 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadObesityData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          renderObesityDataTable(data.obesity_data);
-        } catch (error) {
-          console.error('Error loading obesity data:', error);
-        }
-      }
-
-      function formatNumber(value, precision = 3) {
-        if (value === "ND") return "未检出";
-        if (typeof value === "string") {
-          return value;
-        }
-        const num = Number(value);
-        return num.toPrecision(precision).replace(/\.?0+$/, '');
-      }
-
-      function calculateProgressPercentage(value) {
-        if (value === "ND") return 0;
-        if (value < 0) return 0;
-        if (value > 100) return 100;
-
-        const num = Number(value);
-
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
-        }
-        return num;
-      }
-
-      function determineStatus(value, minRange, maxRange) {
-        if (value === "ND" && minRange > 0) {
-          return {
-            text: '缺乏',
-            color: 'yellow',
-            direction: 'down'
-          };
-        }
-
-        if (value < minRange) {
-          return {
-            text: '偏低',
-            color: 'red',
-            direction: 'down'
-          };
-        } else if (value > maxRange) {
-          return {
-            text: '超标',
-            color: 'red',
-            direction: 'up'
-          };
-        } else {
-          return {
-            text: '正常',
-            color: 'green',
-            direction: null
-          };
-        }
-      }
-
-      function generateStars(count, isPositive) {
-        const starColor = isPositive ? 'text-orange-500' : 'text-blue-500';
-        return Array(3).fill().map((_, i) =>
-          `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
-        ).join('');
-      }
-
-      // 获取文本颜色类
-      function getTextColorClass(bacteria) {
-        const { detected_abundance, normal_range } = bacteria;
-        const isAbnormal =
-          (detected_abundance === "ND" && normal_range.normal_range_min > 0) ||
-          (detected_abundance !== "ND" && (
-            detected_abundance < normal_range.normal_range_min ||
-            detected_abundance > normal_range.normal_range_max
-          ));
-
-        return isAbnormal ? "text-red-500" : "text-gray-900";
-      }
-
-      // 格式化检测值
-      function formatDetectedValue(value) {
-        return value === "ND" ? "未检出" : value.toPrecision(2);
-      }
-
-      // 获取箭头图标
-      function getArrowIcon(bacteria) {
-        const { detected_abundance, normal_range } = bacteria;
-
-        if (detected_abundance === "ND" && normal_range.normal_range_min > 0) {
-          return '<i class="fas fa-arrow-down text-red-500 ml-0.5"></i>';
-        }
-
-        if (detected_abundance !== "ND") {
-          if (detected_abundance < normal_range.normal_range_min) {
-            return '<i class="fas fa-arrow-down text-red-500 ml-0.5"></i>';
+      // 肥胖相关菌数据展示模块
+      const ObesityBacteria = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            YELLOW: '#faad14',
+            BLUE: '#3b82f6',
+            GRAY: '#808080',
+            BLACK: '#000000',
+            PRIMARY: '#00B2B4',
+            WARNING: '#faad14',
+            ORANGE: '#fa8c16'
+          },
+          CORRELATION: {
+            "+": {
+              text: "正相关",
+              textColor: "text-black", // 文本显示为黑色
+              starColor: "text-orange-500" // 星星保持橙色
+            },
+            "-": {
+              text: "负相关",
+              textColor: "text-black", // 文本显示为黑色
+              starColor: "text-blue-500" // 星星保持蓝色
+            }
           }
-          if (detected_abundance > normal_range.normal_range_max) {
-            return '<i class="fas fa-arrow-up text-red-500 ml-0.5"></i>';
+        },
+
+        // 格式化数字
+        formatNumber(value, precision = 2) {
+          if (value === "ND") return "未检出";
+          if (typeof value === "string") {
+            // 尝试将字符串转换为数字
+            const num = Number(value);
+            if (isNaN(num)) return value;
+            return num.toPrecision(precision).replace(/\.?0+$/, '');
           }
-        }
+          return value.toPrecision(precision).replace(/\.?0+$/, '');
+        },
 
-        return "";
-      }
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
+        },
 
-      // 计算进度条宽度
-      function calculateProgressWidth(bacteria) {
-        if (bacteria.detected_abundance === 'ND') return 0;
+        // 分离中文名和拉丁名
+        separateName(fullName) {
+          if (!fullName) return { chineseName: '', latinName: '' };
 
-        const value = bacteria.detected_abundance;
-        if (value <= 20) {
-          return Math.min(20, Math.max(5, value * 1.5));
-        }
-        return Math.min(100, Math.max(0, value));
-      }
+          // 假设拉丁名是斜体或者包含字母的部分
+          // 常见的分隔模式: "中文名 拉丁名" 或 "中文名（拉丁名）"
+          let chineseName, latinName;
 
-      function renderObesityDataTable(obesityData) {
-        const container = document.getElementById('obesity-data-table-body');
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          yellow: '#faad14'
-        };
-
-        obesityData.forEach(bacteria => {
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
-
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
-
-          const minRange = bacteria.normal_range.normal_range_min;
-          const maxRange = bacteria.normal_range.normal_range_max;
-          const currentValue = bacteria.detected_abundance;
-
-          const formattedCurrentValue = formatNumber(currentValue);
-          const formattedMinRange = formatNumber(minRange);
-          const formattedMaxRange = formatNumber(maxRange);
-
-          const status = determineStatus(currentValue, minRange, maxRange);
-          const isNormal = status.text === '正常';
-
-          const correlationText = bacteria.correlation === 'positive' ? '正相关' : '负相关';
-          const isPositive = bacteria.correlation === 'positive';
-          const isNegative = bacteria.correlation === 'negative';
-
-          if (status.text === '超标' && isPositive) {
-            bacteriaContainer.style.border = '1px solid #ff4d4f';
-            bacteriaContainer.style.borderRadius = '4px';
-            bacteriaContainer.style.margin = '4px 0';
-          } else if (status.text === '偏低' && isNegative) {
-            bacteriaContainer.style.border = '1px solid #3b82f6';
-            bacteriaContainer.style.borderRadius = '4px';
-            bacteriaContainer.style.margin = '4px 0';
+          if (fullName.includes('(') || fullName.includes('（')) {
+            // 处理带括号的形式: "中文名（拉丁名）"
+            const match = fullName.match(/(.*?)[\(（](.*?)[\)）]/);
+            if (match) {
+              chineseName = match[1].trim();
+              latinName = match[2].trim();
+            } else {
+              // 没找到括号匹配，使用整个名称
+              chineseName = fullName;
+              latinName = '';
+            }
           } else {
-            bacteriaContainer.style.border = '1px solid transparent';
+            // 处理空格分隔的形式: "中文名 拉丁名"
+            // 假设拉丁名包含字母
+            const hasLatin = /[a-zA-Z]/.test(fullName);
+
+            if (hasLatin) {
+              // 查找第一个字母出现的位置
+              const firstLatinIndex = fullName.search(/[a-zA-Z]/);
+              if (firstLatinIndex > 0) {
+                // 将名称分为两部分
+                chineseName = fullName.substring(0, firstLatinIndex).trim();
+                latinName = fullName.substring(firstLatinIndex).trim();
+              } else {
+                // 如果拉丁名在最前面，整个作为拉丁名
+                chineseName = '';
+                latinName = fullName.trim();
+              }
+            } else {
+              // 没有拉丁字符，整个作为中文名
+              chineseName = fullName;
+              latinName = '';
+            }
           }
 
-          const dataRow = `
-            <tr>
-              <td class="py-2 px-4 text-left obesity-first-column">
-                <div class="obesity-chinese-text">${bacteria.chinese_name}</div>
-                <div class="obesity-latin-text text-gray-500">${bacteria.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center obesity-second-column obesity-column-text">
-                ${bacteria.normal_range.normal_range_min.toPrecision(2)}-${bacteria.normal_range.normal_range_max.toPrecision(2)}
-              </td>
-              <td class="py-2 px-4 text-center obesity-third-column disease-column-text">
-                  <span>${bacteria.detected_abundance === "ND" ? "未检出" : parseFloat(Number(formattedCurrentValue).toPrecision(2))}</span>
-                  <div class="progress-bar w-full mt-2">
-                      <div class="progress"
-                           style="width: ${bacteria.detected_abundance === 'ND' ? '0' :
-            Math.min(100,
-              Math.max(0,
-                bacteria.detected_abundance <= 20
-                  ? Math.min(20, Math.max(5, bacteria.detected_abundance * 1.5))
-                  : bacteria.detected_abundance
-              )
-            )}%;
-                                  background-color: #00B2B4;
-                                  transition: width 0.3s ease;">
-                      </div>
-                  </div>
-              </td>
-              <td class="py-2 px-4 text-center obesity-fourth-column obesity-column-text">
-                ${bacteria.higher_than_percentage === "-" ? '-' : (bacteria.higher_than_percentage * 100).toFixed(0) + '%'}
-              </td>
+          return { chineseName, latinName };
+        },
 
-              <td class="py-2 px-4 text-center obesity-fifth-column obesity-column-text">
-                ${correlationText}
-              </td>
+        // 获取状态信息
+        getStatus(detected, normalRange) {
+          const { min, max } = this.parseRange(normalRange);
 
-              <td class="py-2 px-4 text-center obesity-sixth-column obesity-column-text">
-                <div class="flex justify-center items-center">
-                  ${generateStars(bacteria.stars, isPositive)}
+          if (detected === "ND") {
+            if (min > 0) {
+              // 如果参考范围下限大于0，但检测结果为未检出，显示为缺乏状态（红色+向下箭头）
+              return {
+                text: '缺乏',
+                color: this.CONSTANTS.COLORS.RED,
+                icon: '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+                isNormal: false,
+                direction: 'down',
+                isGrayND: false
+              };
+            } else {
+              // 如果参考范围下限为0，检测结果为未检出是正常的，显示为灰色
+              return {
+                text: '正常',
+                color: this.CONSTANTS.COLORS.GRAY,
+                icon: '',
+                isNormal: true,
+                direction: null,
+                isGrayND: true
+              };
+            }
+          }
+
+          if (detected < min) {
+            return {
+              text: '偏低',
+              color: this.CONSTANTS.COLORS.RED,
+              icon: '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+              isNormal: false,
+              direction: 'down',
+              isGrayND: false
+            };
+          } else if (detected > max) {
+            return {
+              text: '超标',
+              color: this.CONSTANTS.COLORS.RED,
+              icon: '<i class="fas fa-arrow-up ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>',
+              isNormal: false,
+              direction: 'up',
+              isGrayND: false
+            };
+          } else {
+            return {
+              text: '正常',
+              color: this.CONSTANTS.COLORS.GREEN,
+              icon: '',
+              isNormal: true,
+              direction: null,
+              isGrayND: false
+            };
+          }
+        },
+
+        // 生成星星评级
+        generateStars(count, correlationType) {
+          // 使用starColor而不是textColor来设置星星颜色
+          const starColor = this.CONSTANTS.CORRELATION[correlationType].starColor;
+          return Array(3).fill().map((_, i) =>
+            `<i class="fa fa-star ${i < count ? starColor : 'text-gray-300'}" aria-hidden="true"></i>`
+          ).join('');
+        },
+
+        // 计算进度条百分比
+        calculateProgressWidth(value) {
+          if (value === 'ND' || value === 0) return 0;
+
+          const num = Number(value);
+          if (num <= 20) {
+            return Math.min(20, Math.max(5, num * 1.5));
+          }
+          return Math.min(100, Math.max(0, num));
+        },
+
+        // 创建描述行
+        createDescriptionRow(bacteria, status) {
+          let descriptionContent = '';
+
+          // 首先添加常规简介
+          if (bacteria.说明 && bacteria.说明.trim()) {
+            descriptionContent += `
+            <div class="flex items-start mb-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                  ${bacteria.说明}
+                </p>
+              </div>
+            </div>
+          `;
+          }
+
+          // 如果状态不是正常，根据状态添加相应的改善建议
+          if (!status.isNormal && bacteria.改善方式 && bacteria.改善方式.trim()) {
+            descriptionContent += `
+            <div class="flex items-start mt-0">
+              <div class="ml-1">
+                <p>
+                  <i class="fas fa-bell" style="color: ${this.CONSTANTS.COLORS.WARNING};"></i>
+                  <strong>改善建议：</strong> ${bacteria.改善方式}
+                </p>
+              </div>
+            </div>
+          `;
+          }
+
+          // 如果有内容需要显示，返回完整的行
+          if (descriptionContent.trim()) {
+            return `
+            <tr class="description-row">
+              <td colspan="5" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  ${descriptionContent}
                 </div>
               </td>
+            </tr>
+          `;
+          }
 
+          // 如果没有描述内容，返回空字符串
+          return '';
+        },
+
+        // 渲染表格
+        renderTable(bacteriaData) {
+          const container = document.getElementById('obesity-data-table-body');
+          if (!container) {
+            console.error('Cannot find container element');
+            return;
+          }
+
+          container.innerHTML = '';
+
+          if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4 text-red-500">暂无肥胖相关菌数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+
+          bacteriaData.forEach(bacteria => {
+            const fullName = bacteria.名称;
+            const { chineseName, latinName } = this.separateName(fullName);
+            const detected = bacteria["丰度%"];
+            const normalRange = bacteria["正常范围"];
+            const correlation = bacteria["问题相关性"];
+            const evidenceStrength = parseInt(bacteria["证据强度"] || "0", 10);
+
+            const { min, max } = this.parseRange(normalRange);
+            const status = this.getStatus(detected, normalRange);
+            const isPositive = correlation === "+";
+            const isNegative = correlation === "-";
+            const correlationText = this.CONSTANTS.CORRELATION[correlation].text;
+
+            // 创建容器
+            const bacteriaContainer = document.createElement('div');
+            bacteriaContainer.className = 'bacteria-info-container';
+
+            // 高亮风险组合：
+            // 1. 正相关且超标
+            // 2. 负相关且偏低或缺乏（包括未检出但应该有的情况）
+            if ((status.text === '超标' && isPositive) ||
+              ((status.text === '偏低' || status.text === '缺乏') && isNegative)) {
+              // 选择合适的边框颜色
+              let borderColor;
+              if (isPositive) {
+                borderColor = this.CONSTANTS.COLORS.RED; // 正相关+超标用红色
+              } else {
+                borderColor = this.CONSTANTS.COLORS.ORANGE; // 负相关+偏低/缺乏用橙色
+              }
+
+              bacteriaContainer.style.border = `1px solid ${borderColor}`;
+              bacteriaContainer.style.borderRadius = '4px';
+              bacteriaContainer.style.margin = '4px 0';
+            } else {
+              bacteriaContainer.style.border = '1px solid transparent';
+            }
+
+            // 创建表格
+            const table = document.createElement('table');
+            table.className = 'bacteria-table min-w-full';
+
+            // 数据行
+            const progressPercentage = this.calculateProgressWidth(detected);
+
+            // 根据状态确定未检出的颜色
+            const detectedText = detected === "ND"
+              ? (status.isGrayND ? '<span style="color: ' + this.CONSTANTS.COLORS.GRAY + '">未检出</span>' : '未检出')
+              : this.formatNumber(detected);
+
+            const dataRow = `
+            <tr>
+              <td class="py-2 px-4 text-left obesity-first-column">
+                <div class="obesity-chinese-text"><strong>${chineseName || '未知'}</strong></div>
+                <div class="obesity-latin-text text-gray-500">${latinName || ''}</div>
+              </td>
+              <td class="py-2 px-4 text-center obesity-second-column obesity-column-text">
+                ${min.toPrecision(2)}-${max.toPrecision(2)}
+              </td>
+              <td class="py-2 px-4 text-center obesity-third-column disease-column-text">
+                <span style="color: ${status.isNormal && !status.isGrayND ? 'inherit' : status.color}">
+                  ${detectedText}
+                  ${status.icon || ''}
+                </span>
+                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div class="progress"
+                       style="width: ${progressPercentage}%;
+                              height: 100%;
+                              background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                              transition: width 0.3s ease;">
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-4 text-center obesity-fourth-column obesity-column-text">
+                <span class="${this.CONSTANTS.CORRELATION[correlation].textColor}">${correlationText}</span>
+              </td>
+              <td class="py-2 px-4 text-center obesity-fifth-column obesity-column-text">
+                <div class="flex justify-center items-center">
+                  ${this.generateStars(evidenceStrength, correlation)}
+                </div>
+              </td>
             </tr>
           `;
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+            // 描述行（同时包含说明和改善建议）
+            const descRow = this.createDescriptionRow(bacteria, status);
 
-          const descRow = filteredDescriptions.length > 0 ? `
-                <tr class="description-row">
-                    <td colspan="6" class="py-2 px-4 text-left">
-                        <div class="description-container text-gray-600" style="font-size: 10px;">
-                            ${filteredDescriptions.map(desc => `
-                                <div>
-                                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                                       style="color: ${desc.color};">
-                                    </i>
-                                    ${desc.text}
-                                </div>
-                            `).join('')}
-                        </div>
-                    </td>
-                </tr>
-            ` : '';
+            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+            bacteriaContainer.appendChild(table);
+            fragment.appendChild(bacteriaContainer);
+          });
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
-        });
-      }
+          container.appendChild(fragment);
+        },
 
-      document.addEventListener('DOMContentLoaded', loadObesityData);
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // 提取肥胖相关菌数据
+            const obesityData = data["疾病相关菌"] ? data["疾病相关菌"]["肥胖"] : [];
+            this.renderTable(obesityData);
+          } catch (error) {
+            console.error('Error loading obesity bacteria data:', error);
+            document.getElementById('obesity-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化肥胖相关菌模块
+      ObesityBacteria.init();
     </script>
-  </div>
 
+  </div>
 
   <!-- 疾病症状相关菌 : 便秘相关菌 -->
 

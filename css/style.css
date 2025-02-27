@@ -1688,6 +1688,24 @@ tr {
   font-size: 0.65rem; /* 控制每一列的字体大小 */
 }
 
+/* 疾病相关菌表格样式 : 肥胖相关菌 */
+
+.obesity-first-column {
+  width: 35%
+}
+.obesity-second-column {
+  width: 15%
+}
+.obesity-third-column {
+  width: 20%
+}
+.obesity-fourth-column {
+  width: 15%
+}
+.obesity-fifth-column {
+  width: 15%
+}
+
 /* 个性化饮食推荐 */
 
 .custom-leading {
