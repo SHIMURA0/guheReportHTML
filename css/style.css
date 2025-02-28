@@ -316,6 +316,62 @@ strong, b {
 .basic-function-of-gut-fourth-column{
   width: 25%
 }
+/* 肠道基础功能模块中文名样式 */
+.basic-function-of-gut-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 肠道基础功能模块英文名样式 */
+.basic-function-of-gut-english-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.basic-function-of-gut-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+/* 肠道整体评估 : 肠道菌群整体评估功能 */
+
+/* 肠道菌群整体评估表格列样式 */
+.overall-evaluation-of-gut-first-column{
+  width: 30%
+}
+.overall-evaluation-of-gut-second-column{
+  width: 20%
+}
+.overall-evaluation-of-gut-third-column{
+  width: 25%
+}
+.overall-evaluation-of-gut-fourth-column{
+  width: 25%
+}
+/* 肠道菌群整体评估模块中文名样式 */
+.overall-evaluation-of-gut-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 肠道菌群整体评估模块英文名样式 */
+.overall-evaluation-of-gut-english-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.basic-function-of-gut-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
 
 
 /* 肠道整体评估 : 肠道菌群评估 */
