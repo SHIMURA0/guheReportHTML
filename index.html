@@ -1295,7 +1295,7 @@ ${d.summarized_health_index.gut_type.value ? `
             { name: "菌种多样性", englishName: "Gut microbial diversity" },
             { name: "菌群平衡", englishName: "Gut microbiota balance" },
             { name: "菌群恢复力", englishName: "Gut microbial resilience" },
-            { name: "生物膜形成能力", englishName: "Biofilm Formation" },
+            { name: "生物膜形成", englishName: "Biofilm Formation" },
             { name: "有益菌", englishName: "Beneficial bacteria" },
             { name: "有害菌", englishName: "Pathogenic bacteria" },
             { name: "革兰氏阴性菌", englishName: "Gram-negative bacteria" },
@@ -1304,16 +1304,20 @@ ${d.summarized_health_index.gut_type.value ? `
         },
 
         // 解析范围字符串
-        parseRange(minRange, maxRange) {
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+          const parts = rangeStr.split('-');
           return {
-            min: parseFloat(minRange || 0),
-            max: parseFloat(maxRange || 0)
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
           };
         },
 
         // 获取状态信息
-        getStatus(value, minRange, maxRange) {
-          const { min, max } = this.parseRange(minRange, maxRange);
+        getStatus(value, rangeStr) {
+          const { min, max } = this.parseRange(rangeStr);
           const numValue = parseFloat(value);
 
           let status = {
@@ -1343,10 +1347,11 @@ ${d.summarized_health_index.gut_type.value ? `
         },
 
         // 计算进度条百分比
-        calculateProgress(value, maxRange) {
-          if (!value || !maxRange) return 0;
+        calculateProgress(value, rangeStr) {
+          const { max } = this.parseRange(rangeStr);
+          if (!value || max === 0) return 0;
+
           const num = Number(value);
-          const max = Number(maxRange);
           // 使进度条以max值为基准计算百分比，但限制在5%-100%范围内
           const percentage = (num / max) * 100;
           return Math.min(100, Math.max(5, percentage));
@@ -1354,7 +1359,7 @@ ${d.summarized_health_index.gut_type.value ? `
 
         // 创建描述行
         createDescriptionRow(item) {
-          if (!item || !item.descriptions || item.descriptions.length === 0) {
+          if (!item || !item.说明) {
             return '';
           }
 
@@ -1362,18 +1367,14 @@ ${d.summarized_health_index.gut_type.value ? `
           <tr class="microbiome-desc-row">
             <td colspan="4" class="py-2 px-4 text-left">
               <div class="description-container text-gray-600" style="font-size: 11px;">
-                ${item.descriptions.map(desc => `
-                  <div class="flex items-start mb-0">
-                    <div class="ml-1">
-                      <p>
-                        <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                           style="color: ${desc.type === 'info' ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};">
-                        </i>
-                        ${desc.text}
-                      </p>
-                    </div>
+                <div class="flex items-start mb-0">
+                  <div class="ml-1">
+                    <p>
+                      <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                      ${item.说明}
+                    </p>
                   </div>
-                `).join('')}
+                </div>
               </div>
             </td>
           </tr>
@@ -1400,8 +1401,8 @@ ${d.summarized_health_index.gut_type.value ? `
           this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
             // 从数据中查找匹配的项目
             const matchedItem = microbiomeData.find(item =>
-              item.chinese_name === evaluationItem.name ||
-              item.chinese_name.includes(evaluationItem.name)
+              item.检测项目 === evaluationItem.name ||
+              item.检测项目.includes(evaluationItem.name)
             );
 
             if (!matchedItem) {
@@ -1409,14 +1410,25 @@ ${d.summarized_health_index.gut_type.value ? `
               return;
             }
 
-            const value = matchedItem.evaluated_value;
-            const minRange = matchedItem.normal_range.min_normal_value;
-            const maxRange = matchedItem.normal_range.max_normal_value;
+            const value = matchedItem.评估值;
+            const rangeStr = matchedItem.参考范围;
+            const evaluation = matchedItem.结果评价;
 
             // 获取状态信息
-            const status = this.getStatus(value, minRange, maxRange);
+            const status = this.getStatus(value, rangeStr);
 
-            const progressPercentage = this.calculateProgress(value, maxRange);
+            // 如果数据中已有结果评价，更新状态文本
+            if (evaluation) {
+              status.text = evaluation;
+              // 根据评价结果更新颜色
+              if (evaluation !== "正常") {
+                status.isNormal = false;
+                status.color = this.CONSTANTS.COLORS.RED;
+                status.valueColor = this.CONSTANTS.COLORS.RED;
+              }
+            }
+
+            const progressPercentage = this.calculateProgress(value, rangeStr);
 
             const itemContainer = document.createElement('div');
             itemContainer.className = 'microbiome-info-container';
@@ -1431,7 +1443,7 @@ ${d.summarized_health_index.gut_type.value ? `
                 <div class="overall-evaluation-of-gut-english-text">${evaluationItem.englishName}</div>
               </td>
               <td class="py-2 px-4 text-center basic-function-of-gut-column-text overall-evaluation-of-gut-second-column">
-                ${minRange}-${maxRange}
+                ${rangeStr}
               </td>
               <td class="py-2 px-4 text-center basic-function-of-gut-column-text overall-evaluation-of-gut-third-column">
                 <div class="flex items-center justify-center">
@@ -1474,8 +1486,8 @@ ${d.summarized_health_index.gut_type.value ? `
               throw new Error(`Network response error: ${response.status}`);
             }
             const data = await response.json();
-            // 使用"overall_evaluation_of_gut_microbiome_data"数据
-            this.renderTable(data.overall_evaluation_of_gut_microbiome_data || []);
+            // 使用"菌群整体评估"数据
+            this.renderTable(data["菌群整体评估"] || []);
           } catch (error) {
             console.error('Error loading overall evaluation of gut microbiome data:', error);
             document.getElementById('overall-evaluation-of-gut-microbiome-data-table-body').innerHTML =
