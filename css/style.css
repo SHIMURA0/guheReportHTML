@@ -1390,20 +1390,35 @@ tr {
 /* 免疫板块 ： 表格样式 */
 
 .immunity-first-column {
-  width: 25%;
+  width: 30%;
 }
 .immunity-second-column {
-  width: 25%;
+  width: 22.5%;
 }
 .immunity-third-column {
-  width: 25%;
+  width: 24.5%;
 }
 .immunity-fourth-column {
-  width: 25%;
+  width: 23%;
 }
-
+.immunity-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 免疫板块表格第一列中的英文名样式 */
+.immunity-english-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
 .immunity-column-text {
-  font-size: 0.65rem; /* 控制每一列的字体大小 */
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
 
