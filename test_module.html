@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>优化版页面布局编辑器</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 基础样式 */
+    .selected {
+      outline: 2px solid #3b82f6 !important;
+      z-index: 10;
+    }
+    .resizer {
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+      width: 10px;
+      height: 10px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      cursor: se-resize;
+    }
+    .container-actions {
+      display: none;
+    }
+    .selected .container-actions {
+      display: flex;
+    }
+    .draggable {
+      cursor: move;
+      user-select: none;
+    }
+    .component-item {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .component-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .text-editable {
+      min-height: 1em;
+      padding: 2px 0;
+    }
+    .text-editable:focus {
+      outline: none;
+      border-bottom: 1px dashed #3b82f6;
+    }
+    .color-preview {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+<!-- 顶部工具栏 -->
+<header class="bg-white shadow p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold text-gray-900">优化版页面布局编辑器</h1>
+    <div class="flex space-x-2">
+      <button id="preview-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
+        <i class="fas fa-eye mr-2"></i> 预览
+      </button>
+      <button id="save-btn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+        <i class="fas fa-save mr-2"></i> 保存
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 主要内容区 -->
+<main class="flex-grow flex overflow-hidden">
+  <!-- 左侧工具面板 -->
+  <div class="w-64 bg-white shadow-md overflow-auto p-4">
+    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">组件</h2>
+
+    <div class="space-y-3">
+      <div class="component-item bg-white border border-gray-200 rounded-md p-3 cursor-grab" draggable="true" data-type="container">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-square text-blue-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">容器</h3>
+            <p class="text-xs text-gray-500">可调整大小的Flex容器</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-item bg-white border border-gray-200 rounded-md p-3 cursor-grab" draggable="true" data-type="text">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-font text-purple-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">文本</h3>
+            <p class="text-xs text-gray-500">可编辑的文本块</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-item bg-white border border-gray-200 rounded-md p-3 cursor-grab" draggable="true" data-type="image">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-image text-green-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">图片</h3>
+            <p class="text-xs text-gray-500">可调整大小的图片</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-lg font-semibold mt-6 mb-4 pb-2 border-b border-gray-200">布局模板</h2>
+
+    <div class="space-y-3">
+      <div class="template-item bg-white border border-gray-200 rounded-md p-3 cursor-pointer" data-template="two-column">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-columns text-gray-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">两列布局</h3>
+            <p class="text-xs text-gray-500">50/50 平分宽度</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="template-item bg-white border border-gray-200 rounded-md p-3 cursor-pointer" data-template="three-column">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-table-columns text-gray-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">三列布局</h3>
+            <p class="text-xs text-gray-500">等分三列</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="template-item bg-white border border-gray-200 rounded-md p-3 cursor-pointer" data-template="sidebar">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+            <i class="fas fa-table text-gray-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium">侧边栏布局</h3>
+            <p class="text-xs text-gray-500">30/70 左右分布</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 中间编辑区域 -->
+  <div class="flex-grow overflow-auto bg-gray-50 p-6 relative">
+    <div id="canvas" class="mx-auto bg-white rounded-lg shadow min-h-[800px] relative p-8" style="width: 1000px;">
+      <div id="drop-placeholder" class="absolute inset-0 flex items-center justify-center text-gray-400 bg-white">
+        <div class="text-center">
+          <i class="fas fa-arrow-down text-3xl mb-2"></i>
+          <p>拖动组件到此处或选择布局模板</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右侧属性面板 -->
+  <div class="w-80 bg-white shadow-md overflow-auto p-4">
+    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">属性设置</h2>
+
+    <!-- 默认提示 -->
+    <div id="properties-placeholder" class="text-center text-gray-400 py-8">
+      <i class="fas fa-mouse-pointer text-3xl mb-2"></i>
+      <p>选择一个元素来编辑其属性</p>
+    </div>
+
+    <!-- 容器属性面板 -->
+    <div id="container-properties" class="hidden space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">容器ID</label>
+        <input type="text" id="container-id" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">尺寸</label>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-xs text-gray-500">宽度</label>
+            <input type="text" id="container-width" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">高度</label>
+            <input type="text" id="container-height" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">布局方向</label>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center">
+            <input type="radio" id="direction-row" name="flex-direction" value="row" class="mr-2">
+            <label for="direction-row" class="text-sm text-gray-600">水平 (Row)</label>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" id="direction-column" name="flex-direction" value="column" class="mr-2">
+            <label for="direction-column" class="text-sm text-gray-600">垂直 (Column)</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">间距</label>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-xs text-gray-500">间隙</label>
+            <input type="text" id="container-gap" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">内边距</label>
+            <input type="text" id="container-padding" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">样式</label>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-xs text-gray-500">背景色</label>
+            <div class="flex items-center">
+              <span id="bg-color-preview" class="color-preview mr-2"></span>
+              <input type="text" id="container-bg-color" class="flex-grow px-3 py-2 border border-gray-300 rounded-md">
+            </div>
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">边框</label>
+            <select id="container-border" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+              <option value="none">无边框</option>
+              <option value="solid">实线</option>
+              <option value="dashed" selected>虚线</option>
+              <option value="dotted">点线</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 文本属性面板 -->
+    <div id="text-properties" class="hidden space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">文本内容</label>
+        <textarea id="text-content" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">字体设置</label>
+        <div class="grid grid-cols-2 gap-2 mb-2">
+          <div>
+            <label class="text-xs text-gray-500">字体</label>
+            <select id="text-font-family" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+              <option value="Arial, sans-serif">Arial</option>
+              <option value="'Times New Roman', serif">Times New Roman</option>
+              <option value="'Microsoft YaHei', sans-serif">微软雅黑</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">大小</label>
+            <input type="text" id="text-font-size" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-xs text-gray-500">颜色</label>
+            <div class="flex items-center">
+              <span id="text-color-preview" class="color-preview mr-2"></span>
+              <input type="text" id="text-color" class="flex-grow px-3 py-2 border border-gray-300 rounded-md">
+            </div>
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">对齐</label>
+            <select id="text-align" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+              <option value="left">左对齐</option>
+              <option value="center">居中</option>
+              <option value="right">右对齐</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">文本样式</label>
+        <div class="flex space-x-2">
+          <button id="text-bold" class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">B</button>
+          <button id="text-italic" class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"><i>I</i></button>
+          <button id="text-underline" class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"><u>U</u></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 图片属性面板 -->
+    <div id="image-properties" class="hidden space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">图片地址</label>
+        <input type="text" id="image-src" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">尺寸</label>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-xs text-gray-500">宽度</label>
+            <input type="text" id="image-width" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+          <div>
+            <label class="text-xs text-gray-500">高度</label>
+            <input type="text" id="image-height" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">边框</label>
+        <select id="image-border" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+          <option value="none">无边框</option>
+          <option value="solid">实线</option>
+          <option value="dashed">虚线</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="properties-actions" class="pt-4 mt-4 border-t border-gray-200 hidden">
+      <button id="apply-properties" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md">
+        应用更改
+      </button>
+      <button id="delete-element" class="w-full mt-2 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md">
+        删除元素
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- 预览模态框 -->
+<div id="preview-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+  <div class="bg-white rounded-lg w-3/4 h-3/4 flex flex-col">
+    <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+      <h2 class="text-xl font-semibold">页面预览</h2>
+      <button id="close-preview" class="text-gray-500 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="flex-grow overflow-auto p-6">
+      <div id="preview-content" class="mx-auto bg-white" style="width: 1000px;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // DOM 引用
+    const canvas = document.getElementById('canvas');
+    const dropPlaceholder = document.getElementById('drop-placeholder');
+    const componentItems = document.querySelectorAll('.component-item');
+    const templateItems = document.querySelectorAll('.template-item');
+    const previewBtn = document.getElementById('preview-btn');
+    const closePreviewBtn = document.getElementById('close-preview');
+    const previewModal = document.getElementById('preview-modal');
+    const previewContent = document.getElementById('preview-content');
+
+    // 属性面板 DOM 引用
+    const propertiesPlaceholder = document.getElementById('properties-placeholder');
+    const containerProperties = document.getElementById('container-properties');
+    const textProperties = document.getElementById('text-properties');
+    const imageProperties = document.getElementById('image-properties');
+    const propertiesActions = document.getElementById('properties-actions');
+
+    // 状态变量
+    let elementCounter = 0;
+    let selectedElement = null;
+    let draggedElement = null;
+    let dragOffsetX = 0, dragOffsetY = 0;
+    let canvasRect;
+
+    // 初始化
+    initializeDragDrop();
+    addButtonListeners();
+
+    // 拖拽相关初始化
+    function initializeDragDrop() {
+      // 组件拖拽
+      componentItems.forEach(item => {
+        item.addEventListener('dragstart', e => {
+          e.dataTransfer.setData('componentType', item.dataset.type);
+        });
+      });
+
+      // 画布拖拽区域
+      canvas.addEventListener('dragover', e => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+      });
+
+      canvas.addEventListener('drop', e => {
+        e.preventDefault();
+        const componentType = e.dataTransfer.getData('componentType');
+
+        if (componentType) {
+          canvasRect = canvas.getBoundingClientRect();
+          const x = e.clientX - canvasRect.left;
+          const y = e.clientY - canvasRect.top;
+
+          createNewElement(componentType, x, y);
+          dropPlaceholder.style.display = 'none';
+        }
+      });
+
+      // 鼠标移动事件 - 用于拖拽
+      document.addEventListener('mousemove', e => {
+        if (!draggedElement) return;
+
+        const x = e.clientX - canvasRect.left - dragOffsetX;
+        const y = e.clientY - canvasRect.top - dragOffsetY;
+
+        // 确保元素不超出画布
+        const maxX = canvasRect.width - draggedElement.offsetWidth;
+        const maxY = canvasRect.height - draggedElement.offsetHeight;
+
+        draggedElement.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
+        draggedElement.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
+      });
+
+      // 鼠标抬起 - 结束拖拽
+      document.addEventListener('mouseup', () => {
+        draggedElement = null;
+      });
+
+      // 阻止画布内容选择
+      canvas.addEventListener('selectstart', e => {
+        if (e.target.contentEditable !== 'true') {
+          e.preventDefault();
+        }
+      });
+    }
+
+    // 创建新元素
+    function createNewElement(type, x, y) {
+      const id = `element-${++elementCounter}`;
+      let element;
+
+      // 创建不同类型的元素
+      switch (type) {
+        case 'container':
+          element = document.createElement('div');
+          element.id = id;
+          element.className = 'draggable border-2 border-dashed border-gray-300';
+          element.dataset.type = 'container';
+          element.style.width = '300px';
+          element.style.height = '200px';
+          element.style.display = 'flex';
+          element.style.flexDirection = 'row';
+          element.style.padding = '10px';
+          element.style.position = 'absolute';
+
+          // 添加控制按钮和调整大小控件
+          const controls = document.createElement('div');
+          controls.className = 'container-actions absolute top-0 right-0 bg-white border border-gray-300 rounded-bl-sm flex';
+          controls.innerHTML = `
+              <button class="p-1 text-gray-600 hover:text-red-600 delete-btn"><i class="fas fa-trash"></i></button>
+            `;
+          element.appendChild(controls);
+
+          // 调整大小控件
+          const resizer = document.createElement('div');
+          resizer.className = 'resizer';
+          element.appendChild(resizer);
+
+          break;
+
+        case 'text':
+          element = document.createElement('div');
+          element.id = id;
+          element.className = 'draggable text-editable';
+          element.dataset.type = 'text';
+          element.contentEditable = true;
+          element.innerHTML = '双击编辑文本';
+          element.style.minWidth = '100px';
+          element.style.minHeight = '24px';
+          element.style.position = 'absolute';
+          break;
+
+        case 'image':
+          element = document.createElement('div');
+          element.id = id;
+          element.className = 'draggable';
+          element.dataset.type = 'image';
+          element.style.position = 'absolute';
+
+          const img = document.createElement('img');
+          img.src = 'https://via.placeholder.com/300x200';
+          img.style.maxWidth = '100%';
+          element.appendChild(img);
+          break;
+      }
+
+      // 设置位置
+      element.style.left = `${x}px`;
+      element.style.top = `${y}px`;
+
+      // 添加到画布
+      canvas.appendChild(element);
+
+      // 添加事件
+      addElementEvents(element);
+
+      // 选择新元素
+      selectElement(element);
+
+      return element;
+    }
+
+    // 添加元素事件
+    function addElementEvents(element) {
+      // 元素点击事件 - 用于选择
+      element.addEventListener('mousedown', e => {
+        // 如果点击的是调整大小控件，不处理
+        if (e.target.className === 'resizer') return;
+
+        // 如果是删除按钮，不选择和拖动
+        if (e.target.closest('.delete-btn')) {
+          const confirmed = confirm('确定要删除此元素吗？');
+          if (confirmed) {
+            element.remove();
+
+            if (selectedElement === element) {
+              selectedElement = null;
+              hideAllPropertiesPanels();
+            }
+
+            // 如果没有元素了，显示占位符
+            if (canvas.children.length === 1) {
+              dropPlaceholder.style.display = 'flex';
+            }
+          }
+          e.stopPropagation();
+          return;
+        }
+
+        // 如果是可编辑文本，不开始拖动
+        if (e.target.isContentEditable) {
+          selectElement(element);
+          return;
+        }
+
+        // 选择元素
+        selectElement(element);
+
+        // 准备拖动
+        canvasRect = canvas.getBoundingClientRect();
+        draggedElement = element;
+        dragOffsetX = e.clientX - canvasRect.left - element.offsetLeft;
+        dragOffsetY = e.clientY - canvasRect.top - element.offsetTop;
+
+        e.stopPropagation();
+      });
+
+      // 为容器添加调整大小功能
+      if (element.dataset.type === 'container') {
+        const resizer = element.querySelector('.resizer');
+        if (resizer) {
+          let startX, startY, startWidth, startHeight;
+
+          resizer.addEventListener('mousedown', e => {
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth = parseInt(getComputedStyle(element).width, 10);
+            startHeight = parseInt(getComputedStyle(element).height, 10);
+
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', stopResize);
+
+            e.stopPropagation();
+            e.preventDefault();
+          });
+
+          function resize(e) {
+            const width = startWidth + e.clientX - startX;
+            const height = startHeight + e.clientY - startY;
+
+            if (width > 50) element.style.width = `${width}px`;
+            if (height > 50) element.style.height = `${height}px`;
+          }
+
+          function stopResize() {
+            document.removeEventListener('mousemove', resize);
+            document.removeEventListener('mouseup', stopResize);
+
+            // 更新属性面板
+            updatePropertiesPanel();
+          }
+        }
+      }
+
+      // 文本双击编辑
+      if (element.dataset.type === 'text') {
+        element.addEventListener('dblclick', () => {
+          element.focus();
+        });
+
+        element.addEventListener('blur', () => {
+          if (selectedElement === element) {
+            document.getElementById('text-content').value = element.innerText;
+          }
+        });
+      }
+    }
+
+    // 选择元素
+    function selectElement(element) {
+      // 取消之前的选择
+      if (selectedElement) {
+        selectedElement.classList.remove('selected');
+      }
+
+      // 新的选择
+      selectedElement = element;
+      element.classList.add('selected');
+
+      // 更新属性面板
+      updatePropertiesPanel();
+    }
+
+    // 更新属性面板
+    function updatePropertiesPanel() {
+      hideAllPropertiesPanels();
+
+      if (!selectedElement) {
+        propertiesPlaceholder.classList.remove('hidden');
+        return;
+      }
+
+      const type = selectedElement.dataset.type;
+      propertiesActions.classList.remove('hidden');
+
+      switch (type) {
+        case 'container':
+          updateContainerPanel();
+          containerProperties.classList.remove('hidden');
+          break;
+        case 'text':
+          updateTextPanel();
+          textProperties.classList.remove('hidden');
+          break;
+        case 'image':
+          updateImagePanel();
+          imageProperties.classList.remove('hidden');
+          break;
+      }
+    }
+
+    // 隐藏所有属性面板
+    function hideAllPropertiesPanels() {
+      propertiesPlaceholder.classList.add('hidden');
+      containerProperties.classList.add('hidden');
+      textProperties.classList.add('hidden');
+      imageProperties.classList.add('hidden');
+      propertiesActions.classList.add('hidden');
+    }
+
+    // 更新容器属性面板
+    function updateContainerPanel() {
+      document.getElementById('container-id').value = selectedElement.id;
+      document.getElementById('container-width').value = selectedElement.style.width;
+      document.getElementById('container-height').value = selectedElement.style.height;
+
+      // 设置方向单选按钮
+      const direction = selectedElement.style.flexDirection || 'row';
+      document.getElementById(`direction-${direction}`).checked = true;
+
+      // 设置其他字段
+      document.getElementById('container-gap').value = selectedElement.style.gap || '';
+      document.getElementById('container-padding').value = selectedElement.style.padding || '';
+      document.getElementById('container-bg-color').value = selectedElement.style.backgroundColor || '';
+      document.getElementById('bg-color-preview').style.backgroundColor = selectedElement.style.backgroundColor || 'transparent';
+
+      // 设置边框样式
+      let borderStyle = 'dashed';
+      if (selectedElement.style.borderStyle) {
+        borderStyle = selectedElement.style.borderStyle;
+      }
+      document.getElementById('container-border').value = borderStyle;
+    }
+
+    // 更新文本属性面板
+    function updateTextPanel() {
+      document.getElementById('text-content').value = selectedElement.innerText;
+      document.getElementById('text-font-family').value = selectedElement.style.fontFamily || 'Arial, sans-serif';
+      document.getElementById('text-font-size').value = selectedElement.style.fontSize || '';
+      document.getElementById('text-color').value = selectedElement.style.color || '#000000';
+      document.getElementById('text-color-preview').style.backgroundColor = selectedElement.style.color || '#000000';
+      document.getElementById('text-align').value = selectedElement.style.textAlign || 'left';
+
+      // 文本样式按钮状态
+      document.getElementById('text-bold').classList.toggle('bg-blue-200',
+        selectedElement.style.fontWeight === 'bold' || selectedElement.style.fontWeight >= 700);
+      document.getElementById('text-italic').classList.toggle('bg-blue-200',
+        selectedElement.style.fontStyle === 'italic');
+      document.getElementById('text-underline').classList.toggle('bg-blue-200',
+        selectedElement.style.textDecoration.includes('underline'));
+    }
+
+    // 更新图片属性面板
+    function updateImagePanel() {
+      const img = selectedElement.querySelector('img');
+      if (img) {
+        document.getElementById('image-src').value = img.src;
+        document.getElementById('image-width').value = img.style.width || '';
+        document.getElementById('image-height').value = img.style.height || '';
+        document.getElementById('image-border').value = img.style.borderStyle || 'none';
+      }
+    }
+
+    // 添加各种按钮的监听器
+    function addButtonListeners() {
+      // 应用属性按钮
+      document.getElementById('apply-properties').addEventListener('click', applyProperties);
+
+      // 删除元素按钮
+      document.getElementById('delete-element').addEventListener('click', () => {
+        if (!selectedElement) return;
+
+        const confirmed = confirm('确定要删除此元素吗？');
+        if (confirmed) {
+          selectedElement.remove();
+          selectedElement = null;
+          hideAllPropertiesPanels();
+          propertiesPlaceholder.classList.remove('hidden');
+
+          // 如果没有元素了，显示占位符
+          if (canvas.children.length === 1) {
+            dropPlaceholder.style.display = 'flex';
+          }
+        }
+      });
+
+      // 文本样式按钮
+      document.getElementById('text-bold').addEventListener('click', () => {
+        if (!selectedElement || selectedElement.dataset.type !== 'text') return;
+
+        const button = document.getElementById('text-bold');
+        button.classList.toggle('bg-blue-200');
+
+        selectedElement.style.fontWeight = button.classList.contains('bg-blue-200') ? 'bold' : 'normal';
+      });
+
+      document.getElementById('text-italic').addEventListener('click', () => {
+        if (!selectedElement || selectedElement.dataset.type !== 'text') return;
+
+        const button = document.getElementById('text-italic');
+        button.classList.toggle('bg-blue-200');
+
+        selectedElement.style.fontStyle = button.classList.contains('bg-blue-200') ? 'italic' : 'normal';
+      });
+
+      document.getElementById('text-underline').addEventListener('click', () => {
+        if (!selectedElement || selectedElement.dataset.type !== 'text') return;
+
+        const button = document.getElementById('text-underline');
+        button.classList.toggle('bg-blue-200');
+
+        selectedElement.style.textDecoration = button.classList.contains('bg-blue-200') ? 'underline' : 'none';
+      });
+
+      // 布局模板按钮
+      templateItems.forEach(item => {
+        item.addEventListener('click', () => {
+          applyTemplate(item.dataset.template);
+        });
+      });
+
+      // 颜色输入变化预览
+      document.getElementById('container-bg-color').addEventListener('input', e => {
+        document.getElementById('bg-color-preview').style.backgroundColor = e.target.value;
+      });
+
+      document.getElementById('text-color').addEventListener('input', e => {
+        document.getElementById('text-color-preview').style.backgroundColor = e.target.value;
+      });
+
+      // 预览按钮
+      previewBtn.addEventListener('click', showPreview);
+
+      // 关闭预览按钮
+      closePreviewBtn.addEventListener('click', () => {
+        previewModal.classList.add('hidden');
+      });
+
+      // 保存按钮
+      document.getElementById('save-btn').addEventListener('click', () => {
+        alert('设计已保存！实际项目中，这里会提交到服务器或下载设计文件。');
+      });
+    }
+
+    // 应用属性更改
+    function applyProperties() {
+      if (!selectedElement) return;
+
+      const type = selectedElement.dataset.type;
+
+      switch (type) {
+        case 'container':
+          // 应用ID
+          selectedElement.id = document.getElementById('container-id').value;
+
+          // 应用尺寸
+          selectedElement.style.width = document.getElementById('container-width').value;
+          selectedElement.style.height = document.getElementById('container-height').value;
+
+          // 应用方向
+          const direction = document.querySelector('input[name="flex-direction"]:checked').value;
+          selectedElement.style.flexDirection = direction;
+
+          // 应用间距
+          selectedElement.style.gap = document.getElementById('container-gap').value;
+          selectedElement.style.padding = document.getElementById('container-padding').value;
+
+          // 应用样式
+          selectedElement.style.backgroundColor = document.getElementById('container-bg-color').value;
+
+          // 应用边框
+          const borderStyle = document.getElementById('container-border').value;
+          selectedElement.className = 'draggable border-2 selected';
+          selectedElement.style.borderStyle = borderStyle;
+          selectedElement.classList.add(`border-${borderStyle}`);
+          selectedElement.classList.add('border-gray-300');
+          break;
+
+        case 'text':
+          // 应用文本
+          selectedElement.innerText = document.getElementById('text-content').value;
+
+          // 应用字体
+          selectedElement.style.fontFamily = document.getElementById('text-font-family').value;
+          selectedElement.style.fontSize = document.getElementById('text-font-size').value;
+          selectedElement.style.color = document.getElementById('text-color').value;
+          selectedElement.style.textAlign = document.getElementById('text-align').value;
+          break;
+
+        case 'image':
+          // 应用图片
+          const img = selectedElement.querySelector('img');
+          if (img) {
+            img.src = document.getElementById('image-src').value;
+            img.style.width = document.getElementById('image-width').value;
+            img.style.height = document.getElementById('image-height').value;
+
+            const imgBorder = document.getElementById('image-border').value;
+            if (imgBorder !== 'none') {
+              img.style.border = `1px ${imgBorder} #ccc`;
+            } else {
+              img.style.border = 'none';
+            }
+          }
+          break;
+      }
+    }
+
+    // 应用模板
+    function applyTemplate(template) {
+      // 清空画布上的元素（保留占位符）
+      while (canvas.children.length > 1) {
+        if (canvas.lastChild !== dropPlaceholder) {
+          canvas.removeChild(canvas.lastChild);
+        }
+      }
+
+      // 隐藏占位符
+      dropPlaceholder.style.display = 'none';
+
+      // 根据模板创建布局
+      switch (template) {
+        case 'two-column':
+          createTwoColumnLayout();
+          break;
+        case 'three-column':
+          createThreeColumnLayout();
+          break;
+        case 'sidebar':
+          createSidebarLayout();
+          break;
+      }
+    }
+
+    // 创建两列布局
+    function createTwoColumnLayout() {
+      // 创建主容器
+      const mainContainer = createNewElement('container', 0, 0);
+      mainContainer.style.position = 'relative';
+      mainContainer.style.left = '0';
+      mainContainer.style.top = '0';
+      mainContainer.style.width = '100%';
+      mainContainer.style.height = '400px';
+      mainContainer.style.display = 'flex';
+      mainContainer.style.flexDirection = 'row';
+      mainContainer.style.gap = '20px';
+
+      // 创建左列
+      const leftCol = createNewElement('container', 0, 0);
+      leftCol.style.position = 'static';
+      leftCol.style.flex = '1';
+      leftCol.style.width = '';
+      canvas.appendChild(leftCol);
+      mainContainer.appendChild(leftCol);
+
+      // 创建右列
+      const rightCol = createNewElement('container', 0, 0);
+      rightCol.style.position = 'static';
+      rightCol.style.flex = '1';
+      rightCol.style.width = '';
+      canvas.appendChild(rightCol);
+      mainContainer.appendChild(rightCol);
+
+      // 在左列添加示例文本
+      const leftText = createNewElement('text', 10, 10);
+      leftText.innerText = '左侧内容区域';
+      leftText.style.position = 'static';
+      canvas.appendChild(leftText);
+      leftCol.appendChild(leftText);
+
+      // 在右列添加示例文本
+      const rightText = createNewElement('text', 10, 10);
+      rightText.innerText = '右侧内容区域';
+      rightText.style.position = 'static';
+      canvas.appendChild(rightText);
+      rightCol.appendChild(rightText);
+
+      selectElement(mainContainer);
+    }
+
+    // 创建三列布局
+    function createThreeColumnLayout() {
+      // 创建主容器
+      const mainContainer = createNewElement('container', 0, 0);
+      mainContainer.style.position = 'relative';
+      mainContainer.style.left = '0';
+      mainContainer.style.top = '0';
+      mainContainer.style.width = '100%';
+      mainContainer.style.height = '400px';
+      mainContainer.style.display = 'flex';
+      mainContainer.style.flexDirection = 'row';
+      mainContainer.style.gap = '15px';
+
+      // 创建三列
+      for (let i = 1; i <= 3; i++) {
+        const col = createNewElement('container', 0, 0);
+        col.style.position = 'static';
+        col.style.flex = '1';
+        col.style.width = '';
+        canvas.appendChild(col);
+        mainContainer.appendChild(col);
+
+        const text = createNewElement('text', 10, 10);
+        text.innerText = `第${i}列内容`;
+        text.style.position = 'static';
+        canvas.appendChild(text);
+        col.appendChild(text);
+      }
+
+      selectElement(mainContainer);
+    }
+
+    // 创建侧边栏布局
+    function createSidebarLayout() {
+      // 创建主容器
+      const mainContainer = createNewElement('container', 0, 0);
+      mainContainer.style.position = 'relative';
+      mainContainer.style.left = '0';
+      mainContainer.style.top = '0';
+      mainContainer.style.width = '100%';
+      mainContainer.style.height = '400px';
+      mainContainer.style.display = 'flex';
+      mainContainer.style.flexDirection = 'row';
+      mainContainer.style.gap = '20px';
+
+      // 创建侧边栏
+      const sidebar = createNewElement('container', 0, 0);
+      sidebar.style.position = 'static';
+      sidebar.style.width = '30%';
+      sidebar.style.flex = '0 0 auto';
+      sidebar.style.backgroundColor = '#f1f5f9';
+      canvas.appendChild(sidebar);
+      mainContainer.appendChild(sidebar);
+
+      // 创建主内容
+      const content = createNewElement('container', 0, 0);
+      content.style.position = 'static';
+      content.style.flex = '1';
+      content.style.width = '';
+      canvas.appendChild(content);
+      mainContainer.appendChild(content);
+
+      // 向侧边栏添加示例文本
+      const sidebarText = createNewElement('text', 10, 10);
+      sidebarText.innerText = '侧边栏导航';
+      sidebarText.style.position = 'static';
+      canvas.appendChild(sidebarText);
+      sidebar.appendChild(sidebarText);
+
+      // 向主内容添加示例文本
+      const contentText = createNewElement('text', 10, 10);
+      contentText.innerText = '主要内容区域';
+      contentText.style.position = 'static';
+      canvas.appendChild(contentText);
+      content.appendChild(contentText);
+
+      selectElement(mainContainer);
+    }
+
+    // 显示预览
+    function showPreview() {
+      // 清空预览内容
+      previewContent.innerHTML = '';
+
+      // 克隆画布
+      const clone = canvas.cloneNode(true);
+
+      // 移除占位符
+      const placeholder = clone.querySelector('#drop-placeholder');
+      if (placeholder) placeholder.remove();
+
+      // 移除编辑控件
+      clone.querySelectorAll('.container-actions, .resizer').forEach(el => el.remove());
+
+      // 移除选择状态
+      clone.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+
+      // 移除可编辑属性
+      clone.querySelectorAll('[contenteditable]').forEach(el => {
+        el.removeAttribute('contenteditable');
+      });
+
+      // 显示预览
+      previewContent.appendChild(clone);
+      previewModal.classList.remove('hidden');
+    }
+  });
+</script>
+</body>
+</html>

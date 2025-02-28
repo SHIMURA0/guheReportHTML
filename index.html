@@ -6266,16 +6266,24 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left immunity-first-column" style="font-size: 11px;">
+          <th
+            class="py-2 px-4 text-left immunity-first-column"
+            style="font-size: 13px;">
             菌群代谢物指标
           </th>
-          <th class="py-2 px-4 text-center immunity-second-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
             参考范围
           </th>
-          <th class="py-2 px-4 text-center immunity-third-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center immunity-fourth-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
         </tr>
@@ -6547,16 +6555,20 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left immunity-first-column" style="font-size: 13px;">
+          <th class="py-2 px-4 text-left immunity-first-column"
+              style="font-size: 13px;">
             细胞因子
           </th>
-          <th class="py-2 px-4 text-center immunity-second-column" style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center immunity-second-column"
+              style="font-size: 13px; padding: 5px 5px;">
             参考范围
           </th>
-          <th class="py-2 px-4 text-center immunity-third-column" style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center immunity-third-column"
+              style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center immunity-fourth-column" style="font-size: 13px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-center immunity-fourth-column"
+              style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
         </tr>
@@ -6828,16 +6840,24 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left immunity-first-column" style="font-size: 11px;">
+          <th
+            class="py-2 px-4 text-left immunity-first-column"
+            style="font-size: 13px;">
             免疫肿瘤指标
           </th>
-          <th class="py-2 px-4 text-center immunity-second-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
             正常范围
           </th>
-          <th class="py-2 px-4 text-center immunity-third-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center immunity-fourth-column" style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center immunity-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
         </tr>
@@ -7279,106 +7299,252 @@ ${d.summarized_health_index.gut_type.value ? `
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left nutrition-first-column" style="font-size: 10px;">饮食指标</th>
-          <th class="py-2 px-4 text-center nutrition-second-column" style="font-size: 10px; padding: 5px 5px;">正常范围（缺乏-不足-过量）</th>
-          <th class="py-2 px-4 text-center nutrition-third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
-          <th class="py-2 px-4 text-center nutrition-fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
+          <th
+            class="py-2 px-4 text-left nutrition-first-column"
+            style="font-size: 13px;">
+            饮食指标
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围（缺乏-不足-过量）
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="daily-food-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
+      <div id="daily-food-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
       <script>
-        async function loadDailyFoodData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderDailyFoodTable(data.daily_food_data);
-          } catch (error) {
-            console.error('Error loading daily food data:', error);
-          }
-        }
+        // 日常饮食和微量元素评估模块
+        const DietaryAssessment = {
+          // 常量定义
+          CONSTANTS: {
+            COLORS: {
+              RED: '#ff4d4f',     // 缺乏（红色）
+              YELLOW: '#fadb14',  // 不足（黄色）
+              GREEN: '#52c41a',   // 正常（绿色）
+              BLUE: '#1890ff',    // 过量（蓝色）
+              PRIMARY: '#00B2B4'  // 主题色
+            },
+            // 定义需要显示的饮食指标列表
+            EVALUATION_ITEMS: [
+              { name: "糖", displayName: "糖", englishName: "Sugar" },
+              { name: "盐", displayName: "盐", englishName: "Salt" },
+              { name: "膳食纤维", displayName: "膳食纤维", englishName: "Dietary Fiber" },
+              { name: "乳制品", displayName: "乳制品", englishName: "Dairy Products" },
+              { name: "铁", displayName: "铁", englishName: "Iron" },
+              { name: "锌", displayName: "锌", englishName: "Zinc" }
+            ]
+          },
 
-        function renderDailyFoodTable(dailyfoodData) {
-          const tableBody = document.getElementById('daily-food-data-table-body');
-          if (!tableBody) {
-            console.error('Daily food data table body not found');
-            return;
-          }
+          // 解析范围字符串（缺乏-不足-过量）
+          parseRange(rangeStr) {
+            if (!rangeStr || typeof rangeStr !== 'string') {
+              return { deficiency: 0, insufficiency: 0, excess: 100 };
+            }
 
-          tableBody.innerHTML = '';
+            const parts = rangeStr.split('-');
+            return {
+              deficiency: parseFloat(parts[0] || 0),
+              insufficiency: parseFloat(parts[1] || 0),
+              excess: parseFloat(parts[2] || 100)
+            };
+          },
 
-          dailyfoodData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('cytokines-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${food.chinese_name}</div>
-                <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${[
-                    food.normal_range.Deficiency ?? 0,
-                    food.normal_range.Insufficiency ?? 0,
-                    food.normal_range.Excess ?? 0
-                  ].join('-')}
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                ${food.Evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="
-                    width: ${Math.min(100, Math.round((food.Evaluation_value / food.normal_range.Excess) * 100))}%;
-                    background-color: #00B2B4;
-                  "></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center column-text" style="
-                color: ${
-                  food.Evaluation_value < food.normal_range.Deficiency ? '#ff4d4f' :
-                  food.Evaluation_value < food.normal_range.Insufficiency ? '#fadb14' :
-                  food.Evaluation_value < food.normal_range.Excess ? '#52c41a' : '#1890ff'
-                };
-                font-weight : bold;">
-                ${
-                  food.Evaluation_value < food.normal_range.Deficiency ? '缺乏' :
-                  food.Evaluation_value < food.normal_range.Insufficiency ? '不足' :
-                  food.Evaluation_value < food.normal_range.Excess ? '正常' : '过量'
-                }
-              </td>
-            `;
+          // 获取状态信息
+          getStatus(value, rangeStr) {
+            const { deficiency, insufficiency, excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('cytokines-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${food.descriptions.map(desc => `
-                    <div class="microbial-metabolites-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
+            let status = {
+              color: this.CONSTANTS.COLORS.GREEN,
+              text: '正常',
+              isNormal: true
+            };
+
+            if (numValue < deficiency) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '缺乏';
+              status.isNormal = false;
+            } else if (numValue < insufficiency) {
+              status.color = this.CONSTANTS.COLORS.YELLOW;
+              status.text = '不足';
+              status.isNormal = false;
+            } else if (numValue >= excess) {
+              status.color = this.CONSTANTS.COLORS.BLUE;
+              status.text = '过量';
+              status.isNormal = false;
+            }
+
+            return status;
+          },
+
+          // 计算进度条百分比
+          calculateProgress(value, rangeStr) {
+            if (!value) return 0;
+
+            const { excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
+
+            // 以excess为基准计算百分比，但不超过100%
+            const percentage = (numValue / excess) * 100;
+            return Math.min(100, Math.max(5, percentage));
+          },
+
+          // 创建描述行
+          createDescriptionRow(item) {
+            if (!item || !item.说明) {
+              return '';
+            }
+
+            return `
+            <tr class="dietary-desc-row">
+              <td colspan="4" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  <div class="flex items-start mb-0">
+                    <div class="ml-1">
+                      <p>
+                        <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                        ${item.说明}
+                      </p>
                     </div>
-                  `).join('')}
+                  </div>
                 </div>
               </td>
+            </tr>
+          `;
+          },
+
+          // 渲染表格
+          renderTable(dietaryData) {
+            const container = document.getElementById('daily-food-data-table-body');
+            if (!container) {
+              console.error('Container element not found');
+              return;
+            }
+            container.innerHTML = '';
+
+            if (!dietaryData || !Array.isArray(dietaryData) || dietaryData.length === 0) {
+              container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+              return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            // 遍历我们定义的评估项目列表
+            this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
+              // 从数据中查找匹配的项目
+              const matchedItem = dietaryData.find(item =>
+                item.检测项目 === evaluationItem.name ||
+                item.检测项目.includes(evaluationItem.name));
+
+              if (!matchedItem) {
+                // 如果没有找到匹配项，可以选择跳过或显示空值
+                return;
+              }
+
+              const value = matchedItem.评估值;
+              const rangeStr = matchedItem.参考范围;
+              const evaluation = matchedItem.结果评价;
+
+              // 获取状态信息
+              const status = this.getStatus(value, rangeStr);
+
+              // 如果数据中已有结果评价，更新状态文本
+              if (evaluation) {
+                status.text = evaluation;
+              }
+
+              const progressPercentage = this.calculateProgress(value, rangeStr);
+
+              const itemContainer = document.createElement('div');
+              itemContainer.className = 'dietary-info-container';
+
+              const table = document.createElement('table');
+              table.className = 'dietary-table min-w-full';
+
+              const dataRow = `
+              <tr>
+                <td class="py-2 px-4 text-left nutrition-first-column">
+                  <div class="chinese-text"><strong>${evaluationItem.displayName}</strong></div>
+                  <div class="latin-text">${evaluationItem.englishName}</div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-second-column">
+                  ${rangeStr.replace(/-/g, '-')}
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-third-column">
+                  <div class="flex items-center justify-center">
+                    <span>
+                      <strong>${value}</strong>
+                    </span>
+                  </div>
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressPercentage}%;
+                                height: 100%;
+                                background-color: ${status.color};
+                                transition: width 0.3s ease;">
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-fourth-column">
+                  <span style="color: ${status.color}">
+                    <strong>${status.text}</strong>
+                  </span>
+                </td>
+              </tr>
             `;
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
+              const descRow = this.createDescriptionRow(matchedItem);
 
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadDailyFoodData);
+              table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+              itemContainer.appendChild(table);
+              fragment.appendChild(itemContainer);
+            });
+
+            container.appendChild(fragment);
+          },
+
+          // 加载数据
+          async loadData() {
+            try {
+              const response = await fetch(DATA_PATHS.DATA);
+              if (!response.ok) {
+                throw new Error(`Network response error: ${response.status}`);
+              }
+              const data = await response.json();
+              // 使用"营养评估"数据
+              this.renderTable(data["营养评估"] || []);
+            } catch (error) {
+              console.error('Error loading dietary assessment data:', error);
+              document.getElementById('daily-food-data-table-body').innerHTML =
+                '<div class="no-data-message">暂无数据</div>';
+            }
+          },
+
+          // 初始化
+          init() {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          }
+        };
+
+        // 初始化日常饮食和微量元素评估模块
+        DietaryAssessment.init();
       </script>
-
     </div>
-
   </div>
 
   <!-- 短链脂肪酸评估板块 -->
@@ -7391,7 +7557,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            矿物质微量元素和有机酸是人体代谢过程中的重要组成部分，它们通过不同的机制参与人体生理功能的调节。本报告将通过肠道菌群等检测指标，全面评估其在人体中的代谢水平和整体状况。
+            短链脂肪酸是肠道菌群发酵膳食纤维产生的重要代谢物，不仅为肠道细胞提供能量，还参与调节免疫功能、维持肠道屏障和影响全身代谢健康。本报告通过肠道菌群检测，评估体内短链脂肪酸的产生水平和整体状况。
           </p>
         </div>
       </div>
@@ -7403,107 +7569,249 @@ ${d.summarized_health_index.gut_type.value ? `
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left nutrition-first-column" style="font-size: 10px;">评估指标</th>
-          <th class="py-2 px-4 text-center nutrition-second-column" style="font-size: 10px; padding: 5px 5px;">正常范围</th>
-          <th class="py-2 px-4 text-center nutrition-third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
-          <th class="py-2 px-4 text-center nutrition-fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
+          <th
+            class="py-2 px-4 text-left nutrition-first-column"
+            style="font-size: 13px;">
+            评估指标
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围（缺乏-不足-过量）
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="short-chain-fatty-acids-data-table-body">
-        <!-- 数据行 -->
-        </tbody>
       </table>
 
+      <div id="short-chain-fatty-acids-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
       <script>
-        <!-- SCFAs is an abbreviation for short chain fatty acids -->
-        async function loadSCFAsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderSCFAsTable(data.short_chain_fatty_acids_data);
-          } catch (error) {
-            console.error('Error loading Short-Chain Fatty Acids data:', error);
-          }
-        }
+        // 短链脂肪酸评估模块
+        const SCFAsAssessment = {
+          // 常量定义
+          CONSTANTS: {
+            COLORS: {
+              RED: '#ff4d4f',     // 缺乏（红色）
+              YELLOW: '#fadb14',  // 不足（黄色）
+              GREEN: '#52c41a',   // 正常（绿色）
+              BLUE: '#1890ff',    // 过量（蓝色）
+              PRIMARY: '#00B2B4'  // 主题色
+            },
+            // 定义需要显示的短链脂肪酸指标列表
+            EVALUATION_ITEMS: [
+              { name: "乙酸", displayName: "乙酸", englishName: "Acetic Acid" },
+              { name: "丙酸", displayName: "丙酸", englishName: "Propionic Acid" },
+              { name: "丁酸", displayName: "丁酸", englishName: "Butyric Acid" }
+            ]
+          },
 
-        function renderSCFAsTable(scfasData) {
-          const tableBody = document.getElementById('short-chain-fatty-acids-data-table-body');
-          if (!tableBody) {
-            console.error('Short-Chain Fatty Acids data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          scfasData.forEach(scfas => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('short-chain-fatty-acids-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${scfas.chinese_name}</div>
-                <div class="latin-text">${scfas.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${[
-              scfas.normal_range.Deficiency ?? 0,
-              scfas.normal_range.Insufficiency ?? 0,
-              scfas.normal_range.Excess ?? 0
-            ].join('-')}
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                ${scfas.Evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="
-                    width: ${Math.min(100, Math.round((scfas.Evaluation_value / scfas.normal_range.Excess) * 100))}%;
-                    background-color: #00B2B4;
-                  "></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center column-text" style="
-                color: ${
-              scfas.Evaluation_value < scfas.normal_range.Deficiency ? '#ff4d4f' :
-                scfas.Evaluation_value < scfas.normal_range.Insufficiency ? '#fadb14' :
-                  scfas.Evaluation_value < scfas.normal_range.Excess ? '#52c41a' : '#1890ff'
-            };
-                font-weight : bold;">
-                ${
-              scfas.Evaluation_value < scfas.normal_range.Deficiency ? '缺乏' :
-                scfas.Evaluation_value < scfas.normal_range.Insufficiency ? '不足' :
-                  scfas.Evaluation_value < scfas.normal_range.Excess ? '正常' : '过量'
+          // 解析范围字符串（缺乏-不足-过量）
+          parseRange(rangeStr) {
+            if (!rangeStr || typeof rangeStr !== 'string') {
+              return { deficiency: 0, insufficiency: 0, excess: 100 };
             }
-              </td>
-            `;
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('short-chain-fatty-acids-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${scfas.descriptions.map(desc => `
-                    <div class="microbial-metabolites-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
+            const parts = rangeStr.split('-');
+            return {
+              deficiency: parseFloat(parts[0] || 0),
+              insufficiency: parseFloat(parts[1] || 0),
+              excess: parseFloat(parts[2] || 100)
+            };
+          },
+
+          // 获取状态信息
+          getStatus(value, rangeStr) {
+            const { deficiency, insufficiency, excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
+
+            let status = {
+              color: this.CONSTANTS.COLORS.GREEN,
+              text: '正常',
+              isNormal: true
+            };
+
+            if (numValue < deficiency) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '缺乏';
+              status.isNormal = false;
+            } else if (numValue < insufficiency) {
+              status.color = this.CONSTANTS.COLORS.YELLOW;
+              status.text = '不足';
+              status.isNormal = false;
+            } else if (numValue >= excess) {
+              status.color = this.CONSTANTS.COLORS.BLUE;
+              status.text = '过量';
+              status.isNormal = false;
+            }
+
+            return status;
+          },
+
+          // 计算进度条百分比
+          calculateProgress(value, rangeStr) {
+            if (!value) return 0;
+
+            const { excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
+
+            // 以excess为基准计算百分比，但不超过100%
+            const percentage = (numValue / excess) * 100;
+            return Math.min(100, Math.max(5, percentage));
+          },
+
+          // 创建描述行
+          createDescriptionRow(item) {
+            if (!item || !item.说明) {
+              return '';
+            }
+
+            return `
+            <tr class="scfas-desc-row">
+              <td colspan="4" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  <div class="flex items-start mb-0">
+                    <div class="ml-1">
+                      <p>
+                        <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                        ${item.说明}
+                      </p>
                     </div>
-                  `).join('')}
+                  </div>
                 </div>
               </td>
+            </tr>
+          `;
+          },
+
+          // 渲染表格
+          renderTable(scfasData) {
+            const container = document.getElementById('short-chain-fatty-acids-data-table-body');
+            if (!container) {
+              console.error('Container element not found');
+              return;
+            }
+            container.innerHTML = '';
+
+            if (!scfasData || !Array.isArray(scfasData) || scfasData.length === 0) {
+              container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+              return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            // 遍历我们定义的评估项目列表
+            this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
+              // 从数据中查找匹配的项目
+              const matchedItem = scfasData.find(item =>
+                item.检测项目 === evaluationItem.name ||
+                item.检测项目.includes(evaluationItem.name));
+
+              if (!matchedItem) {
+                // 如果没有找到匹配项，可以选择跳过或显示空值
+                return;
+              }
+
+              const value = matchedItem.评估值;
+              const rangeStr = matchedItem.参考范围;
+              const evaluation = matchedItem.结果评价;
+
+              // 获取状态信息
+              const status = this.getStatus(value, rangeStr);
+
+              // 如果数据中已有结果评价，更新状态文本
+              if (evaluation) {
+                status.text = evaluation;
+              }
+
+              const progressPercentage = this.calculateProgress(value, rangeStr);
+
+              const itemContainer = document.createElement('div');
+              itemContainer.className = 'scfas-info-container';
+
+              const table = document.createElement('table');
+              table.className = 'scfas-table min-w-full';
+
+              const dataRow = `
+              <tr>
+                <td class="py-2 px-4 text-left nutrition-first-column">
+                  <div class="chinese-text"><strong>${evaluationItem.displayName}</strong></div>
+                  <div class="latin-text">${evaluationItem.englishName}</div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-second-column">
+                  ${rangeStr.replace(/-/g, '-')}
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-third-column">
+                  <div class="flex items-center justify-center">
+                    <span>
+                      <strong>${value}</strong>
+                    </span>
+                  </div>
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressPercentage}%;
+                                height: 100%;
+                                background-color: ${status.color};
+                                transition: width 0.3s ease;">
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-fourth-column">
+                  <span style="color: ${status.color}">
+                    <strong>${status.text}</strong>
+                  </span>
+                </td>
+              </tr>
             `;
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
+              const descRow = this.createDescriptionRow(matchedItem);
 
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadSCFAsData);
+              table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+              itemContainer.appendChild(table);
+              fragment.appendChild(itemContainer);
+            });
+
+            container.appendChild(fragment);
+          },
+
+          // 加载数据
+          async loadData() {
+            try {
+              const response = await fetch(DATA_PATHS.DATA);
+              if (!response.ok) {
+                throw new Error(`Network response error: ${response.status}`);
+              }
+              const data = await response.json();
+              // 使用"短链脂肪酸"数据
+              this.renderTable(data["营养评估"] || []);
+            } catch (error) {
+              console.error('Error loading SCFAs data:', error);
+              document.getElementById('short-chain-fatty-acids-data-table-body').innerHTML =
+                '<div class="no-data-message">暂无数据</div>';
+            }
+          },
+
+          // 初始化
+          init() {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          }
+        };
+
+        // 初始化短链脂肪酸评估模块
+        SCFAsAssessment.init();
       </script>
-
     </div>
-
   </div>
 
   <!-- 维生素评估板块 -->
@@ -7516,7 +7824,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            维生素是人体必需的微量营养素，本报告通过肠道菌群等检测指标来评估下列各项维生素的水平。
+            维生素是人体必需的微量营养素，参与多种生理功能调节和代谢过程。本报告通过肠道菌群等检测指标来评估各类维生素的水平，为健康管理提供科学依据。
           </p>
         </div>
       </div>
@@ -7528,107 +7836,256 @@ ${d.summarized_health_index.gut_type.value ? `
         <thead>
         <!-- 标题行 -->
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column" style="font-size: 10px;">评估指标</th>
-          <th class="py-2 px-4 text-center second-column" style="font-size: 10px; padding: 5px 5px;">正常范围</th>
-          <th class="py-2 px-4 text-center third-column" style="font-size: 10px; padding: 5px 5px;">评估数值</th>
-          <th class="py-2 px-4 text-center fourth-column" style="font-size: 10px; padding: 5px 5px;">评估结果</th>
+          <th
+            class="py-2 px-4 text-left nutrition-first-column"
+            style="font-size: 13px;">
+            评估指标
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估数值
+          </th>
+          <th
+            class="py-2 px-4 text-center nutrition-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            评估结果
+          </th>
         </tr>
         </thead>
-        <tbody id="vitamins-data-table-body">
-        <!-- 数据行 -->
-        </tbody>
       </table>
 
+      <div id="vitamins-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+
       <script>
-        async function loadVitaminsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderVitaminsTable(data.vitamins_data);
-          } catch (error) {
-            console.error('Error loading vitamins data:', error);
-          }
-        }
+        // 维生素评估模块
+        const VitaminsAssessment = {
+          // 常量定义
+          CONSTANTS: {
+            COLORS: {
+              RED: '#ff4d4f',     // 缺乏（红色）
+              YELLOW: '#fadb14',  // 不足（黄色）
+              GREEN: '#52c41a',   // 正常（绿色）
+              BLUE: '#1890ff',    // 过量（蓝色）
+              PRIMARY: '#00B2B4'  // 主题色
+            },
+            // 定义需要显示的维生素指标列表
+            EVALUATION_ITEMS: [
+              { name: "维生素A", displayName: "维生素A", englishName: "Vitamin A" },
+              { name: "维生素B1", displayName: "维生素B1", englishName: "Vitamin B1" },
+              { name: "维生素B2", displayName: "维生素B2", englishName: "Vitamin B2" },
+              { name: "维生素B6", displayName: "维生素B6", englishName: "Vitamin B6" },
+              { name: "维生素B12", displayName: "维生素B12", englishName: "Vitamin B12" },
+              { name: "叶酸", displayName: "维生素B9 (叶酸)", englishName: "Folic Acid" },
+              { name: "维生素C", displayName: "维生素C", englishName: "Vitamin C" },
+              { name: "维生素D", displayName: "维生素D", englishName: "Vitamin D" },
+              { name: "维生素E", displayName: "维生素E", englishName: "Vitamin E" },
+              { name: "维生素K", displayName: "维生素K", englishName: "Vitamin K" }
+            ]
+          },
 
-        function renderVitaminsTable(vitaminsData) {
-          const tableBody = document.getElementById('vitamins-data-table-body');
-          if (!tableBody) {
-            console.error('Vitamins data table body not found');
-            return;
-          }
+          // 解析范围字符串
+          parseRange(rangeStr) {
+            if (!rangeStr || typeof rangeStr !== 'string') {
+              return { deficiency: 0, insufficiency: 0, excess: 100 };
+            }
 
-          tableBody.innerHTML = '';
+            const parts = rangeStr.split('-');
+            return {
+              deficiency: parseFloat(parts[0] || 0),
+              insufficiency: parseFloat(parts[1] || 0),
+              excess: parseFloat(parts[2] || 100)
+            };
+          },
 
-          vitaminsData.forEach(vitamins => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('vitamins-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${vitamins.chinese_name}</div>
-                <div class="latin-text">${vitamins.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                  ${[
-              vitamins.normal_range.Deficiency ?? 0,
-              vitamins.normal_range.Insufficiency ?? 0,
-              vitamins.normal_range.Excess ?? 0
-            ].join('-')}
-              </td>
-              <td class="py-2 px-4 text-center column-text">
-                ${vitamins.Evaluation_value}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="
-                    width: ${Math.min(100, Math.round((vitamins.Evaluation_value / vitamins.normal_range.Excess) * 100))}%;
-                    background-color: #00B2B4;
-                  "></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center column-text" style="
-                color: ${
-                  vitamins.Evaluation_value < vitamins.normal_range.Deficiency ? '#ff4d4f' :
-                  vitamins.Evaluation_value < vitamins.normal_range.Insufficiency ? '#fadb14' :
-                  vitamins.Evaluation_value < vitamins.normal_range.Excess ? '#52c41a' : '#1890ff'
-                };
-                font-weight : bold;
-              ">
-                ${
-                  vitamins.Evaluation_value < vitamins.normal_range.Deficiency ? '缺乏' :
-                  vitamins.Evaluation_value < vitamins.normal_range.Insufficiency ? '不足' :
-                  vitamins.Evaluation_value < vitamins.normal_range.Excess ? '正常' : '过量'
-                }
-              </td>
-            `;
+          // 获取状态信息
+          getStatus(value, rangeStr) {
+            const { deficiency, insufficiency, excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
 
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('vitamins-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container">
-                  ${vitamins.descriptions.map(desc => `
-                    <div class="vitamins-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
+            let status = {
+              color: this.CONSTANTS.COLORS.GREEN,
+              text: '正常',
+              isNormal: true
+            };
+
+            if (numValue < deficiency) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '缺乏';
+              status.isNormal = false;
+            } else if (numValue < insufficiency) {
+              status.color = this.CONSTANTS.COLORS.YELLOW;
+              status.text = '不足';
+              status.isNormal = false;
+            } else if (numValue >= excess) {
+              status.color = this.CONSTANTS.COLORS.BLUE;
+              status.text = '过量';
+              status.isNormal = false;
+            }
+
+            return status;
+          },
+
+          // 计算进度条百分比
+          calculateProgress(value, rangeStr) {
+            if (!value) return 0;
+
+            const { excess } = this.parseRange(rangeStr);
+            const numValue = parseFloat(value);
+
+            // 以excess为基准计算百分比，但不超过100%
+            const percentage = (numValue / excess) * 100;
+            return Math.min(100, Math.max(5, percentage));
+          },
+
+          // 创建描述行
+          createDescriptionRow(item) {
+            if (!item || !item.说明) {
+              return '';
+            }
+
+            return `
+            <tr class="vitamins-desc-row">
+              <td colspan="4" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 11px;">
+                  <div class="flex items-start mb-0">
+                    <div class="ml-1">
+                      <p>
+                        <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                        ${item.说明}
+                      </p>
                     </div>
-                  `).join('')}
+                  </div>
                 </div>
               </td>
+            </tr>
+          `;
+          },
+
+          // 渲染表格
+          renderTable(vitaminsData) {
+            const container = document.getElementById('vitamins-data-table-body');
+            if (!container) {
+              console.error('Container element not found');
+              return;
+            }
+            container.innerHTML = '';
+
+            if (!vitaminsData || !Array.isArray(vitaminsData) || vitaminsData.length === 0) {
+              container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+              return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            // 遍历我们定义的评估项目列表
+            this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
+              // 从数据中查找匹配的项目
+              const matchedItem = vitaminsData.find(item =>
+                item.检测项目 === evaluationItem.name ||
+                item.检测项目.includes(evaluationItem.name));
+
+              if (!matchedItem) {
+                // 如果没有找到匹配项，可以选择跳过或显示空值
+                return;
+              }
+
+              const value = matchedItem.评估值;
+              const rangeStr = matchedItem.参考范围;
+              const evaluation = matchedItem.结果评价;
+
+              // 获取状态信息
+              const status = this.getStatus(value, rangeStr);
+
+              // 如果数据中已有结果评价，更新状态文本
+              if (evaluation) {
+                status.text = evaluation;
+              }
+
+              const progressPercentage = this.calculateProgress(value, rangeStr);
+
+              const itemContainer = document.createElement('div');
+              itemContainer.className = 'vitamins-info-container';
+
+              const table = document.createElement('table');
+              table.className = 'vitamins-table min-w-full';
+
+              const dataRow = `
+              <tr>
+                <td class="py-2 px-4 text-left nutrition-first-column">
+                  <div class="chinese-text"><strong>${evaluationItem.displayName}</strong></div>
+                  <div class="latin-text">${evaluationItem.englishName}</div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-second-column">
+                  ${rangeStr.replace(/-/g, '-')}
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-third-column">
+                  <div class="flex items-center justify-center">
+                    <span>
+                      <strong>${value}</strong>
+                    </span>
+                  </div>
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressPercentage}%;
+                                height: 100%;
+                                background-color: ${status.color};
+                                transition: width 0.3s ease;">
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-fourth-column">
+                  <span style="color: ${status.color}">
+                    <strong>${status.text}</strong>
+                  </span>
+                </td>
+              </tr>
             `;
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
+              const descRow = this.createDescriptionRow(matchedItem);
 
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadVitaminsData);
+              table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+              itemContainer.appendChild(table);
+              fragment.appendChild(itemContainer);
+            });
+
+            container.appendChild(fragment);
+          },
+
+          // 加载数据
+          async loadData() {
+            try {
+              const response = await fetch(DATA_PATHS.DATA);
+              if (!response.ok) {
+                throw new Error(`Network response error: ${response.status}`);
+              }
+              const data = await response.json();
+              // 使用"维生素"数据
+              this.renderTable(data["营养评估"] || []);
+            } catch (error) {
+              console.error('Error loading vitamins data:', error);
+              document.getElementById('vitamins-data-table-body').innerHTML =
+                '<div class="no-data-message">暂无数据</div>';
+            }
+          },
+
+          // 初始化
+          init() {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          }
+        };
+
+        // 初始化维生素评估模块
+        VitaminsAssessment.init();
       </script>
-
     </div>
-
   </div>
 
   <!-- 氨基酸评估板块 -->
@@ -7652,20 +8109,24 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left first-column"
-              style="font-size: 11px;">
+          <th
+            class="py-2 px-4 text-left nutrition-first-column"
+            style="font-size: 13px;">
             氨基酸名称
           </th>
-          <th class="py-2 px-4 text-center second-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            正常范围
+          <th
+            class="py-2 px-4 text-center nutrition-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围
           </th>
-          <th class="py-2 px-4 text-center third-column"
-              style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center nutrition-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center fourth-column"
-              style="font-size: 11px; padding: 5px 5px;">
+          <th
+            class="py-2 px-4 text-center nutrition-fourth-column"
+            style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
         </tr>
@@ -7673,158 +8134,254 @@ ${d.summarized_health_index.gut_type.value ? `
       </table>
 
       <div id="amino-acids-data-table-body">
-        <!-- Data rows will be generated by Javascript code dynamically -->
+        <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
-    </div>
 
-    <script>
-      async function loadAminoAcidsData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          renderAminoAcidsTable(data.amino_acids_data);
-        } catch (error) {
-          console.error('Error loading amino acids data:', error);
-        }
-      }
+      <script>
+        // 氨基酸评估模块
+        const AminoAcidsAssessment = {
+          // 常量定义
+          CONSTANTS: {
+            COLORS: {
+              RED: '#ff4d4f',     // 缺乏（红色）
+              YELLOW: '#fadb14',  // 不足（黄色）
+              GREEN: '#389e0d',   // 正常（绿色）
+              BLUE: '#1890ff',    // 过量（蓝色）
+              PRIMARY: '#00B2B4'  // 主题色
+            },
+            // 定义需要显示的氨基酸指标列表
+            EVALUATION_ITEMS: [
+              { name: "苏氨酸", displayName: "苏氨酸", englishName: "Threonine" },
+              { name: "异亮氨酸", displayName: "异亮氨酸", englishName: "Isoleucine" },
+              { name: "亮氨酸", displayName: "亮氨酸", englishName: "Leucine" },
+              { name: "赖氨酸", displayName: "赖氨酸", englishName: "Lysine" },
+              { name: "蛋氨酸", displayName: "蛋氨酸", englishName: "Methionine" },
+              { name: "半胱氨酸", displayName: "半胱氨酸", englishName: "Cysteine" },
+              { name: "苯丙氨酸", displayName: "苯丙氨酸", englishName: "Phenylalanine" },
+              { name: "酪氨酸", displayName: "酪氨酸", englishName: "Tyrosine" },
+              { name: "缬氨酸", displayName: "缬氨酸", englishName: "Valine" },
+              { name: "组氨酸", displayName: "组氨酸", englishName: "Histidine" },
+              { name: "丙氨酸", displayName: "丙氨酸", englishName: "Alanine" },
+              { name: "谷氨酸", displayName: "谷氨酸", englishName: "Glutamic Acid" },
+              { name: "甘氨酸", displayName: "甘氨酸", englishName: "Glycine" },
+              { name: "脯氨酸", displayName: "脯氨酸", englishName: "Proline" },
+              { name: "丝氨酸", displayName: "丝氨酸", englishName: "Serine" },
+              { name: "色氨酸", displayName: "色氨酸", englishName: "Tryptophan" }
+            ]
+          },
 
-      function getStatusColor(value, deficiency, insufficiency, excess) {
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          yellow: '#fadb14',
-          green: '#389e0d',
-          blue: '#1890ff'
-        };
+          // 解析范围字符串
+          parseRange(rangeStr) {
+            if (!rangeStr || typeof rangeStr !== 'string') {
+              return { deficiency: 0, insufficiency: 0, excess: 100 };
+            }
 
-        if (value < deficiency) return CUSTOM_COLORS.red;
-        if (value < insufficiency) return CUSTOM_COLORS.yellow;
-        if (value < excess) return CUSTOM_COLORS.green;
-        return CUSTOM_COLORS.blue;
-      }
+            const parts = rangeStr.split('-');
+            return {
+              deficiency: parseFloat(parts[0] || 0),
+              insufficiency: parseFloat(parts[1] || 0),
+              excess: parseFloat(parts[2] || 100)
+            };
+          },
 
-      function getStatusText(value, deficiency, insufficiency, excess) {
-        if (value < deficiency) return '缺乏';
-        if (value < insufficiency) return '不足';
-        if (value < excess) return '正常';
-        return '过量';
-      }
+          // 获取状态信息
+          getStatus(value, rangeStr) {
+            const { deficiency, insufficiency, excess } = this.parseRange(rangeStr);
 
-      function getStatusIcon(status) {
-        if (status === '缺乏' || status === '不足') {
-          return '<i class="fas fa-arrow-down ml-1"></i>';
-        } else if (status === '过量') {
-          return '<i class="fas fa-arrow-up ml-1"></i>';
-        }
-        return '';
-      }
+            // 处理非数值情况，如 "ND"（未检出）
+            if (value === "ND" || isNaN(parseFloat(value))) {
+              return {
+                color: this.CONSTANTS.COLORS.GREEN,
+                text: '正常',
+                isNormal: true,
+                icon: ''
+              };
+            }
 
-      function calculateProgressPercentage(value, excess) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
-        const percentage = (value / excess) * 50; // 最大宽度设为50%
-        return Math.max(5, Math.min(50, percentage));
-      }
+            const numValue = parseFloat(value);
 
-      function renderAminoAcidsTable(aminoacidsData) {
-        const container = document.getElementById('amino-acids-data-table-body');
-        if (!container) {
-          console.error('Amino acids table body not found');
-          return;
-        }
+            let status = {
+              color: this.CONSTANTS.COLORS.GREEN,
+              text: '正常',
+              isNormal: true,
+              icon: ''
+            };
 
-        container.innerHTML = '';
+            if (numValue < deficiency) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '缺乏';
+              status.isNormal = false;
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+            } else if (numValue < insufficiency) {
+              status.color = this.CONSTANTS.COLORS.YELLOW;
+              status.text = '不足';
+              status.isNormal = false;
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+            } else if (numValue >= excess) {
+              status.color = this.CONSTANTS.COLORS.BLUE;
+              status.text = '过量';
+              status.isNormal = false;
+              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
+            }
 
-        aminoacidsData.forEach(aminoacids => {
-          const aminoAcidsContainer = document.createElement('div');
-          aminoAcidsContainer.className = 'bacteria-info-container';
+            return status;
+          },
 
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
+          // 计算进度条百分比
+          calculateProgress(value, rangeStr) {
+            if (value === "ND" || isNaN(parseFloat(value))) return 0;
 
-          const status = getStatusText(
-            aminoacids.Evaluation_value,
-            aminoacids.normal_range.Deficiency,
-            aminoacids.normal_range.Insufficiency,
-            aminoacids.normal_range.Excess
-          );
-          const isNormal = status === '正常';
+            const numValue = parseFloat(value);
+            if (numValue === 0) return 0;
 
-          const dataRow = `
-        <tr class="amino-acids-data-row">
-          <td class="py-2 px-4 text-left first-column">
-            <div class="chinese-text">${aminoacids.chinese_name}</div>
-            <div class="latin-text">${aminoacids.english_name}</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
-            ${[
-            aminoacids.normal_range.Deficiency ?? 0,
-            aminoacids.normal_range.Insufficiency ?? 0,
-            aminoacids.normal_range.Excess ?? 0
-          ].join('-')}
-          </td>
-          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
-            ${aminoacids.Evaluation_value}
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(aminoacids.Evaluation_value, aminoacids.normal_range.Excess)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center column-text" style="font-size: 0.65rem;">
-            <span style="color: ${getStatusColor(
-            aminoacids.Evaluation_value,
-            aminoacids.normal_range.Deficiency,
-            aminoacids.normal_range.Insufficiency,
-            aminoacids.normal_range.Excess
-          )}; font-weight: bold;">
-              ${status}${getStatusIcon(status)}
-            </span>
-          </td>
-        </tr>
-      `;
+            const { excess } = this.parseRange(rangeStr);
 
-          const filteredDescriptions = aminoacids.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+            // 计算进度条宽度，最大宽度设为50%
+            const percentage = (numValue / excess) * 50;
+            return Math.max(5, Math.min(50, percentage));
+          },
 
-          const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="amino-acids-data-row">
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600 mt-0.5" style="font-size: 10px;">
-              ${filteredDescriptions.map(desc => `
-                <div class="flex items-start">
-                  <div class="ml-1">
-                    <p>
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
-                         style="color: ${desc.color};">
-                      </i>
-                      ${desc.text}
-                      <ul class="list-disc ml-5" style="margin-top: 10px; margin-bottom: -5px;">
-                        <li><strong>超标的影响：</strong> 超标可能导致健康风险，包括但不限于心脏病、高血压及其他代谢性疾病。</li>
-                        <li><strong>偏低的影响：</strong> 偏低的水平可能导致营养不足、免疫力下降以及其他相关健康问题。</li>
-                      </ul>
-                    </p>
+          // 创建描述行
+          createDescriptionRow(item) {
+            if (!item || !item.说明) {
+              return '';
+            }
+
+            return `
+            <tr class="amino-acids-desc-row">
+              <td colspan="4" class="py-2 px-4 text-left">
+                <div class="description-container text-gray-600" style="font-size: 10px;">
+                  <div class="flex items-start">
+                    <div class="ml-1">
+                      <p>
+                        <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
+                        ${item.说明}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </td>
+            </tr>
+          `;
+          },
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          aminoAcidsContainer.appendChild(table);
-          container.appendChild(aminoAcidsContainer);
-        });
-      }
+          // 渲染表格
+          renderTable(aminoacidsData) {
+            const container = document.getElementById('amino-acids-data-table-body');
+            if (!container) {
+              console.error('Container element not found');
+              return;
+            }
+            container.innerHTML = '';
 
-      // 页面加载时加载数据
-      document.addEventListener('DOMContentLoaded', loadAminoAcidsData);
-    </script>
+            if (!aminoacidsData || !Array.isArray(aminoacidsData) || aminoacidsData.length === 0) {
+              container.innerHTML = '<div class="no-data-message">暂无数据</div>';
+              return;
+            }
 
+            const fragment = document.createDocumentFragment();
+
+            // 遍历我们定义的评估项目列表
+            this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
+              // 从数据中查找匹配的项目
+              const matchedItem = aminoacidsData.find(item =>
+                item.检测项目 === evaluationItem.name ||
+                item.检测项目.includes(evaluationItem.name));
+
+              if (!matchedItem) {
+                // 如果没有找到匹配项，可以选择跳过或显示空值
+                return;
+              }
+
+              const value = matchedItem.评估值;
+              const rangeStr = matchedItem.参考范围;
+              const evaluation = matchedItem.结果评价;
+
+              // 获取状态信息
+              const status = this.getStatus(value, rangeStr);
+
+              // 如果数据中已有结果评价，更新状态文本
+              if (evaluation) {
+                status.text = evaluation;
+              }
+
+              const progressPercentage = this.calculateProgress(value, rangeStr);
+
+              const itemContainer = document.createElement('div');
+              itemContainer.className = 'amino-acids-info-container';
+
+              const table = document.createElement('table');
+              table.className = 'amino-acids-table min-w-full';
+
+              const dataRow = `
+              <tr>
+                <td class="py-2 px-4 text-left nutrition-first-column">
+                  <div class="chinese-text"><strong>${evaluationItem.displayName}</strong></div>
+                  <div class="latin-text">${evaluationItem.englishName}</div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-second-column" style="font-size: 0.65rem;">
+                  ${rangeStr.replace(/-/g, '-')}
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-third-column" style="font-size: 0.65rem;">
+                  <div class="flex items-center justify-center">
+                    <span>
+                      <strong>${value}</strong>
+                    </span>
+                  </div>
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressPercentage}%;
+                                height: 100%;
+                                background-color: ${status.color};
+                                transition: width 0.3s ease;">
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center nutrition-column-text nutrition-fourth-column" style="font-size: 0.65rem;">
+                  <span style="color: ${status.color}">
+                    <strong>${status.text}${status.icon}</strong>
+                  </span>
+                </td>
+              </tr>
+            `;
+
+              const descRow = this.createDescriptionRow(matchedItem);
+
+              table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
+              itemContainer.appendChild(table);
+              fragment.appendChild(itemContainer);
+            });
+
+            container.appendChild(fragment);
+          },
+
+          // 加载数据
+          async loadData() {
+            try {
+              const response = await fetch(DATA_PATHS.DATA);
+              if (!response.ok) {
+                throw new Error(`Network response error: ${response.status}`);
+              }
+              const data = await response.json();
+              // 使用"氨基酸"数据
+              this.renderTable(data["营养评估"] || []);
+            } catch (error) {
+              console.error('Error loading amino acids data:', error);
+              document.getElementById('amino-acids-data-table-body').innerHTML =
+                '<div class="no-data-message">暂无数据</div>';
+            }
+          },
+
+          // 初始化
+          init() {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          }
+        };
+
+        // 初始化氨基酸评估模块
+        AminoAcidsAssessment.init();
+      </script>
+    </div>
   </div>
 
   <!-- 慢病整体对比图示 -->
@@ -8680,10 +9237,6 @@ ${d.summarized_health_index.gut_type.value ? `
             </ul>
           </li>
           <li class="answer-text">
-            <strong>超过%的人：</strong>
-            这一列展示了该菌群的检测丰度水平超过了多少同样进行过检测的人群比例。这一数据可以帮助您了解该菌群丰度在大人群中的分布情况。
-          </li>
-          <li class="answer-text">
             <strong>相关性：</strong>
             这一列标示该菌群丰度与特定疾病相关症状之间的关系。
             <ul style="margin-left: 30px; margin-top:5px; list-style-type: disc;">
@@ -8842,19 +9395,29 @@ ${d.summarized_health_index.gut_type.value ? `
         <tr style="background-color: #00B2B4; color: white;">
           <th
             class="py-2 px-4 text-left obesity-first-column"
-            style="font-size: 13px;">肥胖相关菌名称</th>
+            style="font-size: 13px;">
+            肥胖相关菌名称
+          </th>
           <th
             class="py-2 px-4 text-center obesity-second-column"
-            style="font-size: 13px; padding: 5px 5px;">参考范围%</th>
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
+          </th>
           <th
             class="py-2 px-4 text-center obesity-third-column"
-            style="font-size: 13px; padding: 5px 5px;">检测丰度%</th>
+            style="font-size: 13px; padding: 5px 5px;">
+            检测丰度%
+          </th>
           <th
             class="py-2 px-4 text-center obesity-fourth-column"
-            style="font-size: 13px; padding: 5px 5px;">相关性</th>
+            style="font-size: 13px; padding: 5px 5px;">
+            相关性
+          </th>
           <th
             class="py-2 px-4 text-center obesity-fifth-column"
-            style="font-size: 13px; padding: 5px 5px;">相关性强度</th>
+            style="font-size: 13px; padding: 5px 5px;">
+            相关性强度
+          </th>
         </tr>
         </thead>
       </table>

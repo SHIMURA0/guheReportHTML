@@ -117,7 +117,7 @@ strong, b {
   }
 
   @page {
-    margin: 20mm 10mm 10mm 10mm; /* 上、右、下、左 */
+    margin: 20mm 10mm 15mm 10mm; /* 上、右、下、左 */
   }
 
   .page-break {
@@ -134,18 +134,20 @@ strong, b {
   .bacteria-info-container:first-child .bacteria-table tr:first-child td {
     padding-top: 8px; /* 增加第一行数据的顶部内边距 */
   }
-  .description-container {
-    page-break-inside: avoid !important; /* 防止在打印时分页 */
-  }
+  /*.description-container {*/
+  /*  page-break-inside: avoid !important; !* 防止在打印时分页 *!*/
+  /*}*/
   .bacteria-info-container {
-    page-break-inside: avoid !important; /* 防止在打印时分页 */
-    break-inside: avoid !important; /* 现代浏览器支持 */
-    /* 添加以下样式 */
-    min-height: fit-content;    /* 确保容器高度适应内容 */
-    /*overflow: visible;          !* 防止内容被截断 *!*/
-    margin-bottom: -2px;         /* 增加一点间距，避免临界值问题 */
-    /*margin-top: 5px; !* 添加上边距 *!*/
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    /* 移除keep-with-next，它可能与其他属性冲突 */
+    display: table !important; /* 强制作为一个整体 */
+    width: 100%;
+    box-decoration-break: clone;
+    position: relative; /* 增加定位上下文 */
+    overflow: visible;
   }
+
   .metabolites-info-container {
     page-break-inside: avoid !important; /* 防止在打印时分页 */
     break-inside: avoid !important; /* 现代浏览器支持 */
@@ -1539,18 +1541,41 @@ tr {
 
 /* 营养板块 ： 营养表格列样式 */
 
+/* 免疫板块 ： 表格样式 */
+
 .nutrition-first-column {
-  width: 25%; /* 菌种名称需要足够空间显示中英文 */
+  width: 28%;
 }
 .nutrition-second-column {
-  width: 30%; /* 正常范围数值 */
+  width: 28%;
 }
 .nutrition-third-column {
-  width: 25%; /* 检测丰度+进度条需要较大空间 */
+  width: 23.5%;
 }
 .nutrition-fourth-column {
-  width: 20%; /* 结果评价 */
+  width: 21.5%;
 }
+.nutrition-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 免疫板块表格第一列中的英文名样式 */
+.nutrition-english-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.nutrition-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
+
 
 
 /* 慢病风险评估板块 */
@@ -1628,7 +1653,7 @@ tr {
 .disease-card {
   display: flex;
   align-items: stretch;  /* 改为stretch，使子元素高度相等 */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   gap: 10px;
   min-height: 80px;    /* 设置最小高度 */
 }
