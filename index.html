@@ -5417,19 +5417,19 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left other-microbial-metabolites-first-column"
+          <th class="py-2 px-4 text-left gut-microbial-metabolites-first-column"
               style="font-size: 13px;">
             菌群代谢物名称
           </th>
-          <th class="py-2 px-4 text-center other-microbial-metabolites-second-column"
+          <th class="py-2 px-4 text-center gut-microbial-metabolites-second-column"
               style="font-size: 13px; padding: 5px 5px;">
             参考范围
           </th>
-          <th class="py-2 px-4 text-center other-microbial-metabolites-third-column"
+          <th class="py-2 px-4 text-center gut-microbial-metabolites-third-column"
               style="font-size: 13px; padding: 5px 5px;">
             评估数值
           </th>
-          <th class="py-2 px-4 text-center other-microbial-metabolites-fourth-column"
+          <th class="py-2 px-4 text-center gut-microbial-metabolites-fourth-column"
               style="font-size: 13px; padding: 5px 5px;">
             评估结果
           </th>
@@ -5694,14 +5694,14 @@ ${d.summarized_health_index.gut_type.value ? `
 
               const dataRow = `
               <tr class="metabolites-row">
-                <td class="py-2 px-4 text-left other-microbial-metabolites-first-column">
-                  <div class="chinese-text">${chineseName}</div>
-                  ${englishName ? `<div class="latin-text">${englishName}</div>` : ''}
+                <td class="py-2 px-4 text-left gut-microbial-metabolites-first-column">
+                  <div class="gut-microbial-metabolites-chinese-text">${chineseName}</div>
+                  ${englishName ? `<div class="gut-microbial-metabolites-english-text">${englishName}</div>` : ''}
                 </td>
-                <td class="py-2 px-4 text-center column-text other-microbial-metabolites-second-column" style="font-size: 0.65rem;">
+                <td class="py-2 px-4 text-center gut-microbial-metabolites-column-text gut-microbial-metabolites-second-column" style="font-size: 0.65rem;">
                   ${rangeStr}
                 </td>
-                <td class="py-2 px-4 text-center column-text other-microbial-metabolites-third-column" style="font-size: 0.65rem;">
+                <td class="py-2 px-4 text-center gut-microbial-metabolites-column-text gut-microbial-metabolites-third-column" style="font-size: 0.65rem;">
                   <div class="flex items-center justify-center">
                     <span style="color: ${status.color}; font-weight: bold;">
                       ${formattedValue}${status.icon}
@@ -5716,7 +5716,7 @@ ${d.summarized_health_index.gut_type.value ? `
                     </div>
                   </div>
                 </td>
-                <td class="py-2 px-4 text-center bold-text column-text other-microbial-metabolites-fourth-column" style="font-size: 0.65rem;">
+                <td class="py-2 px-4 text-center bold-text gut-microbial-metabolites-column-text gut-microbial-metabolites-fourth-column" style="font-size: 0.65rem;">
                   <span style="color: ${status.color}; font-weight: bold;">
                     ${status.text}
                   </span>

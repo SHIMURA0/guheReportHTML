@@ -1311,17 +1311,37 @@ tr {
 
 /* 菌群代谢物及神经递质评估板块 : 其他代谢物 */
 
-.other-microbial-metabolites-first-column { /* 其他代谢物名称 */
+.gut-microbial-metabolites-first-column { /* 其他代谢物名称 */
   width: 25%;
 }
-.other-microbial-metabolites-second-column { /* 参考范围 */
+.gut-microbial-metabolites-second-column { /* 参考范围 */
   width: 25%;
 }
-.other-microbial-metabolites-third-column { /* 评估数值 */
+.gut-microbial-metabolites-third-column { /* 评估数值 */
   width: 25%;
 }
-.other-microbial-metabolites-fourth-column { /* 评估结果 */
+.gut-microbial-metabolites-fourth-column { /* 评估结果 */
   width: 25%;
+}
+
+.gut-microbial-metabolites-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 免疫板块表格第一列中的英文名样式 */
+.gut-microbial-metabolites-english-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.gut-microbial-metabolites-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
 .metabolites-info-container {
