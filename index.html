@@ -67,6 +67,99 @@
 <!-- 页面主体 -->
 <body class="bg-white p-6">
 
+  <!-- 阅读指南和免责声明 -->
+
+  <h1 class="custom-title-second-level page-break">报告阅读指南</h1>
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            本宏基因组报告旨在提供对您肠道中微生物群落的全面分析与理解。以下是一些关于宏基因组的基本概念，技术解析和注意事项。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 问答信息框 -->
+    <div class="qa-box">
+      <div class="flex items-start ml-2">
+        <p class="text-lg font-bold text-lightpurple">
+          <i class="fas fa-question-circle icon icon-purple"></i>
+          什么是肠道菌群的宏基因组？和16S有什么区别？
+        </p>
+      </div>
+      <div class="flex items-start ml-2 mt-2">
+        <p class="answer-text">
+          <i class="fas fa-comments icon icon-orange"></i>
+          肠道菌群的宏基因组是指从肠道微生物群体中提取的所有微生物（如细菌、古菌、真菌和病毒等）的遗传物质（DNA）进行分析和研究的领域。宏基因组则提供更为详尽和全面的微生物分析，可以揭示真菌，病毒，此外可以识别毒理和耐药基因，而16S rRNA有着更大的样本积累和数据库支持，更侧重于分类学上的信息，适合用作微生物群落的初步分析。
+        </p>
+      </div>
+    </div>
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-exclamation-triangle" style="color: orange;"></i>
+            <strong>特别注意：</strong>本报告采用高通量测序对肠道菌群进行宏基因组检测，然后使用大数据和人工智能技术对各项指标进行评估，以下是您在阅读报告时要注意的事项：
+          </p>
+          <ul class="list-disc ml-5">
+            <li>
+              <strong>结果的解读并非绝对</strong>：
+              <ul class="list-disc ml-5">
+                <li>报告中的数据和分析结果只是对您肠道菌群的一个快照，它们可能会受到多种因素的影响，如饮食、生活方式、地理环境等。因此，请保持对结果的审慎态度，不要将其视为绝对的健康指标。</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>个体差异</strong>：
+              <ul class="list-disc ml-5">
+                <li>肠道菌群的构成因人而异，个体差异可能会导致相同的微生物组成在不同人群中的健康影响不同。</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>技术和方法的限制</strong>：
+              <ul class="list-disc ml-5">
+                <li>尽管高通量测序和人工智能技术能提供强大的分析能力，但这些技术也有局限性。例如，某些微生物可能在样本处理中丢失，或存在序列的拼接误差，这可能导致结果的不准确性或偏差。</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>临床相关性并不确定</strong>：
+              <ul class="list-disc ml-5">
+                <li>报告可能会提到与某些健康状况的相关性，但关联并不等于因果关系。个别结果需结合您的整体健康状况和其他临床因素进行判断，而不是单一指标决定健康状况。</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>避免过度解读</strong>：
+              <ul class="list-disc ml-5">
+                <li>有些微小的变化可能并不具有临床意义。</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>跟踪研究的重要性</strong>：
+              <ul class="list-disc ml-5">
+                <li>肠道菌群是动态的，定期监测和跟踪会提供更好的健康状态评估。单次测试结果的意义有限，尤其是在没有长期数据对比的情况下。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <!-- 宏基因组检测报告总结页 -->
 
   <!-- h1标题：使用自定义样式类custom-title-first-level来定制"宏基因组检测报告"的样式 -->
@@ -777,116 +870,23 @@ ${d.summarized_health_index.gut_type.value ? `
 
   <!-- 宏基因组报告阅读指南 -->
 
-<!--  <div class="pt-[5mm] page-break">-->
-  <h1 class="custom-title-second-level page-break">报告阅读指南</h1>
-
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
-            本宏基因组报告旨在提供对您肠道中微生物群落的全面分析与理解。以下是一些关于宏基因组的基本概念，技术解析和注意事项。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 问答信息框 -->
-    <div class="qa-box">
-      <div class="flex items-start ml-2">
-        <p class="text-lg font-bold text-lightpurple">
-          <i class="fas fa-question-circle icon icon-purple"></i>
-          什么是肠道菌群的宏基因组？和16S有什么区别？
-        </p>
-      </div>
-      <div class="flex items-start ml-2 mt-2">
-        <p class="answer-text">
-          <i class="fas fa-comments icon icon-orange"></i>
-          肠道菌群的宏基因组是指从肠道微生物群体中提取的所有微生物（如细菌、古菌、真菌和病毒等）的遗传物质（DNA）进行分析和研究的领域。宏基因组报告提供更为详尽和全面的微生物分析，可以揭示微生物的功能和相互作用，而16S rRNA报告则更侧重于分类学上的信息，适合用作微生物群落的初步分析。
-        </p>
-      </div>
-    </div>
-
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            <i class="fas fa-exclamation-triangle" style="color: orange;"></i>
-            <strong>特别注意：</strong>本报告采用高通量测序对肠道菌群进行宏基因组检测，然后使用大数据和人工智能技术对各项指标进行评估，以下是您在阅读报告时要注意的事项：
-          </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>结果的解读并非绝对</strong>：
-              <ul class="list-disc ml-5">
-                <li>报告中的数据和分析结果只是对您肠道菌群的一个快照，它们可能会受到多种因素的影响，如饮食、生活方式、地理环境等。因此，请保持对结果的审慎态度，不要将其视为绝对的健康指标。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>个体差异</strong>：
-              <ul class="list-disc ml-5">
-                <li>肠道菌群的构成因人而异，个体差异可能会导致相同的微生物组成在不同人群中的健康影响截然不同。因此，报告中某些相关性的普遍性可能无法适用于每个人。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>技术和方法的限制</strong>：
-              <ul class="list-disc ml-5">
-                <li>尽管高通量测序和人工智能技术能提供强大的分析能力，但这些技术也有局限性。例如，某些微生物可能在样本处理中丢失，或存在序列的拼接错误，这可能导致结果的不准确性或偏差。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>功能预测的局限性</strong>：
-              <ul class="list-disc ml-5">
-                <li>报告中对微生物功能的预测基于已有数据库和算法，这些预测并不一定能准确反映微生物的实际生理功能。请谨慎对待这些预测，尤其是在临床决策时。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>临床相关性并不确定</strong>：
-              <ul class="list-disc ml-5">
-                <li>报告可能会提到与某些健康状况的相关性，但关联并不等于因果关系。个别结果需结合您的整体健康状况和其他临床因素进行判断，而不是单一指标决定健康状况。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>避免过度解读</strong>：
-              <ul class="list-disc ml-5">
-                <li>有些微小的变化可能并不具有临床意义。</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>跟踪研究的重要性</strong>：
-              <ul class="list-disc ml-5">
-                <li>肠道菌群是动态的，定期监测和跟踪会提供更好的健康状态评估。单次测试结果的意义有限，尤其是在没有长期数据对比的情况下。</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
   <!-- 肠道整体评估板块 -->
   <h2 class="custom-title-second-level page-break">肠道整体评估</h2>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
+
     <!-- 信息框 -->
     <div class="info-box">
       <div class="flex items-start">
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            本部分总结了您本次肠道菌群检测的整体关键指标，主要涵盖以下两个核心维度：
+            <span style="color: #00B2B4;">本部分总结了您本次肠道菌群检测的整体关键指标，主要涵盖以下两个核心维度：</span>
           </p>
           <ul class="list-disc ml-5">
-            <li><strong>肠道基础功能：</strong> 评估肠道的基本生理功能，包括：
+            <li><strong style="color: #00B2B4;">肠道基础功能：</strong> 评估肠道的基本生理功能，包括：
               <ul class="list-disc ml-5">
                 <li>
                   蛋白质发酵能力：测定肠道中细菌对蛋白质的发酵和利用能力，反映肠道微生物的代谢功能。
@@ -907,7 +907,7 @@ ${d.summarized_health_index.gut_type.value ? `
             </li>
           </ul>
           <ul class="list-disc ml-5">
-            <li><strong>肠道菌群整体：</strong> 评估肠道菌群的整体功能状态，包括：
+            <li><strong style="color: #00B2B4;">肠道菌群整体：</strong> 评估肠道菌群的整体功能状态，包括：
               <ul class="list-disc ml-5">
                 <li>
                   菌种数量：反映肠道中微生物菌种的多样性，多样性越高，通常代表健康的肠道环境。
@@ -955,7 +955,9 @@ ${d.summarized_health_index.gut_type.value ? `
   <!-- 肠道整体评估 : 肠道基础功能评估 -->
   <h3 class="custom-title-third-level page-break">肠道基础功能评估</h3>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
 
     <!-- 信息框 -->
     <div class="info-box">
@@ -1006,7 +1008,7 @@ ${d.summarized_health_index.gut_type.value ? `
         CONSTANTS: {
           COLORS: {
             RED: '#ff4d4f',
-            GREEN: '#389e0d',
+            GREEN: '#52c41a',
             GRAY: '#808080',
             PRIMARY: '#00B2B4'
           },
@@ -1087,7 +1089,7 @@ ${d.summarized_health_index.gut_type.value ? `
 
         // 创建描述行
         createDescriptionRow(item) {
-          if (!item || !item.说明) {
+          if (!item || !item["说明"]) {
             return '';
           }
 
@@ -1098,8 +1100,11 @@ ${d.summarized_health_index.gut_type.value ? `
                 <div class="flex items-start mb-0">
                   <div class="ml-1">
                     <p>
-                      <i class="fas fa-info-circle" style="color: ${this.CONSTANTS.COLORS.PRIMARY};"></i>
-                      ${item.说明}
+                      <i
+                        class="fas fa-info-circle"
+                        style="color: ${this.CONSTANTS.COLORS.PRIMARY};">
+                      </i>
+                      ${item["说明"]}
                     </p>
                   </div>
                 </div>
@@ -1139,9 +1144,9 @@ ${d.summarized_health_index.gut_type.value ? `
               return;
             }
 
-            const value = matchedItem.评估值;
-            const rangeStr = matchedItem.参考范围;
-            const evaluation = matchedItem.结果评价;
+            const value = matchedItem["评估值"];
+            const rangeStr = matchedItem["参考范围"];
+            const evaluation = matchedItem["结果评价"];
 
             // 根据评估值和参考范围判断状态
             const status = this.getStatus(value, rangeStr);
@@ -1166,36 +1171,40 @@ ${d.summarized_health_index.gut_type.value ? `
             table.className = 'basic-function-table min-w-full';
 
             const dataRow = `
-            <tr>
-              <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
-                <div class="basic-function-of-gut-chinese-text"><strong>${functionItem.name}</strong></div>
-                <div class="basic-function-of-gut-english-text">${functionItem.englishName}</div>
-              </td>
-              <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-second-column">
-                ${rangeStr}
-              </td>
-              <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-third-column">
-                <div class="flex items-center justify-center">
-                  <span style="color: ${status.valueColor}">
-                    <strong>${value}${status.icon}</strong>
-                  </span>
-                </div>
-                <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                  <div class="progress"
-                       style="width: ${progressPercentage}%;
-                              height: 100%;
-                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.GREEN : this.CONSTANTS.COLORS.RED};
-                              transition: width 0.3s ease;">
+              <tr>
+                <td class="py-2 px-4 text-left basic-function-of-gut-first-column">
+                  <div class="basic-function-of-gut-chinese-text">
+                    <strong>${functionItem.name}</strong>
                   </div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-fourth-column">
-                <span style="color: ${status.color}">
-                  <strong>${status.text}</strong>
-                </span>
-              </td>
-            </tr>
-          `;
+                  <div class="basic-function-of-gut-english-text">
+                    ${functionItem.englishName}
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-second-column">
+                  ${rangeStr}
+                </td>
+                <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-third-column">
+                  <div class="flex items-center justify-center">
+                    <span style="color: ${status.valueColor}">
+                      <strong>${value}${status.icon}</strong>
+                    </span>
+                  </div>
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressPercentage}%;
+                                height: 100%;
+                                background-color: ${status.isNormal ? this.CONSTANTS.COLORS.GREEN : this.CONSTANTS.COLORS.RED};
+                                transition: width 0.3s ease;">
+                    </div>
+                  </div>
+                </td>
+                <td class="py-2 px-4 text-center basic-function-of-gut-column-text basic-function-of-gut-fourth-column">
+                  <span style="color: ${status.color}">
+                    <strong>${status.text}</strong>
+                  </span>
+                </td>
+              </tr>
+            `;
 
             const descRow = this.createDescriptionRow(matchedItem);
 
@@ -1285,13 +1294,13 @@ ${d.summarized_health_index.gut_type.value ? `
         CONSTANTS: {
           COLORS: {
             RED: '#ff4d4f',
-            GREEN: '#389e0d',
+            GREEN: '#52c41a',
             GRAY: '#808080',
             PRIMARY: '#00B2B4'
           },
           // 定义我们需要显示的菌群整体评估项目列表
           EVALUATION_ITEMS: [
-            { name: "菌种数量", englishName: "Gut microbial species count" },
+            { name: "菌种数量", englishName: "Gut microbial count" },
             { name: "菌种多样性", englishName: "Gut microbial diversity" },
             { name: "菌群平衡", englishName: "Gut microbiota balance" },
             { name: "菌群恢复力", englishName: "Gut microbial resilience" },
@@ -5089,313 +5098,6 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
   </div>
-
-  <!-- 菌群代谢物及神经递质评估板块 : 有机酸评估 -->
-
-  <h2 class="custom-title-1 page-break">短链脂肪酸评估</h2>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            有机酸类代谢物是由肠道微生物发酵碳水化合物和蛋白质产生的重要中间产物。这些物质参与能量代谢、神经传导和免疫调节等多个生理过程。通过检测这些指标，可以评估肠道微生物的代谢活性和宿主健康状况。
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="rounded-table">
-      <table class="min-w-full">
-        <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">短链脂肪酸名称</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">结果评价</th>
-        </tr>
-        </thead>
-        <tbody id="organic-acids-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
-      </table>
-
-      <script>
-        async function loadOrganicAcidsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderOrganicAcidsTable(data.organic_acids_data);
-          } catch (error) {
-            console.error('Error loading organic acids data:', error);
-          }
-        }
-
-        function renderOrganicAcidsTable(organicacidsData) {
-          const tableBody = document.getElementById('organic-acids-data-table-body');
-          if (!tableBody) {
-            console.error('Organic acids table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          organicacidsData.forEach(acid => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('organic-acids-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${acid.chinese_name}</div>
-                <div class="latin-text">${acid.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${acid.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${acid.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${acid.progress_percentage}%;"></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${acid.evaluation.color}-600 column-text">
-                ${acid.evaluation.status}
-              </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('organic-acids-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${acid.descriptions.map(desc => `
-                    <div class="organic-acids-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadOrganicAcidsData);
-      </script>
-
-    </div>
-  </div>
-
-  <!-- 菌群代谢物及神经递质评估板块 : 神经活性物质评估 -->
-
-  <h2 class="custom-title-1 page-break">神经活性物质评估</h2>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            神经活性物质是一类在神经系统中发挥重要作用的化学物质，包括神经递质和激素。这些物质参与调节情绪、认知、行为和内分泌功能。通过检测这些指标，可以评估神经系统功能状态和神经内分泌平衡。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="rounded-table">
-      <table class="min-w-full">
-        <thead>
-        <tr class="bg-teal-600 text-white">
-          <th class="py-2 px-4 text-left microbial-metabolites-first-column">神经活性物质名称</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>
-          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>
-        </tr>
-        </thead>
-        <tbody id="neuroactive-substances-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
-      </table>
-
-      <script>
-        async function loadNeuroActiveData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderNeuroActiveTable(data.neuroactive_substances_data);
-          } catch (error) {
-            console.error('Error loading neuroactive-substances data:', error);
-          }
-        }
-
-        function renderNeuroActiveTable(organicacidsData) {
-          const tableBody = document.getElementById('neuroactive-substances-data-table-body');
-          if (!tableBody) {
-            console.error('Neuroactive-substances table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          organicacidsData.forEach(neuroactive => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('neuroactive-substances-data-row');
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left first-column">
-                <div class="chinese-text">${neuroactive.chinese_name}</div>
-                <div class="latin-text">${neuroactive.latin_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center column-text">${neuroactive.normal_range}</td>
-              <td class="py-2 px-4 text-center column-text">
-                ${neuroactive.detected_abundance}
-                <div class="progress-bar w-full mt-1">
-                  <div class="progress" style="width: ${neuroactive.progress_percentage}%;"></div>
-                </div>
-              </td>
-              <td class="py-2 px-4 text-center bold-text text-${neuroactive.evaluation.color}-600 column-text">
-                ${neuroactive.evaluation.status}
-              </td>
-            `;
-
-            // 创建描述行
-            const descRow = document.createElement('tr');
-            descRow.classList.add('neuroactive-substances-data-row');
-            descRow.innerHTML = `
-              <td colspan="6" class="py-2 px-4 text-left">
-                <div class="description-container text-gray-600">
-                  ${neuroactive.descriptions.map(desc => `
-                    <div class="organic-acids-description">
-                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"
-                         style="color: ${desc.color};"></i>
-                      ${desc.text}
-                    </div>
-                  `).join('')}
-                </div>
-              </td>
-            `;
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-            tableBody.appendChild(descRow);
-          });
-        }
-
-        // 页面加载时加载有机酸数据
-        document.addEventListener('DOMContentLoaded', loadNeuroActiveData);
-      </script>
-
-    </div>
-  </div>
-
-  <!-- 菌群代谢物及神经递质评估板块 : 含氮/含硫化合物评估物质 -->
-
-<!--  <h2 class="custom-title-1 page-break">含氮/含硫化合物评估</h2>-->
-<!--  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
-<!--    &lt;!&ndash; 信息框 &ndash;&gt;-->
-<!--    <div class="info-box">-->
-<!--      <div class="flex items-start">-->
-<!--        <i class="fas fa-info-circle icon"></i>-->
-<!--        <div class="ml-2">-->
-<!--          <p class="text-lg text-custom-teal">-->
-<!--            神经活性物质是一类在神经系统中发挥重要作用的化学物质，包括神经递质和激素。这些物质参与调节情绪、认知、行为和内分泌功能。通过检测这些指标，可以评估神经系统功能状态和神经内分泌平衡。-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="rounded-table">-->
-<!--      <table class="min-w-full">-->
-<!--        <thead>-->
-<!--        <tr class="bg-teal-600 text-white">-->
-<!--          <th class="py-2 px-4 text-left microbial-metabolites-first-column">化合物名称</th>-->
-<!--          <th class="py-2 px-4 text-center microbial-metabolites-second-column">正常范围</th>-->
-<!--          <th class="py-2 px-4 text-center microbial-metabolites-third-column">评估数值</th>-->
-<!--          <th class="py-2 px-4 text-center microbial-metabolites-fourth-column">评估结果</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="compounds-data-table-body">-->
-<!--        &lt;!&ndash; 数据将通过 JavaScript 动态插入 &ndash;&gt;-->
-<!--        </tbody>-->
-<!--      </table>-->
-
-<!--      <script>-->
-<!--        async function loadCompoundsData() {-->
-<!--          try {-->
-<!--            const response = await fetch(DATA_PATHS.DATA);-->
-<!--            const data = await response.json();-->
-<!--            renderCompoundsTable(data.compounds_data);-->
-<!--          } catch (error) {-->
-<!--            console.error('Error loading compounds data:', error);-->
-<!--          }-->
-<!--        }-->
-
-<!--        function renderCompoundsTable(organicacidsData) {-->
-<!--          const tableBody = document.getElementById('compounds-data-table-body');-->
-<!--          if (!tableBody) {-->
-<!--            console.error('Compounds table body not found');-->
-<!--            return;-->
-<!--          }-->
-
-<!--          tableBody.innerHTML = '';-->
-
-<!--          organicacidsData.forEach(compounds => {-->
-<!--            // 创建数据行-->
-<!--            const dataRow = document.createElement('tr');-->
-<!--            dataRow.classList.add('compounds-data-row');-->
-<!--            dataRow.innerHTML = `-->
-<!--              <td class="py-2 px-4 text-left first-column">-->
-<!--                <div class="chinese-text">${compounds.chinese_name}</div>-->
-<!--                <div class="latin-text">${compounds.latin_name}</div>-->
-<!--              </td>-->
-<!--              <td class="py-2 px-4 text-center column-text">${compounds.normal_range}</td>-->
-<!--              <td class="py-2 px-4 text-center column-text">-->
-<!--                ${compounds.detected_abundance}-->
-<!--                <div class="progress-bar w-full mt-1">-->
-<!--                  <div class="progress" style="width: ${compounds.progress_percentage}%;"></div>-->
-<!--                </div>-->
-<!--              </td>-->
-<!--              <td class="py-2 px-4 text-center bold-text text-${compounds.evaluation.color}-600 column-text">-->
-<!--                ${compounds.evaluation.status}-->
-<!--              </td>-->
-<!--            `;-->
-
-<!--            // 创建描述行-->
-<!--            const descRow = document.createElement('tr');-->
-<!--            descRow.classList.add('compounds-data-row');-->
-<!--            descRow.innerHTML = `-->
-<!--              <td colspan="6" class="py-2 px-4 text-left">-->
-<!--                <div class="description-container text-gray-600">-->
-<!--                  ${compounds.descriptions.map(desc => `-->
-<!--                    <div class="organic-acids-description">-->
-<!--                      <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'exclamation-triangle'}"-->
-<!--                         style="color: ${desc.color};"></i>-->
-<!--                      ${desc.text}-->
-<!--                    </div>-->
-<!--                  `).join('')}-->
-<!--                </div>-->
-<!--              </td>-->
-<!--            `;-->
-
-<!--            // 添加到表格-->
-<!--            tableBody.appendChild(dataRow);-->
-<!--            tableBody.appendChild(descRow);-->
-<!--          });-->
-<!--        }-->
-
-<!--        // 页面加载时加载有机酸数据-->
-<!--        document.addEventListener('DOMContentLoaded', loadCompoundsData);-->
-<!--      </script>-->
-
-<!--    </div>-->
-<!--  </div>-->
 
   <!-- 菌群代谢物及神经递质评估板块 : 其他代谢物评估 -->
   <h2 class="custom-title-1 page-break">菌群代谢物评估</h2>
@@ -12331,7 +12033,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <i class="fas fa-info-circle icon"></i>
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
-           主食类饮食是指以谷物、淀粉类食物为主要组成部分的饮食习惯，通常包括米饭、面条、面包、土豆、玉米等。主食是人体获取能量的主要来源，富含碳水化合物，是维持日常活动和身体功能所需的重要营养成分。
+            主食类饮食是指以谷物、淀粉类食物为主要组成部分的饮食习惯，通常包括米饭、面条、面包、土豆、玉米等。主食是人体获取能量的主要来源，富含碳水化合物，是维持日常活动和身体功能所需的重要营养成分。
           </p>
         </div>
       </div>
@@ -12354,86 +12056,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="staple-food-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadStapleFoodData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderStapleFoodTable(data.staple_food_data);
-          } catch (error) {
-            console.error('Error loading food data:', error);
-          }
-        }
+      <div id="staple-food-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderStapleFoodTable(staplefoodData) {
-          const tableBody = document.getElementById('staple-food-data-table-body');
-          if (!tableBody) {
-            console.error('Food data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const StapleFoodRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(stapleFoodData) {
+          const container = document.getElementById('staple-food-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!stapleFoodData || !Array.isArray(stapleFoodData) || stapleFoodData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无主食类饮食推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
-          staplefoodData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('staple-food-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+          stapleFoodData.forEach(food => {
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"主食"的食物
+              const stapleFoodData = foodRecommendations.filter(food => food["分类"] === "主食");
+
+              if (stapleFoodData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                stapleFoodData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(stapleFoodData);
+              } else {
+                document.getElementById('staple-food-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无主食类饮食推荐数据</div>';
+              }
+            } else {
+              document.getElementById('staple-food-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无主食类饮食推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('staple-food-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadStapleFoodData);
-      </script>
-
-    </div>
-
+      // 初始化主食类饮食推荐模块
+      StapleFoodRecommendation.init();
+    </script>
   </div>
 
   <h3 class="custom-title-third-level page-break">肉类推荐</h3>
@@ -12468,88 +12258,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="meat-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadMeatData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
-            data.meat_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderMeatTable(data.meat_data);
-          } catch (error) {
-            console.error('Error loading meat data:', error);
-          }
-        }
+      <div id="meat-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderMeatTable(fruitData) {
-          const tableBody = document.getElementById('meat-data-table-body');
-          if (!tableBody) {
-            console.error('Meat data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const MeatRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(meatData) {
+          const container = document.getElementById('meat-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!meatData || !Array.isArray(meatData) || meatData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无肉类饮食推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
-          fruitData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('meat-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+          meatData.forEach(food => {
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"肉类"的食物
+              const meatData = foodRecommendations.filter(food => food["分类"] === "肉类");
+
+              if (meatData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                meatData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(meatData);
+              } else {
+                document.getElementById('meat-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无肉类饮食推荐数据</div>';
+              }
+            } else {
+              document.getElementById('meat-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无肉类饮食推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('meat-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadMeatData);
-      </script>
-
-    </div>
-
+      // 初始化肉类饮食推荐模块
+      MeatRecommendation.init();
+    </script>
   </div>
 
   <h3 class="custom-title-third-level page-break">水产品推荐</h3>
@@ -12584,88 +12460,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="aquatic-products-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadAquaticProductsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
-            data.aquatic_products_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderAquaticProductsTable(data.aquatic_products_data);
-          } catch (error) {
-            console.error('Error loading aquatic products data:', error);
-          }
-        }
+      <div id="aquatic-products-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderAquaticProductsTable(fastfoodData) {
-          const tableBody = document.getElementById('aquatic-products-data-table-body');
-          if (!tableBody) {
-            console.error('Aquatic products data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const AquaticProductsRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(aquaticData) {
+          const container = document.getElementById('aquatic-products-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!aquaticData || !Array.isArray(aquaticData) || aquaticData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无水产品推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
-          fastfoodData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('fast-food-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+          aquaticData.forEach(food => {
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"水产"的食物
+              const aquaticData = foodRecommendations.filter(food => food["分类"] === "水产品");
+
+              if (aquaticData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                aquaticData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(aquaticData);
+              } else {
+                document.getElementById('aquatic-products-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无水产品推荐数据</div>';
+              }
+            } else {
+              document.getElementById('aquatic-products-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无水产品推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('aquatic-products-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadAquaticProductsData);
-      </script>
-
-    </div>
-
+      // 初始化水产品推荐模块
+      AquaticProductsRecommendation.init();
+    </script>
   </div>
 
   <h3 class="custom-title-third-level page-break">乳制品推荐</h3>
@@ -12700,203 +12662,377 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="dairy-products-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadDairyProductsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderDairyProductsTable(data.dairy_products_data);
-          } catch (error) {
-            console.error('Error loading dairy products data:', error);
-          }
-        }
-
-        function renderDairyProductsTable(dairyproductsData) {
-          const tableBody = document.getElementById('dairy-products-data-table-body');
-          if (!tableBody) {
-            console.error('Dairy products data table body not found');
-            return;
-          }
-
-          tableBody.innerHTML = '';
-
-          dairyproductsData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('dairy-products-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
-
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
-
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
-                  </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
-
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
-          });
-        }
-
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadDairyProductsData);
-      </script>
-
-    </div>
-
-  </div>
-
-  <h3 class="custom-title-third-level page-break">汤推荐</h3>
-
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <i class="fas fa-info-circle icon"></i>
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            汤类饮食是指以汤品为主要组成部分的饮食习惯。汤可以用多种食材制作，包括肉类、蔬菜、豆类和谷物等，具有多样性和灵活性。
-          </p>
-        </div>
+      <div id="dairy-products-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
     </div>
 
-    <!-- 汤推荐表格 -->
-    <div class="rounded-table">
-      <table class="min-w-full">
-        <thead>
-        <!-- 标题行 -->
-        <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>
-          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>
-          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>
-          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>
-          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>
-          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>
-          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
-        </tr>
-        </thead>
-        <tbody id="soup-data-table-body">
-
-        </tbody>
-      </table>
-
-      <script>
-        async function loadSoupData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
-            data.soup_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderSoupTable(data.soup_data);
-          } catch (error) {
-            console.error('Error loading soup data:', error);
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const DairyProductsRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
           }
-        }
+        },
 
-        function renderSoupTable(fruitData) {
-          const tableBody = document.getElementById('soup-data-table-body');
-          if (!tableBody) {
-            console.error('Fruit data table body not found');
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(dairyData) {
+          const container = document.getElementById('dairy-products-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!dairyData || !Array.isArray(dairyData) || dairyData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无乳制品推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
-          fruitData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('soup-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+          dairyData.forEach(food => {
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"乳制品"的食物
+              const dairyData = foodRecommendations.filter(food => food["分类"] === "乳制品");
+
+              if (dairyData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                dairyData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(dairyData);
+              } else {
+                document.getElementById('dairy-products-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无乳制品推荐数据</div>';
+              }
+            } else {
+              document.getElementById('dairy-products-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无乳制品推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('dairy-products-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadSoupData);
-      </script>
-
-    </div>
-
+      // 初始化乳制品推荐模块
+      DairyProductsRecommendation.init();
+    </script>
   </div>
+
+<!--  <h3 class="custom-title-third-level page-break">汤推荐</h3>-->
+
+<!--  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
+<!--    &lt;!&ndash; 信息框 &ndash;&gt;-->
+<!--    <div class="info-box">-->
+<!--      <div class="flex items-start">-->
+<!--        <i class="fas fa-info-circle icon"></i>-->
+<!--        <div class="ml-2">-->
+<!--          <p class="text-lg text-custom-teal">-->
+<!--            汤类饮食是指以汤品为主要组成部分的饮食习惯。汤可以用多种食材制作，包括肉类、蔬菜、豆类和谷物等，具有多样性和灵活性。-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; 汤推荐表格 &ndash;&gt;-->
+<!--    <div class="rounded-table">-->
+<!--      <table class="min-w-full">-->
+<!--        <thead>-->
+<!--        &lt;!&ndash; 标题行 &ndash;&gt;-->
+<!--        <tr style="background-color: #00B2B4; color: white;">-->
+<!--          <th class="py-2 px-4 text-left food-first-column" style="font-size: 10px;">食物名称</th>-->
+<!--          <th class="py-2 px-4 text-center food-second-column" style="font-size: 10px; padding: 5px 5px;">推荐指数</th>-->
+<!--          <th class="py-2 px-4 text-center food-third-column" style="font-size: 10px; padding: 5px 5px;">能量(KJ)</th>-->
+<!--          <th class="py-2 px-4 text-center food-fourth-column" style="font-size: 10px; padding: 5px 5px;">蛋白(g)</th>-->
+<!--          <th class="py-2 px-4 text-center food-fifth-column" style="font-size: 10px; padding: 5px 5px;">脂肪(g)</th>-->
+<!--          <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)</th>-->
+<!--          <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>-->
+<!--          <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>-->
+<!--          <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--      </table>-->
+
+<!--      <div id="soup-data-table-body">-->
+<!--        &lt;!&ndash; 数据将通过 JavaScript 动态插入 &ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--      // 创建独立的命名空间对象，避免作用域冲突-->
+<!--      const SoupRecommendation = {-->
+<!--        // 常量定义-->
+<!--        CONSTANTS: {-->
+<!--          COLORS: {-->
+<!--            VERY_NEGATIVE: '#FF3B30', // -100 到 -60-->
+<!--            NEGATIVE: '#FF9500',      // -60 到 -30-->
+<!--            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0-->
+<!--            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30-->
+<!--            POSITIVE: '#00C35A',      // 30 到 60-->
+<!--            VERY_POSITIVE: '#00B248'  // 60 到 100-->
+<!--          }-->
+<!--        },-->
+
+<!--        // 格式化数字-->
+<!--        formatNumber(value) {-->
+<!--          if (value === undefined || value === null) return '';-->
+
+<!--          const num = Number(value);-->
+<!--          if (isNaN(num)) return value;-->
+
+<!--          return num.toString();-->
+<!--        },-->
+
+<!--        // 获取进度条颜色-->
+<!--        getProgressBarColor(value) {-->
+<!--          const numValue = parseFloat(value);-->
+<!--          if (isNaN(numValue)) return 'transparent';-->
+
+<!--          if (numValue >= -100 && numValue < -60) {-->
+<!--            return this.CONSTANTS.COLORS.VERY_NEGATIVE;-->
+<!--          } else if (numValue >= -60 && numValue < -30) {-->
+<!--            return this.CONSTANTS.COLORS.NEGATIVE;-->
+<!--          } else if (numValue >= -30 && numValue < 0) {-->
+<!--            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;-->
+<!--          } else if (numValue >= 0 && numValue < 30) {-->
+<!--            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;-->
+<!--          } else if (numValue >= 30 && numValue < 60) {-->
+<!--            return this.CONSTANTS.COLORS.POSITIVE;-->
+<!--          } else if (numValue >= 60 && numValue <= 100) {-->
+<!--            return this.CONSTANTS.COLORS.VERY_POSITIVE;-->
+<!--          }-->
+<!--          return 'transparent';-->
+<!--        },-->
+
+<!--        // 渲染表格-->
+<!--        renderTable(soupData) {-->
+<!--          const container = document.getElementById('soup-data-table-body');-->
+<!--          if (!container) return;-->
+
+<!--          container.innerHTML = '';-->
+
+<!--          if (!soupData || !Array.isArray(soupData) || soupData.length === 0) {-->
+<!--            container.innerHTML = '<div class="text-center p-4">暂无汤类推荐数据</div>';-->
+<!--            return;-->
+<!--          }-->
+
+<!--          const fragment = document.createDocumentFragment();-->
+
+<!--          soupData.forEach(food => {-->
+<!--            const foodContainer = document.createElement('div');-->
+<!--            foodContainer.className = 'food-info-container';-->
+
+<!--            const table = document.createElement('table');-->
+<!--            table.className = 'food-table min-w-full';-->
+
+<!--            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);-->
+<!--            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';-->
+
+<!--            const dataRow = `-->
+<!--              <tr class="food-row">-->
+<!--                <td class="py-2 px-4 text-left food-first-column">-->
+<!--                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>-->
+<!--                </td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-second-column">-->
+<!--                  ${food["推荐指数"] || ''}-->
+<!--                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">-->
+<!--                    <div class="progress"-->
+<!--                         style="width: ${progressBarWidth};-->
+<!--                                height: 100%;-->
+<!--                                background-color: ${progressBarColor};-->
+<!--                                transition: width 0.3s ease;">-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>-->
+<!--                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>-->
+<!--              </tr>-->
+<!--            `;-->
+
+<!--            table.innerHTML = `<tbody>${dataRow}</tbody>`;-->
+<!--            foodContainer.appendChild(table);-->
+<!--            fragment.appendChild(foodContainer);-->
+<!--          });-->
+
+<!--          container.appendChild(fragment);-->
+<!--        },-->
+
+<!--        // 加载数据-->
+<!--        async loadData() {-->
+<!--          try {-->
+<!--            const response = await fetch(DATA_PATHS.DATA);-->
+<!--            if (!response.ok) {-->
+<!--              throw new Error(`Network response error: ${response.status}`);-->
+<!--            }-->
+
+<!--            const data = await response.json();-->
+
+<!--            // 尝试获取食物推荐数据-->
+<!--            let foodRecommendations = null;-->
+
+<!--            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {-->
+<!--              foodRecommendations = data["食物推荐"];-->
+<!--            }-->
+
+<!--            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {-->
+<!--              // 过滤出分类为"汤"的食物-->
+<!--              const soupData = foodRecommendations.filter(food => food["分类"] === "汤");-->
+
+<!--              if (soupData.length > 0) {-->
+<!--                // 按推荐指数排序（从高到低）-->
+<!--                soupData.sort((a, b) => {-->
+<!--                  const scoreA = parseFloat(a["推荐指数"] || 0);-->
+<!--                  const scoreB = parseFloat(b["推荐指数"] || 0);-->
+<!--                  return scoreB - scoreA;-->
+<!--                });-->
+
+<!--                this.renderTable(soupData);-->
+<!--              } else {-->
+<!--                document.getElementById('soup-data-table-body').innerHTML =-->
+<!--                  '<div class="text-center p-4">暂无汤类推荐数据</div>';-->
+<!--              }-->
+<!--            } else {-->
+<!--              document.getElementById('soup-data-table-body').innerHTML =-->
+<!--                '<div class="text-center p-4">暂无汤类推荐数据</div>';-->
+<!--            }-->
+<!--          } catch (error) {-->
+<!--            document.getElementById('soup-data-table-body').innerHTML =-->
+<!--              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';-->
+<!--          }-->
+<!--        },-->
+
+<!--        // 初始化-->
+<!--        init() {-->
+<!--          if (document.readyState === 'loading') {-->
+<!--            document.addEventListener('DOMContentLoaded', () => this.loadData());-->
+<!--          } else {-->
+<!--            this.loadData();-->
+<!--          }-->
+<!--        }-->
+<!--      };-->
+
+<!--      // 初始化汤推荐模块-->
+<!--      SoupRecommendation.init();-->
+<!--    </script>-->
+<!--  </div>-->
 
   <h3 class="custom-title-third-level page-break">蔬菜推荐</h3>
 
@@ -12930,88 +13066,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="vegetables-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadVegetablesData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
-            data.vegetables_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderVegetablesTable(data.vegetables_data);
-          } catch (error) {
-            console.error('Error loading vegetables data:', error);
-          }
-        }
+      <div id="vegetables-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderVegetablesTable(vegetablesData) {
-          const tableBody = document.getElementById('vegetables-data-table-body');
-          if (!tableBody) {
-            console.error('Vegetables data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const VegetablesRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(vegetablesData) {
+          const container = document.getElementById('vegetables-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!vegetablesData || !Array.isArray(vegetablesData) || vegetablesData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无蔬菜推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
           vegetablesData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('vegetables-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"蔬菜"的食物
+              const vegetablesData = foodRecommendations.filter(food => food["分类"] === "蔬菜");
+
+              if (vegetablesData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                vegetablesData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(vegetablesData);
+              } else {
+                document.getElementById('vegetables-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无蔬菜推荐数据</div>';
+              }
+            } else {
+              document.getElementById('vegetables-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无蔬菜推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('vegetables-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadVegetablesData);
-      </script>
-
-    </div>
-
+      // 初始化蔬菜推荐模块
+      VegetablesRecommendation.init();
+    </script>
   </div>
 
   <h2 class="custom-title-third-level page-break">干果推荐</h2>
@@ -13046,86 +13268,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="dried-fruits-data-table-body">
-
-        </tbody>
       </table>
 
-      <script>
-        async function loadDriedFruitsData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            renderDriedFruitsTable(data.dried_fruits_data);
-          } catch (error) {
-            console.error('Error loading dried fruits data:', error);
-          }
-        }
+      <div id="dried-fruits-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderDriedFruitsTable(driedfruitsData) {
-          const tableBody = document.getElementById('dried-fruits-data-table-body');
-          if (!tableBody) {
-            console.error('Dried fruits data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const DriedFruitsRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(driedFruitsData) {
+          const container = document.getElementById('dried-fruits-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!driedFruitsData || !Array.isArray(driedFruitsData) || driedFruitsData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无干果推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
-          driedfruitsData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('dairy-products-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+          driedFruitsData.forEach(food => {
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"干果"的食物
+              const driedFruitsData = foodRecommendations.filter(food => food["分类"] === "干果");
+
+              if (driedFruitsData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                driedFruitsData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(driedFruitsData);
+              } else {
+                document.getElementById('dried-fruits-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无干果推荐数据</div>';
+              }
+            } else {
+              document.getElementById('dried-fruits-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无干果推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('dried-fruits-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadDriedFruitsData);
-      </script>
-
-    </div>
-
+      // 初始化干果推荐模块
+      DriedFruitsRecommendation.init();
+    </script>
   </div>
 
 <!--  <h2 class="custom-title-third-level page-break">快餐推荐</h2>-->
@@ -13276,87 +13586,174 @@ ${d.summarized_health_index.gut_type.value ? `
           <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
         </tr>
         </thead>
-        <tbody id="fruit-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-        </tbody>
       </table>
 
-      <script>
-        async function loadFruitData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            // 对 aquatic_products_data 按照 evaluation_value 从大到小（从正到负）排序
-            data.fruit_data.sort((a, b) => b.evaluation_value - a.evaluation_value);
-            renderFruitTable(data.fruit_data);
-          } catch (error) {
-            console.error('Error loading fruit data:', error);
-          }
-        }
+      <div id="fruit-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
 
-        function renderFruitTable(fruitData) {
-          const tableBody = document.getElementById('fruit-data-table-body');
-          if (!tableBody) {
-            console.error('Fruit data table body not found');
+    <script>
+      // 创建独立的命名空间对象，避免作用域冲突
+      const FruitRecommendation = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            VERY_NEGATIVE: '#FF3B30', // -100 到 -60
+            NEGATIVE: '#FF9500',      // -60 到 -30
+            SLIGHTLY_NEGATIVE: '#FFCC00', // -30 到 0
+            SLIGHTLY_POSITIVE: '#7ED321', // 0 到 30
+            POSITIVE: '#00C35A',      // 30 到 60
+            VERY_POSITIVE: '#00B248'  // 60 到 100
+          }
+        },
+
+        // 格式化数字
+        formatNumber(value) {
+          if (value === undefined || value === null) return '';
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          return num.toString();
+        },
+
+        // 获取进度条颜色
+        getProgressBarColor(value) {
+          const numValue = parseFloat(value);
+          if (isNaN(numValue)) return 'transparent';
+
+          if (numValue >= -100 && numValue < -60) {
+            return this.CONSTANTS.COLORS.VERY_NEGATIVE;
+          } else if (numValue >= -60 && numValue < -30) {
+            return this.CONSTANTS.COLORS.NEGATIVE;
+          } else if (numValue >= -30 && numValue < 0) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_NEGATIVE;
+          } else if (numValue >= 0 && numValue < 30) {
+            return this.CONSTANTS.COLORS.SLIGHTLY_POSITIVE;
+          } else if (numValue >= 30 && numValue < 60) {
+            return this.CONSTANTS.COLORS.POSITIVE;
+          } else if (numValue >= 60 && numValue <= 100) {
+            return this.CONSTANTS.COLORS.VERY_POSITIVE;
+          }
+          return 'transparent';
+        },
+
+        // 渲染表格
+        renderTable(fruitData) {
+          const container = document.getElementById('fruit-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!fruitData || !Array.isArray(fruitData) || fruitData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无水果推荐数据</div>';
             return;
           }
 
-          tableBody.innerHTML = '';
+          const fragment = document.createDocumentFragment();
 
           fruitData.forEach(food => {
-            // 创建数据行
-            const dataRow = document.createElement('tr');
-            dataRow.classList.add('fast-food-data-row');
-            const getProgressBarColor = (value) => {
-              if (value >= -100 && value < -60) {
-                return '#FF3B30'; // -100 到 -60
-              } else if (value >= -60 && value < -30) {
-                return '#FF9500'; // -60 到 -30
-              } else if (value >= -30 && value < 0) {
-                return '#FFCC00'; // -30 到 0
-              } else if (value >= 0 && value < 30) {
-                return '#7ED321'; // 0 到 30
-              } else if (value >= 30 && value < 60) {
-                return '#00C35A'; // 30 到 60
-              } else if (value >= 60 && value <= 100) {
-                return '#00B248'; // 60 到 100
-              }
-              return 'transparent'; // 其他情况
-            };
+            const foodContainer = document.createElement('div');
+            foodContainer.className = 'food-info-container';
 
-            const progressBarColor = getProgressBarColor(food.evaluation_value);
+            const table = document.createElement('table');
+            table.className = 'food-table min-w-full';
 
-            dataRow.innerHTML = `
-              <td class="py-2 px-4 text-left">
-                  <div class="chinese-text">${food.chinese_name}</div>
-                  <div class="latin-text">${food.english_name}</div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">
-                  ${food.evaluation_value}
-                  <div class="progress-bar w-full mt-1">
-                      <div class="progress" style="background-color: ${progressBarColor}; width: ${Math.abs(food.evaluation_value)}%;"></div>
+            const progressBarColor = this.getProgressBarColor(food["推荐指数"]);
+            const progressBarWidth = Math.abs(parseFloat(food["推荐指数"] || 0)) + '%';
+
+            const dataRow = `
+              <tr class="food-row">
+                <td class="py-2 px-4 text-left food-first-column">
+                  <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-second-column">
+                  ${food["推荐指数"] || ''}
+                  <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div class="progress"
+                         style="width: ${progressBarWidth};
+                                height: 100%;
+                                background-color: ${progressBarColor};
+                                transition: width 0.3s ease;">
+                    </div>
                   </div>
-              </td>
-              <td class="py-2 px-4 text-center food-column-text">${food.calories}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.protein}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fat}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.carbohydrates}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.starch}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.fiber}</td>
-              <td class="py-2 px-4 text-center food-column-text">${food.cholesterol}</td>
-          `;
+                </td>
+                <td class="py-2 px-4 text-center food-column-text food-third-column">${food["能量KJ"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fourth-column">${food["蛋白g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-fifth-column">${food["脂肪g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-sixth-column">${food["碳水化合物g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-seventh-column">${food["淀粉g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-eighth-column">${food["总膳食纤维g"] || ''}</td>
+                <td class="py-2 px-4 text-center food-column-text food-nineth-column">${food["胆固醇mg"] || ''}</td>
+              </tr>
+            `;
 
-            // 添加到表格
-            tableBody.appendChild(dataRow);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            foodContainer.appendChild(table);
+            fragment.appendChild(foodContainer);
           });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取食物推荐数据
+            let foodRecommendations = null;
+
+            if (data["食物推荐"] && Array.isArray(data["食物推荐"])) {
+              foodRecommendations = data["食物推荐"];
+            }
+
+            if (foodRecommendations && Array.isArray(foodRecommendations) && foodRecommendations.length > 0) {
+              // 过滤出分类为"水果"的食物
+              const fruitData = foodRecommendations.filter(food => food["分类"] === "水果");
+
+              if (fruitData.length > 0) {
+                // 按推荐指数排序（从高到低）
+                fruitData.sort((a, b) => {
+                  const scoreA = parseFloat(a["推荐指数"] || 0);
+                  const scoreB = parseFloat(b["推荐指数"] || 0);
+                  return scoreB - scoreA;
+                });
+
+                this.renderTable(fruitData);
+              } else {
+                document.getElementById('fruit-data-table-body').innerHTML =
+                  '<div class="text-center p-4">暂无水果推荐数据</div>';
+              }
+            } else {
+              document.getElementById('fruit-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无水果推荐数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('fruit-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
         }
+      };
 
-        // 页面加载时加载致病菌数据
-        document.addEventListener('DOMContentLoaded', loadFruitData);
-      </script>
-
-    </div>
-
+      // 初始化水果推荐模块
+      FruitRecommendation.init();
+    </script>
   </div>
 
 
@@ -13393,10 +13790,21 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left detected-gut-microbiota-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-fourth-column">结果评价</th>
+          <th
+            class="py-2 px-4 text-left detected-gut-bacteria-first-column"
+            style="font-size: 13px;">
+            细菌名称
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-bacteria-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-bacteria-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            检测丰度%
+          </th>
         </tr>
         </thead>
       </table>
@@ -13407,175 +13815,224 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadDetectedGutBacteriaData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          data.detected_gut_bacteria_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
-          renderDetectedGutBacteriaTable(data.detected_gut_bacteria_data);
-        } catch (error) {
-          console.error('Error loading detected gut bacteria data:', error);
-        }
-      }
+      // 创建独立的命名空间对象，避免作用域冲突
+      const DetectedGutBacteria = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080'
+          }
+        },
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "未检出") {
-          return value;
-        }
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "未检出";
+          }
 
-        const num = Number(value);
+          const num = Number(value);
+          if (isNaN(num)) return value;
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
-      }
+          if (num >= 1) {
+            const integerDigits = Math.floor(Math.log10(num)) + 1;
+            const decimalPlaces = Math.max(0, 4 - integerDigits);
+            return num.toFixed(decimalPlaces);
+          } else {
+            const str = num.toPrecision(4);
+            return str.replace(/\.?0+$/, '');
+          }
+        },
 
-      function formatDetectedValue(value) {
-        if (value === "ND") {
-          return "未检出";
-        }
-        return formatNumber(value);
-      }
+        // 计算进度条百分比
+        calculateProgressPercentage(value) {
+          if (value === "ND" || value === "未检出" || value === 0) {
+            return 0;
+          }
 
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
+          const num = Number(value);
+          if (isNaN(num)) return 0;
 
-      function calculateProgressPercentage(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+          const logValue = Math.log10(num);
+          const minLog = -1;
+          const maxLog = 3;
 
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1;
-        const maxLog = 3;
+          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+          return Math.max(5, Math.min(50, percentage));
+        },
 
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
+        // 获取状态信息
+        getStatus(detected, minRange, maxRange) {
+          let status = {
+            color: this.CONSTANTS.COLORS.GREEN,
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
 
-      function renderDetectedGutBacteriaTable(bacteriaData) {
-        const container = document.getElementById('detected-gut-bacteria-data-table-body');
-        if (!container) {
-          console.error('Detected gut bacteria table body not found');
-          return;
-        }
-
-        container.innerHTML = '';
-
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        bacteriaData.forEach(bacteria => {
-          let statusColor, statusText, statusIcon;
-          const detected = bacteria.detected_abundance;
-          const minRange = bacteria.normal_range.min_normal_value;
-          const maxRange = bacteria.normal_range.max_normal_value;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
-
-          if (detected === "ND") {
+          if (detected === "ND" || detected === "未检出") {
             if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
             }
           } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
+            const numDetected = parseFloat(detected);
+            if (numDetected < minRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
+            } else if (numDetected > maxRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '超标';
+              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
+              status.isNormal = false;
             }
           }
 
-          const bacteriaContainer = document.createElement('div');
-          bacteriaContainer.className = 'bacteria-info-container';
+          return status;
+        },
 
-          const table = document.createElement('table');
-          table.className = 'bacteria-table min-w-full';
+        // 渲染表格
+        renderTable(bacteriaData) {
+          const container = document.getElementById('detected-gut-bacteria-data-table-body');
+          if (!container) return;
 
-          const dataRow = `
-        <tr class="bacteria-row">
-          <td class="py-2 px-4 text-left detected-gut-microbiota-first-column">
-            <div class="chinese-text">${bacteria.chinese_name}</div>
-            <div class="latin-text text-gray-500">${bacteria.latin_name}</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-second-column">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-third-column">
-            ${formattedDetectedValue}
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(detected)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text column-text detected-gut-microbiota-fourth-column">
-            <span style="color: ${CUSTOM_COLORS[statusColor]}">
-              ${statusText}${statusIcon}
-            </span>
-          </td>
-        </tr>
-      `;
+          container.innerHTML = '';
 
-          const filteredDescriptions = bacteria.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+          if (!bacteriaData || !Array.isArray(bacteriaData) || bacteriaData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无检出细菌数据</div>';
+            return;
+          }
 
-          const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="bacteria-desc-row">
-          <td colspan="6" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              ${filteredDescriptions.map(desc => `
-                <div class="bacteria-description">
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};"></i>
-                  ${desc.text}
+          const fragment = document.createDocumentFragment();
+
+          bacteriaData.forEach(bacteria => {
+            const detected = bacteria.detected_abundance;
+            const minRange = bacteria.normal_range?.min_normal_value || 0;
+            const maxRange = bacteria.normal_range?.max_normal_value || 0;
+
+            const formattedDetectedValue = this.formatNumber(detected);
+            const formattedMinRange = this.formatNumber(minRange);
+            const formattedMaxRange = this.formatNumber(maxRange);
+
+            const status = this.getStatus(detected, minRange, maxRange);
+
+            const bacteriaContainer = document.createElement('div');
+            bacteriaContainer.className = 'bacteria-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'bacteria-table min-w-full';
+
+            // 获取拉丁名和中文名
+            const latinName = bacteria.latin_name || "";
+            const chineseName = bacteria.chinese_name || "";
+
+            // 构造名称显示HTML
+            let nameDisplay;
+            if (!chineseName || chineseName.trim() === "") {
+              // 如果中文名为空，只显示拉丁名一次
+              nameDisplay = `
+                <div class="detected-gut-bacteria-chinese-text"><strong>${latinName}</strong></div>
+              `;
+            } else {
+              // 如果有中文名，则同时显示中文名和拉丁名
+              nameDisplay = `
+                <div class="detected-gut-bacteria-chinese-text"><strong>${chineseName}</strong></div>
+                <div class="detected-gut-bacteria-latin-text text-gray-500">${latinName}</div>
+              `;
+            }
+
+            const dataRow = `
+          <tr class="bacteria-row">
+            <td class="py-2 px-4 text-left detected-gut-bacteria-first-column">
+              ${nameDisplay}
+            </td>
+
+            <td class="py-2 px-4 text-center detected-gut-bacteria-column-text detected-gut-bacteria-second-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div class="progress"
+                     style="width: ${this.calculateProgressPercentage(detected)}%;
+                            height: 100%;
+                            background-color: #00B2B4;
+                            transition: width 0.3s ease;">
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center detected-gut-bacteria-column-text detected-gut-bacteria-third-column">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          bacteriaContainer.appendChild(table);
-          container.appendChild(bacteriaContainer);
-        });
-      }
+          </tr>
+        `;
 
-      document.addEventListener('DOMContentLoaded', loadDetectedGutBacteriaData);
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            bacteriaContainer.appendChild(table);
+            fragment.appendChild(bacteriaContainer);
+          });
+
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取细菌数据
+            let bacteriaData = null;
+
+            if (data.detected_gut_bacteria_data && Array.isArray(data.detected_gut_bacteria_data)) {
+              bacteriaData = data.detected_gut_bacteria_data;
+            } else if (data["检出菌"] && data["检出菌"]["细菌"] && Array.isArray(data["检出菌"]["细菌"])) {
+              bacteriaData = data["检出菌"]["细菌"];
+            }
+
+            if (bacteriaData && Array.isArray(bacteriaData) && bacteriaData.length > 0) {
+              // 按丰度递减排序
+              bacteriaData.sort((a, b) => {
+                const abundanceA = a.detected_abundance === "ND" ? 0 : parseFloat(a.detected_abundance);
+                const abundanceB = b.detected_abundance === "ND" ? 0 : parseFloat(b.detected_abundance);
+                return abundanceB - abundanceA;
+              });
+
+              // 限制显示前35个
+              if (bacteriaData.length > 35) {
+                bacteriaData = bacteriaData.slice(0, 35);
+              }
+
+              this.renderTable(bacteriaData);
+            } else {
+              document.getElementById('detected-gut-bacteria-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无检出细菌数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('detected-gut-bacteria-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化检出细菌模块
+      DetectedGutBacteria.init();
     </script>
 
   </div>
@@ -13602,10 +14059,21 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left detected-gut-microbiota-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-fourth-column">结果评价</th>
+          <th
+            class="py-2 px-4 text-left detected-gut-fungi-first-column"
+            style="font-size: 13px;">
+            真菌名称
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-fungi-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-fungi-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            检测丰度%
+          </th>
         </tr>
         </thead>
       </table>
@@ -13745,16 +14213,13 @@ ${d.summarized_health_index.gut_type.value ? `
 
             const dataRow = `
           <tr class="fungi-row">
-            <td class="py-2 px-4 text-left detected-gut-microbiota-first-column">
-              <div class="chinese-text"><strong>${chineseName}</strong></div>
-              <div class="latin-text text-gray-500">${latinName}</div>
+            <td class="py-2 px-4 text-left detected-gut-fungi-first-column">
+              <div class="detected-gut-fungi-chinese-text"><strong>${chineseName}</strong></div>
+              <div class="detected-gut-fungi-latin-text text-gray-500">${latinName}</div>
             </td>
-            <td class="py-2 px-4 text-center column-text detected-gut-microbiota-second-column">
-              ${formattedMinRange}-${formattedMaxRange}
-            </td>
-            <td class="py-2 px-4 text-center column-text detected-gut-microbiota-third-column">
+            <td class="py-2 px-4 text-center detected-gut-fungi-column-text detected-gut-fungi-second-column">
               ${formattedDetectedValue}
-              <div class="progress-bar w-full mt-1" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                 <div class="progress"
                      style="width: ${this.calculateProgressPercentage(detected)}%;
                             height: 100%;
@@ -13763,10 +14228,8 @@ ${d.summarized_health_index.gut_type.value ? `
                 </div>
               </div>
             </td>
-            <td class="py-2 px-4 text-center bold-text column-text detected-gut-microbiota-fourth-column">
-              <span style="color: ${status.color}">
-                ${status.text}${status.icon}
-              </span>
+            <td class="py-2 px-4 text-center detected-gut-fungi-column-text detected-gut-fungi-third-column">
+              ${formattedMinRange}-${formattedMaxRange}
             </td>
           </tr>
         `;
@@ -13866,10 +14329,21 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left detected-gut-microbiota-first-column">菌种名称</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-second-column">正常范围</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-third-column">检测丰度</th>
-          <th class="py-2 px-4 text-center detected-gut-microbiota-fourth-column">结果评价</th>
+          <th
+            class="py-2 px-4 text-left detected-gut-eukaryotes-first-column"
+            style="font-size: 13px;">
+            真核生物名称
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-eukaryotes-second-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            参考范围%
+          </th>
+          <th
+            class="py-2 px-4 text-center detected-gut-eukaryotes-third-column"
+            style="font-size: 13px; padding: 5px 5px;">
+            检测丰度%
+          </th>
         </tr>
         </thead>
       </table>
@@ -13880,177 +14354,258 @@ ${d.summarized_health_index.gut_type.value ? `
     </div>
 
     <script>
-      async function loadDetectedGutEukaryotesData() {
-        try {
-          const response = await fetch(DATA_PATHS.DATA);
-          const data = await response.json();
-          data.detected_gut_eukaryotes_data.sort((a, b) => b.detected_abundance - a.detected_abundance);
-          renderDetectedGutEukaryotesTable(data.detected_gut_eukaryotes_data);
-        } catch (error) {
-          console.error('Error loading detected gut eukaryotes data:', error);
-        }
-      }
+      // 创建独立的命名空间对象，避免作用域冲突
+      const DetectedGutEukaryotes = {
+        // 常量定义
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#389e0d',
+            GRAY: '#808080'
+          }
+        },
 
-      function formatNumber(value) {
-        if (typeof value === "string" && value === "未检出") {
-          return value;
-        }
+        // 格式化数字
+        formatNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "未检出";
+          }
 
-        const num = Number(value);
+          const num = Number(value);
+          if (isNaN(num)) return value;
 
-        if (num >= 1) {
-          const integerDigits = Math.floor(Math.log10(num)) + 1;
-          const decimalPlaces = Math.max(0, 4 - integerDigits);
-          return num.toFixed(decimalPlaces);
-        } else {
-          const str = num.toPrecision(4);
-          return str.replace(/\.?0+$/, '');
-        }
-      }
+          if (num >= 1) {
+            const integerDigits = Math.floor(Math.log10(num)) + 1;
+            const decimalPlaces = Math.max(0, 4 - integerDigits);
+            return num.toFixed(decimalPlaces);
+          } else {
+            const str = num.toPrecision(4);
+            return str.replace(/\.?0+$/, '');
+          }
+        },
 
-      function formatDetectedValue(value) {
-        if (value === "ND") {
-          return "未检出";
-        }
-        return formatNumber(value);
-      }
+        // 解析正常范围 (适应 "-0.05" 这种格式)
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
 
-      function formatRangeValue(value) {
-        return formatNumber(value);
-      }
+          // 检查是否为范围格式 (例如 "0.01-0.05")
+          if (rangeStr.includes('-')) {
+            const parts = rangeStr.split('-');
+            return {
+              min: parseFloat(parts[0] || 0),
+              max: parseFloat(parts[1] || 0)
+            };
+          }
+          // 单值格式 (例如 "-0.05")，表示最大值
+          else {
+            return {
+              min: 0,
+              max: parseFloat(rangeStr.replace('-', '')) || 0
+            };
+          }
+        },
 
-      function calculateProgressPercentage(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+        // 计算进度条百分比
+        calculateProgressPercentage(value) {
+          if (value === "ND" || value === "未检出" || value === 0) {
+            return 0;
+          }
 
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1;
-        const maxLog = 3;
+          const num = Number(value);
+          if (isNaN(num)) return 0;
 
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
-      }
+          const logValue = Math.log10(num);
+          const minLog = -1;
+          const maxLog = 3;
 
-      function renderDetectedGutEukaryotesTable(eukaryotesData) {
-        const container = document.getElementById('detected-gut-eukaryotes-data-table-body');
-        if (!container) {
-          console.error('Detected gut eukaryotes table body not found');
-          return;
-        }
+          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
+          return Math.max(5, Math.min(50, percentage));
+        },
 
-        container.innerHTML = '';
+        // 获取状态信息
+        getStatus(detected, minRange, maxRange) {
+          let status = {
+            color: this.CONSTANTS.COLORS.GREEN,
+            text: '正常',
+            icon: '',
+            isNormal: true
+          };
 
-        const CUSTOM_COLORS = {
-          red: '#ff4d4f',
-          green: '#389e0d',
-          gray: '#808080'
-        };
-
-        eukaryotesData.forEach(eukaryotes => {
-          let statusColor, statusText, statusIcon;
-          const detected = eukaryotes.detected_abundance;
-          const minRange = eukaryotes.normal_range.min_normal_value;
-          const maxRange = eukaryotes.normal_range.max_normal_value;
-
-          const formattedDetectedValue = formatDetectedValue(detected);
-          const formattedMinRange = formatRangeValue(minRange);
-          const formattedMaxRange = formatRangeValue(maxRange);
-
-          let isNormal = true;
-
-          if (detected === "ND") {
+          if (detected === "ND" || detected === "未检出") {
             if (minRange > 0) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
             }
           } else {
-            if (detected < minRange) {
-              statusColor = 'red';
-              statusText = '偏低';
-              statusIcon = '<i class="fas fa-arrow-down ml-1"></i>';
-              isNormal = false;
-            } else if (detected <= maxRange) {
-              statusColor = 'green';
-              statusText = '正常';
-              statusIcon = '';
-            } else {
-              statusColor = 'red';
-              statusText = '超标';
-              statusIcon = '<i class="fas fa-arrow-up ml-1"></i>';
-              isNormal = false;
+            const numDetected = parseFloat(detected);
+            if (numDetected < minRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '偏低';
+              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
+              status.isNormal = false;
+            } else if (numDetected > maxRange) {
+              status.color = this.CONSTANTS.COLORS.RED;
+              status.text = '超标';
+              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
+              status.isNormal = false;
             }
           }
 
-          const eukaryotesContainer = document.createElement('div');
-          eukaryotesContainer.className = 'eukaryotes-info-container';
+          return status;
+        },
 
-          const table = document.createElement('table');
-          table.className = 'eukaryotes-table min-w-full';
+        // 渲染表格
+        renderTable(eukaryotesData) {
+          const container = document.getElementById('detected-gut-eukaryotes-data-table-body');
+          if (!container) return;
 
-          const dataRow = `
-        <tr class="eukaryotes-row">
-          <td class="py-2 px-4 text-left detected-gut-microbiota-first-column">
-            <div class="chinese-text">${eukaryotes.chinese_name}</div>
-            <div class="latin-text text-gray-500">${eukaryotes.latin_name}</div>
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-second-column">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-          <td class="py-2 px-4 text-center column-text detected-gut-microbiota-third-column">
-            ${formattedDetectedValue}
-            <div class="progress-bar w-full mt-1">
-              <div class="progress"
-                   style="width: ${calculateProgressPercentage(detected)}%;
-                          background-color: #00B2B4;
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-          <td class="py-2 px-4 text-center bold-text column-text detected-gut-microbiota-fourth-column">
-            <span style="color: ${CUSTOM_COLORS[statusColor]}">
-              ${statusText}${statusIcon}
-            </span>
-          </td>
-        </tr>
-      `;
+          container.innerHTML = '';
 
-          const filteredDescriptions = eukaryotes.descriptions.filter(desc =>
-            desc.type === 'info' || (!isNormal && desc.type === 'warning')
-          );
+          if (!eukaryotesData || !Array.isArray(eukaryotesData) || eukaryotesData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无检出真核生物数据</div>';
+            return;
+          }
 
-          const descRow = filteredDescriptions.length > 0 ? `
-        <tr class="eukaryotes-desc-row">
-          <td colspan="4" class="py-2 px-4 text-left">
-            <div class="description-container text-gray-600">
-              ${filteredDescriptions.map(desc => `
-                <div class="eukaryotes-description">
-                  <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                     style="color: ${desc.color};"></i>
-                  ${desc.text}
+          const fragment = document.createDocumentFragment();
+
+          eukaryotesData.forEach(eukaryote => {
+            const detected = eukaryote["丰度%"];
+            const { min: minRange, max: maxRange } = this.parseRange(eukaryote["正常范围"]);
+
+            const formattedDetectedValue = this.formatNumber(detected);
+            const formattedMaxRange = this.formatNumber(maxRange);
+
+            const status = this.getStatus(detected, minRange, maxRange);
+
+            const eukaryoteContainer = document.createElement('div');
+            eukaryoteContainer.className = 'eukaryote-info-container';
+
+            const table = document.createElement('table');
+            table.className = 'eukaryote-table min-w-full';
+
+            // 获取拉丁名和中文名
+            const latinName = eukaryote["名称"] || "";
+            const chineseName = eukaryote["中文名"] || "";
+
+            // 构造名称显示HTML
+            let nameDisplay;
+            if (!chineseName || chineseName.trim() === "") {
+              // 如果中文名为空，只显示拉丁名一次
+              nameDisplay = `
+                <div class="detected-gut-eukaryotes-chinese-text"><strong>${latinName}</strong></div>
+                <div class="detected-gut-eukaryotes-latin-text text-gray-500">${latinName}</div>
+              `;
+            } else {
+              // 如果有中文名，则同时显示中文名和拉丁名
+              nameDisplay = `
+                <div class="detected-gut-eukaryotes-chinese-text"><strong>${chineseName}</strong></div>
+                <div class="detected-gut-eukaryotes-latin-text text-gray-500">${latinName}</div>
+              `;
+            }
+
+            const dataRow = `
+          <tr class="eukaryote-row">
+            <td class="py-2 px-4 text-left detected-gut-eukaryotes-first-column">
+              ${nameDisplay}
+            </td>
+            <td class="py-2 px-4 text-center detected-gut-eukaryotes-column-text detected-gut-eukaryotes-second-column">
+              ${formattedDetectedValue}
+              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div class="progress"
+                     style="width: ${this.calculateProgressPercentage(detected)}%;
+                            height: 100%;
+                            background-color: #00B2B4;
+                            transition: width 0.3s ease;">
                 </div>
-              `).join('')}
-            </div>
-          </td>
-        </tr>
-      ` : '';
+              </div>
+            </td>
+            <td class="py-2 px-4 text-center detected-gut-eukaryotes-column-text detected-gut-eukaryotes-third-column">
+              ${minRange > 0 ? this.formatNumber(minRange) + "-" : ""}${formattedMaxRange}
+            </td>
+          </tr>
+        `;
 
-          table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-          eukaryotesContainer.appendChild(table);
-          container.appendChild(eukaryotesContainer);
-        });
-      }
+            table.innerHTML = `<tbody>${dataRow}</tbody>`;
+            eukaryoteContainer.appendChild(table);
+            fragment.appendChild(eukaryoteContainer);
+          });
 
-      document.addEventListener('DOMContentLoaded', loadDetectedGutEukaryotesData);
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取真核生物数据，检查各种可能的位置
+            let eukaryotesData = null;
+
+            if (data["检出菌"] && data["检出菌"]["Eukaryota"] && Array.isArray(data["检出菌"]["Eukaryota"])) {
+              eukaryotesData = data["检出菌"]["Eukaryota"];
+            }
+            else if (data["检出菌"] && data["检出菌"]["eukaryotes"] && Array.isArray(data["检出菌"]["eukaryotes"])) {
+              eukaryotesData = data["检出菌"]["eukaryotes"];
+            }
+            else if (data["检出菌"] && data["检出菌"]["真核生物"] && Array.isArray(data["检出菌"]["真核生物"])) {
+              eukaryotesData = data["检出菌"]["真核生物"];
+            }
+            else if (data["Eukaryota"] && Array.isArray(data["Eukaryota"])) {
+              eukaryotesData = data["Eukaryota"];
+            }
+            else if (data["eukaryotes"] && Array.isArray(data["eukaryotes"])) {
+              eukaryotesData = data["eukaryotes"];
+            }
+            else if (data["真核生物"] && Array.isArray(data["真核生物"])) {
+              eukaryotesData = data["真核生物"];
+            }
+
+            if (eukaryotesData && Array.isArray(eukaryotesData) && eukaryotesData.length > 0) {
+              // 按丰度递减排序
+              eukaryotesData.sort((a, b) => {
+                const abundanceA = parseFloat(a["丰度%"]) || 0;
+                const abundanceB = parseFloat(b["丰度%"]) || 0;
+                return abundanceB - abundanceA;
+              });
+
+              // 限制显示前35个
+              if (eukaryotesData.length > 35) {
+                eukaryotesData = eukaryotesData.slice(0, 35);
+              }
+
+              this.renderTable(eukaryotesData);
+            } else {
+              document.getElementById('detected-gut-eukaryotes-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无检出真核生物数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('detected-gut-eukaryotes-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化检出真核生物模块
+      DetectedGutEukaryotes.init();
     </script>
-
   </div>
 
   <!-- 参考文献板块 -->

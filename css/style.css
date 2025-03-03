@@ -2120,20 +2120,105 @@ tr {
 .detected-gut-microbiota-third-column{ width: 20% }
 .detected-gut-microbiota-fourth-column{ width: 15% }
 
+.detected-gut-bacteria-first-column {
+  width: 35%;
+}
+.detected-gut-bacteria-second-column {
+  width: 32.5%;
+}
+.detected-gut-bacteria-third-column {
+  width: 32.5%;
+}
+
+.detected-gut-bacteria-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.detected-gut-bacteria-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.detected-gut-bacteria-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
 /* 检出肠道真菌板块 */
 
-.detected-gut-fungi-first-column{ width: 40% }
-.detected-gut-fungi-second-column{ width: 25% }
-.detected-gut-fungi-third-column{ width: 20% }
-.detected-gut-fungi-fourth-column{ width: 15% }
+.detected-gut-fungi-first-column {
+  width: 35%;
+}
+.detected-gut-fungi-second-column {
+  width: 32.5%;
+}
+.detected-gut-fungi-third-column {
+  width: 32.5%;
+}
+
+.detected-gut-fungi-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.detected-gut-fungi-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.detected-gut-fungi-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
 
 /* 检出肠道真核生物板块 */
 
-.detected-gut-eukaryotes-first-column{ width: 40% }
-.detected-gut-eukaryotes-second-column{ width: 25% }
-.detected-gut-eukaryotes-third-column{ width: 20% }
-.detected-gut-eukaryotes-fourth-column{ width: 15% }
+.detected-gut-eukaryotes-first-column {
+  width: 35%;
+}
+.detected-gut-eukaryotes-second-column {
+  width: 32.5%;
+}
+.detected-gut-eukaryotes-third-column {
+  width: 32.5%;
+}
 
+.detected-gut-eukaryotes-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+
+/* 有益菌表格第一列中的菌群拉丁名样式 */
+
+.detected-gut-eukaryotes-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+.detected-gut-eukaryotes-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
 
 /* 参考文献板块 */
 
