@@ -1,597 +1,689 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microbiome Report Builder</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    .component-item { cursor: grab; }
-    .report-component.selected { outline: 2px solid #3b82f6; }
-  </style>
-</head>
-<body class="bg-gray-100">
-<!-- Header -->
-<header class="bg-white shadow">
-  <div class="max-w-7xl mx-auto py-4 px-4">
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-900">Microbiome Report Builder</h1>
-      <div class="flex space-x-2">
-        <button id="preview-button" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
-          <i class="fas fa-eye mr-2"></i> Preview
-        </button>
-        <button id="save-button" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
-          <i class="fas fa-save mr-2"></i> Save
-        </button>
-        <button id="export-button" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md">
-          <i class="fas fa-file-pdf mr-2"></i> Export PDF
-        </button>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Microbiome Report Builder</title>-->
+<!--  <script src="https://cdn.tailwindcss.com"></script>-->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+<!--  <style>-->
+<!--    .component-item { cursor: grab; }-->
+<!--    .report-component.selected { outline: 2px solid #3b82f6; }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body class="bg-gray-100">-->
+<!--&lt;!&ndash; Header &ndash;&gt;-->
+<!--<header class="bg-white shadow">-->
+<!--  <div class="max-w-7xl mx-auto py-4 px-4">-->
+<!--    <div class="flex justify-between items-center">-->
+<!--      <h1 class="text-xl font-bold text-gray-900">Microbiome Report Builder</h1>-->
+<!--      <div class="flex space-x-2">-->
+<!--        <button id="preview-button" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">-->
+<!--          <i class="fas fa-eye mr-2"></i> Preview-->
+<!--        </button>-->
+<!--        <button id="save-button" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md">-->
+<!--          <i class="fas fa-save mr-2"></i> Save-->
+<!--        </button>-->
+<!--        <button id="export-button" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md">-->
+<!--          <i class="fas fa-file-pdf mr-2"></i> Export PDF-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->
+
+<!--&lt;!&ndash; Main Content &ndash;&gt;-->
+<!--<main class="max-w-7xl mx-auto py-6 px-4 flex">-->
+<!--  &lt;!&ndash; Component Panel &ndash;&gt;-->
+<!--  <div class="w-1/4 bg-white rounded-lg shadow p-4 mr-4">-->
+<!--    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Available Components</h2>-->
+<!--    <div class="space-y-3">-->
+<!--      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="GutFungiComponent">-->
+<!--        <div class="flex items-center">-->
+<!--          <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mr-3">-->
+<!--            <i class="fas fa-bacterium text-teal-600"></i>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <h3 class="font-medium">Gut Fungi</h3>-->
+<!--            <p class="text-xs text-gray-500">Shows detected fungi and their abundance</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="CoreMicrobiomeComponent">-->
+<!--        <div class="flex items-center">-->
+<!--          <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-3">-->
+<!--            <i class="fas fa-dna text-indigo-600"></i>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <h3 class="font-medium">Core Microbiome</h3>-->
+<!--            <p class="text-xs text-gray-500">Displays core microbiome analysis</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="BacterialDiversityComponent">-->
+<!--        <div class="flex items-center">-->
+<!--          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">-->
+<!--            <i class="fas fa-chart-pie text-blue-600"></i>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <h3 class="font-medium">Bacterial Diversity</h3>-->
+<!--            <p class="text-xs text-gray-500">Diversity indices and comparative analysis</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="TextComponent">-->
+<!--        <div class="flex items-center">-->
+<!--          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">-->
+<!--            <i class="fas fa-align-left text-gray-600"></i>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <h3 class="font-medium">Text Block</h3>-->
+<!--            <p class="text-xs text-gray-500">Add custom text explanations</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Report Design Area &ndash;&gt;-->
+<!--  <div class="w-2/4">-->
+<!--    <div class="bg-white rounded-lg shadow p-4 mb-4">-->
+<!--      <h2 class="text-lg font-semibold mb-2">Report Design</h2>-->
+<!--      <p class="text-sm text-gray-500 mb-4">Drag components from the left panel to the area below</p>-->
+
+<!--      <div id="report-container" class="rounded-md border-2 border-dashed border-gray-300 min-h-[500px] p-4">-->
+<!--        <div class="drop-placeholder flex items-center justify-center text-gray-400 h-full">-->
+<!--          <div class="text-center">-->
+<!--            <i class="fas fa-arrow-down text-3xl mb-2"></i>-->
+<!--            <p>Drag and drop components here</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="bg-white rounded-lg shadow p-4">-->
+<!--      <div class="flex justify-between items-center mb-4">-->
+<!--        <h2 class="text-lg font-semibold">Data Source Settings</h2>-->
+<!--        <button class="text-teal-600 hover:text-teal-700 text-sm">-->
+<!--          <i class="fas fa-sync-alt mr-1"></i> Refresh Data-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--      <div class="flex mb-4">-->
+<!--        <div class="w-3/4 mr-2">-->
+<!--          <input type="text" value="./data/bacteria_data.json" class="w-full px-3 py-2 border border-gray-300 rounded-md">-->
+<!--        </div>-->
+<!--        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md">Browse...</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Properties Panel &ndash;&gt;-->
+<!--  <div class="w-1/4 bg-white rounded-lg shadow p-4 ml-4">-->
+<!--    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Property Settings</h2>-->
+
+<!--    <div id="properties-placeholder" class="text-center text-gray-400 py-8">-->
+<!--      <i class="fas fa-sliders-h text-3xl mb-2"></i>-->
+<!--      <p>Select a component to edit its properties</p>-->
+<!--    </div>-->
+
+<!--    <div id="properties-panel" class="hidden">-->
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-sm font-medium text-gray-700 mb-1">Component Title</label>-->
+<!--        <input type="text" id="component-title" class="w-full px-3 py-2 border border-gray-300 rounded-md">-->
+<!--      </div>-->
+
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-sm font-medium text-gray-700 mb-1">Display Settings</label>-->
+<!--        <div class="space-y-2">-->
+<!--          <div class="flex items-center">-->
+<!--            <input type="checkbox" id="show-progress" class="mr-2" checked>-->
+<!--            <label for="show-progress" class="text-sm text-gray-600">Show Progress Bars</label>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <input type="checkbox" id="show-chart" class="mr-2" checked>-->
+<!--            <label for="show-chart" class="text-sm text-gray-600">Show Chart</label>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div id="text-content-container" class="mb-4 hidden">-->
+<!--        <label class="block text-sm font-medium text-gray-700 mb-1">Text Content</label>-->
+<!--        <textarea id="text-content" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-md"></textarea>-->
+<!--      </div>-->
+
+<!--      <div class="pt-4 border-t border-gray-200">-->
+<!--        <button id="apply-properties" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-md">-->
+<!--          Apply Changes-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</main>-->
+
+<!--&lt;!&ndash; Preview Modal &ndash;&gt;-->
+<!--<div id="preview-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">-->
+<!--  <div class="bg-white rounded-lg w-3/4 h-3/4 flex flex-col">-->
+<!--    <div class="p-4 border-b border-gray-200 flex justify-between items-center">-->
+<!--      <h2 class="text-xl font-semibold">Report Preview</h2>-->
+<!--      <button id="close-preview" class="text-gray-500 hover:text-gray-700">-->
+<!--        <i class="fas fa-times"></i>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <div class="flex-grow overflow-auto p-6">-->
+<!--      <div id="preview-content" class="mx-auto" style="max-width: 800px;"></div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  document.addEventListener('DOMContentLoaded', () => {-->
+<!--    // Component templates-->
+<!--    const componentTypes = {-->
+<!--      GutFungiComponent: {-->
+<!--        title: 'Detected Gut Fungi',-->
+<!--        icon: 'bacterium',-->
+<!--        color: 'teal',-->
+<!--        showProgress: true,-->
+<!--        render: (config) => `-->
+<!--            <div class="mb-5">-->
+<!--              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>-->
+<!--              <div class="bg-teal-50 p-3 rounded-md mb-4">-->
+<!--                <p class="text-sm text-teal-800">-->
+<!--                  <i class="fas fa-info-circle mr-2"></i>-->
+<!--                  The table shows gut fungi detected in your sample-->
+<!--                </p>-->
+<!--              </div>-->
+
+<!--              <div class="rounded-lg border border-gray-200">-->
+<!--                <table class="min-w-full">-->
+<!--                  <thead>-->
+<!--                    <tr class="bg-teal-600 text-white">-->
+<!--                      <th class="py-2 px-4 text-left">Species Name</th>-->
+<!--                      <th class="py-2 px-4 text-center">Abundance</th>-->
+<!--                      <th class="py-2 px-4 text-center">Status</th>-->
+<!--                    </tr>-->
+<!--                  </thead>-->
+<!--                  <tbody>-->
+<!--                    <tr>-->
+<!--                      <td class="py-2 px-4 border-t border-gray-200">-->
+<!--                        <div class="font-medium">Candida albicans</div>-->
+<!--                      </td>-->
+<!--                      <td class="py-2 px-4 text-center border-t border-gray-200">-->
+<!--                        0.32-->
+<!--                        ${config.showProgress ? `-->
+<!--                        <div class="w-full bg-gray-200 h-2 rounded-full mt-1">-->
+<!--                          <div class="bg-teal-500 h-2 rounded-full" style="width: 35%"></div>-->
+<!--                        </div>` : ''}-->
+<!--                      </td>-->
+<!--                      <td class="py-2 px-4 text-center border-t border-gray-200 text-green-600 font-medium">Normal</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                      <td class="py-2 px-4 border-t border-gray-200">-->
+<!--                        <div class="font-medium">Lactobacillus acidophilus</div>-->
+<!--                      </td>-->
+<!--                      <td class="py-2 px-4 text-center border-t border-gray-200">-->
+<!--                        1.8-->
+<!--                        ${config.showProgress ? `-->
+<!--                        <div class="w-full bg-gray-200 h-2 rounded-full mt-1">-->
+<!--                          <div class="bg-teal-500 h-2 rounded-full" style="width: 45%"></div>-->
+<!--                        </div>` : ''}-->
+<!--                      </td>-->
+<!--                      <td class="py-2 px-4 text-center border-t border-gray-200 text-red-600 font-medium">High <i class="fas fa-arrow-up text-xs"></i></td>-->
+<!--                    </tr>-->
+<!--                  </tbody>-->
+<!--                </table>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          `-->
+<!--      },-->
+<!--      CoreMicrobiomeComponent: {-->
+<!--        title: 'Core Microbiome Analysis',-->
+<!--        icon: 'dna',-->
+<!--        color: 'indigo',-->
+<!--        showChart: true,-->
+<!--        render: (config) => `-->
+<!--            <div class="mb-5">-->
+<!--              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>-->
+<!--              <div class="bg-indigo-50 p-3 rounded-md mb-4">-->
+<!--                <p class="text-sm text-indigo-800">-->
+<!--                  <i class="fas fa-info-circle mr-2"></i>-->
+<!--                  Core microbiome refers to the dominant bacterial groups in your gut-->
+<!--                </p>-->
+<!--              </div>-->
+
+<!--              <div class="grid grid-cols-2 gap-4 mb-5">-->
+<!--                <div class="bg-gray-50 rounded-lg p-4">-->
+<!--                  <h3 class="text-lg font-medium text-gray-800 mb-2">Dominant Genera</h3>-->
+<!--                  <div class="h-56 flex items-center justify-center">-->
+<!--                    ${config.showChart ? `-->
+<!--                    <div class="relative w-full h-full">-->
+<!--                      <div class="absolute inset-0 flex items-center justify-center">-->
+<!--                        <div class="w-40 h-40 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">-->
+<!--                          Core Microbiome-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="absolute top-6 right-16 w-16 h-16 rounded-full bg-indigo-300 flex items-center justify-center text-white text-sm">-->
+<!--                        18%-->
+<!--                      </div>-->
+<!--                      <div class="absolute bottom-10 right-20 w-20 h-20 rounded-full bg-indigo-400 flex items-center justify-center text-white text-sm">-->
+<!--                        25%-->
+<!--                      </div>-->
+<!--                      <div class="absolute top-20 left-16 w-24 h-24 rounded-full bg-indigo-600 flex items-center justify-center text-white text-sm">-->
+<!--                        32%-->
+<!--                      </div>-->
+<!--                    </div>` : '<div class="text-gray-400">Chart hidden</div>'}-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="bg-gray-50 rounded-lg p-4">-->
+<!--                  <h3 class="text-lg font-medium text-gray-800 mb-2">Health Score</h3>-->
+<!--                  <div class="flex items-center justify-center h-56">-->
+<!--                    <div class="text-center">-->
+<!--                      <div class="text-5xl font-bold text-indigo-600 mb-2">76</div>-->
+<!--                      <div class="text-sm text-gray-500">out of 100</div>-->
+<!--                      <div class="w-full bg-gray-200 h-3 rounded-full mt-3">-->
+<!--                        <div class="bg-indigo-500 h-3 rounded-full" style="width: 76%"></div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          `-->
+<!--      },-->
+<!--      BacterialDiversityComponent: {-->
+<!--        title: 'Bacterial Diversity',-->
+<!--        icon: 'chart-pie',-->
+<!--        color: 'blue',-->
+<!--        showChart: true,-->
+<!--        render: (config) => `-->
+<!--            <div class="mb-5">-->
+<!--              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>-->
+<!--              <div class="bg-blue-50 p-3 rounded-md mb-4">-->
+<!--                <p class="text-sm text-blue-800">-->
+<!--                  <i class="fas fa-info-circle mr-2"></i>-->
+<!--                  Bacterial diversity is an important indicator of gut health-->
+<!--                </p>-->
+<!--              </div>-->
+
+<!--              <div class="grid grid-cols-2 gap-6 mb-5">-->
+<!--                <div>-->
+<!--                  <h3 class="text-lg font-medium text-gray-800 mb-3">Diversity Indices</h3>-->
+<!--                  <div class="bg-blue-50 rounded-lg p-4">-->
+<!--                    <div class="grid grid-cols-2 gap-4">-->
+<!--                      <div class="text-center">-->
+<!--                        <div class="text-2xl font-bold text-blue-600">3.86</div>-->
+<!--                        <div class="text-sm text-blue-800">Shannon Index</div>-->
+<!--                        <div class="w-full bg-gray-200 h-2 rounded-full mt-2">-->
+<!--                          <div class="bg-blue-500 h-2 rounded-full" style="width: 78%"></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="text-center">-->
+<!--                        <div class="text-2xl font-bold text-blue-600">0.91</div>-->
+<!--                        <div class="text-sm text-blue-800">Simpson Index</div>-->
+<!--                        <div class="w-full bg-gray-200 h-2 rounded-full mt-2">-->
+<!--                          <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div>-->
+<!--                  <h3 class="text-lg font-medium text-gray-800 mb-3">Species Richness</h3>-->
+<!--                  <div class="bg-blue-50 rounded-lg p-4 flex items-center">-->
+<!--                    <div class="w-20 h-20 flex items-center justify-center">-->
+<!--                      <div class="relative w-full h-full">-->
+<!--                        ${config.showChart ? `-->
+<!--                        <svg viewBox="0 0 36 36" class="w-full h-full">-->
+<!--                          <path d="M18 2.0845-->
+<!--                            a 15.9155 15.9155 0 0 1 0 31.831-->
+<!--                            a 15.9155 15.9155 0 0 1 0 -31.831"-->
+<!--                            fill="none" stroke="#E5E7EB" stroke-width="3" stroke-dasharray="100, 100"/>-->
+<!--                          <path d="M18 2.0845-->
+<!--                            a 15.9155 15.9155 0 0 1 0 31.831-->
+<!--                            a 15.9155 15.9155 0 0 1 0 -31.831"-->
+<!--                            fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="75, 100"/>-->
+<!--                        </svg>-->
+<!--                        <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-blue-600">75</div>-->
+<!--                        ` : '<div class="text-gray-400">Chart hidden</div>'}-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="ml-4">-->
+<!--                      <div class="text-sm text-blue-800 mb-1">Species detected: 185</div>-->
+<!--                      <div class="text-sm text-blue-800">Above population average</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          `-->
+<!--      },-->
+<!--      TextComponent: {-->
+<!--        title: 'Text Explanation',-->
+<!--        icon: 'align-left',-->
+<!--        color: 'gray',-->
+<!--        textContent: 'Enter your custom text explanation here',-->
+<!--        render: (config) => `-->
+<!--            <div class="mb-5">-->
+<!--              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>-->
+<!--              <div class="bg-white p-3">-->
+<!--                <p>${config.textContent}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          `-->
+<!--      }-->
+<!--    };-->
+
+<!--    // State management-->
+<!--    let componentCounter = 0;-->
+<!--    let selectedComponent = null;-->
+<!--    const reportComponents = [];-->
+
+<!--    // DOM elements-->
+<!--    const reportContainer = document.getElementById('report-container');-->
+<!--    const propertiesPanel = document.getElementById('properties-panel');-->
+<!--    const propertiesPlaceholder = document.getElementById('properties-placeholder');-->
+<!--    const textContentContainer = document.getElementById('text-content-container');-->
+<!--    const componentItems = document.querySelectorAll('.component-item');-->
+<!--    const previewButton = document.getElementById('preview-button');-->
+<!--    const previewModal = document.getElementById('preview-modal');-->
+<!--    const closePreviewButton = document.getElementById('close-preview');-->
+<!--    const previewContent = document.getElementById('preview-content');-->
+
+<!--    // Initialize drag and drop-->
+<!--    componentItems.forEach(item => {-->
+<!--      item.addEventListener('dragstart', e => {-->
+<!--        e.dataTransfer.setData('componentType', item.dataset.type);-->
+<!--      });-->
+<!--    });-->
+
+<!--    reportContainer.addEventListener('dragover', e => {-->
+<!--      e.preventDefault();-->
+<!--    });-->
+
+<!--    reportContainer.addEventListener('drop', e => {-->
+<!--      e.preventDefault();-->
+
+<!--      const componentType = e.dataTransfer.getData('componentType');-->
+<!--      if (!componentType) return;-->
+
+<!--      // Clear placeholder-->
+<!--      if (reportContainer.querySelector('.drop-placeholder')) {-->
+<!--        reportContainer.innerHTML = '';-->
+<!--      }-->
+
+<!--      // Create new component-->
+<!--      const componentTypeInfo = componentTypes[componentType];-->
+<!--      if (!componentTypeInfo) return;-->
+
+<!--      const component = {-->
+<!--        id: `component-${++componentCounter}`,-->
+<!--        type: componentType,-->
+<!--        config: { ...componentTypeInfo }-->
+<!--      };-->
+
+<!--      reportComponents.push(component);-->
+
+<!--      // Render component-->
+<!--      const componentDiv = document.createElement('div');-->
+<!--      componentDiv.className = 'report-component mb-4 relative bg-white p-3 rounded-md border border-gray-200';-->
+<!--      componentDiv.dataset.id = component.id;-->
+
+<!--      componentDiv.innerHTML = `-->
+<!--          <div class="flex items-center justify-between mb-2">-->
+<!--            <div class="flex items-center">-->
+<!--              <div class="w-6 h-6 rounded-full bg-${componentTypeInfo.color}-100 flex items-center justify-center mr-2">-->
+<!--                <i class="fas fa-${componentTypeInfo.icon} text-${componentTypeInfo.color}-600 text-xs"></i>-->
+<!--              </div>-->
+<!--              <div class="text-sm font-medium">${component.config.title}</div>-->
+<!--            </div>-->
+<!--            <div class="flex">-->
+<!--              <button class="p-1 text-gray-500 hover:text-gray-700 edit-component">-->
+<!--                <i class="fas fa-edit"></i>-->
+<!--              </button>-->
+<!--              <button class="p-1 text-gray-500 hover:text-red-600 delete-component ml-1">-->
+<!--                <i class="fas fa-trash-alt"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="component-content">-->
+<!--            ${componentTypeInfo.render(component.config)}-->
+<!--          </div>-->
+<!--        `;-->
+
+<!--      reportContainer.appendChild(componentDiv);-->
+
+<!--      // Add event listeners-->
+<!--      const editButton = componentDiv.querySelector('.edit-component');-->
+<!--      editButton.addEventListener('click', () => selectComponent(component));-->
+
+<!--      const deleteButton = componentDiv.querySelector('.delete-component');-->
+<!--      deleteButton.addEventListener('click', () => {-->
+<!--        if (confirm('Are you sure you want to delete this component?')) {-->
+<!--          const index = reportComponents.findIndex(c => c.id === component.id);-->
+<!--          if (index !== -1) {-->
+<!--            reportComponents.splice(index, 1);-->
+<!--            componentDiv.remove();-->
+
+<!--            if (selectedComponent && selectedComponent.id === component.id) {-->
+<!--              selectedComponent = null;-->
+<!--              propertiesPanel.classList.add('hidden');-->
+<!--              propertiesPlaceholder.classList.remove('hidden');-->
+<!--            }-->
+
+<!--            if (reportComponents.length === 0) {-->
+<!--              reportContainer.innerHTML = `-->
+<!--                  <div class="drop-placeholder flex items-center justify-center text-gray-400 h-full">-->
+<!--                    <div class="text-center">-->
+<!--                      <i class="fas fa-arrow-down text-3xl mb-2"></i>-->
+<!--                      <p>Drag and drop components here</p>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                `;-->
+<!--            }-->
+<!--          }-->
+<!--        }-->
+<!--      });-->
+
+<!--      componentDiv.addEventListener('click', (e) => {-->
+<!--        if (!e.target.closest('button')) {-->
+<!--          selectComponent(component);-->
+<!--        }-->
+<!--      });-->
+
+<!--      // Auto-select new component-->
+<!--      selectComponent(component);-->
+<!--    });-->
+
+<!--    // Select component and display properties-->
+<!--    function selectComponent(component) {-->
+<!--      document.querySelectorAll('.report-component').forEach(el => {-->
+<!--        el.classList.remove('selected');-->
+<!--      });-->
+
+<!--      const componentEl = document.querySelector(`.report-component[data-id="${component.id}"]`);-->
+<!--      if (componentEl) {-->
+<!--        componentEl.classList.add('selected');-->
+<!--      }-->
+
+<!--      selectedComponent = component;-->
+<!--      propertiesPanel.classList.remove('hidden');-->
+<!--      propertiesPlaceholder.classList.add('hidden');-->
+
+<!--      // Update property form-->
+<!--      const titleInput = document.getElementById('component-title');-->
+<!--      const showProgressCheckbox = document.getElementById('show-progress');-->
+<!--      const showChartCheckbox = document.getElementById('show-chart');-->
+
+<!--      titleInput.value = component.config.title || '';-->
+
+<!--      if (component.type === 'TextComponent') {-->
+<!--        textContentContainer.classList.remove('hidden');-->
+<!--        const textContentTextarea = document.getElementById('text-content');-->
+<!--        textContentTextarea.value = component.config.textContent || '';-->
+<!--        showProgressCheckbox.parentElement.parentElement.classList.add('hidden');-->
+<!--      } else {-->
+<!--        textContentContainer.classList.add('hidden');-->
+<!--        showProgressCheckbox.parentElement.parentElement.classList.remove('hidden');-->
+<!--        showProgressCheckbox.checked = component.config.showProgress !== false;-->
+<!--        showChartCheckbox.checked = component.config.showChart !== false;-->
+<!--      }-->
+<!--    }-->
+
+<!--    // Apply property changes-->
+<!--    document.getElementById('apply-properties').addEventListener('click', () => {-->
+<!--      if (!selectedComponent) return;-->
+
+<!--      const titleInput = document.getElementById('component-title');-->
+<!--      const showProgressCheckbox = document.getElementById('show-progress');-->
+<!--      const showChartCheckbox = document.getElementById('show-chart');-->
+
+<!--      selectedComponent.config.title = titleInput.value;-->
+
+<!--      if (selectedComponent.type !== 'TextComponent') {-->
+<!--        selectedComponent.config.showProgress = showProgressCheckbox.checked;-->
+<!--        selectedComponent.config.showChart = showChartCheckbox.checked;-->
+<!--      } else {-->
+<!--        const textContentTextarea = document.getElementById('text-content');-->
+<!--        selectedComponent.config.textContent = textContentTextarea.value;-->
+<!--      }-->
+
+<!--      // Re-render component-->
+<!--      const componentEl = document.querySelector(`.report-component[data-id="${selectedComponent.id}"]`);-->
+<!--      if (componentEl) {-->
+<!--        const componentTypeInfo = componentTypes[selectedComponent.type];-->
+<!--        componentEl.querySelector('.component-content').innerHTML = componentTypeInfo.render(selectedComponent.config);-->
+<!--        componentEl.querySelector('.text-sm.font-medium').textContent = selectedComponent.config.title;-->
+<!--      }-->
+<!--    });-->
+
+<!--    // Preview functionality-->
+<!--    previewButton.addEventListener('click', () => {-->
+<!--      previewContent.innerHTML = '';-->
+
+<!--      if (reportComponents.length === 0) {-->
+<!--        previewContent.innerHTML = '<div class="text-center py-8 text-gray-500">No components in the report. Please add components from the left panel.</div>';-->
+<!--      } else {-->
+<!--        reportComponents.forEach(component => {-->
+<!--          const componentTypeInfo = componentTypes[component.type];-->
+<!--          const content = componentTypeInfo.render(component.config);-->
+<!--          previewContent.innerHTML += content;-->
+<!--        });-->
+<!--      }-->
+
+<!--      previewModal.classList.remove('hidden');-->
+<!--    });-->
+
+<!--    closePreviewButton.addEventListener('click', () => {-->
+<!--      previewModal.classList.add('hidden');-->
+<!--    });-->
+
+<!--    // Save and export buttons-->
+<!--    document.getElementById('save-button').addEventListener('click', () => {-->
+<!--      alert('Configuration saved!');-->
+<!--    });-->
+
+<!--    document.getElementById('export-button').addEventListener('click', () => {-->
+<!--      alert('Report exported as PDF!');-->
+<!--    });-->
+<!--  });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<div class="bg-white rounded-lg p-6 mb-8 shadow-md" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+  <!-- 标题区域 -->
+  <div class="mb-6 border-b pb-4">
+    <h2 class="text-2xl font-bold text-gray-800 mb-1" style="color: #00B2B4;">
+      <i class="fas fa-exclamation-circle mr-2"></i>报告阅读注意事项
+    </h2>
+    <p class="text-gray-600">
+      本报告采用高通量测序技术对肠道菌群进行宏基因组检测，并利用大数据和人工智能技术对各项指标进行评估。
+    </p>
+  </div>
+
+  <!-- 内容区域 -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- 项目1：结果的解读并非绝对 -->
+    <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+      <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+        <i class="fas fa-chart-bar text-blue-600 text-xl"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-blue-800 mb-2">结果的解读并非绝对</h3>
+        <p class="text-blue-700 text-sm">
+          报告中的数据和分析结果只是对您肠道菌群的一个快照，可能受饮食、生活方式、地理环境等多种因素影响。请保持审慎态度，不要将其视为绝对的健康指标。
+        </p>
+      </div>
+    </div>
+
+    <!-- 项目2：技术和方法的限制 -->
+    <div class="bg-purple-50 rounded-lg p-4 flex items-start">
+      <div class="flex-shrink-0 bg-purple-100 rounded-full p-3 mr-4">
+        <i class="fas fa-microscope text-purple-600 text-xl"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-purple-800 mb-2">技术和方法的限制</h3>
+        <p class="text-purple-700 text-sm">
+          尽管高通量测序和人工智能技术能提供强大的分析能力，但这些技术也存在局限性，可能无法捕捉到所有微生物或其功能。
+        </p>
+      </div>
+    </div>
+
+    <!-- 项目3：临床相关性并不确定 -->
+    <div class="bg-yellow-50 rounded-lg p-4 flex items-start">
+      <div class="flex-shrink-0 bg-yellow-100 rounded-full p-3 mr-4">
+        <i class="fas fa-link text-yellow-600 text-xl"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-yellow-800 mb-2">临床相关性并不确定</h3>
+        <p class="text-yellow-700 text-sm">
+          报告可能提到与某些健康状况的相关性，但关联并不等于因果关系。个别结果需结合您的整体健康状况和其他临床因素进行判断，而不是单一指标决定健康状况。
+        </p>
+      </div>
+    </div>
+
+    <!-- 项目4：避免过度解读 -->
+    <div class="bg-green-50 rounded-lg p-4 flex items-start">
+      <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+        <i class="fas fa-search-plus text-green-600 text-xl"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-green-800 mb-2">避免过度解读</h3>
+        <p class="text-green-700 text-sm">
+          有些微小的变化可能并不具有临床意义。不要过分关注单个菌群的轻微波动，而应关注整体菌群平衡与多样性。
+        </p>
+      </div>
+    </div>
+
+    <!-- 项目5：跟踪研究的重要性 -->
+    <div class="bg-red-50 rounded-lg p-4 flex items-start md:col-span-2">
+      <div class="flex-shrink-0 bg-red-100 rounded-full p-3 mr-4">
+        <i class="fas fa-history text-red-600 text-xl"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-red-800 mb-2">跟踪研究的重要性</h3>
+        <p class="text-red-700 text-sm">
+          肠道菌群是动态的，定期监测和跟踪会提供更好的健康状态评估。单次测试结果的意义有限，尤其是在没有长期数据对比的情况下。建议定期进行检测，以便更好地了解您肠道菌群的变化趋势。
+        </p>
       </div>
     </div>
   </div>
-</header>
 
-<!-- Main Content -->
-<main class="max-w-7xl mx-auto py-6 px-4 flex">
-  <!-- Component Panel -->
-  <div class="w-1/4 bg-white rounded-lg shadow p-4 mr-4">
-    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Available Components</h2>
-    <div class="space-y-3">
-      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="GutFungiComponent">
-        <div class="flex items-center">
-          <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mr-3">
-            <i class="fas fa-bacterium text-teal-600"></i>
-          </div>
-          <div>
-            <h3 class="font-medium">Gut Fungi</h3>
-            <p class="text-xs text-gray-500">Shows detected fungi and their abundance</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="CoreMicrobiomeComponent">
-        <div class="flex items-center">
-          <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
-            <i class="fas fa-dna text-indigo-600"></i>
-          </div>
-          <div>
-            <h3 class="font-medium">Core Microbiome</h3>
-            <p class="text-xs text-gray-500">Displays core microbiome analysis</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="BacterialDiversityComponent">
-        <div class="flex items-center">
-          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-            <i class="fas fa-chart-pie text-blue-600"></i>
-          </div>
-          <div>
-            <h3 class="font-medium">Bacterial Diversity</h3>
-            <p class="text-xs text-gray-500">Diversity indices and comparative analysis</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="component-item bg-white border border-gray-200 rounded-md p-3" draggable="true" data-type="TextComponent">
-        <div class="flex items-center">
-          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-            <i class="fas fa-align-left text-gray-600"></i>
-          </div>
-          <div>
-            <h3 class="font-medium">Text Block</h3>
-            <p class="text-xs text-gray-500">Add custom text explanations</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- 底部总结 -->
+  <div class="mt-6 pt-4 border-t border-gray-200">
+    <p class="text-gray-700 italic text-center">
+      请将本报告作为您了解肠道健康状况的参考工具，而非医疗诊断依据。
+      如有任何健康问题，请咨询专业医护人员。
+    </p>
   </div>
 
-  <!-- Report Design Area -->
-  <div class="w-2/4">
-    <div class="bg-white rounded-lg shadow p-4 mb-4">
-      <h2 class="text-lg font-semibold mb-2">Report Design</h2>
-      <p class="text-sm text-gray-500 mb-4">Drag components from the left panel to the area below</p>
-
-      <div id="report-container" class="rounded-md border-2 border-dashed border-gray-300 min-h-[500px] p-4">
-        <div class="drop-placeholder flex items-center justify-center text-gray-400 h-full">
-          <div class="text-center">
-            <i class="fas fa-arrow-down text-3xl mb-2"></i>
-            <p>Drag and drop components here</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg shadow p-4">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Data Source Settings</h2>
-        <button class="text-teal-600 hover:text-teal-700 text-sm">
-          <i class="fas fa-sync-alt mr-1"></i> Refresh Data
-        </button>
-      </div>
-
-      <div class="flex mb-4">
-        <div class="w-3/4 mr-2">
-          <input type="text" value="./data/bacteria_data.json" class="w-full px-3 py-2 border border-gray-300 rounded-md">
-        </div>
-        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md">Browse...</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Properties Panel -->
-  <div class="w-1/4 bg-white rounded-lg shadow p-4 ml-4">
-    <h2 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Property Settings</h2>
-
-    <div id="properties-placeholder" class="text-center text-gray-400 py-8">
-      <i class="fas fa-sliders-h text-3xl mb-2"></i>
-      <p>Select a component to edit its properties</p>
-    </div>
-
-    <div id="properties-panel" class="hidden">
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Component Title</label>
-        <input type="text" id="component-title" class="w-full px-3 py-2 border border-gray-300 rounded-md">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Display Settings</label>
-        <div class="space-y-2">
-          <div class="flex items-center">
-            <input type="checkbox" id="show-progress" class="mr-2" checked>
-            <label for="show-progress" class="text-sm text-gray-600">Show Progress Bars</label>
-          </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="show-chart" class="mr-2" checked>
-            <label for="show-chart" class="text-sm text-gray-600">Show Chart</label>
-          </div>
-        </div>
-      </div>
-
-      <div id="text-content-container" class="mb-4 hidden">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Text Content</label>
-        <textarea id="text-content" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-md"></textarea>
-      </div>
-
-      <div class="pt-4 border-t border-gray-200">
-        <button id="apply-properties" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-md">
-          Apply Changes
-        </button>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- Preview Modal -->
-<div id="preview-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg w-3/4 h-3/4 flex flex-col">
-    <div class="p-4 border-b border-gray-200 flex justify-between items-center">
-      <h2 class="text-xl font-semibold">Report Preview</h2>
-      <button id="close-preview" class="text-gray-500 hover:text-gray-700">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="flex-grow overflow-auto p-6">
-      <div id="preview-content" class="mx-auto" style="max-width: 800px;"></div>
-    </div>
-  </div>
+  <!-- 添加必要的FontAwesome图标 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Component templates
-    const componentTypes = {
-      GutFungiComponent: {
-        title: 'Detected Gut Fungi',
-        icon: 'bacterium',
-        color: 'teal',
-        showProgress: true,
-        render: (config) => `
-            <div class="mb-5">
-              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>
-              <div class="bg-teal-50 p-3 rounded-md mb-4">
-                <p class="text-sm text-teal-800">
-                  <i class="fas fa-info-circle mr-2"></i>
-                  The table shows gut fungi detected in your sample
-                </p>
-              </div>
-
-              <div class="rounded-lg border border-gray-200">
-                <table class="min-w-full">
-                  <thead>
-                    <tr class="bg-teal-600 text-white">
-                      <th class="py-2 px-4 text-left">Species Name</th>
-                      <th class="py-2 px-4 text-center">Abundance</th>
-                      <th class="py-2 px-4 text-center">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="py-2 px-4 border-t border-gray-200">
-                        <div class="font-medium">Candida albicans</div>
-                      </td>
-                      <td class="py-2 px-4 text-center border-t border-gray-200">
-                        0.32
-                        ${config.showProgress ? `
-                        <div class="w-full bg-gray-200 h-2 rounded-full mt-1">
-                          <div class="bg-teal-500 h-2 rounded-full" style="width: 35%"></div>
-                        </div>` : ''}
-                      </td>
-                      <td class="py-2 px-4 text-center border-t border-gray-200 text-green-600 font-medium">Normal</td>
-                    </tr>
-                    <tr>
-                      <td class="py-2 px-4 border-t border-gray-200">
-                        <div class="font-medium">Lactobacillus acidophilus</div>
-                      </td>
-                      <td class="py-2 px-4 text-center border-t border-gray-200">
-                        1.8
-                        ${config.showProgress ? `
-                        <div class="w-full bg-gray-200 h-2 rounded-full mt-1">
-                          <div class="bg-teal-500 h-2 rounded-full" style="width: 45%"></div>
-                        </div>` : ''}
-                      </td>
-                      <td class="py-2 px-4 text-center border-t border-gray-200 text-red-600 font-medium">High <i class="fas fa-arrow-up text-xs"></i></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          `
-      },
-      CoreMicrobiomeComponent: {
-        title: 'Core Microbiome Analysis',
-        icon: 'dna',
-        color: 'indigo',
-        showChart: true,
-        render: (config) => `
-            <div class="mb-5">
-              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>
-              <div class="bg-indigo-50 p-3 rounded-md mb-4">
-                <p class="text-sm text-indigo-800">
-                  <i class="fas fa-info-circle mr-2"></i>
-                  Core microbiome refers to the dominant bacterial groups in your gut
-                </p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-4 mb-5">
-                <div class="bg-gray-50 rounded-lg p-4">
-                  <h3 class="text-lg font-medium text-gray-800 mb-2">Dominant Genera</h3>
-                  <div class="h-56 flex items-center justify-center">
-                    ${config.showChart ? `
-                    <div class="relative w-full h-full">
-                      <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-40 h-40 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">
-                          Core Microbiome
-                        </div>
-                      </div>
-                      <div class="absolute top-6 right-16 w-16 h-16 rounded-full bg-indigo-300 flex items-center justify-center text-white text-sm">
-                        18%
-                      </div>
-                      <div class="absolute bottom-10 right-20 w-20 h-20 rounded-full bg-indigo-400 flex items-center justify-center text-white text-sm">
-                        25%
-                      </div>
-                      <div class="absolute top-20 left-16 w-24 h-24 rounded-full bg-indigo-600 flex items-center justify-center text-white text-sm">
-                        32%
-                      </div>
-                    </div>` : '<div class="text-gray-400">Chart hidden</div>'}
-                  </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg p-4">
-                  <h3 class="text-lg font-medium text-gray-800 mb-2">Health Score</h3>
-                  <div class="flex items-center justify-center h-56">
-                    <div class="text-center">
-                      <div class="text-5xl font-bold text-indigo-600 mb-2">76</div>
-                      <div class="text-sm text-gray-500">out of 100</div>
-                      <div class="w-full bg-gray-200 h-3 rounded-full mt-3">
-                        <div class="bg-indigo-500 h-3 rounded-full" style="width: 76%"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-      },
-      BacterialDiversityComponent: {
-        title: 'Bacterial Diversity',
-        icon: 'chart-pie',
-        color: 'blue',
-        showChart: true,
-        render: (config) => `
-            <div class="mb-5">
-              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>
-              <div class="bg-blue-50 p-3 rounded-md mb-4">
-                <p class="text-sm text-blue-800">
-                  <i class="fas fa-info-circle mr-2"></i>
-                  Bacterial diversity is an important indicator of gut health
-                </p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-6 mb-5">
-                <div>
-                  <h3 class="text-lg font-medium text-gray-800 mb-3">Diversity Indices</h3>
-                  <div class="bg-blue-50 rounded-lg p-4">
-                    <div class="grid grid-cols-2 gap-4">
-                      <div class="text-center">
-                        <div class="text-2xl font-bold text-blue-600">3.86</div>
-                        <div class="text-sm text-blue-800">Shannon Index</div>
-                        <div class="w-full bg-gray-200 h-2 rounded-full mt-2">
-                          <div class="bg-blue-500 h-2 rounded-full" style="width: 78%"></div>
-                        </div>
-                      </div>
-                      <div class="text-center">
-                        <div class="text-2xl font-bold text-blue-600">0.91</div>
-                        <div class="text-sm text-blue-800">Simpson Index</div>
-                        <div class="w-full bg-gray-200 h-2 rounded-full mt-2">
-                          <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="text-lg font-medium text-gray-800 mb-3">Species Richness</h3>
-                  <div class="bg-blue-50 rounded-lg p-4 flex items-center">
-                    <div class="w-20 h-20 flex items-center justify-center">
-                      <div class="relative w-full h-full">
-                        ${config.showChart ? `
-                        <svg viewBox="0 0 36 36" class="w-full h-full">
-                          <path d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                            fill="none" stroke="#E5E7EB" stroke-width="3" stroke-dasharray="100, 100"/>
-                          <path d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                            fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="75, 100"/>
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-blue-600">75</div>
-                        ` : '<div class="text-gray-400">Chart hidden</div>'}
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <div class="text-sm text-blue-800 mb-1">Species detected: 185</div>
-                      <div class="text-sm text-blue-800">Above population average</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-      },
-      TextComponent: {
-        title: 'Text Explanation',
-        icon: 'align-left',
-        color: 'gray',
-        textContent: 'Enter your custom text explanation here',
-        render: (config) => `
-            <div class="mb-5">
-              <h2 class="text-xl font-semibold mb-3 pb-2 border-b border-gray-200">${config.title}</h2>
-              <div class="bg-white p-3">
-                <p>${config.textContent}</p>
-              </div>
-            </div>
-          `
-      }
-    };
-
-    // State management
-    let componentCounter = 0;
-    let selectedComponent = null;
-    const reportComponents = [];
-
-    // DOM elements
-    const reportContainer = document.getElementById('report-container');
-    const propertiesPanel = document.getElementById('properties-panel');
-    const propertiesPlaceholder = document.getElementById('properties-placeholder');
-    const textContentContainer = document.getElementById('text-content-container');
-    const componentItems = document.querySelectorAll('.component-item');
-    const previewButton = document.getElementById('preview-button');
-    const previewModal = document.getElementById('preview-modal');
-    const closePreviewButton = document.getElementById('close-preview');
-    const previewContent = document.getElementById('preview-content');
-
-    // Initialize drag and drop
-    componentItems.forEach(item => {
-      item.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('componentType', item.dataset.type);
-      });
-    });
-
-    reportContainer.addEventListener('dragover', e => {
-      e.preventDefault();
-    });
-
-    reportContainer.addEventListener('drop', e => {
-      e.preventDefault();
-
-      const componentType = e.dataTransfer.getData('componentType');
-      if (!componentType) return;
-
-      // Clear placeholder
-      if (reportContainer.querySelector('.drop-placeholder')) {
-        reportContainer.innerHTML = '';
-      }
-
-      // Create new component
-      const componentTypeInfo = componentTypes[componentType];
-      if (!componentTypeInfo) return;
-
-      const component = {
-        id: `component-${++componentCounter}`,
-        type: componentType,
-        config: { ...componentTypeInfo }
-      };
-
-      reportComponents.push(component);
-
-      // Render component
-      const componentDiv = document.createElement('div');
-      componentDiv.className = 'report-component mb-4 relative bg-white p-3 rounded-md border border-gray-200';
-      componentDiv.dataset.id = component.id;
-
-      componentDiv.innerHTML = `
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center">
-              <div class="w-6 h-6 rounded-full bg-${componentTypeInfo.color}-100 flex items-center justify-center mr-2">
-                <i class="fas fa-${componentTypeInfo.icon} text-${componentTypeInfo.color}-600 text-xs"></i>
-              </div>
-              <div class="text-sm font-medium">${component.config.title}</div>
-            </div>
-            <div class="flex">
-              <button class="p-1 text-gray-500 hover:text-gray-700 edit-component">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button class="p-1 text-gray-500 hover:text-red-600 delete-component ml-1">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </div>
-          <div class="component-content">
-            ${componentTypeInfo.render(component.config)}
-          </div>
-        `;
-
-      reportContainer.appendChild(componentDiv);
-
-      // Add event listeners
-      const editButton = componentDiv.querySelector('.edit-component');
-      editButton.addEventListener('click', () => selectComponent(component));
-
-      const deleteButton = componentDiv.querySelector('.delete-component');
-      deleteButton.addEventListener('click', () => {
-        if (confirm('Are you sure you want to delete this component?')) {
-          const index = reportComponents.findIndex(c => c.id === component.id);
-          if (index !== -1) {
-            reportComponents.splice(index, 1);
-            componentDiv.remove();
-
-            if (selectedComponent && selectedComponent.id === component.id) {
-              selectedComponent = null;
-              propertiesPanel.classList.add('hidden');
-              propertiesPlaceholder.classList.remove('hidden');
-            }
-
-            if (reportComponents.length === 0) {
-              reportContainer.innerHTML = `
-                  <div class="drop-placeholder flex items-center justify-center text-gray-400 h-full">
-                    <div class="text-center">
-                      <i class="fas fa-arrow-down text-3xl mb-2"></i>
-                      <p>Drag and drop components here</p>
-                    </div>
-                  </div>
-                `;
-            }
-          }
-        }
-      });
-
-      componentDiv.addEventListener('click', (e) => {
-        if (!e.target.closest('button')) {
-          selectComponent(component);
-        }
-      });
-
-      // Auto-select new component
-      selectComponent(component);
-    });
-
-    // Select component and display properties
-    function selectComponent(component) {
-      document.querySelectorAll('.report-component').forEach(el => {
-        el.classList.remove('selected');
-      });
-
-      const componentEl = document.querySelector(`.report-component[data-id="${component.id}"]`);
-      if (componentEl) {
-        componentEl.classList.add('selected');
-      }
-
-      selectedComponent = component;
-      propertiesPanel.classList.remove('hidden');
-      propertiesPlaceholder.classList.add('hidden');
-
-      // Update property form
-      const titleInput = document.getElementById('component-title');
-      const showProgressCheckbox = document.getElementById('show-progress');
-      const showChartCheckbox = document.getElementById('show-chart');
-
-      titleInput.value = component.config.title || '';
-
-      if (component.type === 'TextComponent') {
-        textContentContainer.classList.remove('hidden');
-        const textContentTextarea = document.getElementById('text-content');
-        textContentTextarea.value = component.config.textContent || '';
-        showProgressCheckbox.parentElement.parentElement.classList.add('hidden');
-      } else {
-        textContentContainer.classList.add('hidden');
-        showProgressCheckbox.parentElement.parentElement.classList.remove('hidden');
-        showProgressCheckbox.checked = component.config.showProgress !== false;
-        showChartCheckbox.checked = component.config.showChart !== false;
-      }
-    }
-
-    // Apply property changes
-    document.getElementById('apply-properties').addEventListener('click', () => {
-      if (!selectedComponent) return;
-
-      const titleInput = document.getElementById('component-title');
-      const showProgressCheckbox = document.getElementById('show-progress');
-      const showChartCheckbox = document.getElementById('show-chart');
-
-      selectedComponent.config.title = titleInput.value;
-
-      if (selectedComponent.type !== 'TextComponent') {
-        selectedComponent.config.showProgress = showProgressCheckbox.checked;
-        selectedComponent.config.showChart = showChartCheckbox.checked;
-      } else {
-        const textContentTextarea = document.getElementById('text-content');
-        selectedComponent.config.textContent = textContentTextarea.value;
-      }
-
-      // Re-render component
-      const componentEl = document.querySelector(`.report-component[data-id="${selectedComponent.id}"]`);
-      if (componentEl) {
-        const componentTypeInfo = componentTypes[selectedComponent.type];
-        componentEl.querySelector('.component-content').innerHTML = componentTypeInfo.render(selectedComponent.config);
-        componentEl.querySelector('.text-sm.font-medium').textContent = selectedComponent.config.title;
-      }
-    });
-
-    // Preview functionality
-    previewButton.addEventListener('click', () => {
-      previewContent.innerHTML = '';
-
-      if (reportComponents.length === 0) {
-        previewContent.innerHTML = '<div class="text-center py-8 text-gray-500">No components in the report. Please add components from the left panel.</div>';
-      } else {
-        reportComponents.forEach(component => {
-          const componentTypeInfo = componentTypes[component.type];
-          const content = componentTypeInfo.render(component.config);
-          previewContent.innerHTML += content;
-        });
-      }
-
-      previewModal.classList.remove('hidden');
-    });
-
-    closePreviewButton.addEventListener('click', () => {
-      previewModal.classList.add('hidden');
-    });
-
-    // Save and export buttons
-    document.getElementById('save-button').addEventListener('click', () => {
-      alert('Configuration saved!');
-    });
-
-    document.getElementById('export-button').addEventListener('click', () => {
-      alert('Report exported as PDF!');
-    });
-  });
-</script>
-</body>
-</html>

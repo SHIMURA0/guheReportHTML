@@ -103,7 +103,7 @@ strong, b {
   border-radius: 8px; /* 圆角 */
   text-align: center; /* 文本居中 */
   color: rgb(0, 178, 180); /* 字体颜色 */
-  font-size: 2.5rem; /* 字体大小 */
+  font-size: 2rem; /* 字体大小 */
   font-weight: bold; /* 使用 'bold' 使字体变粗 */
 }
 
@@ -145,7 +145,7 @@ strong, b {
     width: 100%;
     box-decoration-break: clone;
     position: relative; /* 增加定位上下文 */
-    overflow: visible;
+    /*overflow: visible;*/
   }
 
   .metabolites-info-container {
@@ -153,6 +153,25 @@ strong, b {
     break-inside: avoid !important; /* 现代浏览器支持 */
     /*margin-top: 5px; !* 添加上边距 *!*/
   }
+
+
+  /* 防止常见致病菌表格内分页导致的行分割问题 */
+  .pathogenic-info-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  /* 确保常见致病菌表格行不分离 */
+  .pathogenic-table tbody tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  /* 确保常见致病菌菌种描述与数据行不分离 */
+  .pathogenic-desc-row {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+
+
 
 
   /*.description-row {*/
@@ -302,6 +321,55 @@ strong, b {
 }
 
 /* 健康总分解读页 */
+
+/* 添加卡片高亮样式 */
+.active-card {
+  border: 2px solid #00B2B4;
+  box-shadow: 0 0 10px rgba(0, 178, 180, 0.3);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* 健康总分容器过渡效果 */
+.health-total-score-container {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#health-total-score, #health-total-score-rating {
+  transition: color 0.5s ease;
+}
+
+/* 优秀评级样式类 */
+.rating-excellent {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
+
+/* 良好评级样式类 */
+.rating-good {
+  background-color: #4F7FFF !important;
+  color: white !important;
+}
+
+/* 一般评级样式类 */
+.rating-average {
+  background-color: #E6A23C !important;
+  color: white !important;
+}
+
+/* 及格评级样式类 */
+.rating-pass {
+  background-color: #EB7A3C !important;
+  color: white !important;
+}
+
+/* 不及格评级样式类 */
+.rating-fail {
+  background-color: #E74C3C !important;
+  color: white !important;
+}
 
 :root {
   --excellent: #10b981;
@@ -1695,12 +1763,12 @@ tr {
 .orange { color: orange; }
 
 /* 修改后的CSS代码 */
-.resistance-first-column { width: 30%; }
-.resistance-second-column { width: 13%; }
-.resistance-third-column { width: 13%; }
-.resistance-fourth-column { width: 20%; }
-.resistance-fifth-column { width: 12%; }
-.resistance-sixth-column { width: 12%; }
+.resist-first-column { width: 26%; }
+.resist-second-column { width: 13%; }
+.resist-third-column { width: 13%; }
+.resist-fourth-column { width: 20%; }
+.resist-fifth-column { width: 12%; }
+.resist-sixth-column { width: 16%; }
 
 .metal-tolerance-first-column { width: 25%; }
 .metal-tolerance-second-column { width: 20%; }
@@ -1729,7 +1797,7 @@ tr {
 }
 
 .resistance-column-text {
-  font-size: 0.65rem;
+  font-size: 0.5rem;
 }
 
 /* 耐药基因样式 */
@@ -1768,7 +1836,7 @@ tr {
   padding: 4px 0;
   width: 100%;
   align-items: flex-end; /* 右对齐 */
-  line-height: 1.4; /* 增加行高 */
+  line-height: 0.5; /* 增加行高 */
 }
 
 .genes-and-reads-stack-container {
@@ -1800,6 +1868,7 @@ tr {
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
 }
+
 
 /* 菌群代谢物及神经递质评估板块 */
 
