@@ -597,7 +597,7 @@ strong, b {
 
 .gut-age-container {
   font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -1695,11 +1695,12 @@ tr {
 .orange { color: orange; }
 
 /* 修改后的CSS代码 */
-.resistance-first-column { width: 20%; }
-.resistance-second-column { width: 20%; }
-.resistance-third-column { width: 20%; }
-.resistance-fourth-column { width: 24%; }
-.resistance-fifth-column { width: 16%; }
+.resistance-first-column { width: 30%; }
+.resistance-second-column { width: 13%; }
+.resistance-third-column { width: 13%; }
+.resistance-fourth-column { width: 20%; }
+.resistance-fifth-column { width: 12%; }
+.resistance-sixth-column { width: 12%; }
 
 .metal-tolerance-first-column { width: 25%; }
 .metal-tolerance-second-column { width: 20%; }
@@ -1767,6 +1768,7 @@ tr {
   padding: 4px 0;
   width: 100%;
   align-items: flex-end; /* 右对齐 */
+  line-height: 1.4; /* 增加行高 */
 }
 
 .genes-and-reads-stack-container {
@@ -2657,9 +2659,9 @@ tr {
 
 /* 检出肠道细菌板块 */
 
-.detected-gut-microbiota-first-column{ width: 40% }
-.detected-gut-microbiota-second-column{ width: 25% }
-.detected-gut-microbiota-third-column{ width: 20% }
+.detected-gut-microbiota-first-column{ width: 35% }
+.detected-gut-microbiota-second-column{ width: 35% }
+.detected-gut-microbiota-third-column{ width: 15% }
 .detected-gut-microbiota-fourth-column{ width: 15% }
 
 .detected-gut-bacteria-first-column {
@@ -2700,11 +2702,15 @@ tr {
   width: 35%;
 }
 .detected-gut-fungi-second-column {
-  width: 32.5%;
+  width: 35%;
 }
 .detected-gut-fungi-third-column {
-  width: 32.5%;
+  width: 15%;
 }
+.detected-gut-fungi-fourth-column {
+  width: 15%;
+}
+
 
 .detected-gut-fungi-chinese-text {
   font-size: 0.8rem; /* 中文字体大小 */

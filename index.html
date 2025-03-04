@@ -1034,7 +1034,10 @@ ${d.summarized_health_index.gut_type.value ? `
   </div>
 
   <!-- 肠道年龄解读页 -->
-  <h2 class="custom-title-second-level page-break">肠道年龄解读</h2>
+  <h2
+    class="custom-title-second-level page-break">
+    肠道年龄解读
+  </h2>
 
   <div
     class="bg-white rounded-lg p-5 mb-5 mx-auto"
@@ -4778,51 +4781,110 @@ ${d.summarized_health_index.gut_type.value ? `
   </div>
 
 
-  <!-- 肠道菌群抗性和基因分布板块 -->
+<!--  &lt;!&ndash; 肠道菌群抗性和基因分布板块 &ndash;&gt;-->
 
-  <!-- 整体页面容器 -->
-  <h2 class="custom-title-second-level page-break">肠道菌群抗性与基因分布</h2>
+<!--  &lt;!&ndash; 整体页面容器 &ndash;&gt;-->
+<!--  <h2 class="custom-title-second-level page-break">肠道菌群抗性与基因分布</h2>-->
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+<!--  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
 
-    <div class="info-box">
-      <div class="flex items-start">
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
-            肠道菌群抗性是指细菌在肠道环境中通过不同基因的协同作用，抵抗抗生素、重金属及其他有害物质的能力。肠道菌群中的耐药基因、金属耐受基因和外排基因共同构成了细菌应对环境压力的重要机制，保障其生存与繁殖。
-          </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>耐药基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>作用机制：编码特定酶或改变靶点，减弱抗生素的效力。</li>
-                <li>常见耐药基因：blaTEM (β-lactamase)、mecA (青霉素结合蛋白改变)。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>金属耐受基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>作用机制：帮助细菌在重金属环境中生存，通过排出或转化金属降低其毒性。</li>
-                <li>常见金属耐受基因：czrC (锌的外排相关)。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>外排基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>作用机制：通过编码外排泵积极排除抗生素和毒素，提高耐药性。</li>
-                <li>常见外排基因：AcrAB-TolC (多种抗生素外排)、MexAB-OprM (对β-lactam抗生素的外排)。</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<!--    <div class="info-box">-->
+<!--      <div class="flex items-start">-->
+<!--        <div class="ml-2">-->
+<!--          <p class="text-lg text-custom-teal">-->
+<!--            <i class="fas fa-info-circle icon"></i>-->
+<!--            肠道菌群抗性是指细菌在肠道环境中通过不同基因的协同作用，抵抗抗生素、重金属及其他有害物质的能力。肠道菌群中的耐药基因、金属耐受基因和外排基因共同构成了细菌应对环境压力的重要机制，保障其生存与繁殖。-->
+<!--          </p>-->
+<!--          <ul class="list-disc ml-5">-->
+<!--            <li>-->
+<!--              <strong>耐药基因</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>作用机制：编码特定酶或改变靶点，减弱抗生素的效力。</li>-->
+<!--                <li>常见耐药基因：blaTEM (β-lactamase)、mecA (青霉素结合蛋白改变)。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>金属耐受基因</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>作用机制：帮助细菌在重金属环境中生存，通过排出或转化金属降低其毒性。</li>-->
+<!--                <li>常见金属耐受基因：czrC (锌的外排相关)。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>外排基因</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>作用机制：通过编码外排泵积极排除抗生素和毒素，提高耐药性。</li>-->
+<!--                <li>常见外排基因：AcrAB-TolC (多种抗生素外排)、MexAB-OprM (对β-lactam抗生素的外排)。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-  </div>
+<!--  </div>-->
 
 
-  <h3 class="custom-title-third-level page-break">耐药基因分布</h3>
+  <h3 class="custom-title-third-level page-break">
+    耐药基因分布
+  </h3>
+
+  <!-- 添加必要的堆叠样式 -->
+  <style>
+    .stack-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stack-item {
+      padding: 2px 4px;
+      border-radius: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 10px;
+    }
+
+    .reads-count.high {
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    .reads-count.low {
+      color: #10b981;
+    }
+
+    .resistance-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .resistance-row:nth-child(even) {
+      background-color: #f9fafb;
+    }
+
+    .resistance-row:not(:last-child) {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .chinese-text {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .latin-text {
+      font-style: italic;
+      font-size: 10px;
+      color: #6b7280;
+    }
+
+    .classification-text {
+      font-size: 10px;
+      color: #4b5563;
+    }
+  </style>
+
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
     <!-- 信息框 -->
@@ -4833,55 +4895,35 @@ ${d.summarized_health_index.gut_type.value ? `
             <i class="fas fa-info-circle icon"></i>
             耐药基因是指生物体内存在的一类基因，使得生物能够抵御或适应抗生素等药物的影响。这些基因广泛存在于细菌中，特别是在病原菌中，发挥着保护细胞、维持生存的重要作用。耐药基因使得肠道菌群能够在不利环境中生存，从而影响治疗效果和公共健康。
           </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>作用机制</strong>：
-              <ul class="list-disc ml-5">
-                <li>药物排除：通过编码泵类蛋白，增强细菌细胞膜对抗生素的排出能力。</li>
-                <li>药物失活：产生酶来分解或改变药物的活性，从而降低其毒性。</li>
-                <li>靶点改变：通过基因突变或重组改变抗生素的靶标，从而使药物无法有效结合。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>常见耐药基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>blaTEM：编码β-lactam酶，能够分解青霉素类抗生素。</li>
-                <li>mecA：与耐甲氧西林的金黄色葡萄球菌（MRSA）相关，改变青霉素结合蛋白，使其对青霉素耐受。</li>
-                <li>tetM：赋予细菌对四环素的耐药能力，通过改变抗生素的靶点机制。</li>
-                <li>aac(3)-IV：编码一种酰胺酶，能够失活氨基糖苷类抗生素。</li>
-                <li>vanA：与万古霉素耐药相关，改变细菌对万古霉素的靶标。</li>
-              </ul>
-            </li>
-          </ul>
+<!--          <ul class="list-disc ml-5">-->
+<!--            <li>-->
+<!--              <strong>作用机制</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>药物排除：通过编码泵类蛋白，增强细菌细胞膜对抗生素的排出能力。</li>-->
+<!--                <li>药物失活：产生酶来分解或改变药物的活性，从而降低其毒性。</li>-->
+<!--                <li>靶点改变：通过基因突变或重组改变抗生素的靶标，从而使药物无法有效结合。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>常见耐药基因</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>blaTEM：编码β-lactam酶，能够分解青霉素类抗生素。</li>-->
+<!--                <li>mecA：与耐甲氧西林的金黄色葡萄球菌（MRSA）相关，改变青霉素结合蛋白，使其对青霉素耐受。</li>-->
+<!--                <li>tetM：赋予细菌对四环素的耐药能力，通过改变抗生素的靶点机制。</li>-->
+<!--                <li>aac(3)-IV：编码一种酰胺酶，能够失活氨基糖苷类抗生素。</li>-->
+<!--                <li>vanA：与万古霉素耐药相关，改变细菌对万古霉素的靶标。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
           <p>下列是您肠道中检出的耐药基因，按照相关耐药基因片段reads数量递减排列。</p>
           <!-- 在这里插入相关数据 -->
         </div>
       </div>
     </div>
 
-
-    <!-- 包裹三个卡片的容器 -->
-<!--    <div class="card-container">-->
-<!--      <div class="card">-->
-<!--        <div class="title">检测菌株</div>-->
-<!--        <div class="number">21株</div>-->
-<!--        <div class="status green">100% 完成检测</div>-->
-<!--      </div>-->
-<!--      <div class="card">-->
-<!--        <div class="title">耐药基因种类</div>-->
-<!--        <div class="number">12种</div>-->
-<!--        <div class="status blue">覆盖3大类别</div>-->
-<!--      </div>-->
-<!--      <div class="card">-->
-<!--        <div class="title">最高reads数</div>-->
-<!--        <div class="number">321,552</div>-->
-<!--        <div class="status orange">四环素类耐药</div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-    <!-- 细菌耐药性基因表格 -->
+    <!-- 细菌耐药性基因表格 - 使用单一表格 -->
     <div class="rounded-table">
-      <table class="min-w-full">
+      <table class="resistance-table min-w-full" id="resistance-main-table">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
           <th class="py-2 px-4 text-left resistance-first-column"
@@ -4892,37 +4934,131 @@ ${d.summarized_health_index.gut_type.value ? `
               style="font-size: 11px; padding: 5px 5px;">
             耐药基因
           </th>
-          <th class="py-2 px-4 text-right resistance-third-column"
-              style="font-size: 11px;
-                    padding: 5px 20px 5px 5px;"
-          >
-            耐药类型
-          </th>
-          <th class="py-2 px-4 text-center resistance-fourth-column"
+          <th class="py-2 px-4 text-center resistance-third-column"
               style="font-size: 11px; padding: 5px 5px;">
             reads数量
           </th>
+          <th class="py-2 px-4 text-center resistance-fourth-column"
+              style="font-size: 11px; padding: 5px 5px;">
+            分类
+          </th>
           <th class="py-2 px-4 text-right resistance-fifth-column"
-              style="font-size: 11px; padding: 5px 20px 5px 5px;">
+              style="font-size: 11px;">
+            药物分类
+          </th>
+          <th class="py-2 px-4 text-right resistance-sixth-column"
+              style="font-size: 11px;">
             耐药药物
           </th>
         </tr>
         </thead>
+        <tbody id="antimicrobial-resistance-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+        </tbody>
       </table>
 
-      <div id="antimicrobial-resistance-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-      </div>
-
       <script>
+        // 检测字符串是否包含中文
+        function containsChinese(str) {
+          return /[\u4e00-\u9fa5]/.test(str);
+        }
+
         async function loadResistanceData() {
           try {
             const response = await fetch(DATA_PATHS.DATA);
             const data = await response.json();
-            data.antimicrobial_resistance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
-            renderResistanceTable(data.antimicrobial_resistance_genes_data);
+
+            // 获取耐药基因数据
+            let resistanceData = data["耐药基因"] || [];
+
+            // 转换数据格式并过滤空的来源菌
+            resistanceData = resistanceData
+              .filter(item => item["来源菌"] && item["来源菌"].trim() !== "") // 过滤掉空的来源菌
+              .map(item => {
+                let chineseName = '';
+                let latinName = '';
+
+                // 处理来源菌名称
+                if (containsChinese(item["来源菌"])) {
+                  // 包含中文，尝试分离中文名和拉丁名
+                  const nameParts = item["来源菌"].split(/\s+/);
+                  // 找到第一个不含中文的部分作为分界点
+                  let splitIndex = 0;
+                  for (let i = 0; i < nameParts.length; i++) {
+                    if (!containsChinese(nameParts[i])) {
+                      splitIndex = i;
+                      break;
+                    }
+                  }
+
+                  chineseName = nameParts.slice(0, splitIndex).join(' ');
+                  latinName = nameParts.slice(splitIndex).join(' ');
+
+                  // 如果拉丁名为空，则尝试其他分割方式
+                  if (!latinName && item["来源菌"].includes(' ')) {
+                    const parts = item["来源菌"].split(' ');
+                    chineseName = parts[0] || '';
+                    latinName = parts.slice(1).join(' ') || '';
+                  }
+                } else {
+                  // 不包含中文，整个字符串作为拉丁名
+                  latinName = item["来源菌"];
+                }
+
+                // 将药物字符串转换为数组
+                let drugs = [];
+                if (item["药物"]) {
+                  // 检查各种可能的分隔符
+                  if (item["药物"].includes('/')) {
+                    drugs = item["药物"].split('/');
+                  } else if (item["药物"].includes('、')) {
+                    drugs = item["药物"].split('、');
+                  } else if (item["药物"].includes(',')) {
+                    drugs = item["药物"].split(',');
+                  } else if (item["药物"].includes('，')) {
+                    drugs = item["药物"].split('，');
+                  } else {
+                    drugs = [item["药物"]];
+                  }
+                }
+
+                // 药物分类转换为数组
+                let drugTypes = [];
+                if (item["药物分类"]) {
+                  if (item["药物分类"].includes('/')) {
+                    drugTypes = item["药物分类"].split('/');
+                  } else if (item["药物分类"].includes('、')) {
+                    drugTypes = item["药物分类"].split('、');
+                  } else if (item["药物分类"].includes(',')) {
+                    drugTypes = item["药物分类"].split(',');
+                  } else if (item["药物分类"].includes('，')) {
+                    drugTypes = item["药物分类"].split('，');
+                  } else {
+                    drugTypes = [item["药物分类"]];
+                  }
+                }
+
+                return {
+                  chinese_name: chineseName,
+                  latin_name: latinName,
+                  has_chinese: chineseName.length > 0, // 标记是否有中文名
+                  resistance_gene: item["耐药基因"] || '',
+                  resistance_type: item["分类"] || '',
+                  reads_count: item["reads数量"] || '0',
+                  resistance_drugs: drugs,
+                  drug_types: drugTypes,
+                  descriptions: ""
+                };
+              });
+
+            // 按reads数量排序
+            resistanceData.sort((a, b) => parseInt(b.reads_count) - parseInt(a.reads_count));
+
+            renderResistanceTable(resistanceData);
           } catch (error) {
             console.error('Error loading resistance data:', error);
+            document.getElementById('antimicrobial-resistance-data-table-body').innerHTML =
+              '<tr><td colspan="6" class="text-center p-4 text-red-500">数据加载失败，请稍后再试</td></tr>';
           }
         }
 
@@ -4935,396 +5071,87 @@ ${d.summarized_health_index.gut_type.value ? `
 
           container.innerHTML = '';
 
+          if (!resistanceData || resistanceData.length === 0) {
+            container.innerHTML = '<tr><td colspan="6" class="text-center p-4 text-gray-500">暂无耐药基因数据</td></tr>';
+            return;
+          }
+
           resistanceData.forEach(resistance => {
-            const resistanceContainer = document.createElement('div');
-            resistanceContainer.className = 'resistance-info-container';
+            // 创建数据行
+            const dataRow = document.createElement('tr');
+            dataRow.className = 'resistance-row';
 
-            const table = document.createElement('table');
-            table.className = 'resistance-table min-w-full';
+            // 根据是否有中文名决定显示方式
+            let sourceNameHtml = '';
+            if (resistance.has_chinese) {
+              // 有中文名，显示中文名和拉丁名
+              sourceNameHtml = `
+            <div class="chinese-text">${resistance.chinese_name}</div>
+            <div class="latin-text">${resistance.latin_name}</div>
+          `;
+            } else {
+              // 只有拉丁名，加粗且不使用斜体
+              sourceNameHtml = `<div style="font-size: 12px; font-weight: bold; font-style: normal;">${resistance.latin_name}</div>`;
+            }
 
-            const dataRow = `
-  <tr class="resistance-row">
-    <td class="py-2 px-4 text-left resistance-first-column">
-      <div class="chinese-text">${resistance.chinese_name}</div>
-      <div class="latin-text">${resistance.latin_name}</div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text resistance-second-column">
-      <span class="resistance-gene">${resistance.resistance_gene}</span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text resistance-third-column">
-      <div class="stack-container">
-        ${resistance.resistance_type.map(type => `
-          <div class="stack-item">${type}</div>
-        `).join('')}
-      </div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text resistance-fourth-column">
-      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
-        ${resistance.reads_count}
-      </span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text resistance-fifth-column">
-      <div class="stack-container">
-        ${resistance.resistance_drugs.map(drug => `
-          <div class="stack-item">${drug}</div>
-        `).join('')}
-      </div>
-    </td>
-  </tr>
+            dataRow.innerHTML = `
+<td class="py-2 px-4 text-left resistance-first-column">
+  ${sourceNameHtml}
+</td>
+<td class="py-2 px-4 text-center resistance-column-text resistance-second-column">
+  <span class="resistance-gene">${resistance.resistance_gene}</span>
+</td>
+<td class="py-2 px-4 text-center resistance-column-text resistance-third-column">
+  <span class="reads-count bg-gray-100">
+    ${resistance.reads_count}
+  </span>
+</td>
+<td class="py-2 px-4 text-center resistance-column-text resistance-fourth-column">
+  <span class="classification-text">${resistance.resistance_type}</span>
+</td>
+<td class="py-2 px-4 text-right resistance-column-text resistance-fifth-column">
+  <div class="stack-container">
+    ${resistance.drug_types.map(type => `
+      <div class="stack-item">${type}</div>
+    `).join('')}
+  </div>
+</td>
+<td class="py-2 px-4 text-right resistance-column-text resistance-sixth-column">
+  <div class="stack-container">
+    ${resistance.resistance_drugs.map(drug => `
+      <div class="stack-item">${drug}</div>
+    `).join('')}
+  </div>
+</td>
 `;
+            container.appendChild(dataRow);
 
-            const descRow = resistance.descriptions ? `
-          <tr class="resistance-desc-row">
-            <td colspan="5" class="py-2 px-4 text-left">
-              <div class="description-container text-gray-600" style="font-size: 10px;">
-                ${resistance.descriptions.map(desc => `
-                  <div class="resistance-description">
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};"></i>
-                    ${desc.text}
-                  </div>
-                `).join('')}
-              </div>
-            </td>
-          </tr>
-        ` : '';
-
-            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-            resistanceContainer.appendChild(table);
-            container.appendChild(resistanceContainer);
+            // 如果有描述，添加描述行
+            if (resistance.descriptions) {
+              const descRow = document.createElement('tr');
+              descRow.className = 'resistance-desc-row';
+              descRow.innerHTML = `
+  <td colspan="6" class="py-2 px-4 text-left">
+    <div class="description-container text-gray-600" style="font-size: 10px;">
+      ${Array.isArray(resistance.descriptions) ?
+                resistance.descriptions.map(desc => `
+          <div class="resistance-description">
+            <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
+               style="color: ${desc.color};"></i>
+            ${desc.text}
+          </div>
+        `).join('') : ''}
+    </div>
+  </td>
+`;
+              container.appendChild(descRow);
+            }
           });
         }
 
         // 页面加载时加载数据
         document.addEventListener('DOMContentLoaded', loadResistanceData);
       </script>
-
-    </div>
-
-  </div>
-
-  <h3 class="custom-title-third-level page-break">金属耐受基因分布</h3>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
-            金属耐受基因是指生物体内存在的一类基因，使得生物能够抵御和适应环境中有毒金属离子的影响。这些基因广泛存在于微生物、植物和动物中，发挥着保护细胞、维持生存的重要作用。金属耐受基因使得肠道菌群能够在负有重金属污染的环境中生存，并帮助维持肠道生态系统的平衡。
-          </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>作用机制</strong>：
-              <ul class="list-disc ml-5">
-                <li>金属转运：通过转运蛋白将金属离子有效排出细胞或将其吸收。</li>
-                <li>金属螯合：合成小分子或蛋白质与金属离子结合，形成无毒的络合物，以降低金属的毒性。</li>
-                <li>去毒化反应：通过酶促反应改变金属离子的化学形态，从而减轻其对细胞的伤害。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>常见金属耐受基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>cusC：负责铜离子的耐受，促进细菌排除体内多余的铜离子。</li>
-                <li>copA：参与铜离子的运输和排出，帮助细菌防止铜的毒性影响。</li>
-                <li>zntA：与锌和镉的耐受相关，能够排出细胞内有害的锌和镉离子。</li>
-                <li>silE：与硅化合物的耐受性相关，帮助细菌生存于含硅的环境。</li>
-                <li>merA：编码汞还原酶，将有毒的二价汞还原为较不活泼的一价汞。</li>
-                <li>chrB：负责铬的耐受，促进细菌在铬污染环境中的存活。</li>
-              </ul>
-            </li>
-          </ul>
-          <p>下列是您肠道中检出的肠道菌群的金属耐受基因，按照相关金属耐受基因片段reads数量递减排列。</p>
-          <!-- 在这里插入相关数据 -->
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 细菌耐药性基因表格 -->
-    <div class="rounded-table">
-      <table class="min-w-full">
-        <thead>
-        <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left metal-tolerance-first-column"
-              style="font-size: 11px;">
-            来源菌株
-          </th>
-          <th class="py-2 px-4 text-center metal-tolerance-second-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            相关基因
-          </th>
-          <th class="py-2 px-4 text-right metal-tolerance-third-column"
-              style="font-size: 11px;
-                    padding: 5px 20px 5px 5px;"
-          >
-            机制类型
-          </th>
-          <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            reads数量
-          </th>
-          <th class="py-2 px-4 text-right metal-tolerance-fifth-column"
-              style="font-size: 11px; padding: 5px 20px 5px 5px;">
-            相关金属
-          </th>
-        </tr>
-        </thead>
-      </table>
-
-      <div id="metal-tolerance-genes-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-      </div>
-
-      <script>
-        async function loadMetalToleranceData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            data.metal_tolerance_genes_data.sort((a, b) => b.reads_count - a.reads_count);
-            renderMetalToleranceTable(data.metal_tolerance_genes_data);
-          } catch (error) {
-            console.error('Error loading resistance data:', error);
-          }
-        }
-
-        function renderMetalToleranceTable(resistanceData) {
-          const container = document.getElementById('metal-tolerance-genes-data-table-body');
-          if (!container) {
-            console.error('Resistance table body not found');
-            return;
-          }
-
-          container.innerHTML = '';
-
-          resistanceData.forEach(resistance => {
-            const resistanceContainer = document.createElement('div');
-            resistanceContainer.className = 'resistance-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'resistance-table min-w-full';
-
-            const dataRow = `
-  <tr class="resistance-row">
-    <td class="py-2 px-4 text-left metal-tolerance-first-column">
-      <div class="chinese-text">${resistance.chinese_name}</div>
-      <div class="latin-text">${resistance.latin_name}</div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-second-column">
-      <span class="resistance-gene">${resistance.resistance_gene}</span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
-      <div class="stack-container">
-        ${resistance.resistance_type.map(type => `
-          <div class="stack-item">${type}</div>
-        `).join('')}
-      </div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
-      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
-        ${resistance.reads_count}
-      </span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fifth-column">
-      <div class="stack-container">
-        ${resistance.resistance_drugs.map(drug => `
-          <div class="stack-item">${drug}</div>
-        `).join('')}
-      </div>
-    </td>
-  </tr>
-`;
-
-            const descRow = resistance.descriptions ? `
-          <tr class="resistance-desc-row">
-            <td colspan="5" class="py-2 px-4 text-left">
-              <div class="description-container text-gray-600" style="font-size: 10px;">
-                ${resistance.descriptions.map(desc => `
-                  <div class="resistance-description">
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};"></i>
-                    ${desc.text}
-                  </div>
-                `).join('')}
-              </div>
-            </td>
-          </tr>
-        ` : '';
-
-            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-            resistanceContainer.appendChild(table);
-            container.appendChild(resistanceContainer);
-          });
-        }
-
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadMetalToleranceData);
-      </script>
-
-    </div>
-
-  </div>
-
-  <h3 class="custom-title-third-level page-break">外排基因分布</h3>
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
-
-    <!-- 信息框 -->
-    <div class="info-box">
-      <div class="flex items-start">
-        <div class="ml-2">
-          <p class="text-lg text-custom-teal">
-            <i class="fas fa-info-circle icon"></i>
-            外排基因是指一类生物体内的基因，通过编码特定的蛋白质，促进细菌将有害物质，如抗生素、毒素及重金属等，从细胞内泵出。外排基因广泛存在于多种细菌中，尤其是在病原菌中，能够增强其生存能力，增加对环境压力的抵抗力。
-          </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>作用机制</strong>：
-              <ul class="list-disc ml-5">
-                <li>主动外排：通过形成外排泵，增强细菌对外界有害物质的排除能力。</li>
-                <li>协同外排：与其他外排蛋白协同工作，提高细菌对多种抗生素或毒素的耐受性。</li>
-                <li>膜透过性调节：调节细菌膜的通透性，以减少有害物质的内流。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>常见外排基因</strong>：
-              <ul class="list-disc ml-5">
-                <li> AcrAB-TolC：编码一套外排泵，能够排出多种抗生素和毒素。</li>
-                <li>MexAB-OprM：存在于铜绿假单胞菌中，具有对多种β-lactam抗生素的外排能力。</li>
-                <li>NorA：使某些细菌对氟喹诺酮类药物具有耐受性，增强细菌抵御药物的能力。</li>
-                <li>CzrC：与锌和其他金属的外排相关，帮助细菌在重金属污染环境中生存。</li>
-                <li>RND家族基因：包括多种外排蛋白家族，广泛存在于革兰氏阴性细菌中，负责多种化学物质的外排。</li>
-              </ul>
-            </li>
-          </ul>
-          <p>下列是您肠道中检出的外排基因，按照相关外排基因片段reads数量递减排列。</p>
-          <!-- 在这里插入相关数据 -->
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- 外排基因表格 -->
-    <div class="rounded-table">
-      <table class="min-w-full">
-        <thead>
-        <tr style="background-color: #00B2B4; color: white;">
-          <th class="py-2 px-4 text-left metal-tolerance-first-column"
-              style="font-size: 11px;">
-            来源菌株
-          </th>
-          <th class="py-2 px-4 text-center metal-tolerance-second-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            相关基因
-          </th>
-          <th class="py-2 px-4 text-right metal-tolerance-third-column"
-              style="font-size: 11px;
-                    padding: 5px 20px 5px 5px;"
-          >
-            机制类型
-          </th>
-          <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
-              style="font-size: 11px; padding: 5px 5px;">
-            reads数量
-          </th>
-          <th class="py-2 px-4 text-right metal-tolerance-fifth-column"
-              style="font-size: 11px; padding: 5px 20px 5px 5px;">
-            外排物质
-          </th>
-        </tr>
-        </thead>
-      </table>
-
-      <div id="efflux-genes-data-table-body">
-        <!-- 数据将通过 JavaScript 动态插入 -->
-      </div>
-
-      <script>
-        async function loadEffluxData() {
-          try {
-            const response = await fetch(DATA_PATHS.DATA);
-            const data = await response.json();
-            data.efflux_genes_data.sort((a, b) => b.reads_count - a.reads_count);
-            renderEffluxTable(data.efflux_genes_data);
-          } catch (error) {
-            console.error('Error loading resistance data:', error);
-          }
-        }
-
-        function renderEffluxTable(resistanceData) {
-          const container = document.getElementById('efflux-genes-data-table-body');
-          if (!container) {
-            console.error('Resistance table body not found');
-            return;
-          }
-
-          container.innerHTML = '';
-
-          resistanceData.forEach(resistance => {
-            const resistanceContainer = document.createElement('div');
-            resistanceContainer.className = 'resistance-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'resistance-table min-w-full';
-
-            const dataRow = `
-  <tr class="resistance-row">
-    <td class="py-2 px-4 text-left metal-tolerance-first-column">
-      <div class="chinese-text">${resistance.chinese_name}</div>
-      <div class="latin-text">${resistance.latin_name}</div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-second-column">
-      <span class="resistance-gene">${resistance.resistance_gene}</span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
-      <div class="stack-container">
-        ${resistance.resistance_type.map(type => `
-          <div class="stack-item">${type}</div>
-        `).join('')}
-      </div>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
-      <span class="reads-count ${parseInt(resistance.reads_count) > 0 ? 'high' : 'low'}">
-        ${resistance.reads_count}
-      </span>
-    </td>
-    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fifth-column">
-      <div class="stack-container">
-        ${resistance.resistance_drugs.map(drug => `
-          <div class="stack-item">${drug}</div>
-        `).join('')}
-      </div>
-    </td>
-  </tr>
-`;
-
-            const descRow = resistance.descriptions ? `
-          <tr class="resistance-desc-row">
-            <td colspan="5" class="py-2 px-4 text-left">
-              <div class="description-container text-gray-600" style="font-size: 10px;">
-                ${resistance.descriptions.map(desc => `
-                  <div class="resistance-description">
-                    <i class="fas fa-${desc.type === 'info' ? 'info-circle' : 'bell'}"
-                       style="color: ${desc.color};"></i>
-                    ${desc.text}
-                  </div>
-                `).join('')}
-              </div>
-            </td>
-          </tr>
-        ` : '';
-
-            table.innerHTML = `<tbody>${dataRow}${descRow}</tbody>`;
-            resistanceContainer.appendChild(table);
-            container.appendChild(resistanceContainer);
-          });
-        }
-
-        // 页面加载时加载数据
-        document.addEventListener('DOMContentLoaded', loadEffluxData);
-      </script>
-
     </div>
 
   </div>
@@ -5340,26 +5167,26 @@ ${d.summarized_health_index.gut_type.value ? `
             <i class="fas fa-info-circle icon"></i>
             毒力基因是指一类生物体内的基因，通过编码特定的蛋白质，使病原菌能够造成宿主细胞的伤害，从而引发感染和疾病。这些基因广泛存在于各种病原菌中，例如细菌、病毒和真菌，能够增强其致病能力和生存优势。
           </p>
-          <ul class="list-disc ml-5">
-            <li>
-              <strong>作用机制</strong>：
-              <ul class="list-disc ml-5">
-                <li>细胞破坏：通过产生毒素或酶破坏宿主细胞结构，从而导致宿主细胞死亡。</li>
-                <li>免疫逃逸：通过抑制宿主免疫反应，帮助病原体在宿主体内存活和繁殖。</li>
-                <li>定殖能力：促进病原体在宿主组织中的定殖和生长，增强感染的能力。</li>
-              </ul>
-            </li>
-            <li>
-              <strong>常见毒力基因</strong>：
-              <ul class="list-disc ml-5">
-                <li>shiga toxin (stx)：由志贺氏菌产生，能够抑制宿主蛋白合成，引发严重的肠道疾病。</li>
-                <li>enterotoxin (eae)：由某些大肠杆菌产生，能够引发腹泻和肠炎。</li>
-                <li>cholera toxin (ctx)：由霍乱弧菌产生，导致宿主细胞大量排泄水分，造成失水和电解质紊乱。</li>
-                <li>pore-forming toxins (PFTs)：能够在宿主细胞膜上形成孔洞，破坏细胞完整性。</li>
-                <li>adhesin genes：促进细菌与宿主细胞结合，从而增强感染能力。</li>
-              </ul>
-            </li>
-          </ul>
+<!--          <ul class="list-disc ml-5">-->
+<!--            <li>-->
+<!--              <strong>作用机制</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>细胞破坏：通过产生毒素或酶破坏宿主细胞结构，从而导致宿主细胞死亡。</li>-->
+<!--                <li>免疫逃逸：通过抑制宿主免疫反应，帮助病原体在宿主体内存活和繁殖。</li>-->
+<!--                <li>定殖能力：促进病原体在宿主组织中的定殖和生长，增强感染的能力。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>常见毒力基因</strong>：-->
+<!--              <ul class="list-disc ml-5">-->
+<!--                <li>shiga toxin (stx)：由志贺氏菌产生，能够抑制宿主蛋白合成，引发严重的肠道疾病。</li>-->
+<!--                <li>enterotoxin (eae)：由某些大肠杆菌产生，能够引发腹泻和肠炎。</li>-->
+<!--                <li>cholera toxin (ctx)：由霍乱弧菌产生，导致宿主细胞大量排泄水分，造成失水和电解质紊乱。</li>-->
+<!--                <li>pore-forming toxins (PFTs)：能够在宿主细胞膜上形成孔洞，破坏细胞完整性。</li>-->
+<!--                <li>adhesin genes：促进细菌与宿主细胞结合，从而增强感染能力。</li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
           <p>下列是您肠道中检出的毒力基因，按照相关毒力基因片段reads数量递减排列。</p>
         </div>
       </div>
@@ -13788,7 +13615,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            下列表格中展示了您肠道中实际检出的肠道细菌（仅展示丰度最高的前35个并且按照丰度递减排列）
+            下列表格展示了您肠道中检测到的肠道细菌，具体列出了丰度最高的前35种细菌，并按丰度递减的顺序排列。
           </p>
         </div>
       </div>
@@ -13799,19 +13626,24 @@ ${d.summarized_health_index.gut_type.value ? `
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
           <th
-            class="py-2 px-4 text-left detected-gut-bacteria-first-column"
-            style="font-size: 13px;">
-            细菌名称
+            class="py-2 px-4 text-left detected-gut-microbiota-first-column"
+            style="font-size: 10px;">
+            细菌拉丁名
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-bacteria-second-column"
-            style="font-size: 13px; padding: 5px 5px;">
+            class="py-2 px-4 text-left detected-gut-microbiota-second-column"
+            style="font-size: 10px;">
+            细菌中文名
+          </th>
+          <th
+            class="py-2 px-4 text-right detected-gut-microbiota-third-column"
+            style="font-size: 10px; padding: 5px 5px;">
             参考范围%
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-bacteria-third-column"
-            style="font-size: 13px; padding: 5px 5px;">
-            检测丰度%
+            class="py-2 px-4 text-right detected-gut-microbiota-fourth-column"
+            style="font-size: 10px;">
+            检出丰度%
           </th>
         </tr>
         </thead>
@@ -13830,8 +13662,10 @@ ${d.summarized_health_index.gut_type.value ? `
           COLORS: {
             RED: '#ff4d4f',
             GREEN: '#00B2B4',  // 使用原来的青色作为正常值颜色
-            GRAY: '#808080'
-          }
+            GRAY: '#808080',
+            LIGHT_GRAY: '#f9f9f9'  // 用于隔行变色
+          },
+          FONT_SIZE: '10px'  // 调整字体大小为9.5px
         },
 
         // 格式化数字
@@ -13853,29 +13687,11 @@ ${d.summarized_health_index.gut_type.value ? `
           }
         },
 
-        // 计算进度条百分比
-        calculateProgressPercentage(value) {
-          if (value === "ND" || value === "未检出" || value === 0) {
-            return 0;
-          }
-
-          const num = Number(value);
-          if (isNaN(num)) return 0;
-
-          const logValue = Math.log10(num);
-          const minLog = -1;
-          const maxLog = 3;
-
-          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-          return Math.max(5, Math.min(50, percentage));
-        },
-
-        // 获取状态信息
+        // 获取状态信息 - 虽然不再使用颜色，但保留此方法以兼容其他可能的逻辑
         getStatus(detected, minRange, maxRange) {
           let status = {
             color: this.CONSTANTS.COLORS.GREEN,
             text: '正常',
-            icon: '',
             isNormal: true
           };
 
@@ -13883,7 +13699,6 @@ ${d.summarized_health_index.gut_type.value ? `
             if (minRange > 0) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '↓'; // 使用Unicode箭头替代font-awesome
               status.isNormal = false;
             }
           } else {
@@ -13891,12 +13706,10 @@ ${d.summarized_health_index.gut_type.value ? `
             if (numDetected < minRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + HARMFUL_CONSTANTS.COLORS.RED + ';"></i>';
               status.isNormal = false;
             } else if (numDetected > maxRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '超标';
-              status.icon = '<i class="fas fa-arrow-up ml-1" style="color: ' + HARMFUL_CONSTANTS.COLORS.RED + ';"></i>';
               status.isNormal = false;
             }
           }
@@ -13917,8 +13730,11 @@ ${d.summarized_health_index.gut_type.value ? `
           }
 
           const fragment = document.createDocumentFragment();
+          const mainTable = document.createElement('table');
+          mainTable.className = 'min-w-full';
+          const tbody = document.createElement('tbody');
 
-          bacteriaData.forEach(bacteria => {
+          bacteriaData.forEach((bacteria, index) => {
             const detected = bacteria.detected_abundance;
             const minRange = bacteria.normal_range?.min_normal_value || 0;
             const maxRange = bacteria.normal_range?.max_normal_value || 0;
@@ -13927,67 +13743,45 @@ ${d.summarized_health_index.gut_type.value ? `
             const formattedMinRange = this.formatNumber(minRange);
             const formattedMaxRange = this.formatNumber(maxRange);
 
-            const status = this.getStatus(detected, minRange, maxRange);
-
-            const bacteriaContainer = document.createElement('div');
-            bacteriaContainer.className = 'bacteria-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'bacteria-table min-w-full';
+            // 获取状态信息 - 虽然不再使用颜色，但保留此调用以兼容其他可能的逻辑
+            this.getStatus(detected, minRange, maxRange);
 
             // 获取拉丁名和中文名
             const latinName = bacteria.latin_name || "";
             const chineseName = bacteria.chinese_name || "";
 
-            // 构造名称显示HTML
-            let nameDisplay;
-            if (!chineseName || chineseName.trim() === "") {
-              // 如果中文名为空，只显示拉丁名一次
-              nameDisplay = `
-          <div class="detected-gut-bacteria-chinese-text"><strong>${latinName}</strong></div>
-        `;
-            } else {
-              // 如果有中文名，则同时显示中文名和拉丁名
-              nameDisplay = `
-          <div class="detected-gut-bacteria-chinese-text"><strong>${chineseName}</strong></div>
-          <div class="detected-gut-bacteria-latin-text text-gray-500">${latinName}</div>
-        `;
+            // 创建行元素
+            const tr = document.createElement('tr');
+            tr.className = 'bacteria-row';
+
+            // 隔行灰色背景
+            if (index % 2 === 1) {
+              tr.style.backgroundColor = this.CONSTANTS.COLORS.LIGHT_GRAY;
             }
 
-            // 修改dataRow的列顺序，与表头保持一致
-            const dataRow = `
-        <tr class="bacteria-row">
-          <td class="py-2 px-4 text-left detected-gut-bacteria-first-column">
-            ${nameDisplay}
-          </td>
-
-          <td class="py-2 px-4 text-center detected-gut-bacteria-column-text detected-gut-bacteria-second-column">
-            ${formattedMinRange}-${formattedMaxRange}
-          </td>
-
-          <td class="py-2 px-4 text-center detected-gut-bacteria-column-text detected-gut-bacteria-third-column">
-            <div class="flex items-center justify-center">
-              <span style="color: ${status.color}">
-                <strong>${formattedDetectedValue} ${status.icon}</strong>
+            // 设置行内容 - 为所有单元格应用9.5px的字体大小
+            tr.innerHTML = `
+            <td class="py-2 px-4 text-left detected-gut-microbiota-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div style="font-style: italic;">${latinName}</div>
+            </td>
+            <td class="py-2 px-4 text-left detected-gut-microbiota-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div>${chineseName}</div>
+            </td>
+            <td class="py-2 px-4 text-right detected-gut-microbiota-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-right detected-gut-microbiota-fourth-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <span style="font-weight: bold;">
+                ${formattedDetectedValue}
               </span>
-            </div>
-            <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-              <div class="progress"
-                   style="width: ${this.calculateProgressPercentage(detected)}%;
-                          height: 100%;
-                          background-color: ${status.color};
-                          transition: width 0.3s ease;">
-              </div>
-            </div>
-          </td>
-        </tr>
-      `;
+            </td>
+          `;
 
-            table.innerHTML = `<tbody>${dataRow}</tbody>`;
-            bacteriaContainer.appendChild(table);
-            fragment.appendChild(bacteriaContainer);
+            tbody.appendChild(tr);
           });
 
+          mainTable.appendChild(tbody);
+          fragment.appendChild(mainTable);
           container.appendChild(fragment);
         },
 
@@ -14062,7 +13856,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            下列表格中展示了您肠道中实际检出的肠道真菌（仅展示丰度最高的前35个并且按照丰度递减排列）
+            下列表格展示了您肠道中检测到的肠道真菌，具体列出了丰度最高的前35种真菌，并按丰度递减的顺序排列。
           </p>
         </div>
       </div>
@@ -14074,18 +13868,18 @@ ${d.summarized_health_index.gut_type.value ? `
         <tr style="background-color: #00B2B4; color: white;">
           <th
             class="py-2 px-4 text-left detected-gut-fungi-first-column"
-            style="font-size: 13px;">
+            style="font-size: 10px;">
             真菌名称
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-fungi-second-column"
-            style="font-size: 13px; padding: 5px 5px;">
+            class="py-2 px-4 text-right detected-gut-fungi-second-column"
+            style="font-size: 10px; padding: 5px 5px;">
             参考范围%
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-fungi-third-column"
-            style="font-size: 13px; padding: 5px 5px;">
-            检测丰度%
+            class="py-2 px-4 text-right detected-gut-fungi-third-column"
+            style="font-size: 10px;">
+            检出丰度%
           </th>
         </tr>
         </thead>
@@ -14103,9 +13897,11 @@ ${d.summarized_health_index.gut_type.value ? `
         CONSTANTS: {
           COLORS: {
             RED: '#ff4d4f',
-            GREEN: '#389e0d',
-            GRAY: '#808080'
-          }
+            GREEN: '#00B2B4',  // 使用与细菌表格一致的青色
+            GRAY: '#808080',
+            LIGHT_GRAY: '#f9f9f9'  // 用于隔行变色
+          },
+          FONT_SIZE: '10px'  // 与细菌表格一致的字体大小
         },
 
         // 格式化数字
@@ -14139,29 +13935,11 @@ ${d.summarized_health_index.gut_type.value ? `
           };
         },
 
-        // 计算进度条百分比
-        calculateProgressPercentage(value) {
-          if (value === "ND" || value === "未检出" || value === 0) {
-            return 0;
-          }
-
-          const num = Number(value);
-          if (isNaN(num)) return 0;
-
-          const logValue = Math.log10(num);
-          const minLog = -1;
-          const maxLog = 3;
-
-          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-          return Math.max(5, Math.min(50, percentage));
-        },
-
         // 获取状态信息
         getStatus(detected, minRange, maxRange) {
           let status = {
             color: this.CONSTANTS.COLORS.GREEN,
             text: '正常',
-            icon: '',
             isNormal: true
           };
 
@@ -14169,7 +13947,6 @@ ${d.summarized_health_index.gut_type.value ? `
             if (minRange > 0) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
               status.isNormal = false;
             }
           } else {
@@ -14177,12 +13954,10 @@ ${d.summarized_health_index.gut_type.value ? `
             if (numDetected < minRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
               status.isNormal = false;
             } else if (numDetected > maxRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '超标';
-              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
               status.isNormal = false;
             }
           }
@@ -14203,8 +13978,11 @@ ${d.summarized_health_index.gut_type.value ? `
           }
 
           const fragment = document.createDocumentFragment();
+          const mainTable = document.createElement('table');
+          mainTable.className = 'min-w-full';
+          const tbody = document.createElement('tbody');
 
-          fungiData.forEach(fungi => {
+          fungiData.forEach((fungi, index) => {
             const detected = fungi["丰度%"];
             const { min: minRange, max: maxRange } = this.parseRange(fungi["正常范围"]);
 
@@ -14212,46 +13990,43 @@ ${d.summarized_health_index.gut_type.value ? `
             const formattedMinRange = this.formatNumber(minRange);
             const formattedMaxRange = this.formatNumber(maxRange);
 
-            const status = this.getStatus(detected, minRange, maxRange);
-
-            const fungiContainer = document.createElement('div');
-            fungiContainer.className = 'fungi-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'fungi-table min-w-full';
+            // 获取状态信息
+            this.getStatus(detected, minRange, maxRange);
 
             // 分离中文名和拉丁名
             const chineseName = fungi["中文名"] || "";
             const latinName = fungi["名称"] || "";
 
-            const dataRow = `
-          <tr class="fungi-row">
-            <td class="py-2 px-4 text-left detected-gut-fungi-first-column">
-              <div class="detected-gut-fungi-chinese-text"><strong>${chineseName}</strong></div>
-              <div class="detected-gut-fungi-latin-text text-gray-500">${latinName}</div>
+            // 创建行元素
+            const tr = document.createElement('tr');
+            tr.className = 'fungi-row';
+
+            // 隔行灰色背景
+            if (index % 2 === 1) {
+              tr.style.backgroundColor = this.CONSTANTS.COLORS.LIGHT_GRAY;
+            }
+
+            // 设置行内容 - 为所有单元格应用10px的字体大小
+            tr.innerHTML = `
+    <td class="py-2 px-4 text-left detected-gut-fungi-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};"><div style="font-style: italic;">${latinName}</div></td>
+            <td class="py-2 px-4 text-left detected-gut-fungi-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div><strong>${chineseName}</strong></div>
             </td>
-            <td class="py-2 px-4 text-center detected-gut-fungi-column-text detected-gut-fungi-second-column">
-              ${formattedDetectedValue}
-              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                <div class="progress"
-                     style="width: ${this.calculateProgressPercentage(detected)}%;
-                            height: 100%;
-                            background-color: #00B2B4;
-                            transition: width 0.3s ease;">
-                </div>
-              </div>
-            </td>
-            <td class="py-2 px-4 text-center detected-gut-fungi-column-text detected-gut-fungi-third-column">
+            <td class="py-2 px-4 text-right detected-gut-fungi-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
               ${formattedMinRange}-${formattedMaxRange}
             </td>
-          </tr>
-        `;
+            <td class="py-2 px-4 text-right detected-gut-fungi-fourth-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <span style="font-weight: bold;">
+                ${formattedDetectedValue}
+              </span>
+            </td>
+          `;
 
-            table.innerHTML = `<tbody>${dataRow}</tbody>`;
-            fungiContainer.appendChild(table);
-            fragment.appendChild(fungiContainer);
+            tbody.appendChild(tr);
           });
 
+          mainTable.appendChild(tbody);
+          fragment.appendChild(mainTable);
           container.appendChild(fragment);
         },
 
