@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>健康总分说明</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --excellent: #10b981;
+      --good: #3b82f6;
+      --average: #f59e0b;
+      --pass: #f97316;
+      --fail: #ef4444;
+      --gradient-bg: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .header-card {
+      background: var(--gradient-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .header {
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(79, 209, 197, 0.1) 0%, rgba(79, 209, 197, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header p {
+      font-size: 1.125rem;
+      color: #64748b;
+      max-width: 90%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .score-scale {
+      padding: 0 2.5rem 2.5rem;
+    }
+
+    .score-title {
+      color: #0f766e;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .score-ranges {
+      display: flex;
+      position: relative;
+      height: 60px;
+      margin-bottom: 3rem;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .range {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .range:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .range-excellent { background-color: var(--excellent); width: 20%; }
+    .range-good { background-color: var(--good); width: 20%; }
+    .range-average { background-color: var(--average); width: 20%; }
+    .range-pass { background-color: var(--pass); width: 20%; }
+    .range-fail { background-color: var(--fail); width: 20%; }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: -20px;
+    }
+
+    .range-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #64748b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 20%;
+    }
+
+    .range-label-text {
+      margin-top: 0.5rem;
+    }
+
+    .range-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-bottom: 4px;
+    }
+
+    .dot-excellent { background-color: var(--excellent); }
+    .dot-good { background-color: var(--good); }
+    .dot-average { background-color: var(--average); }
+    .dot-pass { background-color: var(--pass); }
+    .dot-fail { background-color: var(--fail); }
+
+    .score-note {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .score-note p {
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .score-value-highlight {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .score-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .score-detail-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border-top: 5px solid;
+    }
+
+    .score-detail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-90-95 { border-color: var(--excellent); }
+    .card-80-90 { border-color: var(--excellent); }
+    .card-70-80 { border-color: var(--good); }
+    .card-60-70 { border-color: var(--average); }
+    .card-50-60 { border-color: var(--pass); }
+    .card-40-50 { border-color: var(--pass); }
+    .card-below-40 { border-color: var(--fail); }
+
+    .score-detail-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+    }
+
+    .score-detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .icon-90-95 { background-color: var(--excellent); }
+    .icon-80-90 { background-color: var(--excellent); }
+    .icon-70-80 { background-color: var(--good); }
+    .icon-60-70 { background-color: var(--average); }
+    .icon-50-60 { background-color: var(--pass); }
+    .icon-40-50 { background-color: var(--pass); }
+    .icon-below-40 { background-color: var(--fail); }
+
+    .score-detail-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .score-detail-content {
+      padding: 1.5rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .distribution-container {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin: 2rem 0;
+    }
+
+    .distribution-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+
+    .distribution-chart {
+      height: 100px;
+      background: linear-gradient(to right,
+      var(--fail) 0%,
+      var(--pass) 20%,
+      var(--average) 40%,
+      var(--good) 60%,
+      var(--excellent) 100%
+      );
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .distribution-curve {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'%3E%3Cpath d='M0,250 C50,220 200,100 400,180 C600,260 800,190 1000,210 C1100,220 1150,250 1200,250' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .distribution-peak {
+      position: absolute;
+      top: 50%;
+      left: 75%;
+      transform: translate(-50%, -100%);
+      width: 2px;
+      height: 80px;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .distribution-peak::after {
+      content: "平均值: 75分";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .distribution-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .distribution-label {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header-card">
+    <div class="header">
+      <h1>健康总分说明</h1>
+      <p>健康总分是综合了三个部分：肠道菌群健康状况、疾病风险情况和营养均衡饮食情况综合评估计算。</p>
+    </div>
+
+    <div class="score-scale">
+      <h2 class="score-title">三项分值的标准</h2>
+
+      <div class="score-ranges">
+        <div class="range range-excellent">优秀</div>
+        <div class="range range-good">良好</div>
+        <div class="range range-average">一般</div>
+        <div class="range range-pass">及格</div>
+        <div class="range range-fail">不及格</div>
+      </div>
+
+      <div class="range-labels">
+        <div class="range-label">
+          <div class="range-dot dot-excellent"></div>
+          <div class="range-label-text">85以上</div>
+        </div>
+        <div class="range-label">
+          <div class="range-dot dot-good"></div>
+          <div class="range-label-text">75~85</div>
+        </div>
+        <div class="range-label">
+          <div class="range-dot dot-average"></div>
+          <div class="range-label-text">60~75</div>
+        </div>
+        <div class="range-label">
+          <div class="range-dot dot-pass"></div>
+          <div class="range-label-text">40~59</div>
+        </div>
+        <div class="range-label">
+          <div class="range-dot dot-fail"></div>
+          <div class="range-label-text">0~40</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="score-note">
+    <p>总共<span class="score-value-highlight">100分</span>，采取扣分制，疾病风险和营养不均衡以及菌群失衡都会相应的减分。人群平均值<span class="score-value-highlight">75分</span>，范围在<span class="score-value-highlight">20~90</span>。数据库中最高分为<span class="score-value-highlight">93分</span>。</p>
+  </div>
+
+  <div class="distribution-container">
+    <h3 class="distribution-title">分数分布</h3>
+    <div class="distribution-chart">
+      <div class="distribution-curve"></div>
+      <div class="distribution-peak"></div>
+    </div>
+    <div class="distribution-labels">
+      <div class="distribution-label">20</div>
+      <div class="distribution-label">40</div>
+      <div class="distribution-label">60</div>
+      <div class="distribution-label">80</div>
+      <div class="distribution-label">100</div>
+    </div>
+  </div>
+
+  <div class="score-details">
+    <div class="score-detail-card card-90-95">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-90-95">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h3 class="score-detail-title">90-95分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>表明极好的健康状况，菌群和营养都非常均衡。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-80-90">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-80-90">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3 class="score-detail-title">80~90分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>表明很健康，适当针对性改善营养饮食即可。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-70-80">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-70-80">
+          <i class="fas fa-smile"></i>
+        </div>
+        <h3 class="score-detail-title">70~80分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>属于健康状态，但是需要注意调整不良的生活方式和注意营养饮食均衡。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-60-70">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-60-70">
+          <i class="fas fa-meh"></i>
+        </div>
+        <h3 class="score-detail-title">60~70分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>属于亚健康，可能有疾病风险需要注意，营养和生活方式也存在不合理。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-50-60">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-50-60">
+          <i class="fas fa-frown"></i>
+        </div>
+        <h3 class="score-detail-title">50~60分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>表明存在个别疾病高风险或较多疾病提示注意，已有慢性疾病状态，需要针对性检查和治疗，此外生活方式也可能存在不良状态。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-40-50">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-40-50">
+          <i class="fas fa-tired"></i>
+        </div>
+        <h3 class="score-detail-title">40~50分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>表明至少有一项疾病处于高风险状况，整体健康状况不佳，请进行医疗检查并马上纠正生活方式。</p>
+      </div>
+    </div>
+
+    <div class="score-detail-card card-below-40">
+      <div class="score-detail-header">
+        <div class="score-detail-icon icon-below-40">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3 class="score-detail-title">低于40分</h3>
+      </div>
+      <div class="score-detail-content">
+        <p>表明有多项疾病风险或某种疾病程度较为严重，强烈建议进行复查或进行治疗。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
