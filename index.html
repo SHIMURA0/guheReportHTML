@@ -1051,18 +1051,19 @@ ${d.summarized_health_index.gut_type.value ? `
             <i class="fas fa-info-circle icon"></i>
             肠道预测年龄是基于超过 6 万人群队列的深度学习模型构建的，通过识别每个年龄段的核心和标志性菌群特
             征进行分析预测。伴随年龄的变化肠道菌群也会相应的改变，当肠道菌群反映的年龄大幅偏离真实年龄时通常代
-            表您的肠道菌群出现了紊乱、存在疾病风险或发育滞后。例如，
-            <ul class="list-disc">
-              <li>肠道年龄远<strong>小于</strong>生理年龄：可能意味着菌群发育滞后。</li>
-              <li>肠道年龄远<strong>大于</strong>生理年龄：可能意味着菌群多样性下降或致病菌增多。</li>
-            </ul>
+            表您的肠道菌群出现了紊乱、存在疾病风险或发育滞后。例如：
           </p>
+          <ul class="list-disc">
+            <li>肠道年龄远<strong>小于</strong>生理年龄：可能意味着菌群发育滞后。</li>
+            <li>肠道年龄远<strong>大于</strong>生理年龄：可能意味着菌群多样性下降或致病菌增多。</li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="gut-age-container">
-      <!-- 扁平肠道年龄展示 -->
+
+      <!-- 肠道年龄展示 -->
       <div class="gut-age-display">
         <div class="gut-age-content">
           <div class="gut-age-title">肠道年龄</div>
@@ -1075,6 +1076,7 @@ ${d.summarized_health_index.gut_type.value ? `
 
       <!-- 年龄段解读卡片 -->
       <div class="age-ranges">
+
         <!-- 0-2岁 -->
         <div class="age-range-card infant">
           <div class="age-range-header">
@@ -13615,7 +13617,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            下列表格展示了您肠道中检测到的肠道细菌，具体列出了丰度最高的前35种细菌，并按丰度递减的顺序排列。
+            下列表格展示了您肠道中实际检出的细菌。如果检测到的细菌超过35种，则仅列出丰度最高的前35种。
           </p>
         </div>
       </div>
@@ -13665,7 +13667,7 @@ ${d.summarized_health_index.gut_type.value ? `
             GRAY: '#808080',
             LIGHT_GRAY: '#f9f9f9'  // 用于隔行变色
           },
-          FONT_SIZE: '10px'  // 调整字体大小为9.5px
+          FONT_SIZE: '10px'  // 调整字体大小为10px
         },
 
         // 格式化数字
@@ -13685,6 +13687,23 @@ ${d.summarized_health_index.gut_type.value ? `
             const str = num.toPrecision(4);
             return str.replace(/\.?0+$/, '');
           }
+        },
+
+        // 专门用于格式化范围数字 - 保留3位小数并去除多余的0
+        formatRangeNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "未检出";
+          }
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          // 固定保留3位小数
+          let formatted = num.toFixed(3);
+          // 去除尾部多余的0和可能的小数点
+          formatted = formatted.replace(/\.?0+$/, '');
+
+          return formatted;
         },
 
         // 获取状态信息 - 虽然不再使用颜色，但保留此方法以兼容其他可能的逻辑
@@ -13740,8 +13759,9 @@ ${d.summarized_health_index.gut_type.value ? `
             const maxRange = bacteria.normal_range?.max_normal_value || 0;
 
             const formattedDetectedValue = this.formatNumber(detected);
-            const formattedMinRange = this.formatNumber(minRange);
-            const formattedMaxRange = this.formatNumber(maxRange);
+            // 使用新的格式化函数处理范围值
+            const formattedMinRange = this.formatRangeNumber(minRange);
+            const formattedMaxRange = this.formatRangeNumber(maxRange);
 
             // 获取状态信息 - 虽然不再使用颜色，但保留此调用以兼容其他可能的逻辑
             this.getStatus(detected, minRange, maxRange);
@@ -13759,7 +13779,7 @@ ${d.summarized_health_index.gut_type.value ? `
               tr.style.backgroundColor = this.CONSTANTS.COLORS.LIGHT_GRAY;
             }
 
-            // 设置行内容 - 为所有单元格应用9.5px的字体大小
+            // 设置行内容 - 为所有单元格应用10px的字体大小
             tr.innerHTML = `
             <td class="py-2 px-4 text-left detected-gut-microbiota-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
               <div style="font-style: italic;">${latinName}</div>
@@ -13846,9 +13866,14 @@ ${d.summarized_health_index.gut_type.value ? `
 
   <!-- 实际检出肠道菌群板块 : 检出真菌 -->
 
-  <h2 class="custom-title-1 page-break">检出肠道真菌</h2>
+  <h2
+    class="custom-title-1 page-break">
+    检出肠道真菌
+  </h2>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
 
     <!-- 信息框 -->
     <div class="info-box">
@@ -13856,28 +13881,34 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            下列表格展示了您肠道中检测到的肠道真菌，具体列出了丰度最高的前35种真菌，并按丰度递减的顺序排列。
+            下列表格展示了您肠道中实际检出的真菌。如果检测到的真菌超过35种，则仅列出丰度最高的前35种。
           </p>
         </div>
       </div>
     </div>
 
     <div class="rounded-table">
+
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
           <th
             class="py-2 px-4 text-left detected-gut-fungi-first-column"
             style="font-size: 10px;">
-            真菌名称
+            真菌拉丁名
           </th>
           <th
-            class="py-2 px-4 text-right detected-gut-fungi-second-column"
+            class="py-2 px-4 text-left detected-gut-fungi-second-column"
+            style="font-size: 10px;">
+            真菌中文名
+          </th>
+          <th
+            class="py-2 px-4 text-right detected-gut-fungi-third-column"
             style="font-size: 10px; padding: 5px 5px;">
             参考范围%
           </th>
           <th
-            class="py-2 px-4 text-right detected-gut-fungi-third-column"
+            class="py-2 px-4 text-right detected-gut-fungi-fourth-column"
             style="font-size: 10px;">
             检出丰度%
           </th>
@@ -13888,6 +13919,7 @@ ${d.summarized_health_index.gut_type.value ? `
       <div id="detected-gut-fungi-data-table-body">
         <!-- 数据将通过 JavaScript 动态插入 -->
       </div>
+
     </div>
 
     <script>
@@ -13907,7 +13939,7 @@ ${d.summarized_health_index.gut_type.value ? `
         // 格式化数字
         formatNumber(value) {
           if (typeof value === "string" && (value === "未检出" || value === "ND")) {
-            return "未检出";
+            return "ND";
           }
 
           const num = Number(value);
@@ -13993,9 +14025,12 @@ ${d.summarized_health_index.gut_type.value ? `
             // 获取状态信息
             this.getStatus(detected, minRange, maxRange);
 
-            // 分离中文名和拉丁名
-            const chineseName = fungi["中文名"] || "";
+            // 获取拉丁名和中文名
             const latinName = fungi["名称"] || "";
+            const chineseName = fungi["中文名"] || "";
+
+            // 确定第二列显示内容 - 如果中文名为空，则显示拉丁名
+            const secondColumnContent = chineseName.trim() !== "" ? chineseName : latinName;
 
             // 创建行元素
             const tr = document.createElement('tr');
@@ -14008,9 +14043,13 @@ ${d.summarized_health_index.gut_type.value ? `
 
             // 设置行内容 - 为所有单元格应用10px的字体大小
             tr.innerHTML = `
-    <td class="py-2 px-4 text-left detected-gut-fungi-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};"><div style="font-style: italic;">${latinName}</div></td>
+            <td class="py-2 px-4 text-left detected-gut-fungi-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div style="font-style: italic;">
+                ${latinName}
+              </div>
+            </td>
             <td class="py-2 px-4 text-left detected-gut-fungi-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
-              <div><strong>${chineseName}</strong></div>
+              <div>${secondColumnContent}</div>
             </td>
             <td class="py-2 px-4 text-right detected-gut-fungi-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
               ${formattedMinRange}-${formattedMaxRange}
@@ -14043,17 +14082,8 @@ ${d.summarized_health_index.gut_type.value ? `
             // 尝试获取真菌数据，检查各种可能的位置
             let fungiData = null;
 
-            if (data["检出菌"] && data["检出菌"]["fungi"] && Array.isArray(data["检出菌"]["fungi"])) {
-              fungiData = data["检出菌"]["fungi"];
-            }
-            else if (data["检出菌"] && data["检出菌"]["真菌"] && Array.isArray(data["检出菌"]["真菌"])) {
-              fungiData = data["检出菌"]["真菌"];
-            }
-            else if (data["fungi"] && Array.isArray(data["fungi"])) {
-              fungiData = data["fungi"];
-            }
-            else if (data["真菌"] && Array.isArray(data["真菌"])) {
-              fungiData = data["真菌"];
+            if (data["检出菌"] && data["检出菌"]["Fungi"] && Array.isArray(data["检出菌"]["Fungi"])) {
+              fungiData = data["检出菌"]["Fungi"];
             }
 
             if (fungiData && Array.isArray(fungiData) && fungiData.length > 0) {
@@ -14107,7 +14137,7 @@ ${d.summarized_health_index.gut_type.value ? `
         <div class="ml-2">
           <p class="text-lg text-custom-teal">
             <i class="fas fa-info-circle icon"></i>
-            下列表格中展示了您肠道中实际检出的肠道真核生物（仅展示丰度最高的前35个并且按照丰度递减排列）
+            下列表格展示了您肠道中实际检出的真核生物。如果检测到的真核生物超过35种，则仅列出丰度最高的前35种。
           </p>
         </div>
       </div>
@@ -14119,18 +14149,23 @@ ${d.summarized_health_index.gut_type.value ? `
         <tr style="background-color: #00B2B4; color: white;">
           <th
             class="py-2 px-4 text-left detected-gut-eukaryotes-first-column"
-            style="font-size: 13px;">
-            真核生物名称
+            style="font-size: 10px;">
+            真核生物拉丁名
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-eukaryotes-second-column"
-            style="font-size: 13px; padding: 5px 5px;">
+            class="py-2 px-4 text-left detected-gut-eukaryotes-second-column"
+            style="font-size: 10px;">
+            真核生物中文名
+          </th>
+          <th
+            class="py-2 px-4 text-right detected-gut-eukaryotes-third-column"
+            style="font-size: 10px; padding: 5px 5px;">
             参考范围%
           </th>
           <th
-            class="py-2 px-4 text-center detected-gut-eukaryotes-third-column"
-            style="font-size: 13px; padding: 5px 5px;">
-            检测丰度%
+            class="py-2 px-4 text-right detected-gut-eukaryotes-fourth-column"
+            style="font-size: 10px;">
+            检出丰度%
           </th>
         </tr>
         </thead>
@@ -14148,15 +14183,17 @@ ${d.summarized_health_index.gut_type.value ? `
         CONSTANTS: {
           COLORS: {
             RED: '#ff4d4f',
-            GREEN: '#389e0d',
-            GRAY: '#808080'
-          }
+            GREEN: '#00B2B4',  // 使用原来的青色作为正常值颜色
+            GRAY: '#808080',
+            LIGHT_GRAY: '#f9f9f9'  // 用于隔行变色
+          },
+          FONT_SIZE: '10px'  // 调整字体大小为10px
         },
 
         // 格式化数字
         formatNumber(value) {
           if (typeof value === "string" && (value === "未检出" || value === "ND")) {
-            return "未检出";
+            return "ND";
           }
 
           const num = Number(value);
@@ -14170,6 +14207,23 @@ ${d.summarized_health_index.gut_type.value ? `
             const str = num.toPrecision(4);
             return str.replace(/\.?0+$/, '');
           }
+        },
+
+        // 专门用于格式化范围数字 - 保留3位小数并去除多余的0
+        formatRangeNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "ND";
+          }
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          // 固定保留3位小数
+          let formatted = num.toFixed(3);
+          // 去除尾部多余的0和可能的小数点
+          formatted = formatted.replace(/\.?0+$/, '');
+
+          return formatted;
         },
 
         // 解析正常范围 (适应 "-0.05" 这种格式)
@@ -14195,29 +14249,11 @@ ${d.summarized_health_index.gut_type.value ? `
           }
         },
 
-        // 计算进度条百分比
-        calculateProgressPercentage(value) {
-          if (value === "ND" || value === "未检出" || value === 0) {
-            return 0;
-          }
-
-          const num = Number(value);
-          if (isNaN(num)) return 0;
-
-          const logValue = Math.log10(num);
-          const minLog = -1;
-          const maxLog = 3;
-
-          const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-          return Math.max(5, Math.min(50, percentage));
-        },
-
         // 获取状态信息
         getStatus(detected, minRange, maxRange) {
           let status = {
             color: this.CONSTANTS.COLORS.GREEN,
             text: '正常',
-            icon: '',
             isNormal: true
           };
 
@@ -14225,7 +14261,6 @@ ${d.summarized_health_index.gut_type.value ? `
             if (minRange > 0) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
               status.isNormal = false;
             }
           } else {
@@ -14233,12 +14268,10 @@ ${d.summarized_health_index.gut_type.value ? `
             if (numDetected < minRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '偏低';
-              status.icon = '<i class="fas fa-arrow-down ml-1"></i>';
               status.isNormal = false;
             } else if (numDetected > maxRange) {
               status.color = this.CONSTANTS.COLORS.RED;
               status.text = '超标';
-              status.icon = '<i class="fas fa-arrow-up ml-1"></i>';
               status.isNormal = false;
             }
           }
@@ -14259,69 +14292,60 @@ ${d.summarized_health_index.gut_type.value ? `
           }
 
           const fragment = document.createDocumentFragment();
+          const mainTable = document.createElement('table');
+          mainTable.className = 'min-w-full';
+          const tbody = document.createElement('tbody');
 
-          eukaryotesData.forEach(eukaryote => {
+          eukaryotesData.forEach((eukaryote, index) => {
             const detected = eukaryote["丰度%"];
             const { min: minRange, max: maxRange } = this.parseRange(eukaryote["正常范围"]);
 
             const formattedDetectedValue = this.formatNumber(detected);
-            const formattedMaxRange = this.formatNumber(maxRange);
-
-            const status = this.getStatus(detected, minRange, maxRange);
-
-            const eukaryoteContainer = document.createElement('div');
-            eukaryoteContainer.className = 'eukaryote-info-container';
-
-            const table = document.createElement('table');
-            table.className = 'eukaryote-table min-w-full';
+            // 使用新的格式化函数处理范围值
+            const formattedMinRange = this.formatRangeNumber(minRange);
+            const formattedMaxRange = this.formatRangeNumber(maxRange);
 
             // 获取拉丁名和中文名
             const latinName = eukaryote["名称"] || "";
             const chineseName = eukaryote["中文名"] || "";
 
-            // 构造名称显示HTML
-            let nameDisplay;
-            if (!chineseName || chineseName.trim() === "") {
-              // 如果中文名为空，只显示拉丁名一次
-              nameDisplay = `
-                <div class="detected-gut-eukaryotes-chinese-text"><strong>${latinName}</strong></div>
-                <div class="detected-gut-eukaryotes-latin-text text-gray-500">${latinName}</div>
-              `;
-            } else {
-              // 如果有中文名，则同时显示中文名和拉丁名
-              nameDisplay = `
-                <div class="detected-gut-eukaryotes-chinese-text"><strong>${chineseName}</strong></div>
-                <div class="detected-gut-eukaryotes-latin-text text-gray-500">${latinName}</div>
-              `;
+            // 确定第二列显示内容 - 如果中文名为空，则显示拉丁名
+            const secondColumnContent = chineseName.trim() !== "" ? chineseName : latinName;
+
+            // 创建行元素
+            const tr = document.createElement('tr');
+            tr.className = 'eukaryote-row';
+
+            // 隔行灰色背景
+            if (index % 2 === 1) {
+              tr.style.backgroundColor = this.CONSTANTS.COLORS.LIGHT_GRAY;
             }
 
-            const dataRow = `
-          <tr class="eukaryote-row">
-            <td class="py-2 px-4 text-left detected-gut-eukaryotes-first-column">
-              ${nameDisplay}
-            </td>
-            <td class="py-2 px-4 text-center detected-gut-eukaryotes-column-text detected-gut-eukaryotes-second-column">
-              ${formattedDetectedValue}
-              <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                <div class="progress"
-                     style="width: ${this.calculateProgressPercentage(detected)}%;
-                            height: 100%;
-                            background-color: #00B2B4;
-                            transition: width 0.3s ease;">
+            // 设置行内容 - 为所有单元格应用10px的字体大小
+            tr.innerHTML = `
+              <td class="py-2 px-4 text-left detected-gut-eukaryotes-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+                <div style="font-style: italic;">
+                  ${latinName}
                 </div>
-              </div>
-            </td>
-            <td class="py-2 px-4 text-center detected-gut-eukaryotes-column-text detected-gut-eukaryotes-third-column">
-              ${minRange > 0 ? this.formatNumber(minRange) + "-" : ""}${formattedMaxRange}
-            </td>
-          </tr>
-        `;
+              </td>
+              <td class="py-2 px-4 text-left detected-gut-eukaryotes-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+                <div>${secondColumnContent}</div>
+              </td>
+              <td class="py-2 px-4 text-right detected-gut-eukaryotes-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+                ${formattedMinRange}-${formattedMaxRange}
+              </td>
+              <td class="py-2 px-4 text-right detected-gut-eukaryotes-fourth-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+                <span style="font-weight: bold;">
+                  ${formattedDetectedValue}
+                </span>
+              </td>
+            `;
 
-            table.innerHTML = `<tbody>${dataRow}</tbody>`;
-            eukaryoteContainer.appendChild(table);
-            fragment.appendChild(eukaryoteContainer);
+            tbody.appendChild(tr);
           });
 
+          mainTable.appendChild(tbody);
+          fragment.appendChild(mainTable);
           container.appendChild(fragment);
         },
 
