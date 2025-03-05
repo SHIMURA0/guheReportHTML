@@ -503,180 +503,201 @@
         const gutType = data["整体评估"][2]["分值"];
 
         container.innerHTML = `
-    <!-- 基本信息行 -->
-    <div class="grid grid-cols-2 gap-4 mb-2">
-        <!-- 左边三个 summary-info-card -->
-        <div class="flex gap-2">
-            ${data["sampleinfo"]["sampleusername"] ? `
-            <div class="summary-info-card" style="flex: 75;">
-                <div class="summary-title font-bold">姓名</div>
-                <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleusername"]}</div>
-            </div>
-            ` : ''}
-            ${data["sampleinfo"]["sex"] ? `
-            <div class="summary-info-card" style="flex: 75;">
-                <div class="summary-title font-bold">性别</div>
-                <div class="font-bold text-gray-500">${data["sampleinfo"]["sex"] === "0" ? "女性" : "男性"}</div>
-            </div>
-            ` : ''}
-            ${data["sampleinfo"]["age"] ? `
-            <div class="summary-info-card" style="flex: 100;">
-                <div class="summary-title font-bold">年龄</div>
-                <div class="font-bold text-gray-500">${data["sampleinfo"]["age"]}</div>
-            </div>
-            ` : ''}
-        </div>
+          <!-- 基本信息行 -->
+          <div class="grid grid-cols-2 gap-4 mb-2">
+              <!-- 左边三个 summary-info-card -->
+              <div class="flex gap-2">
+                  ${data["sampleinfo"]["sampleusername"] ? `
+                  <div class="summary-info-card" style="flex: 75;">
+                      <div class="summary-title font-bold">姓名</div>
+                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleusername"]}</div>
+                  </div>
+                  ` : ''}
+                  ${data["sampleinfo"]["sex"] ? `
+                  <div class="summary-info-card" style="flex: 75;">
+                      <div class="summary-title font-bold">性别</div>
+                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sex"] === "0" ? "女性" : "男性"}</div>
+                  </div>
+                  ` : ''}
+                  ${data["sampleinfo"]["age"] ? `
+                  <div class="summary-info-card" style="flex: 100;">
+                      <div class="summary-title font-bold">年龄</div>
+                      <div class="font-bold text-gray-500">${data["sampleinfo"]["age"]}</div>
+                  </div>
+                  ` : ''}
+              </div>
 
-        <!-- 右边两个 summary-info-card -->
-        <div class="flex gap-2">
-            ${data["sampleinfo"]["sampleid"] ? `
-            <div class="summary-info-card flex-1">
-                <div class="summary-title font-bold">样本编号</div>
-                <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleid"]}</div>
-            </div>
-            ` : ''}
-            ${data["sampleinfo"]["reportdate"] ? `
-            <div class="summary-info-card flex-1">
-                <div class="summary-title font-bold">报告日期</div>
-                <div class="font-bold text-gray-500">${data["sampleinfo"]["reportdate"]}</div>
-            </div>
-            ` : ''}
-        </div>
-    </div>
+              <!-- 右边两个 summary-info-card -->
+              <div class="flex gap-2">
+                  ${data["sampleinfo"]["sampleid"] ? `
+                  <div class="summary-info-card flex-1">
+                      <div class="summary-title font-bold">样本编号</div>
+                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleid"]}</div>
+                  </div>
+                  ` : ''}
+                  ${data["sampleinfo"]["reportdate"] ? `
+                  <div class="summary-info-card flex-1">
+                      <div class="summary-title font-bold">报告日期</div>
+                      <div class="font-bold text-gray-500">${data["sampleinfo"]["reportdate"]}</div>
+                  </div>
+                  ` : ''}
+              </div>
+          </div>
 
-    <!-- 健康总分和指标框 -->
-    <div class="grid grid-cols-2 gap-4 mb-2">
-        ${healthScore ? `
-        <div class="summary-info-card">
-            <div class="summary-title mb-7"><b>健康总分</b></div>
-            <div class="flex flex-col items-center">
-                <div class="w-40 h-40 mb-5">
-                    <svg viewBox="0 0 100 100">
-                        <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
-                        <circle class="summary-circle"
-                                cx="50"
-                                cy="50"
-                                r="45"
-                                stroke="${scoreColors.circle}"
-                                stroke-dasharray="282.7"
-                                stroke-dashoffset="${282.7 - (282.7 * parseInt(healthScore) / 100)}"/>
-                        <text x="50"
-                              y="45"
-                              class="summary-score-text"
-                              text-anchor="middle"
-                              dominant-baseline="middle"
-                              font-size="30"
-                              font-weight="bold"
-                              fill="${scoreColors.text}">${healthScore}</text>
-                        <text x="50"
-                              y="68"
-                              class="summary-score-text"
-                              text-anchor="middle"
-                              font-size="10"
-                              fill="#2DA6A8">总分: 100</text>
-                    </svg>
-                </div>
-                ${data["整体评估"][0]["说明"] ? `
-                <div class="summary-description text-center">
-                    ${data["整体评估"][0]["说明"]}
-                </div>
-                ` : ''}
-            </div>
-        </div>
-        ` : ''}
+          <!-- 健康总分和指标框 -->
+          <div class="grid grid-cols-2 gap-4 mb-2">
+              ${healthScore ? `
+              <div class="summary-info-card">
+                  <div class="summary-title mb-7"><b>健康总分</b></div>
+                  <div class="flex flex-col items-center">
+                      <div class="w-40 h-40 mb-5">
+                          <svg viewBox="0 0 100 100">
+                              <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
+                              <circle class="summary-circle"
+                                      cx="50"
+                                      cy="50"
+                                      r="45"
+                                      stroke="${scoreColors.circle}"
+                                      stroke-dasharray="282.7"
+                                      stroke-dashoffset="${282.7 - (282.7 * parseInt(healthScore) / 100)}"/>
+                              <text x="50"
+                                    y="45"
+                                    class="summary-score-text"
+                                    text-anchor="middle"
+                                    dominant-baseline="middle"
+                                    font-size="30"
+                                    font-weight="bold"
+                                    fill="${scoreColors.text}">${healthScore}</text>
+                              <text x="50"
+                                    y="68"
+                                    class="summary-score-text"
+                                    text-anchor="middle"
+                                    font-size="10"
+                                    fill="#2DA6A8">总分: 100</text>
+                          </svg>
+                      </div>
+                      ${data["整体评估"][0]["说明"] ? `
+                      <div class="summary-description text-center">
+                          ${data["整体评估"][0]["说明"]}
+                      </div>
+                      ` : ''}
+                  </div>
+              </div>
+              ` : ''}
 
-        <!-- 右侧指标栏 -->
-        <div class="flex flex-col gap-2 h-full">
-            <!-- 其他指标保持不变 -->
-                  <div class="flex flex-col gap-2 h-full">
-        <!-- 菌群健康 -->
-        <div class="flex-1 summary-info-card p-4">
+              <!-- 右侧指标栏 -->
+              <div class="flex flex-col gap-2 h-full">
+                  <!-- 其他指标保持不变 -->
+                        <div class="flex flex-col gap-2 h-full">
+              <!-- 菌群健康 -->
+      <div class="flex-1 summary-info-card p-4">
           <div class="summary-title font-bold mb-3">菌群健康</div>
           <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#FFD700] h-3 rounded-full" style="width: 73%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#FFD700]">73</span>/100
-            </div>
+              <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                  <div class="bg-[#FFD700] h-3 rounded-full"
+                       style="width: ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
+                data['整体评估'].find(item => item['检测项目'] === '菌群健康')['分值'] : 73}%"></div>
+              </div>
+              <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                  <span class="text-[#FFD700]">
+                      ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
+                data['整体评估'].find(item => item['检测项目'] === '菌群健康')['分值'] : 73}
+                  </span>/100
+              </div>
           </div>
           <div class="text-sm text-gray-600 mt-2">
-            肠道菌群多样性良好
+              ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
+                data['整体评估'].find(item => item['检测项目'] === '菌群健康')['说明'] :
+                '肠道菌群多样性良好'}
           </div>
-        </div>
+      </div>
 
-        <!-- 慢病控制 -->
-        <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">慢病控制</div>
-          <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 81%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#9ACD32]">81</span>/100
-            </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-            慢性疾病风险较低
-          </div>
-        </div>
+              <!-- 慢病控制 -->
+              <div class="flex-1 summary-info-card p-4">
+                  <div class="summary-title font-bold mb-3">慢病控制</div>
+                  <div class="flex w-full items-center">
+                      <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                          <div class="bg-[#9ACD32] h-3 rounded-full"
+                               style="width: ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
+                        data['整体评估'].find(item => item['检测项目'] === '慢病控制')['分值'] : 81}%"></div>
+                      </div>
+                      <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                          <span class="text-[#9ACD32]">
+                              ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
+                        data['整体评估'].find(item => item['检测项目'] === '慢病控制')['分值'] : 81}
+                          </span>/100
+                      </div>
+                  </div>
+                  <div class="text-sm text-gray-600 mt-2">
+                      ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
+                        data['整体评估'].find(item => item['检测项目'] === '慢病控制')['说明'] :
+                        '慢性疾病风险较低'}
+                  </div>
+              </div>
 
-        <!-- 营养均衡 -->
-        <div class="flex-1 summary-info-card p-4">
+              <!-- 营养均衡 -->
+      <div class="flex-1 summary-info-card p-4">
           <div class="summary-title font-bold mb-3">营养均衡</div>
           <div class="flex w-full items-center">
-            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-              <div class="bg-[#9ACD32] h-3 rounded-full" style="width: 80%"></div>
-            </div>
-            <div class="text-[#2DA6A8] font-bold w-16 text-right">
-              <span class="text-[#9ACD32]">80</span>/100
-            </div>
+              <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                  <div class="bg-[#9ACD32] h-3 rounded-full"
+                       style="width: ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
+                data['整体评估'].find(item => item['检测项目'] === '营养均衡')['分值'] : 80}%"></div>
+              </div>
+              <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                  <span class="text-[#9ACD32]">
+                      ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
+                data['整体评估'].find(item => item['检测项目'] === '营养均衡')['分值'] : 80}
+                  </span>/100
+              </div>
           </div>
           <div class="text-sm text-gray-600 mt-2">
-            营养摄入基本均衡
+              ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
+                data['整体评估'].find(item => item['检测项目'] === '营养均衡')['说明'] :
+                '营养摄入基本均衡'}
           </div>
-        </div>
       </div>
-        </div>
-    </div>
-
-    <!-- 肠道年龄和肠型 -->
-    <div class="flex gap-4">
-        ${gutAge ? `
-        <div class="summary-info-card flex-[7]">
-            <div class="summary-title mb-10"><b>肠道年龄</b></div>
-            <div class="flex flex-col">
-                <div class="relative w-full">
-                    ${(() => {
-          const ageMetrics = calculateAgeBarMetrics(
-            parseInt(data["sampleinfo"]["age"]),
-            parseInt(gutAge)
-          );
-          return `
-                        <!-- 肠道年龄渲染逻辑保持不变 -->
-                        ${renderAgeBar(data["sampleinfo"]["age"], gutAge, ageMetrics)}
-                        `;
-        })()}
-                </div>
-                ${data["整体评估"][1]["说明"] ? `
-                <div class="summary-description mt-5">
-                    ${data["整体评估"][1]["说明"]}
-                </div>
-                ` : ''}
             </div>
-        </div>
-        ` : ''}
+              </div>
+          </div>
 
-        ${gutType ? `
-        <div class="summary-info-card flex-[3]">
-            <div class="summary-title mb-3"><b>肠型</b></div>
-            <div class="flex flex-col gap-2">
-                ${generateGutTypeCards(gutType)}
-            </div>
-        </div>
-        ` : ''}
-    </div>
-    `;
+          <!-- 肠道年龄和肠型 -->
+          <div class="flex gap-4">
+              ${gutAge ? `
+              <div class="summary-info-card flex-[7]">
+                  <div class="summary-title mb-10"><b>肠道年龄</b></div>
+                  <div class="flex flex-col">
+                      <div class="relative w-full">
+                          ${(() => {
+                const ageMetrics = calculateAgeBarMetrics(
+                  parseInt(data["sampleinfo"]["age"]),
+                  parseInt(gutAge)
+                );
+                return `
+                              <!-- 肠道年龄渲染逻辑保持不变 -->
+                              ${renderAgeBar(data["sampleinfo"]["age"], gutAge, ageMetrics)}
+                              `;
+              })()}
+                      </div>
+                      ${data["整体评估"][1]["说明"] ? `
+                      <div class="summary-description mt-5">
+                          ${data["整体评估"][1]["说明"]}
+                      </div>
+                      ` : ''}
+                  </div>
+              </div>
+              ` : ''}
+
+              ${gutType ? `
+              <div class="summary-info-card flex-[3]">
+                  <div class="summary-title mb-3"><b>肠型</b></div>
+                  <div class="flex flex-col gap-2">
+                      ${generateGutTypeCards(gutType)}
+                  </div>
+              </div>
+              ` : ''}
+          </div>
+          `;
       }
 
       // 辅助渲染年龄条的函数
@@ -2132,37 +2153,51 @@
 
     <div class="flex w-full gap-2 mb-3">
       <!-- 风险评估参考标准 -->
-      <div class="w-2/5 slow-disease-summary-info-card py-2 flex justify-center items-center">
-        <div class="text-base font-bold">风险评估参考标准</div>
-      </div>
-
-      <!-- 风险进度条 -->
-      <div class="w-3/5 summary-info-card p-4 flex flex-col justify-center gap-1">
-        <!-- 风险标签 -->
-        <div class="flex w-full">
-          <div class="w-[30%] text-center">
-            <span class="text-sm text-gray-600">低风险</span>
-          </div>
-          <div class="w-[20%] text-center">
-            <span class="text-sm text-gray-600">注意</span>
-          </div>
-          <div class="w-[20%] text-center">
-            <span class="text-sm text-gray-600">中高风险</span>
-          </div>
-          <div class="w-[30%] text-center">
-            <span class="text-sm text-gray-600">高风险</span>
-          </div>
+      <div class="flex w-full gap-2 mb-3">
+        <!-- 风险评估参考标准 -->
+        <div class="w-2/5 slow-disease-summary-info-card py-2 flex justify-center items-center h-full">
+          <div class="text-base font-bold text-gray-500">风险评估参考标准</div>
         </div>
 
-        <!-- 分段进度条 -->
-        <div class="flex w-full h-3 rounded-full overflow-hidden">
-          <div class="bg-green-400" style="width: 30%"></div>
-          <div class="bg-yellow-400" style="width: 20%"></div>
-          <div class="bg-orange-400" style="width: 20%"></div>
-          <div class="bg-red-400" style="width: 30%"></div>
+        <!-- 风险进度条 -->
+        <div class="w-3/5 summary-info-card p-4 pb-8 flex flex-col justify-center gap-1 h-full">
+          <!-- 风险标签 -->
+          <div class="flex w-full">
+            <div class="w-[30%] text-center">
+              <span class="text-sm text-gray-600">低风险</span>
+            </div>
+            <div class="w-[20%] text-center">
+              <span class="text-sm text-gray-600">注意</span>
+            </div>
+            <div class="w-[20%] text-center">
+              <span class="text-sm text-gray-600">中高风险</span>
+            </div>
+            <div class="w-[30%] text-center">
+              <span class="text-sm text-gray-600">高风险</span>
+            </div>
+          </div>
+
+          <!-- 分段进度条 -->
+          <div class="flex w-full h-3 rounded-full overflow-hidden">
+            <div class="bg-green-400" style="width: 30%"></div>
+            <div class="bg-yellow-400" style="width: 20%"></div>
+            <div class="bg-orange-400" style="width: 20%"></div>
+            <div class="bg-red-400" style="width: 30%"></div>
+          </div>
+
+          <!-- 数字刻度 -->
+          <div class="flex w-full relative">
+            <div class="absolute left-0 text-sm text-gray-600">0</div>
+            <div class="absolute left-[28%] text-sm text-gray-600">0.3</div>
+            <div class="absolute left-[48%] text-sm text-gray-600">0.5</div>
+            <div class="absolute left-[68%] text-sm text-gray-600">0.7</div>
+            <div class="absolute right-0 text-sm text-gray-600">1</div>
+          </div>
         </div>
       </div>
+
     </div>
+
 
     <!-- 慢病风险评估板块 : 慢病风险表格 -->
     <div class="rounded-table">
@@ -2727,7 +2762,7 @@
 
   <div
     class="bg-white rounded-lg p-5 mb-5 mx-auto"
-    style="width: 100%;">
+    style="width: 100%; margin-top: -15px">
 
     <!-- 维生素表格 -->
     <div class="rounded-table">
@@ -4826,7 +4861,7 @@
         font-size: 10px;
         font-weight: 600;
         text-align: center;
-        padding: 4px 5px; /* 调大上下内间距 */
+        padding: 5px 5px; /* 调大上下内间距 */
         border-radius: 4px;
         display: inline-block;
         min-width: 50px;
