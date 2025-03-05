@@ -890,13 +890,11 @@ ${d.summarized_health_index.gut_type.value ? `
     <div class="health-total-score-container">
       <div class="health-total-score-left">
         <div class="health-total-score-label">您的健康总分</div>
-        <div class="health-total-score-message">您的健康状况良好，仍有提升空间</div>
       </div>
       <div class="health-total-score-right">
         <div class="health-total-score-number">
-          78<span class="health-total-score-denominator">/100</span>
+          <span id="health-total-score-value">-</span><span class="health-total-score-denominator">/100</span>
         </div>
-        <div class="health-total-score-rating">良好</div>
       </div>
     </div>
 
@@ -1029,172 +1027,92 @@ ${d.summarized_health_index.gut_type.value ? `
         </div>
       </div>
     </div>
+
+    <script>
+      // 健康总分加载器
+      const HealthScoreLoader = {
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // 从整体评估中获取健康总分数据
+            const healthScoreData = data["整体评估"].find(item => item["检测项目"] === "健康总分");
+
+            if (healthScoreData) {
+              this.updateHealthScoreDisplay(healthScoreData);
+            } else {
+              console.error("健康总分数据未找到");
+              this.setErrorState();
+            }
+          } catch (error) {
+            console.error('Error loading health score data:', error);
+            this.setErrorState();
+          }
+        },
+
+        updateHealthScoreDisplay(healthScoreData) {
+          const scoreValue = healthScoreData["分值"];
+
+          // 更新分数
+          const scoreElement = document.getElementById('health-total-score-value');
+
+          scoreElement.textContent = scoreValue;
+
+          // 移除之前的颜色类
+          const colorClasses = [
+            'text-green-600', 'text-blue-600', 'text-yellow-600',
+            'text-orange-600', 'text-red-600'
+          ];
+
+          scoreElement.classList.remove(...colorClasses);
+
+          // 根据分数设置颜色
+          if (scoreValue >= 85) {
+            scoreElement.style.color = '#4CAF50'; // 优秀绿色
+          } else if (scoreValue >= 75) {
+            scoreElement.style.color = '#4F7FFF'; // 良好蓝色
+          } else if (scoreValue >= 60) {
+            scoreElement.style.color = '#E6A23C'; // 一般黄色
+          } else if (scoreValue >= 40) {
+            scoreElement.style.color = '#EB7A3C'; // 及格橙色
+          } else {
+            scoreElement.style.color = '#E74C3C'; // 不及格红色
+          }
+
+          // 添加其他样式类
+          scoreElement.classList.add('font-bold', 'text-2xl');
+        },
+
+        // 设置错误状态
+        setErrorState() {
+          const scoreElement = document.getElementById('health-total-score-value');
+
+          const colorClasses = [
+            'text-green-600', 'text-blue-600', 'text-yellow-600', 'text-orange-600', 'text-red-600',
+            'bg-green-100', 'bg-blue-100', 'bg-yellow-100', 'bg-orange-100', 'bg-red-100'
+          ];
+
+          scoreElement.classList.remove(...colorClasses);
+
+          scoreElement.textContent = '-';
+          scoreElement.classList.add('text-gray-500', 'bg-transparent');
+        },
+
+        // 初始化
+        init() {
+          document.addEventListener('DOMContentLoaded', () => this.loadData());
+        }
+      };
+
+      // 初始化健康总分加载器
+      HealthScoreLoader.init();
+    </script>
   </div>
-
-<!--  &lt;!&ndash; 健康总分解读页 &ndash;&gt;-->
-<!--  <h2 class="custom-title-second-level page-break">健康总分解读</h2>-->
-
-<!--  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
-<!--    &lt;!&ndash; 信息框 &ndash;&gt;-->
-<!--    <div class="info-box">-->
-<!--      <div class="flex items-start">-->
-<!--        <div class="ml-2">-->
-<!--          <p class="text-lg text-custom-teal">-->
-<!--            <i class="fas fa-info-circle icon"></i>-->
-<!--            健康总分的满分为100分。在评估健康总分时，综合了三个部分：肠道菌群健康状况、疾病风险情况和营养均衡饮食情况综合评估计算，并采用扣分制，具体包括因疾病风险、营养不均衡和菌群失衡等因素而导致的相应减分。-->
-<!--          </p>-->
-<!--          <ul class="list-disc ml-5">-->
-<!--            <li><strong>常见的健康分数范围：</strong>20分-90分</li>-->
-<!--            <li><strong>人群平均健康得分：</strong>75分</li>-->
-<!--            <li><strong>数据库中最高健康得分：</strong>93分</li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="health-total-score-container">-->
-<!--      <div class="health-total-score-left">-->
-<!--        <div class="health-total-score-label">您的健康总分</div>-->
-<!--        <div class="health-total-score-message">您的健康状况良好，仍有提升空间</div>-->
-<!--      </div>-->
-<!--      <div class="health-total-score-right">-->
-<!--        <div class="health-total-score-number">-->
-<!--          78<span class="health-total-score-denominator">/100</span>-->
-<!--        </div>-->
-<!--        <div class="health-total-score-rating">良好</div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; 三项分值的标准 &ndash;&gt;-->
-<!--    <div class="health-score-scale-container">-->
-<!--      <div class="health-score-scale-title">三项分值的标准</div>-->
-
-<!--      <div class="health-score-scale">-->
-<!--        <div class="health-score-range excellent">优秀</div>-->
-<!--        <div class="health-score-range good">良好</div>-->
-<!--        <div class="health-score-range average">一般</div>-->
-<!--        <div class="health-score-range pass">及格</div>-->
-<!--        <div class="health-score-range fail">不及格</div>-->
-<!--      </div>-->
-
-<!--      <div class="health-score-scale-labels">-->
-<!--        <div class="health-score-scale-label">-->
-<!--          <div class="health-score-scale-dot excellent-dot"></div>-->
-<!--          <div class="health-score-scale-text">85以上</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-scale-label">-->
-<!--          <div class="health-score-scale-dot good-dot"></div>-->
-<!--          <div class="health-score-scale-text">75~85</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-scale-label">-->
-<!--          <div class="health-score-scale-dot average-dot"></div>-->
-<!--          <div class="health-score-scale-text">60~75</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-scale-label">-->
-<!--          <div class="health-score-scale-dot pass-dot"></div>-->
-<!--          <div class="health-score-scale-text">40~59</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-scale-label">-->
-<!--          <div class="health-score-scale-dot fail-dot"></div>-->
-<!--          <div class="health-score-scale-text">0~40</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; 分数卡片容器 &ndash;&gt;-->
-<!--    <div class="health-score-cards-container">-->
-<!--      &lt;!&ndash; 90-95分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-90-95">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-medal"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">90-95分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          表明极好的健康状况，菌群和营养都非常均衡。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 80-90分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-80-90">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-star"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">80~90分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          表明很健康，适当针对性改善营养饮食即可。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 70-80分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-70-80">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-smile"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">70~80分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          属于健康状态，但是需要注意调整不良的生活方式和注意营养饮食均衡。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 60-70分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-60-70">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-meh"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">60~70分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          属于亚健康，可能有疾病风险需要注意，营养和生活方式也存在不合理。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 50-60分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-50-60">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-frown"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">50~60分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          表明存在个别疾病高风险或较多疾病提示注意，已有慢性疾病状态，需要针对性检查和治疗，此外生活方式也可能存在不良状态。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 40-50分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-40-50">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-tired"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">40~50分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          表明至少有一项疾病处于高风险状况，整体健康状况不佳，请进行医疗检查并马上纠正生活方式。-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; 低于40分卡片 &ndash;&gt;-->
-<!--      <div class="health-score-card card-below-40">-->
-<!--        <div class="health-score-card-left">-->
-<!--          <div class="health-score-card-icon">-->
-<!--            <i class="fas fa-exclamation-triangle"></i>-->
-<!--          </div>-->
-<!--          <div class="health-score-card-score">低于40分</div>-->
-<!--        </div>-->
-<!--        <div class="health-score-card-content">-->
-<!--          表明有多项疾病风险或某种疾病程度较为严重，强烈建议进行复查或进行治疗。-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 
   <!-- 肠道年龄解读页 -->
   <h2
@@ -5136,10 +5054,12 @@ ${d.summarized_health_index.gut_type.value ? `
         try {
           const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
-          // 按reads数量降序排序
+
+          // 按reads数量降序排序，确保将reads数量转换为数字
           const sortedData = [...data["耐药基因"]].sort((a, b) =>
-            parseInt(b["reads数量"]) - parseInt(a["reads数量"])
+            parseInt(b["reads数量"] || "0") - parseInt(a["reads数量"] || "0")
           );
+
           renderResistanceTable(sortedData);
         } catch (error) {
           console.error('Error loading resistance data:', error);
@@ -5155,7 +5075,16 @@ ${d.summarized_health_index.gut_type.value ? `
 
         container.innerHTML = '';
 
-        resistanceData.forEach((item, index) => {
+        // 过滤和处理数据
+        const filteredData = resistanceData.filter(item =>
+          item["来源菌"] !== "" && item["耐药基因"] !== ""
+        ).map(item => ({
+          ...item,
+          // 如果 reads数量 为空字符串，设置为 0
+          "reads数量": item["reads数量"] === "" ? "0" : item["reads数量"]
+        }));
+
+        filteredData.forEach((item, index) => {
           const resistanceContainer = document.createElement('div');
           resistanceContainer.className = 'ar-resistance-info-container';
 
@@ -5168,36 +5097,36 @@ ${d.summarized_health_index.gut_type.value ? `
 
           // 创建表格行
           const dataRow = `
-          <tr class="ar-resistance-row ${index % 2 === 1 ? 'ar-row-alternate' : ''}">
-            <td class="py-2 px-4 text-left ar-col-source">
-              <div class="ar-chinese-text">${item["来源菌"] || ''}</div>
-            </td>
-            <td class="py-2 px-4 text-center ar-col-gene">
-              <div class="ar-gene-name">${item["耐药基因"] || ''}</div>
-            </td>
-            <td class="py-2 px-4 text-center ar-col-reads">
-              <div class="ar-reads-count">${item["reads数量"] || '0'}</div>
-            </td>
-            <!-- 减小分类列的左右内边距 -->
-            <td class="py-2 px-2 text-center ar-col-type">
-              <div class="ar-resistance-type">${item["分类"] || ''}</div>
-            </td>
-            <td class="py-2 px-4 text-right ar-col-drug-type">
-              <div class="ar-stack-container-right">
-                ${drugTypes.map(type => `
-                  <div class="ar-stack-item-right">${type.trim()}</div>
-                `).join('')}
-              </div>
-            </td>
-            <td class="py-2 px-4 text-right ar-col-drugs">
-              <div class="ar-stack-container-right">
-                ${drugs.map(drug => `
-                  <div class="ar-stack-item-right">${drug.trim()}</div>
-                `).join('')}
-              </div>
-            </td>
-          </tr>
-        `;
+    <tr class="ar-resistance-row ${index % 2 === 1 ? 'ar-row-alternate' : ''}">
+      <td class="py-2 px-4 text-left ar-col-source">
+        <div class="ar-chinese-text">${item["来源菌"] || ''}</div>
+      </td>
+      <td class="py-2 px-4 text-center ar-col-gene">
+        <div class="ar-gene-name">${item["耐药基因"] || ''}</div>
+      </td>
+      <td class="py-2 px-4 text-center ar-col-reads">
+        <div class="ar-reads-count">${item["reads数量"]}</div>
+      </td>
+      <!-- 减小分类列的左右内边距 -->
+      <td class="py-2 px-2 text-center ar-col-type">
+        <div class="ar-resistance-type">${item["分类"] || ''}</div>
+      </td>
+      <td class="py-2 px-4 text-right ar-col-drug-type">
+        <div class="ar-stack-container-right">
+          ${drugTypes.map(type => `
+            <div class="ar-stack-item-right">${type.trim()}</div>
+          `).join('')}
+        </div>
+      </td>
+      <td class="py-2 px-4 text-right ar-col-drugs">
+        <div class="ar-stack-container-right">
+          ${drugs.map(drug => `
+            <div class="ar-stack-item-right">${drug.trim()}</div>
+          `).join('')}
+        </div>
+      </td>
+    </tr>
+  `;
 
           table.innerHTML = `<tbody>${dataRow}</tbody>`;
           resistanceContainer.appendChild(table);
@@ -5252,11 +5181,11 @@ ${d.summarized_health_index.gut_type.value ? `
       }
 
       .ar-col-gene {
-        width: 17%;
+        width: 18%;
       }
 
       .ar-col-reads {
-        width: 12%;
+        width: 11%;
       }
 
       .ar-col-type {
@@ -5420,12 +5349,12 @@ ${d.summarized_health_index.gut_type.value ? `
               style="font-size: 11px; padding: 5px 5px;">
             毒力基因
           </th>
-          <th class="py-2 px-4 text-right metal-tolerance-third-column"
-              style="font-size: 11px;
-              padding: 5px 20px 5px 5px;"
-          >
-            机制类型
-          </th>
+<!--          <th class="py-2 px-4 text-right metal-tolerance-third-column"-->
+<!--              style="font-size: 11px;-->
+<!--              padding: 5px 20px 5px 5px;"-->
+<!--          >-->
+<!--            机制类型-->
+<!--          </th>-->
           <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
               style="font-size: 11px; padding: 5px 5px;">
             reads数量
@@ -5486,13 +5415,7 @@ ${d.summarized_health_index.gut_type.value ? `
                     `).join('')}
                   </div>
                 </td>
-                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-third-column">
-                  <div class="stack-container text-center">
-                    ${resistance.resistance_type.map(type => `
-                      <div class="stack-item text-center bg-gray-100">${type}</div>
-                    `).join('')}
-                  </div>
-                </td>
+
                 <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
                   <div class="genes-and-reads-stack-container">
                     ${resistance.reads_count.map(count => `
@@ -8034,7 +7957,7 @@ ${d.summarized_health_index.gut_type.value ? `
   </div>
 
   <!-- 氨基酸评估板块 -->
-  <h3 class="custom-title-1 page-break">氨基酸评估</h3>
+  <h3 class="custom-title-third-level page-break">氨基酸评估</h3>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
     <!-- 信息框 -->
@@ -12004,29 +11927,28 @@ ${d.summarized_health_index.gut_type.value ? `
           const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
 
-          // 2. 创建包含要合并的键的列表
-          const keysToMerge = [
-            'staple_food_data',
-            'dairy_products_data',
-            'dried_fruits_data',
-            'fast_food_data',
-            'aquatic_products_data',
-            'fruit_data',
-            'soup_data',
-            'meat_data',
-            'vegetables_data'
+          // 2. 获取食物推荐数据
+          const allFoods = data["食物推荐"] || [];
+
+          // 3. 过滤出需要的分类
+          const categoriesToInclude = [
+            '主食',
+            '乳制品',
+            '干果',
+            '水产品',
+            '水果',
+            '肉类',
+            '蔬菜'
           ];
 
-          // 3. 合并所有指定的食物数据
-          let allFoods = [];
-          keysToMerge.forEach(key => {
-            if (data[key] && Array.isArray(data[key])) {
-              allFoods = allFoods.concat(data[key]);
-            }
-          });
+          const filteredFoods = allFoods.filter(food =>
+            categoriesToInclude.includes(food.分类)
+          );
 
-          // 4. 按推荐分数从高到低排序，取前 30 个和后 30 个
-          const sortedFoods = allFoods.sort((a, b) => b.evaluation_value - a.evaluation_value); // 从高到低排序
+          // 4. 按推荐指数从高到低排序
+          const sortedFoods = filteredFoods.sort((a, b) =>
+            parseFloat(b["推荐指数"]) - parseFloat(a["推荐指数"])
+          );
 
           const topFoods = sortedFoods.slice(0, 30); // 最高的 30 个
           const lowestFoods = sortedFoods.slice(-30); // 最低的 30 个
@@ -12064,17 +11986,17 @@ ${d.summarized_health_index.gut_type.value ? `
             };
 
             const foodRow = `
-              <div class="flex items-center mt-[1px]">
-                  <div class="w-20 text-right pr-4">${lowestFood.chinese_name || '未定义'}</div>
-                  <div class="food-recommendation-top-score-bar-container">
-                      <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
-                          <div class="food-recommendation-top-negative-score" style="background-color: ${getNegativeColor(lowestFood.evaluation_value)}; transform: scaleX(${-(lowestFood.evaluation_value || 0) / 100});"></div>
-                          <div class="food-recommendation-top-positive-score" style="background-color: ${getPositiveColor(topFood.evaluation_value)}; transform: scaleX(${(topFood.evaluation_value || 0) / 100})"></div>
-                      </div>
+          <div class="flex items-center mt-[1px]">
+              <div class="w-20 text-right pr-4">${lowestFood.名称 || '未定义'}</div>
+              <div class="food-recommendation-top-score-bar-container">
+                  <div class="h-3.5 bg-gray-200 rounded-full overflow-hidden food-recommendation-top-score-bar">
+                      <div class="food-recommendation-top-negative-score" style="background-color: ${getNegativeColor(lowestFood["推荐指数"] || 0)}; transform: scaleX(${-(lowestFood["推荐指数"] || 0) / 100});"></div>
+                      <div class="food-recommendation-top-positive-score" style="background-color: ${getPositiveColor(topFood["推荐指数"] || 0)}; transform: scaleX(${(topFood["推荐指数"] || 0) / 100})"></div>
                   </div>
-                  <div class="w-20 pl-4">${topFood.chinese_name || '未定义'}</div>
               </div>
-          `;
+              <div class="w-20 pl-4">${topFood.名称 || '未定义'}</div>
+          </div>
+        `;
 
             foodContainer.innerHTML += foodRow; // 动态添加到 DOM 中
           }
@@ -13836,7 +13758,6 @@ ${d.summarized_health_index.gut_type.value ? `
 
 
   <!-- 实际检出肠道菌群板块 : 检出细菌 -->
-
   <h2 class="custom-title-1 page-break">检出肠道细菌</h2>
 
   <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
@@ -13857,24 +13778,16 @@ ${d.summarized_health_index.gut_type.value ? `
       <table class="min-w-full">
         <thead>
         <tr style="background-color: #00B2B4; color: white;">
-          <th
-            class="py-2 px-4 text-left detected-gut-microbiota-first-column"
-            style="font-size: 10px;">
+          <th class="py-2 px-4 text-left detected-gut-microbiota-first-column" style="font-size: 10px;">
             细菌拉丁名
           </th>
-          <th
-            class="py-2 px-4 text-left detected-gut-microbiota-second-column"
-            style="font-size: 10px;">
+          <th class="py-2 px-4 text-left detected-gut-microbiota-second-column" style="font-size: 10px;">
             细菌中文名
           </th>
-          <th
-            class="py-2 px-4 text-right detected-gut-microbiota-third-column"
-            style="font-size: 10px; padding: 5px 5px;">
+          <th class="py-2 px-4 text-right detected-gut-microbiota-third-column" style="font-size: 10px; padding: 5px 5px;">
             参考范围%
           </th>
-          <th
-            class="py-2 px-4 text-right detected-gut-microbiota-fourth-column"
-            style="font-size: 10px;">
+          <th class="py-2 px-4 text-right detected-gut-microbiota-fourth-column" style="font-size: 10px;">
             检出丰度%
           </th>
         </tr>
@@ -13893,17 +13806,17 @@ ${d.summarized_health_index.gut_type.value ? `
         CONSTANTS: {
           COLORS: {
             RED: '#ff4d4f',
-            GREEN: '#00B2B4',  // 使用原来的青色作为正常值颜色
+            GREEN: '#00B2B4',  // 使用与真菌表格一致的青色
             GRAY: '#808080',
             LIGHT_GRAY: '#f9f9f9'  // 用于隔行变色
           },
-          FONT_SIZE: '10px'  // 调整字体大小为10px
+          FONT_SIZE: '10px'  // 与真菌表格一致的字体大小
         },
 
         // 格式化数字
         formatNumber(value) {
           if (typeof value === "string" && (value === "未检出" || value === "ND")) {
-            return "未检出";
+            return "ND";
           }
 
           const num = Number(value);
@@ -13911,32 +13824,27 @@ ${d.summarized_health_index.gut_type.value ? `
 
           if (num >= 1) {
             const integerDigits = Math.floor(Math.log10(num)) + 1;
-            const decimalPlaces = Math.max(0, 4 - integerDigits);
+            const decimalPlaces = 3;
             return num.toFixed(decimalPlaces);
           } else {
-            const str = num.toPrecision(4);
+            const str = num.toFixed(3);
             return str.replace(/\.?0+$/, '');
           }
         },
 
-        // 专门用于格式化范围数字 - 保留3位小数并去除多余的0
-        formatRangeNumber(value) {
-          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
-            return "未检出";
+        // 解析正常范围
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
           }
-
-          const num = Number(value);
-          if (isNaN(num)) return value;
-
-          // 固定保留3位小数
-          let formatted = num.toFixed(3);
-          // 去除尾部多余的0和可能的小数点
-          formatted = formatted.replace(/\.?0+$/, '');
-
-          return formatted;
+          const parts = rangeStr.split('-');
+          return {
+            min: parseFloat(parts[0] || 0),
+            max: parseFloat(parts[1] || 0)
+          };
         },
 
-        // 获取状态信息 - 虽然不再使用颜色，但保留此方法以兼容其他可能的逻辑
+        // 获取状态信息
         getStatus(detected, minRange, maxRange) {
           let status = {
             color: this.CONSTANTS.COLORS.GREEN,
@@ -13984,21 +13892,22 @@ ${d.summarized_health_index.gut_type.value ? `
           const tbody = document.createElement('tbody');
 
           bacteriaData.forEach((bacteria, index) => {
-            const detected = bacteria.detected_abundance;
-            const minRange = bacteria.normal_range?.min_normal_value || 0;
-            const maxRange = bacteria.normal_range?.max_normal_value || 0;
+            const detected = bacteria["丰度%"];
+            const { min: minRange, max: maxRange } = this.parseRange(bacteria["正常范围"]);
 
             const formattedDetectedValue = this.formatNumber(detected);
-            // 使用新的格式化函数处理范围值
-            const formattedMinRange = this.formatRangeNumber(minRange);
-            const formattedMaxRange = this.formatRangeNumber(maxRange);
+            const formattedMinRange = this.formatNumber(minRange);
+            const formattedMaxRange = this.formatNumber(maxRange);
 
-            // 获取状态信息 - 虽然不再使用颜色，但保留此调用以兼容其他可能的逻辑
+            // 获取状态信息
             this.getStatus(detected, minRange, maxRange);
 
             // 获取拉丁名和中文名
-            const latinName = bacteria.latin_name || "";
-            const chineseName = bacteria.chinese_name || "";
+            const latinName = bacteria["名称"] || "";
+            const chineseName = bacteria["中文名"] || "";
+
+            // 确定第二列显示内容 - 如果中文名为空，则显示拉丁名
+            const secondColumnContent = chineseName.trim() !== "" ? chineseName : latinName;
 
             // 创建行元素
             const tr = document.createElement('tr');
@@ -14012,10 +13921,12 @@ ${d.summarized_health_index.gut_type.value ? `
             // 设置行内容 - 为所有单元格应用10px的字体大小
             tr.innerHTML = `
             <td class="py-2 px-4 text-left detected-gut-microbiota-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
-              <div style="font-style: italic;">${latinName}</div>
+              <div style="font-style: italic;">
+                ${latinName}
+              </div>
             </td>
             <td class="py-2 px-4 text-left detected-gut-microbiota-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
-              <div>${chineseName}</div>
+              <div>${secondColumnContent}</div>
             </td>
             <td class="py-2 px-4 text-right detected-gut-microbiota-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
               ${formattedMinRange}-${formattedMaxRange}
@@ -14048,17 +13959,15 @@ ${d.summarized_health_index.gut_type.value ? `
             // 尝试获取细菌数据
             let bacteriaData = null;
 
-            if (data.detected_gut_bacteria_data && Array.isArray(data.detected_gut_bacteria_data)) {
-              bacteriaData = data.detected_gut_bacteria_data;
-            } else if (data["检出菌"] && data["检出菌"]["细菌"] && Array.isArray(data["检出菌"]["细菌"])) {
-              bacteriaData = data["检出菌"]["细菌"];
+            if (data["检出菌"] && data["检出菌"]["Bacteria"] && Array.isArray(data["检出菌"]["Bacteria"])) {
+              bacteriaData = data["检出菌"]["Bacteria"];
             }
 
             if (bacteriaData && Array.isArray(bacteriaData) && bacteriaData.length > 0) {
               // 按丰度递减排序
               bacteriaData.sort((a, b) => {
-                const abundanceA = a.detected_abundance === "ND" ? 0 : parseFloat(a.detected_abundance);
-                const abundanceB = b.detected_abundance === "ND" ? 0 : parseFloat(b.detected_abundance);
+                const abundanceA = parseFloat(a["丰度%"]) || 0;
+                const abundanceB = parseFloat(b["丰度%"]) || 0;
                 return abundanceB - abundanceA;
               });
 
@@ -14091,7 +14000,6 @@ ${d.summarized_health_index.gut_type.value ? `
       // 初始化检出细菌模块
       DetectedGutBacteria.init();
     </script>
-
   </div>
 
   <!-- 实际检出肠道菌群板块 : 检出真菌 -->
