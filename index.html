@@ -14530,10 +14530,260 @@
     </script>
   </div>
 
+
+  <!-- 检出病毒板块 -->
+
+  <!-- 实际检出肠道病毒板块 -->
+  <h2 class="custom-title-1 page-break">检出肠道病毒</h2>
+
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
+
+    <!-- 信息框 -->
+    <div class="info-box">
+      <div class="flex items-start">
+        <div class="ml-2">
+          <p class="text-lg text-custom-teal">
+            <i class="fas fa-info-circle icon"></i>
+            下列表格展示了您肠道中实际检出的病毒。如果检测到的病毒超过35种，则仅列出丰度最高的前35种。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-table">
+      <table class="min-w-full">
+        <thead>
+        <tr style="background-color: #00B2B4; color: white;">
+          <th
+            class="py-2 px-4 text-left detected-gut-virus-first-column"
+            style="font-size: 10px;">
+            病毒拉丁名
+          </th>
+          <th
+            class="py-2 px-4 text-left detected-gut-virus-second-column"
+            style="font-size: 10px;">
+            病毒中文名
+          </th>
+          <th
+            class="py-2 px-4 text-right detected-gut-virus-third-column"
+            style="font-size: 10px; padding: 5px 5px;">
+            参考范围%
+          </th>
+          <th
+            class="py-2 px-4 text-right detected-gut-virus-fourth-column"
+            style="font-size: 10px;">
+            检出丰度%
+          </th>
+        </tr>
+        </thead>
+      </table>
+
+      <div id="detected-gut-viruses-data-table-body">
+        <!-- 数据将通过 JavaScript 动态插入 -->
+      </div>
+    </div>
+
+    <script>
+      const DetectedGutViruses = {
+        // 常量定义（与之前的模板相同）
+        CONSTANTS: {
+          COLORS: {
+            RED: '#ff4d4f',
+            GREEN: '#00B2B4',
+            GRAY: '#808080',
+            LIGHT_GRAY: '#f9f9f9'
+          },
+          FONT_SIZE: '10px'
+        },
+
+        // 格式化数字方法（与之前的模板相同）
+        formatNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "ND";
+          }
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          if (num >= 1) {
+            const integerDigits = Math.floor(Math.log10(num)) + 1;
+            const decimalPlaces = Math.max(0, 4 - integerDigits);
+            return num.toFixed(decimalPlaces);
+          } else {
+            const str = num.toPrecision(4);
+            return str.replace(/\.?0+$/, '');
+          }
+        },
+
+        formatRangeNumber(value) {
+          if (typeof value === "string" && (value === "未检出" || value === "ND")) {
+            return "ND";
+          }
+
+          const num = Number(value);
+          if (isNaN(num)) return value;
+
+          let formatted = num.toFixed(3);
+          formatted = formatted.replace(/\.?0+$/, '');
+
+          return formatted;
+        },
+
+        parseRange(rangeStr) {
+          if (!rangeStr || typeof rangeStr !== 'string') {
+            return { min: 0, max: 0 };
+          }
+
+          if (rangeStr.includes('-')) {
+            const parts = rangeStr.split('-');
+            return {
+              min: parseFloat(parts[0] || 0),
+              max: parseFloat(parts[1] || 0)
+            };
+          } else {
+            return {
+              min: 0,
+              max: parseFloat(rangeStr.replace('-', '')) || 0
+            };
+          }
+        },
+
+        // 渲染表格
+        renderTable(virusesData) {
+          const container = document.getElementById('detected-gut-viruses-data-table-body');
+          if (!container) return;
+
+          container.innerHTML = '';
+
+          if (!virusesData || !Array.isArray(virusesData) || virusesData.length === 0) {
+            container.innerHTML = '<div class="text-center p-4">暂无检出病毒数据</div>';
+            return;
+          }
+
+          const fragment = document.createDocumentFragment();
+          const mainTable = document.createElement('table');
+          mainTable.className = 'min-w-full';
+          const tbody = document.createElement('tbody');
+
+          virusesData.forEach((virus, index) => {
+            const detected = virus["丰度%"];
+            const { min: minRange, max: maxRange } = this.parseRange(virus["正常范围"]);
+
+            const formattedDetectedValue = this.formatNumber(detected);
+            const formattedMinRange = this.formatRangeNumber(minRange);
+            const formattedMaxRange = this.formatRangeNumber(maxRange);
+
+            const latinName = virus["名称"] || "";
+            const chineseName = virus["中文名"] || "";
+
+            const secondColumnContent = chineseName.trim() !== "" ? chineseName : latinName;
+
+            const tr = document.createElement('tr');
+            tr.className = 'virus-row';
+
+            if (index % 2 === 1) {
+              tr.style.backgroundColor = this.CONSTANTS.COLORS.LIGHT_GRAY;
+            }
+
+            tr.innerHTML = `
+            <td class="py-2 px-4 text-left detected-gut-virus-first-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div style="font-style: italic;">
+                ${latinName}
+              </div>
+            </td>
+            <td class="py-2 px-4 text-left detected-gut-virus-second-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <div>${secondColumnContent}</div>
+            </td>
+            <td class="py-2 px-4 text-right detected-gut-virus-third-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              ${formattedMinRange}-${formattedMaxRange}
+            </td>
+            <td class="py-2 px-4 text-right detected-gut-virus-fourth-column" style="font-size: ${this.CONSTANTS.FONT_SIZE};">
+              <span style="font-weight: bold;">
+                ${formattedDetectedValue}
+              </span>
+            </td>
+          `;
+
+            tbody.appendChild(tr);
+          });
+
+          mainTable.appendChild(tbody);
+          fragment.appendChild(mainTable);
+          container.appendChild(fragment);
+        },
+
+        // 加载数据
+        async loadData() {
+          try {
+            const response = await fetch(DATA_PATHS.DATA);
+            if (!response.ok) {
+              throw new Error(`Network response error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // 尝试获取病毒数据，检查各种可能的位置
+            let virusesData = null;
+
+            const possibleDataPaths = [
+              data["检出菌"]?.["Viruses"],
+              data["检出菌"]?.["viruses"],
+              data["检出菌"]?.["病毒"],
+              data["Viruses"],
+              data["viruses"],
+              data["病毒"]
+            ];
+
+            virusesData = possibleDataPaths.find(Array.isArray);
+
+            if (virusesData && virusesData.length > 0) {
+              // 按丰度递减排序
+              virusesData.sort((a, b) => {
+                const abundanceA = parseFloat(a["丰度%"]) || 0;
+                const abundanceB = parseFloat(b["丰度%"]) || 0;
+                return abundanceB - abundanceA;
+              });
+
+              // 限制显示前35个
+              if (virusesData.length > 35) {
+                virusesData = virusesData.slice(0, 35);
+              }
+
+              this.renderTable(virusesData);
+            } else {
+              document.getElementById('detected-gut-viruses-data-table-body').innerHTML =
+                '<div class="text-center p-4">暂无检出病毒数据</div>';
+            }
+          } catch (error) {
+            document.getElementById('detected-gut-viruses-data-table-body').innerHTML =
+              '<div class="text-center p-4 text-red-500">数据加载失败，请稍后再试</div>';
+          }
+        },
+
+        // 初始化
+        init() {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.loadData());
+          } else {
+            this.loadData();
+          }
+        }
+      };
+
+      // 初始化检出病毒模块
+      DetectedGutViruses.init();
+    </script>
+  </div>
+
   <!-- 参考文献板块 -->
   <h1 class="custom-title-1 page-break">参考文献</h1>
 
-  <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+  <div
+    class="bg-white rounded-lg p-5 mb-5 mx-auto"
+    style="width: 100%;">
+
     <!-- 参考文献板块 : 信息说明卡片 -->
     <div class="info-box">
       <div class="flex items-start">

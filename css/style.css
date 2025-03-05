@@ -2837,6 +2837,44 @@ tr {
   font-size: 0.7rem; /* 控制每一列的字体大小 */
 }
 
+/* 检出病毒板块 */
+
+/* 检出肠道病毒表格列宽度样式 */
+.detected-gut-virus-first-column {
+  width: 35%;
+}
+.detected-gut-virus-second-column {
+  width: 35%;
+}
+.detected-gut-virus-third-column {
+  width: 15%;
+}
+.detected-gut-virus-fourth-column {
+  width: 15%;
+}
+
+/* 检出病毒表格第二列中文名样式 */
+.detected-gut-virus-chinese-text {
+  font-size: 0.8rem; /* 中文字体大小 */
+  /*margin-top: 0rem;*/
+  font-weight: 900; /* 加粗 */
+  margin-bottom: 0; /* 去掉底部外边距 */
+  line-height: 1.5; /* 设置行高为1，减少行间距 */
+}
+/* 检出病毒表格第一列拉丁名样式 */
+.detected-gut-virus-latin-text {
+  font-size: 0.75rem; /* 拉丁文字体大小 */
+  color: #6b7280; /* 灰色 */
+  margin-top: 1px; /* 去掉与中文行的间隔 */
+  /*margin-bottom: -5px;*/
+  line-height: 1; /* 设置行高为1，减少行间距 */
+  /*font-style: italic; !* 设置文本为斜体 *!*/
+}
+/* 检出病毒表格其他列文字样式 */
+.detected-gut-virus-column-text {
+  font-size: 0.7rem; /* 控制每一列的字体大小 */
+}
+
 
 
 /* 参考文献板块 */
