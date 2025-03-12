@@ -1,355 +1,400 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh-CN">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>肠道菌群分析总结报告</title>-->
+<!--  <script src="https://cdn.tailwindcss.com"></script>-->
+<!--  <style>-->
+<!--    @media print {-->
+<!--      body {-->
+<!--        width: 210mm;-->
+<!--        height: 297mm;-->
+<!--        margin: 0;-->
+<!--        padding: 0;-->
+<!--      }-->
+<!--      .page {-->
+<!--        width: 210mm;-->
+<!--        height: 297mm;-->
+<!--        padding: 10mm;-->
+<!--      }-->
+<!--      @page {-->
+<!--        size: A4;-->
+<!--        margin: 0;-->
+<!--      }-->
+<!--    }-->
+
+<!--    .progress-bar {-->
+<!--      height: 8px;-->
+<!--      border-radius: 4px;-->
+<!--      background: #e0e0e0;-->
+<!--      overflow: hidden;-->
+<!--    }-->
+
+<!--    .progress-value {-->
+<!--      height: 100%;-->
+<!--      border-radius: 4px;-->
+<!--    }-->
+
+<!--    .box-shadow {-->
+<!--      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+
+<!--<div class="bg-blue-50 rounded-2xl p-4 w-full mx-auto border border-white/30">-->
+<!--  <h2 class="text-lg font-bold text-[#1976D2] mb-2">饮食营养评估</h2>-->
+<!--  <p class="text-xs text-gray-600 mb-4">全面分析您的日常饮食结构和营养摄入情况，识别潜在的营养缺陷和不平衡。</p>-->
+
+<!--  <div class="space-y-4">-->
+<!--    &lt;!&ndash; 过量 &ndash;&gt;-->
+<!--    <div class="flex items-center bg-red-100 p-2 rounded-lg">-->
+<!--      <span class="text-red-600 font-semibold text-lg">过量</span>-->
+<!--      <i class="fas fa-arrow-up ml-2 text-red-600"></i>-->
+<!--      <div class="ml-4 flex items-center space-x-2">-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">盐</span>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; 不足 &ndash;&gt;-->
+<!--    <div class="flex items-center bg-yellow-100 p-2 rounded-lg">-->
+<!--      <span class="text-yellow-600 font-semibold text-lg">不足</span>-->
+<!--      <i class="fas fa-arrow-down ml-2 text-yellow-600"></i>-->
+<!--      <div class="ml-4 flex items-center space-x-2">-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">锌</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">维生素B5</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">维生素D</span>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; 缺乏 &ndash;&gt;-->
+<!--    <div class="flex items-center bg-red-100 p-2 rounded-lg">-->
+<!--      <span class="text-red-600 font-semibold text-lg">缺乏</span>-->
+<!--      <i class="fas fa-arrow-down ml-2 text-red-600"></i>-->
+<!--      <div class="ml-4 flex flex-wrap justify-end w-full">-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B1</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B2</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">叶酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B12</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">赖氨酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">苯丙氨酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">丙氨酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">谷氨酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">甘氨酸</span>-->
+<!--        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">色氨酸</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<body class="bg-gray-50">-->
+<!--<div class="page bg-white mx-auto box-shadow">-->
+<!--  &lt;!&ndash; 报告头部 &ndash;&gt;-->
+<!--  <header class="flex justify-between items-center border-b-2 border-blue-600 pb-4">-->
+<!--    <div>-->
+<!--      <h1 class="text-2xl font-bold text-blue-800">肠道菌群分析总结报告</h1>-->
+<!--      <p class="text-gray-500">报告日期: 2025年3月6日</p>-->
+<!--    </div>-->
+<!--    <div class="text-right">-->
+<!--      <p class="font-semibold">样本编号: GUT-20250306-001</p>-->
+<!--      <p class="text-sm text-gray-600">分析方法: 宏基因组测序</p>-->
+<!--    </div>-->
+<!--  </header>-->
+
+<!--  &lt;!&ndash; 慢病风险板块 &ndash;&gt;-->
+<!--  <section class="mt-4">-->
+<!--    <div class="bg-blue-50 rounded-lg p-3 mb-2">-->
+<!--      <h2 class="text-lg font-bold text-blue-800 flex items-center">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--        </svg>-->
+<!--        慢病风险评估-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--    <div class="grid grid-cols-3 gap-3">-->
+<!--      <div class="border rounded-lg p-3 bg-white">-->
+<!--        <div class="flex justify-between">-->
+<!--          <span class="font-medium">肥胖症</span>-->
+<!--          <span class="text-red-500 font-bold">高风险</span>-->
+<!--        </div>-->
+<!--        <div class="progress-bar mt-2">-->
+<!--          <div class="progress-value bg-red-500" style="width: 85%"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-3 bg-white">-->
+<!--        <div class="flex justify-between">-->
+<!--          <span class="font-medium">2型糖尿病</span>-->
+<!--          <span class="text-yellow-500 font-bold">中等风险</span>-->
+<!--        </div>-->
+<!--        <div class="progress-bar mt-2">-->
+<!--          <div class="progress-value bg-yellow-500" style="width: 60%"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-3 bg-white">-->
+<!--        <div class="flex justify-between">-->
+<!--          <span class="font-medium">肠易激综合征</span>-->
+<!--          <span class="text-red-500 font-bold">高风险</span>-->
+<!--        </div>-->
+<!--        <div class="progress-bar mt-2">-->
+<!--          <div class="progress-value bg-red-500" style="width: 78%"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; 饮食营养板块 &ndash;&gt;-->
+<!--  <section class="mt-4">-->
+<!--    <div class="bg-green-50 rounded-lg p-3 mb-2">-->
+<!--      <h2 class="text-lg font-bold text-green-800 flex items-center">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />-->
+<!--        </svg>-->
+<!--        饮食营养评估-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--    <div class="bg-white border rounded-lg p-4">-->
+<!--      <div class="grid grid-cols-2 gap-4">-->
+<!--        <div>-->
+<!--          <h3 class="font-semibold mb-2">营养异常指标</h3>-->
+<!--          <ul class="text-sm">-->
+<!--            <li class="flex items-center mb-1">-->
+<!--              <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>-->
+<!--              <span class="font-medium">膳食纤维摄入不足</span>-->
+<!--            </li>-->
+<!--            <li class="flex items-center mb-1">-->
+<!--              <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>-->
+<!--              <span class="font-medium">ω-3脂肪酸水平低</span>-->
+<!--            </li>-->
+<!--            <li class="flex items-center">-->
+<!--              <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>-->
+<!--              <span class="font-medium">多酚类物质摄入不足</span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h3 class="font-semibold mb-2">建议增加摄入</h3>-->
+<!--          <div class="flex flex-wrap">-->
+<!--            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">全谷物</span>-->
+<!--            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">绿叶蔬菜</span>-->
+<!--            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">深海鱼类</span>-->
+<!--            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">坚果</span>-->
+<!--            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">莓类水果</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; 菌群代谢板块 &ndash;&gt;-->
+<!--  <section class="mt-4">-->
+<!--    <div class="bg-purple-50 rounded-lg p-3 mb-2">-->
+<!--      <h2 class="text-lg font-bold text-purple-800 flex items-center">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />-->
+<!--        </svg>-->
+<!--        菌群代谢评估-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--    <div class="grid grid-cols-5 gap-2">-->
+<!--      <div class="border rounded-lg p-2 bg-white">-->
+<!--        <h3 class="text-sm font-semibold text-center mb-1">短链脂肪酸</h3>-->
+<!--        <div class="text-center">-->
+<!--          <span class="inline-block w-10 h-10 rounded-full bg-red-100 text-red-800 flex items-center justify-center font-bold text-lg">低</span>-->
+<!--        </div>-->
+<!--        <p class="text-xs text-center mt-1">丁酸盐产生不足</p>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-2 bg-white">-->
+<!--        <h3 class="text-sm font-semibold text-center mb-1">肠黏膜屏障</h3>-->
+<!--        <div class="text-center">-->
+<!--          <span class="inline-block w-10 h-10 rounded-full bg-yellow-100 text-yellow-800 flex items-center justify-center font-bold text-lg">中</span>-->
+<!--        </div>-->
+<!--        <p class="text-xs text-center mt-1">屏障功能轻度受损</p>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-2 bg-white">-->
+<!--        <h3 class="text-sm font-semibold text-center mb-1">维生素合成</h3>-->
+<!--        <div class="text-center">-->
+<!--          <span class="inline-block w-10 h-10 rounded-full bg-green-100 text-green-800 flex items-center justify-center font-bold text-lg">正常</span>-->
+<!--        </div>-->
+<!--        <p class="text-xs text-center mt-1">B族维生素合成良好</p>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-2 bg-white">-->
+<!--        <h3 class="text-sm font-semibold text-center mb-1">氧化还原</h3>-->
+<!--        <div class="text-center">-->
+<!--          <span class="inline-block w-10 h-10 rounded-full bg-yellow-100 text-yellow-800 flex items-center justify-center font-bold text-lg">中</span>-->
+<!--        </div>-->
+<!--        <p class="text-xs text-center mt-1">抗氧化能力中等</p>-->
+<!--      </div>-->
+<!--      <div class="border rounded-lg p-2 bg-white">-->
+<!--        <h3 class="text-sm font-semibold text-center mb-1">胆汁酸代谢</h3>-->
+<!--        <div class="text-center">-->
+<!--          <span class="inline-block w-10 h-10 rounded-full bg-red-100 text-red-800 flex items-center justify-center font-bold text-lg">异常</span>-->
+<!--        </div>-->
+<!--        <p class="text-xs text-center mt-1">次级胆汁酸过高</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; 免疫指标板块 &ndash;&gt;-->
+<!--  <section class="mt-4">-->
+<!--    <div class="bg-yellow-50 rounded-lg p-3 mb-2">-->
+<!--      <h2 class="text-lg font-bold text-yellow-800 flex items-center">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />-->
+<!--        </svg>-->
+<!--        免疫指标评估-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--    <div class="bg-white border rounded-lg p-3">-->
+<!--      <div class="grid grid-cols-2 gap-4">-->
+<!--        <div class="border-r pr-4">-->
+<!--          <h3 class="font-semibold mb-2 text-sm">炎症标志物</h3>-->
+<!--          <div class="space-y-2">-->
+<!--            <div>-->
+<!--              <div class="flex justify-between text-xs">-->
+<!--                <span>IL-6</span>-->
+<!--                <span class="text-red-500 font-medium">高于参考范围</span>-->
+<!--              </div>-->
+<!--              <div class="progress-bar mt-1">-->
+<!--                <div class="progress-value bg-red-500" style="width: 82%"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <div class="flex justify-between text-xs">-->
+<!--                <span>TNF-α</span>-->
+<!--                <span class="text-yellow-500 font-medium">轻度升高</span>-->
+<!--              </div>-->
+<!--              <div class="progress-bar mt-1">-->
+<!--                <div class="progress-value bg-yellow-500" style="width: 65%"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <div class="flex justify-between text-xs">-->
+<!--                <span>C反应蛋白</span>-->
+<!--                <span class="text-green-500 font-medium">正常范围</span>-->
+<!--              </div>-->
+<!--              <div class="progress-bar mt-1">-->
+<!--                <div class="progress-value bg-green-500" style="width: 40%"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h3 class="font-semibold mb-2 text-sm">免疫细胞调节</h3>-->
+<!--          <div class="space-y-1 text-sm">-->
+<!--            <p><span class="font-medium">Treg细胞：</span><span class="text-red-500">数量偏低</span></p>-->
+<!--            <p><span class="font-medium">Th17/Treg比例：</span><span class="text-red-500">失衡</span></p>-->
+<!--            <p><span class="font-medium">IgA分泌：</span><span class="text-yellow-500">轻度不足</span></p>-->
+<!--            <p><span class="font-medium">黏膜免疫：</span><span class="text-yellow-500">功能轻度下降</span></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; 耐药/毒力基因板块 &ndash;&gt;-->
+<!--  <section class="mt-4">-->
+<!--    <div class="bg-red-50 rounded-lg p-3 mb-2">-->
+<!--      <h2 class="text-lg font-bold text-red-800 flex items-center">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />-->
+<!--        </svg>-->
+<!--        耐药基因与毒力基因评估-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--    <div class="grid grid-cols-2 gap-4">-->
+<!--      <div class="bg-white border rounded-lg p-3">-->
+<!--        <h3 class="font-semibold mb-2 text-sm">耐药基因检测</h3>-->
+<!--        <div class="space-y-2">-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>-->
+<!--            <span class="text-sm">检出β-内酰胺酶基因</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>-->
+<!--            <span class="text-sm">检出四环素耐药基因</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>-->
+<!--            <span class="text-sm">未检出氟喹诺酮耐药基因</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>-->
+<!--            <span class="text-sm">未检出碳青霉烯类耐药基因</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="bg-white border rounded-lg p-3">-->
+<!--        <h3 class="font-semibold mb-2 text-sm">毒力基因检测</h3>-->
+<!--        <div class="space-y-2">-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>-->
+<!--            <span class="text-sm">大肠杆菌溶血素基因低水平表达</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>-->
+<!--            <span class="text-sm">未检出产志贺毒素基因</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>-->
+<!--            <span class="text-sm">未检出沙门氏菌侵袭基因</span>-->
+<!--          </div>-->
+<!--          <div class="flex items-center">-->
+<!--            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>-->
+<!--            <span class="text-sm">未检出肠毒素基因</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; 报告页脚 &ndash;&gt;-->
+<!--  <footer class="mt-6 pt-2 border-t text-sm text-gray-500 text-center">-->
+<!--    <p>本报告仅供参考，不作为临床诊断依据。如有健康问题，请咨询专业医师。</p>-->
+<!--  </footer>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>肠道菌群分析总结报告</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>动态布局</title>
   <style>
-    @media print {
-      body {
-        width: 210mm;
-        height: 297mm;
-        margin: 0;
-        padding: 0;
-      }
-      .page {
-        width: 210mm;
-        height: 297mm;
-        padding: 10mm;
-      }
-      @page {
-        size: A4;
-        margin: 0;
-      }
+    .container {
+      display: flex;
+      flex-wrap: wrap; /* 允许换行 */
+      gap: 0.5rem; /* 块之间的间距 */
     }
 
-    .progress-bar {
-      height: 8px;
-      border-radius: 4px;
-      background: #e0e0e0;
-      overflow: hidden;
+    .box {
+      flex: 1; /* 使每个块占据相等的空间 */
+      text-align: center; /* 文本居中 */
+      padding: 0.5rem; /* 内边距 */
+      border-radius: 0.25rem; /* 圆角 */
     }
 
-    .progress-value {
-      height: 100%;
-      border-radius: 4px;
+    .box-1 {
+      background-color: #f7fafc; /* 浅灰色 */
+      min-width: 150px; /* 设置最小宽度以确保换行 */
     }
 
-    .box-shadow {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .box-2 {
+      background-color: #edf2f7; /* 中灰色 */
+      min-width: 150px; /* 设置最小宽度以确保换行 */
+    }
+
+    .box-3 {
+      background-color: #e2e8f0; /* 深灰色 */
+      min-width: 150px; /* 设置最小宽度以确保换行 */
     }
   </style>
 </head>
-
-<div class="bg-blue-50 rounded-2xl p-4 w-full mx-auto border border-white/30">
-  <h2 class="text-lg font-bold text-[#1976D2] mb-2">饮食营养评估</h2>
-  <p class="text-xs text-gray-600 mb-4">全面分析您的日常饮食结构和营养摄入情况，识别潜在的营养缺陷和不平衡。</p>
-
-  <div class="space-y-4">
-    <!-- 过量 -->
-    <div class="flex items-center bg-red-100 p-2 rounded-lg">
-      <span class="text-red-600 font-semibold text-lg">过量</span>
-      <i class="fas fa-arrow-up ml-2 text-red-600"></i>
-      <div class="ml-4 flex items-center space-x-2">
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">盐</span>
-      </div>
-    </div>
-
-    <!-- 不足 -->
-    <div class="flex items-center bg-yellow-100 p-2 rounded-lg">
-      <span class="text-yellow-600 font-semibold text-lg">不足</span>
-      <i class="fas fa-arrow-down ml-2 text-yellow-600"></i>
-      <div class="ml-4 flex items-center space-x-2">
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">锌</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">维生素B5</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full">维生素D</span>
-      </div>
-    </div>
-
-    <!-- 缺乏 -->
-    <div class="flex items-center bg-red-100 p-2 rounded-lg">
-      <span class="text-red-600 font-semibold text-lg">缺乏</span>
-      <i class="fas fa-arrow-down ml-2 text-red-600"></i>
-      <div class="ml-4 flex flex-wrap justify-end w-full">
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B1</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B2</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">叶酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">维生素B12</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">赖氨酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">苯丙氨酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">丙氨酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">谷氨酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">甘氨酸</span>
-        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded-full m-1">色氨酸</span>
-      </div>
-    </div>
-  </div>
-</div>
-<body class="bg-gray-50">
-<div class="page bg-white mx-auto box-shadow">
-  <!-- 报告头部 -->
-  <header class="flex justify-between items-center border-b-2 border-blue-600 pb-4">
-    <div>
-      <h1 class="text-2xl font-bold text-blue-800">肠道菌群分析总结报告</h1>
-      <p class="text-gray-500">报告日期: 2025年3月6日</p>
-    </div>
-    <div class="text-right">
-      <p class="font-semibold">样本编号: GUT-20250306-001</p>
-      <p class="text-sm text-gray-600">分析方法: 宏基因组测序</p>
-    </div>
-  </header>
-
-  <!-- 慢病风险板块 -->
-  <section class="mt-4">
-    <div class="bg-blue-50 rounded-lg p-3 mb-2">
-      <h2 class="text-lg font-bold text-blue-800 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        慢病风险评估
-      </h2>
-    </div>
-    <div class="grid grid-cols-3 gap-3">
-      <div class="border rounded-lg p-3 bg-white">
-        <div class="flex justify-between">
-          <span class="font-medium">肥胖症</span>
-          <span class="text-red-500 font-bold">高风险</span>
-        </div>
-        <div class="progress-bar mt-2">
-          <div class="progress-value bg-red-500" style="width: 85%"></div>
-        </div>
-      </div>
-      <div class="border rounded-lg p-3 bg-white">
-        <div class="flex justify-between">
-          <span class="font-medium">2型糖尿病</span>
-          <span class="text-yellow-500 font-bold">中等风险</span>
-        </div>
-        <div class="progress-bar mt-2">
-          <div class="progress-value bg-yellow-500" style="width: 60%"></div>
-        </div>
-      </div>
-      <div class="border rounded-lg p-3 bg-white">
-        <div class="flex justify-between">
-          <span class="font-medium">肠易激综合征</span>
-          <span class="text-red-500 font-bold">高风险</span>
-        </div>
-        <div class="progress-bar mt-2">
-          <div class="progress-value bg-red-500" style="width: 78%"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 饮食营养板块 -->
-  <section class="mt-4">
-    <div class="bg-green-50 rounded-lg p-3 mb-2">
-      <h2 class="text-lg font-bold text-green-800 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        饮食营养评估
-      </h2>
-    </div>
-    <div class="bg-white border rounded-lg p-4">
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <h3 class="font-semibold mb-2">营养异常指标</h3>
-          <ul class="text-sm">
-            <li class="flex items-center mb-1">
-              <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>
-              <span class="font-medium">膳食纤维摄入不足</span>
-            </li>
-            <li class="flex items-center mb-1">
-              <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>
-              <span class="font-medium">ω-3脂肪酸水平低</span>
-            </li>
-            <li class="flex items-center">
-              <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
-              <span class="font-medium">多酚类物质摄入不足</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-semibold mb-2">建议增加摄入</h3>
-          <div class="flex flex-wrap">
-            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">全谷物</span>
-            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">绿叶蔬菜</span>
-            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">深海鱼类</span>
-            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">坚果</span>
-            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded m-1">莓类水果</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 菌群代谢板块 -->
-  <section class="mt-4">
-    <div class="bg-purple-50 rounded-lg p-3 mb-2">
-      <h2 class="text-lg font-bold text-purple-800 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-        </svg>
-        菌群代谢评估
-      </h2>
-    </div>
-    <div class="grid grid-cols-5 gap-2">
-      <div class="border rounded-lg p-2 bg-white">
-        <h3 class="text-sm font-semibold text-center mb-1">短链脂肪酸</h3>
-        <div class="text-center">
-          <span class="inline-block w-10 h-10 rounded-full bg-red-100 text-red-800 flex items-center justify-center font-bold text-lg">低</span>
-        </div>
-        <p class="text-xs text-center mt-1">丁酸盐产生不足</p>
-      </div>
-      <div class="border rounded-lg p-2 bg-white">
-        <h3 class="text-sm font-semibold text-center mb-1">肠黏膜屏障</h3>
-        <div class="text-center">
-          <span class="inline-block w-10 h-10 rounded-full bg-yellow-100 text-yellow-800 flex items-center justify-center font-bold text-lg">中</span>
-        </div>
-        <p class="text-xs text-center mt-1">屏障功能轻度受损</p>
-      </div>
-      <div class="border rounded-lg p-2 bg-white">
-        <h3 class="text-sm font-semibold text-center mb-1">维生素合成</h3>
-        <div class="text-center">
-          <span class="inline-block w-10 h-10 rounded-full bg-green-100 text-green-800 flex items-center justify-center font-bold text-lg">正常</span>
-        </div>
-        <p class="text-xs text-center mt-1">B族维生素合成良好</p>
-      </div>
-      <div class="border rounded-lg p-2 bg-white">
-        <h3 class="text-sm font-semibold text-center mb-1">氧化还原</h3>
-        <div class="text-center">
-          <span class="inline-block w-10 h-10 rounded-full bg-yellow-100 text-yellow-800 flex items-center justify-center font-bold text-lg">中</span>
-        </div>
-        <p class="text-xs text-center mt-1">抗氧化能力中等</p>
-      </div>
-      <div class="border rounded-lg p-2 bg-white">
-        <h3 class="text-sm font-semibold text-center mb-1">胆汁酸代谢</h3>
-        <div class="text-center">
-          <span class="inline-block w-10 h-10 rounded-full bg-red-100 text-red-800 flex items-center justify-center font-bold text-lg">异常</span>
-        </div>
-        <p class="text-xs text-center mt-1">次级胆汁酸过高</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 免疫指标板块 -->
-  <section class="mt-4">
-    <div class="bg-yellow-50 rounded-lg p-3 mb-2">
-      <h2 class="text-lg font-bold text-yellow-800 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-        免疫指标评估
-      </h2>
-    </div>
-    <div class="bg-white border rounded-lg p-3">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="border-r pr-4">
-          <h3 class="font-semibold mb-2 text-sm">炎症标志物</h3>
-          <div class="space-y-2">
-            <div>
-              <div class="flex justify-between text-xs">
-                <span>IL-6</span>
-                <span class="text-red-500 font-medium">高于参考范围</span>
-              </div>
-              <div class="progress-bar mt-1">
-                <div class="progress-value bg-red-500" style="width: 82%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs">
-                <span>TNF-α</span>
-                <span class="text-yellow-500 font-medium">轻度升高</span>
-              </div>
-              <div class="progress-bar mt-1">
-                <div class="progress-value bg-yellow-500" style="width: 65%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs">
-                <span>C反应蛋白</span>
-                <span class="text-green-500 font-medium">正常范围</span>
-              </div>
-              <div class="progress-bar mt-1">
-                <div class="progress-value bg-green-500" style="width: 40%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="font-semibold mb-2 text-sm">免疫细胞调节</h3>
-          <div class="space-y-1 text-sm">
-            <p><span class="font-medium">Treg细胞：</span><span class="text-red-500">数量偏低</span></p>
-            <p><span class="font-medium">Th17/Treg比例：</span><span class="text-red-500">失衡</span></p>
-            <p><span class="font-medium">IgA分泌：</span><span class="text-yellow-500">轻度不足</span></p>
-            <p><span class="font-medium">黏膜免疫：</span><span class="text-yellow-500">功能轻度下降</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 耐药/毒力基因板块 -->
-  <section class="mt-4">
-    <div class="bg-red-50 rounded-lg p-3 mb-2">
-      <h2 class="text-lg font-bold text-red-800 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-        </svg>
-        耐药基因与毒力基因评估
-      </h2>
-    </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="bg-white border rounded-lg p-3">
-        <h3 class="font-semibold mb-2 text-sm">耐药基因检测</h3>
-        <div class="space-y-2">
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-2"></span>
-            <span class="text-sm">检出β-内酰胺酶基因</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
-            <span class="text-sm">检出四环素耐药基因</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-            <span class="text-sm">未检出氟喹诺酮耐药基因</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-            <span class="text-sm">未检出碳青霉烯类耐药基因</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white border rounded-lg p-3">
-        <h3 class="font-semibold mb-2 text-sm">毒力基因检测</h3>
-        <div class="space-y-2">
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
-            <span class="text-sm">大肠杆菌溶血素基因低水平表达</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-            <span class="text-sm">未检出产志贺毒素基因</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-            <span class="text-sm">未检出沙门氏菌侵袭基因</span>
-          </div>
-          <div class="flex items-center">
-            <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
-            <span class="text-sm">未检出肠毒素基因</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 报告页脚 -->
-  <footer class="mt-6 pt-2 border-t text-sm text-gray-500 text-center">
-    <p>本报告仅供参考，不作为临床诊断依据。如有健康问题，请咨询专业医师。</p>
-  </footer>
+<body>
+<div class="container">
+  <div class="box box-1">块 1</div>
+  <div class="box box-2">块 2</div>
+  <div class="box box-3">块 3</div>
 </div>
 </body>
 </html>

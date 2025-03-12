@@ -54,6 +54,25 @@
 
   <!-- 框架/库（使用 defer 确保不阻塞） -->
   <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+  <style>
+    #chart-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    #sankey-chart {
+      width: 100%;
+      height: 500px;
+    }
+
+    #svg-container {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
 
   <!-- 无JS时的降级方案 -->
   <noscript>
@@ -1389,8 +1408,8 @@
 
         <div class="text-right">
           <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项正常</span>
+            <span class="text-3xl font-bold text-green-600">5</span>
+            <span class="text-base text-gray-500">/7 项正常</span>
           </div>
         </div>
       </div>
@@ -1426,7 +1445,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">12</span>
-            <span class="text-xs text-gray-500">/16 项低风险</span>
+            <span class="text-base text-gray-500">/16 项低风险</span>
           </div>
         </div>
       </div>
@@ -1434,9 +1453,9 @@
       <div class="border-t border-gray-300 my-1"></div>
       <div class="space-y-1">
         <div class="flex justify-start items-center">
-          <div class="flex items-center space-x-1">
-            <span class="bg-orange-100 text-orange-800 text-xs px-1.5 py-0.5 rounded">中等风险</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">II型糖尿病，结直肠癌</span>
+          <div class="flex items-center">
+            <span class="bg-orange-100 text-orange-800 text-xs px-1.5 py-0.5 rounded mr-0">中等风险</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded ml-0">II型糖尿病，结直肠癌</span>
           </div>
         </div>
         <div class="flex justify-start items-center">
@@ -1467,7 +1486,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">19</span>
-            <span class="text-xs text-gray-500">/31 项正常</span>
+            <span class="text-base text-gray-500">/31 项正常</span>
           </div>
         </div>
       </div>
@@ -1490,92 +1509,24 @@
             <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
             <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B12</span>
             <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded">不足</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B1，B2，B9（叶酸）</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B1，B2，B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸）</span>
+            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">过量</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B1，B2，B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸），B9（叶酸）</span>
           </div>
         </div>
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">氨基酸</span>
           <div class="flex items-center space-x-1">
             <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
-            <span
-              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">赖氨酸，苯丙氨酸，丙氨酸，谷氨酸，甘氨酸，色氨酸</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded max-w-xs break-words">
+              赖氨酸，苯丙氨酸，丙氨酸，谷氨酸，甘氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸，色氨酸
+            </span>
           </div>
         </div>
 
       </div>
 
-
     </div>
-
-    <!--    &lt;!&ndash; 分割线 &ndash;&gt;-->
-    <!--    <div class="border-t border-gray-300 my-3"></div>-->
-
-    <!--    &lt;!&ndash; 异常指标详情 &ndash;&gt;-->
-    <!--    <div class="space-y-2">-->
-    <!--      <div class="flex justify-between items-center bg-white/50 p-2 rounded-lg">-->
-    <!--        <div class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--          过量 <i class="fas fa-arrow-up ml-1"></i>-->
-    <!--        </div>-->
-    <!--        <div class="flex items-center space-x-2">-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--            盐-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--      <div class="flex justify-between items-center bg-white/50 p-2 rounded-lg">-->
-    <!--        <div class="bg-yellow-100 text-yellow-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--          不足 <i class="fas fa-arrow-down ml-1"></i>-->
-    <!--        </div>-->
-    <!--        <div class="flex items-center space-x-2 flex-wrap">-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--            锌-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--            维生素B5-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center">-->
-    <!--            维生素D-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--      <div class="flex justify-between items-center bg-white/50 p-2 rounded-lg">-->
-    <!--        <div class="bg-red-100 text-red-600 text-xs px-2 py-1 flex rounded-full items-center">-->
-    <!--          缺乏 <i class="fas fa-arrow-down ml-1"></i>-->
-    <!--        </div>-->
-    <!--        <div class="flex items-center space-x-2 flex-wrap justify-end w-full">-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            维生素B1-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            维生素B2-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 40px;">-->
-    <!--            叶酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            维生素B12-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            赖氨酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            苯丙氨酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            丙氨酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            谷氨酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            甘氨酸-->
-    <!--          </div>-->
-    <!--          <div class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center" style="min-width: 60px;">-->
-    <!--            色氨酸-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
   </div>
 
   <!-- 菌群代谢物 -->
@@ -1598,7 +1549,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">16</span>
-            <span class="text-xs text-gray-500">/22 正常</span>
+            <span class="text-base text-gray-500">/22 项正常</span>
           </div>
         </div>
       </div>
@@ -1606,12 +1557,11 @@
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
       <div class="space-y-1">
-        <div class="flex justify-start items-center">
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
-            <span
-              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">γ-氨基丁酸，谷氨酸，异戊酸盐，色氨，肌醇，吲哚</span>
-          </div>
+        <div class="flex items-center bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+          <!--          <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded mr-1">偏低</span>-->
+          <span class="flex-1">
+            偏低 γ-氨基丁酸，谷氨酸，异戊酸盐，色氨，肌醇，吲哚，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐
+        </span>
         </div>
       </div>
 
@@ -1638,7 +1588,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">17</span>
-            <span class="text-xs text-gray-500">/20 项正常</span>
+            <span class="text-base text-gray-500">/20 项正常</span>
           </div>
         </div>
       </div>
@@ -1695,7 +1645,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-gray-600 mr-1">14</span>
-            <span class="text-xs text-gray-500">/14 项检出</span>
+            <span class="text-base text-gray-500">/14 项检出</span>
           </div>
         </div>
       </div>
@@ -1738,7 +1688,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">0</span>
-            <span class="text-xs text-gray-500">/35 项检出</span>
+            <span class="text-base text-gray-500">/35 项检出</span>
           </div>
         </div>
       </div>
@@ -1751,8 +1701,13 @@
 
 <!-- 宏基因组报告宏观指标总结 -->
 
-<h2 class="custom-title-third-level page-break">菌群指标总结</h2>
-<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+<h2
+  class="custom-title-third-level page-break">
+  菌群指标总结
+</h2>
+<div
+  class="bg-white rounded-lg p-5 mb-5 mx-auto"
+  style="width: 100%;">
 
   <!-- 菌群整体评估 -->
   <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
@@ -1774,7 +1729,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">7</span>
-            <span class="text-xs text-gray-500">/8 项正常</span>
+            <span class="text-base text-gray-500">/8 项正常</span>
           </div>
         </div>
       </div>
@@ -1798,6 +1753,7 @@
   <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
+
       <div class="flex justify-between items-start">
         <div>
           <div class="flex items-center mb-1">
@@ -1814,7 +1770,7 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+            <span class="text-base text-gray-500">/7 项检测丰度在参考范围内</span>
           </div>
         </div>
       </div>
@@ -1895,24 +1851,11 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-gray-600 mr-1">1</span>
-            <span class="text-xs text-gray-500">/17 项检出</span>
+            <span class="text-base text-gray-500">/17 项检出</span>
           </div>
         </div>
       </div>
 
-      <!--      &lt;!&ndash; 分割线 &ndash;&gt;-->
-      <!--      <div class="border-t border-gray-300 my-1"></div>-->
-      <!--      <div class="space-y-1">-->
-
-      <!--        <div class="flex justify-start items-center">-->
-      <!--          <span class="text-xs text-gray-600 mr-2">核心菌属</span>-->
-      <!--          <div class="flex items-center space-x-1 ml-auto">-->
-      <!--            <span class="text-base font-bold text-green-600 mr-1">5</span>-->
-      <!--            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>-->
-      <!--          </div>-->
-      <!--        </div>-->
-
-      <!--      </div>-->
     </div>
   </div>
 
@@ -1936,24 +1879,11 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-gray-600 mr-1">0</span>
-            <span class="text-xs text-gray-500">/38 项检出</span>
+            <span class="text-base text-gray-500">/38 项检出</span>
           </div>
         </div>
       </div>
 
-      <!--      &lt;!&ndash; 分割线 &ndash;&gt;-->
-      <!--      <div class="border-t border-gray-300 my-1"></div>-->
-      <!--      <div class="space-y-1">-->
-
-      <!--        <div class="flex justify-start items-center">-->
-      <!--          <span class="text-xs text-gray-600 mr-2">核心菌属</span>-->
-      <!--          <div class="flex items-center space-x-1 ml-auto">-->
-      <!--            <span class="text-base font-bold text-green-600 mr-1">5</span>-->
-      <!--            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>-->
-      <!--          </div>-->
-      <!--        </div>-->
-
-      <!--      </div>-->
     </div>
   </div>
 
@@ -1977,24 +1907,11 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-gray-600 mr-1">0</span>
-            <span class="text-xs text-gray-500">/0 项检出</span>
+            <span class="text-base text-gray-500">/0 项检出</span>
           </div>
         </div>
       </div>
 
-      <!--      &lt;!&ndash; 分割线 &ndash;&gt;-->
-      <!--      <div class="border-t border-gray-300 my-1"></div>-->
-      <!--      <div class="space-y-1">-->
-
-      <!--        <div class="flex justify-start items-center">-->
-      <!--          <span class="text-xs text-gray-600 mr-2">核心菌属</span>-->
-      <!--          <div class="flex items-center space-x-1 ml-auto">-->
-      <!--            <span class="text-base font-bold text-green-600 mr-1">5</span>-->
-      <!--            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>-->
-      <!--          </div>-->
-      <!--        </div>-->
-
-      <!--      </div>-->
     </div>
   </div>
 
@@ -2002,6 +1919,7 @@
   <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
+
       <div class="flex justify-between items-start">
         <div>
           <div class="flex items-center mb-1">
@@ -2011,67 +1929,68 @@
             </div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed">
-            深入关联特定疾病症状与微生物组异常，揭示菌群失衡与临床表征的潜在机制
+            揭示肠道微生物组失衡与临床症状的内在关联机制
           </p>
         </div>
 
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+            <span class="text-base text-gray-500">/7 项检测丰度在参考范围内</span>
           </div>
         </div>
       </div>
 
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
+
       <div class="space-y-0">
 
+        <!-- 肥胖相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">肥胖相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="obesity" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
+        <!-- 便秘相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">便秘相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="constipation" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
+        <!-- 腹胀相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">腹胀相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="bloating" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
+        <!-- 过敏相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">过敏相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="allergy" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
+        <!-- 抑郁相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">抑郁相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="depression" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
+        <!-- 失眠相关菌 -->
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">失眠相关菌</span>
-          <div class="flex items-center ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1">5</span>
-            <span class="text-xs text-gray-500">/7 项检测丰度在参考范围内</span>
+          <div data-bacteria-type="insomnia" class="flex items-center ml-auto">
+            <!-- 动态内容将在这里加载 -->
           </div>
         </div>
 
@@ -2079,6 +1998,119 @@
     </div>
   </div>
 
+  <script>
+    // 数据模块
+    const GutMicrobiotaDataModule = (() => {
+      // 加载数据
+      async function loadData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          if (!response.ok) {
+            throw new Error(`Network response error: ${response.status}`);
+          }
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error('Error loading data:', error);
+        }
+      }
+
+      // 安全地转换丰度值
+      function safeParseAbundance(value) {
+        if (value === "ND") return 0;
+        const parsedValue = parseFloat(value);
+        return isNaN(parsedValue) ? 0 : parsedValue;
+      }
+
+      // 计算特定疾病的正常范围内菌群数量
+      function calculateNormalCount(data, diseaseKey) {
+        const relatedBacteria = data["疾病相关菌"][diseaseKey];
+        const totalCount = relatedBacteria.length;
+        let normalCount = 0;
+
+        relatedBacteria.forEach(item => {
+          const abundance = safeParseAbundance(item["丰度%"]);
+
+          if (!item["正常范围"]) {
+            console.warn(`No normal range for: ${item["名称"]}`);
+            return;
+          }
+
+          const [min, max] = item["正常范围"].split('-').map(Number);
+
+          if (abundance >= min && abundance <= max) {
+            normalCount++;
+          }
+        });
+
+        return {totalCount, normalCount};
+      }
+
+      // 更新HTML的通用函数
+      function updateHtml(diseaseType, normalCount, totalCount) {
+        const element = document.querySelector(`[data-bacteria-type="${diseaseType}"]`);
+
+        if (!element) {
+          console.error(`Element with data-bacteria-type="${diseaseType}" not found`);
+          return;
+        }
+
+        element.innerHTML = `
+                <span class="text-base font-bold text-green-600 mr-1">${normalCount}</span>
+                <span class="text-xs text-gray-500">/${totalCount} 项检测丰度在参考范围内</span>
+            `;
+      }
+
+      // 主函数
+      async function init() {
+        try {
+          const data = await loadData();
+          if (data) {
+            const diseases = [
+              '肥胖',
+              '便秘',
+              '腹胀',
+              '过敏',
+              '抑郁',
+              '失眠'
+            ];
+
+            // 遍历疾病类型并更新
+            diseases.forEach(disease => {
+              const {totalCount, normalCount} = calculateNormalCount(data, disease);
+
+              // 使用映射将中文疾病名转换为对应的 data 属性
+              const diseaseMapping = {
+                '肥胖': 'obesity',
+                '便秘': 'constipation',
+                '腹胀': 'bloating',
+                '过敏': 'allergy',
+                '抑郁': 'depression',
+                '失眠': 'insomnia'
+              };
+
+              updateHtml(diseaseMapping[disease], normalCount, totalCount);
+            });
+          }
+        } catch (error) {
+          console.error('Initialization error:', error);
+        }
+      }
+
+      return {
+        init
+      };
+    })();
+
+    // 使用多种方法确保初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      GutMicrobiotaDataModule.init();
+    });
+
+    window.addEventListener('load', () => {
+      GutMicrobiotaDataModule.init();
+    });
+  </script>
 
 </div>
 
@@ -6008,6 +6040,128 @@
 
 </div>
 
+<h2
+  class="custom-title-second-level page-break">
+  肠道微生物分类
+</h2>
+<div
+  class="bg-white rounded-lg p-5 mb-5 mx-auto"
+  style="width: 100%;">
+
+  <div id="chart-container">
+    <div id="chart-title" style="text-align: center; padding: 10px;">
+      <!--      <h2 style="margin: 0; color: #333; font-size: 18px;">肠道微生物组分类</h2>-->
+      <p style="
+        margin: 5px 0 0;
+        color: #666;
+        font-size: 12px;">
+        每个分类按相对丰度降序排列
+      </p>
+    </div>
+    <div id="sankey-chart"></div>
+    <!--    <div id="svg-container"></div> &lt;!&ndash; 用于插入 SVG &ndash;&gt;-->
+  </div>
+
+  <script>
+    // 使用 SVG 渲染器初始化图表
+    const chart = echarts.init(document.getElementById('sankey-chart'), null, {renderer: 'svg'});
+
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove',
+        formatter: function (params) {
+          if (params.dataType === 'node') {
+            return `${params.name}<br/>相对丰度: ${params.value}%`;
+          }
+          return `${params.data.source} → ${params.data.target}<br/>关联强度: ${params.value}`;
+        }
+      },
+      series: [{
+        type: 'sankey',
+        draggable: false, // 禁用拖拽功能
+        nodeWidth: 20,
+        nodeGap: 10,
+        layoutIterations: 0,
+        data: [
+          {name: 'Bacteria', depth: 0, itemStyle: {color: '#1f77b4'}},
+          {name: 'Firmicutes', depth: 1, itemStyle: {color: '#d62728'}},
+          {name: 'Bacteroidetes', depth: 1, itemStyle: {color: '#9467bd'}},
+          {name: 'Proteobacteria', depth: 1, itemStyle: {color: '#8c564b'}},
+          {name: 'Actinobacteria', depth: 1, itemStyle: {color: '#e377c2'}},
+          {name: 'Verrucomicrobia', depth: 1, itemStyle: {color: '#7f7f7f'}},
+          {name: 'Fusobacteria', depth: 1, itemStyle: {color: '#17becf'}},
+          {name: 'Streptococcus', depth: 2, itemStyle: {color: '#ff9896'}},
+          {name: 'Bacteroides', depth: 2, itemStyle: {color: '#aec7e8'}},
+          {name: 'Lactobacillus', depth: 2, itemStyle: {color: '#bcbd22'}},
+          {name: 'Bifidobacterium', depth: 2, itemStyle: {color: '#98df8a'}},
+          {name: 'Escherichia', depth: 2, itemStyle: {color: '#ff7f0e'}},
+          {name: 'Prevotella', depth: 2, itemStyle: {color: '#ffbb78'}},
+          {name: 'Akkermansia', depth: 2, itemStyle: {color: '#c5b0d5'}},
+          {name: 'Fusobacterium', depth: 2, itemStyle: {color: '#2ca02c'}}
+        ],
+        links: [
+          {source: 'Bacteria', target: 'Firmicutes', value: 40},
+          {source: 'Bacteria', target: 'Bacteroidetes', value: 25},
+          {source: 'Bacteria', target: 'Proteobacteria', value: 15},
+          {source: 'Bacteria', target: 'Actinobacteria', value: 10},
+          {source: 'Bacteria', target: 'Verrucomicrobia', value: 5},
+          {source: 'Bacteria', target: 'Fusobacteria', value: 5},
+          {source: 'Firmicutes', target: 'Streptococcus', value: 18},
+          {source: 'Firmicutes', target: 'Lactobacillus', value: 12},
+          {source: 'Bacteroidetes', target: 'Bacteroides', value: 15},
+          {source: 'Bacteroidetes', target: 'Prevotella', value: 10},
+          {source: 'Proteobacteria', target: 'Escherichia', value: 10},
+          {source: 'Actinobacteria', target: 'Bifidobacterium', value: 10},
+          {source: 'Verrucomicrobia', target: 'Akkermansia', value: 5},
+          {source: 'Fusobacteria', target: 'Fusobacterium', value: 5}
+        ],
+        label: {
+          fontSize: 10,
+          color: '#000'
+        },
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: '#fff'
+        },
+        lineStyle: {
+          color: 'source',
+          opacity: 0.5,
+          curveness: 0.5
+        }
+      }],
+      responsive: true
+    };
+
+    // 初始化图表
+    chart.setOption(option);
+
+    // 在图表渲染完成后获取 SVG 并插入到指定 div
+    chart.on('finished', function () {
+      const svgData = chart.getDataURL({
+        type: 'svg',
+        pixelRatio: 2 // 提高分辨率
+      });
+
+      // 创建一个 div 来存放 SVG
+      const svgContainer = document.getElementById('svg-container');
+      svgContainer.innerHTML = ''; // 清空原有内容
+
+      // 处理 SVG 数据，去掉前缀
+      const svgContent = svgData.replace(/^data:image\/svg\+xml;charset=utf-8,/, '');
+      const decodedSvg = decodeURIComponent(svgContent);
+
+      // 直接插入 SVG 数据
+      // svgContainer.innerHTML = decodedSvg;
+    });
+
+    // 添加窗口大小变化的响应式处理
+    window.addEventListener('resize', function () {
+      chart.resize();
+    });
+  </script>
+</div>
+
 
 <!-- 肠道细菌板块 -->
 <h2 class="custom-title-second-level page-break">肠道细菌</h2>
@@ -7169,32 +7323,32 @@
     </div>
   </div>
 
-  <!--    &lt;!&ndash; 有害菌检测情况总结圆环 &ndash;&gt;-->
-  <!--    <div class="harmful-gut-bacteria-container mt-10 mb-5">-->
-  <!--      <div class="harmful-gut-bacteria-donut-chart-container">-->
-  <!--        <div class="harmful-gut-bacteria-donut-chart"></div>-->
-  <!--        <div class="harmful-gut-bacteria-center-hole">-->
-  <!--          <div class="harmful-gut-bacteria-center-value">3/17</div>-->
-  <!--          <div class="harmful-gut-bacteria-center-label">异常</div>-->
-  <!--          <div class="harmful-gut-bacteria-center-sublabel">常见有害菌检测结果</div>-->
-  <!--        </div>-->
-  <!--      </div>-->
+  <!-- 有害菌检测情况总结圆环 -->
+  <div class="harmful-gut-bacteria-container mt-10 mb-5">
+    <div class="harmful-gut-bacteria-donut-chart-container">
+      <div class="harmful-gut-bacteria-donut-chart"></div>
+      <div class="harmful-gut-bacteria-center-hole">
+        <div class="harmful-gut-bacteria-center-value">3/17</div>
+        <div class="harmful-gut-bacteria-center-label">异常</div>
+        <div class="harmful-gut-bacteria-center-sublabel">常见有害菌检测结果</div>
+      </div>
+    </div>
 
-  <!--      <div class="harmful-gut-bacteria-legend">-->
-  <!--        <div class="harmful-gut-bacteria-legend-item">-->
-  <!--          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-exceeded"></div>-->
-  <!--          <span>异常 (3项)</span>-->
-  <!--        </div>-->
-  <!--        <div class="harmful-gut-bacteria-legend-item">-->
-  <!--          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-normal"></div>-->
-  <!--          <span>参考范围内 (8项)</span>-->
-  <!--        </div>-->
-  <!--        <div class="harmful-gut-bacteria-legend-item">-->
-  <!--          <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-not-detected"></div>-->
-  <!--          <span>未检出 (6项)</span>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
+    <div class="harmful-gut-bacteria-legend">
+      <div class="harmful-gut-bacteria-legend-item">
+        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-exceeded"></div>
+        <span>异常 (3项)</span>
+      </div>
+      <div class="harmful-gut-bacteria-legend-item">
+        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-normal"></div>
+        <span>参考范围内 (8项)</span>
+      </div>
+      <div class="harmful-gut-bacteria-legend-item">
+        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-not-detected"></div>
+        <span>未检出 (6项)</span>
+      </div>
+    </div>
+  </div>
 
   <!-- 问答信息框 -->
   <div class="qa-box">
@@ -11831,9 +11985,6 @@
 </div>
 
 
-
-
-
 <!--  &lt;!&ndash; 肠道菌群抗性和基因分布板块 &ndash;&gt;-->
 
 
@@ -13786,7 +13937,6 @@
     DetectedGutViruses.init();
   </script>
 </div>
-
 
 
 <!-- 个性化饮食板块 -->
