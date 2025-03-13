@@ -913,6 +913,32 @@ strong, b {
 }
 
 
+/* 评估指标总结页 */
+
+.amino-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.status-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.status-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+
 /* 肠道整体评估 : 肠道基础功能 */
 
 /* 肠道基础功能表格列样式 */
