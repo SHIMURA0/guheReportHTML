@@ -1385,20 +1385,24 @@
 </div>
 
 
-<!-- 宏基因组报告宏观指标总结 -->
-
+<!-- 宏基因组报告宏观评估指标总结 -->
 <h2 class="custom-title-third-level page-break">评估指标总结</h2>
-<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+<div
+  class="bg-white rounded-lg p-5 mb-5 mx-auto"
+  style="width: 100%;">
 
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30" style="margin-bottom: -5px">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: -5px; margin-top: -5px">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
+
       <div class="flex justify-between items-start">
+
         <div>
           <div class="flex items-center mb-1">
-            <h2 class="text-lg font-bold text-[#1976D2] mr-2">肠道基础功能评估</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-              7项
+            <h2 class="text-lg font-bold text-[#1976D2] mr-2">肠道整体评估</h2>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded" id="total-items">
+              15项
             </div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed">
@@ -1408,36 +1412,36 @@
 
         <div class="text-right">
           <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600">5</span>
-            <span class="text-base text-gray-500">/7 项正常</span>
+            <span class="text-3xl font-bold text-green-600 mr-1" id="normal-count">12</span>
+            <span class="text-base text-gray-500" id="total-count">/15 项正常</span>
           </div>
         </div>
+
       </div>
 
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
       <div class="space-y-1">
-        <div class="flex justify-start items-center">
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">代谢健康，草酸盐代谢</span>
-          </div>
+
+        <div class="amino-container">
+          <div class="status-group intestinal-status-group"></div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
+  <div
+    class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+    style="margin-bottom: -5px;">
     <!-- 评估指标标签 -->
-    <div class="mb-2">
-      <div class="flex justify-between items-start">
+    <div class="mb-1">
 
+      <div class="flex justify-between items-start">
         <div>
           <div class="flex items-center mb-1">
             <h2 class="text-lg font-bold text-[#1982D2] mr-2">慢病风险评估</h2>
-            <div class="bg-[#00B2B426] text-[#00B2B4] text-xs px-2 py-1 rounded">
-              <strong>16项</strong>
-            </div>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded chronic-disease-total-items">16项</div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed">
             全面评估您的慢性疾病潜在风险，提前预警健康隐患。
@@ -1446,118 +1450,83 @@
 
         <div class="text-right">
           <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1">12</span>
-            <span class="text-base text-gray-500">/16 项低风险</span>
+            <span class="text-3xl font-bold text-green-600 mr-1 chronic-disease-low-risk-count"></span>
+            <span class="text-base text-gray-500 chronic-disease-total-count"></span>
           </div>
         </div>
-
       </div>
 
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
-      <div class="space-y-1">
-
-        <div class="flex justify-start items-center">
-          <div class="flex items-center">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded mr-1">高风险</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">测试</span>
-          </div>
-        </div>
-
-        <div class="flex justify-start items-center">
-          <div class="flex items-center">
-            <span class="bg-orange-100 text-orange-800 text-xs px-1.5 py-0.5 rounded mr-1">中等风险</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">II型糖尿病，结直肠癌</span>
-          </div>
-        </div>
-
-        <div class="flex justify-start items-center">
-          <div class="flex items-center space-x-1">
-            <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded">需注意</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">感染性腹泻，肝病</span>
-          </div>
-        </div>
-
+      <div class="space-y-1 chronic-disease-risk-status">
+        <!-- 动态渲染风险状态 -->
       </div>
     </div>
   </div>
 
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
+  <!-- 饮食营养评估 -->
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: -5px">
     <!-- 评估指标标签 -->
     <div class="mb-2">
+
       <div class="flex justify-between items-start">
         <div>
           <div class="flex items-center mb-1">
             <h2 class="text-lg font-bold text-[#1976D2] mr-2">饮食营养评估</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-              31项
-            </div>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded" id="nutrition-total-items">项</div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed">
             全面分析您的日常饮食结构和营养摄入情况，识别潜在的营养缺陷和不平衡。
           </p>
         </div>
+
         <div class="text-right">
           <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1">19</span>
-            <span class="text-base text-gray-500">/31 项正常</span>
+            <span class="text-3xl font-bold text-green-600" id="nutrition-normal-count"></span>
+            <span class="text-base text-gray-500">/<span id="nutrition-total-count"></span> 项正常</span>
           </div>
         </div>
       </div>
+
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
 
       <div class="space-y-1">
+        <!-- 日常饮食 -->
         <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">日常饮食</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded">不足</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">锌</span>
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">过量</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">盐</span>
+          <span class="bg-[#00B2B426] p-0.5 text-xs text-gray-600 mr-2 rounded">日常饮食</span>
+          <div class="flex items-center space-x-1 daily-diet-status">
+            <!-- 动态加载日常饮食内容 -->
           </div>
         </div>
+        <!-- 维生素 -->
         <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">维生素</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B12</span>
-            <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded">不足</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B1，B2，叶酸</span>
+          <span class="bg-[#00B2B426] px-2 py-0.5 text-xs text-gray-600 mr-2 rounded">维生素</span>
+          <div class="flex items-center space-x-1 vitamins-status">
+            <!-- 动态加载维生素内容 -->
           </div>
         </div>
-
+        <!-- 氨基酸 -->
         <div class="amino-container">
+          <!-- 氨基酸标题标签 -->
+          <span class="amino-label text-xs text-gray-600 rounded">氨基酸</span>
 
-          <span class="status-label text-xs text-gray-600 self-center">氨基酸</span>
-
-          <div class="status-group">
-
-            <div class="status-container">
-              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
-              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果
-              </div>
-            </div>
-
-            <div class="status-container">
-              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">过量</span>
-              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                色氨酸，精氨酸，这是另一个文本示例，展示多行的布局效果
-              </div>
-            </div>
-
+          <!-- 状态组合容器 -->
+          <div class="status-group amino-acids">
+            <!-- 这里将由 JavaScript 动态填充 -->
+            <!-- 如果没有数据，会显示正常状态 -->
+            <!-- 如果有异常数据，会按照缺乏、不足、过量的顺序显示 -->
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
 
   <!-- 菌群代谢物 -->
 
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: -5px">
     <!-- 评估指标标签 -->
     <div class="mb-2">
       <div class="flex justify-between items-start">
@@ -1583,12 +1552,37 @@
       <!-- 分割线 -->
       <div class="border-t border-gray-300 my-1"></div>
       <div class="space-y-1">
-        <div class="flex items-center bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
-          <!--          <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded mr-1">偏低</span>-->
-          <span class="flex-1">
-            偏低 γ-氨基丁酸，谷氨酸，异戊酸盐，色氨，肌醇，吲哚，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐，异戊酸盐
-        </span>
+
+        <!-- 氨基酸整体容器 -->
+        <div class="amino-container">
+
+          <!-- 状态组合容器 -->
+          <div class="status-group">
+            <!-- 第一个状态容器：缺乏 -->
+            <div class="status-container">
+              <!-- 状态标签：缺乏 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
+
+              <!-- 缺乏的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果，赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果
+              </div>
+            </div>
+
+            <!-- 第二个状态容器：过量 -->
+            <div class="status-container">
+              <!-- 状态标签：过量 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">过量</span>
+
+              <!-- 过量的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果，赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
 
     </div>
@@ -1596,7 +1590,8 @@
 
   <!-- 免疫指标 -->
 
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: -20px">
     <!-- 评估指标标签 -->
     <div class="mb-2">
       <div class="flex justify-between items-start">
@@ -1623,162 +1618,740 @@
       <div class="border-t border-gray-300 my-1"></div>
 
       <div class="space-y-1">
-        <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">免疫指标</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">IgM，白蛋白</span>
-          </div>
-        </div>
-        <!--        <div class="flex justify-start items-center">-->
-        <!--          <span class="text-xs text-gray-600 mr-2">炎症感染</span>-->
-        <!--          <div class="flex items-center space-x-1">-->
-        <!--            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>-->
-        <!--            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B12</span>-->
-        <!--            <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded">不足</span>-->
-        <!--            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">B1，B2，B9（叶酸）</span>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">菌群代谢</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">氢气</span>
-          </div>
-        </div>
 
-      </div>
+        <!-- 免疫指标整体容器 -->
+        <div class="amino-container">
+          <!-- 氨基酸标题标签 -->
+          <span class="amino-label text-xs text-gray-600 rounded">免疫指标</span>
 
-    </div>
-  </div>
+          <!-- 状态组合容器 -->
+          <div class="status-group">
+            <!-- 第一个状态容器：缺乏 -->
+            <div class="status-container">
+              <!-- 状态标签：缺乏 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
 
-  <!-- 耐药基因 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
-    <!-- 评估指标标签 -->
-    <div class="mb-2">
-      <div class="flex justify-between items-start">
-        <div>
-          <div class="flex items-center mb-1">
-            <h2 class="text-lg font-bold text-[#1976D2] mr-2">耐药基因检测</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-              14项
+              <!-- 缺乏的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果，赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果
+              </div>
             </div>
-          </div>
-          <p class="text-xs text-gray-600 mt-1 leading-relaxed max-w-[500px]">
-            精准解析抗生素耐药基因谱系，预测个体药物敏感性和潜在治疗风险。
-          </p>
-        </div>
-        <div class="text-right">
-          <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-gray-600 mr-1">14</span>
-            <span class="text-base text-gray-500">/14 项检出</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- 分割线 -->
-      <div class="border-t border-gray-300 my-1"></div>
+            <!-- 第二个状态容器：过量 -->
+            <div class="status-container">
+              <!-- 状态标签：过量 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏高</span>
 
-      <div class="space-y-1">
-        <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">reads数 TOP3：</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(W) | 11600 | 四环素耐药</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(40) | 11000 | 四环素耐药</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">mef(En2) | 5800 | 大环内酯耐药</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 毒力基因 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
-    <!-- 评估指标标签 -->
-    <div class="mb-2">
-      <div class="flex justify-between items-start">
-
-        <div>
-          <div class="flex items-center mb-1">
-            <h2 class="text-lg font-bold text-[#1976D2] mr-2">毒力基因检测</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-              35项
+              <!-- 过量的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果，赖氨酸，苯丙氨酸，这是一个很长很长的文本示例，用于展示自动换行效果
+              </div>
             </div>
+
           </div>
-          <p class="text-xs text-gray-600 mt-1 leading-relaxed max-w-[500px]">
-            深入解析致病菌毒力基因，全面评估您的微生物组潜在致病风险和抗性特征。
-          </p>
         </div>
 
-        <div class="text-right">
-          <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1">0</span>
-            <span class="text-base text-gray-500">/35 项检出</span>
+
+        <!-- 免疫指标整体容器 -->
+        <div class="amino-container">
+          <!-- 氨基酸标题标签 -->
+          <span class="amino-label text-xs text-gray-600 rounded">炎症感染</span>
+
+          <!-- 状态组合容器 -->
+          <div class="status-group">
+            <!-- 第一个状态容器：缺乏 -->
+            <div class="status-container">
+              <!-- 状态标签：缺乏 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
+
+              <!-- 缺乏的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例
+              </div>
+            </div>
+
+            <!-- 第二个状态容器：过量 -->
+            <div class="status-container">
+              <!-- 状态标签：过量 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏高</span>
+
+              <!-- 过量的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例
+              </div>
+            </div>
+
           </div>
         </div>
+
+        <!-- 免疫指标整体容器 -->
+        <div class="amino-container">
+          <!-- 氨基酸标题标签 -->
+          <span class="amino-label text-xs text-gray-600 rounded">菌群代谢</span>
+
+          <!-- 状态组合容器 -->
+          <div class="status-group">
+            <!-- 第一个状态容器：缺乏 -->
+            <div class="status-container">
+              <!-- 状态标签：缺乏 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
+
+              <!-- 缺乏的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例
+              </div>
+            </div>
+
+            <!-- 第二个状态容器：过量 -->
+            <div class="status-container">
+              <!-- 状态标签：过量 -->
+              <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏高</span>
+
+              <!-- 过量的氨基酸详细信息 -->
+              <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                赖氨酸，苯丙氨酸，这是一个很长很长的文本示例
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
+
     </div>
   </div>
+
+  <script>
+    // 主数据模块
+    const GutMicrobiotaEvaluatedDataModule = (() => {
+
+      // 公共数据加载函数
+      async function loadData() {
+        try {
+          const response = await fetch(DATA_PATHS.DATA);
+          if (!response.ok) {
+            throw new Error(`Network response error: ${response.status}`);
+          }
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error('Error loading data:', error);
+          throw error; // 重新抛出错误，让调用者处理
+        }
+      }
+
+      // 肠道整体评估子模块（肠道基础功能+菌群整体指标）（共16项）
+      const IntestinalAssessmentModule = {
+        process: function (data) {
+          // 获取"菌群整体评估"数据，如果不存在则使用空数组
+          const assessmentData = data['菌群整体评估'] || [];
+
+          // 统计总数和正常数
+          const totalItems = assessmentData.length;
+          const normalItems = assessmentData.filter(item => item['结果评价'] === '正常').length;
+
+          // 筛选偏低的指标
+          const lowItems = assessmentData.filter(item => {
+            const referenceRange = item['参考范围'].split('-').map(Number);
+            const assessmentValue = Number(item['评估值']);
+            return assessmentValue < referenceRange[0];
+          });
+          // 筛选偏高的指标
+          const highItems = assessmentData.filter(item => {
+            const referenceRange = item['参考范围'].split('-').map(Number);
+            const assessmentValue = Number(item['评估值']);
+            return assessmentValue > referenceRange[1];
+          });
+
+          return {
+            totalItems,    // 总项目数
+            normalItems,   // 正常项目数
+            lowItems,      // 偏低指标
+            highItems      // 偏高指标
+          };
+        },
+
+        render: function (result) {
+          // 更新总体统计信息
+          const totalItemsElement = document.getElementById('total-items');
+          const normalCountElement = document.getElementById('normal-count');
+          const totalCountElement = document.getElementById('total-count');
+
+          // 更新统计信息
+          totalItemsElement.textContent = `${result.totalItems}项`;
+          normalCountElement.textContent = result.normalItems;
+          totalCountElement.textContent = `/${result.totalItems} 项正常`;
+
+          // 使用特定的类选择器
+          const statusGroupElement = document.querySelector('.intestinal-status-group');
+
+          // 清空现有内容
+          statusGroupElement.innerHTML = '';
+
+          // 渲染偏低指标
+          if (result.lowItems.length > 0) {
+            const lowContainer = document.createElement('div');
+            lowContainer.className = 'status-container';
+            lowContainer.innerHTML = `
+            <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
+            <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                ${result.lowItems.map(item => `${item['检测项目']}`).join('，')}
+            </div>
+        `;
+            statusGroupElement.appendChild(lowContainer);
+          }
+
+          // 渲染偏高指标
+          if (result.highItems.length > 0) {
+            const highContainer = document.createElement('div');
+            highContainer.className = 'status-container';
+            highContainer.innerHTML = `
+            <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏高</span>
+            <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                ${result.highItems.map(item => `${item['检测项目']}`).join('，')}
+            </div>
+        `;
+            statusGroupElement.appendChild(highContainer);
+          }
+
+          // 如果没有偏低或偏高的指标
+          if (result.lowItems.length === 0 && result.highItems.length === 0) {
+            statusGroupElement.innerHTML = `
+            <div class="status-container">
+                <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
+                <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                    所有指标均在正常范围
+                </div>
+            </div>
+        `;
+          }
+        }
+      };
+
+      // 慢病风险评估子模块
+      const ChronicDiseaseRiskModule = {
+        process: function (data) {
+          // 获取"慢病风险"数据，如果不存在则使用空数组
+          const riskData = data['慢病风险'] || [];
+
+          // 统计总数和低风险数
+          const totalItems = riskData.length;
+          const lowRiskItems = riskData.filter(item => item['结果评价'] === '低风险').length;
+          // 高风险疾病筛选
+          const highRiskItems = riskData.filter(item => item['结果评价'] === '高风险');
+          // 中等风险筛选
+          const mediumRiskItems = riskData.filter(item => item['结果评价'] === '中等风险');
+
+          return {
+            totalItems,        // 总项目数
+            lowRiskItems,      // 低风险项目数
+            highRiskItems,     // 高风险指标
+            mediumRiskItems    // 中等风险指标
+          };
+        },
+
+        render: function (result) {
+          // 更新总体统计信息
+          const totalItemsElement = document.querySelector('.chronic-disease-total-items');
+          const lowRiskCountElement = document.querySelector('.chronic-disease-low-risk-count');
+          const totalCountElement = document.querySelector('.chronic-disease-total-count');
+
+          // 更新统计信息
+          totalItemsElement.textContent = `${result.totalItems}项`;
+          lowRiskCountElement.textContent = result.lowRiskItems;
+          totalCountElement.textContent = `/${result.totalItems} 项低风险`;
+
+          // 使用特定的类选择器
+          const riskStatusContainer = document.querySelector('.chronic-disease-risk-status');
+
+          // 清空现有内容
+          riskStatusContainer.innerHTML = '';
+
+          // 渲染高风险指标
+          if (result.highRiskItems.length > 0) {
+            const highRiskContainer = document.createElement('div');
+            highRiskContainer.className = 'flex justify-start items-center mb-1';
+            highRiskContainer.innerHTML = `
+                <div class="flex items-center">
+                    <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded mr-1">高风险</span>
+                    <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+                        ${result.highRiskItems.map(item => item['检测项目']).join('，')}
+                    </span>
+                </div>
+            `;
+            riskStatusContainer.appendChild(highRiskContainer);
+          }
+
+          // 渲染中等风险指标
+          if (result.mediumRiskItems.length > 0) {
+            const mediumRiskContainer = document.createElement('div');
+            mediumRiskContainer.className = 'flex justify-start items-center mb-1';
+            mediumRiskContainer.innerHTML = `
+                <div class="flex items-center">
+                    <span class="bg-orange-100 text-orange-800 text-xs px-1.5 py-0.5 rounded mr-1">中等风险</span>
+                    <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+                        ${result.mediumRiskItems.map(item => item['检测项目']).join('，')}
+                    </span>
+                </div>
+            `;
+            riskStatusContainer.appendChild(mediumRiskContainer);
+          }
+
+          // 如果没有中高风险指标
+          if (result.highRiskItems.length === 0 && result.mediumRiskItems.length === 0) {
+            // 查找"需注意"等级的指标
+            const warningRiskItems = riskData.filter(item => {
+              const referenceRanges = item['参考范围'].split('-').map(Number);
+              const assessmentValue = Number(item['评估值']);
+              return assessmentValue > referenceRanges[0] && assessmentValue <= referenceRanges[1]; // 需注意风险阈值
+            }).map(item => item['检测项目']);
+
+            // 如果有需注意的指标
+            if (warningRiskItems.length > 0) {
+              riskStatusContainer.innerHTML = `
+            <div class="flex justify-start items-center mb-1">
+                <div class="flex items-center">
+                    <span class="bg-yellow-100 text-yellow-800 text-xs px-1.5 py-0.5 rounded mr-1">需注意</span>
+                    <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+                        ${warningRiskItems.join('，')}
+                    </span>
+                </div>
+            </div>
+        `;
+            }
+            // 如果连需注意的指标都没有
+            else {
+              riskStatusContainer.innerHTML = `
+            <div class="flex justify-start items-center mb-1">
+                <div class="flex items-center">
+                    <span class="bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded mr-1">低风险</span>
+                    <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+                        所有指标均处于低风险范围
+                    </span>
+                </div>
+            </div>
+        `;
+            }
+          }
+        }
+      };
+
+      // 饮食营养板块统计
+      const NutritionAssessmentModule = {
+        process: function(data) {
+          // 获取营养评估数据
+          const nutritionData = data['营养评估'] || [];
+
+          // 过滤掉不需要的项
+          const filteredData = this.filterUnwantedItems(nutritionData);
+
+          // 统计正常项和总项
+          const normalCount = this.countNormalItems(filteredData);
+          const totalCount = filteredData.length;
+
+          return { normalCount, totalCount };
+        },
+
+        filterUnwantedItems: function(nutritionData) {
+          // 定义要去掉的项
+          const unwantedKeys = ['乙酸', '丙酸', '丁酸'];
+
+          // 过滤掉不需要的项
+          return nutritionData.filter(item => !unwantedKeys.includes(item['检测项目']));
+        },
+
+        countNormalItems: function(nutritionData) {
+          return nutritionData.filter(item => item['结果评价'] === '正常').length;
+        },
+
+        render: function(normalCount, totalCount) {
+          document.getElementById('nutrition-total-items').textContent = `${totalCount}项`;
+          document.getElementById('nutrition-normal-count').textContent = normalCount;
+          document.getElementById('nutrition-total-count').textContent = totalCount;
+        }
+      };
+
+      // 日常饮食小模块
+      const DailyNutritionAssessmentModule = {
+        // 定义需要检测的项目
+        dailyDietItems: ['盐', '糖', '乳制品', '纤维', '铁', '锌'],
+
+        process: function (data) {
+          const nutritionData = data['营养评估'] || [];
+          return this.filterDailyDiet(nutritionData);
+        },
+
+        filterDailyDiet: function (nutritionData) {
+          const results = [];
+
+          nutritionData.forEach(item => {
+            if (this.dailyDietItems.includes(item['检测项目']) && item['结果评价'] !== '正常') {
+              results.push(item);
+            }
+          });
+
+          return results;
+        },
+
+        render: function (dailyDietResults) {
+          const container = document.querySelector('.daily-diet-status');
+          container.innerHTML = ''; // 清空现有内容
+
+          if (dailyDietResults.length === 0) {
+            container.innerHTML = `
+            <span class="bg-green-100 text-green-800 text-xs p-2 rounded">正常</span>
+            <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
+                所有日常饮食指标均在正常范围
+            </span>
+        `;
+            return;
+          }
+
+          // 定义排序优先级
+          const priorityOrder = ['缺乏', '不足', '过量'];
+
+          // 对结果进行排序
+          const sortedResults = dailyDietResults.sort((a, b) => {
+            return priorityOrder.indexOf(a['结果评价']) - priorityOrder.indexOf(b['结果评价']);
+          });
+
+          sortedResults.forEach(item => {
+            const statusClass =
+              item['结果评价'] === '过量' ? 'bg-red-100 text-red-800' :
+                item['结果评价'] === '不足' ? 'bg-yellow-100 text-yellow-800' :
+                  item['结果评价'] === '缺乏' ? 'bg-red-100 text-red-800' : '';
+
+            const statusLabel = item['结果评价'];
+
+            const html = `
+            <span class="${statusClass} text-xs px-1.5 py-0.5 rounded">${statusLabel}</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">${item['检测项目']}</span>
+        `;
+            container.innerHTML += html;
+          });
+        }
+      };
+
+      // 初始化模块
+      async function initializeDailyDietNutrition() {
+        try {
+          const data = await loadData();
+          const dailyDietResults = DailyNutritionAssessmentModule.process(data);
+          DailyNutritionAssessmentModule.render(dailyDietResults);
+        } catch (error) {
+          const container = document.querySelector('.daily-diet-status');
+          container.innerHTML = `
+            <span class="bg-red-100 text-red-800 text-xs p-2 rounded">加载失败</span>
+            <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
+                无法获取日常饮食数据
+            </span>
+        `;
+          console.error('Daily Diet Nutrition Initialization Error:', error);
+        }
+      }
+
+      // 页面加载时初始化模块
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeDailyDietNutrition();
+      });
+
+      // 维生素小模块
+      const VitaminAssessmentModule = {
+        // 定义需要检测的维生素项目
+        vitaminItems: [
+          '维生素A', '维生素B1', '维生素B2', '维生素B6',
+          '维生素B12', '叶酸', '维生素C', '维生素D',
+          '维生素E', '维生素K'
+        ],
+
+        process: function(data) {
+          const nutritionData = data['营养评估'] || [];
+          return this.filterVitamins(nutritionData);
+        },
+
+        filterVitamins: function(nutritionData) {
+          const results = [];
+
+          nutritionData.forEach(item => {
+            if (this.vitaminItems.includes(item['检测项目']) && item['结果评价'] !== '正常') {
+              results.push(item);
+            }
+          });
+
+          return results;
+        },
+
+        render: function(results) {
+          const container = document.querySelector('.vitamins-status');
+          container.innerHTML = ''; // 清空现有内容
+
+          if (results.length === 0) {
+            container.innerHTML = `
+                <span class="bg-green-100 text-green-800 text-xs p-2 rounded">正常</span>
+                <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
+                    所有指标均在正常范围
+                </span>
+            `;
+            return;
+          }
+
+          // 定义排序优先级
+          const priorityOrder = ['缺乏', '不足', '过量'];
+
+          // 对结果进行排序
+          const sortedResults = results.sort((a, b) => {
+            return priorityOrder.indexOf(a['结果评价']) - priorityOrder.indexOf(b['结果评价']);
+          });
+
+          // 分组结果
+          const groupedResults = sortedResults.reduce((acc, item) => {
+            if (!acc[item['结果评价']]) {
+              acc[item['结果评价']] = [];
+            }
+            // 去掉“维生素”前缀
+            const vitaminName = item['检测项目'].replace('维生素', '');
+            acc[item['结果评价']].push(vitaminName);
+            return acc;
+          }, {});
+
+          // 按优先级渲染
+          priorityOrder.forEach(status => {
+            if (groupedResults[status]) {
+              const statusClass =
+                status === '过量' ? 'bg-red-100 text-red-800' :
+                  status === '不足' ? 'bg-yellow-100 text-yellow-800' :
+                    status === '缺乏' ? 'bg-red-100 text-red-800' : '';
+
+              const html = `
+                    <span class="${statusClass} text-xs px-1.5 py-0.5 rounded">${status}</span>
+                    <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
+                        ${groupedResults[status].join('，')}
+                    </span>
+                `;
+              container.innerHTML += html;
+            }
+          });
+        }
+      };
+
+      // 初始化维生素模块
+      async function initializeVitaminNutrition() {
+        try {
+          const data = await loadData();
+          const vitaminResults = VitaminAssessmentModule.process(data);
+          VitaminAssessmentModule.render(vitaminResults);
+        } catch (error) {
+          const container = document.querySelector('.vitamins-status');
+          container.innerHTML = `
+            <span class="bg-red-100 text-red-800 text-xs p-2 rounded">加载失败</span>
+            <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
+                无法获取维生素数据
+            </span>
+        `;
+          console.error('Vitamin Nutrition Initialization Error:', error);
+        }
+      }
+
+      // 页面加载时初始化模块
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeVitaminNutrition();
+      });
+
+      // 氨基酸小模块
+      const AminoAcidAssessmentModule = {
+        // 定义需要检测的氨基酸项目
+        aminoAcidItems: [
+          '苏氨酸', '异亮氨酸', '亮氨酸', '赖氨酸', '蛋氨酸',
+          '半胱氨酸', '苯丙氨酸', '酪氨酸', '缬氨酸', '组氨酸',
+          '丙氨酸', '谷氨酸', '甘氨酸', '脯氨酸', '丝氨酸', '色氨酸'
+        ],
+
+        process: function(data) {
+          const nutritionData = data['营养评估'] || [];
+          return this.filterAminoAcids(nutritionData);
+        },
+
+        filterAminoAcids: function(nutritionData) {
+          const results = [];
+
+          nutritionData.forEach(item => {
+            if (this.aminoAcidItems.includes(item['检测项目']) && item['结果评价'] !== '正常') {
+              results.push(item);
+            }
+          });
+
+          return results;
+        },
+
+        render: function(results) {
+          const container = document.querySelector('.amino-acids');
+          container.innerHTML = ''; // 清空现有内容
+
+          if (results.length === 0) {
+            const normalContainer = document.createElement('div');
+            normalContainer.className = 'status-container';
+            normalContainer.innerHTML = `
+                <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
+                <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                    所有氨基酸指标均在正常范围
+                </div>
+            `;
+            container.appendChild(normalContainer);
+            return;
+          }
+
+          // 定义排序优先级
+          const priorityOrder = ['缺乏', '不足', '过量'];
+
+          // 对结果进行排序
+          const sortedResults = results.sort((a, b) => {
+            return priorityOrder.indexOf(a['结果评价']) - priorityOrder.indexOf(b['结果评价']);
+          });
+
+          // 分组结果
+          const groupedResults = sortedResults.reduce((acc, item) => {
+            if (!acc[item['结果评价']]) {
+              acc[item['结果评价']] = [];
+            }
+            acc[item['结果评价']].push(item['检测项目']);
+            return acc;
+          }, {});
+
+          // 按优先级渲染
+          priorityOrder.forEach(status => {
+            if (groupedResults[status]) {
+              const statusContainer = document.createElement('div');
+              statusContainer.className = 'status-container';
+
+              const statusClass =
+                status === '过量' ? 'bg-red-100 text-red-800' :
+                  status === '不足' ? 'bg-yellow-100 text-yellow-800' :
+                    status === '缺乏' ? 'bg-red-100 text-red-800' : '';
+
+              statusContainer.innerHTML = `
+                <span class="status-label ${statusClass} text-xs px-1.5 py-0.5 rounded">${status}</span>
+                <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                    ${groupedResults[status].join('，')}
+                </div>
+              `;
+
+              container.appendChild(statusContainer);
+            }
+          });
+        }
+      };
+
+      // 对外暴露的公共方法
+      return {
+        loadData,
+        IntestinalAssessmentModule,  // 肠道整体评估
+        ChronicDiseaseRiskModule,  // 慢病评估
+        NutritionAssessmentModule,
+        DailyNutritionAssessmentModule,  // 日常饮食评估
+        VitaminAssessmentModule,  // 维生素评估
+        AminoAcidAssessmentModule,  // 氨基酸评估
+
+        // 初始化方法
+        async initialize() {
+          try {
+            const data = await this.loadData();
+
+            // 处理肠道整体评估
+            const intestinalResult = this.IntestinalAssessmentModule.process(data);
+            this.IntestinalAssessmentModule.render(intestinalResult);
+            // 处理慢病风险评估
+            const chronicDiseaseResult = this.ChronicDiseaseRiskModule.process(data);
+            this.ChronicDiseaseRiskModule.render(chronicDiseaseResult);
+            // 处理饮食营养评估
+            const { normalCount, totalCount } = NutritionAssessmentModule.process(data);
+            NutritionAssessmentModule.render(normalCount, totalCount);
+            // 处理营养评估
+            const nutritionResult = this.DailyNutritionAssessmentModule.process(data);
+            this.DailyNutritionAssessmentModule.render(nutritionResult);
+            // 处理维生素营养评估
+            const vitaminResults = VitaminAssessmentModule.process(data);
+            VitaminAssessmentModule.render(vitaminResults);
+            // 处理氨基酸营养评估
+            const aminoAcidResults = AminoAcidAssessmentModule.process(data);
+            AminoAcidAssessmentModule.render(aminoAcidResults);
+
+          } catch (error) {
+            console.error('Initialization Error:', error);
+            // 处理错误的UI逻辑
+            const totalItemsElement = document.getElementById('total-items');
+            const normalCountElement = document.getElementById('normal-count');
+            const totalCountElement = document.getElementById('total-count');
+
+            totalItemsElement.textContent = '加载失败';
+            normalCountElement.textContent = '-';
+            totalCountElement.textContent = '/- 项正常';
+          }
+        }
+      };
+    })();
+
+    // 页面加载时初始化模块
+    document.addEventListener('DOMContentLoaded', () => {
+      GutMicrobiotaEvaluatedDataModule.initialize();
+    });
+  </script>
+
 </div>
 
 
-<!-- 宏基因组报告微观指标总结 -->
-
-<!-- 宏基因组报告宏观指标总结 -->
-
+<!-- 宏基因组报告检微观测指标总结 -->
 <h2
   class="custom-title-third-level page-break">
-  菌群指标总结
+  检测指标总结
 </h2>
 <div
   class="bg-white rounded-lg p-5 mb-5 mx-auto"
   style="width: 100%;">
 
-  <!-- 菌群整体评估 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
-    <!-- 评估指标标签 -->
-    <div class="mb-2 mx-auto">
-      <div class="flex justify-between items-start">
+  <!--  &lt;!&ndash; 菌群整体评估 &ndash;&gt;-->
+  <!--  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">-->
+  <!--    &lt;!&ndash; 评估指标标签 &ndash;&gt;-->
+  <!--    <div class="mb-2 mx-auto">-->
+  <!--      <div class="flex justify-between items-start">-->
 
-        <div>
-          <div class="flex items-center mb-1">
-            <h2 class="text-lg font-bold text-[#1976D2] mr-2">菌群整体评估</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded" data-assessment-type="total-count">
-              8项
-            </div>
-          </div>
-          <p class="text-xs text-gray-600 mt-1 leading-relaxed">
-            全面解析肠道微生物组生态系统，评估菌群多样性、功能平衡和健康状态
-          </p>
-        </div>
+  <!--        <div>-->
+  <!--          <div class="flex items-center mb-1">-->
+  <!--            <h2 class="text-lg font-bold text-[#1976D2] mr-2">菌群整体评估</h2>-->
+  <!--            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded" data-assessment-type="total-count">-->
+  <!--              8项-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--          <p class="text-xs text-gray-600 mt-1 leading-relaxed">-->
+  <!--            全面解析肠道微生物组生态系统，评估菌群多样性、功能平衡和健康状态-->
+  <!--          </p>-->
+  <!--        </div>-->
 
-        <div class="text-right">
-          <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1" data-assessment-type="normal-count"></span>
-            <span class="text-base text-gray-500" data-assessment-type="normal-detection"></span>
-          </div>
-        </div>
+  <!--        <div class="text-right">-->
+  <!--          <div class="flex items-center justify-end">-->
+  <!--            <span class="text-3xl font-bold text-green-600 mr-1" data-assessment-type="normal-count"></span>-->
+  <!--            <span class="text-base text-gray-500" data-assessment-type="normal-detection"></span>-->
+  <!--          </div>-->
+  <!--        </div>-->
 
-      </div>
+  <!--      </div>-->
 
-      <!-- 分割线 -->
-      <div class="border-t border-gray-300 my-1"></div>
-      <div class="space-y-1">
+  <!--      &lt;!&ndash; 分割线 &ndash;&gt;-->
+  <!--      <div class="border-t border-gray-300 my-1"></div>-->
+  <!--      <div class="space-y-1">-->
 
-        <div class="flex justify-start items-center">
-          <div class="flex items-center space-x-1">
-            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">菌群恢复力</span>
-          </div>
-        </div>
+  <!--        <div class="flex justify-start items-center">-->
+  <!--          <div class="flex items-center space-x-1">-->
+  <!--            <span class="bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>-->
+  <!--            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">菌群恢复力</span>-->
+  <!--          </div>-->
+  <!--        </div>-->
 
-      </div>
-    </div>
-  </div>
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
   <!-- 肠道细菌 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
 
@@ -1799,7 +2372,8 @@
         <div class="text-right">
           <div class="flex items-center justify-end">
             <span class="text-3xl font-bold text-green-600 mr-1" data-bacteria-type="normal-count">5</span>
-            <span class="text-base text-gray-500" data-bacteria-type="normal-detection">/7 项检测丰度在参考范围内</span>
+            <span class="text-base text-gray-500"
+                  data-bacteria-type="normal-detection">/7 项检测丰度在参考范围内</span>
           </div>
         </div>
 
@@ -1820,7 +2394,8 @@
         <div class="flex justify-start items-center">
           <span class="text-xs text-gray-600 mr-2">非核心重要菌属</span>
           <div class="flex items-center space-x-1 ml-auto">
-            <span class="text-base font-bold text-green-600 mr-1" data-bacteria-type="non-core-bacteria-count">0</span>
+              <span class="text-base font-bold text-green-600 mr-1"
+                    data-bacteria-type="non-core-bacteria-count">0</span>
             <span class="text-xs text-gray-500"
                   data-bacteria-type="non-core-bacteria-detection">/7 项检测丰度在参考范围内</span>
           </div>
@@ -1869,7 +2444,7 @@
   </div>
 
   <!-- 常见真菌 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
       <div class="flex justify-between items-start">
@@ -1900,7 +2475,8 @@
         <div>
           <div class="flex items-center mb-1">
             <h2 class="text-lg font-bold text-[#1976D2] mr-2">常见肠道寄生虫</h2>
-            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded" data-bacteria-type="parasite-count"></div>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                 data-bacteria-type="parasite-count"></div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed">
             全面分析评估您的肠道基础生理功能
@@ -1914,7 +2490,7 @@
   </div>
 
   <!-- 肠道病毒 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
       <div class="flex justify-between items-start">
@@ -1940,7 +2516,7 @@
   </div>
 
   <!-- 疾病症状相关菌 -->
-  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-2">
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30 mb-0">
     <!-- 评估指标标签 -->
     <div class="mb-2 mx-auto">
 
@@ -2025,6 +2601,95 @@
     </div>
   </div>
 
+  <!-- 耐药基因 -->
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: 0px">
+    <!-- 评估指标标签 -->
+    <div class="mb-2">
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="flex items-center mb-1">
+            <h2 class="text-lg font-bold text-[#1976D2] mr-2">耐药基因检测</h2>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
+              14项
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed max-w-[500px]">
+            精准解析抗生素耐药基因谱系，预测个体药物敏感性和潜在治疗风险。
+          </p>
+        </div>
+        <div class="text-right">
+          <div class="flex items-center justify-end">
+            <span class="text-3xl font-bold text-gray-600 mr-1">14</span>
+            <span class="text-base text-gray-500">/14 项检出</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分割线 -->
+      <div class="border-t border-gray-300 my-1"></div>
+
+      <div class="space-y-1">
+        <div class="flex justify-start items-center">
+          <span class="text-xs text-gray-600 mr-2">reads数 TOP3：</span>
+          <div class="flex items-center space-x-1">
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(W) | 11600 | 四环素耐药</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(40) | 11000 | 四环素耐药</span>
+            <span
+              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">mef(En2) | 5800 | 大环内酯耐药</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 毒力基因 -->
+  <div class="bg-white rounded-2xl px-1 py-1 w-full mx-auto border border-white/30"
+       style="margin-bottom: 0px">
+    <!-- 评估指标标签 -->
+    <div class="mb-2">
+      <div class="flex justify-between items-start">
+
+        <div>
+          <div class="flex items-center mb-1">
+            <h2 class="text-lg font-bold text-[#1976D2] mr-2">毒力基因检测</h2>
+            <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
+              35项
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed max-w-[500px]">
+            深入解析致病菌毒力基因，全面评估您的微生物组潜在致病风险和抗性特征。
+          </p>
+        </div>
+
+        <div class="text-right">
+          <div class="flex items-center justify-end">
+            <span class="text-3xl font-bold text-green-600 mr-1">0</span>
+            <span class="text-base text-gray-500">/35 项检出</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分割线 -->
+      <div class="border-t border-gray-300 my-1"></div>
+
+      <div class="space-y-1">
+        <div class="flex justify-start items-center">
+          <span class="text-xs text-gray-600 mr-2">reads数 TOP3：</span>
+          <div class="flex items-center space-x-1">
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(W) | 11600 | 四环素耐药</span>
+            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(40) | 11000 | 四环素耐药</span>
+            <span
+              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">mef(En2) | 5800 | 大环内酯耐药</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
   <script>
     // 主数据模块
     const GutMicrobiotaDataModule = (() => {
@@ -2056,7 +2721,6 @@
         // 评估项目映射
         const ASSESSMENT_KEYS = [
           '菌种数量',
-          '菌种多样性',
           '肠道菌群平衡',
           '菌群恢复力',
           '生物膜形成',
@@ -3081,7 +3745,7 @@
         // 定义菌群整体评估项目列表及英文名
         EVALUATION_ITEMS: [
           {name: "菌种数量", englishName: "Gut microbial count"},
-          {name: "菌种多样性", englishName: "Gut microbial diversity"},
+          {name: "菌群多样性", englishName: "Gut microbial diversity"},
           {name: "肠道菌群平衡", englishName: "Gut microbiota balance"},
           {name: "菌群恢复力", englishName: "Gut microbial resilience"},
           {name: "生物膜形成", englishName: "Biofilm Formation"},
@@ -4000,7 +4664,7 @@
           EVALUATION_ITEMS: [
             {name: "糖", displayName: "糖", englishName: "Sugar"},
             {name: "盐", displayName: "盐", englishName: "Salt"},
-            {name: "膳食纤维", displayName: "膳食纤维", englishName: "Dietary Fiber"},
+            {name: "纤维", displayName: "纤维", englishName: "Dietary Fiber"},
             {name: "乳制品", displayName: "乳制品", englishName: "Dairy Products"},
             {name: "铁", displayName: "铁", englishName: "Iron"},
             {name: "锌", displayName: "锌", englishName: "Zinc"}
@@ -4547,7 +5211,7 @@
             RED: '#ff4d4f',     // 缺乏（红色）
             YELLOW: '#fadb14',  // 不足（黄色）
             GREEN: '#52c41a',   // 正常（绿色）
-            BLUE: '#ff4d4f',    // 过量（红色）- 改为与其他板块一致
+            BLUE: '#ff4d4f',    // 过量（红色）
             PRIMARY: '#00B2B4'  // 主题色
           },
           // 定义需要显示的氨基酸指标列表
@@ -4688,8 +5352,7 @@
           this.CONSTANTS.EVALUATION_ITEMS.forEach(evaluationItem => {
             // 从数据中查找匹配的项目
             const matchedItem = aminoacidsData.find(item =>
-              item.检测项目 === evaluationItem.name ||
-              item.检测项目.includes(evaluationItem.name));
+              item.检测项目 === evaluationItem.name);
 
             if (!matchedItem) {
               // 如果没有找到匹配项，可以选择跳过或显示空值
@@ -9836,7 +10499,8 @@
           </ul>
         </li>
         <li>
-          <i class="fa fa-info-circle" style="color: rgb(0, 178, 180);"></i> 与 <i class="fa fa-bell text-red-500"></i>
+          <i class="fa fa-info-circle" style="color: rgb(0, 178, 180);"></i> 与 <i
+          class="fa fa-bell text-red-500"></i>
           分别是通过对全球最大规模的调查样本进行相关性分析和统计检验得出的菌群简介信息和丰度较参考范围异常时相对应的饮食改善。
         </li>
       </ul>
@@ -14694,8 +15358,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -14897,8 +15563,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -15100,8 +15768,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -15303,8 +15973,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -15708,8 +16380,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -16028,8 +16702,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>
@@ -16231,8 +16907,10 @@
         <th class="py-2 px-4 text-center food-sixth-column" style="font-size: 10px; padding: 5px 5px;">碳水化合物(g)
         </th>
         <th class="py-2 px-4 text-center food-seventh-column" style="font-size: 10px; padding: 5px 5px;">淀粉(g)</th>
-        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)</th>
-        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)</th>
+        <th class="py-2 px-4 text-center food-eighth-column" style="font-size: 10px; padding: 5px 5px;">膳食纤维(g)
+        </th>
+        <th class="py-2 px-4 text-center food-nineth-column" style="font-size: 10px; padding: 5px 5px;">胆固醇(mg)
+        </th>
       </tr>
       </thead>
     </table>

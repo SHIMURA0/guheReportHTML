@@ -924,11 +924,13 @@ strong, b {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  flex-grow: 1;
 }
 .status-container {
   display: flex;
   align-items: stretch;
   gap: 0.25rem;
+  /*margin-bottom: 0.5rem;*/
 }
 .status-label {
   display: inline-flex;
@@ -936,6 +938,15 @@ strong, b {
   justify-content: center;
   white-space: nowrap;
   min-width: max-content;
+}
+.amino-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background-color: #00B2B426;
+  padding: 0.125rem 0.5rem;
+  align-self: stretch; /* 关键 */
 }
 
 
