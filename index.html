@@ -48,7 +48,8 @@
   <script>
     window.DATA_PATHS = {
       // DATA: './data/bacteria_data.json'
-      DATA: './data/guhe_api_data_686841025.json'
+      // DATA: './data/guhe_api_data_686841025.json'
+      DATA: './data/guhe_api_data_673658272.json'
     };
   </script>
 
@@ -1938,7 +1939,7 @@
 
       // 饮食营养板块统计
       const NutritionAssessmentModule = {
-        process: function(data) {
+        process: function (data) {
           // 获取营养评估数据
           const nutritionData = data['营养评估'] || [];
 
@@ -1949,10 +1950,10 @@
           const normalCount = this.countNormalItems(filteredData);
           const totalCount = filteredData.length;
 
-          return { normalCount, totalCount };
+          return {normalCount, totalCount};
         },
 
-        filterUnwantedItems: function(nutritionData) {
+        filterUnwantedItems: function (nutritionData) {
           // 定义要去掉的项
           const unwantedKeys = ['乙酸', '丙酸', '丁酸'];
 
@@ -1960,11 +1961,11 @@
           return nutritionData.filter(item => !unwantedKeys.includes(item['检测项目']));
         },
 
-        countNormalItems: function(nutritionData) {
+        countNormalItems: function (nutritionData) {
           return nutritionData.filter(item => item['结果评价'] === '正常').length;
         },
 
-        render: function(normalCount, totalCount) {
+        render: function (normalCount, totalCount) {
           document.getElementById('nutrition-total-items').textContent = `${totalCount}项`;
           document.getElementById('nutrition-normal-count').textContent = normalCount;
           document.getElementById('nutrition-total-count').textContent = totalCount;
@@ -2064,12 +2065,12 @@
           '维生素E', '维生素K'
         ],
 
-        process: function(data) {
+        process: function (data) {
           const nutritionData = data['营养评估'] || [];
           return this.filterVitamins(nutritionData);
         },
 
-        filterVitamins: function(nutritionData) {
+        filterVitamins: function (nutritionData) {
           const results = [];
 
           nutritionData.forEach(item => {
@@ -2081,7 +2082,7 @@
           return results;
         },
 
-        render: function(results) {
+        render: function (results) {
           const container = document.querySelector('.vitamins-status');
           container.innerHTML = ''; // 清空现有内容
 
@@ -2166,12 +2167,12 @@
           '丙氨酸', '谷氨酸', '甘氨酸', '脯氨酸', '丝氨酸', '色氨酸'
         ],
 
-        process: function(data) {
+        process: function (data) {
           const nutritionData = data['营养评估'] || [];
           return this.filterAminoAcids(nutritionData);
         },
 
-        filterAminoAcids: function(nutritionData) {
+        filterAminoAcids: function (nutritionData) {
           const results = [];
 
           nutritionData.forEach(item => {
@@ -2183,7 +2184,7 @@
           return results;
         },
 
-        render: function(results) {
+        render: function (results) {
           const container = document.querySelector('.amino-acids');
           container.innerHTML = ''; // 清空现有内容
 
@@ -2246,7 +2247,7 @@
         loadData,
         IntestinalAssessmentModule,  // 肠道整体评估
         ChronicDiseaseRiskModule,  // 慢病评估
-        NutritionAssessmentModule,
+        NutritionAssessmentModule,  // 饮食营养评估统计
         DailyNutritionAssessmentModule,  // 日常饮食评估
         VitaminAssessmentModule,  // 维生素评估
         AminoAcidAssessmentModule,  // 氨基酸评估
@@ -2263,7 +2264,7 @@
             const chronicDiseaseResult = this.ChronicDiseaseRiskModule.process(data);
             this.ChronicDiseaseRiskModule.render(chronicDiseaseResult);
             // 处理饮食营养评估
-            const { normalCount, totalCount } = NutritionAssessmentModule.process(data);
+            const {normalCount, totalCount} = NutritionAssessmentModule.process(data);
             NutritionAssessmentModule.render(normalCount, totalCount);
             // 处理营养评估
             const nutritionResult = this.DailyNutritionAssessmentModule.process(data);
@@ -7225,128 +7226,183 @@
 
 </div>
 
-<h2
-  class="custom-title-second-level page-break">
-  肠道微生物分类
-</h2>
-<div
-  class="bg-white rounded-lg p-5 mb-5 mx-auto"
-  style="width: 100%;">
 
-  <div id="chart-container">
-    <div id="chart-title" style="text-align: center; padding: 10px;">
-      <!--      <h2 style="margin: 0; color: #333; font-size: 18px;">肠道微生物组分类</h2>-->
-      <p style="
-        margin: 5px 0 0;
-        color: #666;
-        font-size: 12px;">
-        每个分类按相对丰度降序排列
-      </p>
+<h3 class="custom-title-third-level page-break">
+  肠道微生物分布
+</h3>
+
+<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+
+  <!-- 信息框 -->
+  <div class="info-box">
+    <div class="flex items-start">
+      <div class="ml-2">
+        <p class="text-lg text-custom-teal">
+          <i class="fas fa-info-circle icon"></i>
+          肠道微生物群由多种微生物组成，包括细菌、真菌、真核生物和病毒，这些微生物共同维持肠道生态平衡和人体健康。分析肠道微生物的分布结构有助于深入了解其对消化、免疫及代谢的影响。
+        </p>
+        <ul class="list-disc ml-5">
+          <li><strong>K（Kingdom，界）</strong>：最高的分类层级，表示所有生命的主要分类，如细菌界（Prokaryota）、真核生物界（Eukaryota）等。</li>
+          <li><strong>P（Phylum，门）</strong>：在界之下的分类层级，用于进一步细分生物种类，例如细菌门（Bacteroidetes）、真菌门（Ascomycota）等。</li>
+          <li><strong>G（Genus，属）</strong>：在门和种之间的分类层级，表示具有相似特征的微生物组，例如某些特定细菌属（如Escherichia、Bacteroides）或者真菌属（如Candida）。</li>
+        </ul>
+        <p class="mt-2">
+          不同类型的微生物在肠道中的平衡关系直接影响宿主的健康，具体介绍如下：
+        </p>
+        <ul class="list-disc ml-5">
+          <li><strong>细菌</strong>：肠道内最丰富的微生物，参与食物的分解和营养的吸收，有助于维持免疫系统的平衡。</li>
+          <li><strong>真菌</strong>：包括酵母和霉菌，能分解复杂的有机物，参与肠道的营养代谢。</li>
+          <li><strong>真核生物</strong>：更广泛的分类，通常指具有细胞核的微生物，有助于维持肠道内的生态稳定。</li>
+          <li><strong>病毒</strong>：在肠道中可能感染细菌，调节微生物群落的组成，维护群落的多样性。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 2px">
+    <div id="sankey-chart-info-title">
+      <p>肠道微生物层级构成（仅显示检测丰度>=0.5‰）</p>
     </div>
     <div id="sankey-chart"></div>
-    <!--    <div id="svg-container"></div> &lt;!&ndash; 用于插入 SVG &ndash;&gt;-->
   </div>
 
   <script>
-    // 使用 SVG 渲染器初始化图表
-    const chart = echarts.init(document.getElementById('sankey-chart'), null, {renderer: 'svg'});
+    // 自定义节点排序函数
+    function customNodeSort(nodes, links) {
+      const prefixOrder = ['k__', 'p__', 'g__', ''];
 
-    const option = {
-      tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-        formatter: function (params) {
-          if (params.dataType === 'node') {
-            return `${params.name}<br/>相对丰度: ${params.value}%`;
-          }
-          return `${params.data.source} → ${params.data.target}<br/>关联强度: ${params.value}`;
-        }
-      },
-      series: [{
-        type: 'sankey',
-        draggable: false, // 禁用拖拽功能
-        nodeWidth: 20,
-        nodeGap: 10,
-        layoutIterations: 0,
-        data: [
-          {name: 'Bacteria', depth: 0, itemStyle: {color: '#1f77b4'}},
-          {name: 'Firmicutes', depth: 1, itemStyle: {color: '#d62728'}},
-          {name: 'Bacteroidetes', depth: 1, itemStyle: {color: '#9467bd'}},
-          {name: 'Proteobacteria', depth: 1, itemStyle: {color: '#8c564b'}},
-          {name: 'Actinobacteria', depth: 1, itemStyle: {color: '#e377c2'}},
-          {name: 'Verrucomicrobia', depth: 1, itemStyle: {color: '#7f7f7f'}},
-          {name: 'Fusobacteria', depth: 1, itemStyle: {color: '#17becf'}},
-          {name: 'Streptococcus', depth: 2, itemStyle: {color: '#ff9896'}},
-          {name: 'Bacteroides', depth: 2, itemStyle: {color: '#aec7e8'}},
-          {name: 'Lactobacillus', depth: 2, itemStyle: {color: '#bcbd22'}},
-          {name: 'Bifidobacterium', depth: 2, itemStyle: {color: '#98df8a'}},
-          {name: 'Escherichia', depth: 2, itemStyle: {color: '#ff7f0e'}},
-          {name: 'Prevotella', depth: 2, itemStyle: {color: '#ffbb78'}},
-          {name: 'Akkermansia', depth: 2, itemStyle: {color: '#c5b0d5'}},
-          {name: 'Fusobacterium', depth: 2, itemStyle: {color: '#2ca02c'}}
-        ],
-        links: [
-          {source: 'Bacteria', target: 'Firmicutes', value: 40},
-          {source: 'Bacteria', target: 'Bacteroidetes', value: 25},
-          {source: 'Bacteria', target: 'Proteobacteria', value: 15},
-          {source: 'Bacteria', target: 'Actinobacteria', value: 10},
-          {source: 'Bacteria', target: 'Verrucomicrobia', value: 5},
-          {source: 'Bacteria', target: 'Fusobacteria', value: 5},
-          {source: 'Firmicutes', target: 'Streptococcus', value: 18},
-          {source: 'Firmicutes', target: 'Lactobacillus', value: 12},
-          {source: 'Bacteroidetes', target: 'Bacteroides', value: 15},
-          {source: 'Bacteroidetes', target: 'Prevotella', value: 10},
-          {source: 'Proteobacteria', target: 'Escherichia', value: 10},
-          {source: 'Actinobacteria', target: 'Bifidobacterium', value: 10},
-          {source: 'Verrucomicrobia', target: 'Akkermansia', value: 5},
-          {source: 'Fusobacteria', target: 'Fusobacterium', value: 5}
-        ],
-        label: {
-          fontSize: 10,
-          color: '#000'
-        },
-        itemStyle: {
-          borderWidth: 1,
-          borderColor: '#fff'
-        },
-        lineStyle: {
-          color: 'source',
-          opacity: 0.5,
-          curveness: 0.5
-        }
-      }],
-      responsive: true
-    };
-
-    // 初始化图表
-    chart.setOption(option);
-
-    // 在图表渲染完成后获取 SVG 并插入到指定 div
-    chart.on('finished', function () {
-      const svgData = chart.getDataURL({
-        type: 'svg',
-        pixelRatio: 2 // 提高分辨率
+      const nodeValueMap = new Map();
+      links.forEach(link => {
+        const targetValue = nodeValueMap.get(link.target) || 0;
+        nodeValueMap.set(link.target, targetValue + parseFloat(link.value));
       });
 
-      // 创建一个 div 来存放 SVG
-      const svgContainer = document.getElementById('svg-container');
-      svgContainer.innerHTML = ''; // 清空原有内容
+      const weightedNodes = nodes.map(node => {
+        const prefix = prefixOrder.find(p => node.name.startsWith(p)) || '';
+        return {
+          ...node,
+          sortWeight: prefixOrder.indexOf(prefix),
+          totalValue: nodeValueMap.get(node.name) || 0
+        };
+      });
 
-      // 处理 SVG 数据，去掉前缀
-      const svgContent = svgData.replace(/^data:image\/svg\+xml;charset=utf-8,/, '');
-      const decodedSvg = decodeURIComponent(svgContent);
+      return weightedNodes.sort((a, b) => {
+        if (a.sortWeight !== b.sortWeight) {
+          return a.sortWeight - b.sortWeight;
+        }
+        return b.totalValue - a.totalValue;
+      });
+    }
 
-      // 直接插入 SVG 数据
-      // svgContainer.innerHTML = decodedSvg;
-    });
+    // 数据加载函数
+    async function loadData() {
+      try {
+        const response = await fetch(DATA_PATHS.DATA); // 替换为您的数据源链接
+        if (!response.ok) {
+          throw new Error(`Network response error: ${response.status}`);
+        }
+        const data = await response.json();
+        return data["桑基图"];
+      } catch (error) {
+        console.error('数据加载错误:', error);
+        throw error;
+      }
+    }
 
-    // 添加窗口大小变化的响应式处理
-    window.addEventListener('resize', function () {
-      chart.resize();
-    });
+    // 渲染桑基图函数
+    async function renderSankeyChart() {
+      const chartDom = document.getElementById('sankey-chart');
+      const myChart = echarts.init(chartDom, null, { renderer: 'svg' });
+
+      try {
+        const sankeyData = await loadData();
+
+        const nodeSet = new Set();
+        sankeyData.data.forEach(item => {
+          nodeSet.add(item.name);
+        });
+
+        const allNodes = Array.from(nodeSet).map(name => ({ name }));
+        const allLinks = sankeyData.links;
+
+        const sortedNodes = customNodeSort(allNodes, allLinks);
+
+        const option = {
+          tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+            formatter: function (params) {
+              if (params.dataType === 'edge') {
+                return `${params.data.source} → ${params.data.target}: ${params.value}`;
+              }
+              return `${params.name}\n总连接值: ${params.data.totalValue.toFixed(2)}`;
+            }
+          },
+          series: [{
+            type: 'sankey',
+            data: sortedNodes,
+            links: allLinks,
+            nodeAlign: 'none',
+            draggable: false, // 禁止拖拽
+            emphasis: {
+              focus: 'adjacency'
+            },
+            label: {
+              fontSize: 10,
+              color: '#333',
+              position: 'right'
+            },
+            lineStyle: {
+              color: 'source',
+              opacity: 0.6,
+              curveness: 0.8
+            },
+            itemStyle: {
+              borderWidth: 0,
+              borderColor: null
+            },
+            nodeWidth: 20,
+            nodeGap: 20
+          }]
+        };
+
+        myChart.setOption(option);
+
+        // 调整桑基图宽度
+        adjustChartWidth(myChart, chartDom);
+
+        window.addEventListener('resize', () => {
+          myChart.resize(); // 确保窗口调整时，桑基图调整宽度
+          adjustChartWidth(myChart, chartDom); // 窗口调整时也进行宽度调整
+        });
+
+      } catch (error) {
+        console.error('渲染图表出错:', error);
+        chartDom.innerHTML = `<div style="text-align:center;color:red;">数据加载失败: ${error.message}</div>`;
+      }
+    }
+
+    // 调整桑基图宽度函数
+    function adjustChartWidth(myChart, chartDom) {
+      const containerWidth = chartDom.parentNode.offsetWidth; // 获取父容器宽度
+      const chartWidth = myChart.getWidth(); // 获取图表的当前宽度
+
+      // 计算右侧文字的宽度，假设每个标签约为100像素
+      const labelTextWidth = 100;
+
+      // 判断是否需要调整宽度
+      if (chartWidth + labelTextWidth > containerWidth) {
+        const newWidth = containerWidth - labelTextWidth - 10; // 留出额外的空间
+        chartDom.style.width = newWidth + 'px'; // 设置新的宽度
+        myChart.resize(); // 重新渲染图表
+      } else {
+        chartDom.style.width = '100%'; // 恢复为100%
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSankeyChart);
   </script>
 </div>
-
 
 <!-- 肠道细菌板块 -->
 <h2 class="custom-title-second-level page-break">肠道细菌</h2>
