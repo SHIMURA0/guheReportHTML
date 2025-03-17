@@ -1189,7 +1189,7 @@ svg {
 }
 
 .chinese-text {
-  font-size: 0.75rem; /* 中文字体大小 */
+  font-size: 0.8rem; /* 中文字体大小 */
   /*margin-top: 0rem;*/
   font-weight: bold; /* 加粗 */
   margin-bottom: 0; /* 去掉底部外边距 */
@@ -1197,7 +1197,7 @@ svg {
 }
 
 .latin-text {
-  font-size: 0.70rem; /* 拉丁文字体大小 */
+  font-size: 0.75rem; /* 拉丁文字体大小 */
   color: #6b7280; /* 灰色 */
   margin-top: 1px; /* 去掉与中文行的间隔 */
   /*margin-bottom: -5px;*/
