@@ -7709,5 +7709,279 @@
       "总膳食纤维g": "25",
       "胆固醇mg": "0"
     }
-  ]
+  ],
+  "桑基图": {
+    "data": [
+      {
+        "name": "k__细菌"
+      },
+      {
+        "name": "k__真菌"
+      },
+      {
+        "name": "k__病毒"
+      },
+      {
+        "name": "k__真核生物"
+      },
+      {
+        "name": "g__拟杆菌属"
+      },
+      {
+        "name": "g__双歧杆菌属"
+      },
+      {
+        "name": "g__梭菌属"
+      },
+      {
+        "name": "g__Eisenbergiella"
+      },
+      {
+        "name": "g__粪杆菌属"
+      },
+      {
+        "name": "g__产丝菌属"
+      },
+      {
+        "name": "g__Flaviaesturariibacter"
+      },
+      {
+        "name": "g__Parabacteroides"
+      },
+      {
+        "name": "g__普雷沃氏菌属"
+      },
+      {
+        "name": "g__Pyramidobacter"
+      },
+      {
+        "name": "p__酸杆菌门"
+      },
+      {
+        "name": "p__厚壁菌门"
+      },
+      {
+        "name": "p__浮霉菌门"
+      },
+      {
+        "name": "p__变形菌门"
+      },
+      {
+        "name": "p__放线菌门"
+      },
+      {
+        "name": "p__互养菌门"
+      },
+      {
+        "name": "p__疣微菌门"
+      },
+      {
+        "name": "p__拟杆菌门"
+      },
+      {
+        "name": "p__绿弯菌门"
+      },
+      {
+        "name": "杜雷拟杆菌"
+      },
+      {
+        "name": "普通拟杆菌"
+      },
+      {
+        "name": "齿双歧杆菌"
+      },
+      {
+        "name": "Clostridium puniceum"
+      },
+      {
+        "name": "普氏栖粪杆菌"
+      },
+      {
+        "name": "Filifactor alocis"
+      },
+      {
+        "name": "迪氏副拟杆菌"
+      },
+      {
+        "name": "普氏菌"
+      },
+      {
+        "name": "Prevotella sp000434975"
+      },
+      {
+        "name": "Pyramidobacter piscolens"
+      },
+      {
+        "name": "酿酒酵母"
+      },
+      {
+        "name": "鲁氏结合酵母"
+      },
+      {
+        "name": "Brussowvirus bvO1205"
+      }
+    ],
+    "links": [
+      {
+        "source": "p__拟杆菌门",
+        "target": "g__拟杆菌属",
+        "value": "365219"
+      },
+      {
+        "source": "p__放线菌门",
+        "target": "g__双歧杆菌属",
+        "value": "32721"
+      },
+      {
+        "source": "p__厚壁菌门",
+        "target": "g__梭菌属",
+        "value": "16061"
+      },
+      {
+        "source": "p__厚壁菌门",
+        "target": "g__Eisenbergiella",
+        "value": "74029"
+      },
+      {
+        "source": "p__厚壁菌门",
+        "target": "g__粪杆菌属",
+        "value": "148811"
+      },
+      {
+        "source": "p__厚壁菌门",
+        "target": "g__产丝菌属",
+        "value": "101446"
+      },
+      {
+        "source": "p__拟杆菌门",
+        "target": "g__Flaviaesturariibacter",
+        "value": "34674"
+      },
+      {
+        "source": "p__拟杆菌门",
+        "target": "g__Parabacteroides",
+        "value": "87114"
+      },
+      {
+        "source": "p__拟杆菌门",
+        "target": "g__普雷沃氏菌属",
+        "value": "54682"
+      },
+      {
+        "source": "p__互养菌门",
+        "target": "g__Pyramidobacter",
+        "value": "9788"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__酸杆菌门",
+        "value": "107"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__厚壁菌门",
+        "value": "399670"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__浮霉菌门",
+        "value": "149"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__变形菌门",
+        "value": "1943"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__放线菌门",
+        "value": "35501"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__互养菌门",
+        "value": "9788"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__疣微菌门",
+        "value": "574"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__拟杆菌门",
+        "value": "547362"
+      },
+      {
+        "source": "k__细菌",
+        "target": "p__绿弯菌门",
+        "value": "132"
+      },
+      {
+        "source": "g__拟杆菌属",
+        "target": "杜雷拟杆菌",
+        "value": "191133"
+      },
+      {
+        "source": "g__拟杆菌属",
+        "target": "普通拟杆菌",
+        "value": "27798"
+      },
+      {
+        "source": "g__双歧杆菌属",
+        "target": "齿双歧杆菌",
+        "value": "32683"
+      },
+      {
+        "source": "g__梭菌属",
+        "target": "Clostridium puniceum",
+        "value": "8957"
+      },
+      {
+        "source": "g__粪杆菌属",
+        "target": "普氏栖粪杆菌",
+        "value": "146447"
+      },
+      {
+        "source": "g__产丝菌属",
+        "target": "Filifactor alocis",
+        "value": "101446"
+      },
+      {
+        "source": "g__Parabacteroides",
+        "target": "迪氏副拟杆菌",
+        "value": "51436"
+      },
+      {
+        "source": "g__普雷沃氏菌属",
+        "target": "普氏菌",
+        "value": "20352"
+      },
+      {
+        "source": "g__普雷沃氏菌属",
+        "target": "Prevotella sp000434975",
+        "value": "33386"
+      },
+      {
+        "source": "g__Pyramidobacter",
+        "target": "Pyramidobacter piscolens",
+        "value": "9472"
+      },
+      {
+        "source": "k__真菌",
+        "target": "酿酒酵母",
+        "value": 2514.1496575519
+      },
+      {
+        "source": "k__真菌",
+        "target": "鲁氏结合酵母",
+        "value": 1955.4497336515
+      },
+      {
+        "source": "k__病毒",
+        "target": "Brussowvirus bvO1205",
+        "value": 861.32904934647
+      }
+    ]
+  }
 }

@@ -49,7 +49,7 @@
     window.DATA_PATHS = {
       // DATA: './data/bacteria_data.json'
       // DATA: './data/guhe_api_data_686841025.json'
-      DATA: './data/guhe_api_data_673658272.json'
+      DATA: './data/guhe_api_data_686841025.json'
     };
   </script>
 
@@ -394,447 +394,418 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<div id="container" class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
+<div id="summary-container" class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
   <!-- 内容将通过JavaScript动态加载 -->
 </div>
 
 <script>
-  // 根据健康总分动态改变颜色
-  function getScoreColor(score) {
-    const numScore = parseInt(score);
-    if (numScore >= 85) {
-      return {
-        circle: '#7CB342', // 柔和的绿色
-        text: '#558B2F'    // 深橄榄绿
-      };
-    } else if (numScore >= 75) {
-      return {
-        circle: '#9CCC65', // 淡青绿色
-        text: '#689F38'    // 中青绿色
-      };
-    } else if (numScore >= 60) {
-      return {
-        circle: '#FFB74D', // 温和的橙色
-        text: '#F57C00'    // 中橙色
-      };
-    } else if (numScore >= 40) {
-      return {
-        circle: '#FF8A65', // 柔和的珊瑚色
-        text: '#E64A19'    // 深珊瑚色
-      };
-    } else {
-      return {
-        circle: '#EF5350', // 柔和的红色
-        text: '#D32F2F'    // 深红色
-      };
-    }
-  }
-
-  function calculateAgeBarMetrics(actualAge, gutAge) {
-    // 基础配置
-    const minAge = 0;
-    const maxAge = 120;
-    const minWidth = 5; // 最小显示宽度百分比
-    const youngAge = 7; // 年轻年龄的分界点
-    const youngAgeScale = 0.3; // 0-7岁占总宽度的比例
-    const remainingScale = 1 - youngAgeScale; // 剩余年龄占总宽度的比例
-
-    // 计算函数
-    function calculatePosition(age) {
-      if (age <= youngAge) {
-        // 0-7岁范围内的计算
-        return (age / youngAge) * (youngAgeScale * 100);
-      } else {
-        // 7岁以上范围的计算
-        const remainingAge = age - youngAge;
-        const remainingMaxAge = maxAge - youngAge;
-        return (youngAgeScale * 100) + ((remainingAge / remainingMaxAge) * (remainingScale * 100));
-      }
+  // 健康总结模块
+  class HealthSummaryModule {
+    constructor(containerId, dataPath) {
+      this.containerId = containerId;
+      this.dataPath = dataPath;
+      this.container = document.getElementById(this.containerId);
     }
 
-    // 计算实际年龄和肠道年龄的位置
-    const actualAgePercent = calculatePosition(actualAge);
-    const gutAgePercent = calculatePosition(gutAge);
+    // 颜色工具方法
+    getScoreColor(score) {
+      const numScore = parseInt(score);
+      const colorMappings = [
+        { min: 85, circle: '#7CB342', text: '#558B2F' },
+        { min: 75, circle: '#9CCC65', text: '#689F38' },
+        { min: 60, circle: '#FFB74D', text: '#F57C00' },
+        { min: 40, circle: '#FF8A65', text: '#E64A19' },
+        { min: 0, circle: '#EF5350', text: '#D32F2F' }
+      ];
 
-    return {
-      actualAge: {
-        width: Math.max(minWidth, Math.min(actualAgePercent, 100)),
-        position: Math.min(actualAgePercent, 100)
-      },
-      gutAge: {
-        width: Math.max(minWidth, Math.min(gutAgePercent, 100)),
-        position: Math.min(gutAgePercent, 100)
-      }
-    };
-  }
+      return colorMappings.find(m => numScore >= m.min) || colorMappings[colorMappings.length - 1];
+    }
 
-  // 生成肠型卡片的辅助函数
-  function generateGutTypeCards(currentType) {
-    const gutTypes = [
-      {
-        type: "A",
-        name: "拟杆菌型",
-        icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'
-      },
-      {
-        type: "B",
-        name: "普雷沃氏菌型",
-        icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
-      },
-      {
-        type: "C",
-        name: "厚壁菌型",
-        icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>'
-      }
-    ];
+    // 年龄计算工具方法
+    calculateAgeBarMetrics(actualAge, gutAge) {
+      const maxAge = 120;
+      const minWidth = 5;
+      const youngAge = 7;
+      const youngAgeScale = 0.3;
+      const remainingScale = 1 - youngAgeScale;
 
-    return gutTypes.map(gutType => {
-      const isActive = gutType.name === currentType;
-      return `
-                    <div class="rounded-xl ${isActive ? 'bg-[#D0E7FF]' : 'bg-white'} p-3">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="text-[10px] font-medium ${isActive ? 'text-blue-600' : 'text-gray-400'} block mb-0.5">
-                                    类型 ${gutType.type}${isActive ? '（您的类型）' : ''}
-                                </span>
-                                <h2 class="text-base font-bold text-gray-500">${gutType.name}</h2>
-                            </div>
-                            <div class="w-6 h-6 rounded-lg ${isActive ? 'bg-blue-600 bg-opacity-30' : 'bg-gray-100'} flex items-center justify-center">
-                                <svg class="w-3 h-3 ${isActive ? 'text-white' : 'text-gray-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    ${gutType.icon}
-                                </svg>
-                            </div>
+      const calculatePosition = (age) => {
+        if (age <= youngAge) {
+          return (age / youngAge) * (youngAgeScale * 100);
+        } else {
+          const remainingAge = age - youngAge;
+          const remainingMaxAge = maxAge - youngAge;
+          return (youngAgeScale * 100) + ((remainingAge / remainingMaxAge) * (remainingScale * 100));
+        }
+      };
+
+      const actualAgePercent = calculatePosition(actualAge);
+      const gutAgePercent = calculatePosition(gutAge);
+
+      return {
+        actualAge: {
+          width: Math.max(minWidth, Math.min(actualAgePercent, 100)),
+          position: Math.min(actualAgePercent, 100)
+        },
+        gutAge: {
+          width: Math.max(minWidth, Math.min(gutAgePercent, 100)),
+          position: Math.min(gutAgePercent, 100)
+        }
+      };
+    }
+
+    // 肠型卡片生成器
+    generateGutTypeCards(currentType) {
+      const gutTypes = [
+        {
+          type: "A",
+          name: "拟杆菌型",
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'
+        },
+        {
+          type: "B",
+          name: "普雷沃氏菌型",
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+        },
+        {
+          type: "C",
+          name: "厚壁菌型",
+          icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>'
+        }
+      ];
+
+      return gutTypes.map(gutType => {
+        const isActive = gutType.name === currentType;
+        return `
+                <div class="rounded-xl ${isActive ? 'bg-[#D0E7FF]' : 'bg-white'} p-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium ${isActive ? 'text-blue-600' : 'text-gray-400'} block mb-0.5">
+                                类型 ${gutType.type}${isActive ? '（您的类型）' : ''}
+                            </span>
+                            <h2 class="text-base font-bold text-gray-500">${gutType.name}</h2>
+                        </div>
+                        <div class="w-6 h-6 rounded-lg ${isActive ? 'bg-blue-600 bg-opacity-30' : 'bg-gray-100'} flex items-center justify-center">
+                            <svg class="w-3 h-3 ${isActive ? 'text-white' : 'text-gray-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                ${gutType.icon}
+                            </svg>
                         </div>
                     </div>
-                `;
-    }).join('');
-  }
-
-  function renderSummary(data) {
-    const container = document.getElementById('container');
-
-    // 安全地获取健康总分
-    const healthScore = data["整体评估"][0]["分值"];
-    const scoreColors = getScoreColor(healthScore);
-
-    // 安全地获取肠道年龄和肠型
-    const gutAge = data["整体评估"][1]["分值"];
-    const gutType = data["整体评估"][2]["分值"];
-
-    container.innerHTML = `
-          <!-- 基本信息行 -->
-          <div class="grid grid-cols-2 gap-4 mb-2">
-              <!-- 左边三个 summary-info-card -->
-              <div class="flex gap-2">
-                  ${data["sampleinfo"]["sampleusername"] ? `
-                  <div class="summary-info-card" style="flex: 75;">
-                      <div class="summary-title font-bold">姓名</div>
-                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleusername"]}</div>
-                  </div>
-                  ` : ''}
-                  ${data["sampleinfo"]["sex"] ? `
-                  <div class="summary-info-card" style="flex: 75;">
-                      <div class="summary-title font-bold">性别</div>
-                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sex"] === "0" ? "女性" : "男性"}</div>
-                  </div>
-                  ` : ''}
-                  ${data["sampleinfo"]["age"] ? `
-                  <div class="summary-info-card" style="flex: 100;">
-                      <div class="summary-title font-bold">年龄</div>
-                      <div class="font-bold text-gray-500">${data["sampleinfo"]["age"]}</div>
-                  </div>
-                  ` : ''}
-              </div>
-
-              <!-- 右边两个 summary-info-card -->
-              <div class="flex gap-2">
-                  ${data["sampleinfo"]["sampleid"] ? `
-                  <div class="summary-info-card flex-1">
-                      <div class="summary-title font-bold">样本编号</div>
-                      <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleid"]}</div>
-                  </div>
-                  ` : ''}
-                  ${data["sampleinfo"]["reportdate"] ? `
-                  <div class="summary-info-card flex-1">
-                      <div class="summary-title font-bold">报告日期</div>
-                      <div class="font-bold text-gray-500">${data["sampleinfo"]["reportdate"]}</div>
-                  </div>
-                  ` : ''}
-              </div>
-          </div>
-
-          <!-- 健康总分和指标框 -->
-          <div class="grid grid-cols-2 gap-4 mb-2">
-              ${healthScore ? `
-              <div class="summary-info-card">
-                  <div class="summary-title mb-7"><b>健康总分</b></div>
-                  <div class="flex flex-col items-center">
-                      <div class="w-40 h-40 mb-5">
-                          <svg viewBox="0 0 100 100">
-                              <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
-                              <circle class="summary-circle"
-                                      cx="50"
-                                      cy="50"
-                                      r="45"
-                                      stroke="${scoreColors.circle}"
-                                      stroke-dasharray="282.7"
-                                      stroke-dashoffset="${282.7 - (282.7 * parseInt(healthScore) / 100)}"/>
-                              <text x="50"
-                                    y="45"
-                                    class="summary-score-text"
-                                    text-anchor="middle"
-                                    dominant-baseline="middle"
-                                    font-size="30"
-                                    font-weight="bold"
-                                    fill="${scoreColors.text}">${healthScore}</text>
-                              <text x="50"
-                                    y="68"
-                                    class="summary-score-text"
-                                    text-anchor="middle"
-                                    font-size="10"
-                                    fill="#2DA6A8">总分: 100</text>
-                          </svg>
-                      </div>
-                      ${data["整体评估"][0]["说明"] ? `
-                      <div class="summary-description text-center">
-                          ${data["整体评估"][0]["说明"]}
-                      </div>
-                      ` : ''}
-                  </div>
-              </div>
-              ` : ''}
-
-              <!-- 右侧指标栏 -->
-              <div class="flex flex-col gap-2 h-full">
-                  <!-- 其他指标保持不变 -->
-                        <div class="flex flex-col gap-2 h-full">
-              <!-- 菌群健康 -->
-      <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">菌群健康</div>
-          <div class="flex w-full items-center">
-              <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-                  <div class="bg-[#FFD700] h-3 rounded-full"
-                       style="width: ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
-      data['整体评估'].find(item => item['检测项目'] === '菌群健康')['分值'] : 73}%"></div>
-              </div>
-              <div class="text-[#2DA6A8] font-bold w-16 text-right">
-                  <span class="text-[#FFD700]">
-                      ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
-      data['整体评估'].find(item => item['检测项目'] === '菌群健康')['分值'] : 73}
-                  </span>/100
-              </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-              ${data['整体评估'].find(item => item['检测项目'] === '菌群健康') ?
-      data['整体评估'].find(item => item['检测项目'] === '菌群健康')['说明'] :
-      '肠道菌群多样性良好'}
-          </div>
-      </div>
-
-              <!-- 慢病控制 -->
-              <div class="flex-1 summary-info-card p-4">
-                  <div class="summary-title font-bold mb-3">慢病控制</div>
-                  <div class="flex w-full items-center">
-                      <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-                          <div class="bg-[#9ACD32] h-3 rounded-full"
-                               style="width: ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
-      data['整体评估'].find(item => item['检测项目'] === '慢病控制')['分值'] : 81}%"></div>
-                      </div>
-                      <div class="text-[#2DA6A8] font-bold w-16 text-right">
-                          <span class="text-[#9ACD32]">
-                              ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
-      data['整体评估'].find(item => item['检测项目'] === '慢病控制')['分值'] : 81}
-                          </span>/100
-                      </div>
-                  </div>
-                  <div class="text-sm text-gray-600 mt-2">
-                      ${data['整体评估'].find(item => item['检测项目'] === '慢病控制') ?
-      data['整体评估'].find(item => item['检测项目'] === '慢病控制')['说明'] :
-      '慢性疾病风险较低'}
-                  </div>
-              </div>
-
-              <!-- 营养均衡 -->
-      <div class="flex-1 summary-info-card p-4">
-          <div class="summary-title font-bold mb-3">营养均衡</div>
-          <div class="flex w-full items-center">
-              <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
-                  <div class="bg-[#9ACD32] h-3 rounded-full"
-                       style="width: ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
-      data['整体评估'].find(item => item['检测项目'] === '营养均衡')['分值'] : 80}%"></div>
-              </div>
-              <div class="text-[#2DA6A8] font-bold w-16 text-right">
-                  <span class="text-[#9ACD32]">
-                      ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
-      data['整体评估'].find(item => item['检测项目'] === '营养均衡')['分值'] : 80}
-                  </span>/100
-              </div>
-          </div>
-          <div class="text-sm text-gray-600 mt-2">
-              ${data['整体评估'].find(item => item['检测项目'] === '营养均衡') ?
-      data['整体评估'].find(item => item['检测项目'] === '营养均衡')['说明'] :
-      '营养摄入基本均衡'}
-          </div>
-      </div>
-            </div>
-              </div>
-          </div>
-
-          <!-- 肠道年龄和肠型 -->
-          <div class="flex gap-4">
-              ${gutAge ? `
-              <div class="summary-info-card flex-[7]">
-                  <div class="summary-title mb-10"><b>肠道年龄</b></div>
-                  <div class="flex flex-col">
-                      <div class="relative w-full">
-                          ${(() => {
-      const ageMetrics = calculateAgeBarMetrics(
-        parseInt(data["sampleinfo"]["age"]),
-        parseInt(gutAge)
-      );
-      return `
-                              <!-- 肠道年龄渲染逻辑保持不变 -->
-                              ${renderAgeBar(data["sampleinfo"]["age"], gutAge, ageMetrics)}
-                              `;
-    })()}
-                      </div>
-                      ${data["整体评估"][1]["说明"] ? `
-                      <div class="summary-description mt-5">
-                          ${data["整体评估"][1]["说明"]}
-                      </div>
-                      ` : ''}
-                  </div>
-              </div>
-              ` : ''}
-
-              ${gutType ? `
-              <div class="summary-info-card flex-[3]">
-                  <div class="summary-title mb-3"><b>肠型</b></div>
-                  <div class="flex flex-col gap-2">
-                      ${generateGutTypeCards(gutType)}
-                  </div>
-              </div>
-              ` : ''}
-          </div>
-          `;
-  }
-
-  // 辅助渲染年龄条的函数
-  function renderAgeBar(actualAge, gutAge, ageMetrics) {
-    return `
-    <div class="mb-9">
-        <div class="flex items-center">
-            <div class="text-gray-600 mr-4 w-20">实际年龄</div>
-            <div class="flex-1 relative">
-                <div class="absolute -top-6 left-[${ageMetrics.actualAge.position}%]">
-                    <div class="text-gray-500 font-bold text-lg whitespace-nowrap"
-                         style="
-                            ${ageMetrics.actualAge.position >= 95 ? 'transform: translateX(-100%);' :
-      ageMetrics.actualAge.position <= 5 ? 'transform: translateX(0);' :
-        'transform: translateX(-50%);'}
-                         ">
-                        ${actualAge}
-                    </div>
-                </div>
-                <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar bg-blue-200"
-                         style="width: ${ageMetrics.actualAge.width}%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="flex items-center">
-            <div class="text-gray-600 mr-4 w-20">肠道年龄</div>
-            <div class="flex-1 relative">
-                <div class="absolute -top-6 left-[${ageMetrics.gutAge.position}%]">
-                    <div class="transform -translate-x-1/2 text-gray-500 font-bold text-lg whitespace-nowrap"
-                         style="
-                            ${ageMetrics.gutAge.position >= 95 ? 'transform: translateX(-100%);' :
-      ageMetrics.gutAge.position <= 5 ? 'transform: translateX(0);' :
-        'transform: translateX(-50%);'}
-                         ">
-                        ${gutAge}
-                    </div>
-                </div>
-                <div class="summary-age-bar bg-gray-200">
-                    <div class="summary-age-bar"
-                         style="width: ${ageMetrics.gutAge.width}%; background-color: rgb(45, 166, 168)"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
-  }
-
-  // 加载数据的异步函数
-  async function loadData() {
-    try {
-      const response = await fetch(DATA_PATHS.DATA);
-      const data = await response.json();
-      renderSummary(data);
-    } catch (error) {
-      console.error('Error loading data:', error);
-      document.getElementById('container').innerHTML = `
-                    <div class="text-red-500 text-center p-4">
-                        加载数据时发生错误，请稍后重试
-                    </div>
-                `;
-    }
-  }
-
-  // 页面加载完成后自动加载数据
-  document.addEventListener('DOMContentLoaded', () => {
-    loadData();
-  });
-
-  // 错误处理函数
-  function handleError(error) {
-    console.error('Error:', error);
-    document.getElementById('container').innerHTML = `
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                    <strong class="font-bold">错误！</strong>
-                    <span class="block sm:inline">加载数据时发生错误，请刷新页面重试。</span>
                 </div>
             `;
-  }
+      }).join('');
+    }
 
-  // 数据格式化辅助函数
-  function formatValue(value, type) {
-    if (!value) return '';
+    // 渲染年龄条
+    renderAgeBar(actualAge, gutAge, ageMetrics) {
+      const positionStyle = (position) => {
+        if (position >= 95) return 'transform: translateX(-100%);';
+        if (position <= 5) return 'transform: translateX(0);';
+        return 'transform: translateX(-50%);';
+      };
 
-    switch (type) {
-      case 'percentage':
-        return `${Math.round(value)}%`;
-      case 'age':
-        return `${value}岁`;
-      case 'date':
-        return new Date(value).toLocaleDateString('zh-CN');
-      default:
-        return value;
+      return `
+            <div class="mb-9">
+                <div class="flex items-center">
+                    <div class="text-gray-600 mr-4 w-20">实际年龄</div>
+                    <div class="flex-1 relative">
+                        <div class="absolute -top-6 left-[${ageMetrics.actualAge.position}%]">
+                            <div class="text-gray-500 font-bold text-lg whitespace-nowrap"
+                                 style="${positionStyle(ageMetrics.actualAge.position)}">
+                                ${actualAge}
+                            </div>
+                        </div>
+                        <div class="summary-age-bar bg-gray-200">
+                            <div class="summary-age-bar bg-blue-200"
+                                 style="width: ${ageMetrics.actualAge.width}%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center">
+                    <div class="text-gray-600 mr-4 w-20">肠道年龄</div>
+                    <div class="flex-1 relative">
+                        <div class="absolute -top-6 left-[${ageMetrics.gutAge.position}%]">
+                            <div class="transform -translate-x-1/2 text-gray-500 font-bold text-lg whitespace-nowrap"
+                                 style="${positionStyle(ageMetrics.gutAge.position)}">
+                                ${gutAge}
+                            </div>
+                        </div>
+                        <div class="summary-age-bar bg-gray-200">
+                            <div class="summary-age-bar"
+                                 style="width: ${ageMetrics.gutAge.width}%; background-color: rgb(45, 166, 168)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // 渲染摘要
+    renderSummary(data) {
+      const healthScore = data["整体评估"][0]["分值"];
+      const scoreColors = this.getScoreColor(healthScore);
+      const gutAge = data["整体评估"][1]["分值"];
+      const gutType = data["整体评估"][2]["分值"];
+
+      this.container.innerHTML = `
+
+            ${this.renderBasicInfo(data)}
+
+
+            <div class="grid grid-cols-2 gap-4 mb-2">
+                ${this.renderHealthScoreSection(data, healthScore, scoreColors)}
+                ${this.renderHealthIndicatorsSection(data)}
+            </div>
+
+            <div class="flex gap-4">
+                ${this.renderGutAgeSection(data, gutAge)}
+                ${this.renderGutTypeSection(gutType)}
+            </div>
+        `;
+    }
+
+    // 基础信息渲染
+    renderBasicInfo(data) {
+      return `
+    <div class="flex justify-between mb-2 space-x-4">
+        <!-- 左边区域 -->
+        <div class="flex flex-row gap-2 w-full">
+            <div class="summary-info-card flex-1">
+                <div class="summary-title font-bold">姓名</div>
+                <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleusername"]}</div>
+            </div>
+
+            <div class="summary-info-card flex-1">
+                <div class="summary-title font-bold">性别</div>
+                <div class="font-bold text-gray-500">${data["sampleinfo"]["sex"] === "0" ? "女性" : "男性"}</div>
+            </div>
+
+            <div class="summary-info-card flex-1">
+                <div class="summary-title font-bold">年龄</div>
+                <div class="font-bold text-gray-500">${data["sampleinfo"]["age"]}</div>
+            </div>
+        </div>
+
+        <!-- 右边区域 -->
+        <div class="flex flex-row gap-4 w-full">
+            <div class="summary-info-card flex-1">
+                <div class="summary-title font-bold">样本编号</div>
+                <div class="font-bold text-gray-500">${data["sampleinfo"]["sampleid"]}</div>
+            </div>
+
+            <div class="summary-info-card flex-1">
+                <div class="summary-title font-bold">报告日期</div>
+                <div class="font-bold text-gray-500">${data["sampleinfo"]["reportdate"]}</div>
+            </div>
+        </div>
+    </div>
+  `;
+    }
+
+    // 健康分数区域渲染
+    renderHealthScoreSection(data, healthScore, scoreColors) {
+      return healthScore ? `
+            <div class="summary-info-card">
+                <div class="summary-title mb-7"><b>健康总分</b></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 mb-5">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="summary-circle-bg" cx="50" cy="50" r="45"/>
+                            <circle class="summary-circle"
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    stroke="${scoreColors.circle}"
+                                    stroke-dasharray="282.7"
+                                    stroke-dashoffset="${282.7 - (282.7 * parseInt(healthScore) / 100)}"/>
+                            <text x="50"
+                                  y="45"
+                                  class="summary-score-text"
+                                  text-anchor="middle"
+                                  dominant-baseline="middle"
+                                  font-size="30"
+                                  font-weight="bold"
+                                  fill="${scoreColors.text}">${healthScore}</text>
+                            <text x="50"
+                                  y="68"
+                                  class="summary-score-text"
+                                  text-anchor="middle"
+                                  font-size="10"
+                                  fill="#2DA6A8">总分: 100</text>
+                        </svg>
+                    </div>
+                    ${data["整体评估"][0]["说明"] ? `
+                    <div class="summary-description text-center">
+                        ${data["整体评估"][0]["说明"]}
+                    </div>
+                    ` : ''}
+                </div>
+            </div>
+        ` : '';
+    }
+
+    // 健康指标区域渲染
+    renderHealthIndicatorsSection(data) {
+      const indicators = [
+        { name: '菌群健康', color: '#FFD700', defaultValue: 73 },
+        { name: '慢病控制', color: '#9ACD32', defaultValue: 81 },
+        { name: '营养均衡', color: '#9ACD32', defaultValue: 80 }
+      ];
+
+      return `
+            <div class="flex flex-col gap-2 h-full">
+                ${indicators.map(indicator => `
+                    <div class="flex-1 summary-info-card p-4">
+                        <div class="summary-title font-bold mb-3">${indicator.name}</div>
+                        <div class="flex w-full items-center">
+                            <div class="flex-1 bg-gray-200 rounded-full h-3 mr-3">
+                                <div class="bg-[${indicator.color}] h-3 rounded-full"
+                                     style="width: ${this.getIndicatorValue(data, indicator.name, indicator.defaultValue)}%"></div>
+                            </div>
+                            <div class="text-[#2DA6A8] font-bold w-16 text-right">
+                                <span class="text-[${indicator.color}]">
+                                    ${this.getIndicatorValue(data, indicator.name, indicator.defaultValue)}
+                                </span>/100
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            ${this.getIndicatorDescription(data, indicator.name)}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    // 获取指标值
+    getIndicatorValue(data, indicatorName, defaultValue) {
+      const indicator = data['整体评估'].find(item => item['检测项目'] === indicatorName);
+      return indicator ? indicator['分值'] : defaultValue;
+    }
+
+    // 获取指标描述
+    getIndicatorDescription(data, indicatorName) {
+      const indicator = data['整体评估'].find(item => item['检测项目'] === indicatorName);
+      return indicator ? indicator['说明'] : this.getDefaultDescription(indicatorName);
+    }
+
+    // 默认描述
+    getDefaultDescription(indicatorName) {
+      const defaultDescriptions = {
+        '菌群健康': '肠道菌群多样性良好',
+        '慢病控制': '慢性疾病风险较低',
+        '营养均衡': '营养摄入基本均衡'
+      };
+      return defaultDescriptions[indicatorName] || '';
+    }
+
+    // 肠道年龄区域渲染
+    renderGutAgeSection(data, gutAge) {
+      return gutAge ? `
+            <div class="summary-info-card flex-[7]">
+                <div class="summary-title mb-10"><b>肠道年龄</b></div>
+                <div class="flex flex-col">
+                    <div class="relative w-full">
+                        ${(() => {
+        const ageMetrics = this.calculateAgeBarMetrics(
+          parseInt(data["sampleinfo"]["age"]),
+          parseInt(gutAge)
+        );
+        return this.renderAgeBar(
+          data["sampleinfo"]["age"],
+          gutAge,
+          ageMetrics
+        );
+      })()}
+                    </div>
+                    ${data["整体评估"][1]["说明"] ? `
+                    <div class="summary-description mt-5">
+                        ${data["整体评估"][1]["说明"]}
+                    </div>` : ''}
+                </div>
+            </div>
+        ` : '';
+    }
+
+    // 肠型区域渲染
+    renderGutTypeSection(gutType) {
+      return gutType ? `
+            <div class="summary-info-card flex-[3]">
+                <div class="summary-title mb-3"><b>肠型</b></div>
+                <div class="flex flex-col gap-2">
+                    ${this.generateGutTypeCards(gutType)}
+                </div>
+            </div>
+        ` : '';
+    }
+
+    // 数据加载方法
+    async loadData() {
+      try {
+        const response = await fetch(this.dataPath);
+        const data = await response.json();
+        this.renderSummary(data);
+      } catch (error) {
+        this.handleError(error);
+      }
+    }
+
+    // 错误处理方法
+    handleError(error) {
+      console.error('Error:', error);
+      this.container.innerHTML = `
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">错误！</strong>
+                <span class="block sm:inline">加载数据时发生错误，请刷新页面重试。</span>
+            </div>
+        `;
+    }
+
+    // 数据格式化工具
+    formatValue(value, type) {
+      if (!value) return '';
+
+      switch (type) {
+        case 'percentage':
+          return `${Math.round(value)}%`;
+        case 'age':
+          return `${value}岁`;
+        case 'date':
+          return new Date(value).toLocaleDateString('zh-CN');
+        default:
+          return value;
+      }
+    }
+
+    // 防抖函数
+    static debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
     }
   }
 
-  // 防抖函数，用于优化窗口调整时的重新渲染
-  function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
+  // 页面加载完成后初始化
+  document.addEventListener('DOMContentLoaded', () => {
+    const summaryModule = new HealthSummaryModule('summary-container', DATA_PATHS.DATA);
+    summaryModule.loadData();
 
-  // 窗口调整时重新渲染的处理函数
-  const handleResize = debounce(() => {
-    loadData();
-  }, 250);
+    // 窗口调整时重新渲染的处理函数
+    const handleResize = HealthSummaryModule.debounce(() => {
+      summaryModule.loadData();
+    }, 250);
 
-  // 添加窗口调整事件监听
-  window.addEventListener('resize', handleResize);
+    // 添加窗口调整事件监听
+    window.addEventListener('resize', handleResize);
+  });
 </script>
 
 <!--    <div class="summary-info-card">-->
@@ -2672,20 +2643,20 @@
         </div>
       </div>
 
-      <!-- 分割线 -->
-      <div class="border-t border-gray-300 my-1"></div>
+<!--      &lt;!&ndash; 分割线 &ndash;&gt;-->
+<!--      <div class="border-t border-gray-300 my-1"></div>-->
 
-      <div class="space-y-1">
-        <div class="flex justify-start items-center">
-          <span class="text-xs text-gray-600 mr-2">reads数 TOP3：</span>
-          <div class="flex items-center space-x-1">
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(W) | 11600 | 四环素耐药</span>
-            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(40) | 11000 | 四环素耐药</span>
-            <span
-              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">mef(En2) | 5800 | 大环内酯耐药</span>
-          </div>
-        </div>
-      </div>
+<!--      <div class="space-y-1">-->
+<!--        <div class="flex justify-start items-center">-->
+<!--          <span class="text-xs text-gray-600 mr-2">reads数 TOP3：</span>-->
+<!--          <div class="flex items-center space-x-1">-->
+<!--            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(W) | 11600 | 四环素耐药</span>-->
+<!--            <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">tet(40) | 11000 | 四环素耐药</span>-->
+<!--            <span-->
+<!--              class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">mef(En2) | 5800 | 大环内酯耐药</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
 
     </div>
@@ -7239,13 +7210,8 @@
       <div class="ml-2">
         <p class="text-lg text-custom-teal">
           <i class="fas fa-info-circle icon"></i>
-          肠道微生物群由多种微生物组成，包括细菌、真菌、真核生物和病毒，这些微生物共同维持肠道生态平衡和人体健康。分析肠道微生物的分布结构有助于深入了解其对消化、免疫及代谢的影响。
+          肠道微生物群由多种微生物组成，包括细菌、真菌、真核生物和病毒，这些微生物共同维持肠道生态平衡和人体健康。分析肠道微生物的分布结构有助于深入了解其对消化、免疫及代谢的影响。以下展示了您肠道内微生物的层级结构（按<strong>界</strong>（__k）、<strong>门</strong>（__p）、<strong>属</strong>（__g）、种等级排序）。
         </p>
-        <ul class="list-disc ml-5">
-          <li><strong>K（Kingdom，界）</strong>：最高的分类层级，表示所有生命的主要分类，如细菌界（Prokaryota）、真核生物界（Eukaryota）等。</li>
-          <li><strong>P（Phylum，门）</strong>：在界之下的分类层级，用于进一步细分生物种类，例如细菌门（Bacteroidetes）、真菌门（Ascomycota）等。</li>
-          <li><strong>G（Genus，属）</strong>：在门和种之间的分类层级，表示具有相似特征的微生物组，例如某些特定细菌属（如Escherichia、Bacteroides）或者真菌属（如Candida）。</li>
-        </ul>
         <p class="mt-2">
           不同类型的微生物在肠道中的平衡关系直接影响宿主的健康，具体介绍如下：
         </p>
@@ -7335,7 +7301,7 @@
               if (params.dataType === 'edge') {
                 return `${params.data.source} → ${params.data.target}: ${params.value}`;
               }
-              return `${params.name}\n总连接值: ${params.data.totalValue.toFixed(2)}`;
+              return `${params.name}\n reads数: ${params.data.totalValue.toFixed(2)}`;
             }
           },
           series: [{
@@ -8560,33 +8526,6 @@
           <i class="fas fa-info-circle icon"></i>
           肠道有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。下列是17种常见肠道有害菌在您的肠道中的检测情况。（可以优先关注异常菌和其对应的改善方法）
         </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 有害菌检测情况总结圆环 -->
-  <div class="harmful-gut-bacteria-container mt-10 mb-5">
-    <div class="harmful-gut-bacteria-donut-chart-container">
-      <div class="harmful-gut-bacteria-donut-chart"></div>
-      <div class="harmful-gut-bacteria-center-hole">
-        <div class="harmful-gut-bacteria-center-value">3/17</div>
-        <div class="harmful-gut-bacteria-center-label">异常</div>
-        <div class="harmful-gut-bacteria-center-sublabel">常见有害菌检测结果</div>
-      </div>
-    </div>
-
-    <div class="harmful-gut-bacteria-legend">
-      <div class="harmful-gut-bacteria-legend-item">
-        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-exceeded"></div>
-        <span>异常 (3项)</span>
-      </div>
-      <div class="harmful-gut-bacteria-legend-item">
-        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-normal"></div>
-        <span>参考范围内 (8项)</span>
-      </div>
-      <div class="harmful-gut-bacteria-legend-item">
-        <div class="harmful-gut-bacteria-legend-color harmful-gut-bacteria-not-detected"></div>
-        <span>未检出 (6项)</span>
       </div>
     </div>
   </div>
