@@ -2183,7 +2183,7 @@
           const lowContainer = document.createElement('div');
           lowContainer.className = 'status-container';
           lowContainer.innerHTML = `
-        <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">缺乏</span>
+        <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏低</span>
         <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
             ${result.lowItems.map(item => {
             // 移除括号及其内容
@@ -2200,15 +2200,15 @@
           const highContainer = document.createElement('div');
           highContainer.className = 'status-container';
           highContainer.innerHTML = `
-        <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">过量</span>
-        <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-            ${result.highItems.map(item => {
+            <span class="status-label bg-red-100 text-red-800 text-xs px-1.5 py-0.5 rounded">偏高</span>
+            <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
+                ${result.highItems.map(item => {
             // 移除括号及其内容
             const cleanName = item['检测项目'].replace(/（.*?）/g, '').trim();
             return `${cleanName}`;
           }).join('，')}
-        </div>
-      `;
+            </div>
+          `;
           statusGroupElement.appendChild(highContainer);
         }
 
@@ -8021,9 +8021,10 @@
             status.text = '偏低';
             status.icon = `<i class="fas fa-arrow-down ml-1" style="color: ${CONSTANTS.COLORS.RED};"></i>`;
             status.isNormal = false;
+          } else {
+            status.color = CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          status.color = CONSTANTS.COLORS.GRAY;
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
@@ -8317,9 +8318,10 @@
             status.text = '偏低';
             status.icon = `<i class="fas fa-arrow-down ml-1" style="color: ${CONSTANTS.COLORS.RED};"></i>`;
             status.isNormal = false;
+          } else {
+            status.color = CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          status.color = CONSTANTS.COLORS.GRAY;
-          return status;
         }
 
         if (detected < minRange) {
@@ -8689,10 +8691,11 @@
             status.text = '偏低';
             status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            // 检测丰度为ND并且最低参考范围为0
+            status.color = CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          // 检测丰度为ND并且最低参考范围为0
-          status.color = CONSTANTS.COLORS.GRAY;
-          return status;
         }
 
         // 低于参考范围
@@ -9048,14 +9051,29 @@
           isNormal: true
         };
 
+        // if (detected === "ND") {
+        //   if (min > 0) {
+        //     status.color = this.CONSTANTS.COLORS.RED;
+        //     status.text = '偏低';
+        //     status.icon = `<i class="fas fa-arrow-down ml-1" style="color: ${this.CONSTANTS.COLORS.RED};"></i>`;
+        //     status.isNormal = false;
+        //   }
+        //   return status;
+        // }
+
+        // 未检出的情况
         if (detected === "ND") {
           if (min > 0) {
+            // 未检出但参考范围最小值大于0，视为偏低
             status.color = this.CONSTANTS.COLORS.RED;
             status.text = '偏低';
-            status.icon = `<i class="fas fa-arrow-down ml-1" style="color: ${this.CONSTANTS.COLORS.RED};"></i>`;
+            status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            // 检测丰度为ND并且最低参考范围为0
+            status.color = this.CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
@@ -9339,14 +9357,17 @@
           isNormal: true
         };
 
+        // 未检出情况
         if (detected === "ND") {
           if (min > 0) {
             status.color = this.CONSTANTS.COLORS.RED;
             status.text = '偏低';
             status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            status.color = this.CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
@@ -9622,8 +9643,10 @@
             status.text = '偏低';
             status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            status.color = this.CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
@@ -9932,8 +9955,10 @@
             status.text = '偏低';
             status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            status.color = this.CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
@@ -10203,8 +10228,10 @@
             status.text = '偏低';
             status.icon = '<i class="fas fa-arrow-down ml-1" style="color: ' + this.CONSTANTS.COLORS.RED + ';"></i>';
             status.isNormal = false;
+          } else {
+            status.color = this.CONSTANTS.COLORS.GRAY;
+            return status;
           }
-          return status;
         }
 
         const detectedNum = parseFloat(detected);
