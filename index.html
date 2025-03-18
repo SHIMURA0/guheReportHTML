@@ -50,9 +50,23 @@
       // DATA: './data/bacteria_data.json'
       // DATA: './data/guhe_api_data_686841025.json'
       // DATA: './data/guhe_api_data_686841025.json'
-      DATA: './data/guhe_api_data_608076970.json'
+      DATA: './data/guhe_api_data_608076970_1.json'
     };
   </script>
+  <!--  <script>-->
+  <!--    // 在页面加载时获取 API 数据-->
+  <!--    fetch('https://www.guhejk.com/API/metatest-API.php?sampleid=608076970')-->
+  <!--      .then(response => response.json())-->
+  <!--      .then(data => {-->
+  <!--        // 直接设置全局变量-->
+  <!--        window.DATA_PATHS = {};-->
+  <!--        window.DATA_PATHS.DATA = data;-->
+  <!--        console.log('Data loaded:', window.DATA_PATHS.DATA);-->
+  <!--      })-->
+  <!--      .catch(error => {-->
+  <!--        console.error('Error fetching data:', error);-->
+  <!--      });-->
+  <!--  </script>-->
 
   <!-- 框架/库（使用 defer 确保不阻塞） -->
   <script src="https://cdn.tailwindcss.com" defer></script>
@@ -1698,7 +1712,7 @@
             <div class="status-container">
                 <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
                 <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                    所有指标均在正常范围
+                    肠道整体评估指标均在参考范围内
                 </div>
             </div>
         `;
@@ -1708,8 +1722,10 @@
 
     // 慢病风险评估子模块
     const ChronicDiseaseRiskModule = {
+
       process: function (data) {
-        // 获取"慢病风险"数据，如果不存在则使用空数组
+
+        // 获取API数据（JSON格式）中"慢病风险"的数据，如果不存在则使用空数组
         const riskData = data['慢病风险'] || [];
 
         // 统计总数和低风险数
@@ -1722,32 +1738,16 @@
         // 中等风险筛选
         const mediumRiskItems = riskData.filter(item => item['结果评价'] === '中等风险');
 
-        // 需注意风险筛选（新增）
-        const warningRiskItems = riskData.filter(item => {
-          // 如果已经有明确的结果评价，则不再重复判断
-          if (['高风险', '中等风险', '低风险'].includes(item['结果评价'])) {
-            return false;
-          }
+        // 需注意风险筛选
+        const warningRiskItems = riskData.filter(item => item['结果评价'] === '注意');
 
-          // 尝试解析参考范围
-          try {
-            const referenceRanges = item['参考范围'].split('-').map(Number);
-            const assessmentValue = Number(item['评估值']);
-
-            // 自定义风险判断逻辑
-            return assessmentValue > referenceRanges[0] && assessmentValue <= referenceRanges[1];
-          } catch (error) {
-            console.warn(`解析风险项目时出错: ${item['检测项目']}`, error);
-            return false;
-          }
-        });
 
         return {
           totalItems,        // 总项目数
           lowRiskItems,      // 低风险项目数
           highRiskItems,     // 高风险指标
           mediumRiskItems,   // 中等风险指标
-          warningRiskItems   // 需注意风险指标（新增）
+          warningRiskItems   // 需注意风险指标
         };
       },
 
@@ -1815,7 +1815,7 @@
           <div class="flex items-center">
             <span class="bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded mr-1">低风险</span>
             <span class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded">
-              所有指标均处于低风险范围
+              慢病评估指标均处于低风险范围
             </span>
           </div>
         </div>
@@ -1889,7 +1889,7 @@
           container.innerHTML = `
             <span class="bg-green-100 text-green-800 text-xs p-2 rounded">正常</span>
             <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
-                所有日常饮食指标均在正常范围
+                日常饮食评估指标均在参考范围内
             </span>
         `;
           return;
@@ -1977,7 +1977,7 @@
           container.innerHTML = `
                 <span class="bg-green-100 text-green-800 text-xs p-2 rounded">正常</span>
                 <span class="bg-gray-100 text-gray-500 text-xs p-2 py-0.5 rounded">
-                    所有指标均在正常范围
+                    维生素评估指标均在参考范围内
                 </span>
             `;
           return;
@@ -2081,7 +2081,7 @@
           normalContainer.innerHTML = `
                 <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
                 <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                    所有氨基酸指标均在正常范围
+                    氨基酸评估指标均在参考范围内
                 </div>
             `;
           container.appendChild(normalContainer);
@@ -2218,7 +2218,7 @@
         <div class="status-container">
             <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
             <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                所有代谢物指标均在正常范围
+                菌群代谢物评估指标均在参考范围内
             </div>
         </div>
       `;
@@ -2384,7 +2384,7 @@
                         <div class="status-container">
                           <span class="status-label bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">正常</span>
                           <div class="bg-gray-100 text-gray-500 text-xs px-1.5 py-0.5 rounded break-words">
-                              所有${moduleData.moduleName}指标均在正常范围
+                              ${moduleData.moduleName}指标均在参考范围内
                           </div>
                         </div>
                     `;
@@ -2814,17 +2814,16 @@
           <div class="flex items-center mb-1">
             <h2 class="text-lg font-bold text-[#1976D2] mr-2">毒力基因检测</h2>
             <div class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-              35项
+              34项
             </div>
           </div>
           <p class="text-xs text-gray-600 mt-1 leading-relaxed max-w-[500px]">
             深入解析致病菌毒力基因，全面评估您的微生物组潜在致病风险和抗性特征。
           </p>
         </div>
-
         <div class="text-right">
           <div class="flex items-center justify-end">
-            <span class="text-3xl font-bold text-green-600 mr-1">0</span>
+            <span class="text-3xl font-bold text-green-600 mr-1" id="matchCountDisplay"></span>
             <span class="text-base text-gray-500">/35 项检出</span>
           </div>
         </div>
@@ -7063,8 +7062,8 @@
                     <em class="ar-chinese-text">${item["来源菌"].split(' ').slice(1).join(' ')}</em>
                   </div>
                 `
-                : `<div class="ar-chinese-text"><em class="italic text-gray-700">${item["来源菌"] || ''}</em></div>`
-              }
+          : `<div class="ar-chinese-text"><em class="italic text-gray-700">${item["来源菌"] || ''}</em></div>`
+        }
             </td>
             <td class="py-2 px-4 text-center ar-col-gene">
               <div class="ar-gene-name">${item["耐药基因"] || ''}</div>
@@ -7268,17 +7267,17 @@
   class="bg-white rounded-lg p-5 mb-5 mx-auto"
   style="width: 100%; margin-bottom: -15px;">
 
-<!--  &lt;!&ndash; 信息框 &ndash;&gt;-->
-<!--  <div class="info-box" style="padding: 3px">-->
-<!--    <div class="flex items-start">-->
-<!--      <div class="ml-2">-->
-<!--        <p class="text-lg text-custom-teal">-->
-<!--          <i class="fas fa-info-circle icon"></i>-->
-<!--          下列是您肠道中检出的重要毒力基因，按照相关毒力基因片段reads数量递减排列。-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  &lt;!&ndash; 信息框 &ndash;&gt;-->
+  <!--  <div class="info-box" style="padding: 3px">-->
+  <!--    <div class="flex items-start">-->
+  <!--      <div class="ml-2">-->
+  <!--        <p class="text-lg text-custom-teal">-->
+  <!--          <i class="fas fa-info-circle icon"></i>-->
+  <!--          下列是您肠道中检出的重要毒力基因，按照相关毒力基因片段reads数量递减排列。-->
+  <!--        </p>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
   <!-- 毒力基因表格 -->
   <div class="rounded-table">
@@ -7299,10 +7298,10 @@
         <!--          >-->
         <!--            机制类型-->
         <!--          </th>-->
-        <th class="py-2 px-4 text-center metal-tolerance-fourth-column"
-            style="font-size: 11px; padding: 5px 5px;">
-          reads数量
-        </th>
+        <!--        <th class="py-2 px-4 text-center metal-tolerance-fourth-column"-->
+        <!--            style="font-size: 11px; padding: 5px 5px;">-->
+        <!--          reads数量-->
+        <!--        </th>-->
         <th class="py-2 px-4 text-center metal-tolerance-fifth-column"
             style="font-size: 11px; padding: 5px 5px 5px 5px;">
           检测结果
@@ -7315,13 +7314,242 @@
       <!-- 数据将通过 JavaScript 动态插入 -->
     </div>
 
+    <!--    毒力基因 reads列 -->
+    <!--    <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">-->
+    <!--      <div class="genes-and-reads-stack-container">-->
+    <!--        ${resistance.reads_count.map(count => `-->
+    <!--        <div class="stack-item">-->
+    <!--          <span class="reads-count ${parseInt(count) > 0 ? 'high' : 'low'}">-->
+    <!--            ${count}-->
+    <!--          </span>-->
+    <!--        </div>-->
+    <!--        `).join('')}-->
+    <!--      </div>-->
+    <!--    </td>-->
+
     <script>
+
+      const toxic_gene_data = [
+        {
+          "chinese_name": "产志贺毒素大肠杆菌",
+          "latin_name": "STEC",
+          "resistance_gene": [
+            "stx1A", "stx1B", "stx2A", "stx2B"
+          ],
+          "resistance_type": [
+            "细胞破坏", "细胞破坏", "细胞破坏", "细胞破坏"
+          ],
+          "reads_count": [
+            "0", "0", "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性", "阴性", "阴性"
+          ],
+          "descriptions": "Shiga毒素导致宿主细胞死亡"
+        },
+        {
+          "chinese_name": "肠集聚性大肠埃希氏菌",
+          "latin_name": "EAggEC",
+          "resistance_gene": [
+            "aggR", "aggA", "aggB", "aggC", "aggD",
+            "aafA", "aafB", "aafC", "aafD",
+            "agg3A", "agg3B", "agg3C", "agg3D"
+          ],
+          "resistance_type": [
+            "定殖能力", "定殖能力", "定殖能力", "定殖能力", "定殖能力",
+            "定殖能力", "定殖能力", "定殖能力", "定殖能力",
+            "定殖能力", "定殖能力", "定殖能力", "定殖能力"
+          ],
+          "reads_count": [
+            "0", "0", "0", "0", "0",
+            "0", "0", "0", "0",
+            "0", "0", "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性", "阴性", "阴性", "阴性",
+            "阴性", "阴性", "阴性", "阴性",
+            "阴性", "阴性", "阴性", "阴性"
+          ],
+          "descriptions": "调控其他聚集因子的表达，促进聚集"
+        },
+        {
+          "chinese_name": "肠致病性大肠杆菌",
+          "latin_name": "EPEC",
+          "resistance_gene": [
+            "eae", "bfpA"
+          ],
+          "resistance_type": [
+            "细胞破坏", "定殖能力"
+          ],
+          "reads_count": [
+            "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性"
+          ],
+          "descriptions": "促进细菌进入宿主细胞并损伤其功能"
+        },
+        {
+          "chinese_name": "肠产毒性大肠埃希氏菌",
+          "latin_name": "ETEC",
+          "resistance_gene": [
+            "eltA", "eltB"
+          ],
+          "resistance_type": [
+            "细胞破坏", "细胞破坏"
+          ],
+          "reads_count": [
+            "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性"
+          ],
+          "descriptions": "肠毒素引起水分和电解质的分泌，导致腹泻"
+        },
+        {
+          "chinese_name": "肠侵袭性大肠埃希氏菌",
+          "latin_name": "EIEC",
+          "resistance_gene": [
+            "ipaH"
+          ],
+          "resistance_type": [
+            "免疫逃逸"
+          ],
+          "reads_count": [
+            "0"
+          ],
+          "resistance_drugs": [
+            "阴性"
+          ],
+          "descriptions": "促进细菌侵入宿主细胞并触发免疫反应"
+        },
+        {
+          "chinese_name": "艰难梭菌毒素基因",
+          "latin_name": "Clostridium difficile toxin gene",
+          "resistance_gene": [
+            "tcdA", "tcdB"
+          ],
+          "resistance_type": [
+            "细胞破坏", "细胞破坏"
+          ],
+          "reads_count": [
+            "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性"
+          ],
+          "descriptions": "破坏宿主细胞并引起炎症"
+        },
+        {
+          "chinese_name": "志贺肠毒素基因",
+          "latin_name": "Shiga toxin gene",
+          "resistance_gene": [
+            "set1A", "set1B", "senB",
+            "gtrA", "gtrB",
+            "ipaH7.8", "ipaH9.8", "ipaH1.4", "ipaH2.5", "ipaH4.5"
+          ],
+          "resistance_type": [
+            "细胞破坏", "细胞破坏", "免疫逃逸",
+            "免疫逃逸", "免疫逃逸",
+            "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸", "免疫逃逸"
+          ],
+          "reads_count": [
+            "0", "0", "0", "0", "0",
+            "0", "0", "0", "0", "0"
+          ],
+          "resistance_drugs": [
+            "阴性", "阴性", "阴性", "阴性", "阴性",
+            "阴性", "阴性", "阴性", "阴性", "阴性"
+          ],
+          "descriptions": "促进液体分泌，引起腹泻"
+        }
+      ];
+
+      // 在 window 对象上定义全局变量
+      window.matchCount = 0;
+
+      function updateMatchCountDisplay() {
+        const matchCountDisplay = document.getElementById("matchCountDisplay");
+        matchCountDisplay.innerText = window.matchCount; // 更新文本内容
+
+        // 根据 matchCount 的值设置颜色
+        if (window.matchCount === 0) {
+          matchCountDisplay.classList.remove("text-red-600"); // 移除红色
+          matchCountDisplay.classList.add("text-green-600"); // 添加绿色
+        } else {
+          matchCountDisplay.classList.remove("text-green-600"); // 移除绿色
+          matchCountDisplay.classList.add("text-red-600"); // 添加红色
+        }
+      }
+
+      function validateAndUpdateResistanceGenes(toxic_gene_data, gene_data) {
+        return toxic_gene_data.map(item => {
+          const updatedReadsCount = [...item.reads_count];
+
+          const updatedResistanceDrugs = item.resistance_drugs.map((drug, index) => {
+            const gene = item.resistance_gene[index];
+            const hasMatch = gene_data.some(resistanceItem =>
+              Object.values(resistanceItem).some(value =>
+                String(value).toLowerCase() === gene.toLowerCase()
+              )
+            );
+
+            if (hasMatch) {
+              updatedReadsCount[index] = "1";
+              window.matchCount++; // 增加匹配计数
+              return "阳性"; // 更新对应的药物状态
+            } else {
+              return drug; // 保持原样
+            }
+          });
+
+          // 更新匹配数量到 DOM
+          updateMatchCountDisplay(); // 更新显示
+
+          return {
+            ...item,
+            reads_count: updatedReadsCount,
+            resistance_drugs: updatedResistanceDrugs
+          };
+        });
+      }
+
+      function debugMatchGenes(toxic_gene_data, gene_data) {
+        return toxic_gene_data.map(item => {
+          const geneMatchDetails = item.resistance_gene.map(gene => {
+            const matches = gene_data.filter(resistanceItem =>
+              Object.values(resistanceItem).some(value =>
+                String(value).toLowerCase().includes(gene.toLowerCase())
+              )
+            );
+
+            return {
+              gene: gene,
+              matched: matches.length > 0,
+              matchedItems: matches
+            };
+          });
+
+          return {
+            ...item,
+            geneMatchDetails
+          };
+        });
+      }
+
       async function loadVirulenceData() {
         try {
           const response = await fetch(DATA_PATHS.DATA);
           const data = await response.json();
+          const updatedToxicGeneData = validateAndUpdateResistanceGenes(toxic_gene_data, data['耐药基因']);
           // data.virulence_genes_data.sort((a, b) => b.reads_count - a.reads_count);
-          renderVirulenceTable(data.virulence_genes_data);
+          console.log(updatedToxicGeneData);
+          console.log("匹配项数量:", window.matchCount);
+          // 调用调试函数
+          const debugResults = debugMatchGenes(toxic_gene_data, data['耐药基因']);
+          // 打印完整的调试结果
+          // console.log(JSON.stringify(debugResults, null, 2));
+          renderVirulenceTable(updatedToxicGeneData);
         } catch (error) {
           console.error('Error loading resistance data:', error);
         }
@@ -7355,18 +7583,6 @@
                     ${resistance.resistance_gene.map(gene => `
                       <div class="stack-item">
                         <span class="resistance-gene">${gene}</span>
-                      </div>
-                    `).join('')}
-                  </div>
-                </td>
-
-                <td class="py-2 px-4 text-center resistance-column-text metal-tolerance-fourth-column">
-                  <div class="genes-and-reads-stack-container">
-                    ${resistance.reads_count.map(count => `
-                      <div class="stack-item">
-                        <span class="reads-count ${parseInt(count) > 0 ? 'high' : 'low'}">
-                          ${count}
-                        </span>
                       </div>
                     `).join('')}
                   </div>
@@ -15050,7 +15266,7 @@
             this.renderTable(eukaryotesData);
           } else {
             document.getElementById('detected-gut-eukaryotes-data-table-body').innerHTML =
-              '<div class="text-center p-4">暂无检出真核生物数据</div>';
+              '<div class="text-center p-4" style="font-size: 10px;">暂无检出真核生物数据</div>';
           }
         } catch (error) {
           document.getElementById('detected-gut-eukaryotes-data-table-body').innerHTML =
