@@ -270,7 +270,7 @@
       "参考范围": "350-700-2000",
       "评估值": "1601.61",
       "结果评价": "正常",
-      "说明": "成年人摄入水平建议在700-2000mcg，低于350mcg属于缺乏，低于700mcg属于偏少，高于2000mcg可适当减少"
+      "说明": "成年人摄入水平建议在700-2000mcg，低于350mcg属于缺乏，低于700mcg属于偏少，高于2000mcg可适当减少摄入。"
     },
     {
       "检测项目": "维生素B1",
@@ -291,7 +291,7 @@
       "参考范围": "0.6-1.2-100",
       "评估值": "1.48",
       "结果评价": "正常",
-      "说明": "成年人摄入水平建议在1.2~100mg每日，低于350mcg属于缺乏，低于700mcg属于偏少，高于2000mcg可适当减少"
+      "说明": "成年人摄入水平建议在1.2~100mg每日，低于350mcg属于缺乏，低于700mcg属于偏少，高于2000mcg可适当减少摄入。"
     },
     {
       "检测项目": "维生素B12",
@@ -7405,19 +7405,13 @@
         "name": "p__拟杆菌门"
       },
       {
-        "name": "艰难梭菌_1"
+        "name": "Haemophilus parainfluenzae"
       },
       {
-        "name": "Faecalibacterium sp003449675"
+        "name": "Bacteroides fragilis"
       },
       {
-        "name": "Filifactor alocis"
-      },
-      {
-        "name": "Intestinibacter bartlettii"
-      },
-      {
-        "name": "酿酒酵母"
+        "name": "Bacteroides caccae"
       }
     ],
     "links": [
@@ -7487,34 +7481,29 @@
         "value": "881614"
       },
       {
-        "source": "g__Clostridioides",
-        "target": "艰难梭菌_1",
-        "value": "16684"
+        "source": "g__嗜血杆菌属",
+        "target": "Haemophilus parainfluenzae",
+        "value": 9578.4016958677
       },
       {
-        "source": "g__粪杆菌属",
-        "target": "Faecalibacterium sp003449675",
-        "value": "15365"
+        "source": "g__拟杆菌属",
+        "target": "Bacteroides fragilis",
+        "value": 52528.603103772
       },
       {
-        "source": "g__产丝菌属",
-        "target": "Filifactor alocis",
-        "value": "18904"
-      },
-      {
-        "source": "g__Intestinibacter",
-        "target": "Intestinibacter bartlettii",
-        "value": "24245"
+        "source": "g__拟杆菌属",
+        "target": "Bacteroides caccae",
+        "value": 11088.805637582
       },
       {
         "source": "k__真核生物",
         "target": null,
-        "value": 37008.251920564
+        "value": 370.08251920564
       },
       {
         "source": "k__真菌",
         "target": "酿酒酵母",
-        "value": 5940.2096769744
+        "value": 59.402096769744
       }
     ]
   }

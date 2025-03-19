@@ -50,8 +50,9 @@
       // DATA: './data/bacteria_data.json'
       // DATA: './data/guhe_api_data_686841025.json'
       // DATA: './data/guhe_api_data_686841025.json'
-      DATA: './data/guhe_api_data_608076970_1.json'
+      // DATA: './data/guhe_api_data_608076970.json'
       // DATA: './data/guhe_api_data_661155682.json'
+      DATA: './data/guhe_api_data_675272848.json'
     };
   </script>
   <!--  <script>-->
@@ -135,7 +136,8 @@
     <div class="flex items-start ml-2 mt-2">
       <p class="answer-text">
         <i class="fas fa-comments icon icon-orange"></i>
-        肠道菌群的宏基因组是指从肠道微生物群体中提取的所有微生物（包括细菌、古菌、真菌和病毒等）的遗传物质（DNA）进行分析与研究的领域。宏基因组分析提供了更为详尽和全面的微生物谱系信息，能够揭示真菌和病毒的存在，并识别毒理和耐药基因。16S rRNA主要针对细菌，16S rRNA 的样本积累和数据库更为丰富。
+        肠道菌群的宏基因组是指从肠道微生物群体中提取的所有微生物（包括细菌、古菌、真菌和病毒等）的遗传物质（DNA）进行分析与研究的领域。宏基因组分析提供了更为详尽和全面的微生物谱系信息，能够揭示真菌和病毒的存在，并识别毒理和耐药基因。16S
+        rRNA主要针对细菌，16S rRNA 的样本积累和数据库更为丰富。
       </p>
     </div>
   </div>
@@ -2260,7 +2262,9 @@
 
           // 统计总数和正常数
           const totalItems = filteredData.length;
-          const normalItems = filteredData.filter(item => item['结果评价'] === '正常').length;
+          const normalItems = filteredData.filter(item =>
+            item['结果评价'] === '正常' || item['结果评价'] === '阴性'
+          ).length;
 
           // 筛选偏低的指标
           const lowItems = filteredData.filter(item => {
@@ -4396,35 +4400,35 @@
     </div>
   </div>
 
-<!--  <div class="qa-box">-->
-<!--    <div class="flex items-start ml-2">-->
-<!--      <p class="text-lg font-bold text-lightpurple">-->
-<!--        <i class="fas fa-question-circle icon icon-purple"></i>-->
-<!--        评估结果易受到自身的一些疾病症状或者环境影响吗？-->
-<!--      </p>-->
-<!--    </div>-->
-<!--    <div class="flex items-start ml-2 mt-2">-->
-<!--      <p class="answer-text">-->
-<!--        <i class="fas fa-comments icon icon-orange"></i>-->
+  <!--  <div class="qa-box">-->
+  <!--    <div class="flex items-start ml-2">-->
+  <!--      <p class="text-lg font-bold text-lightpurple">-->
+  <!--        <i class="fas fa-question-circle icon icon-purple"></i>-->
+  <!--        评估结果易受到自身的一些疾病症状或者环境影响吗？-->
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--    <div class="flex items-start ml-2 mt-2">-->
+  <!--      <p class="answer-text">-->
+  <!--        <i class="fas fa-comments icon icon-orange"></i>-->
 
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--  <div class="qa-box">-->
-<!--    <div class="flex items-start ml-2">-->
-<!--      <p class="text-lg font-bold text-lightpurple">-->
-<!--        <i class="fas fa-question-circle icon icon-purple"></i>-->
-<!--        如何对待不同慢病评估的风险值？-->
-<!--      </p>-->
-<!--    </div>-->
-<!--    <div class="flex items-start ml-2 mt-2">-->
-<!--      <p class="answer-text">-->
-<!--        <i class="fas fa-comments icon icon-orange"></i>-->
+  <!--  <div class="qa-box">-->
+  <!--    <div class="flex items-start ml-2">-->
+  <!--      <p class="text-lg font-bold text-lightpurple">-->
+  <!--        <i class="fas fa-question-circle icon icon-purple"></i>-->
+  <!--        如何对待不同慢病评估的风险值？-->
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--    <div class="flex items-start ml-2 mt-2">-->
+  <!--      <p class="answer-text">-->
+  <!--        <i class="fas fa-comments icon icon-orange"></i>-->
 
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
   <!-- 警告提示信息框 -->
   <div class="info-box" style="background-color: #FFE5CC">
@@ -6954,20 +6958,20 @@
 
 <div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">
 
-<!--  &lt;!&ndash; 信息框 &ndash;&gt;-->
-<!--  <div class="info-box">-->
-<!--    <div class="flex items-start">-->
-<!--      <div class="ml-2">-->
-<!--        <p class="text-lg text-custom-teal">-->
-<!--          <i class="fas fa-info-circle icon"></i>-->
-<!--          耐药基因是指能够使微生物对抗生素产生抵抗力的基因序列，这些基因可以通过编码特定蛋白质，使微生物具备各种耐药机制，如药物降解、药物外排、靶点改变等。耐药基因的存在使得抗生素治疗变得困难，增加了感染治疗的挑战。-->
-<!--        </p>-->
-<!--        <ul class="list-disc ml-6 pl-2">-->
-<!--          <li>下列是您肠道中检出的耐药基因，按照相关耐药基因片段reads数量递减排列。</li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  &lt;!&ndash; 信息框 &ndash;&gt;-->
+  <!--  <div class="info-box">-->
+  <!--    <div class="flex items-start">-->
+  <!--      <div class="ml-2">-->
+  <!--        <p class="text-lg text-custom-teal">-->
+  <!--          <i class="fas fa-info-circle icon"></i>-->
+  <!--          耐药基因是指能够使微生物对抗生素产生抵抗力的基因序列，这些基因可以通过编码特定蛋白质，使微生物具备各种耐药机制，如药物降解、药物外排、靶点改变等。耐药基因的存在使得抗生素治疗变得困难，增加了感染治疗的挑战。-->
+  <!--        </p>-->
+  <!--        <ul class="list-disc ml-6 pl-2">-->
+  <!--          <li>下列是您肠道中检出的耐药基因，按照相关耐药基因片段reads数量递减排列。</li>-->
+  <!--        </ul>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
   <!-- 信息框 -->
   <div class="info-box">
@@ -7639,6 +7643,132 @@
 
 </div>
 
+<!--<h3 class="custom-title-third-level page-break">-->
+<!--  测试-->
+<!--</h3>-->
+
+<!--<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%; height: 700px">-->
+<!--  <div id="sankey-chart" style="height: 100%"></div> &lt;!&ndash; 桑基图容器 &ndash;&gt;-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  // 自定义节点排序函数-->
+<!--  function customNodeSort(nodes, links) {-->
+<!--    const prefixOrder = ['k__', 'p__', 'g__', ''];-->
+
+<!--    const nodeValueMap = new Map();-->
+<!--    links.forEach(link => {-->
+<!--      const targetValue = nodeValueMap.get(link.target) || 0;-->
+<!--      nodeValueMap.set(link.target, targetValue + parseFloat(link.value));-->
+<!--    });-->
+
+<!--    const weightedNodes = nodes.map(node => {-->
+<!--      const prefix = prefixOrder.find(p => node.name.startsWith(p)) || '';-->
+<!--      return {-->
+<!--        ...node,-->
+<!--        sortWeight: prefixOrder.indexOf(prefix),-->
+<!--        totalValue: nodeValueMap.get(node.name) || 0-->
+<!--      };-->
+<!--    });-->
+
+<!--    return weightedNodes.sort((a, b) => {-->
+<!--      if (a.sortWeight !== b.sortWeight) {-->
+<!--        return a.sortWeight - b.sortWeight;-->
+<!--      }-->
+<!--      return b.totalValue - a.totalValue;-->
+<!--    });-->
+<!--  }-->
+
+<!--  // 数据加载函数-->
+<!--  async function loadData() {-->
+<!--    try {-->
+<!--      const response = await fetch(DATA_PATHS.DATA); // 替换为您的数据源链接-->
+<!--      if (!response.ok) {-->
+<!--        throw new Error(`Network response error: ${response.status}`);-->
+<!--      }-->
+<!--      const data = await response.json();-->
+<!--      return data["桑基图"]; // 请确认此处根据正确路径获取数据-->
+<!--    } catch (error) {-->
+<!--      console.error('数据加载错误:', error);-->
+<!--      throw error;-->
+<!--    }-->
+<!--  }-->
+
+<!--  // 渲染桑基图函数-->
+<!--  async function renderSankeyChart() {-->
+<!--    const chartDom = document.getElementById('sankey-chart');-->
+<!--    const myChart = echarts.init(chartDom, null, { renderer: 'svg' });-->
+
+<!--    try {-->
+<!--      const sankeyData = await loadData();-->
+
+<!--      // 创建节点集合-->
+<!--      const nodeSet = new Set();-->
+<!--      sankeyData.data.forEach(item => {-->
+<!--        nodeSet.add(item.name);-->
+<!--      });-->
+
+<!--      const allNodes = Array.from(nodeSet).map(name => ({ name }));-->
+<!--      const allLinks = sankeyData.links;-->
+
+<!--      // 对节点进行排序-->
+<!--      const sortedNodes = customNodeSort(allNodes, allLinks);-->
+
+<!--      const option = {-->
+<!--        backgroundColor: '#fff',-->
+<!--        title: {-->
+<!--          subtext: 'Sankey Diagram Example',-->
+<!--          left: 'center'-->
+<!--        },-->
+<!--        tooltip: {-->
+<!--          trigger: 'item',-->
+<!--          formatter: function (params) {-->
+<!--            if (params.dataType === 'edge') {-->
+<!--              return `${params.data.source} → ${params.data.target}: ${params.value}`;-->
+<!--            }-->
+<!--            return `${params.name}\n Total Value: ${params.data.totalValue.toFixed(2)}`;-->
+<!--          }-->
+<!--        },-->
+<!--        series: [{-->
+<!--          type: 'sankey',-->
+<!--          data: sortedNodes,-->
+<!--          links: allLinks,-->
+<!--          nodeAlign: 'justified',-->
+<!--          draggable: true,-->
+<!--          label: {-->
+<!--            fontSize: 10,-->
+<!--            position: 'right',-->
+<!--            color: 'rgba(0,0,0,0.7)',-->
+<!--            fontFamily: 'Arial',-->
+<!--          },-->
+<!--          lineStyle: {-->
+<!--            color: 'source',-->
+<!--            opacity: 0.6,-->
+<!--            curveness: 0.5-->
+<!--          },-->
+<!--          nodeWidth: 20,-->
+<!--          nodeGap: 15,-->
+<!--          emphasis: {-->
+<!--            focus: 'adjacency'-->
+<!--          },-->
+<!--        }]-->
+<!--      };-->
+
+<!--      myChart.setOption(option);-->
+<!--      myChart.resize(); // 确保图表能适应父容器的大小-->
+
+<!--      window.addEventListener('resize', function() {-->
+<!--        myChart.resize(); // 确保在窗口调整时图表也调整-->
+<!--      });-->
+<!--    } catch (error) {-->
+<!--      console.error('渲染图表出错:', error);-->
+<!--      chartDom.innerHTML = `<div style="text-align:center;color:red;">数据加载失败: ${error.message}</div>`;-->
+<!--    }-->
+<!--  }-->
+
+<!--  document.addEventListener('DOMContentLoaded', renderSankeyChart);-->
+<!--</script>-->
+
 
 <h3 class="custom-title-third-level page-break">
   肠道微生物分布
@@ -7671,7 +7801,7 @@
     <div id="sankey-chart-info-title">
       <p>肠道微生物层级构成（仅显示检测丰度>=0.5‰）</p>
     </div>
-    <div id="sankey-chart"></div>
+    <div id="sankey-chart" style="flex-grow: 1;"></div>
   </div>
 
   <script>
@@ -7751,7 +7881,7 @@
             data: sortedNodes,
             links: allLinks,
             nodeAlign: 'none',
-            draggable: false, // 禁止拖拽
+            draggable: true, // 禁止拖拽
             emphasis: {
               focus: 'adjacency'
             },
@@ -7769,8 +7899,8 @@
               borderWidth: 0,
               borderColor: null
             },
-            nodeWidth: 20,
-            nodeGap: 20
+            nodeWidth: 10,
+            nodeGap: 10
           }]
         };
 
@@ -7810,6 +7940,7 @@
 
     document.addEventListener('DOMContentLoaded', renderSankeyChart);
   </script>
+
 </div>
 
 <!-- 肠道细菌板块 -->
@@ -8008,24 +8139,53 @@
         };
       }
 
-      // 计算进度条百分比 - 优化版
       function calculateProgressPercentage(value) {
-        if (value === "ND" || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num >= 0.4) {
-          return num;
-        } else if (num >= 0.2) {
-          return 4 + ((num - 0.2) / 0.2) * 36;
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
         } else {
-          const logValue = Math.log10(Math.max(num, 0.0000001) + 0.0001);
-          const minLog = Math.log10(0.0000001 + 0.0001);
-          const maxLog = Math.log10(0.2 + 0.0001);
-          const normalizedLog = (logValue - minLog) / (maxLog - minLog);
-          return 1 + normalizedLog * 3;
+          // 0-10的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.3);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
       }
+
+// 测试关键值
+      const testValues = [
+        0.00001, // 很小的值
+        0.0005,
+        0.001,
+        0.005,
+        0.05,
+        0.1,
+        1,
+        5,
+        10,
+        25,
+        50,      // 50的边界值
+        75,      // 大于50的值
+        100,
+        150,
+        200,
+        250,
+        300
+      ];
+
+      testValues.forEach(value => {
+        console.log(`原始值: ${value}, 转换后: ${calculateProgressPercentage(value).toFixed(2)}`);
+      });
 
       // 获取状态信息
       function getBacteriaStatus(detected, normalRange) {
@@ -8311,19 +8471,41 @@
       }
 
       // 计算进度条百分比 - 优化版
+      // function calculateOtherImportantProgressPercentage(value) {
+      //   if (value === "ND" || value === 0) return 0;
+      //   const num = Number(value);
+      //   if (num >= 0.4) {
+      //     return num;
+      //   } else if (num >= 0.2) {
+      //     return 4 + ((num - 0.2) / 0.2) * 36;
+      //   } else {
+      //     const logValue = Math.log10(Math.max(num, 0.0000001) + 0.0001);
+      //     const minLog = Math.log10(0.0000001 + 0.0001);
+      //     const maxLog = Math.log10(0.2 + 0.0001);
+      //     const normalizedLog = (logValue - minLog) / (maxLog - minLog);
+      //     return 1 + normalizedLog * 3;
+      //   }
+      // }
       function calculateOtherImportantProgressPercentage(value) {
-        if (value === "ND" || value === 0) return 0;
-        const num = Number(value);
-        if (num >= 0.4) {
-          return num;
-        } else if (num >= 0.2) {
-          return 4 + ((num - 0.2) / 0.2) * 36;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
+
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
         } else {
-          const logValue = Math.log10(Math.max(num, 0.0000001) + 0.0001);
-          const minLog = Math.log10(0.0000001 + 0.0001);
-          const maxLog = Math.log10(0.2 + 0.0001);
-          const normalizedLog = (logValue - minLog) / (maxLog - minLog);
-          return 1 + normalizedLog * 3;
+          // 0-20的值使用自然对数变换并映射到0-40
+          const logValue = Math.log(num + 1.15);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
       }
 
@@ -8666,34 +8848,25 @@
 
       // 计算进度条百分比 - 优化版
       function calculateProgressPercentage(value) {
-        // 处理特殊情况
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        // 确保value是数字
-        const num = Number(value);
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        // 分段缩放处理
-        if (num >= 0.4) {
-          // 高丰度值(≥0.4)保持原始比例(转为0-100百分比)
-          return num;
-        } else if (num >= 0.2) {
-          // 中等丰度值(0.2-0.4)平滑过渡
-          // 从4%到40%的线性映射
-          return 4 + ((num - 0.2) / 0.2) * 36;
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
         } else {
-          // 低丰度值(&lt;0.2)使用对数变换
-          // 确保对数计算有效，即使是极小值
-          const logValue = Math.log10(Math.max(num, 0.0000001) + 0.0001);
-          const minLog = Math.log10(0.0000001 + 0.0001);
-          const maxLog = Math.log10(0.2 + 0.0001);
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
 
-          // 归一化到0-1区间
-          const normalizedLog = (logValue - minLog) / (maxLog - minLog);
-
-          // 映射到1%-4%区间
-          return 1 + normalizedLog * 3;
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
       }
 
@@ -9166,17 +9339,26 @@
 
       // 计算进度条百分比
       calculateProgress(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
+
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到30-100的范围
+          return (logValue / maxLogValue) * 30;
         }
-
-        const num = Number(value);
-        const logValue = Math.log10(num);
-        const minLog = -1;  // log10(0.0001)
-        const maxLog = 3;   // log10(100)
-
-        const percentage = ((logValue - minLog) / (maxLog - minLog)) * 45 + 5;
-        return Math.max(5, Math.min(50, percentage));
       },
 
       // 渲染表格
@@ -9445,16 +9627,26 @@
 
       // 计算进度条百分比
       calculateProgress(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        return Math.min(100, Math.max(5,
-          num <= 1 ? num * 30 :
-            num <= 10 ? 30 + (num - 1) * 5 :
-              75 + (Math.min(num, 100) - 10) * 0.25
-        ));
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到30-100的范围
+          return (logValue / maxLogValue) * 30;
+        }
       },
 
       // 渲染表格
@@ -9724,16 +9916,26 @@
 
       // 计算进度条百分比
       calculateProgress(value) {
-        if (value === "ND" || value === "未检出" || value === 0) {
-          return 0;
-        }
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        return Math.min(100, Math.max(5,
-          num <= 1 ? num * 30 :
-            num <= 10 ? 30 + (num - 1) * 5 :
-              75 + (Math.min(num, 100) - 10) * 0.25
-        ));
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到30-100的范围
+          return (logValue / maxLogValue) * 30;
+        }
       },
 
       // 渲染表格
@@ -10036,16 +10238,26 @@
 
       // 计算进度条百分比
       calculateProgress(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        return Math.min(100, Math.max(5,
-          num <= 1 ? num * 30 :
-            num <= 10 ? 30 + (num - 1) * 5 :
-              75 + (Math.min(num, 100) - 10) * 0.25
-        ));
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到30-100的范围
+          return (logValue / maxLogValue) * 30;
+        }
       },
 
       // 渲染表格
@@ -10324,16 +10536,26 @@
 
       // 计算进度条百分比
       calculateProgress(value) {
-        if (value === "ND" || value === 0) {
-          return 0;
-        }
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        return Math.min(100, Math.max(5,
-          num <= 1 ? num * 30 :
-            num <= 10 ? 30 + (num - 1) * 5 :
-              75 + (Math.min(num, 100) - 10) * 0.25
-        ));
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
+
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到30-100的范围
+          return (logValue / maxLogValue) * 30;
+        }
       },
 
       // 渲染表格
@@ -11157,6 +11379,7 @@
         const num = Number(value);
         if (isNaN(num)) return value;
         return num.toFixed(3).replace(/\.?0+$/, '');
+        // return num
       },
 
       // 解析正常范围
@@ -11273,15 +11496,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -11398,7 +11632,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
               <tr>
@@ -11418,7 +11652,7 @@
                     <div class="progress"
                          style="width: ${progressPercentage}%;
                                 height: 100%;
-                                background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                                background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                                 transition: width 0.3s ease;">
                     </div>
                   </div>
@@ -11696,15 +11930,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -11822,7 +12067,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
               <tr>
@@ -11846,7 +12091,7 @@
                     <div class="progress"
                          style="width: ${progressPercentage}%;
                                 height: 100%;
-                                background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                                background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                                 transition: width 0.3s ease;">
                     </div>
                   </div>
@@ -12124,15 +12369,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -12250,7 +12506,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
             <tr>
@@ -12270,7 +12526,7 @@
                   <div class="progress"
                        style="width: ${progressPercentage}%;
                               height: 100%;
-                              background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                               transition: width 0.3s ease;">
                   </div>
                 </div>
@@ -12547,15 +12803,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -12673,7 +12940,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
             <tr>
@@ -12693,7 +12960,7 @@
                   <div class="progress"
                        style="width: ${progressPercentage}%;
                               height: 100%;
-                              background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                               transition: width 0.3s ease;">
                   </div>
                 </div>
@@ -12971,15 +13238,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -13097,7 +13375,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
             <tr>
@@ -13117,7 +13395,7 @@
                   <div class="progress"
                        style="width: ${progressPercentage}%;
                               height: 100%;
-                              background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                              background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                               transition: width 0.3s ease;">
                   </div>
                 </div>
@@ -13395,15 +13673,26 @@
 
       // 计算进度条百分比
       calculateProgressWidth(value) {
-        if (value === 'ND' || value === 0) return 0;
+        // 处理无效值
+        if (value === "ND" || value <= 0) return 0;
 
-        const num = Number(value);
-        if (isNaN(num)) return 0;
+        const num = Number(value); // 转换为数字
+        const logThreshold = 20; // 对数变换的阈值
+        const midScaleValue = 20; // 开始线性映射的起点
+        const midScaleTarget = 30; // 线性映射的目标起点
+        const maxTarget = 100; // 最大目标值
 
-        if (num <= 20) {
-          return Math.min(20, Math.max(5, num * 1.5));
+        if (num > logThreshold) {
+          // 20-100线性映射到30-100
+          return ((num - midScaleValue) / (100 - midScaleValue)) * (maxTarget - midScaleTarget) + midScaleTarget;
+        } else {
+          // 0-0.4的值使用自然对数变换并映射到0-10
+          const logValue = Math.log(num + 1.1);
+          const maxLogValue = Math.log(logThreshold + 1);
+
+          // 0-20归一化到0-30的范围
+          return (logValue / maxLogValue) * 30;
         }
-        return Math.min(100, Math.max(0, num));
       },
 
       // 创建描述行
@@ -13552,7 +13841,7 @@
           // 根据状态确定未检出的颜色
           const detectedText = detected === "ND"
             ? (status.isGrayND ? `<span style="color: ${this.CONSTANTS.COLORS.GRAY}">ND</span>` : 'ND')
-            : this.formatNumber(detected);
+            : detected;
 
           const dataRow = `
           <tr>
@@ -13572,7 +13861,7 @@
                 <div class="progress"
                      style="width: ${progressPercentage}%;
                             height: 100%;
-                            background-color: ${this.CONSTANTS.COLORS.PRIMARY};
+                            background-color: ${status.isNormal ? this.CONSTANTS.COLORS.PRIMARY : this.CONSTANTS.COLORS.RED};
                             transition: width 0.3s ease;">
                 </div>
               </div>
@@ -15911,7 +16200,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -16116,7 +16405,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -16321,7 +16610,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -16526,7 +16815,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -16933,7 +17222,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -17255,7 +17544,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};
@@ -17460,7 +17749,7 @@
                   <div class="chinese-text"><strong>${food["名称"] || ''}</strong></div>
                 </td>
                 <td class="py-2 px-4 text-center food-column-text food-second-column">
-                  ${food["推荐指数"] || ''}
+                  ${parseInt(food["推荐指数"]) || ''}
                   <div class="progress-bar w-full mt-2" style="background-color: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
                     <div class="progress"
                          style="width: ${progressBarWidth};

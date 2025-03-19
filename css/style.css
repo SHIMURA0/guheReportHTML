@@ -1070,12 +1070,12 @@ strong, b {
 #sankey-chart {
   width: 100%;     /* 宽度填满父容器 */
   max-width: 100%; /* 最大宽度不超过父容器 */
-  height: 650px;   /* 固定高度，可根据需要调整 */
+  height: 100%;   /* 固定高度，可根据需要调整 */
   margin: 0 auto;  /* 居中显示 */
 }
 svg {
   width: 100%; /* SVG宽度100% */
-  height: auto; /* 高度自适应 */
+  height: 100%; /* 高度自适应 */
 }
 
 /* 肠道菌群细菌分类版块*/
