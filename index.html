@@ -52,7 +52,8 @@
       // DATA: './data/guhe_api_data_686841025.json'
       // DATA: './data/guhe_api_data_608076970.json'
       // DATA: './data/guhe_api_data_661155682.json'
-      DATA: './data/guhe_api_data_675272848.json'
+      // DATA: './data/guhe_api_data_675272848.json'
+      DATA: './data/guhe_api_data_610862362.json'
     };
   </script>
   <!--  <script>-->
@@ -73,24 +74,24 @@
   <!-- 框架/库（使用 defer 确保不阻塞） -->
   <script src="https://cdn.tailwindcss.com" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
-  <style>
-    #chart-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+<!--  <style>-->
+<!--    #chart-container {-->
+<!--      width: 100%;-->
+<!--      display: flex;-->
+<!--      flex-direction: column;-->
+<!--      gap: 20px;-->
+<!--    }-->
 
-    #sankey-chart {
-      width: 100%;
-      height: 500px;
-    }
+<!--    #sankey-chart {-->
+<!--      width: 100%;-->
+<!--      height: 500px;-->
+<!--    }-->
 
-    #svg-container {
-      width: 100%;
-      height: 500px;
-    }
-  </style>
+<!--    #svg-container {-->
+<!--      width: 100%;-->
+<!--      height: 500px;-->
+<!--    }-->
+<!--  </style>-->
 
   <!-- 无JS时的降级方案 -->
   <noscript>
@@ -7647,14 +7648,14 @@
 <!--  测试-->
 <!--</h3>-->
 
-<!--<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%; height: 700px">-->
+<!--<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%; height: 1000px">-->
 <!--  <div id="sankey-chart" style="height: 100%"></div> &lt;!&ndash; 桑基图容器 &ndash;&gt;-->
 <!--</div>-->
 
 <!--<script>-->
 <!--  // 自定义节点排序函数-->
 <!--  function customNodeSort(nodes, links) {-->
-<!--    const prefixOrder = ['k__', 'p__', 'g__', ''];-->
+<!--    const prefixOrder = ['d__', 'k__', 'p__', 'g__', ''];-->
 
 <!--    const nodeValueMap = new Map();-->
 <!--    links.forEach(link => {-->
@@ -7733,8 +7734,8 @@
 <!--          type: 'sankey',-->
 <!--          data: sortedNodes,-->
 <!--          links: allLinks,-->
-<!--          nodeAlign: 'justified',-->
-<!--          draggable: true,-->
+<!--          nodeAlign: 'none',-->
+<!--          draggable: false,-->
 <!--          label: {-->
 <!--            fontSize: 10,-->
 <!--            position: 'right',-->
@@ -7769,6 +7770,596 @@
 <!--  document.addEventListener('DOMContentLoaded', renderSankeyChart);-->
 <!--</script>-->
 
+<!--<h3 class="custom-title-third-level page-break">-->
+<!--  肠道微生物分布-->
+<!--</h3>-->
+
+<!--<div class="bg-white rounded-lg p-5 mb-5 mx-auto" style="width: 100%;">-->
+<!--<div id="sankey-container"></div>-->
+<!--<script>-->
+<!--  // 初始化 ECharts 实例-->
+<!--  var chart = echarts.init(document.getElementById('sankey-container'));-->
+
+<!--  // 数据处理-->
+<!--  function processData(rawData) {-->
+<!--    const nodes = new Set();-->
+<!--    const links = [];-->
+
+<!--    // 添加所有节点-->
+<!--    rawData.data.forEach(item => {-->
+<!--      nodes.add(item.name);-->
+<!--    });-->
+
+<!--    // 处理连接-->
+<!--    rawData.links.forEach(link => {-->
+<!--      if (link.source && link.target) {-->
+<!--        links.push({-->
+<!--          source: link.source,-->
+<!--          target: link.target,-->
+<!--          value: link.value-->
+<!--        });-->
+<!--      }-->
+<!--    });-->
+
+<!--    // 将节点转换为数组-->
+<!--    const nodesArray = Array.from(nodes).map(name => ({ name }));-->
+
+<!--    return { nodes: nodesArray, links: links };-->
+<!--  }-->
+
+<!--  // 原始数据-->
+<!--  const rawData = {-->
+<!--    "data": [-->
+<!--      {-->
+<!--        "name": "Viruses"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteria"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Eukaryota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteriophage sp."-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Pseudomonadota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Uroviricota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "uncultured bacterium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Actinomycetota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacillota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroidota"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Caudoviricetes sp."-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Escherichia"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Escherichia coli"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Streptococcus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Faecalibacterium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Ruminococcus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Clostridiales bacterium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Dorea"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Anaerostipes"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Blautia"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Agathobacter"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Mediterraneibacter"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Anaerobutyricum"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Waltera"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Simiaoa"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Coprococcus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Roseburia"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Phascolarctobacterium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Chordata"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Alistipes"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Odoribacter"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Parabacteroides"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroides"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Phocaeicola"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Faecalibacterium prausnitzii"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Oscillospiraceae bacterium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Ruminococcus bicirculans (ex Wegman et al. 2014)"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Lachnospiraceae bacterium GAM79"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Dorea longicatena"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Anaerostipes hadrus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Blautia wexlerae"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Blautia hansenii"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Agathobacter rectalis"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "[Ruminococcus] lactaris"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Anaerobutyricum hallii"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Waltera intestinalis"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Simiaoa sunii"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Coprococcus comes"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Roseburia hominis"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Phascolarctobacterium faecium"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Alistipes onderdonkii"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Odoribacter splanchnicus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Parabacteroides merdae"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroides thetaiotaomicron"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroides uniformis"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroides ovatus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Bacteroides xylanisolvens"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Phocaeicola vulgatus"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Phocaeicola dorei"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Blautia sp. SC05B48"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Homo"-->
+<!--      },-->
+<!--      {-->
+<!--        "name": "Homo sapiens"-->
+<!--      }-->
+<!--    ],-->
+<!--    "links": [-->
+<!--      {-->
+<!--        "source": "root",-->
+<!--        "target": "Viruses",-->
+<!--        "value": 61167.00558653-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "root",-->
+<!--        "target": "Bacteria",-->
+<!--        "value": 910775.99099544-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "root",-->
+<!--        "target": "Eukaryota",-->
+<!--        "value": 28057.003418035-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Viruses",-->
+<!--        "target": "Bacteriophage sp.",-->
+<!--        "value": 8815.1347430932-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteria",-->
+<!--        "target": "Pseudomonadota",-->
+<!--        "value": 25343.391699897-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Viruses",-->
+<!--        "target": "Uroviricota",-->
+<!--        "value": 41423.274187939-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteria",-->
+<!--        "target": "uncultured bacterium",-->
+<!--        "value": 13275.321426758-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteria",-->
+<!--        "target": "Actinomycetota",-->
+<!--        "value": 8368.3050614758-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteria",-->
+<!--        "target": "Bacillota",-->
+<!--        "value": 493578.41638849-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteria",-->
+<!--        "target": "Bacteroidota",-->
+<!--        "value": 394632.28948848-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Uroviricota",-->
+<!--        "target": "Caudoviricetes sp.",-->
+<!--        "value": 27474.23246768-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Pseudomonadota",-->
+<!--        "target": "Escherichia",-->
+<!--        "value": 8280.8314894046-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Escherichia",-->
+<!--        "target": "Escherichia coli",-->
+<!--        "value": 6500.4643050862-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Streptococcus",-->
+<!--        "value": 6351.0061488321-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Faecalibacterium",-->
+<!--        "value": 164226.70755461-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Ruminococcus",-->
+<!--        "value": 93929.62374585-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Clostridiales bacterium",-->
+<!--        "value": 16943.80469874-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Dorea",-->
+<!--        "value": 10127.81761934-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Anaerostipes",-->
+<!--        "value": 11648.081268162-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Blautia",-->
+<!--        "value": 63513.537259397-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Agathobacter",-->
+<!--        "value": 13031.051959495-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Mediterraneibacter",-->
+<!--        "value": 16690.459607002-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Anaerobutyricum",-->
+<!--        "value": 5430.1199121711-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Waltera",-->
+<!--        "value": 12575.725948581-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Simiaoa",-->
+<!--        "value": 20282.089718534-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Coprococcus",-->
+<!--        "value": 7619.4694930607-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Roseburia",-->
+<!--        "value": 13678.897068322-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Phascolarctobacterium",-->
+<!--        "value": 6276.2770707051-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Eukaryota",-->
+<!--        "target": "Chordata",-->
+<!--        "value": 29701.429333615-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroidota",-->
+<!--        "target": "Alistipes",-->
+<!--        "value": 18742.32313201-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroidota",-->
+<!--        "target": "Odoribacter",-->
+<!--        "value": 8170.5723069484-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroidota",-->
+<!--        "target": "Parabacteroides",-->
+<!--        "value": 10632.769917279-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroidota",-->
+<!--        "target": "Bacteroides",-->
+<!--        "value": 134944.10863561-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroidota",-->
+<!--        "target": "Phocaeicola",-->
+<!--        "value": 233765.1077769-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Faecalibacterium",-->
+<!--        "target": "Faecalibacterium prausnitzii",-->
+<!--        "value": 143748.2367703-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Oscillospiraceae bacterium",-->
+<!--        "value": 29467.200982794-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Ruminococcus",-->
+<!--        "target": "Ruminococcus bicirculans (ex Wegman et al. 2014)",-->
+<!--        "value": 61012.526872055-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacillota",-->
+<!--        "target": "Lachnospiraceae bacterium GAM79",-->
+<!--        "value": 6759.9885454033-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Dorea",-->
+<!--        "target": "Dorea longicatena",-->
+<!--        "value": 6523.6361122574-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Anaerostipes",-->
+<!--        "target": "Anaerostipes hadrus",-->
+<!--        "value": 11390.681110169-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Blautia",-->
+<!--        "target": "Blautia wexlerae",-->
+<!--        "value": 22634.607441587-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Blautia",-->
+<!--        "target": "Blautia hansenii",-->
+<!--        "value": 27400.661979911-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Agathobacter",-->
+<!--        "target": "Agathobacter rectalis",-->
+<!--        "value": 12703.750183202-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Mediterraneibacter",-->
+<!--        "target": "[Ruminococcus] lactaris",-->
+<!--        "value": 11317.68991758-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Anaerobutyricum",-->
+<!--        "target": "Anaerobutyricum hallii",-->
+<!--        "value": 5359.4459002991-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Waltera",-->
+<!--        "target": "Waltera intestinalis",-->
+<!--        "value": 12093.945457814-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Simiaoa",-->
+<!--        "target": "Simiaoa sunii",-->
+<!--        "value": 11274.242779134-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Coprococcus",-->
+<!--        "target": "Coprococcus comes",-->
+<!--        "value": 7025.1126391202-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Roseburia",-->
+<!--        "target": "Roseburia hominis",-->
+<!--        "value": 7768.3483541355-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Phascolarctobacterium",-->
+<!--        "target": "Phascolarctobacterium faecium",-->
+<!--        "value": 6138.2117196435-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Alistipes",-->
+<!--        "target": "Alistipes onderdonkii",-->
+<!--        "value": 12821.347104596-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Odoribacter",-->
+<!--        "target": "Odoribacter splanchnicus",-->
+<!--        "value": 8058.5752389544-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Parabacteroides",-->
+<!--        "target": "Parabacteroides merdae",-->
+<!--        "value": 6940.9217397316-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroides",-->
+<!--        "target": "Bacteroides thetaiotaomicron",-->
+<!--        "value": 11176.341893836-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroides",-->
+<!--        "target": "Bacteroides uniformis",-->
+<!--        "value": 67319.892784048-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroides",-->
+<!--        "target": "Bacteroides ovatus",-->
+<!--        "value": 34558.0470183-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Bacteroides",-->
+<!--        "target": "Bacteroides xylanisolvens",-->
+<!--        "value": 8711.4409060022-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Phocaeicola",-->
+<!--        "target": "Phocaeicola vulgatus",-->
+<!--        "value": 186642.72761521-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Phocaeicola",-->
+<!--        "target": "Phocaeicola dorei",-->
+<!--        "value": 35559.455284881-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Blautia",-->
+<!--        "target": "Blautia sp. SC05B48",-->
+<!--        "value": 7962.6053375872-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Chordata",-->
+<!--        "target": "Homo",-->
+<!--        "value": 31558.842776778-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Homo",-->
+<!--        "target": "Homo sapiens",-->
+<!--        "value": 28082.685504316-->
+<!--      },-->
+<!--      {-->
+<!--        "source": "Eukaryota",-->
+<!--        "target": null,-->
+<!--        "value": 7.9170341168172-->
+<!--      }-->
+<!--    ]-->
+<!--  };-->
+
+<!--  // 处理数据-->
+<!--  const processedData = processData(rawData);-->
+
+<!--  // ECharts 配置-->
+<!--  const option = {-->
+<!--    title: {-->
+<!--      text: '微生物分类分布 Sankey 图',-->
+<!--      textStyle: {-->
+<!--        fontSize: 16-->
+<!--      }-->
+<!--    },-->
+<!--    tooltip: {-->
+<!--      trigger: 'item',-->
+<!--      triggerOn: 'mousemove'-->
+<!--    },-->
+<!--    series: [{-->
+<!--      type: 'sankey',-->
+<!--      data: processedData.nodes,-->
+<!--      links: processedData.links,-->
+<!--      itemStyle: {-->
+<!--        borderWidth: 1,-->
+<!--        borderColor: '#aaa'-->
+<!--      },-->
+<!--      lineStyle: {-->
+<!--        color: 'source',-->
+<!--        opacity: 0.5-->
+<!--      },-->
+<!--      label: {-->
+<!--        fontSize: 10,-->
+<!--        rotate: 0-->
+<!--      }-->
+<!--    }]-->
+<!--  };-->
+
+<!--  // 使用配置显示图表-->
+<!--  chart.setOption(option);-->
+
+<!--  // 响应式调整-->
+<!--  window.addEventListener('resize', function() {-->
+<!--    chart.resize();-->
+<!--  });-->
+<!--</script>-->
+<!--</div>-->
+
 
 <h3 class="custom-title-third-level page-break">
   肠道微生物分布
@@ -7782,7 +8373,7 @@
       <div class="ml-2">
         <p class="text-lg text-custom-teal">
           <i class="fas fa-info-circle icon"></i>
-          肠道微生物群由多种微生物组成，包括细菌、真菌、真核生物和病毒，这些微生物共同维持肠道生态平衡和人体健康。分析肠道微生物的分布结构有助于深入了解其对消化、免疫及代谢的影响。以下展示了您肠道内微生物的层级结构（按<strong>界</strong>（__k）、<strong>门</strong>（__p）、<strong>属</strong>（__g）、种等级排序）。
+          肠道微生物群由多种微生物组成，包括细菌、真菌、真核生物和病毒，这些微生物共同维持肠道生态平衡和人体健康。分析肠道微生物的分布结构有助于深入了解其对消化、免疫及代谢的影响。以下展示了您肠道内微生物的层级结构（按<strong>界</strong>（d__）、<strong>门</strong>（p__）、<strong>属</strong>（g__）、<strong>种</strong>等级排序）。
         </p>
         <p class="mt-2">
           不同类型的微生物在肠道中的平衡关系直接影响宿主的健康，具体介绍如下：
@@ -7801,13 +8392,13 @@
     <div id="sankey-chart-info-title">
       <p>肠道微生物层级构成（仅显示检测丰度>=0.5‰）</p>
     </div>
-    <div id="sankey-chart" style="flex-grow: 1;"></div>
+    <div id="sankey-chart" style="height: 600px"></div>
   </div>
 
   <script>
     // 自定义节点排序函数
     function customNodeSort(nodes, links) {
-      const prefixOrder = ['k__', 'p__', 'g__', ''];
+      const prefixOrder = ['d__', 'k__', 'p__', 'g__', ''];
 
       const nodeValueMap = new Map();
       links.forEach(link => {
@@ -7881,7 +8472,7 @@
             data: sortedNodes,
             links: allLinks,
             nodeAlign: 'none',
-            draggable: true, // 禁止拖拽
+            draggable: false, // 禁止拖拽
             emphasis: {
               focus: 'adjacency'
             },
